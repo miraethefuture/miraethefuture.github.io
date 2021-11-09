@@ -1,44 +1,41 @@
----
-layout: default
----
+<!DOCTYPE HTML>
+<html lang="en" >
+    <head>
 
-<div class="posts">
-  {% assign posts = site.posts %}
-  {% if paginator %}
-    {% assign posts = paginator.posts %}
-  {% endif %}
-  {% for post in posts %}
-    <div class="post">
-      <h2 class="post-title">
-        <a href="{{ post.url | relative_url }}">
-          {{ post.title }}
-        </a>
-      </h2>
+        {%- include head.html -%}
 
-      <time datetime="{{ post.date | date_to_xmlschema }}" class="post-meta">{{ post.date | date_to_string }}</time>
+        {% assign reversed_posts = site.posts | reverse %}
 
-      <p class="post-excerpt">
-        {% if post.description %}
-          {{ post.description | strip_html }}
-        {% else %}
-          {{ post.excerpt | strip_html }}
+        {% if reversed_posts %}
+            <link rel="next" href="{{site.baseurl}}{{reversed_posts.first.url}}" />
         {% endif %}
-      </p>
-    </div>
-  {% endfor %}
-</div>
+    </head>
+    <body>
+        <div class="book">
 
-{% if paginator %}
-  <div class="pagination">
-    {% if paginator.next_page %}
-      <a class="pagination-item older" href="{{ paginator.next_page_path | relative_url }}">Older</a>
-    {% else %}
-      <span class="pagination-item older">Older</span>
-    {% endif %}
-    {% if paginator.previous_page %}
-      <a class="pagination-item newer" href="{{ paginator.previous_page_path | relative_url }}">Newer</a>
-    {% else %}
-      <span class="pagination-item newer">Newer</span>
-    {% endif %}
-  </div>
-{% endif %}
+            {%- include toc-date.html -%}
+
+            <div class="book-body">
+                {%- include body.html -%}
+
+                {% if reversed_posts %}
+                    <a href="{{site.baseurl}}{{reversed_posts.first.url}}" class="navigation navigation-next navigation-unique" aria-label="Next page: {{reversed_posts.first.title}}">
+                        <i class="fa fa-angle-right"></i>
+                    </a>
+                {% endif %}
+            </div>
+
+            <!-- {%- include search.html -%} -->
+
+            <script>
+            var gitbook = gitbook || [];
+            gitbook.push(function() {
+                gitbook.page.hasChanged({%- include metadata-home.json.tpl -%});
+            });
+            </script>
+        </div>
+
+        {%- include footer.html -%}
+
+    </body>
+</html>
