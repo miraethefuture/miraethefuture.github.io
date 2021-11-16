@@ -2,7 +2,7 @@
 name: "Mirae"
 title: "Mirae the Future"
 description: "I will take you on the fabulous world of exploration. Travel, culture, lifestyle. Eat, Pray, Love!"
-logo: 'assets/images/logo.png'
+logo: 'assets/images/mirae_memoji.png'
 favicon: 'assets/images/logo.png'
 baseurl: https://miraethefuture.github.io/
 google_analytics: ''
@@ -14,22 +14,14 @@ email: miraeaeaeaeae@gmail.com
 
 # Authors
 authors:
-  sal:
+  Mirae:
     name: Mirae
     display_name: Mirae
-    avatar: 'assets/images/avatar-sal.png'
-    email: wowthemesnet@gmail.com
-    web: https://www.wowthemes.net/donate/
-    twitter: https://twitter.com/wowthemesnet
-    description: "Author of Memoirs, a Bootstrap Medium styled template available for Jekyll. You are currently previewing Jekyll template demo."
-  john:
-    name: John
-    display_name: John
-    avatar: 'assets/images/avatar.png'
-    email: wowthemesnet@gmail.com
-    web: https://www.wowthemes.net
-    twitter: https://twitter.com/wowthemesnet
-    description: "Write a short description of the author here. You are currently previewing Memoirs demo, a Jekyll template compatible with Github pages."
+    avatar: 'assets/images/mirae_memoji.png'
+    email: miraeaeaeaeae@gmail.com
+    web: https://miraethefuture.github.io/
+    twitter: https://twitter.com/Lookingfortheb4
+    description: "a developer who is an artist"
 
 # Plugins
 plugins:
