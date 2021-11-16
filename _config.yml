@@ -2,8 +2,8 @@
 name: "Mirae"
 title: "Mirae the Future"
 description: "I will take you on the fabulous world of exploration. Travel, culture, lifestyle. Eat, Pray, Love!"
-logo: 'assets/images/logo_mirae.PNG'
-favicon: 'assets/images/favicon_mirae.PNG'
+logo: 'assets/images/logo_mirae.png'
+favicon: 'assets/images/favicon_mirae.png'
 baseurl: https://miraethefuture.github.io/
 google_analytics: ''
 disqus: ''
