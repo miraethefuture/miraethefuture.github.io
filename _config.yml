@@ -5,7 +5,7 @@ description: "Hello World!"
 logo: 'assets/images/logo1_mirae.png'
 favicon: 'assets/images/favicon1_mirae.png'
 baseurl: https://miraethefuture.github.io/
-google_analytics: ''
+google_analytics: 'G-CYDFEWC2YE'
 disqus: ''
 mailchimp-list: ''
 include: ["_pages"]
