@@ -13,4 +13,24 @@ image: assets/images/Google_search.png
 
 
 <img src="/assets/images/gs_1.png" alt="gs_1.png"
-	title="reason" width="970" height="94" />
+	title="reason" width="970" height="94" />  
+
+  구글 콘솔에서 인증을 하려니.. 이런게 있어야 한다고 해서 다시 폭풍 검색.  
+
+<img src="/assets/images/gs_2.png" alt="gs_2.png"
+  title="googletoldme" width="1224" height="220" />  
+
+  오 구글은 친절하게도 왜 실패했는지 알려줌. <head> 섹션에 나의 ID 가 있어야 한다고 하는데...내 아이디를 .yml 파일에 입력했는데 어떤 HTML 파일 어딘가에 붙여야 하는걸까..?  
+
+<img src="/assets/images/Google_search.png" alt="Google_search.png"
+  title="done" width="1276" height="570" />  
+
+  헐 성공! 하지만 Google Analytics 를 통해서가 아니고 HTML 파일 업로드해서 성공했네.. 다운받은 HTML 파일을 어디에 저장해야되는지 몰랐는데 그냥 깃허브 블로그 루트 디렉토리였네... 아무튼 성공! 위 링크의 주인분께 무한 감사를..!  
+
+  한두시간이 지나야 잘 노출되고 있는지 확인이 가능하다고 하니 내일 확인해봐야겠다.
+
+## 그리고 다음날이 된 11/19 (FRI) 현재...  
+<img src="/assets/images/gs_3.png" alt="gs_3.png"
+  title="notyet" width="1464" height="428" />  
+
+URL 이 구글에 등록이 안되있다하여 등록중.. 구글에 검색되기는 현재 진행중.  
