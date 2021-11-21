@@ -33,4 +33,4 @@ image: assets/images/Google_search.png
 <img src="/assets/images/gs_3.png" alt="gs_3.png"
   title="notyet" width="1464" height="428" />  
 
-URL 이 구글에 등록이 안되있다하여 등록중.. 구글에 검색되기는 현재 진행중.  
+URL 이 구글에 등록이 안되있다하여 등록중.. 구글에 검색되기는 현재 진행중..
