@@ -34,3 +34,21 @@ image: assets/images/Google_search.png
   title="notyet" width="1464" height="428" />  
 
 URL 이 구글에 등록이 안되있다하여 등록중.. 구글에 검색되기는 현재 진행중..
+
+## 11/22 (MON)  
+
+*site:* 와 내 주소를 입력하면 검색이 되고 있는지 알 수 있다고해서 시도!  
+
+그리고 드디어..!  
+
+<img src="/assets/images/gs_4.png" alt="gs_4.png"
+title="finally" width="1470" height="788" />  
+
+
+검색이 되고 있는 것을 확인.  
+
+
+## 구글에 내 블로그 노출시키기 성공~!  
+
+
+이름은 바꿔야겠다. 그냥 Mirae 로 나오네  
