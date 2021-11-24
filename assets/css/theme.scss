@@ -14,8 +14,7 @@ $enable-rounded: false;
 @import "bootstrap/mixins";
 @import 'bootstrap/bootstrap';
 @import 'stars';
-@import "sass-code-highlight1/monokai";
-
+@import "css/syntax.css"
 
 // general
 body, input, button, select, optgroup, textarea {
