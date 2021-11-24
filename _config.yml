@@ -45,13 +45,15 @@ paginate: 6
 paginate_path: /page:num/
 
 # Other
-#highlighter: rouge
 markdown: kramdown
+highlighter: rouge
+
 kramdown:
-  input : GFM
+  input: GFM
   syntax_highlighter : rouge
+  auto_ids: true
    #syntax_highlighter_opts:
-      disable : true
+   #disable : true
 
 
 
