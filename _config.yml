@@ -46,14 +46,14 @@ paginate_path: /page:num/
 
 # Other
 markdown: kramdown
-highlighter: rouge
+#highlighter: rouge
 
 kramdown:
-  input: GFM
-  syntax_highlighter : rouge
-  auto_ids: true
-   #syntax_highlighter_opts:
-   #disable : true
+  #input: GFM
+  #syntax_highlighter : rouge
+  #auto_ids: true
+   syntax_highlighter_opts:
+   disable : true
 
 
 
