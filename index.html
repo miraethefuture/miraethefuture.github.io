@@ -1,21 +1,8 @@
 ---
 layout: default
-title: Home
 ---
-
-<!-- Posts Index
-================================================== -->
-<div class="blog-grid-container">
-    {% for post in paginator.posts %}
-        {% include postbox.html %}
-    {% endfor %}
-</div>
-
-<!-- Pagination
-================================================== -->
-<div class="bottompagination">
-<span class="navigation" role="navigation">
-    {% include pagination.html %}
-</span>
-</div>
-
+<ul>
+	{% for post in site.posts %}
+	<li><a href="{{  post.url }}" title="{{ post.title }}"><img src="/assets/img/file.ico" title="{{ post.title }}" />{{ post.title }}</a></li>
+	{% endfor %}
+</ul>
