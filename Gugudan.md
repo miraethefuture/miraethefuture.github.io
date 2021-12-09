@@ -2,8 +2,8 @@
 layout: default
 ---
 
-## Welcome to another page
+## Things I Learned.
 
-_yay_
+
 
 [back](./)
