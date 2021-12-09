@@ -3,7 +3,7 @@
 
 # Uncomment and set the URL of your site (with protocol, e.g. `https://`)
 # NOTE: You don't need to provide this property when hosting on GitHub Pages or Netlify.
-url:                   https://miraethefuture.github.io
+# url:                   https://username.github.io
 
 # Uncomment and set the "base URL" of your site.
 # When your site is in a subdirectory, set to `/<name of directory>`,
@@ -20,15 +20,16 @@ url:                   https://miraethefuture.github.io
 lang:                  en
 
 # The title of your blog. Used in the sidebar and the browser tab.
-title:                 Mirae the Future
+title:                 Starter Kit
 
 # A short description (~150 chars) of the page used for the meta description tag.
 # Can use markdown, but no more than one paragraph (enforced by `>`)
 description:           >
-  Hi! I'm Mirae. 안녕하세요! 저는 미래입니다.
+  Hydejack is a boutique Jekyll theme for hackers, nerds, and academics,
+  with a focus on personal sites that are meant to impress.
 
 # A shorter description for the sidebar.
-tagline:               Change
+tagline:               Change `tagline` in `_config.yml`
 
 # A list of keywords for your blog
 keywords:              []
@@ -41,8 +42,8 @@ logo:                  /assets/img/logo.png
 # This should be the same author as first entry in `_data/authors.yml`.
 author:
   # Used by `jekyll-feed`:
-  name:                <Mirae> <''>
-  email:               <miraeaeaeaeae@gmail.com>
+  name:                <firstname> <lastname>
+  email:               <mail@domain.tld>
   # # Used by `jekyll-seo-tag`:
   # twitter:             <username>
 
@@ -85,7 +86,7 @@ theme: jekyll-theme-hydejack
 
 # Customizaton
 # ----------------------------------------------------------------------------------------
-
+ 
 # Sidebar image and theme color of the site.
 accent_image:          /assets/img/sidebar-bg.jpg
 accent_color:          rgb(79,177,186)
@@ -214,7 +215,7 @@ hydejack:
   # This will increase site build speed dramatically!
   no_inline_css:       false
 
-  # Set to `true` if you don't intend on changing the accent color on a per-page basis.
+  # Set to `true` if you don't intend on changing the accent color on a per-page basis. 
   # This will increase site build speed!
   no_page_style:       false
 
@@ -257,7 +258,7 @@ hydejack:
 
   # Buyers of the PRO version can opt to hide all dates from the theme.
   # Frequent consumers of online content will know that nothing devalues a post like
-  # seeing an old date.
+  # seeing an old date. 
   hide_dates:          false
 
   # TODO
@@ -398,21 +399,21 @@ jekyll_compose:
   default_front_matter:
     drafts:
       layout: post
-      description: >
+      description: > 
         A short ~160 character description of your post for search engines,
         social media previews, etc.
       image:
         path: /assets/img/sidebar-bg.jpg
     posts:
       layout: post
-      description: >
+      description: > 
         A short ~160 character description of your post for search engines,
         social media previews, etc.
       image:
         path: /assets/img/sidebar-bg.jpg
     projects:
       layout: project
-      description: >
+      description: > 
         A short ~160 character description of your post for search engines,
         social media previews, etc.
       image:
