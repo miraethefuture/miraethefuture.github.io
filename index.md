@@ -2,7 +2,7 @@
 layout: default
 ---
 
-[Things I Learned](/_posts/Things-I-Learned.html).
+[Things I Learned](./_posts/Things-I-Learned.html).
 
 <!--
 Text can be **bold**, _italic_, or ~~strikethrough~~.
