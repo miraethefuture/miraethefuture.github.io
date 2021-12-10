@@ -1,7 +1,6 @@
 ---
 layout: default
 title: "만들어 가면서 배우는 JAVA 플레이그라운드 <구구단 구현하기 추가미션>"
-permalink: https://miraethefuture.github.io/Gugudan
 ---
 
 <!--### 만들어 가면서 배우는 JAVA 플레이그라운드 <구구단 구현하기 추가미션>-->
