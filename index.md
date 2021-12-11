@@ -2,8 +2,8 @@
 layout: default
 ---
 
-[-만들어 가면서 배우는 JAVA 플레이그라운드 구구단 구현하기 추가미션](file:///Users/jeongmilae/Documents/GitHub/miraethefuture.github.io/_post/Gugudan.md)  
-[-개발 공부? 영어 공부? !](en_and_dev.md)
+[-만들어 가면서 배우는 JAVA 플레이그라운드 구구단 구현하기 추가미션](./-Gugudan.html)  
+[-개발 공부? 영어 공부? !](./-en_and_dev.html)
 
 
 <!--
