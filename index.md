@@ -2,10 +2,10 @@
 layout: default
 ---
 
-[-개발 공부? 영어 공부? !](./-en_and_dev.html)    
-[-만들어 가면서 배우는 JAVA 플레이그라운드 구구단 구현하기 추가미션](./-Gugudan.html)      
+[-개발 공부? 영어 공부?!](./-en_and_dev.html)    
+[-만들어 가면서 배우는 JAVA 플레이그라운드 구구단 구현하기 추가미션](./2021-12-10-Gugudan.html)      
 [-while문으로 구구단 홀수곱만 구현](./-Gugudan_odd.html)  
-  
+
 
 
 
