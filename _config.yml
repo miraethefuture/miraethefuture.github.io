@@ -1,6 +1,6 @@
 title: Mirae the Future
 author: Mirae 미래
-  name:
+  name: miraethefuture
   email: miraeaeaeaeae@gmail.com
 description: > # this means to ignore newlines until "show_excerpts:"
   안녕하세요. 여러분! Hello World! 미래 the Future 의 블로그 입니다.
@@ -15,7 +15,7 @@ minima:
   # generate social links in footer
   social_links:
     twitter:
-    github:  
+    github:
     # devto: jekyll
     # dribbble: jekyll
     # facebook: jekyll
