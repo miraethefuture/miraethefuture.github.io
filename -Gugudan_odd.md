@@ -11,14 +11,12 @@ public class Gugudan {
         int i = 2;   //2단부터 시작
 	      while (i < 10) {   //9단까지 출력
 	         System.out.println("====" + i + "단 ===="); //몇단인지 화면에 출력
-
            int j = 0;
 	         while (j < 10) {
-	    	        j++; //1씩 증감이므로 1로 시작
-	    	        if (j % 2 == 0) continue; //n % 2 == 0 이면 짝수 1 이면 홀수 (나머지)
-	              System.out.println(i + " X " + j + " = " + i*j);
-
-           }
+	            j++; //1씩 증감이므로 1로 시작
+	            if (j % 2 == 0) continue; //n % 2 == 0 이면 짝수 1 이면 홀수 (나머지)
+	            System.out.println(i + " X " + j + " = " + i*j);
+        }
 	         i++;
         }
     }
