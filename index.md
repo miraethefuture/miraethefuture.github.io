@@ -2,8 +2,8 @@
 layout: default
 ---
 
-[-만들어 가면서 배우는 JAVA 플레이그라운드 구구단 구현하기 추가미션](/_post/Gugudan)  
-[-개발 공부? 영어 공부? !](/_post/en_and_dev)
+[-만들어 가면서 배우는 JAVA 플레이그라운드 구구단 구현하기 추가미션](Gugudan.md)  
+[-개발 공부? 영어 공부? !](en_and_dev.md)
 
 
 <!--
