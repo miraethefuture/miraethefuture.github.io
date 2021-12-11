@@ -1,2 +1,3 @@
-# Mirae the Future
-안녕하세요! 반갑습니다.
+안녕하세요. 반갑습니다.
+
+Mirae the Future 의 블로그 입니다.
