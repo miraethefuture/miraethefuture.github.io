@@ -57,7 +57,7 @@ body {
   color: #6d6d6d;
   text-shadow: 0 1px 0 rgba(255, 255, 255, 0.8);
   background: #E8F6F3;
-
+  //첫 페이지 background color
   //원래 설정
 	//background: #e7e7e7 url(../images/body-bg.png) 0 0 repeat;
 
@@ -93,7 +93,8 @@ header h2 {
 
 #container {
   min-height: 595px;
-  background: transparent url(../images/highlight-bg.jpg) 50% 0 no-repeat;
+  background: transparent
+	//background: transparent url(../images/highlight-bg.jpg) 50% 0 no-repeat;
 }
 
 .inner {
