@@ -26,9 +26,9 @@ public class Gugudan {
 
 ```
 
-<img src="/assets/images/gugudanResult.png" alt="gugudanResult.png" width="184" height="926">
+<img src="/assets/images/gugudanResult.png" alt="gugudanResult.png" width="92" height="468">
 
 이렇게 구현이 됩니다. 나누기의 나머지 수를 이용하는 것을 기억해두면 좋을 것 같습니다.
 
-> % 는 the remainder operator, 또는 the modulo operator 라고 부르네요.  
+* % 는 the remainder operator, 또는 the modulo operator 라고 부르네요.  
 나머지 수를 구하는 연산자 입니다.
