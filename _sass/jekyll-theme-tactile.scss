@@ -67,7 +67,7 @@ a {
   color: #65AE71;
 }
 a:hover {
-  color: #469A55;
+  color: #3C7947;
 	//글씨에 커서 대면 바뀌는 색?
 }
 
@@ -360,8 +360,8 @@ footer a:hover {
 /* All Mobile Sizes (devices and browser) */
 @media only screen and (max-width: 767px) {
   header {
-    padding-top: 10px;
-    padding-bottom: 10px;
+    padding-top: 20px;
+    padding-bottom: 20px;
   }
   #downloads {
     margin-bottom: 25px;
@@ -375,7 +375,7 @@ footer a:hover {
   }
   ul li {
     margin-left: 10px;
-    padding-left: 10px;
+    padding-left: 20px;
   }
   ol li {
     margin-left: 10px;
