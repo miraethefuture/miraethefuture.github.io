@@ -56,7 +56,7 @@ body {
   line-height: 1.5;
   color: #6d6d6d;
   text-shadow: 0 1px 0 rgba(255, 255, 255, 0.8);
-  background: #F7FCF6;
+  background: #F6F7F6;
   //첫 페이지 background color
   //원래 설정
 	//background: #e7e7e7 url(../images/body-bg.png) 0 0 repeat;
@@ -67,7 +67,8 @@ a {
   color: #65AE71;
 }
 a:hover {
-  color: #c5000c;
+  color: #469A55;
+	//글씨에 커서 대면 바뀌는 색?
 }
 
 header {
