@@ -1,7 +1,7 @@
 ---
 layout: post
 title: "만들어 가면서 배우는 JAVA 플레이그라운드 <구구단 구현하기 추가미션>"
-categories: misc
+categories: 
 ---
 아래 모든 내용은 인프런 강의 ‘만들어 가면서 배우는 JAVA 플레이그라운드’의 내용입니다.  
 
