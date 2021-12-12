@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+
+    <html>
+    {% include head.html %}
+
+        <body>
+            {% include header.html %}
+            <!-- main -->
+            <ul>
+            {% for post in site.posts %}
+            <li>
+                <a href="{{ post.url | relative_url }}">{{ post.title }}</a>
+            </li>
+            {% endfor %}
+            </ul>
+
+            {% include footer.html %}
+        </body>
+
+    </html>
