@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en-US">
+  <head>
+    <meta charset='utf-8'>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <link rel="stylesheet" href="/assets/css/style.css?v=">
+    <link rel="stylesheet" type="text/css" href="/assets/css/print.css" media="print">
+    <!--[if lt IE 9]>
+    <script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+    <![endif]-->
+
+<!-- Begin Jekyll SEO tag v2.7.1 -->
+<title>while문으로 구구단 홀수곱만 구현 | Mirae the Future</title>
+<meta name="generator" content="Jekyll v4.2.1" />
+<meta property="og:title" content="while문으로 구구단 홀수곱만 구현" />
+<meta property="og:locale" content="en_US" />
+<meta name="description" content="미래 더 퓨처의 블로그 입니다." />
+<meta property="og:description" content="미래 더 퓨처의 블로그 입니다." />
+<link rel="canonical" href="http://localhost:4000/-Gugudan_odd.html" />
+<meta property="og:url" content="http://localhost:4000/-Gugudan_odd.html" />
+<meta property="og:site_name" content="Mirae the Future" />
+<meta name="twitter:card" content="summary" />
+<meta property="twitter:title" content="while문으로 구구단 홀수곱만 구현" />
+<script type="application/ld+json">
+{"description":"미래 더 퓨처의 블로그 입니다.","url":"http://localhost:4000/-Gugudan_odd.html","@type":"WebPage","headline":"while문으로 구구단 홀수곱만 구현","@context":"https://schema.org"}</script>
+<!-- End Jekyll SEO tag -->
+
+    <!-- start custom head snippets, customize with your own _includes/head-custom.html file -->
+
+<!-- Setup Google Analytics -->
+
+  <script>
+    (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+    (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+            m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+        })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+    ga('create', 'G-CYDFEWC2YE', 'auto');
+    ga('send', 'pageview');
+  </script>
+
+
+
+<!-- You can set your favicon here -->
+<!-- link rel="shortcut icon" type="image/x-icon" href="/favicon.ico" -->
+
+<!-- end custom head snippets -->
+
+  </head>
+
+  <body>
+    <div id="container">
+      <div class="inner">
+
+        <header>
+          <h1>while문으로 구구단 홀수곱만 구현</h1>
+          <h2>미래 더 퓨처의 블로그 입니다.</h2>
+        </header>
+        <section id="downloads" class="clearfix">
+          
+	
+        </section>
+        <hr>
+        <section id="main_content">
+          <div class="language-java highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">public</span> <span class="kd">class</span> <span class="nc">Gugudan</span> <span class="o">{</span>
+    <span class="kd">public</span> <span class="kt">void</span> <span class="nf">GugudanOdd</span><span class="o">()</span> <span class="o">{</span>
+        <span class="kt">int</span> <span class="n">i</span> <span class="o">=</span> <span class="mi">2</span><span class="o">;</span>   <span class="c1">//2단부터 시작</span>
+	      <span class="k">while</span> <span class="o">(</span><span class="n">i</span> <span class="o">&lt;</span> <span class="mi">10</span><span class="o">)</span> <span class="o">{</span>   <span class="c1">//9단까지 출력</span>
+	         <span class="nc">System</span><span class="o">.</span><span class="na">out</span><span class="o">.</span><span class="na">println</span><span class="o">(</span><span class="s">"===="</span> <span class="o">+</span> <span class="n">i</span> <span class="o">+</span> <span class="s">"단 ===="</span><span class="o">);</span> <span class="c1">//몇단인지 화면에 출력</span>
+           <span class="kt">int</span> <span class="n">j</span> <span class="o">=</span> <span class="mi">0</span><span class="o">;</span>
+	         <span class="k">while</span> <span class="o">(</span><span class="n">j</span> <span class="o">&lt;</span> <span class="mi">10</span><span class="o">)</span> <span class="o">{</span>
+	            <span class="n">j</span><span class="o">++;</span> <span class="c1">//1씩 증감이므로 1로 시작</span>
+	            <span class="k">if</span> <span class="o">(</span><span class="n">j</span> <span class="o">%</span> <span class="mi">2</span> <span class="o">==</span> <span class="mi">0</span><span class="o">)</span> <span class="k">continue</span><span class="o">;</span> <span class="c1">//n % 2 == 0 이면 짝수 1 이면 홀수 (나머지)</span>
+	            <span class="nc">System</span><span class="o">.</span><span class="na">out</span><span class="o">.</span><span class="na">println</span><span class="o">(</span><span class="n">i</span> <span class="o">+</span> <span class="s">" X "</span> <span class="o">+</span> <span class="n">j</span> <span class="o">+</span> <span class="s">" = "</span> <span class="o">+</span> <span class="n">i</span><span class="o">*</span><span class="n">j</span><span class="o">);</span>
+        <span class="o">}</span>
+	         <span class="n">i</span><span class="o">++;</span>
+        <span class="o">}</span>
+    <span class="o">}</span>
+<span class="o">}</span>
+
+</code></pre></div></div>
+
+<p><img src="/assets/images/gugudanResult.png" alt="gugudanResult.png" width="92" height="468" /></p>
+
+<p>이렇게 구현이 됩니다. 나누기의 나머지 수를 이용하는 것을 기억해두면 좋을 것 같습니다.</p>
+
+<ul>
+  <li>% 는 the remainder operator, 또는 the modulo operator 라고 부르네요.<br />
+나머지 수를 구하는 연산자 입니다.</li>
+</ul>
+
+        </section>
+
+        <footer>
+        
+          This page was generated by <a href="https://pages.github.com">GitHub Pages</a>.
+        </footer>
+
+      </div>
+    </div>
+  </body>
+</html>
