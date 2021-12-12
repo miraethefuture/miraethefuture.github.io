@@ -12,11 +12,11 @@ main:
     url: /docs/Gugudan/
 
 # side bars
-docs:
+sidebar-menu:
   - title: POSTS
     children:
       - title: "Gugudan"
-        url: /docs/Gugudan/
+        url: /
       # - title: "Structure"
       #   url: /docs/structure/
       # - title: "Installation"
