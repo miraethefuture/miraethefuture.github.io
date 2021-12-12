@@ -1,10 +1,10 @@
 ---
 title: "Layout: Sidebar with Navigation List"
 excerpt: "A post with a sidebar navigation list."
-author_profile: false
+author_profile: true
 sidebar:
-  title: "Gugudan"
-  nav: docs/Gugudan
+  title: 
+  nav: /docs/Gugudan/
 ---
 아래 모든 내용은 인프런 강의 ‘만들어 가면서 배우는 JAVA 플레이그라운드’의 내용입니다.  
 
