@@ -15,7 +15,7 @@ main:
 docs:
   - title: POSTS
     children:
-      - title: "Gugudan(Java)"
+      - title: "Gugudan"
         url: /docs/Gugudan/
       # - title: "Structure"
       #   url: /docs/structure/
