@@ -3,14 +3,14 @@ title: "Header Image (Horizontal)"
 header:
   image: /assets/images/teaser.jpg
   caption: "Photo credit: [**Unsplash**](https://unsplash.com)"
-categories:
-  - Layout
-  - Uncategorized
-tags:
-  - edge case
-  - featured image
-  - image
-  - layout
+#categories:
+  #- Layout
+  #- Uncategorized
+#tags:
+  #- edge case
+  #- featured image
+  #- image
+  #- layout
 ---
 
 This post should display a **header image**, if the theme supports it.
