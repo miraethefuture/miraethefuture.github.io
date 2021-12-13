@@ -5,7 +5,7 @@ author_profile: false
 sidebar:
   title: "Sample Title"
   nav: sidebar-sample
-permalink: /test/Sidebar with Navigation List/
+permalink: /categories/Sidebar with Navigation List/
 show_date: true
 ---
 
