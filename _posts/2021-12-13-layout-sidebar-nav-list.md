@@ -6,6 +6,7 @@ sidebar:
   title: "Sample Title"
   nav: sidebar-sample
 permalink: /test/Sidebar with Navigation List/
+show_date: true
 ---
 
 This post has a custom navigation list set in the post's YAML Front Matter.
