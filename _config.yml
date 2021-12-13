@@ -283,7 +283,7 @@ defaults:
       type: posts
     values:
      sidebar:
-       nav : sidebar
+       nav: sidebar
       layout: single
       author_profile: true
       read_time: false
