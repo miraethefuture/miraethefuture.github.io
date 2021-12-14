@@ -12,10 +12,10 @@ main:
     url: /sitemap/
 
 words:
-  - title: "Parent Page A"
+  - title: "VERB 동사"
     children:
-      - title: "Child Page A1"
-        url: /
+      - title: "append"
+        url: /docs/append/
       - title: "Child Page A2"
         url: /
       - title: "Child Page A3"
@@ -34,4 +34,3 @@ words:
         url: /
       - title: "Child Page B5"
         url: /
-  
