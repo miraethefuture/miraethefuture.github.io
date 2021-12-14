@@ -1,5 +1,5 @@
 ---
-title: "Java: 만들어 가면서 배우는 JAVA 플레이그라운드(구구단 구현하기 추가미션)"
+title: "만들어 가면서 배우는 JAVA 플레이그라운드(구구단 구현하기 추가미션)"
 excerpt:
 last_modified_at:
 header:
