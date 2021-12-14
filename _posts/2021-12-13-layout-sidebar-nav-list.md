@@ -1,11 +1,11 @@
 ---
 title: "개발 공부하며 정리해보는 영단어 목록"
 excerpt: "A post with a sidebar navigation list."
-author_profile: false
+author_profile: true
 sidebar:
-  title: "Sample Title"
-  nav: sidebar-sample
-permalink: /categories/Sidebar with Navigation List/
+  title: "the list"
+  nav: words
+permalink: /Sidebar with Navigation List/
 show_date: true
 ---
 
