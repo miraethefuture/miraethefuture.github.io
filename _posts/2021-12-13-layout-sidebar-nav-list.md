@@ -1,5 +1,5 @@
 ---
-title: "Sidebar with Navigation List"
+title: "개발 공부하며 정리해보는 영단어 목록"
 excerpt: "A post with a sidebar navigation list."
 author_profile: false
 sidebar:
@@ -14,7 +14,7 @@ This post has a custom navigation list set in the post's YAML Front Matter.
 ```yaml
 sidebar:
   title: "Sample Title"
-  nav: sidebar-sample
+  nav: words
 ```
 
 Along with navigation elements set in `_data/navigation.yml`.
