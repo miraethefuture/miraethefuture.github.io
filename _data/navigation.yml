@@ -16,8 +16,8 @@ words:
     children:
       - title: "append"
         url: /docs/append/
-      - title: "Child Page A2"
-        url: /
+      - title: "test"
+        url: /words/test/
       - title: "Child Page A3"
         url: /
       - title: "Child Page A4"
