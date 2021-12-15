@@ -1,4 +1,31 @@
-<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="4.2.1">Jekyll</generator><link href="http://localhost:4000/feed.xml" rel="self" type="application/atom+xml" /><link href="http://localhost:4000/" rel="alternate" type="text/html" /><updated>2021-12-15T09:59:54+09:00</updated><id>http://localhost:4000/feed.xml</id><title type="html">Mirae the Future</title><subtitle>An amazing website.</subtitle><author><name>Mirae</name></author><entry><title type="html">만들어 가면서 배우는 JAVA 플레이그라운드(구구단 구현하기 추가미션)</title><link href="http://localhost:4000/GugudanFinal/" rel="alternate" type="text/html" title="만들어 가면서 배우는 JAVA 플레이그라운드(구구단 구현하기 추가미션)" /><published>2021-12-14T00:00:00+09:00</published><updated>2021-12-14T00:00:00+09:00</updated><id>http://localhost:4000/GugudanFinal</id><content type="html" xml:base="http://localhost:4000/GugudanFinal/">&lt;p&gt;아래 모든 내용은 인프런 강의 ‘만들어 가면서 배우는 JAVA 플레이그라운드’의 내용입니다.&lt;/p&gt;
+<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="4.2.1">Jekyll</generator><link href="http://localhost:4000/feed.xml" rel="self" type="application/atom+xml" /><link href="http://localhost:4000/" rel="alternate" type="text/html" /><updated>2021-12-15T20:59:18+09:00</updated><id>http://localhost:4000/feed.xml</id><title type="html">Mirae the Future</title><subtitle>An amazing website.</subtitle><author><name>Mirae</name></author><entry><title type="html">append 덧붙이다</title><link href="http://localhost:4000/words/append/" rel="alternate" type="text/html" title="append 덧붙이다" /><published>2021-12-15T00:00:00+09:00</published><updated>2021-12-15T21:48:05+09:00</updated><id>http://localhost:4000/words/append</id><content type="html" xml:base="http://localhost:4000/words/append/">&lt;p&gt;블로그를 만드는 과정에서 아래와 같은 에러를 만났습니다.&lt;/p&gt;
+
+&lt;blockquote&gt;
+  &lt;p&gt;Jekyll 4.2.1   Please &lt;strong&gt;append&lt;/strong&gt; &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;--trace&lt;/code&gt; to the &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;serve&lt;/code&gt; command
+for any additional information o
+r backtrace.&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;p&gt;–trace 를 append 해라?&lt;/p&gt;
+
+&lt;p class=&quot;notice--success&quot;&gt;
+bundle exec jekyll serve --trace
+&lt;/p&gt;
+
+&lt;p&gt;이렇게 뒤에 &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;--trace&lt;/code&gt; 를 덧붙이라는 말이었어요.&lt;/p&gt;
+
+&lt;div class=&quot;notice--info&quot;&gt;
+  &lt;h1 class=&quot;no_toc&quot;&gt;append&lt;/h1&gt;
+
+&lt;p&gt;to add something to a piece of writing&lt;br /&gt;  
+글에 어떤 내용을 덧붙이다.&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;예문 1&lt;/li&gt;
+  &lt;li&gt;예문 2&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;/div&gt;</content><author><name>Mirae</name></author><summary type="html">1.덧붙이다 2.첨부하다 :: to add something to a piece of writing 글에 어떤 내용을 덧붙이다.</summary></entry><entry><title type="html">만들어 가면서 배우는 JAVA 플레이그라운드(구구단 구현하기 추가미션)</title><link href="http://localhost:4000/GugudanFinal/" rel="alternate" type="text/html" title="만들어 가면서 배우는 JAVA 플레이그라운드(구구단 구현하기 추가미션)" /><published>2021-12-14T00:00:00+09:00</published><updated>2021-12-14T00:00:00+09:00</updated><id>http://localhost:4000/GugudanFinal</id><content type="html" xml:base="http://localhost:4000/GugudanFinal/">&lt;p&gt;아래 모든 내용은 인프런 강의 ‘만들어 가면서 배우는 JAVA 플레이그라운드’의 내용입니다.&lt;/p&gt;
 
 &lt;h3 id=&quot;추가-미션-문제&quot;&gt;추가 미션 문제&lt;/h3&gt;
 
@@ -52,4 +79,8 @@
 
 &lt;p&gt;Of all delectable islands the Neverland is the snuggest and most compact, not large and sprawly, you know, with tedious distances between one adventure and another, but nicely crammed. When you play at it by day with the chairs and table-cloth, it is not in the least alarming, but in the two minutes before you go to sleep it becomes very real. That is why there are night-lights.&lt;/p&gt;
 
-&lt;p&gt;Occasionally in her travels through her children’s minds Mrs. Darling found things she could not understand, and of these quite the most perplexing was the word Peter. She knew of no Peter, and yet he was here and there in John and Michael’s minds, while Wendy’s began to be scrawled all over with him. The name stood out in bolder letters than any of the other words, and as Mrs. Darling gazed she felt that it had an oddly cocky appearance.&lt;/p&gt;</content><author><name>Mirae</name></author><category term="post date" /><summary type="html">This post has post date enabled. The date the post was published should show if show_date: true is added to it’s YAML Front Matter or as a default in _config.yml.</summary></entry><entry><title type="html">개발 공부하며 정리해보는 영단어 목록</title><link href="http://localhost:4000/Sidebar%20with%20Navigation%20List/" rel="alternate" type="text/html" title="개발 공부하며 정리해보는 영단어 목록" /><published>2021-12-13T00:00:00+09:00</published><updated>2021-12-13T00:00:00+09:00</updated><id>http://localhost:4000/layout-sidebar-nav-list</id><content type="html" xml:base="http://localhost:4000/Sidebar%20with%20Navigation%20List/">&lt;p&gt;개발 공부를 하&lt;/p&gt;</content><author><name>Mirae</name></author><summary type="html">개발 공부를 하며 만난 영단어들을 정리합니다.</summary></entry></feed>
+&lt;p&gt;Occasionally in her travels through her children’s minds Mrs. Darling found things she could not understand, and of these quite the most perplexing was the word Peter. She knew of no Peter, and yet he was here and there in John and Michael’s minds, while Wendy’s began to be scrawled all over with him. The name stood out in bolder letters than any of the other words, and as Mrs. Darling gazed she felt that it had an oddly cocky appearance.&lt;/p&gt;</content><author><name>Mirae</name></author><category term="post date" /><summary type="html">This post has post date enabled. The date the post was published should show if show_date: true is added to it’s YAML Front Matter or as a default in _config.yml.</summary></entry><entry><title type="html">개발 공부하며 정리해보는 영단어 목록</title><link href="http://localhost:4000/Sidebar%20with%20Navigation%20List/" rel="alternate" type="text/html" title="개발 공부하며 정리해보는 영단어 목록" /><published>2021-12-13T00:00:00+09:00</published><updated>2021-12-13T00:00:00+09:00</updated><id>http://localhost:4000/layout-sidebar-nav-list</id><content type="html" xml:base="http://localhost:4000/Sidebar%20with%20Navigation%20List/">&lt;p&gt;개발 공부를 하며 만난 영단어들을 정리합니다.&lt;/p&gt;
+
+&lt;blockquote&gt;
+  &lt;p&gt;개발용어(x) 공부하며 만난 보통 영단어(o)&lt;/p&gt;
+&lt;/blockquote&gt;</content><author><name>Mirae</name></author><summary type="html">개발 공부를 하며 만난 영단어들을 정리합니다.</summary></entry></feed>

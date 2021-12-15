@@ -1,0 +1,32 @@
+I"4<p>블로그를 만드는 과정에서 아래와 같은 에러를 만났습니다.</p>
+
+<blockquote>
+  <p>Jekyll 4.2.1   Please <strong>append</strong> <code class="language-plaintext highlighter-rouge">--trace</code> to the <code class="language-plaintext highlighter-rouge">serve</code> command
+for any additional information o
+r backtrace.</p>
+</blockquote>
+
+<p>–trace 를 append 해라?</p>
+
+<p class="notice--success">
+bundle exec jekyll serve --trace
+</p>
+
+<p>이렇게 뒤에 <code class="language-plaintext highlighter-rouge">--trace</code> 를 덧붙이라는 말이었어요.</p>
+
+<h2 id="append">append</h2>
+<h4 id="to-add-something-to-a-piece-of-writing">to add something to a piece of writing</h4>
+<p>글에 어떤 내용을 덧붙이다.</p>
+
+<div class="notice--info">
+  <h1 class="no_toc">append</h1>
+
+<p>You can also add the <code class="language-plaintext highlighter-rouge">.notice</code> class to a <code class="language-plaintext highlighter-rouge">&lt;div&gt;</code> element.</p>
+
+<ul>
+  <li>Bullet point 1</li>
+  <li>Bullet point 2</li>
+</ul>
+
+</div>
+:ET

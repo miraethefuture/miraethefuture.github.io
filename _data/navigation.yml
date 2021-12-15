@@ -15,10 +15,10 @@ words:
   - title: "VERB 동사"
     children:
       - title: "append"
-        url: /docs/append/
+        url: /words/append/
       - title: "test"
         url: /words/test/
-      - title: "Child Page A3"
+      - title: "override"
         url: /
       - title: "Child Page A4"
         url: /
