@@ -1,30 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.sitemaps.org/schemas/sitemap/0.9 http://www.sitemaps.org/schemas/sitemap/0.9/sitemap.xsd" xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
 <url>
-<loc>http://localhost:4000/layout-header-image-horizontal/</loc>
-<lastmod>2021-12-13T00:00:00+09:00</lastmod>
-</url>
-<url>
-<loc>http://localhost:4000/layout-post-date/</loc>
-<lastmod>2021-12-13T00:00:00+09:00</lastmod>
-</url>
-<url>
-<loc>http://localhost:4000/Sidebar%20with%20Navigation%20List/</loc>
-<lastmod>2021-12-13T00:00:00+09:00</lastmod>
-</url>
-<url>
-<loc>http://localhost:4000/GugudanFinal/</loc>
-<lastmod>2021-12-14T00:00:00+09:00</lastmod>
-</url>
-<url>
-<loc>http://localhost:4000/words/test/</loc>
-<lastmod>2021-06-23T20:53:04+09:00</lastmod>
-</url>
-<url>
-<loc>http://localhost:4000/words/append/</loc>
-<lastmod>2021-12-15T21:48:05+09:00</lastmod>
-</url>
-<url>
-<loc>http://localhost:4000/</loc>
+<loc>http://localhost:4000/splash-page/</loc>
 </url>
 </urlset>
