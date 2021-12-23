@@ -20,7 +20,7 @@ title                    : "Mirae the Future"
 title_separator          : "|"
 subtitle                 : # site tagline that appears below site title in masthead
 name                     : "Mirae the Future"
-description              : "My website."
+description              : "My amazing website."
 url                      : "https://miraethefuture.github.io" # the base hostname & protocol for your site e.g. "https://mmistakes.github.io"
 baseurl                  : # the subpath of your site, e.g. "/blog"
 repository               : "miraethefuture/miraethefuture.github.io" # GitHub username/repo-name e.g. "mmistakes/minimal-mistakes"
