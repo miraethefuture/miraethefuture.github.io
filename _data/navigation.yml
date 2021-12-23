@@ -12,25 +12,13 @@ main:
   #   url: /sitemap/
 
 words:
-  - title: "VERB 동사"
+  - title: "동사 verb"
     children:
       - title: "a ~ e"
-        url: /words/atoe/
-      - title: "test"
-        url: /words/test/
-      - title: "override"
-        url: /
-      - title: "Child Page A4"
-        url: /
-  - title: "Parent Page B"
+        url: /vocab/atoe/
+  - title: "명사 noun"
     children:
-      - title: "Child Page B1"
+      - title: "1"
         url: /
-      - title: "Child Page B2"
-        url: /
-      - title: "Child Page B3"
-        url: /
-      - title: "Child Page B4"
-        url: /
-      - title: "Child Page B5"
+      - title: "2"
         url: /
