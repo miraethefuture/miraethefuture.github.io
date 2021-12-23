@@ -1,4 +1,10 @@
 var store = [{
+        "title": "Gemified Theme -- Alpha Release",
+        "excerpt":"Jekyll themes distributed as Ruby gems are finally here to make installing and upgrading much easier. Gone are the days of forking a repo just to “install it”. Or dealing with merge conflicts when pulling in upstream commits to “upgrade it”. If you’re interested in testing out Minimal Mistakes as...","categories": ["Jekyll"],
+        "tags": ["update"],
+        "url": "/jekyll/gemified-theme-alpha/",
+        "teaser": "/assets/images/teaser.jpg"
+      },{
         "title": "Header Image (Horizontal)",
         "excerpt":"This post should display a header image, if the theme supports it.   Non-square images can provide some unique styling issues.   This post tests a horizontal header image.  ","categories": [],
         "tags": [],
@@ -20,7 +26,7 @@ var store = [{
         "title": "만들어 가면서 배우는 JAVA 플레이그라운드(구구단 구현하기 추가미션)",
         "excerpt":"아래 모든 내용은 인프런 강의 ‘만들어 가면서 배우는 JAVA 플레이그라운드’의 내용입니다. 추가 미션 문제 사용자에게 입력 값을 받아서 구구단을 출력 입력값이 11 이라면 2 * 1 부터 2 * 11 까지 ~ 11 * 1 부터 11 * 11 까지 한번에 출력 현재 상황: 11을 입력해서 11 * 1 ~...","categories": [],
         "tags": ["code","Java"],
-        "url": "/GugudanFinal/",
+        "url": "/docs/configuration/",
         "teaser": "/assets/images/teaser.jpg"
       },{
         "title": "Layout: Sidebar Custom",
