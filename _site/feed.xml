@@ -1,1 +1,170 @@
-<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="4.2.1">Jekyll</generator><link href="http://localhost:4000/feed.xml" rel="self" type="application/atom+xml" /><link href="http://localhost:4000/" rel="alternate" type="text/html" /><updated>2021-12-21T07:46:52+09:00</updated><id>http://localhost:4000/feed.xml</id><title type="html">Mirae the Future</title><subtitle>An amazing website.</subtitle><author><name>Mirae</name></author></feed>
+<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="4.2.1">Jekyll</generator><link href="http://localhost:4000/feed.xml" rel="self" type="application/atom+xml" /><link href="http://localhost:4000/" rel="alternate" type="text/html" /><updated>2021-12-23T21:08:29+09:00</updated><id>http://localhost:4000/feed.xml</id><title type="html">Mirae the Future</title><subtitle>An amazing website.</subtitle><author><name>Mirae</name></author><entry><title type="html">append 덧붙이다</title><link href="http://localhost:4000/words/append/" rel="alternate" type="text/html" title="append 덧붙이다" /><published>2021-12-15T00:00:00+09:00</published><updated>2021-12-15T21:48:05+09:00</updated><id>http://localhost:4000/words/append</id><content type="html" xml:base="http://localhost:4000/words/append/">&lt;p&gt;블로그를 만드는 과정에서 아래와 같은 에러를 만났습니다.&lt;/p&gt;
+
+&lt;blockquote&gt;
+  &lt;p&gt;Jekyll 4.2.1   Please &lt;strong&gt;append&lt;/strong&gt; &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;--trace&lt;/code&gt; to the &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;serve&lt;/code&gt; command
+for any additional information o
+r backtrace.&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;p&gt;–trace 를 append 해라?&lt;/p&gt;
+
+&lt;p class=&quot;notice--success&quot;&gt;
+bundle exec jekyll serve --trace
+&lt;/p&gt;
+
+&lt;p&gt;이렇게 뒤에 &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;--trace&lt;/code&gt; 를 덧붙이라는 말이었어요.&lt;/p&gt;
+
+&lt;div class=&quot;notice--info&quot;&gt;
+  &lt;h1 class=&quot;no_toc&quot;&gt;append&lt;/h1&gt;
+
+&lt;p&gt;to add something to a piece of writing&lt;br /&gt;  
+글에 어떤 내용을 덧붙이다.&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;예문 1&lt;/li&gt;
+  &lt;li&gt;예문 2&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;/div&gt;</content><author><name>Mirae</name></author><summary type="html">1.덧붙이다 2.첨부하다 :: to add something to a piece of writing 글에 어떤 내용을 덧붙이다.</summary></entry><entry><title type="html">만들어 가면서 배우는 JAVA 플레이그라운드(구구단 구현하기 추가미션)</title><link href="http://localhost:4000/docs/configuration/" rel="alternate" type="text/html" title="만들어 가면서 배우는 JAVA 플레이그라운드(구구단 구현하기 추가미션)" /><published>2021-12-14T00:00:00+09:00</published><updated>2021-12-14T00:00:00+09:00</updated><id>http://localhost:4000/docs/GugudanFinal</id><content type="html" xml:base="http://localhost:4000/docs/configuration/">&lt;p&gt;아래 모든 내용은 인프런 강의 ‘만들어 가면서 배우는 JAVA 플레이그라운드’의 내용입니다.&lt;/p&gt;
+
+&lt;h3 id=&quot;추가-미션-문제&quot;&gt;추가 미션 문제&lt;/h3&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;사용자에게 입력 값을 받아서 구구단을 출력&lt;/li&gt;
+  &lt;li&gt;입력값이 11 이라면 2 * 1 부터 2 * 11 까지 ~ 11 * 1 부터 11 * 11 까지 한번에 출력&lt;/li&gt;
+  &lt;li&gt;현재 상황: 11을 입력해서 11 * 1 ~ 11 *11 은 출력할 수 있으나 2,3,4,5,6,7,8,9,10,11 단을 한꺼번에 출력하는 것이 안됨.&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;div class=&quot;language-java highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;kn&quot;&gt;import&lt;/span&gt; &lt;span class=&quot;nn&quot;&gt;java.util.Scanner&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;;&lt;/span&gt;
+
+&lt;span class=&quot;kd&quot;&gt;public&lt;/span&gt; &lt;span class=&quot;kd&quot;&gt;class&lt;/span&gt; &lt;span class=&quot;nc&quot;&gt;Finalmission&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;{&lt;/span&gt;
+    &lt;span class=&quot;kd&quot;&gt;public&lt;/span&gt; &lt;span class=&quot;kd&quot;&gt;static&lt;/span&gt; &lt;span class=&quot;kt&quot;&gt;void&lt;/span&gt; &lt;span class=&quot;nf&quot;&gt;main&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nc&quot;&gt;String&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;[]&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;args&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;{&lt;/span&gt;
+        &lt;span class=&quot;nc&quot;&gt;System&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;out&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;println&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;출력할 구구단의 값은? :&quot;&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;);&lt;/span&gt;
+        &lt;span class=&quot;nc&quot;&gt;Scanner&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;scanner&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;new&lt;/span&gt; &lt;span class=&quot;nc&quot;&gt;Scanner&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nc&quot;&gt;System&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;in&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;);&lt;/span&gt;
+        &lt;span class=&quot;kt&quot;&gt;int&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;number&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;scanner&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;nextInt&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;();&lt;/span&gt;
+
+        &lt;span class=&quot;kt&quot;&gt;int&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;[]&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;result&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;new&lt;/span&gt; &lt;span class=&quot;kt&quot;&gt;int&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;number&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;];&lt;/span&gt;
+        &lt;span class=&quot;k&quot;&gt;for&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;kt&quot;&gt;int&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;j&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;2&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;;&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;j&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;&amp;lt;=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;number&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;;&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;j&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;++)&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;{&lt;/span&gt;
+        	&lt;span class=&quot;k&quot;&gt;for&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;kt&quot;&gt;int&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;i&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;0&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;;&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;i&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;&amp;lt;&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;result&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;length&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;;&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;i&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;++)&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;{&lt;/span&gt;
+            	&lt;span class=&quot;n&quot;&gt;result&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;i&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;]&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;j&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;*&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;i&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;+&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;1&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;);&lt;/span&gt;
+            	&lt;span class=&quot;nc&quot;&gt;System&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;out&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;println&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;result&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;i&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;]);&lt;/span&gt;
+
+            &lt;span class=&quot;o&quot;&gt;}&lt;/span&gt;
+        &lt;span class=&quot;o&quot;&gt;}&lt;/span&gt;
+    &lt;span class=&quot;o&quot;&gt;}&lt;/span&gt;
+&lt;span class=&quot;o&quot;&gt;}&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;</content><author><name>Mirae</name></author><category term="code" /><category term="Java" /><summary type="html">아래 모든 내용은 인프런 강의 ‘만들어 가면서 배우는 JAVA 플레이그라운드’의 내용입니다.</summary></entry><entry><title type="html">Layout: Sidebar Custom</title><link href="http://localhost:4000/words/test/" rel="alternate" type="text/html" title="Layout: Sidebar Custom" /><published>2021-12-14T00:00:00+09:00</published><updated>2021-06-23T20:53:04+09:00</updated><id>http://localhost:4000/words/char</id><content type="html" xml:base="http://localhost:4000/words/test/">&lt;p&gt;This post has a custom sidebar set in the post’s YAML Front Matter.&lt;/p&gt;
+
+&lt;p&gt;An example of how that YAML could look is:&lt;/p&gt;
+
+&lt;div class=&quot;language-yaml highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;na&quot;&gt;sidebar&lt;/span&gt;&lt;span class=&quot;pi&quot;&gt;:&lt;/span&gt;
+  &lt;span class=&quot;pi&quot;&gt;-&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;title&lt;/span&gt;&lt;span class=&quot;pi&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;s2&quot;&gt;&quot;&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;Title&quot;&lt;/span&gt;
+    &lt;span class=&quot;na&quot;&gt;image&lt;/span&gt;&lt;span class=&quot;pi&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;s2&quot;&gt;&quot;&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;/assets/images/your-image.jpg&quot;&lt;/span&gt;
+    &lt;span class=&quot;na&quot;&gt;image_alt&lt;/span&gt;&lt;span class=&quot;pi&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;s2&quot;&gt;&quot;&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;image&quot;&lt;/span&gt;
+    &lt;span class=&quot;na&quot;&gt;text&lt;/span&gt;&lt;span class=&quot;pi&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;s2&quot;&gt;&quot;&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;Some&lt;/span&gt;&lt;span class=&quot;nv&quot;&gt; &lt;/span&gt;&lt;span class=&quot;s&quot;&gt;text&lt;/span&gt;&lt;span class=&quot;nv&quot;&gt; &lt;/span&gt;&lt;span class=&quot;s&quot;&gt;here.&quot;&lt;/span&gt;
+  &lt;span class=&quot;pi&quot;&gt;-&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;title&lt;/span&gt;&lt;span class=&quot;pi&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;s2&quot;&gt;&quot;&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;Another&lt;/span&gt;&lt;span class=&quot;nv&quot;&gt; &lt;/span&gt;&lt;span class=&quot;s&quot;&gt;Title&quot;&lt;/span&gt;
+    &lt;span class=&quot;na&quot;&gt;text&lt;/span&gt;&lt;span class=&quot;pi&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;s2&quot;&gt;&quot;&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;More&lt;/span&gt;&lt;span class=&quot;nv&quot;&gt; &lt;/span&gt;&lt;span class=&quot;s&quot;&gt;text&lt;/span&gt;&lt;span class=&quot;nv&quot;&gt; &lt;/span&gt;&lt;span class=&quot;s&quot;&gt;here.&quot;&lt;/span&gt;
+    &lt;span class=&quot;na&quot;&gt;nav&lt;/span&gt;&lt;span class=&quot;pi&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;sidebar-sample&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;</content><author><name>Mirae</name></author><summary type="html">A post with custom sidebar content.</summary></entry><entry><title type="html">Header Image (Horizontal)</title><link href="http://localhost:4000/layout-header-image-horizontal/" rel="alternate" type="text/html" title="Header Image (Horizontal)" /><published>2021-12-13T00:00:00+09:00</published><updated>2021-12-13T00:00:00+09:00</updated><id>http://localhost:4000/layout-header-image-horizontal</id><content type="html" xml:base="http://localhost:4000/layout-header-image-horizontal/">&lt;p&gt;This post should display a &lt;strong&gt;header image&lt;/strong&gt;, if the theme supports it.&lt;/p&gt;
+
+&lt;p&gt;Non-square images can provide some unique styling issues.&lt;/p&gt;
+
+&lt;p&gt;This post tests a horizontal header image.&lt;/p&gt;</content><author><name>Mirae</name></author><summary type="html">This post should display a header image, if the theme supports it.</summary></entry><entry><title type="html">Layout: Post Date Enabled</title><link href="http://localhost:4000/layout-post-date/" rel="alternate" type="text/html" title="Layout: Post Date Enabled" /><published>2021-12-13T00:00:00+09:00</published><updated>2021-12-13T00:00:00+09:00</updated><id>http://localhost:4000/layout-post-date</id><content type="html" xml:base="http://localhost:4000/layout-post-date/">&lt;p&gt;This post has post date enabled. The date the post was published should show if &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;show_date: true&lt;/code&gt; is added to it’s YAML Front Matter or as a default in &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;_config.yml&lt;/code&gt;.&lt;/p&gt;
+
+&lt;p&gt;If you could keep awake (but of course you can’t) you would see your own mother doing this, and you would find it very interesting to watch her. It is quite like tidying up drawers. You would see her on her knees, I expect, lingering humorously over some of your contents, wondering where on earth you had picked this thing up, making discoveries sweet and not so sweet, pressing this to her cheek as if it were as nice as a kitten, and hurriedly stowing that out of sight. When you wake in the morning, the naughtiness and evil passions with which you went to bed have been folded up small and placed at the bottom of your mind and on the top, beautifully aired, are spread out your prettier thoughts, ready for you to put on.&lt;/p&gt;
+
+&lt;p&gt;I don’t know whether you have ever seen a map of a person’s mind. Doctors sometimes draw maps of other parts of you, and your own map can become intensely interesting, but catch them trying to draw a map of a child’s mind, which is not only confused, but keeps going round all the time. There are zigzag lines on it, just like your temperature on a card, and these are probably roads in the island, for the Neverland is always more or less an island, with astonishing splashes of colour here and there, and coral reefs and rakish-looking craft in the offing, and savages and lonely lairs, and gnomes who are mostly tailors, and caves through which a river runs, and princes with six elder brothers, and a hut fast going to decay, and one very small old lady with a hooked nose. It would be an easy map if that were all, but there is also first day at school, religion, fathers, the round pond, needle-work, murders, hangings, verbs that take the dative, chocolate pudding day, getting into braces, say ninety-nine, three-pence for pulling out your tooth yourself, and so on, and either these are part of the island or they are another map showing through, and it is all rather confusing, especially as nothing will stand still.&lt;/p&gt;
+
+&lt;p&gt;Of course the Neverlands vary a good deal. John’s, for instance, had a lagoon with flamingoes flying over it at which John was shooting, while Michael, who was very small, had a flamingo with lagoons flying over it. John lived in a boat turned upside down on the sands, Michael in a wigwam, Wendy in a house of leaves deftly sewn together. John had no friends, Michael had friends at night, Wendy had a pet wolf forsaken by its parents, but on the whole the Neverlands have a family resemblance, and if they stood still in a row you could say of them that they have each other’s nose, and so forth. On these magic shores children at play are for ever beaching their coracles [simple boat]. We too have been there; we can still hear the sound of the surf, though we shall land no more.&lt;/p&gt;
+
+&lt;p&gt;Of all delectable islands the Neverland is the snuggest and most compact, not large and sprawly, you know, with tedious distances between one adventure and another, but nicely crammed. When you play at it by day with the chairs and table-cloth, it is not in the least alarming, but in the two minutes before you go to sleep it becomes very real. That is why there are night-lights.&lt;/p&gt;
+
+&lt;p&gt;Occasionally in her travels through her children’s minds Mrs. Darling found things she could not understand, and of these quite the most perplexing was the word Peter. She knew of no Peter, and yet he was here and there in John and Michael’s minds, while Wendy’s began to be scrawled all over with him. The name stood out in bolder letters than any of the other words, and as Mrs. Darling gazed she felt that it had an oddly cocky appearance.&lt;/p&gt;</content><author><name>Mirae</name></author><category term="post date" /><summary type="html">This post has post date enabled. The date the post was published should show if show_date: true is added to it’s YAML Front Matter or as a default in _config.yml.</summary></entry><entry><title type="html">개발 공부하며 정리해보는 영단어 목록</title><link href="http://localhost:4000/Sidebar%20with%20Navigation%20List/" rel="alternate" type="text/html" title="개발 공부하며 정리해보는 영단어 목록" /><published>2021-12-13T00:00:00+09:00</published><updated>2021-12-13T00:00:00+09:00</updated><id>http://localhost:4000/layout-sidebar-nav-list</id><content type="html" xml:base="http://localhost:4000/Sidebar%20with%20Navigation%20List/">&lt;p&gt;개발 공부를 하며 만난 영단어들을 정리합니다.&lt;/p&gt;
+
+&lt;blockquote&gt;
+  &lt;p&gt;개발용어(x) 공부하며 만난 보통 영단어(o)&lt;/p&gt;
+&lt;/blockquote&gt;</content><author><name>Mirae</name></author><summary type="html">개발 공부를 하며 만난 영단어들을 정리합니다.</summary></entry><entry><title type="html">Gemified Theme – Alpha Release</title><link href="http://localhost:4000/jekyll/gemified-theme-alpha/" rel="alternate" type="text/html" title="Gemified Theme – Alpha Release" /><published>2016-09-21T00:00:00+09:00</published><updated>2018-03-21T05:00:58+09:00</updated><id>http://localhost:4000/jekyll/gemified-theme-alpha</id><content type="html" xml:base="http://localhost:4000/jekyll/gemified-theme-alpha/">&lt;p&gt;Jekyll &lt;a href=&quot;http://jekyllrb.com/docs/themes/&quot;&gt;themes distributed as Ruby gems&lt;/a&gt; are finally here to make installing and upgrading much easier. Gone are the days of forking a repo just to “install it”. Or dealing with merge conflicts when pulling in upstream commits to “upgrade it”.&lt;/p&gt;
+
+&lt;p&gt;If you’re interested in testing out Minimal Mistakes as a gemified theme read on. There are a few caveats though:&lt;/p&gt;
+
+&lt;ol&gt;
+  &lt;li&gt;Support for a theme &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;assets&lt;/code&gt; folder was recently &lt;a href=&quot;https://github.com/jekyll/jekyll/pull/5364&quot;&gt;added to Jekyll core&lt;/a&gt;, but has yet to be released or rolled into the &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;github-pages&lt;/code&gt; gem. Meaning you can’t use Minimal Mistakes as a Ruby gem there just yet… locally served or self-hosted installs should be fine if you don’t mind using a pre-release version of Jekyll.&lt;/li&gt;
+  &lt;li&gt;Windows users can’t currently use themes packaged as gems due to a &lt;a href=&quot;https://github.com/jekyll/jekyll/issues/5192&quot;&gt;bug with file paths&lt;/a&gt; in Jekyll core. This is being worked on so hopefully a &lt;a href=&quot;https://github.com/jekyll/jekyll/pull/5256&quot;&gt;fix is on the way&lt;/a&gt; soon.&lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;p&gt;Fine with all that? Great. Let’s continue.&lt;/p&gt;
+
+&lt;p&gt;If you’re migrating a site already using Minimal Mistakes and haven’t customized any of the &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;_includes&lt;/code&gt;, &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;_layouts&lt;/code&gt;, &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;_sass&lt;/code&gt; partials, or &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;assets&lt;/code&gt; this should be quick and painless.&lt;/p&gt;
+
+&lt;h2 id=&quot;step-1-remove-theme-files&quot;&gt;Step 1: Remove Theme Files&lt;/h2&gt;
+
+&lt;p&gt;Remove &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;_includes&lt;/code&gt;, &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;_layouts&lt;/code&gt;, &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;_sass&lt;/code&gt;, &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;assets&lt;/code&gt; folders and files within. You won’t need these anymore as they’re bundled in the theme.&lt;/p&gt;
+
+&lt;p&gt;If you customized any of these then leave them alone and only remove the untouched ones. If setup correctly your modified versions should act as &lt;a href=&quot;http://jekyllrb.com/docs/themes/#overriding-theme-defaults&quot;&gt;overrides&lt;/a&gt; to the versions bundled with the theme.&lt;/p&gt;
+
+&lt;h2 id=&quot;step-2-update-gemfile&quot;&gt;Step 2: Update &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;Gemfile&lt;/code&gt;&lt;/h2&gt;
+
+&lt;p&gt;In order to test you’ll need to install pre-release gems of Jekyll and Minimal Mistakes.&lt;/p&gt;
+
+&lt;p&gt;Start by replacing &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;gem &quot;github-pages&quot;&lt;/code&gt; or &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;gem &quot;jekyll&quot;&lt;/code&gt; with the following:&lt;/p&gt;
+
+&lt;div class=&quot;language-ruby highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;n&quot;&gt;gem&lt;/span&gt; &lt;span class=&quot;s2&quot;&gt;&quot;jekyll&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;ss&quot;&gt;:git&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&amp;gt;&lt;/span&gt; &lt;span class=&quot;s2&quot;&gt;&quot;https://github.com/jekyll/jekyll.git&quot;&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;p&gt;Then add the pre-release Minimal Mistakes theme gem:&lt;/p&gt;
+
+&lt;div class=&quot;language-ruby highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;n&quot;&gt;gem&lt;/span&gt; &lt;span class=&quot;s2&quot;&gt;&quot;minimal-mistakes-jekyll&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;ss&quot;&gt;:git&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&amp;gt;&lt;/span&gt; &lt;span class=&quot;s2&quot;&gt;&quot;https://github.com/mmistakes/minimal-mistakes.git&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;ss&quot;&gt;:branch&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&amp;gt;&lt;/span&gt; &lt;span class=&quot;s2&quot;&gt;&quot;feature/theme-gem&quot;&lt;/span&gt;&lt;span class=&quot;sb&quot;&gt;`
+&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;p&gt;When finished your &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;Gemfile&lt;/code&gt; should look something like this:&lt;/p&gt;
+
+&lt;div class=&quot;language-ruby highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;n&quot;&gt;source&lt;/span&gt; &lt;span class=&quot;s2&quot;&gt;&quot;https://rubygems.org&quot;&lt;/span&gt;
+
+&lt;span class=&quot;n&quot;&gt;gem&lt;/span&gt; &lt;span class=&quot;s2&quot;&gt;&quot;jekyll&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;ss&quot;&gt;:git&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&amp;gt;&lt;/span&gt; &lt;span class=&quot;s2&quot;&gt;&quot;https://github.com/jekyll/jekyll.git&quot;&lt;/span&gt;
+&lt;span class=&quot;n&quot;&gt;gem&lt;/span&gt; &lt;span class=&quot;s2&quot;&gt;&quot;minimal-mistakes-jekyll&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;ss&quot;&gt;:git&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&amp;gt;&lt;/span&gt; &lt;span class=&quot;s2&quot;&gt;&quot;https://github.com/mmistakes/minimal-mistakes.git&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;ss&quot;&gt;:branch&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&amp;gt;&lt;/span&gt; &lt;span class=&quot;s2&quot;&gt;&quot;feature/theme-gem&quot;&lt;/span&gt;
+
+&lt;span class=&quot;n&quot;&gt;group&lt;/span&gt; &lt;span class=&quot;ss&quot;&gt;:jekyll_plugins&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;do&lt;/span&gt;
+  &lt;span class=&quot;c1&quot;&gt;# gem &quot;jekyll-archives&quot;&lt;/span&gt;
+  &lt;span class=&quot;n&quot;&gt;gem&lt;/span&gt; &lt;span class=&quot;s2&quot;&gt;&quot;jekyll-paginate&quot;&lt;/span&gt;
+  &lt;span class=&quot;n&quot;&gt;gem&lt;/span&gt; &lt;span class=&quot;s2&quot;&gt;&quot;jekyll-sitemap&quot;&lt;/span&gt;
+  &lt;span class=&quot;n&quot;&gt;gem&lt;/span&gt; &lt;span class=&quot;s2&quot;&gt;&quot;jekyll-gist&quot;&lt;/span&gt;
+  &lt;span class=&quot;n&quot;&gt;gem&lt;/span&gt; &lt;span class=&quot;s2&quot;&gt;&quot;jekyll-feed&quot;&lt;/span&gt;
+&lt;span class=&quot;k&quot;&gt;end&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;h2 id=&quot;step-3-run-bundler&quot;&gt;Step 3: Run Bundler&lt;/h2&gt;
+
+&lt;p&gt;Run &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;bundle install&lt;/code&gt; (or &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;bundle update&lt;/code&gt; if you’re updating an existing repo) to install the pre-release gems.&lt;/p&gt;
+
+&lt;h2 id=&quot;step-4-install-the-theme&quot;&gt;Step 4: Install the Theme&lt;/h2&gt;
+
+&lt;p&gt;Add &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;theme: &quot;minimal-mistakes-jekyll&quot;&lt;/code&gt; to your &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;_config.yml&lt;/code&gt; file.&lt;/p&gt;
+
+&lt;p&gt;If you’re migrating from an existing Minimal Mistakes site you shouldn’t have to change anything else after this. If it’s a new site consult then docs to &lt;a href=&quot;/docs/configuration/&quot;&gt;properly config&lt;/a&gt;.&lt;/p&gt;
+
+&lt;p class=&quot;notice--danger&quot;&gt;&lt;strong&gt;Please Note:&lt;/strong&gt; Paths for image headers, overlays, teasers, &lt;a href=&quot;/docs/helpers/#gallery&quot;&gt;galleries&lt;/a&gt;, and &lt;a href=&quot;/docs/helpers/#feature-row&quot;&gt;feature rows&lt;/a&gt; have changed and now require a full path. Instead of just &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;image: filename.jpg&lt;/code&gt; you’ll need to use the full path eg: &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;image: assets/images/filename.jpg&lt;/code&gt;. The preferred location is now &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;assets/images&lt;/code&gt; but can be placed elsewhere or external hosted. This applies for image references in &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;_config.yml&lt;/code&gt; and &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;author.yml&lt;/code&gt;.&lt;/p&gt;
+
+&lt;h2 id=&quot;step-5-jekyll-new-tweaks&quot;&gt;Step 5: &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;jekyll new&lt;/code&gt; Tweaks&lt;/h2&gt;
+
+&lt;p&gt;If this is a new site be sure to add the following files to &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;_data/&lt;/code&gt; and customize as you see fit. There is currently no way of bundling them in with the theme, so be sure to consult the docs on how to properly use both.&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;&lt;a href=&quot;https://github.com/mmistakes/minimal-mistakes/blob/master/_data/ui-text.yml&quot;&gt;&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;_data/ui-text.yml&lt;/code&gt;&lt;/a&gt; - UI text &lt;a href=&quot;/docs/ui-text/&quot;&gt;documentation&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;https://github.com/mmistakes/minimal-mistakes/blob/master/_data/navigation.yml&quot;&gt;&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;_data/navigation.yml&lt;/code&gt;&lt;/a&gt; - navigation &lt;a href=&quot;/docs/navigation/&quot;&gt;documentation&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;You’ll also need to:&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;Replace &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;&amp;lt;site root&amp;gt;/index.html&lt;/code&gt; with a modified &lt;a href=&quot;https://github.com/mmistakes/minimal-mistakes/blob/master/index.html&quot;&gt;Minimal Mistakes &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;index.html&lt;/code&gt;&lt;/a&gt;.&lt;/li&gt;
+  &lt;li&gt;Change &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;layout: post&lt;/code&gt; in &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;_posts/0000-00-00-welcome-to-jekyll.markdown&lt;/code&gt; to &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;layout: single&lt;/code&gt;.&lt;/li&gt;
+  &lt;li&gt;Remove &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;about.md&lt;/code&gt;, or at the very least change &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;layout: page&lt;/code&gt; to &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;layout: single&lt;/code&gt; and remove references to &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;icon-github.html&lt;/code&gt; (or &lt;a href=&quot;https://github.com/jekyll/minima/tree/master/_includes&quot;&gt;copy to your &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;_includes&lt;/code&gt;&lt;/a&gt; if using).&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;hr /&gt;
+
+&lt;p&gt;That’s it! If all goes well running &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;bundle exec jekyll serve&lt;/code&gt; should spin-up your site. If you encounter any bumps please file an issue on GitHub and make sure to indicate you’re testing the pre-release Ruby gem version.&lt;/p&gt;
+
+&lt;p&gt;&lt;a href=&quot;https://github.com/mmistakes/minimal-mistakes/issues/new&quot; class=&quot;btn btn--info btn--large&quot;&gt;File an issue&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;Thanks!&lt;/p&gt;</content><author><name>Mirae</name></author><category term="Jekyll" /><category term="update" /><summary type="html">Jekyll themes distributed as Ruby gems are finally here to make installing and upgrading much easier. Gone are the days of forking a repo just to “install it”. Or dealing with merge conflicts when pulling in upstream commits to “upgrade it”.</summary></entry></feed>
