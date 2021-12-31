@@ -1,4 +1,4 @@
-I"��<p>A list of all the posts and pages found on the site. For you robots out there is an <a href="/sitemap.xml">XML version</a> available for digesting as well.</p>
+I"��<p>A list of all the posts and pages found on the site. For you robots out there is an <a href="/sitemap.xml">XML version</a> available for digesting as well.</p>
 
 <h2>Pages</h2>
 
@@ -658,7 +658,7 @@
     
     <h2 class="archive__item-title no_toc" itemprop="headline">
       
-        <a href="/vocab/atoe/" rel="permalink">a ~ e :: 동사
+        <a href="/vocab/verb/" rel="permalink">영단어 정리 :: 동사
 </a>
       
     </h2>
@@ -680,7 +680,7 @@
   </p>
 
 
-    <p class="archive__item-excerpt" itemprop="description">첫 알파벳이 a 부터 e 사이에 있는 동사들을 정리합니다.
+    <p class="archive__item-excerpt" itemprop="description">개발 공부하며 만난 동사들을 정리합니다.
 </p>
   </article>
 </div>

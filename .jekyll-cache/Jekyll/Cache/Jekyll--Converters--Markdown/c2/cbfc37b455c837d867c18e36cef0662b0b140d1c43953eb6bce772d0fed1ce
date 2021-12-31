@@ -1,4 +1,4 @@
-I"O<h1 id="️--a">🗃️  A</h1>
+I"t<h1 id="️--a">🗃️  A</h1>
 
 <div class="notice--info">
   <h1 class="no_toc">append</h1>
@@ -27,5 +27,21 @@ r backtrace.</p>
 bundle exec jekyll serve --trace
 </p>
 
-<p>이렇게 뒤에 <code class="language-plaintext highlighter-rouge">--trace</code> 를 덧붙이라는 말이었어요.</p>
+<p>이렇게 뒤에 <code class="language-plaintext highlighter-rouge">--trace</code> 를 덧붙이라는 말이었어요.  <br />
+<br />
+<br /></p>
+<h1 id="️--g">🗃️  G</h1>
+
+<div class="notice--info">
+  <h1 class="no_toc">goes a long way towards</h1>
+
+<p>to add something to a piece of writing<br />  
+글에 어떤 내용을 덧붙이다.</p>
+
+<ul>
+  <li>덧붙이다</li>
+  <li>첨부하다</li>
+</ul>
+
+</div>
 :ET

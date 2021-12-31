@@ -419,9 +419,9 @@ var store = [{
         "url": "/posts/gugudan/",
         "teaser": "/assets/images/teaser.jpg"
       },{
-        "title": "a ~ e :: 동사",
-        "excerpt":"🗃️ A append to add something to a piece of writing 글에 어떤 내용을 덧붙이다. 덧붙이다 첨부하다 블로그를 만드는 과정에서 아래와 같은 에러를 만났습니다. Jekyll 4.2.1 Please append --trace to the serve command for any additional information o r backtrace. –trace 를 append 해라? bundle exec jekyll serve --trace 이렇게...","categories": ["vocabularies","영어단어","vocab"],
+        "title": "영단어 정리 :: 동사",
+        "excerpt":"🗃️ A append to add something to a piece of writing. 글에 어떤 내용을 덧붙이다. 덧붙이다 첨부하다 블로그를 만드는 과정에서 아래와 같은 에러를 만났습니다. Jekyll 4.2.1 Please append --trace to the serve command for any additional information o r backtrace. –trace 를 append 해라? bundle exec jekyll serve --trace 이렇게...","categories": ["vocabularies","영어단어","vocab"],
         "tags": ["studying","learning"],
-        "url": "/vocab/atoe/",
+        "url": "/vocab/verb/",
         "teaser": "/assets/images/teaser.jpg"
       }]
