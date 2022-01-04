@@ -2,14 +2,14 @@
 main:
   - title: "Categories"
     url: /categories/
-  - title: "Sample Posts"
-    url: /year-archive/
+  # - title: "Sample Posts"
+  #   url: /year-archive/
   - title: "Tags"
     url: /tags/
-  - title: "Pages"
-    url: /page-archive/
-  - title: "Sitemap"
-    url: /sitemap/
+  # - title: "Pages"
+  #   url: /page-archive/
+  # - title: "Sitemap"
+  #   url: /sitemap/
 
 
   # - title: "Sample Collections"

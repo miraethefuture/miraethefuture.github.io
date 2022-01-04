@@ -269,12 +269,6 @@ var store = [{
         "url": "/layout/uncategorized/layout-header-image-external/",
         "teaser": "/assets/images/teaser.jpg"
       },{
-        "title": "Layout: Header Image (Horizontal)",
-        "excerpt":"This post should display a header image, if the theme supports it.   Non-square images can provide some unique styling issues.   This post tests a horizontal header image.  ","categories": ["Layout","Uncategorized"],
-        "tags": ["edge case","featured image","image","layout"],
-        "url": "/layout/uncategorized/layout-header-image-horizontal/",
-        "teaser": "/assets/images/teaser.jpg"
-      },{
         "title": "Layout: Header Image and Text Readability",
         "excerpt":"This is a sample post with a large feature image1 up top and tons of text. Odio ad blue bottle vinyl, 90’s narwhal commodo bitters pour-over nostrud. Ugh est hashtag in, fingerstache adipisicing laboris esse Pinterest shabby chic Portland. Shoreditch bicycle rights anim, flexitarian laboris put a bird on it...","categories": [],
         "tags": ["sample post","readability","test"],
@@ -401,12 +395,6 @@ var store = [{
         "url": "/layout/uncategorized/layout-header-video/",
         "teaser": "/assets/images/teaser.jpg"
       },{
-        "title": "Header Image (Horizontal)",
-        "excerpt":"This post should display a header image, if the theme supports it.   Non-square images can provide some unique styling issues.   This post tests a horizontal header image.  ","categories": [],
-        "tags": [],
-        "url": "/layout-header-image-horizontal/",
-        "teaser": "/assets/images/teaser.jpg"
-      },{
         "title": "개발 공부하며 정리해보는 영단어 목록",
         "excerpt":"개발 공부를 하며 만난 영단어들을 정리합니다.      개발용어(x) 공부하며 만난 보통 영단어(o)   ","categories": [],
         "tags": [],
@@ -423,5 +411,11 @@ var store = [{
         "excerpt":"🗃️ A append to add something to a piece of writing. 글에 어떤 내용을 덧붙이다. 덧붙이다 첨부하다 블로그를 만드는 과정에서 아래와 같은 에러를 만났습니다. Jekyll 4.2.1 Please append --trace to the serve command for any additional information o r backtrace. –trace 를 append 해라? bundle exec jekyll serve --trace 이렇게...","categories": ["vocabularies","영어단어","vocab"],
         "tags": ["studying","learning"],
         "url": "/vocab/verb/",
+        "teaser": "/assets/images/teaser.jpg"
+      },{
+        "title": "2021을 돌아보며",
+        "excerpt":"오늘은 2022년 1월 4일입니다.  어느덧 퇴사한지 두달이 지났고 그동안 뭘 했는지 생각해보게 됩니다.  한동안은 정말 바빴어요. 국민취업지원제도에 대해 알아보고 신청하고 내일배움 카드를 발급받았습니다.  우여곡절 끝에 운전면허도 땄답니다. 국비학원을 등록하기도 했어요.  JAVA 기반의 풀스택 개발자 양성 코스인데 이제 개강이 얼마 남지 않았네요.  ","categories": ["records"],
+        "tags": ["records","기록"],
+        "url": "/records/2021%EC%9D%84-%EB%8F%8C%EC%95%84%EB%B3%B4%EB%A9%B0/",
         "teaser": "/assets/images/teaser.jpg"
       }]
