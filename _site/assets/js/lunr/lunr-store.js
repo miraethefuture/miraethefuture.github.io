@@ -414,7 +414,7 @@ var store = [{
         "teaser": "/assets/images/teaser.jpg"
       },{
         "title": "2021을 돌아보며",
-        "excerpt":"오늘은 2022년 1월 4일입니다.  어느덧 퇴사한지 두달이 지났고 그동안 뭘 했는지 생각해보게 됩니다.  한동안은 정말 바빴어요. 국민취업지원제도에 대해 알아보고 신청하고 내일배움 카드를 발급받았습니다.  우여곡절 끝에 운전면허도 땄답니다. 국비학원을 등록하기도 했어요.  JAVA 기반의 풀스택 개발자 양성 코스인데 이제 개강이 얼마 남지 않았네요.  ","categories": ["records"],
+        "excerpt":" ","categories": ["records"],
         "tags": ["records","기록"],
         "url": "/records/2021%EC%9D%84-%EB%8F%8C%EC%95%84%EB%B3%B4%EB%A9%B0/",
         "teaser": "/assets/images/teaser.jpg"
