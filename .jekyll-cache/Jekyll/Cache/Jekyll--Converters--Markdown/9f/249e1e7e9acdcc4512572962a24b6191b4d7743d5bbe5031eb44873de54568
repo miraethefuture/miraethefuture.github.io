@@ -1,26 +1,4 @@
----
-title: "영단어 정리"
-type: posts
-excerpt: 개발 공부하며 만난 단어들을 기록합니다.
-permalink: /vocab/verb/
-show_date: true
-last_modified_at: 2021-12-15T08:48:05-04:00
-#redirect_from:
-#  - /theme-setup/
-toc: true
-toc_label: "Verb"
-#toc_icon: "cog"
-toc_sticky: true
-categories:
-  - vocabularies  
-  - 영어단어
-  - vocab
-tags:
-  - studying
-  - learning
-
----
-<!-- <div class="notice--info">
+I"�<!-- <div class="notice--info">
   <h1 class="no_toc">what word?</h1>
 
 <p>description<br>  
@@ -33,12 +11,12 @@ tags:
 
 </div>      -->
 
-# 🗃️  A
+<h1 id="️--a">🗃️  A</h1>
 
 <div class="notice--info">
   <h1 class="no_toc">append</h1>
 
-<p>to add something to a piece of writing.<br>  
+<p>to add something to a piece of writing.<br />  
 글에 어떤 내용을 덧붙이다.</p>
 
 <ul>
@@ -48,22 +26,18 @@ tags:
 
 </div>
 
-
-
 <div class="notice--info">
   <h1 class="no_toc">allow</h1>
 
-<p>to make something happen, especially something helpful or useful.<br>  
+<p>to make something happen, especially something helpful or useful.<br />  
 어떤일이 일어나는 것을 가능하게 만들다.</p>
 
-</div>  
-
-
+</div>
 
 <div class="notice--info">
   <h1 class="no_toc">automate</h1>
 
-<p>to start using computers or machines to do a job, rather than people<br>  
+<p>to start using computers or machines to do a job, rather than people<br />  
 어떤 일을 하기 위해 사람 대신 컴퓨터나 기계를 사용하다.</p>
 
 <ul>
@@ -73,33 +47,22 @@ tags:
 
 </div>
 
-
-
-
-
-# 🗃️  E
-
 <div class="notice--info">
   <h1 class="no_toc">executable</h1>
 
-<p>a computer file that can be run as a program<br>  
+<p>a computer file that can be run as a program<br />  
 프로그램으로 실행 될 수 있는 파일.</p>
 
-(명사 / 형용사 둘 다 executable)
+- noun / adjective 둘 다 executable
 
-</div>  
+</div>
 
-
-
-
-
-
-# 🗃️  G  
+<h1 id="️--g">🗃️  G</h1>
 
 <div class="notice--info">
-  <h1 class="no_toc">goes a long way towards(to)</h1>
+  <h1 class="no_toc">goes a long way towards</h1>
 
-<p>If you say that something goes a long way towards doing a particular thing, you mean that it is an important factor in achieving that thing.<br>  
+<p>If you say that something goes a long way towards doing a particular thing, you mean that it is an important factor in achieving that thing.<br />  
 something 은 a particular thing 을 달성하기 위한 중요한 요소이다.</p>
 
 <ul>
@@ -109,4 +72,5 @@ something 은 a particular thing 을 달성하기 위한 중요한 요소이다.
 
 </div>
 
-[🗣️ goes a long way towards 발음 들어보기](https://youglish.com/getbyid/77089450/goes%20a%20long%20way/english)  
+<p><a href="https://youglish.com/getbyid/77089450/goes%20a%20long%20way/english">🗣️ 발음 들어보기</a></p>
+:ET
