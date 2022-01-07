@@ -1,0 +1,24 @@
+I"�<p>오늘의 공부는 Gradle 이 무엇인지 알아보며 시작해본다.
+Gradle 은 웹 애플리케이션을 만들 때 자동으로 자료들을 모아주고 테스트해주고 빌드해주는 소프트웨어다. ‘a build system’ 또는 ‘a build automation tool’ 이라고 하는데 구글링을 해보니 한국말로도 ‘빌드 도구’ 라고 번역되어 있다. 그렇다면 build tool 은 정확히 무엇일까?</p>
+
+<p><strong>Build tools</strong>는 작성된 코드를 응용 프로그램으로 만들어주는 프로그램이라고 한다. 작은 규모의 프로젝트에서는 개발자들이 컴퓨터의 도움없이 이 작업을 하곤 하지만 규모가 큰 프로젝트에서는 컴퓨터 프로그램인 build tools가 이런 작업을 행하는게 실용적이다.
+Gradle이 이 빌드 도구 중 하나인 것이다</p>
+
+<p><strong>Building</strong>한다는 것에는 여러가지 세부 단계들이 포함되어 있고 크게 두가지로 단계로 나누어진다.</p>
+<ul>
+  <li>compiling : 컴파일링은 사람이 작성한 코드를 컴퓨터가 이해하고 사용할 수 있는 형식으로 바꾸는 것</li>
+  <li>
+    <p>linking : 링킹은 컴파일링 된 파일들을 하나의 실행 가능한 파일로 만들어주는 것</p>
+
+    <!-- assembling, deploying 이란?  -->
+  </li>
+</ul>
+
+<hr />
+
+<!-- ```markdown
+![alt]({{ site.url }}{{ site.baseurl }}/assets/images/filename.jpg)
+```
+
+![Unsplash image 9](http://localhost:4000/assets/images/unsplash-image-9.jpg) -->
+:ET

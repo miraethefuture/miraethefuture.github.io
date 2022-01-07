@@ -23,8 +23,8 @@ var store = [{
         "url": "/records/2021%EC%9D%84-%EB%8F%8C%EC%95%84%EB%B3%B4%EB%A9%B0/",
         "teaser": "/assets/images/teaser.jpg"
       },{
-        "title": "Gradle 이란?",
-        "excerpt":"오늘의 공부는 Gradle 이 무엇인지 알아보며 시작해본다. Gradle 은 웹 애플리케이션을 만들 때 자동으로 자료들을 모아주고 테스트해주고 빌드해주는 소프트웨어다. ‘a build system’ 또는 ‘a build automation tool’ 이라고 하는데 구글링을 해보니 한국말로도 ‘빌드 도구’ 라고 번역되어 있다. 그렇다면 build tool 은 정확히 무엇일까?    ","categories": ["TIL"],
+        "title": "[20220107] Gradle/Build tools/Building/상속",
+        "excerpt":"오늘의 공부는 Gradle 이 무엇인지 알아보며 시작해본다. Gradle 은 웹 애플리케이션을 만들 때 자동으로 자료들을 모아주고 테스트해주고 빌드해주는 소프트웨어다. ‘a build system’ 또는 ‘a build automation tool’ 이라고 하는데 구글링을 해보니 한국말로도 ‘빌드 도구’ 라고 번역되어 있다. 그렇다면 build tool 은 정확히 무엇일까? Build tools는 작성된 코드를 응용 프로그램으로 만들어주는...","categories": ["TIL"],
         "tags": ["software","learning","공부 기록"],
         "url": "/til/gradle/",
         "teaser": "/assets/images/teaser.jpg"
