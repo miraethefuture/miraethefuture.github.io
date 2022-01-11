@@ -9,7 +9,7 @@
   <head>
     <meta charset="utf-8">
 
-<!-- begin _includes/seo.html --><title>2021을 돌아보며 | Mirae the Future</title>
+<!-- begin _includes/seo.html --><title>[20220111] Spring Boot Annotation/REST resources | Mirae the Future</title>
 <meta name="description" content="">
 
 
@@ -22,21 +22,19 @@
 <meta property="og:type" content="article">
 <meta property="og:locale" content="en_US">
 <meta property="og:site_name" content="Mirae the Future">
-<meta property="og:title" content="2021을 돌아보며">
-<meta property="og:url" content="http://localhost:4000/records/2021%EC%9D%84-%EB%8F%8C%EC%95%84%EB%B3%B4%EB%A9%B0/">
+<meta property="og:title" content="[20220111] Spring Boot Annotation/REST resources">
+<meta property="og:url" content="http://localhost:4000/til/annoation/">
 
 
   <meta property="og:description" content="">
 
 
 
-  <meta property="og:image" content="http://localhost:4000/assets/images/teaser.jpg">
 
 
 
 
-
-  <meta property="article:published_time" content="2022-01-04T00:00:00+09:00">
+  <meta property="article:published_time" content="2022-01-11T00:00:00+09:00">
 
 
 
@@ -47,7 +45,7 @@
   
 
 
-<link rel="canonical" href="http://localhost:4000/records/2021%EC%9D%84-%EB%8F%8C%EC%95%84%EB%B3%B4%EB%A9%B0/">
+<link rel="canonical" href="http://localhost:4000/til/annoation/">
 
 
 
@@ -148,27 +146,6 @@
 
     <div class="initial-content">
       
-  
-
-
-
-
-
-
-
-<div class="page__hero"
-  style=" background-image: url('');"
->
-  
-    <img src="/assets/images/teaser.jpg" alt="2021을 돌아보며" class="page__hero-image">
-  
-  
-    <span class="page__hero-caption">Photo credit: <a href="https://unsplash.com"><strong>Unsplash</strong></a>
-</span>
-  
-</div>
-
-
 
 
   
@@ -192,7 +169,7 @@
       
         
         <li itemprop="itemListElement" itemscope itemtype="https://schema.org/ListItem">
-          <a href="/categories/#records" itemprop="item"><span itemprop="name">Records</span></a>
+          <a href="/categories/#til" itemprop="item"><span itemprop="name">Til</span></a>
           <meta itemprop="position" content="2" />
         </li>
         <span class="sep">/</span>
@@ -200,7 +177,7 @@
     
       
       
-        <li class="current">2021을 돌아보며</li>
+        <li class="current">[20220111] Spring Boot Annotation/REST resources</li>
       
     
   </ol>
@@ -326,34 +303,19 @@
 
 
   <article class="page h-entry" itemscope itemtype="https://schema.org/CreativeWork">
-    <meta itemprop="headline" content="2021을 돌아보며">
+    <meta itemprop="headline" content="[20220111] Spring Boot Annotation/REST resources">
     <meta itemprop="description" content="">
-    <meta itemprop="datePublished" content="2022-01-04T00:00:00+09:00">
+    <meta itemprop="datePublished" content="2022-01-11T00:00:00+09:00">
     
 
     <div class="page__inner-wrap">
       
         <header>
           <h1 id="page-title" class="page__title p-name" itemprop="headline">
-            <a href="http://localhost:4000/records/2021%EC%9D%84-%EB%8F%8C%EC%95%84%EB%B3%B4%EB%A9%B0/" class="u-url" itemprop="url">2021을 돌아보며
+            <a href="http://localhost:4000/til/annoation/" class="u-url" itemprop="url">[20220111] Spring Boot Annotation/REST resources
 </a>
           </h1>
           
-
-  <p class="page__meta">
-    
-      
-      <span class="page__meta-date">
-        <i class="far fa-calendar-alt" aria-hidden="true"></i>
-        
-        <time datetime="2022-01-04T00:00:00+09:00">January 4, 2022</time>
-      </span>
-    
-
-    
-
-    
-  </p>
 
 
         </header>
@@ -361,7 +323,26 @@
 
       <section class="page__content e-content" itemprop="text">
         
-        
+        <hr />
+
+<h3 id="spring-boot-annotation">Spring Boot Annotation</h3>
+<p>스프링 부트 애노테이션은 메타 데이터의 한 타입이다. (메타 데이터는 거대한 데이터베이스 속에 무엇이 들어있는지 알려주는 정보인데, 예를 들면 누가 이 정보를 기록했고, 무엇을 위한 정보이고, 어떤 형식으로 저장되었는지를 알려준다.) 애노테이션은 프로그램에 대한 정보를 보충하기 위해 사용되는데 어플리케이션의 일부는 아니다. 작동하는 코드에 직접적인 영향을 미치지 않는다.</p>
+<s>컴퓨터가 이해할 수 있는 주석으로 생각하면 되려나?</s>
+
+<h3 id="rest-resources">REST resources</h3>
+<p>Spring boot 애노테이션 중 @RestController 라는 것이 있었고 이것을 사용하면 RESTful한 web services 를 만들 수 있다라고 하여 REST란 무엇인지 검색해보고 있다.<br />
+검색 중 stack overflow 에 <a href="https://stackoverflow.com/questions/10799198/what-are-rest-resources">What are REST resources?</a> 라는 질문글을 읽어보게 됐는데 질문자의 ‘REST resources에 관한 몇개의 글을 읽어봤지만 글들이 너무 추상적이어서 오히려 전보다 더 헷갈림’이라는 말에 크게 공감했다. 답변자 중 한명은 ‘REST resources에 관한 글들이 추상적인 이유는 REST resource 라는 개념이 추상적이기 때문’이라고 했다.<br />
+여러명의 답변을 정리해보자면,</p>
+<ul>
+  <li>“whatever thing is accessed by the URL you supply”<br />
+그게 무엇이든 네가 제공한 URL 로 찾을 수 있는 정보</li>
+  <li>A resource is anything that’s important enough to be referenced as a thing in itself.<br />
+resource 는 ‘어떤 것’이라고 부를 수 있을만한 그 어떤 것이든 될 수 있다.</li>
+  <li>Data responded back are the resources<br />
+요청해서 받은 데이터가 resources 다.</li>
+</ul>
+
+<p>흠… 감이 오는 것 같기도..? 몇개 더 읽어봐야겠다.</p>
 
         
       </section>
@@ -378,9 +359,11 @@
     <strong><i class="fas fa-fw fa-tags" aria-hidden="true"></i> Tags: </strong>
     <span itemprop="keywords">
     
-      <a href="/tags/#records" class="page__taxonomy-item p-category" rel="tag">records</a><span class="sep">, </span>
+      <a href="/tags/#learning" class="page__taxonomy-item p-category" rel="tag">learning</a><span class="sep">, </span>
     
-      <a href="/tags/#%EA%B8%B0%EB%A1%9D" class="page__taxonomy-item p-category" rel="tag">기록</a>
+      <a href="/tags/#software" class="page__taxonomy-item p-category" rel="tag">software</a><span class="sep">, </span>
+    
+      <a href="/tags/#%EA%B3%B5%EB%B6%80-%EA%B8%B0%EB%A1%9D" class="page__taxonomy-item p-category" rel="tag">공부 기록</a>
     
     </span>
   </p>
@@ -397,7 +380,7 @@
     <strong><i class="fas fa-fw fa-folder-open" aria-hidden="true"></i> Categories: </strong>
     <span itemprop="keywords">
     
-      <a href="/categories/#records" class="page__taxonomy-item p-category" rel="tag">records</a>
+      <a href="/categories/#til" class="page__taxonomy-item p-category" rel="tag">TIL</a>
     
     </span>
   </p>
@@ -405,7 +388,7 @@
 
         
 
-  <p class="page__date"><strong><i class="fas fa-fw fa-calendar-alt" aria-hidden="true"></i> Updated:</strong> <time class="dt-published" datetime="2022-01-04T00:00:00+09:00">January 4, 2022</time></p>
+  <p class="page__date"><strong><i class="fas fa-fw fa-calendar-alt" aria-hidden="true"></i> Updated:</strong> <time class="dt-published" datetime="2022-01-11T00:00:00+09:00">January 11, 2022</time></p>
 
       </footer>
 
@@ -414,12 +397,11 @@
       
   <nav class="pagination">
     
-      <a href="/vocab/verb/" class="pagination--pager" title="영단어 정리
+      <a href="/til/gradle/" class="pagination--pager" title="[20220107] Gradle/Build tools/Building/상속
 ">Previous</a>
     
     
-      <a href="/til/gradle/" class="pagination--pager" title="[20220107] Gradle/Build tools/Building/상속
-">Next</a>
+      <a href="#" class="pagination--pager disabled">Next</a>
     
   </nav>
 
@@ -447,7 +429,7 @@
     
     <h2 class="archive__item-title no_toc" itemprop="headline">
       
-        <a href="/til/annoation/" rel="permalink">[20220111] Spring Boot Annotation/REST resources
+        <a href="/til/gradle/" rel="permalink">[20220107] Gradle/Build tools/Building/상속
 </a>
       
     </h2>
@@ -474,15 +456,29 @@
     
     <h2 class="archive__item-title no_toc" itemprop="headline">
       
-        <a href="/til/gradle/" rel="permalink">[20220107] Gradle/Build tools/Building/상속
+        <a href="/records/2021%EC%9D%84-%EB%8F%8C%EC%95%84%EB%B3%B4%EB%A9%B0/" rel="permalink">2021을 돌아보며
 </a>
       
     </h2>
     
 
+  <p class="page__meta">
+    
+      
+      <span class="page__meta-date">
+        <i class="far fa-calendar-alt" aria-hidden="true"></i>
+        
+        <time datetime="2022-01-04T00:00:00+09:00">January 4, 2022</time>
+      </span>
+    
+
+    
+
+    
+  </p>
+
 
     <p class="archive__item-excerpt" itemprop="description">
-
 </p>
   </article>
 </div>

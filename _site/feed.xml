@@ -1,4 +1,23 @@
-<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="4.2.1">Jekyll</generator><link href="http://localhost:4000/feed.xml" rel="self" type="application/atom+xml" /><link href="http://localhost:4000/" rel="alternate" type="text/html" /><updated>2022-01-07T18:06:19+09:00</updated><id>http://localhost:4000/feed.xml</id><title type="html">Mirae the Future</title><subtitle>An amazing website.</subtitle><author><name>Mirae</name></author><entry><title type="html">[20220107] Gradle/Build tools/Building/상속</title><link href="http://localhost:4000/til/gradle/" rel="alternate" type="text/html" title="[20220107] Gradle/Build tools/Building/상속" /><published>2022-01-07T00:00:00+09:00</published><updated>2022-01-07T00:00:00+09:00</updated><id>http://localhost:4000/til/gradle</id><content type="html" xml:base="http://localhost:4000/til/gradle/">&lt;hr /&gt;
+<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="4.2.1">Jekyll</generator><link href="http://localhost:4000/feed.xml" rel="self" type="application/atom+xml" /><link href="http://localhost:4000/" rel="alternate" type="text/html" /><updated>2022-01-11T15:27:31+09:00</updated><id>http://localhost:4000/feed.xml</id><title type="html">Mirae the Future</title><subtitle>An amazing website.</subtitle><author><name>Mirae</name></author><entry><title type="html">[20220111] Spring Boot Annotation/REST resources</title><link href="http://localhost:4000/til/annoation/" rel="alternate" type="text/html" title="[20220111] Spring Boot Annotation/REST resources" /><published>2022-01-11T00:00:00+09:00</published><updated>2022-01-11T00:00:00+09:00</updated><id>http://localhost:4000/til/annoation</id><content type="html" xml:base="http://localhost:4000/til/annoation/">&lt;hr /&gt;
+
+&lt;h3 id=&quot;spring-boot-annotation&quot;&gt;Spring Boot Annotation&lt;/h3&gt;
+&lt;p&gt;스프링 부트 애노테이션은 메타 데이터의 한 타입이다. (메타 데이터는 거대한 데이터베이스 속에 무엇이 들어있는지 알려주는 정보인데, 예를 들면 누가 이 정보를 기록했고, 무엇을 위한 정보이고, 어떤 형식으로 저장되었는지를 알려준다.) 애노테이션은 프로그램에 대한 정보를 보충하기 위해 사용되는데 어플리케이션의 일부는 아니다. 작동하는 코드에 직접적인 영향을 미치지 않는다.&lt;/p&gt;
+&lt;s&gt;컴퓨터가 이해할 수 있는 주석으로 생각하면 되려나?&lt;/s&gt;
+
+&lt;h3 id=&quot;rest-resources&quot;&gt;REST resources&lt;/h3&gt;
+&lt;p&gt;Spring boot 애노테이션 중 @RestController 라는 것이 있었고 이것을 사용하면 RESTful한 web services 를 만들 수 있다라고 하여 REST란 무엇인지 검색해보고 있다.&lt;br /&gt;
+검색 중 stack overflow 에 &lt;a href=&quot;https://stackoverflow.com/questions/10799198/what-are-rest-resources&quot;&gt;What are REST resources?&lt;/a&gt; 라는 질문글을 읽어보게 됐는데 질문자의 ‘REST resources에 관한 몇개의 글을 읽어봤지만 글들이 너무 추상적이어서 오히려 전보다 더 헷갈림’이라는 말에 크게 공감했다. 답변자 중 한명은 ‘REST resources에 관한 글들이 추상적인 이유는 REST resource 라는 개념이 추상적이기 때문’이라고 했다.&lt;br /&gt;
+여러명의 답변을 정리해보자면,&lt;/p&gt;
+&lt;ul&gt;
+  &lt;li&gt;“whatever thing is accessed by the URL you supply”&lt;br /&gt;
+그게 무엇이든 네가 제공한 URL 로 찾을 수 있는 정보&lt;/li&gt;
+  &lt;li&gt;A resource is anything that’s important enough to be referenced as a thing in itself.&lt;br /&gt;
+resource 는 ‘어떤 것’이라고 부를 수 있을만한 그 어떤 것이든 될 수 있다.&lt;/li&gt;
+  &lt;li&gt;Data responded back are the resources&lt;br /&gt;
+요청해서 받은 데이터가 resources 다.&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;흠… 감이 오는 것 같기도..? 몇개 더 읽어봐야겠다.&lt;/p&gt;</content><author><name>Mirae</name></author><category term="TIL" /><category term="software" /><category term="learning" /><category term="공부 기록" /><summary type="html"></summary></entry><entry><title type="html">[20220107] Gradle/Build tools/Building/상속</title><link href="http://localhost:4000/til/gradle/" rel="alternate" type="text/html" title="[20220107] Gradle/Build tools/Building/상속" /><published>2022-01-07T00:00:00+09:00</published><updated>2022-01-07T00:00:00+09:00</updated><id>http://localhost:4000/til/gradle</id><content type="html" xml:base="http://localhost:4000/til/gradle/">&lt;hr /&gt;
 
 &lt;p&gt;오늘의 공부는 &lt;strong&gt;Gradle&lt;/strong&gt; 이 무엇인지 알아보며 시작해본다.
 Gradle 은 웹 애플리케이션을 만들 때 자동으로 자료들을 모아주고 테스트해주고 빌드해주는 소프트웨어다. ‘a build system’ 또는 ‘a build automation tool’ 이라고 하는데 구글링을 해보니 한국말로도 ‘빌드 도구’ 라고 번역되어 있다. 그렇다면 build tool 은 정확히 무엇일까?&lt;/p&gt;
@@ -18,7 +37,14 @@ Gradle이 이 빌드 도구 중 하나인 것이다&lt;/p&gt;
 
 &lt;hr /&gt;
 
-&lt;h2 id=&quot;상속&quot;&gt;상속&lt;/h2&gt;
+&lt;h2 id=&quot;상속inheritance&quot;&gt;상속(Inheritance)&lt;/h2&gt;
+
+&lt;p&gt;스프링 부트를 이용한 게시판 만들기에 관심이 생겨서 글들을 읽어보다가 Gradle이 정확히 무엇인지 궁금해졌었고, 개념만 공부했을때는 와닿지 않았던 &lt;strong&gt;상속&lt;/strong&gt;이 어떤 느낌으로 사용되는지 약간 알게 되었다. 그래서 한번 더 상속에 대해 정리해보려 한다.&lt;/p&gt;
+
+&lt;p&gt;자바에서 &lt;strong&gt;상속&lt;/strong&gt;은 한 클래스가 다른 클래스의 속성을 취하는 것이다. 상속을 사용하므로써 우리는 이미 있는 어떤 클래스의 메소드와 필드(변수)를 다시 사용할 수 있다.
+객체를 재사용할 수 있다는 점에서 &lt;strong&gt;상속&lt;/strong&gt;은 객체 지향 프로그램에서 중요한 규칙이다.&lt;/p&gt;
+
+&lt;p&gt;extends means that you are creating a subclass of the basic class you are extending.&lt;/p&gt;
 
 &lt;!-- ```markdown
 ![alt]({{ site.url }}{{ site.baseurl }}/assets/images/filename.jpg)
@@ -69,6 +95,19 @@ Gradle이 이 빌드 도구 중 하나인 것이다&lt;/p&gt;
 &lt;ul&gt;
   &lt;li&gt;Cash machines automates two basic function of a back - deposits and withdrawals.&lt;/li&gt;
   &lt;li&gt;Build tools are programs that automate the creation of executable applications from source cord.&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;/div&gt;
+
+&lt;div class=&quot;notice--info&quot;&gt;
+  &lt;h1 class=&quot;no_toc&quot;&gt;access&lt;/h1&gt;
+
+&lt;p&gt;to find information, especially on a computer&lt;br /&gt;  
+(주로 컴퓨터에서)정보를 찾는 것&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;Users can access their voice mail remotely.&lt;/li&gt;
+  &lt;li&gt;whatever thing is accessed by the URL you supply&lt;/li&gt;
 &lt;/ul&gt;
 
 &lt;/div&gt;
@@ -143,7 +182,55 @@ something 은 a particular thing 을 달성하기 위한 중요한 요소이다.
   &lt;li&gt;In small projects, developers often manually invoke the build process&lt;/li&gt;
 &lt;/ul&gt;
 
-&lt;/div&gt;</content><author><name>Mirae</name></author><category term="vocabularies" /><category term="영어단어" /><category term="vocab" /><category term="studying" /><category term="learning" /><summary type="html">개발 공부하며 만난 단어들을 기록합니다.</summary></entry><entry><title type="html">만들어 가면서 배우는 JAVA 플레이그라운드(구구단 구현하기 추가미션)</title><link href="http://localhost:4000/posts/gugudan/" rel="alternate" type="text/html" title="만들어 가면서 배우는 JAVA 플레이그라운드(구구단 구현하기 추가미션)" /><published>2021-12-14T00:00:00+09:00</published><updated>2021-12-14T00:00:00+09:00</updated><id>http://localhost:4000/posts/GugudanFinal</id><content type="html" xml:base="http://localhost:4000/posts/gugudan/">&lt;p&gt;아래 모든 내용은 인프런 강의 ‘만들어 가면서 배우는 JAVA 플레이그라운드’의 내용입니다.&lt;/p&gt;
+&lt;/div&gt;
+
+&lt;div class=&quot;notice--info&quot;&gt;
+  &lt;h1 class=&quot;no_toc&quot;&gt;metadata&lt;/h1&gt;
+
+&lt;p&gt;information that describes what is contained in large computer databases, for example who wrote the information, what it is for, and in what form it is stored&lt;br /&gt;  
+큰 컴퓨터 데이타베이스에 무엇이 저장되어 있는지 알려주는 정보이다. 예를 들면 누가 이 정보를 작성했고, 무엇을 위한 것이고, 어떤 형식으로 저장되었는지에 관한 정보를 알려준다.&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;Spring Boot Annotations is a form of metadata that provides data about a program.&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;/div&gt;
+
+&lt;h1 id=&quot;️--p&quot;&gt;🗃️  P&lt;/h1&gt;
+&lt;div class=&quot;notice--info&quot;&gt;
+  &lt;h1 class=&quot;no_toc&quot;&gt;protocol&lt;/h1&gt;
+
+&lt;p&gt;an established method for conneting computers so that they can exchange information&lt;br /&gt;  
+컴퓨터들이 서로 정보를 교환할 수 있는 방법&lt;/p&gt;
+
+&lt;/div&gt;
+
+&lt;h1 id=&quot;️--r&quot;&gt;🗃️  R&lt;/h1&gt;
+
+&lt;div class=&quot;notice--info&quot;&gt;
+  &lt;h1 class=&quot;no_toc&quot;&gt;retrieve&lt;/h1&gt;
+
+&lt;p&gt;to get back information that has been stored in the memory of a computer&lt;br /&gt;  
+큰 컴퓨터 데이타베이스에 무엇이 저장되어 있는지 알려주는 정보이다. 예를 들면 누가 이 정보를 작성했고, 무엇을 위한 것이고, 어떤 형식으로 저장되었는지에 관한 정보를 알려준다.&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;Spring Boot Annotations is a form of metadata that provides data about a program.&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;/div&gt;
+
+&lt;h1 id=&quot;️--t&quot;&gt;🗃️  T&lt;/h1&gt;
+
+&lt;div class=&quot;notice--info&quot;&gt;
+  &lt;h1 class=&quot;no_toc&quot;&gt;transfer&lt;/h1&gt;
+
+&lt;p&gt;to copy recorded information from one system to another&lt;br /&gt;  시스템에 기록된 정보를 다른 시스템에 복사하는 것.&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;Spring Boot Annotations is a form of metadata that provides data about a program.&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;/div&gt;</content><author><name>Mirae</name></author><category term="vocabularies" /><category term="영어단어" /><category term="studying" /><category term="learning" /><category term="vocab" /><summary type="html">개발 공부하며 만난 단어들을 기록합니다.</summary></entry><entry><title type="html">만들어 가면서 배우는 JAVA 플레이그라운드(구구단 구현하기 추가미션)</title><link href="http://localhost:4000/posts/gugudan/" rel="alternate" type="text/html" title="만들어 가면서 배우는 JAVA 플레이그라운드(구구단 구현하기 추가미션)" /><published>2021-12-14T00:00:00+09:00</published><updated>2021-12-14T00:00:00+09:00</updated><id>http://localhost:4000/posts/GugudanFinal</id><content type="html" xml:base="http://localhost:4000/posts/gugudan/">&lt;p&gt;아래 모든 내용은 인프런 강의 ‘만들어 가면서 배우는 JAVA 플레이그라운드’의 내용입니다.&lt;/p&gt;
 
 &lt;h3 id=&quot;추가-미션-문제&quot;&gt;추가 미션 문제&lt;/h3&gt;
 
@@ -171,8 +258,4 @@ something 은 a particular thing 을 달성하기 위한 중요한 요소이다.
         &lt;span class=&quot;o&quot;&gt;}&lt;/span&gt;
     &lt;span class=&quot;o&quot;&gt;}&lt;/span&gt;
 &lt;span class=&quot;o&quot;&gt;}&lt;/span&gt;
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;</content><author><name>Mirae</name></author><category term="code" /><category term="Java" /><summary type="html">아래 모든 내용은 인프런 강의 ‘만들어 가면서 배우는 JAVA 플레이그라운드’의 내용입니다.</summary></entry><entry><title type="html">개발 공부하며 정리해보는 영단어 목록</title><link href="http://localhost:4000/Sidebar%20with%20Navigation%20List/" rel="alternate" type="text/html" title="개발 공부하며 정리해보는 영단어 목록" /><published>2021-12-13T00:00:00+09:00</published><updated>2021-12-13T00:00:00+09:00</updated><id>http://localhost:4000/layout-sidebar-nav-list</id><content type="html" xml:base="http://localhost:4000/Sidebar%20with%20Navigation%20List/">&lt;p&gt;개발 공부를 하며 만난 영단어들을 정리합니다.&lt;/p&gt;
-
-&lt;blockquote&gt;
-  &lt;p&gt;개발용어(x) 공부하며 만난 보통 영단어(o)&lt;/p&gt;
-&lt;/blockquote&gt;</content><author><name>Mirae</name></author><summary type="html">개발 공부를 하며 만난 영단어들을 정리합니다.</summary></entry></feed>
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;</content><author><name>Mirae</name></author><category term="code" /><category term="Java" /><summary type="html">아래 모든 내용은 인프런 강의 ‘만들어 가면서 배우는 JAVA 플레이그라운드’의 내용입니다.</summary></entry></feed>
