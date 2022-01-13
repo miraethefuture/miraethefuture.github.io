@@ -1,4 +1,4 @@
-I"*<!-- <div class="notice--info">
+I"�<!-- <div class="notice--info">
   <h1 class="no_toc">what word?</h1>
 
 <p>description<br>  
@@ -144,6 +144,18 @@ something 은 a particular thing 을 달성하기 위한 중요한 요소이다.
 
 </div>
 
+<div class="notice--info">
+  <h1 class="no_toc">map onto</h1>
+
+<p>to match something or have direct relationship with something<br />  
+어떤 것을 연결하거나 직접적인 관계를 가지는 것.</p>
+
+<ul>
+  <li>Spring Boot Annotations is a form of metadata that provides data about a program.</li>
+</ul>
+
+</div>
+
 <h1 id="️--p">🗃️  P</h1>
 <div class="notice--info">
   <h1 class="no_toc">protocol</h1>
@@ -179,4 +191,6 @@ something 은 a particular thing 을 달성하기 위한 중요한 요소이다.
 </ul>
 
 </div>
+
+<!-- component -->
 :ET

@@ -28,4 +28,10 @@ var store = [{
         "tags": ["software","learning","공부 기록"],
         "url": "/til/annoation/",
         "teaser": "/assets/images/teaser.jpg"
+      },{
+        "title": "[20220113] ",
+        "excerpt":"💭 국비 Java 학원 수업 개강일이 얼마 남지 않았다. 지금까지는 JAVA에 대해 예습해보았고 커리큘럼에 있는 다른 것들도 미리 한번씩 봐두면 좋을 것 같아서 담당자님께 설명 들었던 것을 떠올리며 커리큘럼을 보고 있다. Java GUI에 대해서는 한번도 알아본적이 없는 것 같아서 검색해 보던 중 코드를 작성하며 정리해주신 블로그를 발견했다. 코드와 설명을 적어주셔서...","categories": ["TIL"],
+        "tags": ["software","learning","공부 기록"],
+        "url": "/til/javaGui/",
+        "teaser": "/assets/images/teaser.jpg"
       }]
