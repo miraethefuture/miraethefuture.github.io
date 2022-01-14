@@ -29,9 +29,21 @@ var store = [{
         "url": "/til/annoation/",
         "teaser": "/assets/images/teaser.jpg"
       },{
-        "title": "[20220113] ",
+        "title": "[20220113] Java Container/Content pane/Classes and Objects",
         "excerpt":"💭 국비 Java 학원 수업 개강일이 얼마 남지 않았다. 지금까지는 JAVA에 대해 예습해보았고 커리큘럼에 있는 다른 것들도 미리 한번씩 봐두면 좋을 것 같아서 담당자님께 설명 들었던 것을 떠올리며 커리큘럼을 보고 있다. Java GUI에 대해서는 한번도 알아본적이 없는 것 같아서 검색해 보던 중 코드를 작성하며 정리해주신 블로그를 발견했다. 코드와 설명을 적어주셔서...","categories": ["TIL"],
         "tags": ["software","learning","공부 기록"],
-        "url": "/til/javaGui/",
+        "url": "/til/javaGui-copy/",
+        "teaser": "/assets/images/teaser.jpg"
+      },{
+        "title": "[20220114~] CRUD 게시판 만들기 도전",
+        "excerpt":"💭 뭔가 만들면서 공부하고 싶어서 CRUD 게시판 만들기에 도전해본다. 완성하면 당연히 좋겠지만 그것보다 만들어가는 과정에서 많은 것들을 배웠으면 좋겠다. 일단 시작 IntelliJ IDEA 를 이용합니다. Spring initializr에서 Gradle project / Language 는 Java를 선택하고, Dependencies로는 Spring Web MySQL Driver Spring DATA JPA Lombok 을 추가 한 뒤 프로젝트 생성 후...","categories": ["TIL"],
+        "tags": ["software","learning","공부 기록"],
+        "url": "/til/crud/",
+        "teaser": "/assets/images/teaser.jpg"
+      },{
+        "title": "[20220114] Java this Keyword / MySQL 데이터베이스 삭제하기 / ",
+        "excerpt":"💭 벌써 1월 14일이라니 시간이 참 빠르다. 오늘은 어제 알아보던 것에 이어서 Java this keyword를 보면서 시작해본다. Java this Keyword 이 페이지를 번역하며 공부 &lt;Using this with a Field&gt; this keyword를 사용하는 가장 흔한 이유는 field(필드변수)의 이름이 메소드 패러미터나 생성자 패러미터와 같을 때 덮어씌여지는 것을 방지하기 위해서이다. 아래 두 예제는...","categories": ["TIL"],
+        "tags": ["software","learning","공부 기록"],
+        "url": "/til/java-continued/",
         "teaser": "/assets/images/teaser.jpg"
       }]

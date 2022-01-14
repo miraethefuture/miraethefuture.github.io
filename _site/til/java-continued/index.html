@@ -9,8 +9,8 @@
   <head>
     <meta charset="utf-8">
 
-<!-- begin _includes/seo.html --><title>만들어 가면서 배우는 JAVA 플레이그라운드(구구단 구현하기 추가미션) | Mirae the Future</title>
-<meta name="description" content="아래 모든 내용은 인프런 강의 ‘만들어 가면서 배우는 JAVA 플레이그라운드’의 내용입니다.">
+<!-- begin _includes/seo.html --><title>[20220114] Java this Keyword / MySQL 데이터베이스 삭제하기 /  | Mirae the Future</title>
+<meta name="description" content="">
 
 
   <meta name="author" content="Mirae">
@@ -22,30 +22,30 @@
 <meta property="og:type" content="article">
 <meta property="og:locale" content="en_US">
 <meta property="og:site_name" content="Mirae the Future">
-<meta property="og:title" content="만들어 가면서 배우는 JAVA 플레이그라운드(구구단 구현하기 추가미션)">
-<meta property="og:url" content="http://localhost:4000/posts/gugudan/">
+<meta property="og:title" content="[20220114] Java this Keyword / MySQL 데이터베이스 삭제하기 /">
+<meta property="og:url" content="http://localhost:4000/til/java-continued/">
 
 
-  <meta property="og:description" content="아래 모든 내용은 인프런 강의 ‘만들어 가면서 배우는 JAVA 플레이그라운드’의 내용입니다.">
-
-
-
-
-
-
-
-  <meta property="article:published_time" content="2021-12-14T00:00:00+09:00">
+  <meta property="og:description" content="">
 
 
 
 
 
-  
+
+
+  <meta property="article:published_time" content="2022-01-14T00:00:00+09:00">
+
+
+
+
 
   
 
+  
 
-<link rel="canonical" href="http://localhost:4000/posts/gugudan/">
+
+<link rel="canonical" href="http://localhost:4000/til/java-continued/">
 
 
 
@@ -169,7 +169,7 @@
       
         
         <li itemprop="itemListElement" itemscope itemtype="https://schema.org/ListItem">
-          <a href="/categories/#posts" itemprop="item"><span itemprop="name">Posts</span></a>
+          <a href="/categories/#til" itemprop="item"><span itemprop="name">Til</span></a>
           <meta itemprop="position" content="2" />
         </li>
         <span class="sep">/</span>
@@ -177,7 +177,7 @@
     
       
       
-        <li class="current">만들어 가면서 배우는 JAVA 플레이그라운드(구구단 구현하기 추가미션)</li>
+        <li class="current">[20220114] Java this Keyword / MySQL 데이터베이스 삭제하기 / </li>
       
     
   </ol>
@@ -303,16 +303,16 @@
 
 
   <article class="page h-entry" itemscope itemtype="https://schema.org/CreativeWork">
-    <meta itemprop="headline" content="만들어 가면서 배우는 JAVA 플레이그라운드(구구단 구현하기 추가미션)">
-    <meta itemprop="description" content="아래 모든 내용은 인프런 강의 ‘만들어 가면서 배우는 JAVA 플레이그라운드’의 내용입니다.">
-    <meta itemprop="datePublished" content="2021-12-14T00:00:00+09:00">
+    <meta itemprop="headline" content="[20220114] Java this Keyword / MySQL 데이터베이스 삭제하기 /">
+    <meta itemprop="description" content="">
+    <meta itemprop="datePublished" content="2022-01-14T00:00:00+09:00">
     
 
     <div class="page__inner-wrap">
       
         <header>
           <h1 id="page-title" class="page__title p-name" itemprop="headline">
-            <a href="http://localhost:4000/posts/gugudan/" class="u-url" itemprop="url">만들어 가면서 배우는 JAVA 플레이그라운드(구구단 구현하기 추가미션)
+            <a href="http://localhost:4000/til/java-continued/" class="u-url" itemprop="url">[20220114] Java this Keyword / MySQL 데이터베이스 삭제하기 /
 </a>
           </h1>
           
@@ -323,35 +323,64 @@
 
       <section class="page__content e-content" itemprop="text">
         
-        <p>아래 모든 내용은 인프런 강의 ‘만들어 가면서 배우는 JAVA 플레이그라운드’의 내용입니다.</p>
+          <aside class="sidebar__right sticky">
+            <nav class="toc">
+              <header><h4 class="nav__title"><i class="fas fa-cog"></i> 👷</h4></header>
+              <ul class="toc__menu"><li><a href="#java-this-keyword">Java this Keyword</a></li><li><a href="#mysql-데이터베이스-삭제하기">MySQL 데이터베이스 삭제하기</a></li></ul>
 
-<h3 id="추가-미션-문제">추가 미션 문제</h3>
+            </nav>
+          </aside>
+        
+        <hr />
 
-<ul>
-  <li>사용자에게 입력 값을 받아서 구구단을 출력</li>
-  <li>입력값이 11 이라면 2 * 1 부터 2 * 11 까지 ~ 11 * 1 부터 11 * 11 까지 한번에 출력</li>
-  <li>현재 상황: 11을 입력해서 11 * 1 ~ 11 *11 은 출력할 수 있으나 2,3,4,5,6,7,8,9,10,11 단을 한꺼번에 출력하는 것이 안됨.</li>
-</ul>
+<h2>💭</h2>
+<p>벌써 1월 14일이라니 시간이 참 빠르다. 오늘은 어제 알아보던 것에 이어서 Java this keyword를 보면서 시작해본다.</p>
 
-<div class="language-java highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kn">import</span> <span class="nn">java.util.Scanner</span><span class="o">;</span>
+<h3 id="java-this-keyword">Java this Keyword</h3>
+<p><a href="https://docs.oracle.com/javase/tutorial/java/javaOO/thiskey.html">이 페이지를 번역하며 공부</a><br /></p>
 
-<span class="kd">public</span> <span class="kd">class</span> <span class="nc">Finalmission</span> <span class="o">{</span>
-    <span class="kd">public</span> <span class="kd">static</span> <span class="kt">void</span> <span class="nf">main</span><span class="o">(</span><span class="nc">String</span><span class="o">[]</span> <span class="n">args</span><span class="o">)</span> <span class="o">{</span>
-        <span class="nc">System</span><span class="o">.</span><span class="na">out</span><span class="o">.</span><span class="na">println</span><span class="o">(</span><span class="s">"출력할 구구단의 값은? :"</span><span class="o">);</span>
-        <span class="nc">Scanner</span> <span class="n">scanner</span> <span class="o">=</span> <span class="k">new</span> <span class="nc">Scanner</span><span class="o">(</span><span class="nc">System</span><span class="o">.</span><span class="na">in</span><span class="o">);</span>
-        <span class="kt">int</span> <span class="n">number</span> <span class="o">=</span> <span class="n">scanner</span><span class="o">.</span><span class="na">nextInt</span><span class="o">();</span>
+<p>&lt;Using <strong>this</strong> with a Field&gt;</p>
 
-        <span class="kt">int</span><span class="o">[]</span> <span class="n">result</span> <span class="o">=</span> <span class="k">new</span> <span class="kt">int</span><span class="o">[</span><span class="n">number</span><span class="o">];</span>
-        <span class="k">for</span><span class="o">(</span><span class="kt">int</span> <span class="n">j</span> <span class="o">=</span> <span class="mi">2</span><span class="o">;</span> <span class="n">j</span> <span class="o">&lt;=</span> <span class="n">number</span><span class="o">;</span> <span class="n">j</span> <span class="o">++)</span> <span class="o">{</span>
-        	<span class="k">for</span><span class="o">(</span><span class="kt">int</span> <span class="n">i</span> <span class="o">=</span> <span class="mi">0</span><span class="o">;</span> <span class="n">i</span> <span class="o">&lt;</span> <span class="n">result</span><span class="o">.</span><span class="na">length</span><span class="o">;</span> <span class="n">i</span><span class="o">++)</span> <span class="o">{</span>
-            	<span class="n">result</span><span class="o">[</span><span class="n">i</span><span class="o">]</span> <span class="o">=</span> <span class="n">j</span> <span class="o">*</span> <span class="o">(</span><span class="n">i</span> <span class="o">+</span> <span class="mi">1</span><span class="o">);</span>
-            	<span class="nc">System</span><span class="o">.</span><span class="na">out</span><span class="o">.</span><span class="na">println</span><span class="o">(</span><span class="n">result</span><span class="o">[</span><span class="n">i</span><span class="o">]);</span>
+<p>this keyword를 사용하는 가장 흔한 이유는 field(필드변수)의 이름이 메소드 패러미터나 생성자 패러미터와 같을 때 덮어씌여지는 것을 방지하기 위해서이다. 아래 두 예제는 이름이 Point 인 클래스를 만드는 두가지 방법을 보여준다.</p>
 
-            <span class="o">}</span>
-        <span class="o">}</span>
-    <span class="o">}</span>
+<div class="language-java highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">public</span> <span class="kd">class</span> <span class="nc">Point</span> <span class="o">{</span>
+  <span class="kd">public</span> <span class="kt">int</span> <span class="n">x</span> <span class="o">=</span> <span class="mi">0</span><span class="o">;</span>
+  <span class="kd">public</span> <span class="kt">int</span> <span class="n">y</span> <span class="o">=</span> <span class="mi">0</span><span class="o">;</span>
+
+  <span class="c1">//생성자 Constructor</span>
+  <span class="kd">public</span> <span class="nf">Point</span><span class="o">(</span><span class="kt">int</span> <span class="n">a</span><span class="o">,</span> <span class="kt">int</span> <span class="n">b</span><span class="o">)</span> <span class="o">{</span>
+    <span class="n">x</span> <span class="o">=</span> <span class="n">a</span><span class="o">;</span>
+    <span class="n">y</span> <span class="o">=</span> <span class="n">b</span><span class="o">;</span>
+  <span class="o">}</span>
 <span class="o">}</span>
 </code></pre></div></div>
+<p>위의 작성된 코드에서는 fields의 이름이 각각 x, y이고 생성자 패러미터는 각각 a, b 이다. 두가지의 이름이 다르기 때문에 문제가 생기지 않는다.</p>
+
+<div class="language-java highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">public</span> <span class="kd">class</span> <span class="nc">Point</span> <span class="o">{</span>
+  <span class="kd">public</span> <span class="kt">int</span> <span class="n">x</span> <span class="o">=</span> <span class="mi">0</span><span class="o">;</span>
+  <span class="kd">public</span> <span class="kt">int</span> <span class="n">y</span> <span class="o">=</span> <span class="mi">0</span><span class="o">;</span>
+
+  <span class="c1">//생성자 Constructor</span>
+  <span class="kd">public</span> <span class="nf">Point</span><span class="o">(</span><span class="kt">int</span> <span class="n">x</span><span class="o">,</span> <span class="kt">int</span> <span class="n">y</span><span class="o">)</span> <span class="o">{</span>
+    <span class="k">this</span><span class="o">.</span><span class="na">x</span> <span class="o">=</span> <span class="n">x</span><span class="o">;</span>
+    <span class="k">this</span><span class="o">.</span><span class="na">y</span> <span class="o">=</span> <span class="n">y</span><span class="o">;</span>
+  <span class="o">}</span>
+<span class="o">}</span>
+</code></pre></div></div>
+<p>하지만 위 코드에서는 fields 의 이름과 생성자 패러미터의 이름이 같다. 이때 fields 앞에 this. 를 붙여주어야 한다.<br />
+<br /></p>
+
+<h3 id="mysql-데이터베이스-삭제하기">MySQL 데이터베이스 삭제하기</h3>
+
+<p>터미널을 열고 <strong>/usr/local/mysql/bin/mysql -u root -p</strong> 을 입력해줍니다. 그리고 비밀번호를 입력해줍니다. (<s>내가 기억하려고 써보는 MySQL 실행시키는 방법</s>)<br />
+show databases; 를 입력하면 아래 사진처럼 어떤 데이터베이스들이 있는지 보여줍니다.
+저는 example 이라는 이름의 데이터베이스를 삭제할거에요.</p>
+
+<p><img src="/assets/images/mql.png" alt="mysql" width="250" /></p>
+
+<p>DROP DATABASE example 을 입력하면 삭제 됩니다.</p>
+
+<p><img src="/assets/images/mql2.png" alt="mysql" width="300" /></p>
 
         
       </section>
@@ -368,9 +397,11 @@
     <strong><i class="fas fa-fw fa-tags" aria-hidden="true"></i> Tags: </strong>
     <span itemprop="keywords">
     
-      <a href="/tags/#code" class="page__taxonomy-item p-category" rel="tag">code</a><span class="sep">, </span>
+      <a href="/tags/#learning" class="page__taxonomy-item p-category" rel="tag">learning</a><span class="sep">, </span>
     
-      <a href="/tags/#java" class="page__taxonomy-item p-category" rel="tag">Java</a>
+      <a href="/tags/#software" class="page__taxonomy-item p-category" rel="tag">software</a><span class="sep">, </span>
+    
+      <a href="/tags/#%EA%B3%B5%EB%B6%80-%EA%B8%B0%EB%A1%9D" class="page__taxonomy-item p-category" rel="tag">공부 기록</a>
     
     </span>
   </p>
@@ -378,9 +409,24 @@
 
 
 
+  
+
+
+  
+
+  <p class="page__taxonomy">
+    <strong><i class="fas fa-fw fa-folder-open" aria-hidden="true"></i> Categories: </strong>
+    <span itemprop="keywords">
+    
+      <a href="/categories/#til" class="page__taxonomy-item p-category" rel="tag">TIL</a>
+    
+    </span>
+  </p>
+
+
         
 
-  <p class="page__date"><strong><i class="fas fa-fw fa-calendar-alt" aria-hidden="true"></i> Updated:</strong> <time class="dt-published" datetime="2021-12-14T00:00:00+09:00">December 14, 2021</time></p>
+  <p class="page__date"><strong><i class="fas fa-fw fa-calendar-alt" aria-hidden="true"></i> Updated:</strong> <time class="dt-published" datetime="2022-01-14T00:00:00+09:00">January 14, 2022</time></p>
 
       </footer>
 
@@ -389,11 +435,11 @@
       
   <nav class="pagination">
     
-      <a href="#" class="pagination--pager disabled">Previous</a>
+      <a href="/til/crud/" class="pagination--pager" title="[20220114~] CRUD 게시판 만들기 도전
+">Previous</a>
     
     
-      <a href="/vocab/verb/" class="pagination--pager" title="영단어 정리
-">Next</a>
+      <a href="#" class="pagination--pager disabled">Next</a>
     
   </nav>
 
@@ -407,33 +453,6 @@
     <div class="page__related">
       <h2 class="page__related-title">You may also enjoy</h2>
       <div class="grid__wrapper">
-        
-          
-
-
-
-<div class="grid__item">
-  <article class="archive__item" itemscope itemtype="https://schema.org/CreativeWork">
-    
-      <div class="archive__item-teaser">
-        <img src="/assets/images/teaser.jpg" alt="">
-      </div>
-    
-    <h2 class="archive__item-title no_toc" itemprop="headline">
-      
-        <a href="/til/java-continued/" rel="permalink">[20220114] Java this Keyword / MySQL 데이터베이스 삭제하기 /
-</a>
-      
-    </h2>
-    
-
-
-    <p class="archive__item-excerpt" itemprop="description">
-
-</p>
-  </article>
-</div>
-
         
           
 
@@ -530,6 +549,48 @@
         <i class="far fa-calendar-alt" aria-hidden="true"></i>
         
         <time datetime="2022-01-11T00:00:00+09:00">January 11, 2022</time>
+      </span>
+    
+
+    
+
+    
+  </p>
+
+
+    <p class="archive__item-excerpt" itemprop="description">
+
+</p>
+  </article>
+</div>
+
+        
+          
+
+
+
+<div class="grid__item">
+  <article class="archive__item" itemscope itemtype="https://schema.org/CreativeWork">
+    
+      <div class="archive__item-teaser">
+        <img src="/assets/images/teaser.jpg" alt="">
+      </div>
+    
+    <h2 class="archive__item-title no_toc" itemprop="headline">
+      
+        <a href="/til/gradle/" rel="permalink">[20220107] Gradle/Build tools/Building/상속
+</a>
+      
+    </h2>
+    
+
+  <p class="page__meta">
+    
+      
+      <span class="page__meta-date">
+        <i class="far fa-calendar-alt" aria-hidden="true"></i>
+        
+        <time datetime="2022-01-07T00:00:00+09:00">January 7, 2022</time>
       </span>
     
 

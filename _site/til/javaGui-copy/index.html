@@ -9,8 +9,8 @@
   <head>
     <meta charset="utf-8">
 
-<!-- begin _includes/seo.html --><title>만들어 가면서 배우는 JAVA 플레이그라운드(구구단 구현하기 추가미션) | Mirae the Future</title>
-<meta name="description" content="아래 모든 내용은 인프런 강의 ‘만들어 가면서 배우는 JAVA 플레이그라운드’의 내용입니다.">
+<!-- begin _includes/seo.html --><title>[20220113] Java Container/Content pane/Classes and Objects | Mirae the Future</title>
+<meta name="description" content="">
 
 
   <meta name="author" content="Mirae">
@@ -22,30 +22,30 @@
 <meta property="og:type" content="article">
 <meta property="og:locale" content="en_US">
 <meta property="og:site_name" content="Mirae the Future">
-<meta property="og:title" content="만들어 가면서 배우는 JAVA 플레이그라운드(구구단 구현하기 추가미션)">
-<meta property="og:url" content="http://localhost:4000/posts/gugudan/">
+<meta property="og:title" content="[20220113] Java Container/Content pane/Classes and Objects">
+<meta property="og:url" content="http://localhost:4000/til/javaGui-copy/">
 
 
-  <meta property="og:description" content="아래 모든 내용은 인프런 강의 ‘만들어 가면서 배우는 JAVA 플레이그라운드’의 내용입니다.">
-
-
-
-
-
-
-
-  <meta property="article:published_time" content="2021-12-14T00:00:00+09:00">
+  <meta property="og:description" content="">
 
 
 
 
 
-  
+
+
+  <meta property="article:published_time" content="2022-01-13T00:00:00+09:00">
+
+
+
+
 
   
 
+  
 
-<link rel="canonical" href="http://localhost:4000/posts/gugudan/">
+
+<link rel="canonical" href="http://localhost:4000/til/javaGui-copy/">
 
 
 
@@ -169,7 +169,7 @@
       
         
         <li itemprop="itemListElement" itemscope itemtype="https://schema.org/ListItem">
-          <a href="/categories/#posts" itemprop="item"><span itemprop="name">Posts</span></a>
+          <a href="/categories/#til" itemprop="item"><span itemprop="name">Til</span></a>
           <meta itemprop="position" content="2" />
         </li>
         <span class="sep">/</span>
@@ -177,7 +177,7 @@
     
       
       
-        <li class="current">만들어 가면서 배우는 JAVA 플레이그라운드(구구단 구현하기 추가미션)</li>
+        <li class="current">[20220113] Java Container/Content pane/Classes and Objects</li>
       
     
   </ol>
@@ -303,19 +303,34 @@
 
 
   <article class="page h-entry" itemscope itemtype="https://schema.org/CreativeWork">
-    <meta itemprop="headline" content="만들어 가면서 배우는 JAVA 플레이그라운드(구구단 구현하기 추가미션)">
-    <meta itemprop="description" content="아래 모든 내용은 인프런 강의 ‘만들어 가면서 배우는 JAVA 플레이그라운드’의 내용입니다.">
-    <meta itemprop="datePublished" content="2021-12-14T00:00:00+09:00">
+    <meta itemprop="headline" content="[20220113] Java Container/Content pane/Classes and Objects">
+    <meta itemprop="description" content="">
+    <meta itemprop="datePublished" content="2022-01-13T00:00:00+09:00">
     
 
     <div class="page__inner-wrap">
       
         <header>
           <h1 id="page-title" class="page__title p-name" itemprop="headline">
-            <a href="http://localhost:4000/posts/gugudan/" class="u-url" itemprop="url">만들어 가면서 배우는 JAVA 플레이그라운드(구구단 구현하기 추가미션)
+            <a href="http://localhost:4000/til/javaGui-copy/" class="u-url" itemprop="url">[20220113] Java Container/Content pane/Classes and Objects
 </a>
           </h1>
           
+
+  <p class="page__meta">
+    
+      
+      <span class="page__meta-date">
+        <i class="far fa-calendar-alt" aria-hidden="true"></i>
+        
+        <time datetime="2022-01-13T00:00:00+09:00">January 13, 2022</time>
+      </span>
+    
+
+    
+
+    
+  </p>
 
 
         </header>
@@ -323,33 +338,70 @@
 
       <section class="page__content e-content" itemprop="text">
         
-        <p>아래 모든 내용은 인프런 강의 ‘만들어 가면서 배우는 JAVA 플레이그라운드’의 내용입니다.</p>
+        <hr />
 
-<h3 id="추가-미션-문제">추가 미션 문제</h3>
+<h3>💭</h3>
+<p>국비 Java 학원 수업 개강일이 얼마 남지 않았다. 지금까지는 JAVA에 대해 예습해보았고 커리큘럼에 있는 다른 것들도 미리 한번씩 봐두면 좋을 것 같아서 담당자님께 설명 들었던 것을 떠올리며 커리큘럼을 보고 있다. Java GUI에 대해서는 한번도 알아본적이 없는 것 같아서 검색해 보던 중 코드를 작성하며 정리해주신 <a href="https://yooniron.tistory.com/12">블로그</a>를 발견했다. 코드와 설명을 적어주셔서 참고하며 공부해보고 있다.</p>
+
+<h3 id="java-swing-에서-container-란">Java Swing 에서 Container 란?</h3>
+<p>하나의 컨테이너는 여러개의 레이어들을 가지고 있다. 레이어를 컨테이너를 덮고 있는 투명한 필름이라고 생각할 수 있다. Java Swing에서 objects를 담기 위해 사용되는 이 레이어를 content pane이라고 한다.</p>
+
+<blockquote>
+  <p>content pane = container 속 layer</p>
+</blockquote>
+
+<p>Container가 가지고 있는 content pane layer에 objects가 추가된다. getContentPane() 메소드가 컨텐트 페인 레이어를 불러온다. 그러면 objects를 그 안에 추가할 수 있다. <br />
+컨텐트 페인을 구글링해보았더니 아래와 같은 사진들이 나온다. pane의 사전적 의미는 창문이나 문에 쓰이는 유리의 한 조각이다. 사전적 의미를 함께 떠올리면 좀 더 이해하기가 쉽다.</p>
+
+<p><img src="http://localhost:4000/assets/images/contentPane.png" alt="content_pane" /></p>
+
+<h3 id="constructor-in-java">Constructor in Java</h3>
+<p>생성자에 대한 몇개의 강의도 듣고, 생성자를 만들어보기도 했지만 왜 생성자를 사용하는지 궁금하다. (분명히 예전에 강의를 봤는데 기억이 안난다😵;)<br />
+생성자(Constructor)는 코드의 집합인데, new 연산자를 통해 클래스 안의 객체의 상태를 초기 설정 하는데 사용되며 메소드와 비슷하다.</p>
+
+<h3 id="java-classes-and-objects">Java Classes and Objects</h3>
+<p><a href="https://www.w3schools.com/java/java_classes.asp">이 페이지를 번역하며 공부</a><br />
+클래스(classes)와 객체(objects)는 자바에서 가장 중요한 개념이다. Java의 모든 것들은 클래스, 그리고 객체와 관련되어있다. attributes, methods도 마찬가지다. 예를 들어보자, 현실 세계에서 자동차는 객체다. 자동차는 색, 무게와 같은 속성(attributes)을 가지고 있다. 또 자동차는 움직이고 멈추는 메소드도 가지고 있다. (<s>메소드를 어떻게 번역하면 좋을까? 기능? 작동방식?</s>) 클래스는 자동차를 만드는 사람이나 회사 또는 청사진으로 비유된다.</p>
 
 <ul>
-  <li>사용자에게 입력 값을 받아서 구구단을 출력</li>
-  <li>입력값이 11 이라면 2 * 1 부터 2 * 11 까지 ~ 11 * 1 부터 11 * 11 까지 한번에 출력</li>
-  <li>현재 상황: 11을 입력해서 11 * 1 ~ 11 *11 은 출력할 수 있으나 2,3,4,5,6,7,8,9,10,11 단을 한꺼번에 출력하는 것이 안됨.</li>
+  <li>Creat an Object <br /></li>
 </ul>
 
-<div class="language-java highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kn">import</span> <span class="nn">java.util.Scanner</span><span class="o">;</span>
+<p>자바에서 객체는 클래스로부터 만들어진다.</p>
+<div class="language-java highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">public</span> <span class="kd">class</span> <span class="nc">Main</span> <span class="o">{</span>                 <span class="c1">//클래스 이름은 항상 대문자로 시작</span>
+  <span class="kt">int</span> <span class="n">x</span> <span class="o">=</span> <span class="mi">5</span><span class="o">;</span>
 
-<span class="kd">public</span> <span class="kd">class</span> <span class="nc">Finalmission</span> <span class="o">{</span>
-    <span class="kd">public</span> <span class="kd">static</span> <span class="kt">void</span> <span class="nf">main</span><span class="o">(</span><span class="nc">String</span><span class="o">[]</span> <span class="n">args</span><span class="o">)</span> <span class="o">{</span>
-        <span class="nc">System</span><span class="o">.</span><span class="na">out</span><span class="o">.</span><span class="na">println</span><span class="o">(</span><span class="s">"출력할 구구단의 값은? :"</span><span class="o">);</span>
-        <span class="nc">Scanner</span> <span class="n">scanner</span> <span class="o">=</span> <span class="k">new</span> <span class="nc">Scanner</span><span class="o">(</span><span class="nc">System</span><span class="o">.</span><span class="na">in</span><span class="o">);</span>
-        <span class="kt">int</span> <span class="n">number</span> <span class="o">=</span> <span class="n">scanner</span><span class="o">.</span><span class="na">nextInt</span><span class="o">();</span>
+  <span class="kd">public</span> <span class="kd">static</span> <span class="kt">void</span> <span class="nf">main</span><span class="o">(</span><span class="nc">String</span><span class="o">[]</span> <span class="n">args</span><span class="o">)</span> <span class="o">{</span>
+    <span class="nc">Main</span> <span class="n">myObj</span> <span class="o">=</span> <span class="k">new</span> <span class="nc">Main</span><span class="o">();</span>       <span class="c1">// 클래스명 + 오브젝트명 설정 = new 연산자 + 클래스명();</span>
+    <span class="nc">System</span><span class="o">.</span><span class="na">out</span><span class="o">.</span><span class="na">println</span><span class="o">(</span><span class="n">myObj</span><span class="o">.</span><span class="na">x</span><span class="o">);</span>
+  <span class="o">}</span>
 
-        <span class="kt">int</span><span class="o">[]</span> <span class="n">result</span> <span class="o">=</span> <span class="k">new</span> <span class="kt">int</span><span class="o">[</span><span class="n">number</span><span class="o">];</span>
-        <span class="k">for</span><span class="o">(</span><span class="kt">int</span> <span class="n">j</span> <span class="o">=</span> <span class="mi">2</span><span class="o">;</span> <span class="n">j</span> <span class="o">&lt;=</span> <span class="n">number</span><span class="o">;</span> <span class="n">j</span> <span class="o">++)</span> <span class="o">{</span>
-        	<span class="k">for</span><span class="o">(</span><span class="kt">int</span> <span class="n">i</span> <span class="o">=</span> <span class="mi">0</span><span class="o">;</span> <span class="n">i</span> <span class="o">&lt;</span> <span class="n">result</span><span class="o">.</span><span class="na">length</span><span class="o">;</span> <span class="n">i</span><span class="o">++)</span> <span class="o">{</span>
-            	<span class="n">result</span><span class="o">[</span><span class="n">i</span><span class="o">]</span> <span class="o">=</span> <span class="n">j</span> <span class="o">*</span> <span class="o">(</span><span class="n">i</span> <span class="o">+</span> <span class="mi">1</span><span class="o">);</span>
-            	<span class="nc">System</span><span class="o">.</span><span class="na">out</span><span class="o">.</span><span class="na">println</span><span class="o">(</span><span class="n">result</span><span class="o">[</span><span class="n">i</span><span class="o">]);</span>
+<span class="o">}</span>
+</code></pre></div></div>
 
-            <span class="o">}</span>
-        <span class="o">}</span>
-    <span class="o">}</span>
+<h3 id="java-this-keyword">Java this Keyword</h3>
+<p><a href="https://docs.oracle.com/javase/tutorial/java/javaOO/thiskey.html">이 페이지를 번역하며 공부</a><br /></p>
+<div class="language-java highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">public</span> <span class="kd">class</span> <span class="nc">Point</span> <span class="o">{</span>
+  <span class="kd">public</span> <span class="kt">int</span> <span class="n">x</span> <span class="o">=</span> <span class="mi">0</span><span class="o">;</span>
+  <span class="kd">public</span> <span class="kt">int</span> <span class="n">y</span> <span class="o">=</span> <span class="mi">0</span><span class="o">;</span>
+
+  <span class="c1">//생성자 Constructor</span>
+  <span class="kd">public</span> <span class="nf">Point</span><span class="o">(</span><span class="kt">int</span> <span class="n">a</span><span class="o">,</span> <span class="kt">int</span> <span class="n">b</span><span class="o">)</span> <span class="o">{</span>
+    <span class="n">x</span> <span class="o">=</span> <span class="n">a</span><span class="o">;</span>
+    <span class="n">y</span> <span class="o">=</span> <span class="n">b</span><span class="o">;</span>
+  <span class="o">}</span>
+<span class="o">}</span>
+</code></pre></div></div>
+<p>위의 작성된 코드를 보면, class … (<s>다음에 계속</s>)</p>
+<div class="language-java highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">public</span> <span class="kd">class</span> <span class="nc">Point</span> <span class="o">{</span>
+  <span class="kd">public</span> <span class="kt">int</span> <span class="n">x</span> <span class="o">=</span> <span class="mi">0</span><span class="o">;</span>
+  <span class="kd">public</span> <span class="kt">int</span> <span class="n">y</span> <span class="o">=</span> <span class="mi">0</span><span class="o">;</span>
+
+  <span class="c1">//생성자 Constructor</span>
+  <span class="kd">public</span> <span class="nf">Point</span><span class="o">(</span><span class="kt">int</span> <span class="n">x</span><span class="o">,</span> <span class="kt">int</span> <span class="n">y</span><span class="o">)</span> <span class="o">{</span>
+    <span class="k">this</span><span class="o">.</span><span class="na">x</span> <span class="o">=</span> <span class="n">x</span><span class="o">;</span>
+    <span class="k">this</span><span class="o">.</span><span class="na">y</span> <span class="o">=</span> <span class="n">y</span><span class="o">;</span>
+  <span class="o">}</span>
 <span class="o">}</span>
 </code></pre></div></div>
 
@@ -368,9 +420,11 @@
     <strong><i class="fas fa-fw fa-tags" aria-hidden="true"></i> Tags: </strong>
     <span itemprop="keywords">
     
-      <a href="/tags/#code" class="page__taxonomy-item p-category" rel="tag">code</a><span class="sep">, </span>
+      <a href="/tags/#learning" class="page__taxonomy-item p-category" rel="tag">learning</a><span class="sep">, </span>
     
-      <a href="/tags/#java" class="page__taxonomy-item p-category" rel="tag">Java</a>
+      <a href="/tags/#software" class="page__taxonomy-item p-category" rel="tag">software</a><span class="sep">, </span>
+    
+      <a href="/tags/#%EA%B3%B5%EB%B6%80-%EA%B8%B0%EB%A1%9D" class="page__taxonomy-item p-category" rel="tag">공부 기록</a>
     
     </span>
   </p>
@@ -378,9 +432,24 @@
 
 
 
+  
+
+
+  
+
+  <p class="page__taxonomy">
+    <strong><i class="fas fa-fw fa-folder-open" aria-hidden="true"></i> Categories: </strong>
+    <span itemprop="keywords">
+    
+      <a href="/categories/#til" class="page__taxonomy-item p-category" rel="tag">TIL</a>
+    
+    </span>
+  </p>
+
+
         
 
-  <p class="page__date"><strong><i class="fas fa-fw fa-calendar-alt" aria-hidden="true"></i> Updated:</strong> <time class="dt-published" datetime="2021-12-14T00:00:00+09:00">December 14, 2021</time></p>
+  <p class="page__date"><strong><i class="fas fa-fw fa-calendar-alt" aria-hidden="true"></i> Updated:</strong> <time class="dt-published" datetime="2022-01-13T00:00:00+09:00">January 13, 2022</time></p>
 
       </footer>
 
@@ -389,10 +458,11 @@
       
   <nav class="pagination">
     
-      <a href="#" class="pagination--pager disabled">Previous</a>
+      <a href="/til/annoation/" class="pagination--pager" title="[20220111] Spring Boot Annotation/REST resources
+">Previous</a>
     
     
-      <a href="/vocab/verb/" class="pagination--pager" title="영단어 정리
+      <a href="/til/crud/" class="pagination--pager" title="[20220114~] CRUD 게시판 만들기 도전
 ">Next</a>
     
   </nav>
@@ -475,7 +545,7 @@
     
     <h2 class="archive__item-title no_toc" itemprop="headline">
       
-        <a href="/til/javaGui-copy/" rel="permalink">[20220113] Java Container/Content pane/Classes and Objects
+        <a href="/til/annoation/" rel="permalink">[20220111] Spring Boot Annotation/REST resources
 </a>
       
     </h2>
@@ -487,7 +557,7 @@
       <span class="page__meta-date">
         <i class="far fa-calendar-alt" aria-hidden="true"></i>
         
-        <time datetime="2022-01-13T00:00:00+09:00">January 13, 2022</time>
+        <time datetime="2022-01-11T00:00:00+09:00">January 11, 2022</time>
       </span>
     
 
@@ -517,7 +587,7 @@
     
     <h2 class="archive__item-title no_toc" itemprop="headline">
       
-        <a href="/til/annoation/" rel="permalink">[20220111] Spring Boot Annotation/REST resources
+        <a href="/til/gradle/" rel="permalink">[20220107] Gradle/Build tools/Building/상속
 </a>
       
     </h2>
@@ -529,7 +599,7 @@
       <span class="page__meta-date">
         <i class="far fa-calendar-alt" aria-hidden="true"></i>
         
-        <time datetime="2022-01-11T00:00:00+09:00">January 11, 2022</time>
+        <time datetime="2022-01-07T00:00:00+09:00">January 7, 2022</time>
       </span>
     
 

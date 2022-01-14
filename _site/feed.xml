@@ -1,4 +1,82 @@
-<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="4.2.1">Jekyll</generator><link href="http://localhost:4000/feed.xml" rel="self" type="application/atom+xml" /><link href="http://localhost:4000/" rel="alternate" type="text/html" /><updated>2022-01-13T20:44:06+09:00</updated><id>http://localhost:4000/feed.xml</id><title type="html">Mirae the Future</title><subtitle>An amazing website.</subtitle><author><name>Mirae</name></author><entry><title type="html">[20220113]</title><link href="http://localhost:4000/til/javaGui/" rel="alternate" type="text/html" title="[20220113]" /><published>2022-01-13T00:00:00+09:00</published><updated>2022-01-13T00:00:00+09:00</updated><id>http://localhost:4000/til/javaGui</id><content type="html" xml:base="http://localhost:4000/til/javaGui/">&lt;hr /&gt;
+<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="4.2.1">Jekyll</generator><link href="http://localhost:4000/feed.xml" rel="self" type="application/atom+xml" /><link href="http://localhost:4000/" rel="alternate" type="text/html" /><updated>2022-01-14T11:19:37+09:00</updated><id>http://localhost:4000/feed.xml</id><title type="html">Mirae the Future</title><subtitle>An amazing website.</subtitle><author><name>Mirae</name></author><entry><title type="html">[20220114~] CRUD 게시판 만들기 도전</title><link href="http://localhost:4000/til/crud/" rel="alternate" type="text/html" title="[20220114~] CRUD 게시판 만들기 도전" /><published>2022-01-14T00:00:00+09:00</published><updated>2022-01-14T00:00:00+09:00</updated><id>http://localhost:4000/til/crud</id><content type="html" xml:base="http://localhost:4000/til/crud/">&lt;hr /&gt;
+
+&lt;h3&gt;💭&lt;/h3&gt;
+&lt;p&gt;뭔가 만들면서 공부하고 싶어서 CRUD 게시판 만들기에 도전해본다. 완성하면 당연히 좋겠지만 그것보다 만들어가는 과정에서 많은 것들을 배웠으면 좋겠다.&lt;/p&gt;
+
+&lt;h3 id=&quot;일단-시작&quot;&gt;일단 시작&lt;/h3&gt;
+
+&lt;p&gt;IntelliJ IDEA 를 이용합니다.&lt;/p&gt;
+
+&lt;p&gt;&lt;a href=&quot;https://start.spring.io/&quot;&gt;Spring initializr&lt;/a&gt;에서 Gradle project / Language 는 Java를 선택하고, Dependencies로는&lt;/p&gt;
+&lt;ul&gt;
+  &lt;li&gt;Spring Web&lt;/li&gt;
+  &lt;li&gt;MySQL Driver&lt;/li&gt;
+  &lt;li&gt;Spring DATA JPA&lt;/li&gt;
+  &lt;li&gt;Lombok&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;을 추가 한 뒤  프로젝트 생성 후 인텔리제이에서 열어줍니다.&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;src/main/resources/application.properties&lt;/strong&gt;에 database관련 설정을 해주어야 한다고 합니다.&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;http://localhost:4000/assets/images/crud1.png&quot; alt=&quot;crud1&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;이 과정에서 spring.datasource.url= 에 데이터베이스 url을 입력해야한다는데&lt;/p&gt;
+
+&lt;hr /&gt;
+&lt;p&gt;구글링하며 참고한 글 목록&lt;/p&gt;
+&lt;ul&gt;
+  &lt;li&gt;&lt;a href=&quot;https://wonit.tistory.com/260&quot;&gt;블로그&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;</content><author><name>Mirae</name></author><category term="TIL" /><category term="software" /><category term="learning" /><category term="공부 기록" /><summary type="html"></summary></entry><entry><title type="html">[20220114] Java this Keyword / MySQL 데이터베이스 삭제하기 /</title><link href="http://localhost:4000/til/java-continued/" rel="alternate" type="text/html" title="[20220114] Java this Keyword / MySQL 데이터베이스 삭제하기 /" /><published>2022-01-14T00:00:00+09:00</published><updated>2022-01-14T00:00:00+09:00</updated><id>http://localhost:4000/til/java%20continued</id><content type="html" xml:base="http://localhost:4000/til/java-continued/">&lt;hr /&gt;
+
+&lt;h2&gt;💭&lt;/h2&gt;
+&lt;p&gt;벌써 1월 14일이라니 시간이 참 빠르다. 오늘은 어제 알아보던 것에 이어서 Java this keyword를 보면서 시작해본다.&lt;/p&gt;
+
+&lt;h3 id=&quot;java-this-keyword&quot;&gt;Java this Keyword&lt;/h3&gt;
+&lt;p&gt;&lt;a href=&quot;https://docs.oracle.com/javase/tutorial/java/javaOO/thiskey.html&quot;&gt;이 페이지를 번역하며 공부&lt;/a&gt;&lt;br /&gt;&lt;/p&gt;
+
+&lt;p&gt;&amp;lt;Using &lt;strong&gt;this&lt;/strong&gt; with a Field&amp;gt;&lt;/p&gt;
+
+&lt;p&gt;this keyword를 사용하는 가장 흔한 이유는 field(필드변수)의 이름이 메소드 패러미터나 생성자 패러미터와 같을 때 덮어씌여지는 것을 방지하기 위해서이다. 아래 두 예제는 이름이 Point 인 클래스를 만드는 두가지 방법을 보여준다.&lt;/p&gt;
+
+&lt;div class=&quot;language-java highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;kd&quot;&gt;public&lt;/span&gt; &lt;span class=&quot;kd&quot;&gt;class&lt;/span&gt; &lt;span class=&quot;nc&quot;&gt;Point&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;{&lt;/span&gt;
+  &lt;span class=&quot;kd&quot;&gt;public&lt;/span&gt; &lt;span class=&quot;kt&quot;&gt;int&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;x&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;0&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;;&lt;/span&gt;
+  &lt;span class=&quot;kd&quot;&gt;public&lt;/span&gt; &lt;span class=&quot;kt&quot;&gt;int&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;y&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;0&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;;&lt;/span&gt;
+
+  &lt;span class=&quot;c1&quot;&gt;//생성자 Constructor&lt;/span&gt;
+  &lt;span class=&quot;kd&quot;&gt;public&lt;/span&gt; &lt;span class=&quot;nf&quot;&gt;Point&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;kt&quot;&gt;int&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;a&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;kt&quot;&gt;int&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;b&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;{&lt;/span&gt;
+    &lt;span class=&quot;n&quot;&gt;x&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;a&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;;&lt;/span&gt;
+    &lt;span class=&quot;n&quot;&gt;y&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;b&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;;&lt;/span&gt;
+  &lt;span class=&quot;o&quot;&gt;}&lt;/span&gt;
+&lt;span class=&quot;o&quot;&gt;}&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+&lt;p&gt;위의 작성된 코드에서는 fields의 이름이 각각 x, y이고 생성자 패러미터는 각각 a, b 이다. 두가지의 이름이 다르기 때문에 문제가 생기지 않는다.&lt;/p&gt;
+
+&lt;div class=&quot;language-java highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;kd&quot;&gt;public&lt;/span&gt; &lt;span class=&quot;kd&quot;&gt;class&lt;/span&gt; &lt;span class=&quot;nc&quot;&gt;Point&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;{&lt;/span&gt;
+  &lt;span class=&quot;kd&quot;&gt;public&lt;/span&gt; &lt;span class=&quot;kt&quot;&gt;int&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;x&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;0&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;;&lt;/span&gt;
+  &lt;span class=&quot;kd&quot;&gt;public&lt;/span&gt; &lt;span class=&quot;kt&quot;&gt;int&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;y&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;0&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;;&lt;/span&gt;
+
+  &lt;span class=&quot;c1&quot;&gt;//생성자 Constructor&lt;/span&gt;
+  &lt;span class=&quot;kd&quot;&gt;public&lt;/span&gt; &lt;span class=&quot;nf&quot;&gt;Point&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;kt&quot;&gt;int&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;x&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;kt&quot;&gt;int&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;y&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;{&lt;/span&gt;
+    &lt;span class=&quot;k&quot;&gt;this&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;x&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;x&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;;&lt;/span&gt;
+    &lt;span class=&quot;k&quot;&gt;this&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;y&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;y&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;;&lt;/span&gt;
+  &lt;span class=&quot;o&quot;&gt;}&lt;/span&gt;
+&lt;span class=&quot;o&quot;&gt;}&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+&lt;p&gt;하지만 위 코드에서는 fields 의 이름과 생성자 패러미터의 이름이 같다. 이때 fields 앞에 this. 를 붙여주어야 한다.&lt;br /&gt;
+&lt;br /&gt;&lt;/p&gt;
+
+&lt;h3 id=&quot;mysql-데이터베이스-삭제하기&quot;&gt;MySQL 데이터베이스 삭제하기&lt;/h3&gt;
+
+&lt;p&gt;터미널을 열고 &lt;strong&gt;/usr/local/mysql/bin/mysql -u root -p&lt;/strong&gt; 을 입력해줍니다. 그리고 비밀번호를 입력해줍니다. (&lt;s&gt;내가 기억하려고 써보는 MySQL 실행시키는 방법&lt;/s&gt;)&lt;br /&gt;
+show databases; 를 입력하면 아래 사진처럼 어떤 데이터베이스들이 있는지 보여줍니다.
+저는 example 이라는 이름의 데이터베이스를 삭제할거에요.&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;/assets/images/mql.png&quot; alt=&quot;mysql&quot; width=&quot;250&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;DROP DATABASE example 을 입력하면 삭제 됩니다.&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;/assets/images/mql2.png&quot; alt=&quot;mysql&quot; width=&quot;300&quot; /&gt;&lt;/p&gt;</content><author><name>Mirae</name></author><category term="TIL" /><category term="software" /><category term="learning" /><category term="공부 기록" /><summary type="html"></summary></entry><entry><title type="html">[20220113] Java Container/Content pane/Classes and Objects</title><link href="http://localhost:4000/til/javaGui-copy/" rel="alternate" type="text/html" title="[20220113] Java Container/Content pane/Classes and Objects" /><published>2022-01-13T00:00:00+09:00</published><updated>2022-01-13T00:00:00+09:00</updated><id>http://localhost:4000/til/javaGui%20copy</id><content type="html" xml:base="http://localhost:4000/til/javaGui-copy/">&lt;hr /&gt;
 
 &lt;h3&gt;💭&lt;/h3&gt;
 &lt;p&gt;국비 Java 학원 수업 개강일이 얼마 남지 않았다. 지금까지는 JAVA에 대해 예습해보았고 커리큘럼에 있는 다른 것들도 미리 한번씩 봐두면 좋을 것 같아서 담당자님께 설명 들었던 것을 떠올리며 커리큘럼을 보고 있다. Java GUI에 대해서는 한번도 알아본적이 없는 것 같아서 검색해 보던 중 코드를 작성하며 정리해주신 &lt;a href=&quot;https://yooniron.tistory.com/12&quot;&gt;블로그&lt;/a&gt;를 발견했다. 코드와 설명을 적어주셔서 참고하며 공부해보고 있다.&lt;/p&gt;

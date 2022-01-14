@@ -6,6 +6,7 @@ tags:
   - software
   - learning
   - 공부 기록
+show_date: true
 ---
 __________________
 
