@@ -9,7 +9,7 @@
   <head>
     <meta charset="utf-8">
 
-<!-- begin _includes/seo.html --><title>[20220114] Java this Keyword / MySQL 데이터베이스 삭제하기 /  | Mirae the Future</title>
+<!-- begin _includes/seo.html --><title>[20220114] Java this Keyword / MySQL 데이터베이스 삭제하기 / ORM | Mirae the Future</title>
 <meta name="description" content="">
 
 
@@ -22,7 +22,7 @@
 <meta property="og:type" content="article">
 <meta property="og:locale" content="en_US">
 <meta property="og:site_name" content="Mirae the Future">
-<meta property="og:title" content="[20220114] Java this Keyword / MySQL 데이터베이스 삭제하기 /">
+<meta property="og:title" content="[20220114] Java this Keyword / MySQL 데이터베이스 삭제하기 / ORM">
 <meta property="og:url" content="http://localhost:4000/til/java-continued/">
 
 
@@ -177,7 +177,7 @@
     
       
       
-        <li class="current">[20220114] Java this Keyword / MySQL 데이터베이스 삭제하기 / </li>
+        <li class="current">[20220114] Java this Keyword / MySQL 데이터베이스 삭제하기 / ORM</li>
       
     
   </ol>
@@ -303,7 +303,7 @@
 
 
   <article class="page h-entry" itemscope itemtype="https://schema.org/CreativeWork">
-    <meta itemprop="headline" content="[20220114] Java this Keyword / MySQL 데이터베이스 삭제하기 /">
+    <meta itemprop="headline" content="[20220114] Java this Keyword / MySQL 데이터베이스 삭제하기 / ORM">
     <meta itemprop="description" content="">
     <meta itemprop="datePublished" content="2022-01-14T00:00:00+09:00">
     
@@ -312,10 +312,25 @@
       
         <header>
           <h1 id="page-title" class="page__title p-name" itemprop="headline">
-            <a href="http://localhost:4000/til/java-continued/" class="u-url" itemprop="url">[20220114] Java this Keyword / MySQL 데이터베이스 삭제하기 /
+            <a href="http://localhost:4000/til/java-continued/" class="u-url" itemprop="url">[20220114] Java this Keyword / MySQL 데이터베이스 삭제하기 / ORM
 </a>
           </h1>
           
+
+  <p class="page__meta">
+    
+      
+      <span class="page__meta-date">
+        <i class="far fa-calendar-alt" aria-hidden="true"></i>
+        
+        <time datetime="2022-01-14T00:00:00+09:00">January 14, 2022</time>
+      </span>
+    
+
+    
+
+    
+  </p>
 
 
         </header>
@@ -326,7 +341,7 @@
           <aside class="sidebar__right sticky">
             <nav class="toc">
               <header><h4 class="nav__title"><i class="fas fa-cog"></i> 👷</h4></header>
-              <ul class="toc__menu"><li><a href="#java-this-keyword">Java this Keyword</a></li><li><a href="#mysql-데이터베이스-삭제하기">MySQL 데이터베이스 삭제하기</a></li></ul>
+              <ul class="toc__menu"><li><a href="#java-this-keyword">Java this Keyword</a></li><li><a href="#mysql-데이터베이스-삭제하기">MySQL 데이터베이스 삭제하기</a></li><li><a href="#java-orm">Java ORM</a></li></ul>
 
             </nav>
           </aside>
@@ -382,6 +397,21 @@ show databases; 를 입력하면 아래 사진처럼 어떤 데이터베이스�
 
 <p><img src="/assets/images/mql2.png" alt="mysql" width="300" /></p>
 
+<h3 id="java-orm">Java ORM</h3>
+<p><a href="https://education.launchcode.org/java-web-development/chapters/orm-part1/background.html">이 페이지를 번역하며 공부</a></p>
+
+<p>Java ORM은 Object-Relational Mapping의 약자로 Java objects와 Relational databases 사이에서 데이터를 변환해주는 기술이다.</p>
+
+<div class="language-java highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">public</span> <span class="kd">class</span> <span class="nc">ContactInfo</span> <span class="o">{</span>
+  <span class="kt">int</span> <span class="n">id</span><span class="o">;</span>
+  <span class="nc">String</span> <span class="n">name</span><span class="o">;</span>
+  <span class="nc">String</span> <span class="n">email</span><span class="o">;</span>
+
+<span class="o">}</span>
+
+</code></pre></div></div>
+<p>위 3가지의 필드를 가지고 있는 ContactInfo라는 클래스가 있다고 가정해보자. 그리고 이 정보들을 MySQL 데이터베이스에 저장하고 싶다. 이때 ORM을 이용해서 어플리케이션의 데이터베이스에 객체들을 담을 테이블을 만들 수 있다. 테이블은 contactinfo라는 이름을 가지게 되고 id, name, email 세개의 열(columns)을 가진다.</p>
+
         
       </section>
 
@@ -435,11 +465,12 @@ show databases; 를 입력하면 아래 사진처럼 어떤 데이터베이스�
       
   <nav class="pagination">
     
-      <a href="/til/crud/" class="pagination--pager" title="[20220114~] CRUD 게시판 만들기 도전
+      <a href="/til/crud/" class="pagination--pager" title="[20220114~] CRUD 게시판 만들기에 대하여
 ">Previous</a>
     
     
-      <a href="#" class="pagination--pager disabled">Next</a>
+      <a href="/til/go/" class="pagination--pager" title="[20220115] /
+">Next</a>
     
   </nav>
 
@@ -467,11 +498,110 @@ show databases; 를 입력하면 아래 사진처럼 어떤 데이터베이스�
     
     <h2 class="archive__item-title no_toc" itemprop="headline">
       
-        <a href="/til/crud/" rel="permalink">[20220114~] CRUD 게시판 만들기 도전
+        <a href="/til/copy/" rel="permalink">[20220117] HTTP / 백준 2558번 / Java Abstraction
 </a>
       
     </h2>
     
+
+  <p class="page__meta">
+    
+      
+      <span class="page__meta-date">
+        <i class="far fa-calendar-alt" aria-hidden="true"></i>
+        
+        <time datetime="2022-01-17T00:00:00+09:00">January 17, 2022</time>
+      </span>
+    
+
+    
+
+    
+  </p>
+
+
+    <p class="archive__item-excerpt" itemprop="description">
+
+</p>
+  </article>
+</div>
+
+        
+          
+
+
+
+<div class="grid__item">
+  <article class="archive__item" itemscope itemtype="https://schema.org/CreativeWork">
+    
+      <div class="archive__item-teaser">
+        <img src="/assets/images/teaser.jpg" alt="">
+      </div>
+    
+    <h2 class="archive__item-title no_toc" itemprop="headline">
+      
+        <a href="/til/go/" rel="permalink">[20220115] /
+</a>
+      
+    </h2>
+    
+
+  <p class="page__meta">
+    
+      
+      <span class="page__meta-date">
+        <i class="far fa-calendar-alt" aria-hidden="true"></i>
+        
+        <time datetime="2022-01-15T00:00:00+09:00">January 15, 2022</time>
+      </span>
+    
+
+    
+
+    
+  </p>
+
+
+    <p class="archive__item-excerpt" itemprop="description">
+
+</p>
+  </article>
+</div>
+
+        
+          
+
+
+
+<div class="grid__item">
+  <article class="archive__item" itemscope itemtype="https://schema.org/CreativeWork">
+    
+      <div class="archive__item-teaser">
+        <img src="/assets/images/teaser.jpg" alt="">
+      </div>
+    
+    <h2 class="archive__item-title no_toc" itemprop="headline">
+      
+        <a href="/til/crud/" rel="permalink">[20220114~] CRUD 게시판 만들기에 대하여
+</a>
+      
+    </h2>
+    
+
+  <p class="page__meta">
+    
+      
+      <span class="page__meta-date">
+        <i class="far fa-calendar-alt" aria-hidden="true"></i>
+        
+        <time datetime="2022-01-14T00:00:00+09:00">January 14, 2022</time>
+      </span>
+    
+
+    
+
+    
+  </p>
 
 
     <p class="archive__item-excerpt" itemprop="description">
@@ -507,90 +637,6 @@ show databases; 를 입력하면 아래 사진처럼 어떤 데이터베이스�
         <i class="far fa-calendar-alt" aria-hidden="true"></i>
         
         <time datetime="2022-01-13T00:00:00+09:00">January 13, 2022</time>
-      </span>
-    
-
-    
-
-    
-  </p>
-
-
-    <p class="archive__item-excerpt" itemprop="description">
-
-</p>
-  </article>
-</div>
-
-        
-          
-
-
-
-<div class="grid__item">
-  <article class="archive__item" itemscope itemtype="https://schema.org/CreativeWork">
-    
-      <div class="archive__item-teaser">
-        <img src="/assets/images/teaser.jpg" alt="">
-      </div>
-    
-    <h2 class="archive__item-title no_toc" itemprop="headline">
-      
-        <a href="/til/annoation/" rel="permalink">[20220111] Spring Boot Annotation/REST resources
-</a>
-      
-    </h2>
-    
-
-  <p class="page__meta">
-    
-      
-      <span class="page__meta-date">
-        <i class="far fa-calendar-alt" aria-hidden="true"></i>
-        
-        <time datetime="2022-01-11T00:00:00+09:00">January 11, 2022</time>
-      </span>
-    
-
-    
-
-    
-  </p>
-
-
-    <p class="archive__item-excerpt" itemprop="description">
-
-</p>
-  </article>
-</div>
-
-        
-          
-
-
-
-<div class="grid__item">
-  <article class="archive__item" itemscope itemtype="https://schema.org/CreativeWork">
-    
-      <div class="archive__item-teaser">
-        <img src="/assets/images/teaser.jpg" alt="">
-      </div>
-    
-    <h2 class="archive__item-title no_toc" itemprop="headline">
-      
-        <a href="/til/gradle/" rel="permalink">[20220107] Gradle/Build tools/Building/상속
-</a>
-      
-    </h2>
-    
-
-  <p class="page__meta">
-    
-      
-      <span class="page__meta-date">
-        <i class="far fa-calendar-alt" aria-hidden="true"></i>
-        
-        <time datetime="2022-01-07T00:00:00+09:00">January 7, 2022</time>
       </span>
     
 

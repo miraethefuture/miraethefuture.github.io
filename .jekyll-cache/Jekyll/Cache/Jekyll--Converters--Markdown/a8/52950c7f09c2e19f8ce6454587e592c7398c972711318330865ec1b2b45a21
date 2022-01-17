@@ -1,0 +1,208 @@
+I"�H<hr />
+
+<h2>💭</h2>
+<ul>
+  <li><a href="https://roadmap.sh/backend">백엔드 개발자 로드맵</a>을 보고 각 항목에 관련된 글을 읽어보려 한다.</li>
+  <li>백준 문제 풀이하며 레벨 올리기!</li>
+  <li>Java에 대해 공부하기</li>
+</ul>
+
+<h3 id="domain-name-resolution">Domain name resolution</h3>
+<p><a href="http://web.stanford.edu/class/msande91si/www-spr04/readings/week1/InternetWhitepaper.htm">이 페이지를 참고</a><br />
+Domain name resolution은 도메인 이름을 IP 주소로 변환하는 처리 과정을 말한다. 하나의 도메인 이름은 하나의 IP 주소와 연결되고, 하나의 IP 주소는 여러개의 도메인 이름들과 연결될 수 있다. 이것은 여러개의 도메인 이름이 하나의 같은 IP 주소를 가질 수 있는 것을 의미한다.</p>
+
+<h3 id="application-protocols--http-and-world-wide-web">Application Protocols : HTTP and World Wide Web</h3>
+<p><a href="http://web.stanford.edu/class/msande91si/www-spr04/readings/week1/InternetWhitepaper.htm">이 페이지를 참고</a><br />
+인터넷에서 가장 흔하게 사용되는 서비스 중 하나는 World Wide Web 이다. Web을 작동시키는 응용 프로그램 프로토콜은 HTTP(Hyper Text Transfer Protocol)이다. HTTP를 HTML과 헷갈리지 말자. HTML은 웹 페이지를 작성하는 언어이다. HTTP는 웹 브라우저와 웹 서버가 서로 정보를 교환하기 위해 사용하는 통신 규약이다. HTTP는 응용 프로그램 레벨의 통신규약인데, HTTP가 통신 규약 스택에서 TCP 위에 있고 특정 응용프로그램(웹 브라우저, 웹 서버와 같은)으로부터 이용되기 때문이다.</p>
+
+<p>HTTP는 비연결형 문자 기반 프로토콜이다. 클라이언트(웹 브라우저)가 웹 서버에 이미지, 웹 페이지 등을 요청한다. 클라이언트가 요청한 뒤 이미지나 웹 페이지가 전송 완료되면 클라이언트와 서버 사이의 연결이 끊긴다. 새 요청이 있을 때마다 다시 연결한다. 대부분의 프로토콜은 연결 지향적이다. 이것은 서로 정보를 주고 받고 있는 컴퓨터가 인터넷을 통해 계속해서 연결을 유지한다는 뜻이다. HTTP는 그러지 않지만. 클라이언트로부터 HTTP 요청이 이루어지기 전에 먼저 서버와 새롭게 연결이 되어야 한다.</p>
+
+<p>당신이 웹 브라우저에 URL 을 입력할 때 어떤 일이 일어날까?</p>
+<ol>
+  <li>URL 이 도메인 이름을 포함하고 있다면, 브라우저는 먼저 domain name server를 연결합니다. 그리고 도메인 이름에 연결된 IP 주소를 찾아옵니다.</li>
+  <li>웹 브라우저는 웹 서버와 연결되고 원하는 웹페이지를 받기 위해 HTTP 요청을 보냅니다. (통신 규약 스택을 통해)</li>
+  <li>웹 서버는 요청을 확인하고 웹 페이지를 확인합니다. 만약 요청으로 들어온 페이지가 있다면, 웹 서버는 전송합니다. 만약 서버가 요청 들어온 페이지를 찾을 수 없다면, 서버는 HTTP 404 error 메시지를 보냅니다. (웹서핑을 해본 사람이면 알겠지만 404 는 ‘페이지를 찾을 수 없음’을 의미합니다.)</li>
+  <li>웹 브라우저가 요청한 페이지를 받으면 연결이 끊어집니다.</li>
+  <li>그리고 브라우저가 페이지를 분석하며 어떤 요소들(이미지, 작은 응용프로그램들)이 더 필요한지 찾습니다.</li>
+  <li>브라우저는 필요한 요소들을 가져오기 위해 서버에 새로이 연결하고, 요소들을 요청합니다. (각 요소마다 따로따로 새 요청을 합니다.)</li>
+  <li>브라우저가 모든것들(이미지, 작은 응요프로그램 등)을 가져오면, 브라우저의 윈도우창에 완전한 페이지가 나타납니다.</li>
+</ol>
+
+<hr />
+
+<h3 id="백준-2588번-문제-풀어보기">백준 2588번 문제 풀어보기</h3>
+<p><a href="https://www.acmicpc.net/problem/2588">2588번 문제</a> <br />
+아래 사진은 (세 자리 수) × (세 자리 수) 의 답을 구하는 과정을 보여준다. <br />
+<img src="/assets/images/2588.png" alt="2588" /> <br />
+(사진의 출처는 백준 사이트의 해당 문제 페이지입니다.)</p>
+
+<p>여기서 (3),(4),(5),(6)에 해당하는 수들을 출력하는 프로그램을 만들면 된다.
+a = (1), b = (2) 라고 할 때, (3)은  a * (b의 1의 자리수), (4)은  a * (b의 10의 자리수), (5)은  a * (b의 100의 자리수) 이니까 입력 받은 b 를 먼저 각각 하나의 1의 자리 숫자로 쪼개고, 쪼개진 각 수에 a 를 곱해보자고 생각했다. 백의 자리수를 쪼개는 방법을 검색하다 이 <a href="https://www.edureka.co/community/2687/how-can-i-separate-the-digits-of-an-int-number-in-java를">페이지</a> 찾았다. 아래 방법으로 숫자를 쪼개서 하나씩 구할 수 있다.</p>
+
+<div class="language-java highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">class</span> <span class="nc">Main</span> <span class="o">{</span>
+  <span class="kd">public</span> <span class="kd">static</span> <span class="kt">void</span> <span class="nf">main</span><span class="o">(</span><span class="nc">String</span><span class="o">[]</span> <span class="n">args</span><span class="o">)</span> <span class="o">{</span>
+
+    <span class="kt">int</span> <span class="n">num</span> <span class="o">=</span> <span class="mi">1020</span><span class="o">;</span>
+
+    <span class="k">while</span> <span class="o">(</span><span class="n">num</span> <span class="o">&gt;</span> <span class="mi">0</span><span class="o">)</span> <span class="o">{</span>
+
+      <span class="nc">System</span><span class="o">.</span><span class="na">out</span><span class="o">.</span><span class="na">println</span><span class="o">(</span> <span class="n">num</span> <span class="o">%</span> <span class="mi">10</span><span class="o">);</span>
+
+      <span class="n">num</span> <span class="o">=</span> <span class="n">num</span> <span class="o">/</span> <span class="mi">10</span><span class="o">;</span>
+
+      <span class="o">}</span>
+    <span class="o">}</span>
+  <span class="o">}</span>
+</code></pre></div></div>
+
+<p>그리고 세시간동안 혼자 생각해보며 (3), (4), (5) 까지는 구했는데 (아래처럼 작성) (6)을 구하지 못하고 답을 찾아봤다. 문제의 레벨을 봤을때 물론 엄청 간단할거라 생각했지만… 길을 잘못들어도 한참 잘못들었더라 하하..</p>
+
+<div class="language-java highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kn">import</span> <span class="nn">java.util.*</span><span class="o">;</span>
+
+<span class="kd">class</span> <span class="nc">Main</span> <span class="o">{</span>
+    <span class="kd">public</span> <span class="kd">static</span> <span class="kt">void</span> <span class="nf">main</span> <span class="o">(</span><span class="nc">String</span><span class="o">[]</span> <span class="n">args</span><span class="o">)</span> <span class="o">{</span>
+        <span class="nc">Scanner</span> <span class="n">sc</span> <span class="o">=</span> <span class="k">new</span> <span class="nc">Scanner</span><span class="o">(</span><span class="nc">System</span><span class="o">.</span><span class="na">in</span><span class="o">);</span>
+        <span class="kt">int</span> <span class="n">a</span><span class="o">,</span> <span class="n">b</span><span class="o">;</span>
+        <span class="n">a</span> <span class="o">=</span> <span class="n">sc</span><span class="o">.</span><span class="na">nextInt</span><span class="o">();</span>
+        <span class="n">b</span> <span class="o">=</span> <span class="n">sc</span><span class="o">.</span><span class="na">nextInt</span><span class="o">();</span>
+
+        <span class="kt">int</span><span class="o">[]</span> <span class="n">arr</span> <span class="o">=</span> <span class="k">new</span> <span class="kt">int</span><span class="o">[</span><span class="mi">3</span><span class="o">];</span>
+        <span class="kt">int</span><span class="o">[]</span> <span class="n">arr2</span> <span class="o">=</span> <span class="k">new</span> <span class="kt">int</span><span class="o">[</span><span class="mi">3</span><span class="o">];</span>
+
+        <span class="k">while</span> <span class="o">(</span><span class="n">b</span> <span class="o">&gt;</span> <span class="mi">0</span><span class="o">)</span> <span class="o">{</span>
+        	<span class="k">for</span><span class="o">(</span><span class="kt">int</span> <span class="n">i</span> <span class="o">=</span> <span class="mi">0</span><span class="o">;</span> <span class="n">i</span> <span class="o">&lt;</span> <span class="n">arr</span><span class="o">.</span><span class="na">length</span><span class="o">;</span> <span class="n">i</span><span class="o">++)</span> <span class="o">{</span>
+        	<span class="n">arr</span><span class="o">[</span><span class="n">i</span><span class="o">]</span> <span class="o">=</span> <span class="n">b</span> <span class="o">%</span> <span class="mi">10</span><span class="o">;</span>
+        	<span class="n">b</span> <span class="o">=</span> <span class="n">b</span> <span class="o">/</span> <span class="mi">10</span><span class="o">;</span>
+        	<span class="n">arr2</span><span class="o">[</span><span class="n">i</span><span class="o">]</span> <span class="o">=</span> <span class="n">a</span> <span class="o">*</span> <span class="n">arr</span><span class="o">[</span><span class="n">i</span><span class="o">];</span> 	
+
+        	<span class="nc">System</span><span class="o">.</span><span class="na">out</span><span class="o">.</span><span class="na">println</span><span class="o">(</span><span class="n">arr2</span><span class="o">[</span><span class="n">i</span><span class="o">]);</span>
+
+        <span class="o">}</span>
+     <span class="o">}</span>
+  <span class="o">}</span>
+
+<span class="o">}</span>              
+</code></pre></div></div>
+
+<p>다른 분이 올린 <a href="https://javacoding.tistory.com/14">답</a>을 보고 생각해봅니다.</p>
+
+<div class="language-java highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kn">import</span> <span class="nn">java.util.*</span><span class="o">;</span>
+
+<span class="kd">class</span> <span class="nc">Main</span> <span class="o">{</span>
+    <span class="kd">public</span> <span class="kd">static</span> <span class="kt">void</span> <span class="nf">main</span> <span class="o">(</span><span class="nc">String</span><span class="o">[]</span> <span class="n">args</span><span class="o">)</span> <span class="o">{</span>
+        <span class="nc">Scanner</span> <span class="n">sc</span> <span class="o">=</span> <span class="k">new</span> <span class="nc">Scanner</span><span class="o">(</span><span class="nc">System</span><span class="o">.</span><span class="na">in</span><span class="o">);</span>
+        <span class="kt">int</span> <span class="n">a</span><span class="o">,</span> <span class="n">b</span><span class="o">;</span>
+        <span class="n">a</span> <span class="o">=</span> <span class="n">sc</span><span class="o">.</span><span class="na">nextInt</span><span class="o">();</span>
+        <span class="n">b</span> <span class="o">=</span> <span class="n">sc</span><span class="o">.</span><span class="na">nextInt</span><span class="o">();</span>
+
+        <span class="nc">System</span><span class="o">.</span><span class="na">out</span><span class="o">.</span><span class="na">println</span><span class="o">(</span><span class="n">a</span> <span class="o">*</span> <span class="o">(</span><span class="n">b</span> <span class="o">%</span> <span class="mi">10</span><span class="o">));</span>
+        <span class="nc">System</span><span class="o">.</span><span class="na">out</span><span class="o">.</span><span class="na">println</span><span class="o">(</span><span class="n">a</span> <span class="o">*</span> <span class="o">((</span><span class="n">b</span> <span class="o">/</span> <span class="mi">10</span><span class="o">)</span> <span class="o">%</span> <span class="mi">10</span><span class="o">));</span>
+        <span class="nc">System</span><span class="o">.</span><span class="na">out</span><span class="o">.</span><span class="na">println</span><span class="o">(</span><span class="n">a</span> <span class="o">*</span> <span class="o">(</span><span class="n">b</span> <span class="o">/</span> <span class="mi">100</span><span class="o">));</span>
+        <span class="nc">System</span><span class="o">.</span><span class="na">out</span><span class="o">.</span><span class="na">println</span><span class="o">(</span><span class="n">a</span> <span class="o">*</span> <span class="n">b</span><span class="o">);</span>
+
+   <span class="o">}</span>
+
+<span class="o">}</span>          
+
+</code></pre></div></div>
+<p>패드에 써가면서 생각해보기</p>
+
+<p><img src="/assets/images/2588_2.png" alt="2588" /> <br /></p>
+
+<h3 id="java-abstraction">Java Abstraction</h3>
+<p><a href="https://www.w3schools.com/java/java_abstract.asp">Abstract Classes and Methods</a> <br />
+데이터 추상화는 중요한 세부 정보들은 숨기고 꼭 보여져야하는 정보들만 유저들이 볼 수 있도록 하는 것이다. 데이터 추상화는 abstract classes 나 interfaces를 통해 이뤄질 수 있다. abstract 키워드는 non-access modifier 이다.<br />
+아래 표는 Acccess Modifier 와 Non-Access Modifier 를 보여준다.</p>
+
+<table>
+  <thead>
+    <tr>
+      <th>Acess Modifiers</th>
+      <th>Non-Access Modifiers</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>private</td>
+      <td>static</td>
+    </tr>
+    <tr>
+      <td>default or No Modifier</td>
+      <td>final</td>
+    </tr>
+    <tr>
+      <td>protected</td>
+      <td>abstract</td>
+    </tr>
+    <tr>
+      <td>public</td>
+      <td>synchronized</td>
+    </tr>
+    <tr>
+      <td> </td>
+      <td>trasient</td>
+    </tr>
+    <tr>
+      <td> </td>
+      <td>volatile</td>
+    </tr>
+    <tr>
+      <td> </td>
+      <td>strictfp</td>
+    </tr>
+  </tbody>
+</table>
+
+<ul>
+  <li>
+    <p>Abstract class는 객체를 만들 수 없도록 제한된 클래스이다.</p>
+  </li>
+  <li>
+    <p>Abstract method는 Abstract class 에서만 사용될 수 있다. abstract methods는 바디 부분이 없다.</p>
+  </li>
+</ul>
+
+<div class="language-java highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">abstract</span> <span class="kd">class</span> <span class="nc">Animal</span> <span class="o">{</span>
+  <span class="kd">public</span> <span class="kd">abstract</span> <span class="kt">void</span> <span class="nf">animalSound</span><span class="o">();</span> <span class="c1">// public 과 abstract 가 같이 사용되네..?</span>
+  <span class="kd">public</span> <span class="kt">void</span> <span class="nf">sleep</span><span class="o">()</span> <span class="o">{</span>
+    <span class="nc">System</span><span class="o">.</span><span class="na">out</span><span class="o">.</span><span class="na">println</span><span class="o">(</span><span class="s">"Zzz"</span><span class="o">);</span>
+  <span class="o">}</span>
+<span class="o">}</span>
+</code></pre></div></div>
+
+<p>위 코드를 보면 알 수 있듯이, 하나의 abstract class는 abstract method와 일반적인 method 둘다 가질 수 있다.</p>
+
+<div class="language-java highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nc">Animal</span> <span class="nc">Obj</span> <span class="o">=</span> <span class="k">new</span> <span class="nc">Animal</span><span class="o">();</span> <span class="c1">// abstract class인 Animal 클래스는 객체를 만들 수 없으므로 에러 발생</span>
+</code></pre></div></div>
+
+<p>Abstract class에 접근하기 위해서는 Abstract class를 상속 받는 subclass를 만들어야 한다.</p>
+
+<div class="language-java highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1">// Abstract class</span>
+<span class="kd">abstract</span> <span class="kd">class</span> <span class="nc">Animal</span> <span class="o">{</span>
+  <span class="c1">// Abstract method</span>
+  <span class="kd">public</span> <span class="kd">abstract</span> <span class="nf">animalSound</span><span class="o">();</span> <span class="c1">//바디 없음</span>
+  <span class="c1">// Regular method</span>
+  <span class="kd">public</span> <span class="kt">void</span> <span class="nf">sleep</span><span class="o">()</span> <span class="o">{</span>
+    <span class="nc">System</span><span class="o">.</span><span class="na">out</span><span class="o">.</span><span class="na">println</span><span class="o">(</span><span class="s">"Zzz"</span><span class="o">);</span>
+  <span class="o">}</span>
+<span class="o">}</span>
+
+<span class="c1">// Animal 클래스를 상속받는 Subclass</span>
+<span class="kd">class</span> <span class="nc">Pig</span> <span class="kd">extends</span> <span class="nc">Animal</span> <span class="o">{</span>
+  <span class="kd">public</span> <span class="kt">void</span> <span class="nf">animalSound</span><span class="o">()</span> <span class="o">{</span>
+    <span class="c1">// 위 Abstract 메소드의 바디가 여기서 작성됨</span>
+    <span class="nc">System</span><span class="o">.</span><span class="na">out</span><span class="o">.</span><span class="na">println</span><span class="o">(</span><span class="s">"The pig says: wee wee"</span><span class="o">);</span>
+  <span class="o">}</span>
+<span class="o">}</span>
+
+<span class="kd">class</span> <span class="nc">Main</span> <span class="o">{</span>
+  <span class="kd">public</span> <span class="kd">static</span> <span class="kt">void</span> <span class="nf">main</span><span class="o">(</span><span class="nc">String</span><span class="o">[]</span> <span class="n">args</span><span class="o">)</span> <span class="o">{</span>
+    <span class="nc">Pig</span> <span class="n">myPig</span> <span class="o">=</span> <span class="k">new</span> <span class="nc">Pig</span><span class="o">();</span> <span class="c1">// Pig 객체 만들기</span>
+    <span class="n">myPig</span><span class="o">.</span><span class="na">animalSound</span><span class="o">();</span>
+    <span class="n">myPig</span><span class="o">.</span><span class="na">sleep</span><span class="o">();</span> <span class="c1">//Pig 객체가 Anmal 클래스를 상속받으므로 sleep 메소드 사용 가능</span>
+
+  <span class="o">}</span>
+<span class="o">}</span>
+
+</code></pre></div></div>
+:ET

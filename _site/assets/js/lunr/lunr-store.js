@@ -35,15 +35,27 @@ var store = [{
         "url": "/til/javaGui-copy/",
         "teaser": "/assets/images/teaser.jpg"
       },{
-        "title": "[20220114~] CRUD 게시판 만들기 도전",
+        "title": "[20220114~] CRUD 게시판 만들기에 대하여",
         "excerpt":"💭 뭔가 만들면서 공부하고 싶어서 CRUD 게시판 만들기에 도전해본다. 완성하면 당연히 좋겠지만 그것보다 만들어가는 과정에서 많은 것들을 배웠으면 좋겠다. 일단 시작 IntelliJ IDEA 를 이용합니다. Spring initializr에서 Gradle project / Language 는 Java를 선택하고, Dependencies로는 Spring Web MySQL Driver Spring DATA JPA Lombok 을 추가 한 뒤 프로젝트 생성 후...","categories": ["TIL"],
         "tags": ["software","learning","공부 기록"],
         "url": "/til/crud/",
         "teaser": "/assets/images/teaser.jpg"
       },{
-        "title": "[20220114] Java this Keyword / MySQL 데이터베이스 삭제하기 / ",
+        "title": "[20220114] Java this Keyword / MySQL 데이터베이스 삭제하기 / ORM",
         "excerpt":"💭 벌써 1월 14일이라니 시간이 참 빠르다. 오늘은 어제 알아보던 것에 이어서 Java this keyword를 보면서 시작해본다. Java this Keyword 이 페이지를 번역하며 공부 &lt;Using this with a Field&gt; this keyword를 사용하는 가장 흔한 이유는 field(필드변수)의 이름이 메소드 패러미터나 생성자 패러미터와 같을 때 덮어씌여지는 것을 방지하기 위해서이다. 아래 두 예제는...","categories": ["TIL"],
         "tags": ["software","learning","공부 기록"],
         "url": "/til/java-continued/",
+        "teaser": "/assets/images/teaser.jpg"
+      },{
+        "title": "[20220115] /",
+        "excerpt":"💭 오늘은 많은 자료들을 봤지만 확실히 이해한 것들은 없는 느낌이다. Accessing Data with JPA 이 페이지를 참고 package com.example.accessingdatajpa; import javax.persistence.Entity; import javax.persistence.GeneratedValue; import javax.persistence.GenerationType; import javax.persistence.Id; @Entity //Entity annotation : JPA entity 라는 것을 알려줌. public class Customer { @Id @GeneratedValue(strategy=GenerationType.AUTO) //annotate id 필드 - ID가 자동으로 만들어져야 한다는...","categories": ["TIL"],
+        "tags": ["software","learning","공부 기록"],
+        "url": "/til/go/",
+        "teaser": "/assets/images/teaser.jpg"
+      },{
+        "title": "[20220117] HTTP / 백준 2558번 / Java Abstraction",
+        "excerpt":"💭 백엔드 개발자 로드맵을 보고 각 항목에 관련된 글을 읽어보려 한다. 백준 문제 풀이하며 레벨 올리기! Java에 대해 공부하기 Domain name resolution 이 페이지를 참고 Domain name resolution은 도메인 이름을 IP 주소로 변환하는 처리 과정을 말한다. 하나의 도메인 이름은 하나의 IP 주소와 연결되고, 하나의 IP 주소는 여러개의 도메인 이름들과 연결될...","categories": ["TIL"],
+        "tags": ["software","learning","공부 기록"],
+        "url": "/til/copy/",
         "teaser": "/assets/images/teaser.jpg"
       }]

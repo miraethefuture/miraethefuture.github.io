@@ -1,5 +1,5 @@
 ---
-title: "[20220114] Java this Keyword / MySQL 데이터베이스 삭제하기 / "
+title: "[20220114] Java this Keyword / MySQL 데이터베이스 삭제하기 / ORM"
 categories:
   - TIL
 tags:
@@ -10,6 +10,7 @@ toc: true
 toc_label: "👷"
 toc_icon: "cog"
 toc_sticky: true
+show_date: true
 ---
 __________________
 
