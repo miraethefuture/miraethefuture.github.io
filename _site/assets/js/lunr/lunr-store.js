@@ -47,7 +47,7 @@ var store = [{
         "url": "/til/java-continued/",
         "teaser": "/assets/images/teaser.jpg"
       },{
-        "title": "[20220115] /",
+        "title": "[20220115] ",
         "excerpt":"💭 오늘은 많은 자료들을 봤지만 확실히 이해한 것들은 없는 느낌이다. Accessing Data with JPA 이 페이지를 참고 package com.example.accessingdatajpa; import javax.persistence.Entity; import javax.persistence.GeneratedValue; import javax.persistence.GenerationType; import javax.persistence.Id; @Entity //Entity annotation : JPA entity 라는 것을 알려줌. public class Customer { @Id @GeneratedValue(strategy=GenerationType.AUTO) //annotate id 필드 - ID가 자동으로 만들어져야 한다는...","categories": ["TIL"],
         "tags": ["software","learning","공부 기록"],
         "url": "/til/go/",
@@ -56,6 +56,12 @@ var store = [{
         "title": "[20220117] HTTP / 백준 2558번 / Java Abstraction",
         "excerpt":"💭 백엔드 개발자 로드맵을 보고 각 항목에 관련된 글을 읽어보려 한다. 백준 문제 풀이하며 레벨 올리기! Java에 대해 공부하기 Domain name resolution 이 페이지를 참고 Domain name resolution은 도메인 이름을 IP 주소로 변환하는 처리 과정을 말한다. 하나의 도메인 이름은 하나의 IP 주소와 연결되고, 하나의 IP 주소는 여러개의 도메인 이름들과 연결될...","categories": ["TIL"],
         "tags": ["software","learning","공부 기록"],
-        "url": "/til/copy/",
+        "url": "/til/theinternet/",
+        "teaser": "/assets/images/teaser.jpg"
+      },{
+        "title": "[20220118] E-mail / 백준 2884번 문제 풀어보기",
+        "excerpt":"💭 How Does the Internet Work? 라는 글 읽기 백준 문제 풀기 Java Application Protocols: SMTP and Electronic Mail 많이 사용되는 인터넷 서비스 중 하나는 이메일이다. 이메일은 Simple Mail Transfer protocol 또는 SMTP 라고 불리는 어플리케이션 레벨의 통신규약을 사용한다. SMTP 역시 HTTP와 같은 텍스트 기반의 통신규약이지만 HTTP와 다르게 연결 지향적이다....","categories": ["TIL"],
+        "tags": ["software","learning","공부 기록"],
+        "url": "/til/start/",
         "teaser": "/assets/images/teaser.jpg"
       }]
