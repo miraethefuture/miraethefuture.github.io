@@ -1,5 +1,5 @@
 ---
-title: "[20220117] HTTP / 백준 2558번 / Java Abstraction"
+title: "HTTP / 백준 2558번 / Java Abstraction"
 categories:
   - TIL
 tags:

@@ -1,11 +1,14 @@
 ---
-title: "[20220114] Java this Keyword / MySQL 데이터베이스 삭제하기 / ORM"
+title: "Java this Keyword / MySQL 데이터베이스 삭제하기 / ORM"
 categories:
   - TIL
+  - 공부 기록
 tags:
   - software
   - learning
-  - 공부 기록
+  - MySQL
+  - Java
+  - this keyword
 toc: true
 toc_label: "👷"
 toc_icon: "cog"
