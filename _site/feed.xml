@@ -1,4 +1,156 @@
-<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="4.2.1">Jekyll</generator><link href="http://localhost:4000/feed.xml" rel="self" type="application/atom+xml" /><link href="http://localhost:4000/" rel="alternate" type="text/html" /><updated>2022-01-18T18:45:10+09:00</updated><id>http://localhost:4000/feed.xml</id><title type="html">Mirae the Future</title><subtitle>An amazing website.</subtitle><author><name>Mirae</name></author><entry><title type="html">[20220118] E-mail / 백준 2884번 문제 풀어보기</title><link href="http://localhost:4000/til/start/" rel="alternate" type="text/html" title="[20220118] E-mail / 백준 2884번 문제 풀어보기" /><published>2022-01-18T00:00:00+09:00</published><updated>2022-01-18T00:00:00+09:00</updated><id>http://localhost:4000/til/start</id><content type="html" xml:base="http://localhost:4000/til/start/">&lt;hr /&gt;
+<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="4.2.1">Jekyll</generator><link href="http://localhost:4000/feed.xml" rel="self" type="application/atom+xml" /><link href="http://localhost:4000/" rel="alternate" type="text/html" /><updated>2022-01-31T08:51:25+09:00</updated><id>http://localhost:4000/feed.xml</id><title type="html">Mirae the Future</title><subtitle>An amazing website.</subtitle><author><name>Mirae</name></author><entry><title type="html">Java 배열 이용하여 정수를 내림차순으로 정렬하기</title><link href="http://localhost:4000/til/decsendingOrder/" rel="alternate" type="text/html" title="Java 배열 이용하여 정수를 내림차순으로 정렬하기" /><published>2022-01-30T00:00:00+09:00</published><updated>2022-01-30T00:00:00+09:00</updated><id>http://localhost:4000/til/decsendingOrder</id><content type="html" xml:base="http://localhost:4000/til/decsendingOrder/">&lt;hr /&gt;
+
+&lt;h3&gt;💭&lt;/h3&gt;
+&lt;p&gt;입력받아 배열에 저장한 정수를 내림차순으로 정렬하기&lt;br /&gt;
+(내림차순 - 값이 큰 순서에서 작은 순서로 정렬)&lt;/p&gt;
+
+&lt;div class=&quot;language-java highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;kn&quot;&gt;import&lt;/span&gt; &lt;span class=&quot;nn&quot;&gt;java.util.Scanner&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;;&lt;/span&gt;
+
+&lt;span class=&quot;kd&quot;&gt;public&lt;/span&gt; &lt;span class=&quot;kd&quot;&gt;class&lt;/span&gt; &lt;span class=&quot;nc&quot;&gt;Main&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;{&lt;/span&gt;
+
+	&lt;span class=&quot;kd&quot;&gt;public&lt;/span&gt; &lt;span class=&quot;kd&quot;&gt;static&lt;/span&gt; &lt;span class=&quot;kt&quot;&gt;void&lt;/span&gt; &lt;span class=&quot;nf&quot;&gt;main&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nc&quot;&gt;String&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;[]&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;args&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;{&lt;/span&gt;
+
+
+    &lt;span class=&quot;nc&quot;&gt;Scanner&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;sc&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;new&lt;/span&gt; &lt;span class=&quot;nc&quot;&gt;Scanner&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nc&quot;&gt;System&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;in&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;);&lt;/span&gt;
+    &lt;span class=&quot;c1&quot;&gt;//입력값을 받아 배열의 크기 정하기&lt;/span&gt;
+    &lt;span class=&quot;nc&quot;&gt;System&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;out&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;println&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;배열의 크기를 입력하세요. : &quot;&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;);&lt;/span&gt;
+    &lt;span class=&quot;kt&quot;&gt;int&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;[]&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;arr&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;new&lt;/span&gt; &lt;span class=&quot;kt&quot;&gt;int&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;sc&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;nextInt&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;()];&lt;/span&gt;
+
+    &lt;span class=&quot;c1&quot;&gt;//for 문을 이용해 배열에 값 저장하기&lt;/span&gt;
+    &lt;span class=&quot;k&quot;&gt;for&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;kt&quot;&gt;int&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;i&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;0&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;;&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;i&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;&amp;lt;&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;arr&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;length&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;;&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;i&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;++)&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;{&lt;/span&gt;
+        &lt;span class=&quot;nc&quot;&gt;System&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;out&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;println&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;((&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;i&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;+&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;1&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;+&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;&quot;번째 정수 입력&quot;&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;);&lt;/span&gt;
+        &lt;span class=&quot;n&quot;&gt;arr&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;i&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;]&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;sc&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;nextInt&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;();&lt;/span&gt;
+    &lt;span class=&quot;o&quot;&gt;}&lt;/span&gt;
+
+    &lt;span class=&quot;c1&quot;&gt;//내림차순으로 정렬하기&lt;/span&gt;
+
+    &lt;span class=&quot;kt&quot;&gt;int&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;box&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;0&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;;&lt;/span&gt;
+
+    &lt;span class=&quot;k&quot;&gt;for&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;kt&quot;&gt;int&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;i&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;0&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;;&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;i&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;&amp;lt;&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;arr&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;length&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;;&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;i&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;++)&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;{&lt;/span&gt;
+        &lt;span class=&quot;k&quot;&gt;for&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;kt&quot;&gt;int&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;j&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;i&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;+&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;1&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;;&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;j&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;&amp;lt;&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;arr&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;length&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;;&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;j&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;++)&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;{&lt;/span&gt;     
+            &lt;span class=&quot;k&quot;&gt;if&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;score&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;j&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;]&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;&amp;gt;&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;arr&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;i&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;])&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;{&lt;/span&gt;    
+              &lt;span class=&quot;n&quot;&gt;box&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;arr&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;i&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;];&lt;/span&gt;         
+              &lt;span class=&quot;n&quot;&gt;arr&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;i&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;]&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;arr&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;j&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;];&lt;/span&gt;     
+              &lt;span class=&quot;n&quot;&gt;arr&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;j&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;]&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;box&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;;&lt;/span&gt;         
+
+            &lt;span class=&quot;o&quot;&gt;}&lt;/span&gt;
+          &lt;span class=&quot;o&quot;&gt;}&lt;/span&gt;
+        &lt;span class=&quot;o&quot;&gt;}&lt;/span&gt;
+
+    &lt;span class=&quot;c1&quot;&gt;//정렬된 배열 출력&lt;/span&gt;
+    &lt;span class=&quot;k&quot;&gt;for&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;kt&quot;&gt;int&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;i&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;0&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;;&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;i&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;&amp;lt;&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;arr&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;length&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;;&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;i&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;++)&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;{&lt;/span&gt;
+      &lt;span class=&quot;nc&quot;&gt;System&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;out&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;println&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;arr[&quot;&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;+&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;i&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;+&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;&quot;] : &quot;&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;+&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;arr&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;i&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;]);&lt;/span&gt;
+    &lt;span class=&quot;o&quot;&gt;}&lt;/span&gt;
+
+
+  &lt;span class=&quot;o&quot;&gt;}&lt;/span&gt;
+&lt;span class=&quot;o&quot;&gt;}&lt;/span&gt;
+
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;p&gt;&lt;img src=&quot;/assets/images/descOrder.jpeg&quot; alt=&quot;desc&quot; /&gt;&lt;/p&gt;</content><author><name>Mirae</name></author><category term="TIL" /><category term="learning" /><category term="Java" /><category term="Array" /><category term="Descending order" /><summary type="html"></summary></entry><entry><title type="html">JSP</title><link href="http://localhost:4000/til/%EA%B3%B5%EB%B6%80%20%EA%B8%B0%EB%A1%9D/aboutJSP/" rel="alternate" type="text/html" title="JSP" /><published>2022-01-28T00:00:00+09:00</published><updated>2022-01-28T00:00:00+09:00</updated><id>http://localhost:4000/til/%EA%B3%B5%EB%B6%80%20%EA%B8%B0%EB%A1%9D/aboutJSP</id><content type="html" xml:base="http://localhost:4000/til/%EA%B3%B5%EB%B6%80%20%EA%B8%B0%EB%A1%9D/aboutJSP/">&lt;hr /&gt;
+
+&lt;h3&gt;💭&lt;/h3&gt;
+&lt;p&gt;자바 웹 개발자 과정 수업을 듣기 시작한지 일주일이 지났다. 자바의 기본적인 문법은 여러가지 온라인 강의를 통해서 예습을 하고 시작했던터라 어렵지 않게 수업을 듣고 있다. 수업 커리큘럼에 JSP가 포함되어 있는데, 아직 JSP가 어떤것인지 잘 몰라서 한번 알아보려고 한다. 요즘 어떤 정보에 대한 글을 읽거나, 기술에 대해 알아보기 전에 ‘지금도 여전히 사용되는가?’ 라는 질문을 먼저 검색해보게 된다. 나의 수준에서는 뭐든 배워두면 도움이 되겠지만, 배울 것은 너무나 많고 시간은 충분하지 않아서 자꾸만 정보의 중요성에 대해 생각해보게 된다. 언제나 새로운 것들이 마구 쏟아지는 지금 같은 시대에는 주로 사용되는 기술들도 빠르게 변한다. 그렇기 때문에 자꾸 위와 같은 질문을 검색해보는 것 같다. 새로운 기술이 언제나 좋은 것은 아니지만 대부분의 경우 새로운 기술이 더 빠르거나, 더 간단하게 복잡한 일을 처리하거나, 전 기술의 단점을 보완해서 나오는 경우가 많이 때문에 새로운 기술들에 대해 더 알고 싶은 것 같다. JSP에 대해서도 구글링해보니 새로운 프로젝트에는 더이상 사용되지 않는 것 같지만, JSP에 대한 기본적인 것들을 알아두면 도움이 되는 것 같다. 작은 프로젝트를 진행할때는 여전히 사용되기도 하고 예전에 만들어진 어플리케이션들을 살펴봐야 할 수도 있고, 서블릿과 JSP가 자바 웹 개발의 기본적인 것들이라 스프링, hibernate을 배우기 전에 배워야 한다는 의견도 있다. 그리고 나는 지금 듣는 과정중 JSP에 대해 배우게 될 것이고, 테스트도 봐야해서 기본적인 것들을 알아보려고 한다.&lt;/p&gt;
+
+&lt;h3 id=&quot;-jsp-java-server-pages&quot;&gt;🧑‍💻 JSP (Java Server Pages)&lt;/h3&gt;
+&lt;p&gt;&lt;a href=&quot;https://www.javatpoint.com/jsp-tutorial&quot;&gt;이 페이지의 내용을 참고&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;JSP는 서블릿처럼 웹 어플리케이션을 만드는 것에 사용된다. 서블릿과 같은 일을 하지만 더 많은 기능들을 가지고 있기 때문에 서블릿의 확장된 버전으로 생각해도 되겠다. JSP 페이지는 HTML 태그와 JSP 태그로 이루어진다. JSP페이지는 기술 파트와 디자인 파트를 나눌 수 있기 때문에 서블릿보다 유지가 쉽다. Expression Language와 Custom Tags와 같은 부가 기능을 제공하기도 한다.&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;💡 서블릿과 비교했을 때 JSP의 장점은 무엇이 있을까?&lt;/strong&gt;&lt;/p&gt;
+&lt;ul&gt;
+  &lt;li&gt;
+    &lt;p&gt;JSP는 서블릿을 확장한 기술이기 때문에 서블릿의 모든 기능들을 사용할 수 있다. implicit objects, predefined tags, expression language 그리고 custom tags와 같은 추가된 기능들을 사용할 수 있다.&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;JSP는 비즈니스 로직과 프레젠테이션 로직을 쉽게 분리 할 수 있다. 덕분에 JSP는 쉽게 관리 할 수 있다.&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;JSP 페이지가 수정되었더라도 프로젝트를 다시 컴파일 하거나 디플로이 할 필요가 없다. 서블릿 코드는 바뀐 부분들을 업데이트하고 리컴파일 해야하지만 JSP는 그럴 필요가 없기 때문에 빠르게 개발할 수 있다.&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;JSP에서는 Action tags, JSTL, Custom tags 등 많은 태그를 이용할 수 있기 때문에 서블릿보다 더 적은 코드 작성을 필요로 한다.&lt;/p&gt;
+  &lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;&lt;strong&gt;💡 JSP의 Lifecycle&lt;/strong&gt;&lt;/p&gt;
+
+&lt;p&gt;JSP 페이지들은 아래 변화 단계를 따른다.&lt;/p&gt;
+&lt;ul&gt;
+  &lt;li&gt;Translation of JSP Page&lt;/li&gt;
+  &lt;li&gt;Compilation of JSP Page&lt;/li&gt;
+  &lt;li&gt;Classloading (the classloader loads class file)&lt;/li&gt;
+  &lt;li&gt;Instantiation (Object of the Generated Servlet is created).&lt;/li&gt;
+  &lt;li&gt;Initialization (the container invokes jspInit() method).&lt;/li&gt;
+  &lt;li&gt;Request processing (the container invokes _jspService() method).&lt;/li&gt;
+  &lt;li&gt;Destroy (the container invokes jspDestroy() method).&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;div class=&quot;notice&quot;&gt;
+  &lt;h4&gt;Note!&lt;/h4&gt;
+  &lt;p&gt;jspInit(), _jspService() and jspDestroy() 는 JSP의 라이프사이클 메서드.&lt;/p&gt;
+&lt;/div&gt;
+
+&lt;p&gt;JSP는 JSP translator의 도움을 받아 서블릿(.java file)으로 변환(&lt;s&gt;변형?&lt;/s&gt;)된다. JSP translator는 JSP 페이지를 서블릿으로 변환하는 웹 서버의 한 부분이다. 서블릿이 된 JSP 페이지는 compiler 에 의해 컴파일 되고 클래스 파일로 변환된다. 서블릿에서 일어나는 모든 프로세스들은 후에 JSP에서 수행된다.&lt;/p&gt;</content><author><name>Mirae</name></author><category term="TIL" /><category term="공부 기록" /><category term="software" /><category term="learning" /><category term="JSP" /><summary type="html"></summary></entry><entry><title type="html">Persist something? ORM과 JPA</title><link href="http://localhost:4000/til/%EA%B3%B5%EB%B6%80%20%EA%B8%B0%EB%A1%9D/aboutjpa/" rel="alternate" type="text/html" title="Persist something? ORM과 JPA" /><published>2022-01-24T00:00:00+09:00</published><updated>2022-01-24T00:00:00+09:00</updated><id>http://localhost:4000/til/%EA%B3%B5%EB%B6%80%20%EA%B8%B0%EB%A1%9D/aboutjpa</id><content type="html" xml:base="http://localhost:4000/til/%EA%B3%B5%EB%B6%80%20%EA%B8%B0%EB%A1%9D/aboutjpa/">&lt;hr /&gt;
+
+&lt;h3&gt;💭&lt;/h3&gt;
+
+&lt;h3 id=&quot;persist-something-persistence&quot;&gt;Persist something? Persistence?&lt;/h3&gt;
+&lt;p&gt;&lt;a href=&quot;https://stackoverflow.com/questions/27608224/jpa-what-exactly-does-it-mean-for-an-entity-object-to-persist-what-is-the-def&quot;&gt;이 페이지를 참고&lt;/a&gt; &lt;br /&gt;&lt;/p&gt;
+
+&lt;p&gt;Persistence는 아주 간단히 말하자면 영구적으로 저장(&lt;s&gt;담아 둔다는&lt;/s&gt;)한다는 뜻이다. 자바를 이용하면서 우리는 오브젝트의 값을 데이터베이스에 저장한다. ORM은 JPA가 제공하는 표준 규격을 이용해 오브젝트를 데이터 베이스에 담는다. (새 튜플의 형태로) JPA에서 오브젝트들은 Entity로 변환된다. (엔티티는 오브젝트를 데이터 베이스의 테이블로 매핑하기 위해 사용됨)&lt;br /&gt;
+persisting an entity는 오브젝트(엔티티로 변환된)를 데이터베이스에 영구적으로 저장한다는 뜻이다. &lt;br /&gt;
+‘Persist’는 어플리케이션이 종료된 후에도 계속해서 데이터가 남아있는 것을 의미한다.
+어플리케이션이 종료되거나 사용자가 세션을 종료하고 새 세션을 시작해도 에전 데이터가 사라지지 않고 계속해서 저장돼있는 것이다.&lt;/p&gt;
+
+&lt;h3 id=&quot;implementation&quot;&gt;Implementation&lt;/h3&gt;
+&lt;p&gt;&lt;a href=&quot;https://ko.wikipedia.org/wiki/%EA%B5%AC%ED%98%84&quot;&gt;이 페이지에서 가져옴&lt;/a&gt;&lt;br /&gt;
+컴퓨터 공학에서, Implementation(구현)이란 기술적으로 정리해놓은 규격서나 알고리즘을 프로그래밍 혹은 소프트웨어 배치를 통해 프로그램이나 소프트웨어의 부분, 다른 컴퓨터 시스템을 구축하는 것을 말한다. 하나의 규격서나 표준에도 다양한 구현이 있을 수 있다. 예를 들면, 웹 브라우저는 W3C에서 정한 규격서의 구현을 포함하고 있다. 또, 소프트웨어 개발 도구는 프로그래밍 언어의 구현을 포함하고 있다. &lt;br /&gt;&lt;/p&gt;
+
+&lt;hr /&gt;
+
+&lt;h3 id=&quot;jsp-java-server-pages&quot;&gt;JSP (Java Server Pages)&lt;/h3&gt;
+&lt;p&gt;&lt;a href=&quot;https://www.geeksforgeeks.org/introduction-to-jsp/&quot;&gt;이 페이지를 참고&lt;/a&gt;&lt;/p&gt;
+&lt;ul&gt;
+  &lt;li&gt;웹 어플리케이션을 만들기 위해 사용되는 서버 쪽 기술.&lt;/li&gt;
+  &lt;li&gt;동적 웹 컨텐트를 만들기 위해 사용된다.&lt;/li&gt;
+  &lt;li&gt;
+    &lt;s&gt;(이 페이지에서는)&lt;/s&gt;
+    &lt;p&gt;JSP 태그는 Java 코드를 HTML 페이지에 넣기 위해 사용된다.&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;Servlet Technology의 신식(?) 버전이다. (구글링 해보니 Servlet이 더 빠르지만 코드 작성하고 읽기는 JSP가 더 쉽다고 합니다.)&lt;/li&gt;
+&lt;/ul&gt;</content><author><name>Mirae</name></author><category term="TIL" /><category term="공부 기록" /><category term="software" /><category term="learning" /><category term="JPA" /><category term="ORM" /><category term="Persistence" /><summary type="html"></summary></entry><entry><title type="html">return Keyword in Java / Java statements</title><link href="http://localhost:4000/til/copy/" rel="alternate" type="text/html" title="return Keyword in Java / Java statements" /><published>2022-01-20T00:00:00+09:00</published><updated>2022-01-20T00:00:00+09:00</updated><id>http://localhost:4000/til/copy</id><content type="html" xml:base="http://localhost:4000/til/copy/">&lt;hr /&gt;
+
+&lt;h3&gt;💭&lt;/h3&gt;
+&lt;ul&gt;
+  &lt;li&gt;Java&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h3 id=&quot;returning-a-value-from-a-method&quot;&gt;Returning a Value from a Method&lt;/h3&gt;
+&lt;p&gt;&lt;a href=&quot;https://docs.oracle.com/javase/tutorial/java/javaOO/returnvalue.html&quot;&gt;이 페이지를 참고&lt;/a&gt; &lt;br /&gt;
+메소드는 아래 상태가 되면 자신을 실행시킨 코드로 돌아온다.&lt;/p&gt;
+&lt;ul&gt;
+  &lt;li&gt;메소드의 모든 statements를 수행했을 때&lt;/li&gt;
+  &lt;li&gt;return statement에 도달 했을 때&lt;/li&gt;
+  &lt;li&gt;
+    &lt;s&gt;throws an exception (covered later),&lt;/s&gt;
+  &lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;메소드를 정의할 때 return type을 선언한다. 메소드의 바디에서 값을 받기위해 &lt;em&gt;return&lt;/em&gt; statement를 사용한다. &lt;em&gt;void&lt;/em&gt; 로 정의된 메소드는 값을 리턴하지 않기 때문에 바디 부분에 return statement를 포함하지 않아도 된다. 포함 할 수도 있는데&lt;/p&gt;
+
+&lt;h3 id=&quot;java-statements&quot;&gt;Java Statements&lt;/h3&gt;
+&lt;p&gt;&lt;a href=&quot;https://study.com/academy/lesson/java-statements-definition-examples.html#:~:text=Lesson%20Summary-,Java%20statements%20are%20instructions%20that%20tell%20the%20programming%20language%20what,of%20blocks%20of%20other%20statements.&amp;amp;text=values%20to%20variables.-,If%20statements%2C%20while%20statements%2C%20and%20for%20loop%20statements,start%20and%20end%20with%20brackets.&quot;&gt;이 페이지를 참고&lt;/a&gt; &lt;br /&gt;
+Java statements 는 자바 프로그래밍 언어가 무엇을 해야하는지 지시해주는 것이다. assignment statement는 아래와 같이 값을 변수에 대입시킨다. (할당한다.)&lt;/p&gt;
+
+&lt;div class=&quot;language-java highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;kt&quot;&gt;double&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;entryFee&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;mf&quot;&gt;15.75&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;;&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;p&gt;모든 Java statements는 세미콜론(;)으로 끝맺어야한다. Java는 세미콜론까지 정보들을 처리한다. 아래 declaration statement는 전달된 메소드를 이용해서 화면에 정보를 나타나게 한다.&lt;/p&gt;
+
+&lt;div class=&quot;language-java highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;nc&quot;&gt;System&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;out&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;println&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;Line 1&quot;&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;);&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;</content><author><name>Mirae</name></author><category term="TIL" /><category term="software" /><category term="learning" /><category term="공부 기록" /><summary type="html"></summary></entry><entry><title type="html">E-mail / 백준 2884번 문제 풀어보기</title><link href="http://localhost:4000/til/email/" rel="alternate" type="text/html" title="E-mail / 백준 2884번 문제 풀어보기" /><published>2022-01-18T00:00:00+09:00</published><updated>2022-01-18T00:00:00+09:00</updated><id>http://localhost:4000/til/email</id><content type="html" xml:base="http://localhost:4000/til/email/">&lt;hr /&gt;
 
 &lt;h3&gt;💭&lt;/h3&gt;
 &lt;ul&gt;
@@ -80,9 +232,7 @@
 
 &lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
 
-&lt;p&gt;&lt;a href=&quot;https://st-lab.tistory.com/24&quot;&gt;답&lt;/a&gt; 구글링을 해보니 정말 간단하게 코드를 작성하셨다. 어떻게 코드를 작성하는지에 대해 생각해보면 좋을 것 같다. 가장 첫번째가 되어야 하는 조건을 구별하는 것을 연습해야겠다. 오늘은 문제 풀이에 시간을 더 쓸 수 없을 것 같아서 내일 한번 더 보고 생각해보기로! 언제나 블로그에 답 남겨주시는 개발자 분들께 감사하며..!&lt;/p&gt;
-
-&lt;h3 id=&quot;tostring-in-java&quot;&gt;toString() in java&lt;/h3&gt;</content><author><name>Mirae</name></author><category term="TIL" /><category term="software" /><category term="learning" /><category term="공부 기록" /><summary type="html"></summary></entry><entry><title type="html">[20220117] HTTP / 백준 2558번 / Java Abstraction</title><link href="http://localhost:4000/til/theinternet/" rel="alternate" type="text/html" title="[20220117] HTTP / 백준 2558번 / Java Abstraction" /><published>2022-01-17T00:00:00+09:00</published><updated>2022-01-17T00:00:00+09:00</updated><id>http://localhost:4000/til/theinternet</id><content type="html" xml:base="http://localhost:4000/til/theinternet/">&lt;hr /&gt;
+&lt;p&gt;&lt;a href=&quot;https://st-lab.tistory.com/24&quot;&gt;답&lt;/a&gt; 구글링을 해보니 정말 간단하게 코드를 작성하셨다. 어떻게 코드를 작성하는지에 대해 생각해보면 좋을 것 같다. 가장 첫번째가 되어야 하는 조건을 구별하는 것을 연습해야겠다. 오늘은 문제 풀이에 시간을 더 쓸 수 없을 것 같아서 내일 한번 더 보고 생각해보기로! 언제나 블로그에 답 남겨주시는 개발자 분들께 감사하며..!&lt;/p&gt;</content><author><name>Mirae</name></author><category term="TIL" /><category term="software" /><category term="learning" /><category term="공부 기록" /><summary type="html"></summary></entry><entry><title type="html">HTTP / 백준 2558번 / Java Abstraction</title><link href="http://localhost:4000/til/theinternet/" rel="alternate" type="text/html" title="HTTP / 백준 2558번 / Java Abstraction" /><published>2022-01-17T00:00:00+09:00</published><updated>2022-01-17T00:00:00+09:00</updated><id>http://localhost:4000/til/theinternet</id><content type="html" xml:base="http://localhost:4000/til/theinternet/">&lt;hr /&gt;
 
 &lt;h2&gt;💭&lt;/h2&gt;
 &lt;ul&gt;
@@ -289,7 +439,7 @@ a = (1), b = (2) 라고 할 때, (3)은  a * (b의 1의 자리수), (4)은  a * 
   &lt;span class=&quot;o&quot;&gt;}&lt;/span&gt;
 &lt;span class=&quot;o&quot;&gt;}&lt;/span&gt;
 
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;</content><author><name>Mirae</name></author><category term="TIL" /><category term="software" /><category term="learning" /><category term="공부 기록" /><summary type="html"></summary></entry><entry><title type="html">[20220115]</title><link href="http://localhost:4000/til/go/" rel="alternate" type="text/html" title="[20220115]" /><published>2022-01-15T00:00:00+09:00</published><updated>2022-01-15T00:00:00+09:00</updated><id>http://localhost:4000/til/go</id><content type="html" xml:base="http://localhost:4000/til/go/">&lt;hr /&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;</content><author><name>Mirae</name></author><category term="TIL" /><category term="software" /><category term="learning" /><category term="공부 기록" /><summary type="html"></summary></entry><entry><title type="html">Accessing Data with JPA</title><link href="http://localhost:4000/til/%EA%B3%B5%EB%B6%80%20%EA%B8%B0%EB%A1%9D/go/" rel="alternate" type="text/html" title="Accessing Data with JPA" /><published>2022-01-15T00:00:00+09:00</published><updated>2022-01-15T00:00:00+09:00</updated><id>http://localhost:4000/til/%EA%B3%B5%EB%B6%80%20%EA%B8%B0%EB%A1%9D/go</id><content type="html" xml:base="http://localhost:4000/til/%EA%B3%B5%EB%B6%80%20%EA%B8%B0%EB%A1%9D/go/">&lt;hr /&gt;
 
 &lt;h2&gt;💭&lt;/h2&gt;
 &lt;p&gt;오늘은 많은 자료들을 봤지만 확실히 이해한 것들은 없는 느낌이다.&lt;/p&gt;
@@ -321,7 +471,7 @@ a = (1), b = (2) 라고 할 때, (3)은  a * (b의 1의 자리수), (4)은  a * 
     &lt;span class=&quot;k&quot;&gt;this&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;lastName&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;lastName&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;;&lt;/span&gt;
   &lt;span class=&quot;o&quot;&gt;}&lt;/span&gt;
 
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;</content><author><name>Mirae</name></author><category term="TIL" /><category term="software" /><category term="learning" /><category term="공부 기록" /><summary type="html"></summary></entry><entry><title type="html">[20220114] Java this Keyword / MySQL 데이터베이스 삭제하기 / ORM</title><link href="http://localhost:4000/til/java-continued/" rel="alternate" type="text/html" title="[20220114] Java this Keyword / MySQL 데이터베이스 삭제하기 / ORM" /><published>2022-01-14T00:00:00+09:00</published><updated>2022-01-14T00:00:00+09:00</updated><id>http://localhost:4000/til/java%20continued</id><content type="html" xml:base="http://localhost:4000/til/java-continued/">&lt;hr /&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;</content><author><name>Mirae</name></author><category term="TIL" /><category term="공부 기록" /><category term="software" /><category term="learning" /><category term="JPA" /><summary type="html"></summary></entry><entry><title type="html">Java this Keyword / MySQL 데이터베이스 삭제하기 / ORM</title><link href="http://localhost:4000/til/%EA%B3%B5%EB%B6%80%20%EA%B8%B0%EB%A1%9D/java-continued/" rel="alternate" type="text/html" title="Java this Keyword / MySQL 데이터베이스 삭제하기 / ORM" /><published>2022-01-14T00:00:00+09:00</published><updated>2022-01-14T00:00:00+09:00</updated><id>http://localhost:4000/til/%EA%B3%B5%EB%B6%80%20%EA%B8%B0%EB%A1%9D/java%20continued</id><content type="html" xml:base="http://localhost:4000/til/%EA%B3%B5%EB%B6%80%20%EA%B8%B0%EB%A1%9D/java-continued/">&lt;hr /&gt;
 
 &lt;h2&gt;💭&lt;/h2&gt;
 &lt;p&gt;벌써 1월 14일이라니 시간이 참 빠르다. 오늘은 어제 알아보던 것에 이어서 Java this keyword를 보면서 시작해본다.&lt;/p&gt;
@@ -385,35 +535,7 @@ show databases; 를 입력하면 아래 사진처럼 어떤 데이터베이스�
 &lt;span class=&quot;o&quot;&gt;}&lt;/span&gt;
 
 &lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
-&lt;p&gt;위 3가지의 필드를 가지고 있는 ContactInfo라는 클래스가 있다고 가정해보자. 그리고 이 정보들을 MySQL 데이터베이스에 저장하고 싶다. 이때 ORM을 이용해서 어플리케이션의 데이터베이스에 객체들을 담을 테이블을 만들 수 있다. 테이블은 contactinfo라는 이름을 가지게 되고 id, name, email 세개의 열(columns)을 가진다.&lt;/p&gt;</content><author><name>Mirae</name></author><category term="TIL" /><category term="software" /><category term="learning" /><category term="공부 기록" /><summary type="html"></summary></entry><entry><title type="html">[20220114~] CRUD 게시판 만들기에 대하여</title><link href="http://localhost:4000/til/crud/" rel="alternate" type="text/html" title="[20220114~] CRUD 게시판 만들기에 대하여" /><published>2022-01-14T00:00:00+09:00</published><updated>2022-01-14T00:00:00+09:00</updated><id>http://localhost:4000/til/crud</id><content type="html" xml:base="http://localhost:4000/til/crud/">&lt;hr /&gt;
-
-&lt;h3&gt;💭&lt;/h3&gt;
-&lt;p&gt;뭔가 만들면서 공부하고 싶어서 CRUD 게시판 만들기에 도전해본다. 완성하면 당연히 좋겠지만 그것보다 만들어가는 과정에서 많은 것들을 배웠으면 좋겠다.&lt;/p&gt;
-
-&lt;h3 id=&quot;일단-시작&quot;&gt;일단 시작&lt;/h3&gt;
-
-&lt;p&gt;IntelliJ IDEA 를 이용합니다.&lt;/p&gt;
-
-&lt;p&gt;&lt;a href=&quot;https://start.spring.io/&quot;&gt;Spring initializr&lt;/a&gt;에서 Gradle project / Language 는 Java를 선택하고, Dependencies로는&lt;/p&gt;
-&lt;ul&gt;
-  &lt;li&gt;Spring Web&lt;/li&gt;
-  &lt;li&gt;MySQL Driver&lt;/li&gt;
-  &lt;li&gt;Spring DATA JPA&lt;/li&gt;
-  &lt;li&gt;Lombok&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;p&gt;을 추가 한 뒤  프로젝트 생성 후 인텔리제이에서 열어줍니다.&lt;/p&gt;
-
-&lt;p&gt;&lt;strong&gt;src/main/resources/application.properties&lt;/strong&gt;에 database관련 설정을 해주어야 한다고 합니다.&lt;/p&gt;
-
-&lt;p&gt;데이터베이스 url과 이름, 패스워드를 입력합니다.&lt;/p&gt;
-
-&lt;hr /&gt;
-&lt;p&gt;구글링하며 참고한 글 목록&lt;/p&gt;
-&lt;ul&gt;
-  &lt;li&gt;&lt;a href=&quot;https://wonit.tistory.com/260&quot;&gt;블로그&lt;/a&gt;&lt;/li&gt;
-  &lt;li&gt;&lt;a href=&quot;https://dev-coco.tistory.com/85&quot;&gt;블로그&lt;/a&gt;&lt;/li&gt;
-&lt;/ul&gt;</content><author><name>Mirae</name></author><category term="TIL" /><category term="software" /><category term="learning" /><category term="공부 기록" /><summary type="html"></summary></entry><entry><title type="html">[20220113] Java Container/Content pane/Classes and Objects</title><link href="http://localhost:4000/til/javaGui-copy/" rel="alternate" type="text/html" title="[20220113] Java Container/Content pane/Classes and Objects" /><published>2022-01-13T00:00:00+09:00</published><updated>2022-01-13T00:00:00+09:00</updated><id>http://localhost:4000/til/javaGui%20copy</id><content type="html" xml:base="http://localhost:4000/til/javaGui-copy/">&lt;hr /&gt;
+&lt;p&gt;위 3가지의 필드를 가지고 있는 ContactInfo라는 클래스가 있다고 가정해보자. 그리고 이 정보들을 MySQL 데이터베이스에 저장하고 싶다. 이때 ORM을 이용해서 어플리케이션의 데이터베이스에 객체들을 담을 테이블을 만들 수 있다. 테이블은 contactinfo라는 이름을 가지게 되고 id, name, email 세개의 열(columns)을 가진다.&lt;/p&gt;</content><author><name>Mirae</name></author><category term="TIL" /><category term="공부 기록" /><category term="software" /><category term="learning" /><category term="MySQL" /><category term="Java" /><category term="this keyword" /><summary type="html"></summary></entry><entry><title type="html">[20220113] Java Container/Content pane/Classes and Objects</title><link href="http://localhost:4000/til/javaGui-copy/" rel="alternate" type="text/html" title="[20220113] Java Container/Content pane/Classes and Objects" /><published>2022-01-13T00:00:00+09:00</published><updated>2022-01-13T00:00:00+09:00</updated><id>http://localhost:4000/til/javaGui%20copy</id><content type="html" xml:base="http://localhost:4000/til/javaGui-copy/">&lt;hr /&gt;
 
 &lt;h3&gt;💭&lt;/h3&gt;
 &lt;p&gt;국비 Java 학원 수업 개강일이 얼마 남지 않았다. 지금까지는 JAVA에 대해 예습해보았고 커리큘럼에 있는 다른 것들도 미리 한번씩 봐두면 좋을 것 같아서 담당자님께 설명 들었던 것을 떠올리며 커리큘럼을 보고 있다. Java GUI에 대해서는 한번도 알아본적이 없는 것 같아서 검색해 보던 중 코드를 작성하며 정리해주신 &lt;a href=&quot;https://yooniron.tistory.com/12&quot;&gt;블로그&lt;/a&gt;를 발견했다. 코드와 설명을 적어주셔서 참고하며 공부해보고 있다.&lt;/p&gt;
@@ -499,287 +621,4 @@ resource 는 ‘어떤 것’이라고 부를 수 있을만한 그 어떤 것이
 요청해서 받은 데이터가 resources 다.&lt;/li&gt;
 &lt;/ul&gt;
 
-&lt;p&gt;흠… 감이 오는 것 같기도..? 몇개 더 읽어봐야겠다.&lt;/p&gt;</content><author><name>Mirae</name></author><category term="TIL" /><category term="software" /><category term="learning" /><category term="공부 기록" /><summary type="html"></summary></entry><entry><title type="html">[20220107] Gradle/Build tools/Building/상속</title><link href="http://localhost:4000/til/gradle/" rel="alternate" type="text/html" title="[20220107] Gradle/Build tools/Building/상속" /><published>2022-01-07T00:00:00+09:00</published><updated>2022-01-07T00:00:00+09:00</updated><id>http://localhost:4000/til/gradle</id><content type="html" xml:base="http://localhost:4000/til/gradle/">&lt;hr /&gt;
-
-&lt;p&gt;오늘의 공부는 &lt;strong&gt;Gradle&lt;/strong&gt; 이 무엇인지 알아보며 시작해본다.
-Gradle 은 웹 애플리케이션을 만들 때 자동으로 자료들을 모아주고 테스트해주고 빌드해주는 소프트웨어다. ‘a build system’ 또는 ‘a build automation tool’ 이라고 하는데 구글링을 해보니 한국말로도 ‘빌드 도구’ 라고 번역되어 있다. 그렇다면 build tool 은 정확히 무엇일까?&lt;/p&gt;
-
-&lt;p&gt;&lt;strong&gt;Build tools&lt;/strong&gt;는 작성된 코드를 응용 프로그램으로 만들어주는 프로그램이라고 한다. 작은 규모의 프로젝트에서는 개발자들이 컴퓨터의 도움없이 이 작업을 하곤 하지만 규모가 큰 프로젝트에서는 컴퓨터 프로그램인 build tools가 이런 작업을 행하는게 실용적이다.
-Gradle이 이 빌드 도구 중 하나인 것이다&lt;/p&gt;
-
-&lt;p&gt;&lt;strong&gt;Building&lt;/strong&gt;한다는 것에는 여러가지 세부 단계들이 포함되어 있고 크게 두가지로 단계로 나누어진다.&lt;/p&gt;
-&lt;ul&gt;
-  &lt;li&gt;compiling : 컴파일링은 사람이 작성한 코드를 컴퓨터가 이해하고 사용할 수 있는 형식으로 바꾸는 것&lt;/li&gt;
-  &lt;li&gt;
-    &lt;p&gt;linking : 링킹은 컴파일링 된 파일들을 하나의 실행 가능한 파일로 만들어주는 것&lt;/p&gt;
-
-    &lt;!-- assembling, deploying 이란?  --&gt;
-  &lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;hr /&gt;
-
-&lt;h2 id=&quot;상속inheritance&quot;&gt;상속(Inheritance)&lt;/h2&gt;
-
-&lt;p&gt;스프링 부트를 이용한 게시판 만들기에 관심이 생겨서 글들을 읽어보다가 Gradle이 정확히 무엇인지 궁금해졌었고, 개념만 공부했을때는 와닿지 않았던 &lt;strong&gt;상속&lt;/strong&gt;이 어떤 느낌으로 사용되는지 약간 알게 되었다. 그래서 한번 더 상속에 대해 정리해보려 한다.&lt;/p&gt;
-
-&lt;p&gt;자바에서 &lt;strong&gt;상속&lt;/strong&gt;은 한 클래스가 다른 클래스의 속성을 취하는 것이다. 상속을 사용하므로써 우리는 이미 있는 어떤 클래스의 메소드와 필드(변수)를 다시 사용할 수 있다.
-객체를 재사용할 수 있다는 점에서 &lt;strong&gt;상속&lt;/strong&gt;은 객체 지향 프로그램에서 중요한 규칙이다.&lt;/p&gt;
-
-&lt;p&gt;extends means that you are creating a subclass of the basic class you are extending.&lt;/p&gt;
-
-&lt;!-- ```markdown
-![alt]({{ site.url }}{{ site.baseurl }}/assets/images/filename.jpg)
-```
-
-![Unsplash image 9](http://localhost:4000/assets/images/unsplash-image-9.jpg) --&gt;</content><author><name>Mirae</name></author><category term="TIL" /><category term="software" /><category term="learning" /><category term="공부 기록" /><summary type="html"></summary></entry><entry><title type="html">2021을 돌아보며</title><link href="http://localhost:4000/records/2021%EC%9D%84-%EB%8F%8C%EC%95%84%EB%B3%B4%EB%A9%B0/" rel="alternate" type="text/html" title="2021을 돌아보며" /><published>2022-01-04T00:00:00+09:00</published><updated>2022-01-04T00:00:00+09:00</updated><id>http://localhost:4000/records/2021%EC%9D%84%20%EB%8F%8C%EC%95%84%EB%B3%B4%EB%A9%B0</id><content type="html" xml:base="http://localhost:4000/records/2021%EC%9D%84-%EB%8F%8C%EC%95%84%EB%B3%B4%EB%A9%B0/"></content><author><name>Mirae</name></author><category term="records" /><category term="records" /><category term="기록" /><summary type="html"></summary></entry><entry><title type="html">영단어 정리</title><link href="http://localhost:4000/vocab/verb/" rel="alternate" type="text/html" title="영단어 정리" /><published>2021-12-15T00:00:00+09:00</published><updated>2021-12-15T21:48:05+09:00</updated><id>http://localhost:4000/vocab/vocab</id><content type="html" xml:base="http://localhost:4000/vocab/verb/">&lt;!-- &lt;div class=&quot;notice--info&quot;&gt;
-  &lt;h1 class=&quot;no_toc&quot;&gt;what word?&lt;/h1&gt;
-
-&lt;p&gt;description&lt;br&gt;  
-한국말 설명.&lt;/p&gt;
-
-&lt;ul&gt;
-  &lt;li&gt;예문&lt;/li&gt;
-  &lt;li&gt;예문&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;/div&gt;      --&gt;
-
-&lt;h1 id=&quot;️--a&quot;&gt;🗃️  A&lt;/h1&gt;
-
-&lt;div class=&quot;notice--info&quot;&gt;
-  &lt;h1 class=&quot;no_toc&quot;&gt;append&lt;/h1&gt;
-
-&lt;p&gt;to add something to a piece of writing.&lt;br /&gt;  
-글에 어떤 내용을 덧붙이다.&lt;/p&gt;
-
-&lt;ul&gt;
-  &lt;li&gt;덧붙이다&lt;/li&gt;
-  &lt;li&gt;첨부하다&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;/div&gt;
-
-&lt;div class=&quot;notice--info&quot;&gt;
-  &lt;h1 class=&quot;no_toc&quot;&gt;allow&lt;/h1&gt;
-
-&lt;p&gt;to make something happen, especially something helpful or useful.&lt;br /&gt;  
-어떤일이 일어나는 것을 가능하게 만들다.&lt;/p&gt;
-
-&lt;/div&gt;
-
-&lt;div class=&quot;notice--info&quot;&gt;
-  &lt;h1 class=&quot;no_toc&quot;&gt;automate&lt;/h1&gt;
-
-&lt;p&gt;to start using computers or machines to do a job, rather than people&lt;br /&gt;  
-어떤 일을 하기 위해 사람 대신 컴퓨터나 기계를 사용하다.&lt;/p&gt;
-
-&lt;ul&gt;
-  &lt;li&gt;Cash machines automates two basic function of a back - deposits and withdrawals.&lt;/li&gt;
-  &lt;li&gt;Build tools are programs that automate the creation of executable applications from source cord.&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;/div&gt;
-
-&lt;div class=&quot;notice--info&quot;&gt;
-  &lt;h1 class=&quot;no_toc&quot;&gt;access&lt;/h1&gt;
-
-&lt;p&gt;to find information, especially on a computer&lt;br /&gt;  
-(주로 컴퓨터에서)정보를 찾는 것&lt;/p&gt;
-
-&lt;ul&gt;
-  &lt;li&gt;Users can access their voice mail remotely.&lt;/li&gt;
-  &lt;li&gt;whatever thing is accessed by the URL you supply&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;/div&gt;
-
-&lt;h1 id=&quot;️--b&quot;&gt;🗃️  B&lt;/h1&gt;
-
-&lt;div class=&quot;notice--info&quot;&gt;
-  &lt;h1 class=&quot;no_toc&quot;&gt;bypass&lt;/h1&gt;
-
-&lt;p&gt;to avoid obeying a rule, system, or someone in an official position.&lt;br /&gt;  
-규칙, 시스템, 공식적인 자리에 있는 사람에게 복종하는 것을 피하는 것&lt;/p&gt;
-
-&lt;ul&gt;
-  &lt;li&gt;Francis bypassed his manager and wrote straight to the director.&lt;/li&gt;
-  &lt;li&gt;You can bypass basic setup steps that are already familiar to you.&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;/div&gt;
-
-&lt;h1 id=&quot;️--c&quot;&gt;🗃️  C&lt;/h1&gt;
-
-&lt;div class=&quot;notice--info&quot;&gt;
-  &lt;h1 class=&quot;no_toc&quot;&gt;configure&lt;/h1&gt;
-
-&lt;p&gt;to arrange something, especially computer equipment, so that it works with other equipment.&lt;br /&gt;  
-어떤 것을 미리 준비해두다. 특히 다른 도구들과 함께 작동될 수 있도록 컴퓨터 도구들 준비해두다.&lt;/p&gt;
-
-&lt;ul&gt;
-  &lt;li&gt;This project is configured to fit the exaples in this tutorial.&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;/div&gt;
-
-&lt;h1 id=&quot;️--d&quot;&gt;🗃️  D&lt;/h1&gt;
-
-&lt;div class=&quot;notice--info&quot;&gt;
-  &lt;h1 class=&quot;no_toc&quot;&gt;define&lt;/h1&gt;
-
-&lt;p&gt;to describe something correctly and thoroughly, and to say what standards limits qualities etc it has that make it different from other things &lt;br /&gt;  
-어떤 것을 명확히 묘사하는 것, 그리고 그것이 다른 것들과는 다른 어떤 기준, 한계 등을 가지고 있는지 말하는 것.&lt;/p&gt;
-
-&lt;ul&gt;
-  &lt;li&gt;the ability to define clients&apos; needs&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;/div&gt;
-
-&lt;h1 id=&quot;️--e&quot;&gt;🗃️  E&lt;/h1&gt;
-
-&lt;div class=&quot;notice--info&quot;&gt;
-  &lt;h1 class=&quot;no_toc&quot;&gt;executable&lt;/h1&gt;
-
-&lt;p&gt;a computer file that can be run as a program&lt;br /&gt;  
-프로그램으로 실행 될 수 있는 파일.&lt;/p&gt;
-
-(명사 / 형용사 둘 다 executable)
-
-&lt;/div&gt;
-
-&lt;h1 id=&quot;️--g&quot;&gt;🗃️  G&lt;/h1&gt;
-
-&lt;div class=&quot;notice--info&quot;&gt;
-  &lt;h1 class=&quot;no_toc&quot;&gt;goes a long way towards(to)&lt;/h1&gt;
-
-&lt;p&gt;If you say that something goes a long way towards doing a particular thing, you mean that it is an important factor in achieving that thing.&lt;br /&gt;  
-something 은 a particular thing 을 달성하기 위한 중요한 요소이다.&lt;/p&gt;
-
-&lt;ul&gt;
-  &lt;li&gt;Implementing the trends will go a long way to building a functional site. &lt;br /&gt; :: 그 트렌드를 구현하는 것은 잘 작동하는 사이트를 만들기 위한 중요한 요소가 될 것이다. &lt;/li&gt;
-  &lt;li&gt;Although not a cure, it goes a long way towards making the patient&apos;s life tolerable. &lt;br /&gt; :: 치료법은 아니지만, 그것은 환자의 삶을 견딜 수 있게 만드는데 큰 도움이 된다. &lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;/div&gt;
-
-&lt;p&gt;&lt;a href=&quot;https://youglish.com/getbyid/77089450/goes%20a%20long%20way/english&quot;&gt;🗣️ goes a long way towards 발음 들어보기&lt;/a&gt;&lt;/p&gt;
-
-&lt;h1 id=&quot;️--i&quot;&gt;🗃️  I&lt;/h1&gt;
-
-&lt;div class=&quot;notice--info&quot;&gt;
-  &lt;h1 class=&quot;no_toc&quot;&gt;invoke&lt;/h1&gt;
-
-&lt;p&gt;to operate a computer program&lt;br /&gt;  
-컴퓨터 프로그램을 작동시키다.&lt;/p&gt;
-
-&lt;ul&gt;
-  &lt;li&gt;In small projects, developers often manually invoke the build process&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;/div&gt;
-
-&lt;!-- implement --&gt;
-
-&lt;div class=&quot;notice--info&quot;&gt;
-  &lt;h1 class=&quot;no_toc&quot;&gt;instruction&lt;/h1&gt;
-
-&lt;p&gt;a command given to a computer to carry out a particular operation.&lt;br /&gt;  
-특정한 일을 수행하기 위해 컴퓨터에게 주어진 명령어.&lt;/p&gt;
-
-&lt;ul&gt;
-  &lt;li&gt;to put a set of instructions into a computer in a form that it can understand and use.&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;/div&gt;
-
-&lt;h1 id=&quot;️--m&quot;&gt;🗃️  M&lt;/h1&gt;
-
-&lt;div class=&quot;notice--info&quot;&gt;
-  &lt;h1 class=&quot;no_toc&quot;&gt;manually&lt;/h1&gt;
-
-&lt;p&gt;operated or done by hand or without the help of electricity, computers etc&lt;br /&gt;  
-기계나 전기의 도움 없이 사람으로부터 수행됨.&lt;/p&gt;
-
-&lt;ul&gt;
-  &lt;li&gt;It would take too long to do a manual search of all the data.&lt;/li&gt;
-  &lt;li&gt;In small projects, developers often manually invoke the build process&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;/div&gt;
-
-&lt;div class=&quot;notice--info&quot;&gt;
-  &lt;h1 class=&quot;no_toc&quot;&gt;metadata&lt;/h1&gt;
-
-&lt;p&gt;information that describes what is contained in large computer databases, for example who wrote the information, what it is for, and in what form it is stored&lt;br /&gt;  
-큰 컴퓨터 데이타베이스에 무엇이 저장되어 있는지 알려주는 정보이다. 예를 들면 누가 이 정보를 작성했고, 무엇을 위한 것이고, 어떤 형식으로 저장되었는지에 관한 정보를 알려준다.&lt;/p&gt;
-
-&lt;ul&gt;
-  &lt;li&gt;Spring Boot Annotations is a form of metadata that provides data about a program.&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;/div&gt;
-
-&lt;div class=&quot;notice--info&quot;&gt;
-  &lt;h1 class=&quot;no_toc&quot;&gt;map onto&lt;/h1&gt;
-
-&lt;p&gt;to match something or have direct relationship with something&lt;br /&gt;  
-어떤 것을 연결하거나 직접적인 관계를 가지는 것.&lt;/p&gt;
-
-&lt;ul&gt;
-  &lt;li&gt;Spring Boot Annotations is a form of metadata that provides data about a program.&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;/div&gt;
-
-&lt;h1 id=&quot;️--p&quot;&gt;🗃️  P&lt;/h1&gt;
-&lt;div class=&quot;notice--info&quot;&gt;
-  &lt;h1 class=&quot;no_toc&quot;&gt;protocol&lt;/h1&gt;
-
-&lt;p&gt;an established method for conneting computers so that they can exchange information&lt;br /&gt;  
-컴퓨터들이 서로 정보를 교환할 수 있는 방법&lt;/p&gt;
-
-&lt;/div&gt;
-
-&lt;h1 id=&quot;️--r&quot;&gt;🗃️  R&lt;/h1&gt;
-
-&lt;div class=&quot;notice--info&quot;&gt;
-  &lt;h1 class=&quot;no_toc&quot;&gt;retrieve&lt;/h1&gt;
-
-&lt;p&gt;to get back information that has been stored in the memory of a computer&lt;br /&gt;  
-큰 컴퓨터 데이타베이스에 무엇이 저장되어 있는지 알려주는 정보이다. 예를 들면 누가 이 정보를 작성했고, 무엇을 위한 것이고, 어떤 형식으로 저장되었는지에 관한 정보를 알려준다.&lt;/p&gt;
-
-&lt;ul&gt;
-  &lt;li&gt;Spring Boot Annotations is a form of metadata that provides data about a program.&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;/div&gt;
-
-&lt;h1 id=&quot;️--t&quot;&gt;🗃️  T&lt;/h1&gt;
-
-&lt;div class=&quot;notice--info&quot;&gt;
-  &lt;h1 class=&quot;no_toc&quot;&gt;transfer&lt;/h1&gt;
-
-&lt;p&gt;to copy recorded information from one system to another&lt;br /&gt;  시스템에 기록된 정보를 다른 시스템에 복사하는 것.&lt;/p&gt;
-
-&lt;ul&gt;
-  &lt;li&gt;Spring Boot Annotations is a form of metadata that provides data about a program.&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;/div&gt;
-
-&lt;h1 id=&quot;️-u&quot;&gt;🗃️ U&lt;/h1&gt;
-&lt;div class=&quot;notice--info&quot;&gt;
-  &lt;h1 class=&quot;no_toc&quot;&gt;underlying cause/principle/problem etc&lt;/h1&gt;
-
-&lt;p&gt;the cause, idea etc that is the most important, although it is easily not noticed&lt;br /&gt;  
-알아차리기 힘들지만 가장 중요한 원인이나 아이디어.&lt;/p&gt;
-
-&lt;ul&gt;
-  &lt;li&gt;the underlying causes of her depression&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;/div&gt;
-
-&lt;!-- component --&gt;</content><author><name>Mirae</name></author><category term="vocabularies" /><category term="영어단어" /><category term="studying" /><category term="learning" /><category term="vocab" /><summary type="html">개발 공부하며 만난 단어들을 기록합니다.</summary></entry></feed>
+&lt;p&gt;흠… 감이 오는 것 같기도..? 몇개 더 읽어봐야겠다.&lt;/p&gt;</content><author><name>Mirae</name></author><category term="TIL" /><category term="software" /><category term="learning" /><category term="공부 기록" /><summary type="html"></summary></entry></feed>
