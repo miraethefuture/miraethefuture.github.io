@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="4.2.1">Jekyll</generator><link href="http://localhost:4000/feed.xml" rel="self" type="application/atom+xml" /><link href="http://localhost:4000/" rel="alternate" type="text/html" /><updated>2022-01-31T15:33:03+09:00</updated><id>http://localhost:4000/feed.xml</id><title type="html">Mirae the Future</title><subtitle>An amazing website.</subtitle><author><name>Mirae</name></author><entry><title type="html">Java 배열 이용하여 정수를 내림차순으로 정렬하기</title><link href="http://localhost:4000/til/decsendingOrder/" rel="alternate" type="text/html" title="Java 배열 이용하여 정수를 내림차순으로 정렬하기" /><published>2022-01-30T00:00:00+09:00</published><updated>2022-01-30T00:00:00+09:00</updated><id>http://localhost:4000/til/decsendingOrder</id><content type="html" xml:base="http://localhost:4000/til/decsendingOrder/">&lt;hr /&gt;
+<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="4.2.1">Jekyll</generator><link href="http://localhost:4000/feed.xml" rel="self" type="application/atom+xml" /><link href="http://localhost:4000/" rel="alternate" type="text/html" /><updated>2022-01-31T17:13:49+09:00</updated><id>http://localhost:4000/feed.xml</id><title type="html">Mirae the Future</title><subtitle>An amazing website.</subtitle><author><name>Mirae</name></author><entry><title type="html">Java 배열 이용하여 정수를 내림차순으로 정렬하기</title><link href="http://localhost:4000/til/decsendingOrder/" rel="alternate" type="text/html" title="Java 배열 이용하여 정수를 내림차순으로 정렬하기" /><published>2022-01-30T00:00:00+09:00</published><updated>2022-01-30T00:00:00+09:00</updated><id>http://localhost:4000/til/decsendingOrder</id><content type="html" xml:base="http://localhost:4000/til/decsendingOrder/">&lt;hr /&gt;
 
 &lt;h3&gt;💭&lt;/h3&gt;
 &lt;p&gt;입력받아 배열에 저장한 정수를 내림차순으로 정렬하기&lt;br /&gt;
@@ -48,10 +48,16 @@
 
 &lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
 
-&lt;p&gt;&lt;img src=&quot;/assets/images/descOrder.jpeg&quot; alt=&quot;desc&quot; /&gt;&lt;/p&gt;</content><author><name>Mirae</name></author><category term="TIL" /><category term="learning" /><category term="Java" /><category term="Array" /><category term="Descending order" /><summary type="html"></summary></entry><entry><title type="html">JSP</title><link href="http://localhost:4000/til/aboutJSP/" rel="alternate" type="text/html" title="JSP" /><published>2022-01-28T00:00:00+09:00</published><updated>2022-01-28T00:00:00+09:00</updated><id>http://localhost:4000/til/aboutJSP</id><content type="html" xml:base="http://localhost:4000/til/aboutJSP/">&lt;hr /&gt;
+&lt;p&gt;&lt;img src=&quot;/assets/images/descOrder.jpeg&quot; alt=&quot;desc&quot; /&gt;&lt;/p&gt;</content><author><name>Mirae</name></author><category term="TIL" /><category term="learning" /><category term="Java" /><category term="Array" /><category term="Descending order" /><summary type="html"></summary></entry><entry><title type="html">JSP에 대해 알아보고 Tomcat Server와 Eclipse 사용하여 JSP 실행</title><link href="http://localhost:4000/til/aboutJSP/" rel="alternate" type="text/html" title="JSP에 대해 알아보고 Tomcat Server와 Eclipse 사용하여 JSP 실행" /><published>2022-01-28T00:00:00+09:00</published><updated>2022-01-28T00:00:00+09:00</updated><id>http://localhost:4000/til/aboutJSP</id><content type="html" xml:base="http://localhost:4000/til/aboutJSP/">&lt;hr /&gt;
 
-&lt;h3&gt;💭&lt;/h3&gt;
-&lt;p&gt;자바 웹 개발자 과정 수업을 듣기 시작한지 일주일이 지났다. 자바의 기본적인 문법은 여러가지 온라인 강의를 통해서 예습을 하고 시작했던터라 어렵지 않게 수업을 듣고 있다. 수업 커리큘럼에 JSP가 포함되어 있는데, 아직 JSP가 어떤것인지 잘 몰라서 한번 알아보려고 한다. 요즘 어떤 정보에 대한 글을 읽거나, 기술에 대해 알아보기 전에 ‘지금도 여전히 사용되는가?’ 라는 질문을 먼저 검색해보게 된다. 나의 수준에서는 뭐든 배워두면 도움이 되겠지만, 배울 것은 너무나 많고 시간은 충분하지 않아서 자꾸만 정보의 중요성에 대해 생각해보게 된다. 언제나 새로운 것들이 마구 쏟아지는 지금 같은 시대에는 주로 사용되는 기술들도 빠르게 변한다. 그렇기 때문에 자꾸 위와 같은 질문을 검색해보는 것 같다. 새로운 기술이 언제나 좋은 것은 아니지만 대부분의 경우 새로운 기술이 더 빠르거나, 더 간단하게 복잡한 일을 처리하거나, 전 기술의 단점을 보완해서 나오는 경우가 많이 때문에 새로운 기술들에 대해 더 알고 싶은 것 같다. JSP에 대해서도 구글링해보니 새로운 프로젝트에는 더이상 사용되지 않는 것 같지만, JSP에 대한 기본적인 것들을 알아두면 도움이 되는 것 같다. 작은 프로젝트를 진행할때는 여전히 사용되기도 하고 예전에 만들어진 어플리케이션들을 살펴봐야 할 수도 있고, 서블릿과 JSP가 자바 웹 개발의 기본적인 것들이라 스프링, hibernate을 배우기 전에 배워야 한다는 의견도 있다. 그리고 나는 지금 듣는 과정중 JSP에 대해 배우게 될 것이고, 테스트도 봐야해서 기본적인 것들을 알아보려고 한다.&lt;/p&gt;
+&lt;h3 id=&quot;-&quot;&gt;💭 ..&lt;/h3&gt;
+
+&lt;div class=&quot;notice&quot;&gt;
+  &lt;h4&gt;자바 웹 개발자 과정 수업을 듣기 시작한지 일주일이 지났다.&lt;/h4&gt;
+  &lt;p&gt;자바의 기본적인 문법은 여러가지 온라인 강의를 통해서 예습을 하고 시작했던터라 어렵지 않게 수업을 듣고 있다. 수업 커리큘럼에 JSP가 포함되어 있는데, 아직 JSP가 어떤것인지 잘 몰라서 한번 알아보려고 한다. &lt;br /&gt;
+  요즘 어떤 정보에 대한 글을 읽거나, 기술에 대해 알아보기 전에 &apos;지금도 여전히 사용되는가?&apos; 라는 질문을 먼저 검색해보게 된다. 나의 수준에서는 뭐든 배워두면 도움이 되겠지만, 배울 것은 너무나 많고 시간은 충분하지 않아서 자꾸만 정보의 중요성에 대해 생각해보게 된다. 언제나 새로운 것들이 마구 쏟아지는 지금 같은 시대에는 주로 사용되는 기술들도 빠르게 변한다. 그렇기 때문에 자꾸 위와 같은 질문을 검색해보는 것 같다. 새로운 기술이 언제나 좋은 것은 아니지만 대부분의 경우 새로운 기술이 더 빠르거나, 더 간단하게 복잡한 일을 처리하거나, 전 기술의 단점을 보완해서 나오는 경우가 많이 때문에 새로운 기술들에 대해 더 알고 싶은 것 같다. &lt;br /&gt;
+  JSP에 대해서도 구글링해보니 새로운 프로젝트에는 더이상 사용되지 않는 것 같지만, JSP에 대한 기본적인 것들을 알아두면 도움이 되는 것 같다. 작은 프로젝트를 진행할때는 여전히 사용되기도 하고 예전에 만들어진 어플리케이션들을 살펴봐야 할 수도 있고, 서블릿과 JSP가 자바 웹 개발의 기본적인 것들이라 스프링, hibernate을 배우기 전에 배워야 한다는 의견도 있다. 그리고 나는 지금 듣는 과정중 JSP에 대해 배우게 될 것이고, 테스트도 봐야해서 기본적인 것들을 알아보려고 한다.&lt;/p&gt;
+&lt;/div&gt;
 
 &lt;h3 id=&quot;-jsp-java-server-pages&quot;&gt;🧑‍💻 JSP (Java Server Pages)&lt;/h3&gt;
 &lt;p&gt;&lt;a href=&quot;https://www.javatpoint.com/jsp-tutorial&quot;&gt;이 페이지의 내용을 참고&lt;/a&gt;&lt;/p&gt;
@@ -78,8 +84,7 @@
 
 &lt;p&gt;JSP 페이지들은 아래 변화 단계를 따른다.&lt;/p&gt;
 &lt;ul&gt;
-  &lt;li&gt;Translation of JSP Page
-JSP는 JSP translator의 도움을 받아 서블릿(.java file)으로 변환(&lt;s&gt;변형?&lt;/s&gt;)된다.&lt;/li&gt;
+  &lt;li&gt;Translation of JSP Page&lt;/li&gt;
   &lt;li&gt;Compilation of JSP Page&lt;/li&gt;
   &lt;li&gt;Classloading (the classloader loads class file)&lt;/li&gt;
   &lt;li&gt;Instantiation (Object of the Generated Servlet is created).&lt;/li&gt;
@@ -93,7 +98,67 @@ JSP는 JSP translator의 도움을 받아 서블릿(.java file)으로 변환(&lt
   &lt;p&gt;jspInit(), _jspService() and jspDestroy() 는 JSP의 라이프사이클 메서드.&lt;/p&gt;
 &lt;/div&gt;
 
-&lt;p&gt;JSP translator는 JSP 페이지를 서블릿으로 변환하는 웹 서버의 한 부분이다. 서블릿이 된 JSP 페이지는 compiler 에 의해 컴파일 되고 클래스 파일로 변환된다. 서블릿에서 일어나는 모든 프로세스들은 후에 JSP에서 수행된다.&lt;/p&gt;</content><author><name>Mirae</name></author><category term="TIL" /><category term="learning" /><category term="JSP" /><category term="Java" /><summary type="html"></summary></entry><entry><title type="html">Persist something? ORM과 JPA</title><link href="http://localhost:4000/til/%EA%B3%B5%EB%B6%80%20%EA%B8%B0%EB%A1%9D/aboutjpa/" rel="alternate" type="text/html" title="Persist something? ORM과 JPA" /><published>2022-01-24T00:00:00+09:00</published><updated>2022-01-24T00:00:00+09:00</updated><id>http://localhost:4000/til/%EA%B3%B5%EB%B6%80%20%EA%B8%B0%EB%A1%9D/aboutjpa</id><content type="html" xml:base="http://localhost:4000/til/%EA%B3%B5%EB%B6%80%20%EA%B8%B0%EB%A1%9D/aboutjpa/">&lt;hr /&gt;
+&lt;p&gt;JSP는 JSP translator의 도움을 받아 서블릿(.java file)으로 변환(&lt;s&gt;변형?&lt;/s&gt;)된다.
+ JSP translator는 JSP 페이지를 서블릿으로 변환하는 웹 서버의 한 부분이다. 서블릿이 된 JSP 페이지는 compiler 에 의해 컴파일 되고 클래스 파일로 변환된다. 서블릿에서 일어나는 모든 프로세스들은 후에 JSP에서 수행된다.&lt;/p&gt;
+
+&lt;h3 id=&quot;-tomcat-server--eclipse로-jsp-작성-후-실행&quot;&gt;🐈 Tomcat Server &amp;amp; Eclipse로 JSP 작성 후 실행&lt;/h3&gt;
+&lt;p&gt;&lt;a href=&quot;https://www.geeksforgeeks.org/creating-jsp-in-eclipse-ide-with-tomcat-server/&quot;&gt;이 페이지의 내용을 참고&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;톰캣 서버는 가장 좋은 웹 서버 중 하나이고, 아파치에서 개발 오픈소스 자바 서블릿 컨테이너이다. 톰캣은 고유의 특징과 빠른 속도, 그리고 J2EE specifications를 구현하는 점 때문에 많은 개발자들이 이용하고 있다.&lt;/p&gt;
+
+&lt;p&gt;위 페이지를 참고하며 이클립스와 톰캣을 이용해 JSP 페이지를 만들어본다.&lt;/p&gt;
+
+&lt;ol&gt;
+  &lt;li&gt;
+    &lt;p&gt;프로젝트 익스플로러에서 마우스 우클릭 New &amp;gt; Dynamic Web project ✅
+  &lt;img src=&quot;/assets/images/CJET.png&quot; alt=&quot;start&quot; /&gt;&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;프로젝트 이름을 입력 &amp;gt; Next ✅
+  &lt;img src=&quot;/assets/images/CJET2.png&quot; alt=&quot;new&quot; /&gt;&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;프로젝트 이름을 입력 &amp;gt; Next ✅
+  &lt;img src=&quot;/assets/images/CJET2.png&quot; alt=&quot;new&quot; /&gt;&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;Next &amp;gt; finish ✅
+  &lt;img src=&quot;/assets/images/CJET3.png&quot; alt=&quot;next&quot; /&gt;
+  &lt;img src=&quot;/assets/images/CJET4.png&quot; alt=&quot;finish&quot; /&gt;&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;프로젝트 익스플로러에 프로젝트가 만들어진 것을 볼 수 있습니다. ✅
+  &lt;img src=&quot;/assets/images/CJET5.png&quot; alt=&quot;projectMade&quot; /&gt;&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;src 위에서 우클릭 &amp;gt; New &amp;gt; JSP File ✅
+  &lt;img src=&quot;/assets/images/CJET6.png&quot; alt=&quot;projectMade&quot; /&gt;&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;Next &amp;gt;✅
+  &lt;img src=&quot;/assets/images/CJET7.png&quot; alt=&quot;projectMade&quot; /&gt;&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;Finish 버튼 클릭 ✅
+  &lt;img src=&quot;/assets/images/CJET8.png&quot; alt=&quot;projectMade&quot; /&gt;&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;JSP 파일이 만들어졌습니다. &amp;lt;body&amp;gt; 부분에 Hello Earth! 를 입력 ✅
+  &lt;img src=&quot;/assets/images/CJET9.png&quot; alt=&quot;HelloEarth&quot; /&gt;&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;프로젝트에서 우클릭 &amp;gt; Run As &amp;gt; 1 Run on Server ✅
+  &lt;img src=&quot;/assets/images/CJET10.png&quot; alt=&quot;runServer&quot; /&gt;&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;Apache &amp;gt; Tomcat 서버 클릭 &amp;gt; Next &amp;gt; Add and Remove 창에서 Finish ✅
+  &lt;img src=&quot;/assets/images/CJET11.png&quot; alt=&quot;projectMade&quot; /&gt;&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;자동으로 사파리 창이 뜹니다. 입력했던 Hello Earth!가 잘 뜨는걸 보니 JSP페이지가 잘 돌아가고 있습니다.
+  &lt;img src=&quot;/assets/images/CJET12.png&quot; alt=&quot;projectMade&quot; /&gt;&lt;/p&gt;
+  &lt;/li&gt;
+&lt;/ol&gt;</content><author><name>Mirae</name></author><category term="TIL" /><category term="learning" /><category term="JSP" /><category term="Java" /><category term="Tomcat Server" /><category term="Eclipse IDE" /><summary type="html"></summary></entry><entry><title type="html">Persist something? ORM과 JPA</title><link href="http://localhost:4000/til/%EA%B3%B5%EB%B6%80%20%EA%B8%B0%EB%A1%9D/aboutjpa/" rel="alternate" type="text/html" title="Persist something? ORM과 JPA" /><published>2022-01-24T00:00:00+09:00</published><updated>2022-01-24T00:00:00+09:00</updated><id>http://localhost:4000/til/%EA%B3%B5%EB%B6%80%20%EA%B8%B0%EB%A1%9D/aboutjpa</id><content type="html" xml:base="http://localhost:4000/til/%EA%B3%B5%EB%B6%80%20%EA%B8%B0%EB%A1%9D/aboutjpa/">&lt;hr /&gt;
 
 &lt;h3&gt;💭&lt;/h3&gt;
 

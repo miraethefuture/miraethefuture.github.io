@@ -65,9 +65,9 @@ var store = [{
         "url": "/til/%EA%B3%B5%EB%B6%80%20%EA%B8%B0%EB%A1%9D/aboutjpa/",
         "teaser": "/assets/images/teaser.jpg"
       },{
-        "title": " JSP ",
-        "excerpt":"💭 자바 웹 개발자 과정 수업을 듣기 시작한지 일주일이 지났다. 자바의 기본적인 문법은 여러가지 온라인 강의를 통해서 예습을 하고 시작했던터라 어렵지 않게 수업을 듣고 있다. 수업 커리큘럼에 JSP가 포함되어 있는데, 아직 JSP가 어떤것인지 잘 몰라서 한번 알아보려고 한다. 요즘 어떤 정보에 대한 글을 읽거나, 기술에 대해 알아보기 전에 ‘지금도 여전히...","categories": ["TIL"],
-        "tags": ["learning","JSP","Java"],
+        "title": "JSP에 대해 알아보고 Tomcat Server와 Eclipse 사용하여 JSP 실행",
+        "excerpt":"💭 .. 자바 웹 개발자 과정 수업을 듣기 시작한지 일주일이 지났다. 자바의 기본적인 문법은 여러가지 온라인 강의를 통해서 예습을 하고 시작했던터라 어렵지 않게 수업을 듣고 있다. 수업 커리큘럼에 JSP가 포함되어 있는데, 아직 JSP가 어떤것인지 잘 몰라서 한번 알아보려고 한다. 요즘 어떤 정보에 대한 글을 읽거나, 기술에 대해 알아보기 전에 '지금도...","categories": ["TIL"],
+        "tags": ["learning","JSP","Java","Tomcat Server","Eclipse IDE"],
         "url": "/til/aboutJSP/",
         "teaser": "/assets/images/teaser.jpg"
       },{
