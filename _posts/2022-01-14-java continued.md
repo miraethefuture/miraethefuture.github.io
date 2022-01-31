@@ -2,13 +2,12 @@
 title: "Java this Keyword / MySQL 데이터베이스 삭제하기 / ORM"
 categories:
   - TIL
-  - 공부 기록
 tags:
-  - software
   - learning
   - MySQL
   - Java
   - this keyword
+  - ORM
 toc: true
 toc_label: "👷"
 toc_icon: "cog"

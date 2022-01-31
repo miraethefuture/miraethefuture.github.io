@@ -7,7 +7,7 @@ tags:
   - Java
   - Array
   - Descending order
-toc: true
+toc: false
 toc_label: "👷"
 toc_icon: "cog"
 toc_sticky: true
