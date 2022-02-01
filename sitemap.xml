@@ -1,102 +1,32 @@
+---
+layout: null
+---
+
 <?xml version="1.0" encoding="UTF-8"?>
-<urlset
-      xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
-      xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-      xsi:schemaLocation="http://www.sitemaps.org/schemas/sitemap/0.9
-            http://www.sitemaps.org/schemas/sitemap/0.9/sitemap.xsd">
-<!-- created with Free Online Sitemap Generator www.xml-sitemaps.com -->
+<urlset xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xsi:schemaLocation="http://www.sitemaps.org/schemas/sitemap/0.9 http://www.sitemaps.org/schemas/sitemap/0.9/sitemap.xsd"
+        xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+    {% for post in site.posts %}
+    <url>
+        <loc>{{ site.url }}{{ post.url }}.html</loc>
+        {% if post.lastmod == null %}
+        <lastmod>{{ post.date | date_to_xmlschema }}</lastmod>
+        {% else %}
+        <lastmod>{{ post.lastmod | date_to_xmlschema }}</lastmod>
+        {% endif %}
 
+        {% if post.sitemap.changefreq == null %}
+        <changefreq>weekly</changefreq>
+        {% else %}
+        <changefreq>{{ post.sitemap.changefreq }}</changefreq>
+        {% endif %}
 
-<url>
-  <loc>https://miraethefuture.github.io/</loc>
-  <lastmod>2022-02-01T08:24:37+00:00</lastmod>
-  <priority>1.00</priority>
-</url>
-<url>
-  <loc>https://miraethefuture.github.io/categories/</loc>
-  <lastmod>2022-02-01T08:24:37+00:00</lastmod>
-  <priority>0.80</priority>
-</url>
-<url>
-  <loc>https://miraethefuture.github.io/tags/</loc>
-  <lastmod>2022-02-01T08:24:37+00:00</lastmod>
-  <priority>0.80</priority>
-</url>
-<url>
-  <loc>https://miraethefuture.github.io/til/decsendingOrder/</loc>
-  <lastmod>2022-02-01T08:24:37+00:00</lastmod>
-  <priority>0.80</priority>
-</url>
-<url>
-  <loc>https://miraethefuture.github.io/til/aboutJSP/</loc>
-  <lastmod>2022-02-01T08:24:37+00:00</lastmod>
-  <priority>0.80</priority>
-</url>
-<url>
-  <loc>https://miraethefuture.github.io/til/%EA%B3%B5%EB%B6%80%20%EA%B8%B0%EB%A1%9D/aboutjpa/</loc>
-  <lastmod>2022-02-01T08:24:37+00:00</lastmod>
-  <priority>0.80</priority>
-</url>
-<url>
-  <loc>https://miraethefuture.github.io/til/copy/</loc>
-  <lastmod>2022-02-01T08:24:37+00:00</lastmod>
-  <priority>0.80</priority>
-</url>
-<url>
-  <loc>https://miraethefuture.github.io/til/email/</loc>
-  <lastmod>2022-02-01T08:24:37+00:00</lastmod>
-  <priority>0.80</priority>
-</url>
-<url>
-  <loc>https://miraethefuture.github.io/page2/</loc>
-  <lastmod>2022-02-01T08:24:37+00:00</lastmod>
-  <priority>0.80</priority>
-</url>
-<url>
-  <loc>https://miraethefuture.github.io/page3/</loc>
-  <lastmod>2022-02-01T08:24:37+00:00</lastmod>
-  <priority>0.80</priority>
-</url>
-<url>
-  <loc>https://miraethefuture.github.io/til/theinternet/</loc>
-  <lastmod>2022-02-01T08:24:37+00:00</lastmod>
-  <priority>0.64</priority>
-</url>
-<url>
-  <loc>https://miraethefuture.github.io/til/%EA%B3%B5%EB%B6%80%20%EA%B8%B0%EB%A1%9D/go/</loc>
-  <lastmod>2022-02-01T08:24:37+00:00</lastmod>
-  <priority>0.64</priority>
-</url>
-<url>
-  <loc>https://miraethefuture.github.io/til/java-continued/</loc>
-  <lastmod>2022-02-01T08:24:37+00:00</lastmod>
-  <priority>0.64</priority>
-</url>
-<url>
-  <loc>https://miraethefuture.github.io/til/javaGui-copy/</loc>
-  <lastmod>2022-02-01T08:24:37+00:00</lastmod>
-  <priority>0.64</priority>
-</url>
-<url>
-  <loc>https://miraethefuture.github.io/til/annoation/</loc>
-  <lastmod>2022-02-01T08:24:37+00:00</lastmod>
-  <priority>0.64</priority>
-</url>
-<url>
-  <loc>https://miraethefuture.github.io/til/gradle/</loc>
-  <lastmod>2022-02-01T08:24:37+00:00</lastmod>
-  <priority>0.64</priority>
-</url>
-<url>
-  <loc>https://miraethefuture.github.io/vocab/verb/</loc>
-  <lastmod>2022-02-01T08:24:37+00:00</lastmod>
-  <priority>0.64</priority>
-</url>
-<url>
-  <loc>https://miraethefuture.github.io/posts/gugudan/</loc>
-  <lastmod>2022-02-01T08:24:37+00:00</lastmod>
-  <priority>0.64</priority>
-</url>
+        {% if post.sitemap.priority == null %}
+        <priority>0.5</priority>
+        {% else %}
+        <priority>{{ post.sitemap.priority }}</priority>
+        {% endif %}
 
-
+    </url>
+    {% endfor %}
 </urlset>
