@@ -133,6 +133,11 @@
               <a href="/tags/">Tags</a>
             </li></ul>
         
+        <button class="search__toggle" type="button">
+          <span class="visually-hidden">Toggle search</span>
+          <i class="fas fa-search"></i>
+        </button>
+        
         <button class="greedy-nav__toggle hidden" type="button">
           <span class="visually-hidden">Toggle menu</span>
           <div class="navicon"></div>
@@ -445,7 +450,7 @@ persisting an entity는 오브젝트(엔티티로 변환된)를 데이터베이�
 ">Previous</a>
     
     
-      <a href="/til/aboutJSP/" class="pagination--pager" title="JSP에 대해 알아보고 Tomcat Server와 Eclipse 사용하여 JSP 실행
+      <a href="/til/aboutJSP/" class="pagination--pager" title="JSP란…? / Tomcat Server &amp; Eclipse로 JSP 작성 후 실행해보기
 ">Next</a>
     
   </nav>
@@ -460,6 +465,48 @@ persisting an entity는 오브젝트(엔티티로 변환된)를 데이터베이�
     <div class="page__related">
       <h2 class="page__related-title">You may also enjoy</h2>
       <div class="grid__wrapper">
+        
+          
+
+
+
+<div class="grid__item">
+  <article class="archive__item" itemscope itemtype="https://schema.org/CreativeWork">
+    
+      <div class="archive__item-teaser">
+        <img src="/assets/images/teaser.jpg" alt="">
+      </div>
+    
+    <h2 class="archive__item-title no_toc" itemprop="headline">
+      
+        <a href="/til/overriding/" rel="permalink">Java 추상화(Abstraction)와 메소드 재정의(Overriding)
+</a>
+      
+    </h2>
+    
+
+  <p class="page__meta">
+    
+      
+      <span class="page__meta-date">
+        <i class="far fa-calendar-alt" aria-hidden="true"></i>
+        
+        <time datetime="2022-02-04T00:00:00+09:00">February 4, 2022</time>
+      </span>
+    
+
+    
+
+    
+  </p>
+
+
+    <p class="archive__item-excerpt" itemprop="description">
+
+</p>
+  </article>
+</div>
+
         
           
 
@@ -516,7 +563,7 @@ persisting an entity는 오브젝트(엔티티로 변환된)를 데이터베이�
     
     <h2 class="archive__item-title no_toc" itemprop="headline">
       
-        <a href="/til/aboutJSP/" rel="permalink">JSP에 대해 알아보고 Tomcat Server와 Eclipse 사용하여 JSP 실행
+        <a href="/til/aboutJSP/" rel="permalink">JSP란…? / Tomcat Server &amp; Eclipse로 JSP 작성 후 실행해보기
 </a>
       
     </h2>
@@ -587,48 +634,6 @@ persisting an entity는 오브젝트(엔티티로 변환된)를 데이터베이�
 </div>
 
         
-          
-
-
-
-<div class="grid__item">
-  <article class="archive__item" itemscope itemtype="https://schema.org/CreativeWork">
-    
-      <div class="archive__item-teaser">
-        <img src="/assets/images/teaser.jpg" alt="">
-      </div>
-    
-    <h2 class="archive__item-title no_toc" itemprop="headline">
-      
-        <a href="/til/email/" rel="permalink">E-mail / 백준 2884번 문제 풀어보기
-</a>
-      
-    </h2>
-    
-
-  <p class="page__meta">
-    
-      
-      <span class="page__meta-date">
-        <i class="far fa-calendar-alt" aria-hidden="true"></i>
-        
-        <time datetime="2022-01-18T00:00:00+09:00">January 18, 2022</time>
-      </span>
-    
-
-    
-
-    
-  </p>
-
-
-    <p class="archive__item-excerpt" itemprop="description">
-
-</p>
-  </article>
-</div>
-
-        
       </div>
     </div>
   
@@ -636,6 +641,17 @@ persisting an entity는 오브젝트(엔티티로 변환된)를 데이터베이�
 </div>
     </div>
 
+    
+      <div class="search-content">
+        <div class="search-content__inner-wrap"><form class="search-content__form" onkeydown="return event.key != 'Enter';" role="search">
+    <label class="sr-only" for="search">
+      Enter your search term...
+    </label>
+    <input type="search" id="search" class="search-input" tabindex="-1" placeholder="Enter your search term..." />
+  </form>
+  <div id="results" class="results"></div></div>
+
+      </div>
     
 
     <div id="footer" class="page__footer">
@@ -681,6 +697,10 @@ persisting an entity는 오브젝트(엔티티로 변환된)를 데이터베이�
 
 
 
+
+<script src="/assets/js/lunr/lunr.min.js"></script>
+<script src="/assets/js/lunr/lunr-store.js"></script>
+<script src="/assets/js/lunr/lunr-en.js"></script>
 
 
 

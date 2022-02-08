@@ -9,7 +9,7 @@
   <head>
     <meta charset="utf-8">
 
-<!-- begin _includes/seo.html --><title>JSP란…? / Tomcat Server &amp; Eclipse로 JSP 작성 후 실행해보기 | Mirae the Future</title>
+<!-- begin _includes/seo.html --><title>Java 추상화(Abstraction)와 메소드 재정의(Overriding) | Mirae the Future</title>
 <meta name="description" content="">
 
 
@@ -22,8 +22,8 @@
 <meta property="og:type" content="article">
 <meta property="og:locale" content="en_US">
 <meta property="og:site_name" content="Mirae the Future">
-<meta property="og:title" content="JSP란…? / Tomcat Server &amp; Eclipse로 JSP 작성 후 실행해보기">
-<meta property="og:url" content="http://localhost:4000/til/aboutJSP/">
+<meta property="og:title" content="Java 추상화(Abstraction)와 메소드 재정의(Overriding)">
+<meta property="og:url" content="http://localhost:4000/til/overriding/">
 
 
   <meta property="og:description" content="">
@@ -34,7 +34,7 @@
 
 
 
-  <meta property="article:published_time" content="2022-01-28T00:00:00+09:00">
+  <meta property="article:published_time" content="2022-02-04T00:00:00+09:00">
 
 
 
@@ -45,7 +45,7 @@
   
 
 
-<link rel="canonical" href="http://localhost:4000/til/aboutJSP/">
+<link rel="canonical" href="http://localhost:4000/til/overriding/">
 
 
 
@@ -182,7 +182,7 @@
     
       
       
-        <li class="current">JSP란...? / Tomcat Server & Eclipse로 JSP 작성 후 실행해보기</li>
+        <li class="current">Java 추상화(Abstraction)와 메소드 재정의(Overriding)</li>
       
     
   </ol>
@@ -304,16 +304,16 @@
 
 
   <article class="page h-entry" itemscope itemtype="https://schema.org/CreativeWork">
-    <meta itemprop="headline" content="JSP란…? / Tomcat Server &amp; Eclipse로 JSP 작성 후 실행해보기">
+    <meta itemprop="headline" content="Java 추상화(Abstraction)와 메소드 재정의(Overriding)">
     <meta itemprop="description" content="">
-    <meta itemprop="datePublished" content="2022-01-28T00:00:00+09:00">
+    <meta itemprop="datePublished" content="2022-02-04T00:00:00+09:00">
     
 
     <div class="page__inner-wrap">
       
         <header>
           <h1 id="page-title" class="page__title p-name" itemprop="headline">
-            <a href="http://localhost:4000/til/aboutJSP/" class="u-url" itemprop="url">JSP란…? / Tomcat Server &amp; Eclipse로 JSP 작성 후 실행해보기
+            <a href="http://localhost:4000/til/overriding/" class="u-url" itemprop="url">Java 추상화(Abstraction)와 메소드 재정의(Overriding)
 </a>
           </h1>
           
@@ -324,7 +324,7 @@
       <span class="page__meta-date">
         <i class="far fa-calendar-alt" aria-hidden="true"></i>
         
-        <time datetime="2022-01-28T00:00:00+09:00">January 28, 2022</time>
+        <time datetime="2022-02-04T00:00:00+09:00">February 4, 2022</time>
       </span>
     
 
@@ -342,137 +342,140 @@
           <aside class="sidebar__right sticky">
             <nav class="toc">
               <header><h4 class="nav__title"><i class="fas fa-cog"></i> 👷</h4></header>
-              <ul class="toc__menu"><li><a href="#-">💭 ..</a></li><li><a href="#-jsp-java-server-pages">🧑‍💻 JSP (Java Server Pages)</a></li><li><a href="#-tomcat-server--eclipse로-jsp-작성-후-실행해보기">🐈 Tomcat Server &amp; Eclipse로 JSP 작성 후 실행해보기</a></li><li><a href="#-jsp-syntax-어떻게-작성하는데">🙋 JSP Syntax 어떻게 작성하는데?</a></li></ul>
+              
 
             </nav>
           </aside>
         
         <hr />
 
-<h3 id="-">💭 ..</h3>
+<h3>💭</h3>
 
 <div class="notice">
-  <h4>자바 웹 개발자 과정 수업을 듣기 시작한지 일주일이 지났다.</h4>
-  <p>자바의 기본적인 문법은 여러가지 온라인 강의를 통해서 예습을 하고 시작했던터라 어렵지 않게 수업을 듣고 있다. 수업 커리큘럼에 JSP가 포함되어 있는데, 아직 JSP가 어떤것인지 잘 몰라서 한번 알아보려고 한다. <br />
-  요즘 어떤 정보에 대한 글을 읽거나, 기술에 대해 알아보기 전에 '지금도 여전히 사용되는가?' 라는 질문을 먼저 검색해보게 된다. 나의 수준에서는 뭐든 배워두면 도움이 되겠지만, 배울 것은 너무나 많고 시간은 충분하지 않아서 자꾸만 정보의 중요성에 대해 생각해보게 된다. 언제나 새로운 것들이 마구 쏟아지는 지금 같은 시대에는 주로 사용되는 기술들도 빠르게 변한다. 그렇기 때문에 자꾸 위와 같은 질문을 검색해보는 것 같다. 새로운 기술이 언제나 좋은 것은 아니지만 대부분의 경우 새로운 기술이 더 빠르거나, 더 간단하게 복잡한 일을 처리하거나, 전 기술의 단점을 보완해서 나오는 경우가 많이 때문에 새로운 기술들에 대해 더 알고 싶은 것 같다. <br />
-  JSP에 대해서도 구글링해보니 새로운 프로젝트에는 더이상 사용되지 않는 것 같지만, JSP에 대한 기본적인 것들을 알아두면 도움이 되는 것 같다. 작은 프로젝트를 진행할때는 여전히 사용되기도 하고 예전에 만들어진 어플리케이션들을 살펴봐야 할 수도 있고, 서블릿과 JSP가 자바 웹 개발의 기본적인 것들이라 스프링, hibernate을 배우기 전에 배워야 한다는 의견도 있다. 그리고 나는 지금 듣는 과정중 JSP에 대해 배우게 될 것이고, 테스트도 봐야해서 기본적인 것들을 알아보려고 한다.</p>
+  <h4>자바 웹 개발자 과정 수업 2주차</h4>
+  <p>중간에 연휴가 있어서 일수로는 7일차다.  
+  오늘은 Overriding과 abstract 클래스와 메소드에 대해 배웠다.  
+  강사님의 설명을 들으며 몇주전 abstract 에 대해 혼자 공부했던 기억이 나서 블로그를 보니..  
+  오늘 처음 듣는 것 같았던 것들이 불과 이주전에 글로 써보기까지 했던 것들이었다.  
+  처음엔 '공부를 한거야 만거야?'라고 스스로에게 물었는데 정리해둔걸 보니 '그래도 틀린 것들을 적어둔건 아니었구나 그때는 열심히 했네.'하는 생각이 들었다. 나는 지금 하고 있는 공부, 취업준비가 국비과정이 끝나면 모두 딱! 끝나버릴거라고 생각하지 않는다. 취업은 사실 바로 됐으면 하지만...! (네카라쿠배 바라는거 아니니까ㅋㅋㅋ) 어딜 취업하든 계속해서 아는 것을 넓혀나가야 할 것 같다는 생각이 든다. 배우면 배울수록, 조금씩 더 많이 알아갈수록 왠지 그럴 것 같다는 생각이 든다. 7일차고 어제 잠을 못자서 오후에는 피곤함이 조금 느껴졌는데 그래도 재미있었다. 아직은 자바를 배우고 있어서 그런걸수도..ㅎㅎ 아무튼 그래서 예전에 정리해뒀던거 + 오늘 배운 것들을 함께 정리해보려고 한다. </p>
 </div>
 
-<h3 id="-jsp-java-server-pages">🧑‍💻 JSP (Java Server Pages)</h3>
-<p><a href="https://www.javatpoint.com/jsp-tutorial">이 페이지의 내용을 참고</a></p>
+<h3 id="lets-get-started">Let’s get started!</h3>
 
-<p>JSP는 서블릿처럼 웹 어플리케이션을 만드는 것에 사용된다. 서블릿과 같은 일을 하지만 더 많은 기능들을 가지고 있기 때문에 서블릿의 확장된 버전으로 생각해도 되겠다. JSP 페이지는 주로 HTML 태그와 JSP 태그로 이루어진다. (JSP 태그를 이용해서 자바 코드를 HTML 페이지에서 사용할 수 있다.) JSP페이지는 기술 파트와 디자인 파트를 나눌 수 있기 때문에 서블릿보다 유지가 쉽다. Expression Language와 Custom Tags와 같은 부가 기능을 제공하기도 한다.</p>
+<p>Overriding을 구글에 검색해보니 사전적 의미가 가장 먼저 나온다.</p>
 
-<p><strong>💡 서블릿과 비교했을 때 JSP의 장점은 무엇이 있을까?</strong></p>
+<blockquote>
+  <p>(adj) more important than any other considerations.
+가장 먼저 고려되는…</p>
+</blockquote>
+
+<p>Overriding methods (메소드 재정의)는 부모 클래스로부터 상속받은 메소드를 자식 클래스가 그대로 사용하지 않고 바디 부분을 변경해서 사용하는 것이다. Overriding 이라는 단어의 사전적 의미 그대로 부모 클래스의 메소드를 override한 자식클래스의 메소드가 가장 중요한 것으로 고려된다. (그러므로 수정된 자식 클래스의 메소드의 기능이 사용된다.) ‘추상화 Abstraction’과  ‘메소드 재정의 Overriding method’는 서로 관련이 있다. 먼저 추상화에 대해서 알아보자.</p>
+
+<h3 id="java-abstraction">Java Abstraction</h3>
+<p><a href="https://www.w3schools.com/java/java_abstract.asp">Abstract Classes and Methods 이 페이지를 참고</a> <br />
+데이터 추상화는 중요한 세부 정보들은 숨기고 꼭 보여져야하는 정보들만 사용자들이 볼 수 있도록 하는 것이다. 또, 응용 프로그램의 설계 부분과 구현하는 부분을 나누기 위해 사용된다. 추상화는 abstract classes 나 interfaces를 통해 이뤄질 수 있다.<br />
+abstract 메소드와 클래스는 책의 목차로 비유하고, override 된 메소드는 내용에 비유해주셨다. <br />
+(여기서 abstract 키워드는 non-access modifier 이다.<br />
+아래 표는 Acccess Modifier 와 Non-Access Modifier 를 보여준다.)</p>
+
+<table>
+  <thead>
+    <tr>
+      <th>Acess Modifiers</th>
+      <th>Non-Access Modifiers</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>private</td>
+      <td>static</td>
+    </tr>
+    <tr>
+      <td>default or No Modifier</td>
+      <td>final</td>
+    </tr>
+    <tr>
+      <td>protected</td>
+      <td>abstract</td>
+    </tr>
+    <tr>
+      <td>public</td>
+      <td>synchronized</td>
+    </tr>
+    <tr>
+      <td> </td>
+      <td>trasient</td>
+    </tr>
+    <tr>
+      <td> </td>
+      <td>volatile</td>
+    </tr>
+    <tr>
+      <td> </td>
+      <td>strictfp</td>
+    </tr>
+  </tbody>
+</table>
+
+<p><br /></p>
 <ul>
   <li>
-    <p>JSP는 서블릿을 확장한 기술이기 때문에 서블릿의 모든 기능들을 사용할 수 있다. implicit objects, predefined tags, expression language 그리고 custom tags와 같은 추가된 기능들을 사용할 수 있다.</p>
+    <p>Abstract class는 객체를 만들 수 없도록 제한된 클래스이다.<br />
+Abstract class를 상속받는 자식클래스를 만들어서 자식클래스를 객체화 할 수 있다.</p>
   </li>
   <li>
-    <p>JSP는 비즈니스 로직과 프레젠테이션 로직을 쉽게 분리 할 수 있다. 덕분에 JSP는 쉽게 관리 할 수 있다.</p>
-  </li>
-  <li>
-    <p>JSP 페이지가 수정되었더라도 프로젝트를 다시 컴파일 하거나 디플로이 할 필요가 없다. 서블릿 코드는 바뀐 부분들을 업데이트하고 리컴파일 해야하지만 JSP는 그럴 필요가 없기 때문에 빠르게 개발할 수 있다.</p>
-  </li>
-  <li>
-    <p>JSP에서는 Action tags, JSTL, Custom tags 등 많은 태그를 이용할 수 있기 때문에 서블릿보다 더 적은 코드 작성을 필요로 한다.</p>
+    <p>Abstract method는 Abstract class 에서만 사용될 수 있다. abstract methods는 바디 부분이 없다. (Abstract method만 있으면 interfaces)</p>
   </li>
 </ul>
 
-<p><strong>💡 JSP의 Lifecycle</strong></p>
+<h3 id="코드를-보며-알아보자">코드를 보며 알아보자!</h3>
 
-<p>JSP 페이지들은 아래 변화 단계를 따른다.</p>
-<ul>
-  <li>Translation of JSP Page</li>
-  <li>Compilation of JSP Page</li>
-  <li>Classloading (the classloader loads class file)</li>
-  <li>Instantiation (Object of the Generated Servlet is created).</li>
-  <li>Initialization (the container invokes jspInit() method).</li>
-  <li>Request processing (the container invokes _jspService() method).</li>
-  <li>Destroy (the container invokes jspDestroy() method).</li>
-</ul>
+<div class="language-java highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">abstract</span> <span class="kd">class</span> <span class="nc">Animal</span> <span class="o">{</span>
+  <span class="kd">public</span> <span class="kd">abstract</span> <span class="kt">void</span> <span class="nf">animalSound</span><span class="o">();</span> <span class="c1">//abstract method (바디 없음)</span>
+  <span class="kd">public</span> <span class="kt">void</span> <span class="nf">sleep</span><span class="o">()</span> <span class="o">{</span>               <span class="c1">// 일반적인 method</span>
+    <span class="nc">System</span><span class="o">.</span><span class="na">out</span><span class="o">.</span><span class="na">println</span><span class="o">(</span><span class="s">"Zzz"</span><span class="o">);</span>
+  <span class="o">}</span>
+<span class="o">}</span>
+</code></pre></div></div>
 
-<div class="notice">
-  <h4>Note!</h4>
-  <p>jspInit(), _jspService() and jspDestroy() 는 JSP의 라이프사이클 메서드.</p>
-</div>
+<p>위 코드를 보면 알 수 있듯이, 하나의 abstract class는 abstract method와 일반적인 method 둘다 가질 수 있다.</p>
 
-<p>JSP는 JSP translator의 도움을 받아 서블릿(.java file)으로 변환(<s>변형?</s>)된다.
- JSP translator는 JSP 페이지를 서블릿으로 변환하는 웹 서버의 한 부분이다. 서블릿이 된 JSP 페이지는 compiler 에 의해 컴파일 되고 클래스 파일로 변환된다. 서블릿에서 일어나는 모든 프로세스들은 후에 JSP에서 수행된다.</p>
+<div class="language-java highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nc">Animal</span> <span class="nc">Obj</span> <span class="o">=</span> <span class="k">new</span> <span class="nc">Animal</span><span class="o">();</span> <span class="c1">// abstract class인 Animal 클래스는 객체를 만들 수 없으므로 에러 발생</span>
+</code></pre></div></div>
 
-<h3 id="-tomcat-server--eclipse로-jsp-작성-후-실행해보기">🐈 Tomcat Server &amp; Eclipse로 JSP 작성 후 실행해보기</h3>
-<p><a href="https://www.geeksforgeeks.org/creating-jsp-in-eclipse-ide-with-tomcat-server/">이 페이지의 내용을 참고</a></p>
+<p>왜 객체를 만들 수 없는지 생각해보자. 객체는 클래스라는 설계도를 이용해서 만든다. 자동차를 떠올려보자. 자동차를 만들기위해 설계도를 만들었는데 그 중 한 부분이 없어진 것이다. 그렇다면 자동차를 만들 수 있을까? (만들수도 있겠지만ㅎㅎ) 온전한 자동차를 만들 수는 없을 것이다. 메소드는 객체에서 기능 부분을 담당한다. 그런데 자동차의 기능 중 한가지가 빠진것이다. 브레이크나 엑셀이 빠진다면..?<br />
+위의 코드를 보고 생각해보자면, Animal이라는 클래스에 animalSound라는 메소드가 텅 비어있는 것이다. 그래서 객체를 만들 수 없는 것이다.</p>
 
-<p>톰캣 서버는 가장 좋은 웹 서버 중 하나이고, 아파치에서 개발한 오픈소스 자바 서블릿 컨테이너이다. 톰캣은 고유의 특징과 빠른 속도, 그리고 J2EE specifications를 실행하는 점 때문에 많은 개발자들이 이용하고 있다.</p>
+<p>Abstract class에 접근하기 위해서는 Abstract class를 상속 받는 subclass를 만들어야 한다.</p>
 
-<p>위 페이지를 참고하며 이클립스와 톰캣을 이용해 JSP 페이지를 만들어본다.</p>
+<div class="language-java highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1">// Abstract class</span>
+<span class="kd">abstract</span> <span class="kd">class</span> <span class="nc">Animal</span> <span class="o">{</span>
+  <span class="c1">// Abstract method</span>
+  <span class="kd">public</span> <span class="kd">abstract</span> <span class="nf">animalSound</span><span class="o">();</span> <span class="c1">//바디 없음</span>
+  <span class="c1">// Regular method</span>
+  <span class="kd">public</span> <span class="kt">void</span> <span class="nf">sleep</span><span class="o">()</span> <span class="o">{</span>
+    <span class="nc">System</span><span class="o">.</span><span class="na">out</span><span class="o">.</span><span class="na">println</span><span class="o">(</span><span class="s">"Zzz"</span><span class="o">);</span>
+  <span class="o">}</span>
+<span class="o">}</span>
 
-<ol>
-  <li>
-    <p>프로젝트 익스플로러에서 마우스 우클릭 New &gt; Dynamic Web project ✅
-  <img src="/assets/images/CJET.png" alt="start" /></p>
-  </li>
-  <li>
-    <p>프로젝트 이름을 입력 &gt; Next ✅
-  <img src="/assets/images/CJET2.png" alt="new" /></p>
-  </li>
-  <li>
-    <p>프로젝트 이름을 입력 &gt; Next ✅
-  <img src="/assets/images/CJET2.png" alt="new" /></p>
-  </li>
-  <li>
-    <p>Next &gt; finish ✅
-  <img src="/assets/images/CJET3.png" alt="next" />
-  <img src="/assets/images/CJET4.png" alt="finish" /></p>
-  </li>
-  <li>
-    <p>프로젝트 익스플로러에 프로젝트가 만들어진 것을 볼 수 있습니다. ✅
-  <img src="/assets/images/CJET5.png" alt="projectMade" /></p>
-  </li>
-  <li>
-    <p>src 위에서 우클릭 &gt; New &gt; JSP File ✅
-  <img src="/assets/images/CJET6.png" alt="projectMade" /></p>
-  </li>
-  <li>
-    <p>Next &gt;✅
-  <img src="/assets/images/CJET7.png" alt="projectMade" /></p>
-  </li>
-  <li>
-    <p>Finish 버튼 클릭 ✅
-  <img src="/assets/images/CJET8.png" alt="projectMade" /></p>
-  </li>
-  <li>
-    <p>JSP 파일이 만들어졌습니다. &lt;body&gt; 부분에 Hello Earth! 를 입력 ✅
-  <img src="/assets/images/CJET9.png" alt="HelloEarth" /></p>
-  </li>
-  <li>
-    <p>프로젝트에서 우클릭 &gt; Run As &gt; 1 Run on Server ✅
-  <img src="/assets/images/CJET10.png" alt="runServer" /></p>
-  </li>
-  <li>
-    <p>Apache &gt; Tomcat 서버 클릭 &gt; Next &gt; Add and Remove 창에서 Finish ✅
-  <img src="/assets/images/CJET11.png" alt="projectMade" /></p>
-  </li>
-  <li>
-    <p>자동으로 사파리 창이 뜹니다. 입력했던 Hello Earth!가 잘 뜨는걸 보니 JSP페이지가 잘 돌아가고 있습니다.
-  <img src="/assets/images/CJET12.png" alt="projectMade" /></p>
-  </li>
-</ol>
+<span class="c1">// Animal 클래스를 상속받는 Subclass</span>
+<span class="kd">class</span> <span class="nc">Pig</span> <span class="kd">extends</span> <span class="nc">Animal</span> <span class="o">{</span>
+  <span class="kd">public</span> <span class="kt">void</span> <span class="nf">animalSound</span><span class="o">()</span> <span class="o">{</span>
+    <span class="c1">// 위 Abstract 메소드의 바디가 여기서 작성됨</span>
+    <span class="nc">System</span><span class="o">.</span><span class="na">out</span><span class="o">.</span><span class="na">println</span><span class="o">(</span><span class="s">"The pig says: wee wee"</span><span class="o">);</span>
+  <span class="o">}</span>
+<span class="o">}</span>
 
-<h3 id="-jsp-syntax-어떻게-작성하는데">🙋 JSP Syntax 어떻게 작성하는데?</h3>
+<span class="kd">class</span> <span class="nc">Main</span> <span class="o">{</span>
+  <span class="kd">public</span> <span class="kd">static</span> <span class="kt">void</span> <span class="nf">main</span><span class="o">(</span><span class="nc">String</span><span class="o">[]</span> <span class="n">args</span><span class="o">)</span> <span class="o">{</span>
+    <span class="nc">Pig</span> <span class="n">myPig</span> <span class="o">=</span> <span class="k">new</span> <span class="nc">Pig</span><span class="o">();</span> <span class="c1">// Pig 객체 만들기</span>
+    <span class="n">myPig</span><span class="o">.</span><span class="na">animalSound</span><span class="o">();</span>
+    <span class="n">myPig</span><span class="o">.</span><span class="na">sleep</span><span class="o">();</span> <span class="c1">//Pig 객체가 Anmal 클래스를 상속받으므로 sleep 메소드 사용 가능</span>
 
-<ul>
-  <li>아래 작성된 태그가 .jsp 파일 맨 위에 추가 된다.
-    <blockquote>
-      <p>&lt;%@ page contentType=”text/html;charset=UTF-8” language=”java” %&gt;</p>
-    </blockquote>
-  </li>
-</ul>
+  <span class="o">}</span>
+<span class="o">}</span>
 
-<p>JSP 페이지는 JSP</p>
-
-<p><strong>✍️ Scriptlet</strong><br />
-  JSP scriptlet는 자바 언어로 쓰여진 코드, 변수, 메서드 선언부, 기호, 부호 등을 담을 수 있다.</p>
+</code></pre></div></div>
 
         
       </section>
@@ -489,15 +492,15 @@
     <strong><i class="fas fa-fw fa-tags" aria-hidden="true"></i> Tags: </strong>
     <span itemprop="keywords">
     
-      <a href="/tags/#eclipse-ide" class="page__taxonomy-item p-category" rel="tag">Eclipse IDE</a><span class="sep">, </span>
+      <a href="/tags/#abstraction" class="page__taxonomy-item p-category" rel="tag">Abstraction</a><span class="sep">, </span>
     
       <a href="/tags/#java" class="page__taxonomy-item p-category" rel="tag">Java</a><span class="sep">, </span>
     
-      <a href="/tags/#jsp" class="page__taxonomy-item p-category" rel="tag">JSP</a><span class="sep">, </span>
-    
       <a href="/tags/#learning" class="page__taxonomy-item p-category" rel="tag">learning</a><span class="sep">, </span>
     
-      <a href="/tags/#tomcat-server" class="page__taxonomy-item p-category" rel="tag">Tomcat Server</a>
+      <a href="/tags/#overriding-in-java" class="page__taxonomy-item p-category" rel="tag">Overriding in Java</a><span class="sep">, </span>
+    
+      <a href="/tags/#%EA%B3%B5%EB%B6%80-%EA%B8%B0%EB%A1%9D" class="page__taxonomy-item p-category" rel="tag">공부 기록</a>
     
     </span>
   </p>
@@ -522,7 +525,7 @@
 
         
 
-  <p class="page__date"><strong><i class="fas fa-fw fa-calendar-alt" aria-hidden="true"></i> Updated:</strong> <time class="dt-published" datetime="2022-01-28T00:00:00+09:00">January 28, 2022</time></p>
+  <p class="page__date"><strong><i class="fas fa-fw fa-calendar-alt" aria-hidden="true"></i> Updated:</strong> <time class="dt-published" datetime="2022-02-04T00:00:00+09:00">February 4, 2022</time></p>
 
       </footer>
 
@@ -531,12 +534,11 @@
       
   <nav class="pagination">
     
-      <a href="/til/%EA%B3%B5%EB%B6%80%20%EA%B8%B0%EB%A1%9D/aboutjpa/" class="pagination--pager" title="Persist something? ORM과 JPA
+      <a href="/til/decsendingOrder/" class="pagination--pager" title="Java 배열 이용하여 정수를 내림차순으로 정렬하기
 ">Previous</a>
     
     
-      <a href="/til/decsendingOrder/" class="pagination--pager" title="Java 배열 이용하여 정수를 내림차순으로 정렬하기
-">Next</a>
+      <a href="#" class="pagination--pager disabled">Next</a>
     
   </nav>
 
@@ -564,7 +566,7 @@
     
     <h2 class="archive__item-title no_toc" itemprop="headline">
       
-        <a href="/til/overriding/" rel="permalink">Java 추상화(Abstraction)와 메소드 재정의(Overriding)
+        <a href="/til/decsendingOrder/" rel="permalink">Java 배열 이용하여 정수를 내림차순으로 정렬하기
 </a>
       
     </h2>
@@ -576,7 +578,7 @@
       <span class="page__meta-date">
         <i class="far fa-calendar-alt" aria-hidden="true"></i>
         
-        <time datetime="2022-02-04T00:00:00+09:00">February 4, 2022</time>
+        <time datetime="2022-01-30T00:00:00+09:00">January 30, 2022</time>
       </span>
     
 
@@ -606,7 +608,7 @@
     
     <h2 class="archive__item-title no_toc" itemprop="headline">
       
-        <a href="/til/decsendingOrder/" rel="permalink">Java 배열 이용하여 정수를 내림차순으로 정렬하기
+        <a href="/til/aboutJSP/" rel="permalink">JSP란…? / Tomcat Server &amp; Eclipse로 JSP 작성 후 실행해보기
 </a>
       
     </h2>
@@ -618,7 +620,7 @@
       <span class="page__meta-date">
         <i class="far fa-calendar-alt" aria-hidden="true"></i>
         
-        <time datetime="2022-01-30T00:00:00+09:00">January 30, 2022</time>
+        <time datetime="2022-01-28T00:00:00+09:00">January 28, 2022</time>
       </span>
     
 
