@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="4.2.1">Jekyll</generator><link href="http://localhost:4000/feed.xml" rel="self" type="application/atom+xml" /><link href="http://localhost:4000/" rel="alternate" type="text/html" /><updated>2022-02-18T21:18:56+09:00</updated><id>http://localhost:4000/feed.xml</id><title type="html">Mirae the Future</title><subtitle>An amazing website.</subtitle><author><name>Mirae</name></author><entry><title type="html">SQL 정리</title><link href="http://localhost:4000/til/sql/" rel="alternate" type="text/html" title="SQL 정리" /><published>2022-02-18T00:00:00+09:00</published><updated>2022-02-18T00:00:00+09:00</updated><id>http://localhost:4000/til/sql</id><content type="html" xml:base="http://localhost:4000/til/sql/">&lt;hr /&gt;
+<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="4.2.1">Jekyll</generator><link href="http://localhost:4000/feed.xml" rel="self" type="application/atom+xml" /><link href="http://localhost:4000/" rel="alternate" type="text/html" /><updated>2022-02-18T21:51:39+09:00</updated><id>http://localhost:4000/feed.xml</id><title type="html">Mirae the Future</title><subtitle>An amazing website.</subtitle><author><name>Mirae</name></author><entry><title type="html">SQL 정리</title><link href="http://localhost:4000/til/sql/" rel="alternate" type="text/html" title="SQL 정리" /><published>2022-02-18T00:00:00+09:00</published><updated>2022-02-18T00:00:00+09:00</updated><id>http://localhost:4000/til/sql</id><content type="html" xml:base="http://localhost:4000/til/sql/">&lt;hr /&gt;
 
 &lt;h3 id=&quot;-&quot;&gt;💭 ..&lt;/h3&gt;
 &lt;div class=&quot;notice&quot;&gt;
@@ -48,8 +48,7 @@ CREATE TABLE 테이블명 (
 
 오라클의 SQL Developer는 데이터 베이스 관련 개발을 더 쉽게 만들어주어 생산성을 높여주는 무료 그래픽 툴이다. 사용자들은 SQL Developer를 이용해서 데이터 베이스에서 검색을 할 수 있고 --&gt;</content><author><name>Mirae</name></author><category term="TIL" /><category term="learning" /><category term="공부 기록" /><category term="Java" /><summary type="html"></summary></entry><entry><title type="html">Java 추상화(Abstraction)와 메소드 재정의(Overriding)</title><link href="http://localhost:4000/til/overriding/" rel="alternate" type="text/html" title="Java 추상화(Abstraction)와 메소드 재정의(Overriding)" /><published>2022-02-04T00:00:00+09:00</published><updated>2022-02-04T00:00:00+09:00</updated><id>http://localhost:4000/til/overriding</id><content type="html" xml:base="http://localhost:4000/til/overriding/">&lt;hr /&gt;
 
-&lt;h3&gt;💭&lt;/h3&gt;
-
+&lt;h3 id=&quot;-&quot;&gt;💭 ..&lt;/h3&gt;
 &lt;div class=&quot;notice&quot;&gt;
   &lt;h4&gt;자바 웹 개발자 과정 수업 2주차&lt;/h4&gt;
   &lt;p&gt;중간에 연휴가 있어서 일수로는 7일차다.  
@@ -60,7 +59,6 @@ CREATE TABLE 테이블명 (
 &lt;/div&gt;
 
 &lt;h3 id=&quot;lets-get-started&quot;&gt;Let’s get started!&lt;/h3&gt;
-
 &lt;p&gt;Overriding을 구글에 검색해보니 사전적 의미가 가장 먼저 나온다.&lt;/p&gt;
 
 &lt;blockquote&gt;

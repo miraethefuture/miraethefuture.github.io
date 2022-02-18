@@ -10,15 +10,14 @@ tags:
   - Overriding in Java
 show_date: true
 toc: true
-toc_label: "👷"
+toc_label: "🕯"
 toc_icon: "cog"
 toc_sticky: true
 
 ---
 __________________
 
-### 💭
-
+### 💭 ..  
 <div class="notice">
   <h4>자바 웹 개발자 과정 수업 2주차</h4>
   <p>중간에 연휴가 있어서 일수로는 7일차다.  
@@ -31,7 +30,6 @@ __________________
 
 
 ### Let's get started!
-
 Overriding을 구글에 검색해보니 사전적 의미가 가장 먼저 나온다.  
 
 > (adj) more important than any other considerations.
