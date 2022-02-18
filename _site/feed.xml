@@ -1,4 +1,52 @@
-<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="4.2.1">Jekyll</generator><link href="http://localhost:4000/feed.xml" rel="self" type="application/atom+xml" /><link href="http://localhost:4000/" rel="alternate" type="text/html" /><updated>2022-02-08T20:41:07+09:00</updated><id>http://localhost:4000/feed.xml</id><title type="html">Mirae the Future</title><subtitle>An amazing website.</subtitle><author><name>Mirae</name></author><entry><title type="html">Java 추상화(Abstraction)와 메소드 재정의(Overriding)</title><link href="http://localhost:4000/til/overriding/" rel="alternate" type="text/html" title="Java 추상화(Abstraction)와 메소드 재정의(Overriding)" /><published>2022-02-04T00:00:00+09:00</published><updated>2022-02-04T00:00:00+09:00</updated><id>http://localhost:4000/til/overriding</id><content type="html" xml:base="http://localhost:4000/til/overriding/">&lt;hr /&gt;
+<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="4.2.1">Jekyll</generator><link href="http://localhost:4000/feed.xml" rel="self" type="application/atom+xml" /><link href="http://localhost:4000/" rel="alternate" type="text/html" /><updated>2022-02-18T21:18:56+09:00</updated><id>http://localhost:4000/feed.xml</id><title type="html">Mirae the Future</title><subtitle>An amazing website.</subtitle><author><name>Mirae</name></author><entry><title type="html">SQL 정리</title><link href="http://localhost:4000/til/sql/" rel="alternate" type="text/html" title="SQL 정리" /><published>2022-02-18T00:00:00+09:00</published><updated>2022-02-18T00:00:00+09:00</updated><id>http://localhost:4000/til/sql</id><content type="html" xml:base="http://localhost:4000/til/sql/">&lt;hr /&gt;
+
+&lt;h3 id=&quot;-&quot;&gt;💭 ..&lt;/h3&gt;
+&lt;div class=&quot;notice&quot;&gt;
+  &lt;h4&gt;SQL&lt;/h4&gt;
+  &lt;p&gt;오늘은 IT국비지원교육 18일차 날이다. 16일간의 자바 여행을 잠깐 마치고 SQL 을 배우기 시작했다.  
+  SQL은 생각보다 어렵지 않아서 자바를 배울 때보다는 편한 마음으로 수업을 듣고 있다.  
+  기본적인 statements들은 많이 사용해 보면 외우게 될 것 같지만 머릿속에서 정리가 덜 된 느낌이라 블로그 글로 정리해 본다. &lt;/p&gt;
+&lt;/div&gt;
+
+&lt;h3 id=&quot;️-sqlstructured-query-language&quot;&gt;⌨️ SQL(Structured Query Language)&lt;/h3&gt;
+&lt;p&gt;SQL(Structured Query Language)은 데이터베이스에 저장된 데이터에 접근하고 조작하기 위해 사용되는 표준 언어다.&lt;/p&gt;
+
+&lt;h3 id=&quot;️-sql-statements-프로그래밍-언어에서-statements-란&quot;&gt;✍️ SQL Statements? 프로그래밍 언어에서 Statements 란?&lt;/h3&gt;
+&lt;p&gt;✋ 잠깐 Statements가 무엇인지 예시를 보며 알아보자.&lt;/p&gt;
+
+&lt;div class=&quot;language-java highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;    &lt;span class=&quot;nc&quot;&gt;System&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;out&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;println&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;Hello World&quot;&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;);&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+&lt;p&gt;-&amp;gt; 자바에서 Hello World를 화면에 출력하는 Statement&lt;/p&gt;
+
+&lt;div class=&quot;language-java highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;    &lt;span class=&quot;nc&quot;&gt;Bicycle&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;redBike&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;new&lt;/span&gt; &lt;span class=&quot;nc&quot;&gt;Bicycle&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;();&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+&lt;p&gt;-&amp;gt; 자바에서 객체를 만드는 Statement&lt;/p&gt;
+
+&lt;div class=&quot;language-sql highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;      &lt;span class=&quot;k&quot;&gt;SELECT&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;*&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;FROM&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;Friends&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+&lt;p&gt;-&amp;gt; Friends 라는 이름의 테이블의 모든 컬럼을 가져와 보여주는 Statement&lt;/p&gt;
+
+&lt;div class=&quot;language-sql highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;    &lt;span class=&quot;k&quot;&gt;SELECT&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;Fname&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;FROM&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;Friends&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+&lt;p&gt;-&amp;gt; Friends 테이블의 Fname 컬럼의 정보를 가져와 보여주는 Statement&lt;/p&gt;
+
+&lt;p&gt;Statements란 각 프로그래밍 언어의 문법에 맞게 쓰여진 문장으로, 수행되어야 하는 작업을 표현한 문장이라고도 할 수 있겠다.&lt;/p&gt;
+
+&lt;!-- ### SQL로
+[이 페이지를 참고](https://www.w3schools.com/sql/sql_select.asp)
+
+
+CREATE TABLE 테이블명 (
+  컬럼명 자료형(크기)
+  deptno number(2,0),
+  loc    varchar2(13),
+  dname  varchar(14)
+  constraint pk_deptno primary key (deptno)
+  );
+
+
+
+오라클의 SQL Developer는 데이터 베이스 관련 개발을 더 쉽게 만들어주어 생산성을 높여주는 무료 그래픽 툴이다. 사용자들은 SQL Developer를 이용해서 데이터 베이스에서 검색을 할 수 있고 --&gt;</content><author><name>Mirae</name></author><category term="TIL" /><category term="learning" /><category term="공부 기록" /><category term="Java" /><summary type="html"></summary></entry><entry><title type="html">Java 추상화(Abstraction)와 메소드 재정의(Overriding)</title><link href="http://localhost:4000/til/overriding/" rel="alternate" type="text/html" title="Java 추상화(Abstraction)와 메소드 재정의(Overriding)" /><published>2022-02-04T00:00:00+09:00</published><updated>2022-02-04T00:00:00+09:00</updated><id>http://localhost:4000/til/overriding</id><content type="html" xml:base="http://localhost:4000/til/overriding/">&lt;hr /&gt;
 
 &lt;h3&gt;💭&lt;/h3&gt;
 
@@ -744,69 +792,4 @@ show databases; 를 입력하면 아래 사진처럼 어떤 데이터베이스�
 &lt;span class=&quot;o&quot;&gt;}&lt;/span&gt;
 
 &lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
-&lt;p&gt;위 3가지의 필드를 가지고 있는 ContactInfo라는 클래스가 있다고 가정해보자. 그리고 이 정보들을 MySQL 데이터베이스에 저장하고 싶다. 이때 ORM을 이용해서 어플리케이션의 데이터베이스에 객체들을 담을 테이블을 만들 수 있다. 테이블은 contactinfo라는 이름을 가지게 되고 id, name, email 세개의 열(columns)을 가진다.&lt;/p&gt;</content><author><name>Mirae</name></author><category term="TIL" /><category term="learning" /><category term="MySQL" /><category term="Java" /><category term="this keyword" /><category term="ORM" /><summary type="html"></summary></entry><entry><title type="html">[20220113] Java Container/Content pane/Classes and Objects</title><link href="http://localhost:4000/til/javaGui-copy/" rel="alternate" type="text/html" title="[20220113] Java Container/Content pane/Classes and Objects" /><published>2022-01-13T00:00:00+09:00</published><updated>2022-01-13T00:00:00+09:00</updated><id>http://localhost:4000/til/javaGui%20copy</id><content type="html" xml:base="http://localhost:4000/til/javaGui-copy/">&lt;hr /&gt;
-
-&lt;h3&gt;💭&lt;/h3&gt;
-&lt;p&gt;국비 Java 학원 수업 개강일이 얼마 남지 않았다. 지금까지는 JAVA에 대해 예습해보았고 커리큘럼에 있는 다른 것들도 미리 한번씩 봐두면 좋을 것 같아서 담당자님께 설명 들었던 것을 떠올리며 커리큘럼을 보고 있다. Java GUI에 대해서는 한번도 알아본적이 없는 것 같아서 검색해 보던 중 코드를 작성하며 정리해주신 &lt;a href=&quot;https://yooniron.tistory.com/12&quot;&gt;블로그&lt;/a&gt;를 발견했다. 코드와 설명을 적어주셔서 참고하며 공부해보고 있다.&lt;/p&gt;
-
-&lt;h3 id=&quot;java-swing-에서-container-란&quot;&gt;Java Swing 에서 Container 란?&lt;/h3&gt;
-&lt;p&gt;하나의 컨테이너는 여러개의 레이어들을 가지고 있다. 레이어를 컨테이너를 덮고 있는 투명한 필름이라고 생각할 수 있다. Java Swing에서 objects를 담기 위해 사용되는 이 레이어를 content pane이라고 한다.&lt;/p&gt;
-
-&lt;blockquote&gt;
-  &lt;p&gt;content pane = container 속 layer&lt;/p&gt;
-&lt;/blockquote&gt;
-
-&lt;p&gt;Container가 가지고 있는 content pane layer에 objects가 추가된다. getContentPane() 메소드가 컨텐트 페인 레이어를 불러온다. 그러면 objects를 그 안에 추가할 수 있다. &lt;br /&gt;
-컨텐트 페인을 구글링해보았더니 아래와 같은 사진들이 나온다. pane의 사전적 의미는 창문이나 문에 쓰이는 유리의 한 조각이다. 사전적 의미를 함께 떠올리면 좀 더 이해하기가 쉽다.&lt;/p&gt;
-
-&lt;p&gt;&lt;img src=&quot;http://localhost:4000/assets/images/contentPane.png&quot; alt=&quot;content_pane&quot; /&gt;&lt;/p&gt;
-
-&lt;h3 id=&quot;constructor-in-java&quot;&gt;Constructor in Java&lt;/h3&gt;
-&lt;p&gt;생성자에 대한 몇개의 강의도 듣고, 생성자를 만들어보기도 했지만 왜 생성자를 사용하는지 궁금하다. (분명히 예전에 강의를 봤는데 기억이 안난다😵;)&lt;br /&gt;
-생성자(Constructor)는 코드의 집합인데, new 연산자를 통해 클래스 안의 객체의 상태를 초기 설정 하는데 사용되며 메소드와 비슷하다.&lt;/p&gt;
-
-&lt;h3 id=&quot;java-classes-and-objects&quot;&gt;Java Classes and Objects&lt;/h3&gt;
-&lt;p&gt;&lt;a href=&quot;https://www.w3schools.com/java/java_classes.asp&quot;&gt;이 페이지를 번역하며 공부&lt;/a&gt;&lt;br /&gt;
-클래스(classes)와 객체(objects)는 자바에서 가장 중요한 개념이다. Java의 모든 것들은 클래스, 그리고 객체와 관련되어있다. attributes, methods도 마찬가지다. 예를 들어보자, 현실 세계에서 자동차는 객체다. 자동차는 색, 무게와 같은 속성(attributes)을 가지고 있다. 또 자동차는 움직이고 멈추는 메소드도 가지고 있다. (&lt;s&gt;메소드를 어떻게 번역하면 좋을까? 기능? 작동방식?&lt;/s&gt;) 클래스는 자동차를 만드는 사람이나 회사 또는 청사진으로 비유된다.&lt;/p&gt;
-
-&lt;ul&gt;
-  &lt;li&gt;Creat an Object &lt;br /&gt;&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;p&gt;자바에서 객체는 클래스로부터 만들어진다.&lt;/p&gt;
-&lt;div class=&quot;language-java highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;kd&quot;&gt;public&lt;/span&gt; &lt;span class=&quot;kd&quot;&gt;class&lt;/span&gt; &lt;span class=&quot;nc&quot;&gt;Main&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;{&lt;/span&gt;                 &lt;span class=&quot;c1&quot;&gt;//클래스 이름은 항상 대문자로 시작&lt;/span&gt;
-  &lt;span class=&quot;kt&quot;&gt;int&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;x&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;5&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;;&lt;/span&gt;
-
-  &lt;span class=&quot;kd&quot;&gt;public&lt;/span&gt; &lt;span class=&quot;kd&quot;&gt;static&lt;/span&gt; &lt;span class=&quot;kt&quot;&gt;void&lt;/span&gt; &lt;span class=&quot;nf&quot;&gt;main&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nc&quot;&gt;String&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;[]&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;args&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;{&lt;/span&gt;
-    &lt;span class=&quot;nc&quot;&gt;Main&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;myObj&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;new&lt;/span&gt; &lt;span class=&quot;nc&quot;&gt;Main&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;();&lt;/span&gt;       &lt;span class=&quot;c1&quot;&gt;// 클래스명 + 오브젝트명 설정 = new 연산자 + 클래스명();&lt;/span&gt;
-    &lt;span class=&quot;nc&quot;&gt;System&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;out&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;println&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;myObj&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;x&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;);&lt;/span&gt;
-  &lt;span class=&quot;o&quot;&gt;}&lt;/span&gt;
-
-&lt;span class=&quot;o&quot;&gt;}&lt;/span&gt;
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
-
-&lt;h3 id=&quot;java-this-keyword&quot;&gt;Java this Keyword&lt;/h3&gt;
-&lt;p&gt;&lt;a href=&quot;https://docs.oracle.com/javase/tutorial/java/javaOO/thiskey.html&quot;&gt;이 페이지를 번역하며 공부&lt;/a&gt;&lt;br /&gt;&lt;/p&gt;
-&lt;div class=&quot;language-java highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;kd&quot;&gt;public&lt;/span&gt; &lt;span class=&quot;kd&quot;&gt;class&lt;/span&gt; &lt;span class=&quot;nc&quot;&gt;Point&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;{&lt;/span&gt;
-  &lt;span class=&quot;kd&quot;&gt;public&lt;/span&gt; &lt;span class=&quot;kt&quot;&gt;int&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;x&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;0&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;;&lt;/span&gt;
-  &lt;span class=&quot;kd&quot;&gt;public&lt;/span&gt; &lt;span class=&quot;kt&quot;&gt;int&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;y&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;0&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;;&lt;/span&gt;
-
-  &lt;span class=&quot;c1&quot;&gt;//생성자 Constructor&lt;/span&gt;
-  &lt;span class=&quot;kd&quot;&gt;public&lt;/span&gt; &lt;span class=&quot;nf&quot;&gt;Point&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;kt&quot;&gt;int&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;a&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;kt&quot;&gt;int&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;b&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;{&lt;/span&gt;
-    &lt;span class=&quot;n&quot;&gt;x&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;a&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;;&lt;/span&gt;
-    &lt;span class=&quot;n&quot;&gt;y&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;b&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;;&lt;/span&gt;
-  &lt;span class=&quot;o&quot;&gt;}&lt;/span&gt;
-&lt;span class=&quot;o&quot;&gt;}&lt;/span&gt;
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
-&lt;p&gt;위의 작성된 코드를 보면, class … (&lt;s&gt;다음에 계속&lt;/s&gt;)&lt;/p&gt;
-&lt;div class=&quot;language-java highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;kd&quot;&gt;public&lt;/span&gt; &lt;span class=&quot;kd&quot;&gt;class&lt;/span&gt; &lt;span class=&quot;nc&quot;&gt;Point&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;{&lt;/span&gt;
-  &lt;span class=&quot;kd&quot;&gt;public&lt;/span&gt; &lt;span class=&quot;kt&quot;&gt;int&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;x&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;0&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;;&lt;/span&gt;
-  &lt;span class=&quot;kd&quot;&gt;public&lt;/span&gt; &lt;span class=&quot;kt&quot;&gt;int&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;y&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;0&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;;&lt;/span&gt;
-
-  &lt;span class=&quot;c1&quot;&gt;//생성자 Constructor&lt;/span&gt;
-  &lt;span class=&quot;kd&quot;&gt;public&lt;/span&gt; &lt;span class=&quot;nf&quot;&gt;Point&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;kt&quot;&gt;int&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;x&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;kt&quot;&gt;int&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;y&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;{&lt;/span&gt;
-    &lt;span class=&quot;k&quot;&gt;this&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;x&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;x&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;;&lt;/span&gt;
-    &lt;span class=&quot;k&quot;&gt;this&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;y&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;y&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;;&lt;/span&gt;
-  &lt;span class=&quot;o&quot;&gt;}&lt;/span&gt;
-&lt;span class=&quot;o&quot;&gt;}&lt;/span&gt;
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;</content><author><name>Mirae</name></author><category term="TIL" /><category term="software" /><category term="learning" /><category term="공부 기록" /><summary type="html"></summary></entry></feed>
+&lt;p&gt;위 3가지의 필드를 가지고 있는 ContactInfo라는 클래스가 있다고 가정해보자. 그리고 이 정보들을 MySQL 데이터베이스에 저장하고 싶다. 이때 ORM을 이용해서 어플리케이션의 데이터베이스에 객체들을 담을 테이블을 만들 수 있다. 테이블은 contactinfo라는 이름을 가지게 되고 id, name, email 세개의 열(columns)을 가진다.&lt;/p&gt;</content><author><name>Mirae</name></author><category term="TIL" /><category term="learning" /><category term="MySQL" /><category term="Java" /><category term="this keyword" /><category term="ORM" /><summary type="html"></summary></entry></feed>

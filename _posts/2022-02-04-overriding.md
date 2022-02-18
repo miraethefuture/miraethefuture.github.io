@@ -8,11 +8,12 @@ tags:
   - Java
   - Abstraction
   - Overriding in Java
+show_date: true
 toc: true
 toc_label: "👷"
 toc_icon: "cog"
 toc_sticky: true
-show_date: true
+
 ---
 __________________
 

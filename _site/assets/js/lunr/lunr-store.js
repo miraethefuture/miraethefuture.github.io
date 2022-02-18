@@ -82,4 +82,10 @@ var store = [{
         "tags": ["learning","공부 기록","Java","Abstraction","Overriding in Java"],
         "url": "/til/overriding/",
         "teaser": "/assets/images/teaser.jpg"
+      },{
+        "title": "SQL 정리",
+        "excerpt":"  💭 ..     SQL    오늘은 IT국비지원교육 18일차 날이다. 16일간의 자바 여행을 잠깐 마치고 SQL 을 배우기 시작했다.     SQL은 생각보다 어렵지 않아서 자바를 배울 때보다는 편한 마음으로 수업을 듣고 있다.     기본적인 statements들은 많이 사용해 보면 외우게 될 것 같지만 머릿속에서 정리가 덜 된 느낌이라 블로그 글로 정리해 본다.     ⌨️ SQL(Structured Query Language)  SQL(Structured Query Language)은 데이터베이스에 저장된 데이터에 접근하고 조작하기 위해 사용되는 표준 언어다.   ✍️ SQL Statements? 프로그래밍 언어에서 Statements 란?  ✋ 잠깐 Statements가 무엇인지 예시를 보며 알아보자.       System.out.println(\"Hello World\");  -&gt; 자바에서 Hello World를 화면에 출력하는 Statement       Bicycle redBike = new Bicycle();  -&gt; 자바에서 객체를 만드는 Statement         SELECT * FROM Friends;  -&gt; Friends 라는 이름의 테이블의 모든 컬럼을 가져와 보여주는 Statement       SELECT Fname FROM Friends;  -&gt; Friends 테이블의 Fname 컬럼의 정보를 가져와 보여주는 Statement   Statements란 각 프로그래밍 언어의 문법에 맞게 쓰여진 문장으로, 수행되어야 하는 작업을 표현한 문장이라고도 할 수 있겠다.    ","categories": ["TIL"],
+        "tags": ["learning","공부 기록","Java"],
+        "url": "/til/sql/",
+        "teaser": "/assets/images/teaser.jpg"
       }]

@@ -9,7 +9,7 @@
   <head>
     <meta charset="utf-8">
 
-<!-- begin _includes/seo.html --><title>[20220113] Java Container/Content pane/Classes and Objects | Mirae the Future</title>
+<!-- begin _includes/seo.html --><title>SQL 정리 | Mirae the Future</title>
 <meta name="description" content="">
 
 
@@ -22,8 +22,8 @@
 <meta property="og:type" content="article">
 <meta property="og:locale" content="en_US">
 <meta property="og:site_name" content="Mirae the Future">
-<meta property="og:title" content="[20220113] Java Container/Content pane/Classes and Objects">
-<meta property="og:url" content="http://localhost:4000/til/javaGui-copy/">
+<meta property="og:title" content="SQL 정리">
+<meta property="og:url" content="http://localhost:4000/til/sql/">
 
 
   <meta property="og:description" content="">
@@ -34,7 +34,7 @@
 
 
 
-  <meta property="article:published_time" content="2022-01-13T00:00:00+09:00">
+  <meta property="article:published_time" content="2022-02-18T00:00:00+09:00">
 
 
 
@@ -45,7 +45,7 @@
   
 
 
-<link rel="canonical" href="http://localhost:4000/til/javaGui-copy/">
+<link rel="canonical" href="http://localhost:4000/til/sql/">
 
 
 
@@ -182,7 +182,7 @@
     
       
       
-        <li class="current">[20220113] Java Container/Content pane/Classes and Objects</li>
+        <li class="current">SQL 정리</li>
       
     
   </ol>
@@ -304,16 +304,16 @@
 
 
   <article class="page h-entry" itemscope itemtype="https://schema.org/CreativeWork">
-    <meta itemprop="headline" content="[20220113] Java Container/Content pane/Classes and Objects">
+    <meta itemprop="headline" content="SQL 정리">
     <meta itemprop="description" content="">
-    <meta itemprop="datePublished" content="2022-01-13T00:00:00+09:00">
+    <meta itemprop="datePublished" content="2022-02-18T00:00:00+09:00">
     
 
     <div class="page__inner-wrap">
       
         <header>
           <h1 id="page-title" class="page__title p-name" itemprop="headline">
-            <a href="http://localhost:4000/til/javaGui-copy/" class="u-url" itemprop="url">[20220113] Java Container/Content pane/Classes and Objects
+            <a href="http://localhost:4000/til/sql/" class="u-url" itemprop="url">SQL 정리
 </a>
           </h1>
           
@@ -324,7 +324,7 @@
       <span class="page__meta-date">
         <i class="far fa-calendar-alt" aria-hidden="true"></i>
         
-        <time datetime="2022-01-13T00:00:00+09:00">January 13, 2022</time>
+        <time datetime="2022-02-18T00:00:00+09:00">February 18, 2022</time>
       </span>
     
 
@@ -339,72 +339,63 @@
 
       <section class="page__content e-content" itemprop="text">
         
+          <aside class="sidebar__right sticky">
+            <nav class="toc">
+              <header><h4 class="nav__title"><i class="fas fa-cog"></i> 🔋</h4></header>
+              <ul class="toc__menu"><li><a href="#-">💭 ..</a></li><li><a href="#️-sqlstructured-query-language">⌨️ SQL(Structured Query Language)</a></li><li><a href="#️-sql-statements-프로그래밍-언어에서-statements-란">✍️ SQL Statements? 프로그래밍 언어에서 Statements 란?</a></li></ul>
+
+            </nav>
+          </aside>
+        
         <hr />
 
-<h3>💭</h3>
-<p>국비 Java 학원 수업 개강일이 얼마 남지 않았다. 지금까지는 JAVA에 대해 예습해보았고 커리큘럼에 있는 다른 것들도 미리 한번씩 봐두면 좋을 것 같아서 담당자님께 설명 들었던 것을 떠올리며 커리큘럼을 보고 있다. Java GUI에 대해서는 한번도 알아본적이 없는 것 같아서 검색해 보던 중 코드를 작성하며 정리해주신 <a href="https://yooniron.tistory.com/12">블로그</a>를 발견했다. 코드와 설명을 적어주셔서 참고하며 공부해보고 있다.</p>
+<h3 id="-">💭 ..</h3>
+<div class="notice">
+  <h4>SQL</h4>
+  <p>오늘은 IT국비지원교육 18일차 날이다. 16일간의 자바 여행을 잠깐 마치고 SQL 을 배우기 시작했다.  
+  SQL은 생각보다 어렵지 않아서 자바를 배울 때보다는 편한 마음으로 수업을 듣고 있다.  
+  기본적인 statements들은 많이 사용해 보면 외우게 될 것 같지만 머릿속에서 정리가 덜 된 느낌이라 블로그 글로 정리해 본다. </p>
+</div>
 
-<h3 id="java-swing-에서-container-란">Java Swing 에서 Container 란?</h3>
-<p>하나의 컨테이너는 여러개의 레이어들을 가지고 있다. 레이어를 컨테이너를 덮고 있는 투명한 필름이라고 생각할 수 있다. Java Swing에서 objects를 담기 위해 사용되는 이 레이어를 content pane이라고 한다.</p>
+<h3 id="️-sqlstructured-query-language">⌨️ SQL(Structured Query Language)</h3>
+<p>SQL(Structured Query Language)은 데이터베이스에 저장된 데이터에 접근하고 조작하기 위해 사용되는 표준 언어다.</p>
 
-<blockquote>
-  <p>content pane = container 속 layer</p>
-</blockquote>
+<h3 id="️-sql-statements-프로그래밍-언어에서-statements-란">✍️ SQL Statements? 프로그래밍 언어에서 Statements 란?</h3>
+<p>✋ 잠깐 Statements가 무엇인지 예시를 보며 알아보자.</p>
 
-<p>Container가 가지고 있는 content pane layer에 objects가 추가된다. getContentPane() 메소드가 컨텐트 페인 레이어를 불러온다. 그러면 objects를 그 안에 추가할 수 있다. <br />
-컨텐트 페인을 구글링해보았더니 아래와 같은 사진들이 나온다. pane의 사전적 의미는 창문이나 문에 쓰이는 유리의 한 조각이다. 사전적 의미를 함께 떠올리면 좀 더 이해하기가 쉽다.</p>
-
-<p><img src="http://localhost:4000/assets/images/contentPane.png" alt="content_pane" /></p>
-
-<h3 id="constructor-in-java">Constructor in Java</h3>
-<p>생성자에 대한 몇개의 강의도 듣고, 생성자를 만들어보기도 했지만 왜 생성자를 사용하는지 궁금하다. (분명히 예전에 강의를 봤는데 기억이 안난다😵;)<br />
-생성자(Constructor)는 코드의 집합인데, new 연산자를 통해 클래스 안의 객체의 상태를 초기 설정 하는데 사용되며 메소드와 비슷하다.</p>
-
-<h3 id="java-classes-and-objects">Java Classes and Objects</h3>
-<p><a href="https://www.w3schools.com/java/java_classes.asp">이 페이지를 번역하며 공부</a><br />
-클래스(classes)와 객체(objects)는 자바에서 가장 중요한 개념이다. Java의 모든 것들은 클래스, 그리고 객체와 관련되어있다. attributes, methods도 마찬가지다. 예를 들어보자, 현실 세계에서 자동차는 객체다. 자동차는 색, 무게와 같은 속성(attributes)을 가지고 있다. 또 자동차는 움직이고 멈추는 메소드도 가지고 있다. (<s>메소드를 어떻게 번역하면 좋을까? 기능? 작동방식?</s>) 클래스는 자동차를 만드는 사람이나 회사 또는 청사진으로 비유된다.</p>
-
-<ul>
-  <li>Creat an Object <br /></li>
-</ul>
-
-<p>자바에서 객체는 클래스로부터 만들어진다.</p>
-<div class="language-java highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">public</span> <span class="kd">class</span> <span class="nc">Main</span> <span class="o">{</span>                 <span class="c1">//클래스 이름은 항상 대문자로 시작</span>
-  <span class="kt">int</span> <span class="n">x</span> <span class="o">=</span> <span class="mi">5</span><span class="o">;</span>
-
-  <span class="kd">public</span> <span class="kd">static</span> <span class="kt">void</span> <span class="nf">main</span><span class="o">(</span><span class="nc">String</span><span class="o">[]</span> <span class="n">args</span><span class="o">)</span> <span class="o">{</span>
-    <span class="nc">Main</span> <span class="n">myObj</span> <span class="o">=</span> <span class="k">new</span> <span class="nc">Main</span><span class="o">();</span>       <span class="c1">// 클래스명 + 오브젝트명 설정 = new 연산자 + 클래스명();</span>
-    <span class="nc">System</span><span class="o">.</span><span class="na">out</span><span class="o">.</span><span class="na">println</span><span class="o">(</span><span class="n">myObj</span><span class="o">.</span><span class="na">x</span><span class="o">);</span>
-  <span class="o">}</span>
-
-<span class="o">}</span>
+<div class="language-java highlighter-rouge"><div class="highlight"><pre class="highlight"><code>    <span class="nc">System</span><span class="o">.</span><span class="na">out</span><span class="o">.</span><span class="na">println</span><span class="o">(</span><span class="s">"Hello World"</span><span class="o">);</span>
 </code></pre></div></div>
+<p>-&gt; 자바에서 Hello World를 화면에 출력하는 Statement</p>
 
-<h3 id="java-this-keyword">Java this Keyword</h3>
-<p><a href="https://docs.oracle.com/javase/tutorial/java/javaOO/thiskey.html">이 페이지를 번역하며 공부</a><br /></p>
-<div class="language-java highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">public</span> <span class="kd">class</span> <span class="nc">Point</span> <span class="o">{</span>
-  <span class="kd">public</span> <span class="kt">int</span> <span class="n">x</span> <span class="o">=</span> <span class="mi">0</span><span class="o">;</span>
-  <span class="kd">public</span> <span class="kt">int</span> <span class="n">y</span> <span class="o">=</span> <span class="mi">0</span><span class="o">;</span>
-
-  <span class="c1">//생성자 Constructor</span>
-  <span class="kd">public</span> <span class="nf">Point</span><span class="o">(</span><span class="kt">int</span> <span class="n">a</span><span class="o">,</span> <span class="kt">int</span> <span class="n">b</span><span class="o">)</span> <span class="o">{</span>
-    <span class="n">x</span> <span class="o">=</span> <span class="n">a</span><span class="o">;</span>
-    <span class="n">y</span> <span class="o">=</span> <span class="n">b</span><span class="o">;</span>
-  <span class="o">}</span>
-<span class="o">}</span>
+<div class="language-java highlighter-rouge"><div class="highlight"><pre class="highlight"><code>    <span class="nc">Bicycle</span> <span class="n">redBike</span> <span class="o">=</span> <span class="k">new</span> <span class="nc">Bicycle</span><span class="o">();</span>
 </code></pre></div></div>
-<p>위의 작성된 코드를 보면, class … (<s>다음에 계속</s>)</p>
-<div class="language-java highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">public</span> <span class="kd">class</span> <span class="nc">Point</span> <span class="o">{</span>
-  <span class="kd">public</span> <span class="kt">int</span> <span class="n">x</span> <span class="o">=</span> <span class="mi">0</span><span class="o">;</span>
-  <span class="kd">public</span> <span class="kt">int</span> <span class="n">y</span> <span class="o">=</span> <span class="mi">0</span><span class="o">;</span>
+<p>-&gt; 자바에서 객체를 만드는 Statement</p>
 
-  <span class="c1">//생성자 Constructor</span>
-  <span class="kd">public</span> <span class="nf">Point</span><span class="o">(</span><span class="kt">int</span> <span class="n">x</span><span class="o">,</span> <span class="kt">int</span> <span class="n">y</span><span class="o">)</span> <span class="o">{</span>
-    <span class="k">this</span><span class="o">.</span><span class="na">x</span> <span class="o">=</span> <span class="n">x</span><span class="o">;</span>
-    <span class="k">this</span><span class="o">.</span><span class="na">y</span> <span class="o">=</span> <span class="n">y</span><span class="o">;</span>
-  <span class="o">}</span>
-<span class="o">}</span>
+<div class="language-sql highlighter-rouge"><div class="highlight"><pre class="highlight"><code>      <span class="k">SELECT</span> <span class="o">*</span> <span class="k">FROM</span> <span class="n">Friends</span><span class="p">;</span>
 </code></pre></div></div>
+<p>-&gt; Friends 라는 이름의 테이블의 모든 컬럼을 가져와 보여주는 Statement</p>
+
+<div class="language-sql highlighter-rouge"><div class="highlight"><pre class="highlight"><code>    <span class="k">SELECT</span> <span class="n">Fname</span> <span class="k">FROM</span> <span class="n">Friends</span><span class="p">;</span>
+</code></pre></div></div>
+<p>-&gt; Friends 테이블의 Fname 컬럼의 정보를 가져와 보여주는 Statement</p>
+
+<p>Statements란 각 프로그래밍 언어의 문법에 맞게 쓰여진 문장으로, 수행되어야 하는 작업을 표현한 문장이라고도 할 수 있겠다.</p>
+
+<!-- ### SQL로
+[이 페이지를 참고](https://www.w3schools.com/sql/sql_select.asp)
+
+
+CREATE TABLE 테이블명 (
+  컬럼명 자료형(크기)
+  deptno number(2,0),
+  loc    varchar2(13),
+  dname  varchar(14)
+  constraint pk_deptno primary key (deptno)
+  );
+
+
+
+오라클의 SQL Developer는 데이터 베이스 관련 개발을 더 쉽게 만들어주어 생산성을 높여주는 무료 그래픽 툴이다. 사용자들은 SQL Developer를 이용해서 데이터 베이스에서 검색을 할 수 있고 -->
 
         
       </section>
@@ -421,9 +412,9 @@
     <strong><i class="fas fa-fw fa-tags" aria-hidden="true"></i> Tags: </strong>
     <span itemprop="keywords">
     
-      <a href="/tags/#learning" class="page__taxonomy-item p-category" rel="tag">learning</a><span class="sep">, </span>
+      <a href="/tags/#java" class="page__taxonomy-item p-category" rel="tag">Java</a><span class="sep">, </span>
     
-      <a href="/tags/#software" class="page__taxonomy-item p-category" rel="tag">software</a><span class="sep">, </span>
+      <a href="/tags/#learning" class="page__taxonomy-item p-category" rel="tag">learning</a><span class="sep">, </span>
     
       <a href="/tags/#%EA%B3%B5%EB%B6%80-%EA%B8%B0%EB%A1%9D" class="page__taxonomy-item p-category" rel="tag">공부 기록</a>
     
@@ -450,7 +441,7 @@
 
         
 
-  <p class="page__date"><strong><i class="fas fa-fw fa-calendar-alt" aria-hidden="true"></i> Updated:</strong> <time class="dt-published" datetime="2022-01-13T00:00:00+09:00">January 13, 2022</time></p>
+  <p class="page__date"><strong><i class="fas fa-fw fa-calendar-alt" aria-hidden="true"></i> Updated:</strong> <time class="dt-published" datetime="2022-02-18T00:00:00+09:00">February 18, 2022</time></p>
 
       </footer>
 
@@ -459,12 +450,11 @@
       
   <nav class="pagination">
     
-      <a href="/til/annoation/" class="pagination--pager" title="[20220111] Spring Boot Annotation/REST resources
+      <a href="/til/overriding/" class="pagination--pager" title="Java 추상화(Abstraction)와 메소드 재정의(Overriding)
 ">Previous</a>
     
     
-      <a href="/til/java-continued/" class="pagination--pager" title="Java this Keyword / MySQL 데이터베이스 삭제하기 / ORM
-">Next</a>
+      <a href="#" class="pagination--pager disabled">Next</a>
     
   </nav>
 
@@ -478,48 +468,6 @@
     <div class="page__related">
       <h2 class="page__related-title">You may also enjoy</h2>
       <div class="grid__wrapper">
-        
-          
-
-
-
-<div class="grid__item">
-  <article class="archive__item" itemscope itemtype="https://schema.org/CreativeWork">
-    
-      <div class="archive__item-teaser">
-        <img src="/assets/images/teaser.jpg" alt="">
-      </div>
-    
-    <h2 class="archive__item-title no_toc" itemprop="headline">
-      
-        <a href="/til/sql/" rel="permalink">SQL 정리
-</a>
-      
-    </h2>
-    
-
-  <p class="page__meta">
-    
-      
-      <span class="page__meta-date">
-        <i class="far fa-calendar-alt" aria-hidden="true"></i>
-        
-        <time datetime="2022-02-18T00:00:00+09:00">February 18, 2022</time>
-      </span>
-    
-
-    
-
-    
-  </p>
-
-
-    <p class="archive__item-excerpt" itemprop="description">
-
-</p>
-  </article>
-</div>
-
         
           
 
@@ -631,6 +579,48 @@
         <i class="far fa-calendar-alt" aria-hidden="true"></i>
         
         <time datetime="2022-01-28T00:00:00+09:00">January 28, 2022</time>
+      </span>
+    
+
+    
+
+    
+  </p>
+
+
+    <p class="archive__item-excerpt" itemprop="description">
+
+</p>
+  </article>
+</div>
+
+        
+          
+
+
+
+<div class="grid__item">
+  <article class="archive__item" itemscope itemtype="https://schema.org/CreativeWork">
+    
+      <div class="archive__item-teaser">
+        <img src="/assets/images/teaser.jpg" alt="">
+      </div>
+    
+    <h2 class="archive__item-title no_toc" itemprop="headline">
+      
+        <a href="/til/%EA%B3%B5%EB%B6%80%20%EA%B8%B0%EB%A1%9D/aboutjpa/" rel="permalink">Persist something? ORM과 JPA
+</a>
+      
+    </h2>
+    
+
+  <p class="page__meta">
+    
+      
+      <span class="page__meta-date">
+        <i class="far fa-calendar-alt" aria-hidden="true"></i>
+        
+        <time datetime="2022-01-24T00:00:00+09:00">January 24, 2022</time>
       </span>
     
 
