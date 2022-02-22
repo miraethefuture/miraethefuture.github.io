@@ -342,14 +342,14 @@
           <aside class="sidebar__right sticky">
             <nav class="toc">
               <header><h4 class="nav__title"><i class="fas fa-cog"></i> 🔋</h4></header>
-              <ul class="toc__menu"><li><a href="#-">💭 ..</a></li><li><a href="#️-sqlstructured-query-language">⌨️ SQL(Structured Query Language)</a></li><li><a href="#️-sql-statements-프로그래밍-언어에서-statements-란">✍️ SQL Statements? 프로그래밍 언어에서 Statements 란?</a></li></ul>
+              
 
             </nav>
           </aside>
         
         <hr />
 
-<h3 id="-">💭 ..</h3>
+<h3>💭</h3>
 <div class="notice">
   <h4>SQL</h4>
   <p>오늘은 IT국비지원교육 18일차 날이다. 16일간의 자바 여행을 잠깐 마치고 SQL 을 배우기 시작했다.  
@@ -358,9 +358,11 @@
 </div>
 
 <h3 id="️-sqlstructured-query-language">⌨️ SQL(Structured Query Language)</h3>
+
 <p>SQL(Structured Query Language)은 데이터베이스에 저장된 데이터에 접근하고 조작하기 위해 사용되는 표준 언어다.</p>
 
 <h3 id="️-sql-statements-프로그래밍-언어에서-statements-란">✍️ SQL Statements? 프로그래밍 언어에서 Statements 란?</h3>
+<hr />
 <p>✋ 잠깐 Statements가 무엇인지 예시를 보며 알아보자.</p>
 
 <div class="language-java highlighter-rouge"><div class="highlight"><pre class="highlight"><code>    <span class="nc">System</span><span class="o">.</span><span class="na">out</span><span class="o">.</span><span class="na">println</span><span class="o">(</span><span class="s">"Hello World"</span><span class="o">);</span>
@@ -380,6 +382,20 @@
 <p>-&gt; Friends 테이블의 Fname 컬럼의 정보를 가져와 보여주는 Statement</p>
 
 <p>Statements란 각 프로그래밍 언어의 문법에 맞게 쓰여진 문장으로, 수행되어야 하는 작업을 표현한 문장이라고도 할 수 있겠다.</p>
+
+<h3 id="sql을-이용해서-데이터-베이스에-테이블을-만들어보자">🤘SQL을 이용해서 데이터 베이스에 테이블을 만들어보자</h3>
+
+<div class="language-sql highlighter-rouge"><div class="highlight"><pre class="highlight"><code>  <span class="k">CREATE</span> <span class="k">TABLE</span> <span class="n">your_table</span> <span class="p">(</span>
+    <span class="n">column1</span> <span class="n">varchar2</span><span class="p">(</span><span class="mi">10</span><span class="p">)</span> <span class="k">primary</span> <span class="k">key</span><span class="p">,</span>
+    <span class="n">column2</span> <span class="n">number</span><span class="p">(</span><span class="mi">5</span><span class="p">)</span> <span class="k">not</span> <span class="k">null</span><span class="p">,</span>
+    <span class="n">column3</span> <span class="n">varchar2</span><span class="p">(</span><span class="mi">15</span><span class="p">),</span>
+    <span class="n">column4</span> <span class="nb">date</span>
+  <span class="p">);</span>
+</code></pre></div></div>
+<p>위의 SQL 쿼리로 테이블을 만들 수 있다. ↓ 아래는 만들어진 테이블. (아직 데이터는 입력하지 않았다.)
+  <img src="/assets/images/sql1_table_created.jpg" alt="sql1_table_created" /></p>
+
+<p><a href="https://youtu.be/wu2twZdrM-E?t=906">🔊run a SQL query</a></p>
 
 <!-- ### SQL로
 [이 페이지를 참고](https://www.w3schools.com/sql/sql_select.asp)
@@ -454,7 +470,8 @@ CREATE TABLE 테이블명 (
 ">Previous</a>
     
     
-      <a href="#" class="pagination--pager disabled">Next</a>
+      <a href="/til/Iterations/" class="pagination--pager" title="프로그래밍에서 Iterations란? / 코딜리티의 open reading material를 읽어보며 for 문에 대해 알아보자.
+">Next</a>
     
   </nav>
 
@@ -468,6 +485,48 @@ CREATE TABLE 테이블명 (
     <div class="page__related">
       <h2 class="page__related-title">You may also enjoy</h2>
       <div class="grid__wrapper">
+        
+          
+
+
+
+<div class="grid__item">
+  <article class="archive__item" itemscope itemtype="https://schema.org/CreativeWork">
+    
+      <div class="archive__item-teaser">
+        <img src="/assets/images/teaser.jpg" alt="">
+      </div>
+    
+    <h2 class="archive__item-title no_toc" itemprop="headline">
+      
+        <a href="/til/Iterations/" rel="permalink">프로그래밍에서 Iterations란? / 코딜리티의 open reading material를 읽어보며 for 문에 대해 알아보자.
+</a>
+      
+    </h2>
+    
+
+  <p class="page__meta">
+    
+      
+      <span class="page__meta-date">
+        <i class="far fa-calendar-alt" aria-hidden="true"></i>
+        
+        <time datetime="2022-02-20T00:00:00+09:00">February 20, 2022</time>
+      </span>
+    
+
+    
+
+    
+  </p>
+
+
+    <p class="archive__item-excerpt" itemprop="description">
+
+</p>
+  </article>
+</div>
+
         
           
 
@@ -579,48 +638,6 @@ CREATE TABLE 테이블명 (
         <i class="far fa-calendar-alt" aria-hidden="true"></i>
         
         <time datetime="2022-01-28T00:00:00+09:00">January 28, 2022</time>
-      </span>
-    
-
-    
-
-    
-  </p>
-
-
-    <p class="archive__item-excerpt" itemprop="description">
-
-</p>
-  </article>
-</div>
-
-        
-          
-
-
-
-<div class="grid__item">
-  <article class="archive__item" itemscope itemtype="https://schema.org/CreativeWork">
-    
-      <div class="archive__item-teaser">
-        <img src="/assets/images/teaser.jpg" alt="">
-      </div>
-    
-    <h2 class="archive__item-title no_toc" itemprop="headline">
-      
-        <a href="/til/%EA%B3%B5%EB%B6%80%20%EA%B8%B0%EB%A1%9D/aboutjpa/" rel="permalink">Persist something? ORM과 JPA
-</a>
-      
-    </h2>
-    
-
-  <p class="page__meta">
-    
-      
-      <span class="page__meta-date">
-        <i class="far fa-calendar-alt" aria-hidden="true"></i>
-        
-        <time datetime="2022-01-24T00:00:00+09:00">January 24, 2022</time>
       </span>
     
 

@@ -1,6 +1,79 @@
-<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="4.2.1">Jekyll</generator><link href="http://localhost:4000/feed.xml" rel="self" type="application/atom+xml" /><link href="http://localhost:4000/" rel="alternate" type="text/html" /><updated>2022-02-18T21:51:39+09:00</updated><id>http://localhost:4000/feed.xml</id><title type="html">Mirae the Future</title><subtitle>An amazing website.</subtitle><author><name>Mirae</name></author><entry><title type="html">SQL 정리</title><link href="http://localhost:4000/til/sql/" rel="alternate" type="text/html" title="SQL 정리" /><published>2022-02-18T00:00:00+09:00</published><updated>2022-02-18T00:00:00+09:00</updated><id>http://localhost:4000/til/sql</id><content type="html" xml:base="http://localhost:4000/til/sql/">&lt;hr /&gt;
+<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="4.2.1">Jekyll</generator><link href="http://localhost:4000/feed.xml" rel="self" type="application/atom+xml" /><link href="http://localhost:4000/" rel="alternate" type="text/html" /><updated>2022-02-20T20:21:30+09:00</updated><id>http://localhost:4000/feed.xml</id><title type="html">Mirae the Future</title><subtitle>An amazing website.</subtitle><author><name>Mirae</name></author><entry><title type="html">프로그래밍에서 Iterations란? / 코딜리티의 open reading material를 읽어보며 for 문에 대해 알아보자.</title><link href="http://localhost:4000/til/Iterations/" rel="alternate" type="text/html" title="프로그래밍에서 Iterations란? / 코딜리티의 open reading material를 읽어보며 for 문에 대해 알아보자." /><published>2022-02-20T00:00:00+09:00</published><updated>2022-02-20T00:00:00+09:00</updated><id>http://localhost:4000/til/Iterations</id><content type="html" xml:base="http://localhost:4000/til/Iterations/">&lt;hr /&gt;
 
-&lt;h3 id=&quot;-&quot;&gt;💭 ..&lt;/h3&gt;
+&lt;h2&gt;🧱&lt;/h2&gt;
+&lt;div class=&quot;notice&quot;&gt;
+  &lt;h4&gt;Iterations&lt;/h4&gt;
+  &lt;p&gt;&lt;s&gt;30분 작성한 글 날린거 실화냐..&lt;/s&gt;  
+  &apos;본격적으로 취업 준비를 해보자!&apos; 하는 생각이 들었고, 블로그의 취직 성공기들을 읽어보다가 코딜리티라는 사이트를 알게 되었다. 리트코드나 프로그래머스는 한번씩 둘러봤는데, 코딜리티는 처음 듣는 곳이라 궁금해져 가입 후 연습문제를 풀기 전 open reading material을 읽어보려고 한다.&lt;/p&gt;
+&lt;/div&gt;
+
+&lt;h3 id=&quot;첫-레슨은-iterations에-관한-글입니다&quot;&gt;첫 레슨은 Iterations에 관한 글입니다.&lt;/h3&gt;
+&lt;p&gt;&lt;a href=&quot;https://codility.com/media/train/Iterations.pdf&quot;&gt;Open reading material about Iterations 링크&lt;/a&gt;&lt;br /&gt;
+  프로그래밍에서 iterating이란 프로그램의 한 부분을 반복하는 것을 말합니다. 이 레슨에서는 Iterations를 수행하는 기초적인 프로그래밍 구조에 대해 알아볼 것 입니다. 바로 “for”과 “while” 반복문(loops)입니다.&lt;/p&gt;
+
+&lt;h3 id=&quot;️-for-loops&quot;&gt;⚙️ For loops&lt;/h3&gt;
+
+&lt;p&gt;반복문의 구조에 대해 먼저 알아봅시다. 만약 정해진 횟수만큼 반복하는 작업을 하려 한다면, 한 그룹에 속해있는 각각의 요소들에 대해 반복을 수행하려 한다면 for 문을 사용하면 됩니다.&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;For loop systax&lt;/strong&gt;&lt;br /&gt;
+  (&lt;s&gt;이 글에서는 python을 기준으로 설명합니다.&lt;/s&gt; 그런데 코드가 좀 다른건지.. 글에 적힌대로 VScode에서 실행하니까 에러가 나네요..?)&lt;/p&gt;
+&lt;div class=&quot;language-python highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;  &lt;span class=&quot;k&quot;&gt;for&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;some_variable&lt;/span&gt; &lt;span class=&quot;ow&quot;&gt;in&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;range_of_values&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt;
+    &lt;span class=&quot;n&quot;&gt;loop_body&lt;/span&gt;   &lt;span class=&quot;c1&quot;&gt;# 처음 개발 공부를 Python으로 시작했는데 자바만 공부하다보니 많이 어색하네요.
+&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+&lt;p&gt;위 for문은 range_of_values의 크기만큼 반복하며 loop body의 내용을 수행합니다. range_of_values의 현재 값은 some_variable의 값에 할당됩니다. 가장 간단한 형태로 아래처럼 작성될 수 있습니다.&lt;/p&gt;
+
+&lt;div class=&quot;language-python highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;  &lt;span class=&quot;k&quot;&gt;for&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;i&lt;/span&gt; &lt;span class=&quot;ow&quot;&gt;in&lt;/span&gt; &lt;span class=&quot;nb&quot;&gt;range&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;0&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;100&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;):&lt;/span&gt;
+    &lt;span class=&quot;k&quot;&gt;print&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;i&lt;/span&gt;   
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+&lt;p&gt;위 코드는 0부터 99까지의 모든 정수를 출력합니다. 0 ~ 어떤 정수 범위의 반복문 수행은 많이 사용됩니다. (Python list나 배열의 인덱스가 0부터 시작하는 주된 이유입니다.) 아래 반복문은 위의 반복문과 똑같은 값을 출력합니다. 0부터 시작이라면 0은 생략 가능하죠.&lt;/p&gt;
+&lt;div class=&quot;language-python highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;  &lt;span class=&quot;k&quot;&gt;for&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;i&lt;/span&gt; &lt;span class=&quot;ow&quot;&gt;in&lt;/span&gt; &lt;span class=&quot;nb&quot;&gt;range&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;100&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;):&lt;/span&gt;
+    &lt;span class=&quot;k&quot;&gt;print&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;i&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;p&gt;예시 : 우리에게 양의 정수인 n 이 주어졌습니다. factorial을 구해볼건데요. 예를 들어 factorial 3은 3 * 2 * 1 입니다. factorial n을 구하여 변수 factorial 에 할당해봅시다.&lt;/p&gt;
+&lt;div class=&quot;language-python highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;  &lt;span class=&quot;n&quot;&gt;factorial&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;1&lt;/span&gt;
+  &lt;span class=&quot;k&quot;&gt;for&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;i&lt;/span&gt; &lt;span class=&quot;ow&quot;&gt;in&lt;/span&gt; &lt;span class=&quot;nb&quot;&gt;range&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;1&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;n&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;+&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;1&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;):&lt;/span&gt;     &lt;span class=&quot;c1&quot;&gt;# factorial n 의 값을 구할 수 있음
+&lt;/span&gt;    &lt;span class=&quot;n&quot;&gt;factorial&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;*=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;i&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;p&gt;또 다른 예시 : * 표로 공백으로 띄어진 삼각형을 출력해봅시다. 삼각형은 n 이라는 행을 가지고 있고, n은 양의 정수로 주어집니다. 각 행은 연달아 1, 2, …, n 개의 *을 가지고 있습니다. 예를 들면, n = 4 일때, 아래의 삼각형이 출력되어야 합니다.&lt;/p&gt;
+&lt;div class=&quot;language-python highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;    &lt;span class=&quot;o&quot;&gt;*&lt;/span&gt;
+    &lt;span class=&quot;o&quot;&gt;*&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;*&lt;/span&gt;
+    &lt;span class=&quot;o&quot;&gt;*&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;*&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;*&lt;/span&gt;
+    &lt;span class=&quot;o&quot;&gt;*&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;*&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;*&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;*&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+&lt;p&gt;이 삼각형을 출력하기 위해서는 두개의 반복문이 필요합니다. 하나의 반복문 안에 다른 반복문 하나가 있어야하죠. 바깥쪽의 반복문은 반복될 때마다 각 행을 출력하고 안쪽의 반복문은 반복될 때마다 *(별 asterisk) 하나를 출력합니다.&lt;/p&gt;
+&lt;div class=&quot;language-python highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;  &lt;span class=&quot;k&quot;&gt;for&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;i&lt;/span&gt; &lt;span class=&quot;ow&quot;&gt;in&lt;/span&gt; &lt;span class=&quot;nb&quot;&gt;range&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;1&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;n&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;+&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;1&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;):&lt;/span&gt;
+    &lt;span class=&quot;k&quot;&gt;for&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;j&lt;/span&gt; &lt;span class=&quot;ow&quot;&gt;in&lt;/span&gt; &lt;span class=&quot;nb&quot;&gt;range&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;i&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;):&lt;/span&gt;
+        &lt;span class=&quot;k&quot;&gt;print&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;&apos; *&apos;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;          &lt;span class=&quot;c1&quot;&gt;# 맨날 자바 for문 작성하다가 python 으로 하니까 너무 좋다.
+&lt;/span&gt;    &lt;span class=&quot;k&quot;&gt;print&lt;/span&gt;    &lt;span class=&quot;c1&quot;&gt;# 안쪽 for문의 바디에 해당됨. 개행 역할
+&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+&lt;p&gt;(위에서도 잠깐 언급한 것처럼 이 자료의 코드 그대로 VScode에 돌리면 에러가 나네요..? Python이 아닌건가요? 아래 코드로 돌리면 제대로 별이 나옵니다.)&lt;/p&gt;
+&lt;div class=&quot;language-python highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;  &lt;span class=&quot;k&quot;&gt;for&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;i&lt;/span&gt; &lt;span class=&quot;ow&quot;&gt;in&lt;/span&gt; &lt;span class=&quot;nb&quot;&gt;range&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;1&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;5&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;:&lt;/span&gt;
+    &lt;span class=&quot;k&quot;&gt;for&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;j&lt;/span&gt; &lt;span class=&quot;ow&quot;&gt;in&lt;/span&gt; &lt;span class=&quot;nb&quot;&gt;range&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;i&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;:&lt;/span&gt;
+        &lt;span class=&quot;k&quot;&gt;print&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&apos; *&apos;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;end&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
+    &lt;span class=&quot;k&quot;&gt;print&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&apos;&apos;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+&lt;p&gt;range function에는 한가지 인자가 더 추가 될 수 있는데, 바로 step 이다. range(10, 0, -1) 은 10, 9, 8, 7, …, 1 까지의 범위를 의미한다. start 값은 10, stop 값은 0, 이 사이를 -1만큼씩 순차적으로 내려온다는 의미가 된다. 이렇게 세개의 인자를 사용할 때는 start 값을 생략할 수 없다.&lt;/p&gt;
+
+&lt;p&gt;또 다른 예시 : 이번에는 아래와 같은 삼각형을 출력해 봅시다. n개의 행을 가지고 있는 거꾸로 된 대칭 모양의 삼각형입니다. 각 행은 2n-1, 2n-3, …, 3, 1개의 *을 가지고 있어야 하고 0, 2, 4,…, 2(n-1)만큼의 공백을 가지고 있어야 합니다. 예를들어 n = 4인 삼각형은 아래처럼 출력되어야 합니다.&lt;/p&gt;
+&lt;div class=&quot;language-python highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;  &lt;span class=&quot;o&quot;&gt;*&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;*&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;*&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;*&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;*&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;*&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;*&lt;/span&gt;
+    &lt;span class=&quot;o&quot;&gt;*&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;*&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;*&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;*&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;*&lt;/span&gt;
+      &lt;span class=&quot;o&quot;&gt;*&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;*&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;*&lt;/span&gt;
+        &lt;span class=&quot;o&quot;&gt;*&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+&lt;p&gt;이 예제에서 우리는 세개의 반복문을 사용합니다. 하나의 바깥쪽 반복문과 두개의 안쪽 반복문입니다. 바깥쪽 반복문은 반복할때마다 하나의 행을 출력합니다. 첫번째 안쪽 반복문은 공백을 출력하고 두번째 안쪽 반복문은 *을 출력합니다.&lt;/p&gt;
+&lt;div class=&quot;language-python highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;  &lt;span class=&quot;k&quot;&gt;for&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;i&lt;/span&gt; &lt;span class=&quot;ow&quot;&gt;in&lt;/span&gt; &lt;span class=&quot;nb&quot;&gt;range&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;n&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;0&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;-&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;1&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;:&lt;/span&gt;
+    &lt;span class=&quot;k&quot;&gt;for&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;j&lt;/span&gt; &lt;span class=&quot;ow&quot;&gt;in&lt;/span&gt; &lt;span class=&quot;nb&quot;&gt;range&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;n&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;-&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;i&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;:&lt;/span&gt;
+      &lt;span class=&quot;k&quot;&gt;print&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;&apos; &apos;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;
+    &lt;span class=&quot;k&quot;&gt;for&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;j&lt;/span&gt; &lt;span class=&quot;ow&quot;&gt;in&lt;/span&gt; &lt;span class=&quot;nb&quot;&gt;range&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;2&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;*&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;i&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;-&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;1&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;:&lt;/span&gt;
+      &lt;span class=&quot;k&quot;&gt;print&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;&apos; *&apos;&lt;/span&gt;
+    &lt;span class=&quot;k&quot;&gt;print&lt;/span&gt;  
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+&lt;p&gt;위의 코드로 별을 출력해보면 (출력되도록 print 부분을 수정하더라도) 공백을 찍는 부분의 식이 좀 잘못되어 있는 같다. 이 예제의 두번째줄이 공백을 출력하는 부분인데 n = 4 일때 (n-i)로 공백을 출력하게 되면 0, 1, 2, 3개의 공백을 출력하게 된다. 예제에서 출력되어야 하는 공백의 수는 0, 2, 4 이다.&lt;br /&gt;
+  만약 별과 별 사이에 공백이 없다면 위의 코드가 맞는데,, 내가 파악하지 못한 부분이 있는걸까?&lt;/p&gt;</content><author><name>Mirae</name></author><category term="TIL" /><category term="learning" /><category term="공부 기록" /><category term="python" /><category term="코딜리티" /><summary type="html"></summary></entry><entry><title type="html">SQL 정리</title><link href="http://localhost:4000/til/sql/" rel="alternate" type="text/html" title="SQL 정리" /><published>2022-02-18T00:00:00+09:00</published><updated>2022-02-18T00:00:00+09:00</updated><id>http://localhost:4000/til/sql</id><content type="html" xml:base="http://localhost:4000/til/sql/">&lt;hr /&gt;
+
+&lt;h3&gt;💭&lt;/h3&gt;
 &lt;div class=&quot;notice&quot;&gt;
   &lt;h4&gt;SQL&lt;/h4&gt;
   &lt;p&gt;오늘은 IT국비지원교육 18일차 날이다. 16일간의 자바 여행을 잠깐 마치고 SQL 을 배우기 시작했다.  
@@ -9,9 +82,11 @@
 &lt;/div&gt;
 
 &lt;h3 id=&quot;️-sqlstructured-query-language&quot;&gt;⌨️ SQL(Structured Query Language)&lt;/h3&gt;
+
 &lt;p&gt;SQL(Structured Query Language)은 데이터베이스에 저장된 데이터에 접근하고 조작하기 위해 사용되는 표준 언어다.&lt;/p&gt;
 
 &lt;h3 id=&quot;️-sql-statements-프로그래밍-언어에서-statements-란&quot;&gt;✍️ SQL Statements? 프로그래밍 언어에서 Statements 란?&lt;/h3&gt;
+&lt;hr /&gt;
 &lt;p&gt;✋ 잠깐 Statements가 무엇인지 예시를 보며 알아보자.&lt;/p&gt;
 
 &lt;div class=&quot;language-java highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;    &lt;span class=&quot;nc&quot;&gt;System&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;out&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;println&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;Hello World&quot;&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;);&lt;/span&gt;
@@ -31,6 +106,20 @@
 &lt;p&gt;-&amp;gt; Friends 테이블의 Fname 컬럼의 정보를 가져와 보여주는 Statement&lt;/p&gt;
 
 &lt;p&gt;Statements란 각 프로그래밍 언어의 문법에 맞게 쓰여진 문장으로, 수행되어야 하는 작업을 표현한 문장이라고도 할 수 있겠다.&lt;/p&gt;
+
+&lt;h3 id=&quot;sql을-이용해서-데이터-베이스에-테이블을-만들어보자&quot;&gt;🤘SQL을 이용해서 데이터 베이스에 테이블을 만들어보자&lt;/h3&gt;
+
+&lt;div class=&quot;language-sql highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;  &lt;span class=&quot;k&quot;&gt;CREATE&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;TABLE&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;your_table&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;
+    &lt;span class=&quot;n&quot;&gt;column1&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;varchar2&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;10&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;primary&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;key&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;
+    &lt;span class=&quot;n&quot;&gt;column2&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;number&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;5&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;not&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;null&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;
+    &lt;span class=&quot;n&quot;&gt;column3&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;varchar2&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;15&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;),&lt;/span&gt;
+    &lt;span class=&quot;n&quot;&gt;column4&lt;/span&gt; &lt;span class=&quot;nb&quot;&gt;date&lt;/span&gt;
+  &lt;span class=&quot;p&quot;&gt;);&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+&lt;p&gt;위의 SQL 쿼리로 테이블을 만들 수 있다. ↓ 아래는 만들어진 테이블. (아직 데이터는 입력하지 않았다.)
+  &lt;img src=&quot;/assets/images/sql1_table_created.jpg&quot; alt=&quot;sql1_table_created&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;a href=&quot;https://youtu.be/wu2twZdrM-E?t=906&quot;&gt;🔊run a SQL query&lt;/a&gt;&lt;/p&gt;
 
 &lt;!-- ### SQL로
 [이 페이지를 참고](https://www.w3schools.com/sql/sql_select.asp)
@@ -726,68 +815,4 @@ a = (1), b = (2) 라고 할 때, (3)은  a * (b의 1의 자리수), (4)은  a * 
     &lt;span class=&quot;k&quot;&gt;this&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;lastName&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;lastName&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;;&lt;/span&gt;
   &lt;span class=&quot;o&quot;&gt;}&lt;/span&gt;
 
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;</content><author><name>Mirae</name></author><category term="TIL" /><category term="공부 기록" /><category term="software" /><category term="learning" /><category term="JPA" /><summary type="html"></summary></entry><entry><title type="html">Java this Keyword / MySQL 데이터베이스 삭제하기 / ORM</title><link href="http://localhost:4000/til/java-continued/" rel="alternate" type="text/html" title="Java this Keyword / MySQL 데이터베이스 삭제하기 / ORM" /><published>2022-01-14T00:00:00+09:00</published><updated>2022-01-14T00:00:00+09:00</updated><id>http://localhost:4000/til/java%20continued</id><content type="html" xml:base="http://localhost:4000/til/java-continued/">&lt;hr /&gt;
-
-&lt;h2&gt;💭&lt;/h2&gt;
-&lt;p&gt;벌써 1월 14일이라니 시간이 참 빠르다. 오늘은 어제 알아보던 것에 이어서 Java this keyword를 보면서 시작해본다.&lt;/p&gt;
-
-&lt;h3 id=&quot;java-this-keyword&quot;&gt;Java this Keyword&lt;/h3&gt;
-&lt;p&gt;&lt;a href=&quot;https://docs.oracle.com/javase/tutorial/java/javaOO/thiskey.html&quot;&gt;이 페이지를 번역하며 공부&lt;/a&gt;&lt;br /&gt;&lt;/p&gt;
-
-&lt;p&gt;&amp;lt;Using &lt;strong&gt;this&lt;/strong&gt; with a Field&amp;gt;&lt;/p&gt;
-
-&lt;p&gt;this keyword를 사용하는 가장 흔한 이유는 field(필드변수)의 이름이 메소드 패러미터나 생성자 패러미터와 같을 때 덮어씌여지는 것을 방지하기 위해서이다. 아래 두 예제는 이름이 Point 인 클래스를 만드는 두가지 방법을 보여준다.&lt;/p&gt;
-
-&lt;div class=&quot;language-java highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;kd&quot;&gt;public&lt;/span&gt; &lt;span class=&quot;kd&quot;&gt;class&lt;/span&gt; &lt;span class=&quot;nc&quot;&gt;Point&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;{&lt;/span&gt;
-  &lt;span class=&quot;kd&quot;&gt;public&lt;/span&gt; &lt;span class=&quot;kt&quot;&gt;int&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;x&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;0&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;;&lt;/span&gt;
-  &lt;span class=&quot;kd&quot;&gt;public&lt;/span&gt; &lt;span class=&quot;kt&quot;&gt;int&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;y&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;0&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;;&lt;/span&gt;
-
-  &lt;span class=&quot;c1&quot;&gt;//생성자 Constructor&lt;/span&gt;
-  &lt;span class=&quot;kd&quot;&gt;public&lt;/span&gt; &lt;span class=&quot;nf&quot;&gt;Point&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;kt&quot;&gt;int&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;a&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;kt&quot;&gt;int&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;b&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;{&lt;/span&gt;
-    &lt;span class=&quot;n&quot;&gt;x&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;a&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;;&lt;/span&gt;
-    &lt;span class=&quot;n&quot;&gt;y&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;b&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;;&lt;/span&gt;
-  &lt;span class=&quot;o&quot;&gt;}&lt;/span&gt;
-&lt;span class=&quot;o&quot;&gt;}&lt;/span&gt;
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
-&lt;p&gt;위의 작성된 코드에서는 fields의 이름이 각각 x, y이고 생성자 패러미터는 각각 a, b 이다. 두가지의 이름이 다르기 때문에 문제가 생기지 않는다.&lt;/p&gt;
-
-&lt;div class=&quot;language-java highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;kd&quot;&gt;public&lt;/span&gt; &lt;span class=&quot;kd&quot;&gt;class&lt;/span&gt; &lt;span class=&quot;nc&quot;&gt;Point&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;{&lt;/span&gt;
-  &lt;span class=&quot;kd&quot;&gt;public&lt;/span&gt; &lt;span class=&quot;kt&quot;&gt;int&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;x&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;0&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;;&lt;/span&gt;
-  &lt;span class=&quot;kd&quot;&gt;public&lt;/span&gt; &lt;span class=&quot;kt&quot;&gt;int&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;y&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;0&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;;&lt;/span&gt;
-
-  &lt;span class=&quot;c1&quot;&gt;//생성자 Constructor&lt;/span&gt;
-  &lt;span class=&quot;kd&quot;&gt;public&lt;/span&gt; &lt;span class=&quot;nf&quot;&gt;Point&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;kt&quot;&gt;int&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;x&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;kt&quot;&gt;int&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;y&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;{&lt;/span&gt;
-    &lt;span class=&quot;k&quot;&gt;this&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;x&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;x&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;;&lt;/span&gt;
-    &lt;span class=&quot;k&quot;&gt;this&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;y&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;y&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;;&lt;/span&gt;
-  &lt;span class=&quot;o&quot;&gt;}&lt;/span&gt;
-&lt;span class=&quot;o&quot;&gt;}&lt;/span&gt;
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
-&lt;p&gt;하지만 위 코드에서는 fields 의 이름과 생성자 패러미터의 이름이 같다. 이때 fields 앞에 this. 를 붙여주어야 한다.&lt;br /&gt;
-&lt;br /&gt;&lt;/p&gt;
-
-&lt;h3 id=&quot;mysql-데이터베이스-삭제하기&quot;&gt;MySQL 데이터베이스 삭제하기&lt;/h3&gt;
-
-&lt;p&gt;터미널을 열고 &lt;strong&gt;/usr/local/mysql/bin/mysql -u root -p&lt;/strong&gt; 을 입력해줍니다. 그리고 비밀번호를 입력해줍니다. (&lt;s&gt;내가 기억하려고 써보는 MySQL 실행시키는 방법&lt;/s&gt;)&lt;br /&gt;
-show databases; 를 입력하면 아래 사진처럼 어떤 데이터베이스들이 있는지 보여줍니다.
-저는 example 이라는 이름의 데이터베이스를 삭제할거에요.&lt;/p&gt;
-
-&lt;p&gt;&lt;img src=&quot;/assets/images/mql.png&quot; alt=&quot;mysql&quot; width=&quot;250&quot; /&gt;&lt;/p&gt;
-
-&lt;p&gt;DROP DATABASE example 을 입력하면 삭제 됩니다.&lt;/p&gt;
-
-&lt;p&gt;&lt;img src=&quot;/assets/images/mql2.png&quot; alt=&quot;mysql&quot; width=&quot;300&quot; /&gt;&lt;/p&gt;
-
-&lt;h3 id=&quot;java-orm&quot;&gt;Java ORM&lt;/h3&gt;
-&lt;p&gt;&lt;a href=&quot;https://education.launchcode.org/java-web-development/chapters/orm-part1/background.html&quot;&gt;이 페이지를 번역하며 공부&lt;/a&gt;&lt;/p&gt;
-
-&lt;p&gt;Java ORM은 Object-Relational Mapping의 약자로 Java objects와 Relational databases 사이에서 데이터를 변환해주는 기술이다.&lt;/p&gt;
-
-&lt;div class=&quot;language-java highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;kd&quot;&gt;public&lt;/span&gt; &lt;span class=&quot;kd&quot;&gt;class&lt;/span&gt; &lt;span class=&quot;nc&quot;&gt;ContactInfo&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;{&lt;/span&gt;
-  &lt;span class=&quot;kt&quot;&gt;int&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;id&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;;&lt;/span&gt;
-  &lt;span class=&quot;nc&quot;&gt;String&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;name&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;;&lt;/span&gt;
-  &lt;span class=&quot;nc&quot;&gt;String&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;email&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;;&lt;/span&gt;
-
-&lt;span class=&quot;o&quot;&gt;}&lt;/span&gt;
-
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
-&lt;p&gt;위 3가지의 필드를 가지고 있는 ContactInfo라는 클래스가 있다고 가정해보자. 그리고 이 정보들을 MySQL 데이터베이스에 저장하고 싶다. 이때 ORM을 이용해서 어플리케이션의 데이터베이스에 객체들을 담을 테이블을 만들 수 있다. 테이블은 contactinfo라는 이름을 가지게 되고 id, name, email 세개의 열(columns)을 가진다.&lt;/p&gt;</content><author><name>Mirae</name></author><category term="TIL" /><category term="learning" /><category term="MySQL" /><category term="Java" /><category term="this keyword" /><category term="ORM" /><summary type="html"></summary></entry></feed>
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;</content><author><name>Mirae</name></author><category term="TIL" /><category term="공부 기록" /><category term="software" /><category term="learning" /><category term="JPA" /><summary type="html"></summary></entry></feed>
