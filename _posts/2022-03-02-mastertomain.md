@@ -9,9 +9,9 @@ tags:
   - Article
 
 toc: true
-toc_label: "👷"
 toc_icon: "cog"
 toc_sticky: true
+toc_label: "⚙️"
 show_date: true
 ---
 
@@ -41,7 +41,7 @@ show_date: true
 Git 그리고 Github은 다른 사람들과 다르지 않았다. 2020년 10월 1일부터, 새롭게 생성되는 모든 깃헙의 레퍼지토리는 main 이라는 이름의 기본 branch를 생성한다. 깃헙은 더이상 master라는 기본 브랜치를 생성하지 않는다.  
 왜 깃헙이 master 브랜치의 이름을 main 브랜치로 바꾸었는지, 그리고 이것이 개발자들에게 어떤 영향을 미칠지 알아보자.
 
-### 문화적 정서
+## 문화적 정서
 2020년 여름, 컴퓨터 산업이 master and slave라는 용어를 사용한다는 것이 모두의 주목을 받았다.
 많은 시위와 커져가는 사회적 동요 속에서, 이 유해하고 한물간 용어는 더 이상 적합하지 않은 것으로 고려되었다.  
 
