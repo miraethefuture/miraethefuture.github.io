@@ -100,4 +100,10 @@ var store = [{
         "tags": ["learning","공부 기록","Github","Article"],
         "url": "/til/mastertomain/",
         "teaser": "/assets/images/teaser.jpg"
+      },{
+        "title": "",
+        "excerpt":" ","categories": ["TIL"],
+        "tags": ["learning","공부 기록","그래프"],
+        "url": "/til/Clang/",
+        "teaser": "/assets/images/teaser.jpg"
       }]
