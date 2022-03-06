@@ -9,7 +9,7 @@
   <head>
     <meta charset="utf-8">
 
-<!-- begin _includes/seo.html --><title>Java this Keyword / MySQL 데이터베이스 삭제하기 / ORM | Mirae the Future</title>
+<!-- begin _includes/seo.html --><title>오라클 클라우드 DB와 자바 연결 / 이클립스에서 select 쿼리로 오라클 DB에 있는 정보 가져오기 | Mirae the Future</title>
 <meta name="description" content="">
 
 
@@ -22,8 +22,8 @@
 <meta property="og:type" content="article">
 <meta property="og:locale" content="en_US">
 <meta property="og:site_name" content="Mirae the Future">
-<meta property="og:title" content="Java this Keyword / MySQL 데이터베이스 삭제하기 / ORM">
-<meta property="og:url" content="http://localhost:4000/til/java-continued/">
+<meta property="og:title" content="오라클 클라우드 DB와 자바 연결 / 이클립스에서 select 쿼리로 오라클 DB에 있는 정보 가져오기">
+<meta property="og:url" content="http://localhost:4000/til/jdbc/">
 
 
   <meta property="og:description" content="">
@@ -34,7 +34,7 @@
 
 
 
-  <meta property="article:published_time" content="2022-01-14T00:00:00+09:00">
+  <meta property="article:published_time" content="2022-02-24T00:00:00+09:00">
 
 
 
@@ -45,7 +45,7 @@
   
 
 
-<link rel="canonical" href="http://localhost:4000/til/java-continued/">
+<link rel="canonical" href="http://localhost:4000/til/jdbc/">
 
 
 
@@ -182,7 +182,7 @@
     
       
       
-        <li class="current">Java this Keyword / MySQL 데이터베이스 삭제하기 / ORM</li>
+        <li class="current">오라클 클라우드 DB와 자바 연결 / 이클립스에서 select 쿼리로 오라클 DB에 있는 정보 가져오기</li>
       
     
   </ol>
@@ -304,16 +304,16 @@
 
 
   <article class="page h-entry" itemscope itemtype="https://schema.org/CreativeWork">
-    <meta itemprop="headline" content="Java this Keyword / MySQL 데이터베이스 삭제하기 / ORM">
+    <meta itemprop="headline" content="오라클 클라우드 DB와 자바 연결 / 이클립스에서 select 쿼리로 오라클 DB에 있는 정보 가져오기">
     <meta itemprop="description" content="">
-    <meta itemprop="datePublished" content="2022-01-14T00:00:00+09:00">
+    <meta itemprop="datePublished" content="2022-02-24T00:00:00+09:00">
     
 
     <div class="page__inner-wrap">
       
         <header>
           <h1 id="page-title" class="page__title p-name" itemprop="headline">
-            <a href="http://localhost:4000/til/java-continued/" class="u-url" itemprop="url">Java this Keyword / MySQL 데이터베이스 삭제하기 / ORM
+            <a href="http://localhost:4000/til/jdbc/" class="u-url" itemprop="url">오라클 클라우드 DB와 자바 연결 / 이클립스에서 select 쿼리로 오라클 DB에 있는 정보 가져오기
 </a>
           </h1>
           
@@ -324,7 +324,7 @@
       <span class="page__meta-date">
         <i class="far fa-calendar-alt" aria-hidden="true"></i>
         
-        <time datetime="2022-01-14T00:00:00+09:00">January 14, 2022</time>
+        <time datetime="2022-02-24T00:00:00+09:00">February 24, 2022</time>
       </span>
     
 
@@ -342,76 +342,120 @@
           <aside class="sidebar__right sticky">
             <nav class="toc">
               <header><h4 class="nav__title"><i class="fas fa-cog"></i> 👷</h4></header>
-              <ul class="toc__menu"><li><a href="#java-this-keyword">Java this Keyword</a></li><li><a href="#mysql-데이터베이스-삭제하기">MySQL 데이터베이스 삭제하기</a></li><li><a href="#java-orm">Java ORM</a></li></ul>
+              
 
             </nav>
           </aside>
         
         <hr />
 
-<h2>💭</h2>
-<p>벌써 1월 14일이라니 시간이 참 빠르다. 오늘은 어제 알아보던 것에 이어서 Java this keyword를 보면서 시작해본다.</p>
+<p><a href="https://velog.io/@zinhoxxl/Apple-Silicon-M1-%EC%9C%BC%EB%A1%9C-oracleeclipse-%EC%97%B0%EB%8F%99%ED%95%98%EA%B8%B0-3">도움을 받은 글1</a><br />
+<a href="https://okky.kr/article/970368">도움을 받은 글2</a></p>
 
-<h3 id="java-this-keyword">Java this Keyword</h3>
-<p><a href="https://docs.oracle.com/javase/tutorial/java/javaOO/thiskey.html">이 페이지를 번역하며 공부</a><br /></p>
+<p><strong>환경</strong></p>
 
-<p>&lt;Using <strong>this</strong> with a Field&gt;</p>
+<p>m1 macbook air 사용
+오라클 클라우드 자율 운영 데이터베이스
+이클립스
+ojdbc8.jar</p>
 
-<p>this keyword를 사용하는 가장 흔한 이유는 field(필드변수)의 이름이 메소드 패러미터나 생성자 패러미터와 같을 때 덮어씌여지는 것을 방지하기 위해서이다. 아래 두 예제는 이름이 Point 인 클래스를 만드는 두가지 방법을 보여준다.</p>
+<p>처음 검색할 때는 JDBC를 자바에.. 뭐 어떻게 한다고..? 라는 생각이 들었습니다.
+아예 JDBC가 어떤 것인지 감이 잡히지 않았습니다.</p>
 
-<div class="language-java highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">public</span> <span class="kd">class</span> <span class="nc">Point</span> <span class="o">{</span>
-  <span class="kd">public</span> <span class="kt">int</span> <span class="n">x</span> <span class="o">=</span> <span class="mi">0</span><span class="o">;</span>
-  <span class="kd">public</span> <span class="kt">int</span> <span class="n">y</span> <span class="o">=</span> <span class="mi">0</span><span class="o">;</span>
+<p>JDBC는 DB와 자바를 연결해줍니다. 자바 언어로 작성한 코드로 데이터 베이스에 접근하고 여러가지 데이터 작업을 할 수 있게 되는 것 입니다.</p>
 
-  <span class="c1">//생성자 Constructor</span>
-  <span class="kd">public</span> <span class="nf">Point</span><span class="o">(</span><span class="kt">int</span> <span class="n">a</span><span class="o">,</span> <span class="kt">int</span> <span class="n">b</span><span class="o">)</span> <span class="o">{</span>
-    <span class="n">x</span> <span class="o">=</span> <span class="n">a</span><span class="o">;</span>
-    <span class="n">y</span> <span class="o">=</span> <span class="n">b</span><span class="o">;</span>
+<p>오라클 클라우드를 사용하고 있다는 특성때문에 기존의 오라클 DB와 자바를 연결하는 방법과 조금 다릅니다.
+아주 조금..! 단계중 많은 부분은 똑같아요.</p>
+
+<p>먼저 저는 SQL Developer를 이용하여 오라클 클라우드 DB에 테이블을 하나 만들어 주었습니다.
+테이블 이름은 stardew_valley 입니다.</p>
+
+<table>
+  <thead>
+    <tr>
+      <th> </th>
+      <th>VNAME</th>
+      <th>ADDRESS</th>
+      <th>AGE</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>1</td>
+      <td>Gus</td>
+      <td>The Stardrop Saloon</td>
+      <td>48</td>
+    </tr>
+    <tr>
+      <td>2</td>
+      <td>Abigail</td>
+      <td>Pierres General Store</td>
+      <td>24</td>
+    </tr>
+    <tr>
+      <td>3</td>
+      <td>Sebastian</td>
+      <td>24 Mountain Road</td>
+      <td>26</td>
+    </tr>
+  </tbody>
+</table>
+
+<p><br /></p>
+
+<p>그리고 이클립스에서 코드 작성하여 테이블의 값들을 가져와보겠습니다.</p>
+
+<p>먼저 작업하고 있는 java project에 ojdbc8.jar를 추가합니다. (위에 블로그에 자세히 설명되어 있습니다. ojdbc10.jar 은 저도 안되더라고요.)</p>
+
+<div class="language-java highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kn">import</span> <span class="nn">java.sql.*</span><span class="o">;</span>
+
+<span class="kd">public</span> <span class="kd">class</span> <span class="nc">Jdbc_test</span> <span class="o">{</span>
+  <span class="kd">public</span> <span class="kd">static</span> <span class="kt">void</span> <span class="nf">main</span><span class="o">(</span><span class="nc">String</span><span class="o">[]</span> <span class="n">args</span><span class="o">)</span> <span class="o">{</span>
+
+    <span class="nc">String</span> <span class="n">url</span> <span class="o">=</span> <span class="s">"jdbc:oracle:thin:@데이터 베이스 이름_high?TNS_ADMIN=전자지갑 압출 풀어준 폴더의 경로"</span><span class="o">;</span>
+    <span class="nc">String</span> <span class="n">userid</span><span class="o">=</span> <span class="s">"데이터베이스 userid"</span><span class="o">;</span> <span class="c1">// 변경하지 않았다면 admin</span>
+    <span class="nc">String</span> <span class="n">pwd</span> <span class="o">=</span> <span class="s">"데이터베이스 접속 비밀번호"</span><span class="o">;</span> <span class="c1">// DB 생성 시 지정했던 비밀번호</span>
+
+
+    <span class="k">try</span><span class="o">{</span>
+
+      <span class="c1">// 오라클 드라이버 로딩</span>
+      <span class="nc">Class</span><span class="o">.</span><span class="na">forName</span><span class="o">(</span><span class="s">"oracle.jdbc.OracleDriver"</span><span class="o">);</span>
+
+      <span class="c1">// DB에 연결</span>
+      <span class="nc">Connection</span> <span class="n">con</span> <span class="o">=</span> <span class="nc">DriverManager</span><span class="o">.</span><span class="na">getConnection</span><span class="o">(</span><span class="n">url</span><span class="o">,</span> <span class="n">userid</span><span class="o">,</span> <span class="n">pwd</span><span class="o">);</span>
+
+      <span class="c1">// sql문 작성 - DB에 저장되어있는 테이블에서 모든 레코드 정보 가져오기</span>
+      <span class="nc">String</span> <span class="n">sql</span> <span class="o">=</span> <span class="s">"select * from stardew_valley"</span><span class="o">;</span> <span class="c1">// ""; 안에 sql문 작성 후 sql 변수에 할당</span>
+
+      <span class="c1">// 작성한 sql문을 DB로 전달하기 위해 연결</span>
+      <span class="nc">PreparedStatement</span> <span class="n">ps</span> <span class="o">=</span> <span class="n">con</span><span class="o">.</span><span class="na">prepareStatement</span><span class="o">(</span><span class="n">sql</span><span class="o">);</span>
+
+      <span class="c1">// 실행 후 결과값을 ResultSet 타입의 변수에 할당</span>
+      <span class="nc">ResultSet</span> <span class="n">rs</span> <span class="o">=</span> <span class="n">ps</span><span class="o">.</span><span class="na">executeQuery</span><span class="o">();</span>
+
+      <span class="c1">// 반복문 이용 결과값 출력</span>
+      <span class="k">while</span><span class="o">(</span><span class="n">rs</span><span class="o">.</span><span class="na">next</span><span class="o">())</span> <span class="o">{</span> <span class="c1">// next() 메서드는 값이 있으면 true 반환 -&gt; 값이 없을 때가지 반복</span>
+        <span class="nc">String</span> <span class="n">vname</span> <span class="o">=</span> <span class="n">rs</span><span class="o">.</span><span class="na">getString</span><span class="o">(</span><span class="s">"vname"</span><span class="o">);</span>
+        <span class="nc">String</span> <span class="n">address</span> <span class="o">=</span> <span class="n">rs</span><span class="o">.</span><span class="na">getString</span><span class="o">(</span><span class="s">"address"</span><span class="o">);</span>
+        <span class="kt">int</span> <span class="n">age</span> <span class="o">=</span> <span class="n">rs</span><span class="o">.</span><span class="na">getInt</span><span class="o">(</span><span class="s">"age"</span><span class="o">);</span>
+
+        <span class="nc">System</span><span class="o">.</span><span class="na">out</span><span class="o">.</span><span class="na">println</span><span class="o">(</span><span class="n">vname</span> <span class="o">+</span> <span class="s">"\t"</span> <span class="o">+</span> <span class="n">address</span> <span class="o">+</span> <span class="s">"\t"</span> <span class="o">+</span> <span class="n">age</span><span class="o">);</span>
+
+      <span class="o">}</span>
+
+      <span class="c1">// 연결되어있던 객체들 닫아주기</span>
+      <span class="n">ps</span><span class="o">.</span><span class="na">close</span><span class="o">();</span> <span class="n">con</span><span class="o">.</span><span class="na">close</span><span class="o">();</span> <span class="n">rs</span><span class="o">.</span><span class="na">close</span><span class="o">();</span>
+
+    <span class="o">}</span> <span class="k">catch</span><span class="o">(</span><span class="nc">Exception</span> <span class="n">e</span><span class="o">)</span> <span class="o">{</span>
+      <span class="n">e</span><span class="o">.</span><span class="na">printStackTrace</span><span class="o">();</span>
+    <span class="o">}</span>
+
   <span class="o">}</span>
 <span class="o">}</span>
-</code></pre></div></div>
-<p>위의 작성된 코드에서는 fields의 이름이 각각 x, y이고 생성자 패러미터는 각각 a, b 이다. 두가지의 이름이 다르기 때문에 문제가 생기지 않는다.</p>
 
-<div class="language-java highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">public</span> <span class="kd">class</span> <span class="nc">Point</span> <span class="o">{</span>
-  <span class="kd">public</span> <span class="kt">int</span> <span class="n">x</span> <span class="o">=</span> <span class="mi">0</span><span class="o">;</span>
-  <span class="kd">public</span> <span class="kt">int</span> <span class="n">y</span> <span class="o">=</span> <span class="mi">0</span><span class="o">;</span>
-
-  <span class="c1">//생성자 Constructor</span>
-  <span class="kd">public</span> <span class="nf">Point</span><span class="o">(</span><span class="kt">int</span> <span class="n">x</span><span class="o">,</span> <span class="kt">int</span> <span class="n">y</span><span class="o">)</span> <span class="o">{</span>
-    <span class="k">this</span><span class="o">.</span><span class="na">x</span> <span class="o">=</span> <span class="n">x</span><span class="o">;</span>
-    <span class="k">this</span><span class="o">.</span><span class="na">y</span> <span class="o">=</span> <span class="n">y</span><span class="o">;</span>
-  <span class="o">}</span>
-<span class="o">}</span>
-</code></pre></div></div>
-<p>하지만 위 코드에서는 fields 의 이름과 생성자 패러미터의 이름이 같다. 이때 fields 앞에 this. 를 붙여주어야 한다.<br />
-<br /></p>
-
-<h3 id="mysql-데이터베이스-삭제하기">MySQL 데이터베이스 삭제하기</h3>
-
-<p>터미널을 열고 <strong>/usr/local/mysql/bin/mysql -u root -p</strong> 을 입력해줍니다. 그리고 비밀번호를 입력해줍니다. (<s>내가 기억하려고 써보는 MySQL 실행시키는 방법</s>)<br />
-show databases; 를 입력하면 아래 사진처럼 어떤 데이터베이스들이 있는지 보여줍니다.
-저는 example 이라는 이름의 데이터베이스를 삭제할거에요.</p>
-
-<p><img src="/assets/images/mql.png" alt="mysql" width="250" /></p>
-
-<p>DROP DATABASE example 을 입력하면 삭제 됩니다.</p>
-
-<p><img src="/assets/images/mql2.png" alt="mysql" width="300" /></p>
-
-<h3 id="java-orm">Java ORM</h3>
-<p><a href="https://education.launchcode.org/java-web-development/chapters/orm-part1/background.html">이 페이지를 번역하며 공부</a></p>
-
-<p>Java ORM은 Object-Relational Mapping의 약자로 Java objects와 Relational databases 사이에서 데이터를 변환해주는 기술이다.</p>
-
-<div class="language-java highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">public</span> <span class="kd">class</span> <span class="nc">ContactInfo</span> <span class="o">{</span>
-  <span class="kt">int</span> <span class="n">id</span><span class="o">;</span>
-  <span class="nc">String</span> <span class="n">name</span><span class="o">;</span>
-  <span class="nc">String</span> <span class="n">email</span><span class="o">;</span>
-
-<span class="o">}</span>
 
 </code></pre></div></div>
-<p>위 3가지의 필드를 가지고 있는 ContactInfo라는 클래스가 있다고 가정해보자. 그리고 이 정보들을 MySQL 데이터베이스에 저장하고 싶다. 이때 ORM을 이용해서 어플리케이션의 데이터베이스에 객체들을 담을 테이블을 만들 수 있다. 테이블은 contactinfo라는 이름을 가지게 되고 id, name, email 세개의 열(columns)을 가진다.</p>
 
         
       </section>
@@ -428,15 +472,9 @@ show databases; 를 입력하면 아래 사진처럼 어떤 데이터베이스�
     <strong><i class="fas fa-fw fa-tags" aria-hidden="true"></i> Tags: </strong>
     <span itemprop="keywords">
     
-      <a href="/tags/#java" class="page__taxonomy-item p-category" rel="tag">Java</a><span class="sep">, </span>
-    
       <a href="/tags/#learning" class="page__taxonomy-item p-category" rel="tag">learning</a><span class="sep">, </span>
     
-      <a href="/tags/#mysql" class="page__taxonomy-item p-category" rel="tag">MySQL</a><span class="sep">, </span>
-    
-      <a href="/tags/#orm" class="page__taxonomy-item p-category" rel="tag">ORM</a><span class="sep">, </span>
-    
-      <a href="/tags/#this-keyword" class="page__taxonomy-item p-category" rel="tag">this keyword</a>
+      <a href="/tags/#%EA%B3%B5%EB%B6%80-%EA%B8%B0%EB%A1%9D" class="page__taxonomy-item p-category" rel="tag">공부 기록</a>
     
     </span>
   </p>
@@ -461,7 +499,7 @@ show databases; 를 입력하면 아래 사진처럼 어떤 데이터베이스�
 
         
 
-  <p class="page__date"><strong><i class="fas fa-fw fa-calendar-alt" aria-hidden="true"></i> Updated:</strong> <time class="dt-published" datetime="2022-01-14T00:00:00+09:00">January 14, 2022</time></p>
+  <p class="page__date"><strong><i class="fas fa-fw fa-calendar-alt" aria-hidden="true"></i> Updated:</strong> <time class="dt-published" datetime="2022-02-24T00:00:00+09:00">February 24, 2022</time></p>
 
       </footer>
 
@@ -470,11 +508,11 @@ show databases; 를 입력하면 아래 사진처럼 어떤 데이터베이스�
       
   <nav class="pagination">
     
-      <a href="/til/javaGui-copy/" class="pagination--pager" title="[20220113] Java Container/Content pane/Classes and Objects
+      <a href="/til/Iterations/" class="pagination--pager" title="프로그래밍에서 Iterations란? / 코딜리티의 open reading material를 읽어보며 for 문에 대해 알아보자.
 ">Previous</a>
     
     
-      <a href="/til/%EA%B3%B5%EB%B6%80%20%EA%B8%B0%EB%A1%9D/go/" class="pagination--pager" title="Accessing Data with JPA
+      <a href="/til/arrayCo/" class="pagination--pager" title="코딜리티의 open reading material을 읽어보며 배열에 대해 알아보자.
 ">Next</a>
     
   </nav>
@@ -503,15 +541,7 @@ show databases; 를 입력하면 아래 사진처럼 어떤 데이터베이스�
     
     <h2 class="archive__item-title no_toc" itemprop="headline">
       
-<<<<<<< HEAD
-        <a href="/til/Clang/" rel="permalink">
-=======
-<<<<<<< HEAD
         <a href="/til/arrayCo/" rel="permalink">코딜리티의 open reading material을 읽어보며 배열에 대해 알아보자.
-=======
-        <a href="/til/mastertomain/" rel="permalink">깃헙은 왜 기본 브랜치의 이름을 main으로 바꿨을까?
->>>>>>> b2c4a961d3528e213c661dac9380780a59d2fbd2
->>>>>>> 1b025479c48820ad9f1fb7165891ca0f76a61a0d
 </a>
       
     </h2>
@@ -523,62 +553,7 @@ show databases; 를 입력하면 아래 사진처럼 어떤 데이터베이스�
       <span class="page__meta-date">
         <i class="far fa-calendar-alt" aria-hidden="true"></i>
         
-<<<<<<< HEAD
-        <time datetime="2022-03-03T00:00:00+09:00">March 3, 2022</time>
-=======
-<<<<<<< HEAD
         <time datetime="2022-03-05T00:00:00+09:00">March 5, 2022</time>
-=======
-        <time datetime="2022-03-02T00:00:00+09:00">March 2, 2022</time>
->>>>>>> b2c4a961d3528e213c661dac9380780a59d2fbd2
->>>>>>> 1b025479c48820ad9f1fb7165891ca0f76a61a0d
-      </span>
-    
-
-    
-
-    
-  </p>
-
-
-<<<<<<< HEAD
-    <p class="archive__item-excerpt" itemprop="description">
-</p>
-=======
-<<<<<<< HEAD
-    <p class="archive__item-excerpt" itemprop="description">
-
-</p>
-  </article>
-</div>
-
-        
-          
-
-
-
-<div class="grid__item">
-  <article class="archive__item" itemscope itemtype="https://schema.org/CreativeWork">
-    
-      <div class="archive__item-teaser">
-        <img src="/assets/images/teaser.jpg" alt="">
-      </div>
-    
-    <h2 class="archive__item-title no_toc" itemprop="headline">
-      
-        <a href="/til/jdbc/" rel="permalink">오라클 클라우드 DB와 자바 연결 / 이클립스에서 select 쿼리로 오라클 DB에 있는 정보 가져오기
-</a>
-      
-    </h2>
-    
-
-  <p class="page__meta">
-    
-      
-      <span class="page__meta-date">
-        <i class="far fa-calendar-alt" aria-hidden="true"></i>
-        
-        <time datetime="2022-02-24T00:00:00+09:00">February 24, 2022</time>
       </span>
     
 
@@ -591,58 +566,6 @@ show databases; 를 입력하면 아래 사진처럼 어떤 데이터베이스�
     <p class="archive__item-excerpt" itemprop="description">
 
 </p>
-=======
-    <p class="archive__item-excerpt" itemprop="description">💭
-
-  깃헙에 대해 배워가면서 한가지 궁금한 점이 생겼습니다.  
-  블로그로 정보를 찾거나 구글링을 하다 보면 사람들은 레퍼지토리 안에 master 브랜치를 기본으로 가지고 있고,  
-  레퍼지토리를 생성하면 master 브랜치가 생성된다는데. 제가 레퍼지토리를 만들면 언제나 ...</p>
->>>>>>> b2c4a961d3528e213c661dac9380780a59d2fbd2
->>>>>>> 1b025479c48820ad9f1fb7165891ca0f76a61a0d
-  </article>
-</div>
-
-        
-          
-
-
-
-<div class="grid__item">
-  <article class="archive__item" itemscope itemtype="https://schema.org/CreativeWork">
-    
-      <div class="archive__item-teaser">
-        <img src="/assets/images/teaser.jpg" alt="">
-      </div>
-    
-    <h2 class="archive__item-title no_toc" itemprop="headline">
-      
-        <a href="/til/mastertomain/" rel="permalink">깃헙은 왜 기본 브랜치의 이름을 main으로 바꿨을까?
-</a>
-      
-    </h2>
-    
-
-  <p class="page__meta">
-    
-      
-      <span class="page__meta-date">
-        <i class="far fa-calendar-alt" aria-hidden="true"></i>
-        
-        <time datetime="2022-03-02T00:00:00+09:00">March 2, 2022</time>
-      </span>
-    
-
-    
-
-    
-  </p>
-
-
-    <p class="archive__item-excerpt" itemprop="description">💭
-
-  깃헙에 대해 배워가면서 한가지 궁금한 점이 생겼습니다.  
-  블로그로 정보를 찾거나 구글링을 하다 보면 사람들은 레퍼지토리 안에 master 브랜치를 기본으로 가지고 있고,  
-  레퍼지토리를 생성하면 master 브랜치가 생성된다는데. 제가 레퍼지토리를 만들면 언제나 ...</p>
   </article>
 </div>
 
@@ -689,8 +612,6 @@ show databases; 를 입력하면 아래 사진처럼 어떤 데이터베이스�
 </div>
 
         
-<<<<<<< HEAD
-=======
           
 
 
@@ -733,7 +654,48 @@ show databases; 를 입력하면 아래 사진처럼 어떤 데이터베이스�
 </div>
 
         
->>>>>>> b2c4a961d3528e213c661dac9380780a59d2fbd2
+          
+
+
+
+<div class="grid__item">
+  <article class="archive__item" itemscope itemtype="https://schema.org/CreativeWork">
+    
+      <div class="archive__item-teaser">
+        <img src="/assets/images/teaser.jpg" alt="">
+      </div>
+    
+    <h2 class="archive__item-title no_toc" itemprop="headline">
+      
+        <a href="/til/overriding/" rel="permalink">Java 추상화(Abstraction)와 메소드 재정의(Overriding)
+</a>
+      
+    </h2>
+    
+
+  <p class="page__meta">
+    
+      
+      <span class="page__meta-date">
+        <i class="far fa-calendar-alt" aria-hidden="true"></i>
+        
+        <time datetime="2022-02-04T00:00:00+09:00">February 4, 2022</time>
+      </span>
+    
+
+    
+
+    
+  </p>
+
+
+    <p class="archive__item-excerpt" itemprop="description">
+
+</p>
+  </article>
+</div>
+
+        
       </div>
     </div>
   
