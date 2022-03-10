@@ -1,8 +1,191 @@
-<<<<<<< HEAD
-<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="4.2.1">Jekyll</generator><link href="http://localhost:4000/feed.xml" rel="self" type="application/atom+xml" /><link href="http://localhost:4000/" rel="alternate" type="text/html" /><updated>2022-03-06T19:06:39+09:00</updated><id>http://localhost:4000/feed.xml</id><title type="html">Mirae the Future</title><subtitle>An amazing website.</subtitle><author><name>Mirae</name></author><entry><title type="html"></title><link href="http://localhost:4000/til/Clang/" rel="alternate" type="text/html" title="" /><published>2022-03-03T00:00:00+09:00</published><updated>2022-03-03T00:00:00+09:00</updated><id>http://localhost:4000/til/Clang</id><content type="html" xml:base="http://localhost:4000/til/Clang/"></content><author><name>Mirae</name></author><category term="TIL" /><category term="learning" /><category term="공부 기록" /><category term="그래프" /><summary type="html"></summary></entry><entry><title type="html">깃헙은 왜 기본 브랜치의 이름을 main으로 바꿨을까?</title><link href="http://localhost:4000/til/mastertomain/" rel="alternate" type="text/html" title="깃헙은 왜 기본 브랜치의 이름을 main으로 바꿨을까?" /><published>2022-03-02T00:00:00+09:00</published><updated>2022-03-02T00:00:00+09:00</updated><id>http://localhost:4000/til/mastertomain</id><content type="html" xml:base="http://localhost:4000/til/mastertomain/">&lt;h3&gt;💭&lt;/h3&gt;
-=======
-<<<<<<< HEAD
-<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="4.2.1">Jekyll</generator><link href="http://localhost:4000/feed.xml" rel="self" type="application/atom+xml" /><link href="http://localhost:4000/" rel="alternate" type="text/html" /><updated>2022-03-05T23:27:25+09:00</updated><id>http://localhost:4000/feed.xml</id><title type="html">Mirae the Future</title><subtitle>An amazing website.</subtitle><author><name>Mirae</name></author><entry><title type="html">코딜리티의 open reading material을 읽어보며 배열에 대해 알아보자.</title><link href="http://localhost:4000/til/arrayCo/" rel="alternate" type="text/html" title="코딜리티의 open reading material을 읽어보며 배열에 대해 알아보자." /><published>2022-03-05T00:00:00+09:00</published><updated>2022-03-05T00:00:00+09:00</updated><id>http://localhost:4000/til/arrayCo</id><content type="html" xml:base="http://localhost:4000/til/arrayCo/">&lt;hr /&gt;
+<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="4.2.1">Jekyll</generator><link href="http://localhost:4000/feed.xml" rel="self" type="application/atom+xml" /><link href="http://localhost:4000/" rel="alternate" type="text/html" /><updated>2022-03-10T23:02:26+09:00</updated><id>http://localhost:4000/feed.xml</id><title type="html">Mirae the Future</title><subtitle>An amazing website.</subtitle><author><name>Mirae</name></author><entry><title type="html">A Swift Tour</title><link href="http://localhost:4000/til/basicSwift2/" rel="alternate" type="text/html" title="A Swift Tour" /><published>2022-03-10T00:00:00+09:00</published><updated>2022-03-10T00:00:00+09:00</updated><id>http://localhost:4000/til/basicSwift2</id><content type="html" xml:base="http://localhost:4000/til/basicSwift2/">&lt;h3 id=&quot;-&quot;&gt;💭 ..&lt;/h3&gt;
+&lt;div class=&quot;notice&quot;&gt;
+  &lt;h4&gt;Swift 공부하기&lt;/h4&gt;
+  &lt;p&gt;Swift는 어떤 언어일까? &lt;/p&gt;
+&lt;/div&gt;
+
+&lt;h3 id=&quot;1-&quot;&gt;1. 📖&lt;/h3&gt;
+&lt;p&gt;&lt;a href=&quot;https://docs.swift.org/swift-book/GuidedTour/GuidedTour.html&quot;&gt;A Swift Tour&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;새로운 프로그래밍 언어를 배울 때, 흔히 첫번째 프로그램으로 “Hello, world!”를 출력하는 프로그램을 만들곤 하죠. Swift에서는 단 한줄로 이 프로그램을 작성할 수 있습니다.&lt;/p&gt;
+
+&lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-swift&quot; data-lang=&quot;swift&quot;&gt;&lt;table class=&quot;rouge-table&quot;&gt;&lt;tbody&gt;&lt;tr&gt;&lt;td class=&quot;gutter gl&quot;&gt;&lt;pre class=&quot;lineno&quot;&gt;1
+&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;nf&quot;&gt;print&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;Hello, world!&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
+&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/tbody&gt;&lt;/table&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
+
+&lt;p&gt;C 나 Objective-C로 코드를 작성해본 경험이 있다면 이 syntax가 낯설지 않을 것입니다. Swift에서 이 한줄의 코드는 완벽하게 한 프로그램입니다. input/output 또는 문자열을 다루기 위해 따로 라이브러리를 추가하지 않아도 됩니다. 전역 범위로 작성된 코드는 프로그램의 시작점으로 사용되므로 main() function이 필요하지 않습니다. 또한 각각의 statement의 끝에 세미콜론(;)을 작성하지 않습니다.&lt;/p&gt;
+
+&lt;h3 id=&quot;2-간단한-값들simple-values&quot;&gt;2. 간단한 값들(Simple Values)&lt;/h3&gt;
+
+&lt;p&gt;상수는 let, 변수는 var를 사용해서 만듭니다. var(변수)에는 다른 값을 다시 할당할 수 있고, let(상수)는 한번 값이 정해지면 바뀌지 않습니다.&lt;/p&gt;
+
+&lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-swift&quot; data-lang=&quot;swift&quot;&gt;&lt;table class=&quot;rouge-table&quot;&gt;&lt;tbody&gt;&lt;tr&gt;&lt;td class=&quot;gutter gl&quot;&gt;&lt;pre class=&quot;lineno&quot;&gt;1
+2
+3
+&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;k&quot;&gt;var&lt;/span&gt; &lt;span class=&quot;nv&quot;&gt;myVariable&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;42&lt;/span&gt;
+&lt;span class=&quot;n&quot;&gt;myVariable&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;50&lt;/span&gt;
+&lt;span class=&quot;k&quot;&gt;let&lt;/span&gt; &lt;span class=&quot;nv&quot;&gt;myConstant&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;42&lt;/span&gt;
+&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/tbody&gt;&lt;/table&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
+
+&lt;p&gt;var, let의 이름 뒤에 : 을 이용해서 데이터 타입을 지정할 수 있습니다. 항상 자료형을 적어주어야 하는 것은 아닙니다. 컴파일러가 할당된 값이 어떤 데이터 자료형을 가지고 있는지 추측할 수도 있습니다.&lt;/p&gt;
+
+&lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-swift&quot; data-lang=&quot;swift&quot;&gt;&lt;table class=&quot;rouge-table&quot;&gt;&lt;tbody&gt;&lt;tr&gt;&lt;td class=&quot;gutter gl&quot;&gt;&lt;pre class=&quot;lineno&quot;&gt;1
+2
+3
+&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;k&quot;&gt;let&lt;/span&gt; &lt;span class=&quot;nv&quot;&gt;implicitInteger&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;70&lt;/span&gt;
+&lt;span class=&quot;k&quot;&gt;let&lt;/span&gt; &lt;span class=&quot;nv&quot;&gt;implicitDouble&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;mf&quot;&gt;70.0&lt;/span&gt;
+&lt;span class=&quot;k&quot;&gt;let&lt;/span&gt; &lt;span class=&quot;nv&quot;&gt;explicitDouble&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;kt&quot;&gt;Double&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;70&lt;/span&gt;
+&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/tbody&gt;&lt;/table&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
+
+&lt;h3 id=&quot;3-the-boilerplate-code&quot;&gt;3. The boilerplate code&lt;/h3&gt;
+&lt;p&gt;&lt;a href=&quot;https://medium.com/iu-women-in-computing/intro-to-swiftui-digital-clock-d0a60e05d394&quot;&gt;Intro to SwiftUI: Digital Clock&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;이론만 읽다보니 지루해지기 시작합니다. 지금 가장 만들어보고 싶은 앱은 디지털 시계 어플리케이션입니다. 구글링을 해봅니다.
+여러개의 친절한 블로그를 발견했는데요. 그 중 하나를 읽어보며 코드 구조를 분석해봅니다.&lt;/p&gt;
+
+&lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-swift&quot; data-lang=&quot;swift&quot;&gt;&lt;table class=&quot;rouge-table&quot;&gt;&lt;tbody&gt;&lt;tr&gt;&lt;td class=&quot;gutter gl&quot;&gt;&lt;pre class=&quot;lineno&quot;&gt;1
+2
+3
+4
+5
+6
+7
+8
+9
+10
+11
+12
+13
+14
+15
+16
+17
+18
+&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;kd&quot;&gt;import&lt;/span&gt; &lt;span class=&quot;kt&quot;&gt;SwiftUI&lt;/span&gt;
+
+&lt;span class=&quot;kd&quot;&gt;struct&lt;/span&gt; &lt;span class=&quot;kt&quot;&gt;ContentView&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;kt&quot;&gt;View&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
+    &lt;span class=&quot;k&quot;&gt;var&lt;/span&gt; &lt;span class=&quot;nv&quot;&gt;body&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;kd&quot;&gt;some&lt;/span&gt; &lt;span class=&quot;kt&quot;&gt;View&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
+
+
+        &lt;span class=&quot;kt&quot;&gt;Text&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;Hello&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
+
+    &lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
+&lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
+
+
+&lt;span class=&quot;kd&quot;&gt;struct&lt;/span&gt; &lt;span class=&quot;kt&quot;&gt;ContentView_Previews&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;kt&quot;&gt;PreviewProvider&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
+    &lt;span class=&quot;kd&quot;&gt;static&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;var&lt;/span&gt; &lt;span class=&quot;nv&quot;&gt;previews&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;kd&quot;&gt;some&lt;/span&gt; &lt;span class=&quot;kt&quot;&gt;View&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
+        &lt;span class=&quot;kt&quot;&gt;ContentView&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;()&lt;/span&gt;
+
+    &lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
+&lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
+&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/tbody&gt;&lt;/table&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
+
+&lt;p&gt;struct는 ContentView라는 이름의 View와 ContentView_Previews라는 이름의 previewProvider를 포함하고 있다.&lt;/p&gt;
+
+&lt;p&gt;View : 스크린에 렌더링 될 컨텐트를 담는 컨테이너다. subviews / parent views를 가질 수도 있다. View는 text, buttons, stacks, 그리고 lists 등 어떤 것이든 담을 수 있다.&lt;/p&gt;
+
+&lt;p&gt;ContentView 안에 body 변수를 가진다. 뷰 컨텐츠의 배열이 형성되는 곳이다. var body : some View 처럼 some 키워드가 View 앞에 오는데 이것은 body 변수가 뷰의 컨텐츠가 어떤 것이든 View를 return한다는 것을 나타낸다.&lt;/p&gt;
+
+&lt;h3 id=&quot;4-현재-날짜와-시간-정보-가져오기&quot;&gt;4. 현재 날짜와 시간 정보 가져오기&lt;/h3&gt;
+
+&lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-swift&quot; data-lang=&quot;swift&quot;&gt;&lt;table class=&quot;rouge-table&quot;&gt;&lt;tbody&gt;&lt;tr&gt;&lt;td class=&quot;gutter gl&quot;&gt;&lt;pre class=&quot;lineno&quot;&gt;1
+2
+3
+&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;kd&quot;&gt;struct&lt;/span&gt; &lt;span class=&quot;kt&quot;&gt;ContentView&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;kt&quot;&gt;View&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
+  &lt;span class=&quot;kd&quot;&gt;@State&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;var&lt;/span&gt; &lt;span class=&quot;nv&quot;&gt;date&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;kt&quot;&gt;Date&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;()&lt;/span&gt;
+&lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
+&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/tbody&gt;&lt;/table&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;
+    &lt;p&gt;‘@State’ 키워드는 해당 변수가 모니터링 되고 있다는 것을 의미한다. 만약 변수의 값이 바뀌면 View는 업데이트를 반영한다.&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;‘Date()’는 사용자가 있는 지역의 날짜와 시간 정보를 가져오는 initializer이다.&lt;/p&gt;
+  &lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-swift&quot; data-lang=&quot;swift&quot;&gt;&lt;table class=&quot;rouge-table&quot;&gt;&lt;tbody&gt;&lt;tr&gt;&lt;td class=&quot;gutter gl&quot;&gt;&lt;pre class=&quot;lineno&quot;&gt;1
+2
+3
+4
+5
+6
+7
+8
+9
+10
+11
+12
+13
+14
+15
+16
+17
+18
+19
+20
+&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;kd&quot;&gt;import&lt;/span&gt; &lt;span class=&quot;kt&quot;&gt;SwiftUI&lt;/span&gt;
+
+&lt;span class=&quot;kd&quot;&gt;struct&lt;/span&gt; &lt;span class=&quot;kt&quot;&gt;ContentView&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;kt&quot;&gt;View&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
+    &lt;span class=&quot;kd&quot;&gt;@State&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;var&lt;/span&gt; &lt;span class=&quot;nv&quot;&gt;date&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;kt&quot;&gt;Date&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;()&lt;/span&gt;
+
+    &lt;span class=&quot;k&quot;&gt;var&lt;/span&gt; &lt;span class=&quot;nv&quot;&gt;body&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;kd&quot;&gt;some&lt;/span&gt; &lt;span class=&quot;kt&quot;&gt;View&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
+
+        &lt;span class=&quot;kt&quot;&gt;VStack&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
+             &lt;span class=&quot;kt&quot;&gt;Text&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;&lt;/span&gt;&lt;span class=&quot;se&quot;&gt;\(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;date&lt;/span&gt;&lt;span class=&quot;se&quot;&gt;)&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
+
+        &lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
+    &lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
+&lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
+
+
+&lt;span class=&quot;kd&quot;&gt;struct&lt;/span&gt; &lt;span class=&quot;kt&quot;&gt;ContentView_Previews&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;kt&quot;&gt;PreviewProvider&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
+    &lt;span class=&quot;kd&quot;&gt;static&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;var&lt;/span&gt; &lt;span class=&quot;nv&quot;&gt;previews&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;kd&quot;&gt;some&lt;/span&gt; &lt;span class=&quot;kt&quot;&gt;View&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
+        &lt;span class=&quot;kt&quot;&gt;ContentView&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;()&lt;/span&gt;
+    &lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
+&lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
+&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/tbody&gt;&lt;/table&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
+
+&lt;p&gt;시간 정보는 계속해서 바뀌므로 @State 키워드를 사용해서 바뀐 시간을 계속해서 반영해주고 문자열 date에 escape character ‘&apos;를 추가해서 Date()를 담고 있는 date 변수의 할당되어 있는 문자열을 가져온다.&lt;/p&gt;
+
+&lt;h3 id=&quot;5-dateformatter-사용&quot;&gt;5. DateFormatter 사용&lt;/h3&gt;
+
+&lt;p&gt;…다음에 계속&lt;/p&gt;</content><author><name>Mirae</name></author><category term="TIL" /><category term="learning" /><category term="공부 기록" /><category term="Swift" /><summary type="html">💭 .. Swift 공부하기 Swift는 어떤 언어일까?</summary></entry><entry><title type="html">Swift</title><link href="http://localhost:4000/til/basicSwift/" rel="alternate" type="text/html" title="Swift" /><published>2022-03-07T00:00:00+09:00</published><updated>2022-03-07T00:00:00+09:00</updated><id>http://localhost:4000/til/basicSwift</id><content type="html" xml:base="http://localhost:4000/til/basicSwift/">&lt;h3 id=&quot;-&quot;&gt;💭 ..&lt;/h3&gt;
+&lt;div class=&quot;notice&quot;&gt;
+  &lt;h4&gt;Swift를 배워보자.&lt;/h4&gt;
+  &lt;p&gt; 아래 링크의 유튜브 튜토리얼을 보며 먼저 전체적으로 한번 훓어보려고 한다.&lt;br /&gt;    
+  그 과정에서 기록이 필요한 것들을 정리해본다.&lt;/p&gt;
+&lt;/div&gt;
+
+&lt;h3 id=&quot;선택한-유투브-튜토리얼&quot;&gt;선택한 유투브 튜토리얼&lt;/h3&gt;
+&lt;p&gt;&lt;a href=&quot;https://www.youtube.com/watch?v=F2ojC6TNwws&amp;amp;t=1s&quot;&gt;2021 SwiftUI Tutorial for Beginners (3.5 hour Masterclass)&lt;/a&gt; &lt;br /&gt;
+이런 양질의 자료를 무료로 볼 수 있다는 것에 감사하며 시작!&lt;/p&gt;
+
+&lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-swift&quot; data-lang=&quot;swift&quot;&gt;&lt;table class=&quot;rouge-table&quot;&gt;&lt;tbody&gt;&lt;tr&gt;&lt;td class=&quot;gutter gl&quot;&gt;&lt;pre class=&quot;lineno&quot;&gt;1
+2
+3
+4
+5
+6
+7
+8
+9
+10
+11
+&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;    &lt;span class=&quot;kd&quot;&gt;import&lt;/span&gt; &lt;span class=&quot;kt&quot;&gt;SwiftUI&lt;/span&gt;
+
+      &lt;span class=&quot;kd&quot;&gt;struct&lt;/span&gt; &lt;span class=&quot;kt&quot;&gt;ContentView&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;kt&quot;&gt;View&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
+        &lt;span class=&quot;k&quot;&gt;var&lt;/span&gt; &lt;span class=&quot;nv&quot;&gt;body&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;kd&quot;&gt;some&lt;/span&gt; &lt;span class=&quot;kt&quot;&gt;View&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
+
+          &lt;span class=&quot;kt&quot;&gt;Text&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;Hello!&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nf&quot;&gt;padding&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;()&lt;/span&gt;
+          &lt;span class=&quot;o&quot;&gt;&amp;lt;!--&lt;/span&gt; &lt;span class=&quot;kt&quot;&gt;Text는&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;element&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;padding은&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;modifier&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;--&amp;gt;&lt;/span&gt;
+        &lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
+      &lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
+
+  
+&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/tbody&gt;&lt;/table&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;</content><author><name>Mirae</name></author><category term="TIL" /><category term="learning" /><category term="공부 기록" /><category term="Swift" /><summary type="html">💭 .. Swift를 배워보자. 아래 링크의 유튜브 튜토리얼을 보며 먼저 전체적으로 한번 훓어보려고 한다. 그 과정에서 기록이 필요한 것들을 정리해본다.</summary></entry><entry><title type="html">코딜리티의 open reading material을 읽어보며 배열에 대해 알아보자.</title><link href="http://localhost:4000/til/arrayCo/" rel="alternate" type="text/html" title="코딜리티의 open reading material을 읽어보며 배열에 대해 알아보자." /><published>2022-03-05T00:00:00+09:00</published><updated>2022-03-05T00:00:00+09:00</updated><id>http://localhost:4000/til/arrayCo</id><content type="html" xml:base="http://localhost:4000/til/arrayCo/">&lt;hr /&gt;
 
 &lt;h2 id=&quot;arrays&quot;&gt;Arrays&lt;/h2&gt;
 &lt;p&gt;&lt;a href=&quot;https://codility.com/media/train/0-Arrays.pdf&quot;&gt;Codility / Arrays&lt;/a&gt;&lt;/p&gt;
@@ -70,7 +253,45 @@ temperatures 배열의 길이만큼 반복하며 각각의 요소에 접근하�
 &lt;br /&gt;
 &lt;br /&gt;
 &lt;br /&gt;
-…다음에 계속&lt;/p&gt;</content><author><name>Mirae</name></author><category term="TIL" /><category term="learning" /><category term="공부 기록" /><category term="Arrays" /><summary type="html"></summary></entry><entry><title type="html">오라클 클라우드 DB와 자바 연결 / 이클립스에서 select 쿼리로 오라클 DB에 있는 정보 가져오기</title><link href="http://localhost:4000/til/jdbc/" rel="alternate" type="text/html" title="오라클 클라우드 DB와 자바 연결 / 이클립스에서 select 쿼리로 오라클 DB에 있는 정보 가져오기" /><published>2022-02-24T00:00:00+09:00</published><updated>2022-02-24T00:00:00+09:00</updated><id>http://localhost:4000/til/jdbc</id><content type="html" xml:base="http://localhost:4000/til/jdbc/">&lt;hr /&gt;
+…다음에 계속&lt;/p&gt;</content><author><name>Mirae</name></author><category term="TIL" /><category term="learning" /><category term="공부 기록" /><category term="Arrays" /><summary type="html"></summary></entry><entry><title type="html">깃헙은 왜 기본 브랜치의 이름을 main으로 바꿨을까?</title><link href="http://localhost:4000/til/mastertomain/" rel="alternate" type="text/html" title="깃헙은 왜 기본 브랜치의 이름을 main으로 바꿨을까?" /><published>2022-03-02T00:00:00+09:00</published><updated>2022-03-02T00:00:00+09:00</updated><id>http://localhost:4000/til/mastertomain</id><content type="html" xml:base="http://localhost:4000/til/mastertomain/">&lt;h3&gt;💭&lt;/h3&gt;
+&lt;div class=&quot;notice&quot;&gt;
+  &lt;h4&gt;깃헙에 대해 배워가면서 한가지 궁금한 점이 생겼습니다.  &lt;/h4&gt;
+  &lt;p&gt;블로그로 정보를 찾거나 구글링을 하다 보면 사람들은 레퍼지토리 안에 master 브랜치를 기본으로 가지고 있고,  
+  레퍼지토리를 생성하면 master 브랜치가 생성된다는데. 제가 레퍼지토리를 만들면 언제나 main 이라는 이름의 기본 브랜치가 생성되었거든요.   
+  &apos;내가 뭔가 설정을 잘못한걸까?&apos;하는 생각이 들어 구글링을 하기 시작했습니다.  
+  그러다가 깃헙이 더이상 master branch라는 이름을 사용하지 않는다는 것을 알게되었어요. 왜일까? 궁금해서 이유를 찾아보니  
+  생각보다 더 멋진 이유로 기본 브랜치의 이름을 main으로 바꿨다는 것을 알게 되어서 공유해 봅니다.
+  &lt;/p&gt;
+&lt;/div&gt;
+
+&lt;h2 id=&quot;왜-깃헙은-master-branch의-이름을-main으로-바꾸었을까&quot;&gt;왜 깃헙은 master branch의 이름을 main으로 바꾸었을까?&lt;/h2&gt;
+&lt;p&gt;&lt;a href=&quot;https://www.theserverside.com/feature/Why-GitHub-renamed-its-master-branch-to-main#:~:text=GitHub%20took%20action%20based%20on,a%20different%20default%20for%20new&quot;&gt;Why GitHub renamed its master branch to main&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;여기 master branch에서 main branch로의 큰 변화가 일어난 이유가 있다.&lt;/p&gt;
+
+&lt;p&gt;시초부터, Git 분산 버전 관리 도구의 기본 branch name은 master로 설정되었다.&lt;br /&gt;
+모든 깃 repository는 master branch를 가지고 있었다. master branch는 소프트웨어 개발 분야에서 없어서는 안 될 역할을 담당하고 있었다.&lt;br /&gt;
+많은 프로젝트들에서 master branch는 실제 소스, 즉 모든 테스트를 거친 잘 작동하는 코드라는 것을 의미했다.&lt;/p&gt;
+
+&lt;p&gt;하지만 master 라는 용어는 컴퓨터 세계에서나 다른 세계에서나 더 이상 사람들이 좋아하지 않는 용어이다.
+Git 그리고 Github은 다른 사람들과 다르지 않았다. 2020년 10월 1일부터, 새롭게 생성되는 모든 깃헙의 레퍼지토리는 main 이라는 이름의 기본 branch를 생성한다. 깃헙은 더이상 master라는 기본 브랜치를 생성하지 않는다.&lt;br /&gt;
+왜 깃헙이 master 브랜치의 이름을 main 브랜치로 바꾸었는지, 그리고 이것이 개발자들에게 어떤 영향을 미칠지 알아보자.&lt;/p&gt;
+
+&lt;h2 id=&quot;문화적-정서&quot;&gt;문화적 정서&lt;/h2&gt;
+&lt;p&gt;2020년 여름, 컴퓨터 산업이 master and slave라는 용어를 사용한다는 것이 모두의 주목을 받았다.
+많은 시위와 커져가는 사회적 동요 속에서, 이 유해하고 한물간 용어는 더 이상 적합하지 않은 것으로 고려되었다.&lt;/p&gt;
+
+&lt;p&gt;Software Freedom Conservancy는 “Conservancy와 Git 프로젝트는 초기 브랜치 이름인 ‘master’가 일부 사람들에게 불쾌감을 준다는 것을 알고 있으며, 그 용어의 사용으로 인해 상처를 입은 사람들에게 공감합니다.”라고 말했다.&lt;/p&gt;
+
+&lt;p&gt;사람들이 생각하는 것과는 달리, 깃의 master 브랜치에는 특별한 기능이 없다.&lt;br /&gt;
+사용자들은 레퍼지토리에 해를 입히지 않고 master 브랜치를 삭제하거나 제거할 수 없다고 생각한다.
+이것은 잘못된 사실이다. master 브랜치는 레퍼지토리에 맨 처음 브랜치가 만들어졌을 때 함께 생성된 기본 설정된 이름이라는 점 빼고는 다른 브랜치들과 다른 점이 없다.  &lt;br /&gt;
+master 브랜치를 삭제하거나 이름을 바꾸거나 심지어는 삭제 후에 새로운 master 브랜치를 만들 수도 있다.&lt;/p&gt;
+
+&lt;p&gt;깃헙의 이런 변화는 과거의 만들어진 레퍼지토리에는 영향을 주지 않는다. 또한 만약 깃헙 사용자가 master라는 이름의 브랜치를 사용하고 싶다면 사용할 수 있다.&lt;br /&gt;
+깃헙은 master라는 용어를 금지하는 것은 아니다. 그저 사용을 격려하지 않는 것일 뿐이다.&lt;/p&gt;
+
+&lt;p&gt;매사추세츠주 캠브리지에 있는 HubSpot의 수석 설계자인 Whitney Sorenson은 깃헙이 master 브랜치의 이름을 main으로 변경하며 얻을 이점이 한시적으로 겪을 장애물보다 훨씬 크다고 했다. 그는 이러한 변화가 회사 시스템에 차별이 없는 언어를 더하기 위한 보다 큰 내부 계획의 일부라고 말했다. 그의 팀은 또한 whitelist와 blacklist를 allowlist와 blocklist로 교체하고 있다. Sorenson은 이메일로 “지금 이러한 변화를 만드는 것에는 시간이 걸리지만 그건 단지 일회적인 기술적 희생일 뿐, 내부적으로나 외부적으로 모두에 지속적인 영향을 미칠 것이다.”라고 말했다. 또 그는 “우리는 이 일을 장기전으로 보고 있으며, 차별이 없는 언어는 사람과 사람 사이의 소통에서 중요한 만큼 우리가 코딩하고, 그것으로 어떤 것을 구축할 때도 중요하다는 것을 안다.”라고 했다.&lt;/p&gt;</content><author><name>Mirae</name></author><category term="TIL" /><category term="learning" /><category term="공부 기록" /><category term="Github" /><category term="Article" /><summary type="html">💭 깃헙에 대해 배워가면서 한가지 궁금한 점이 생겼습니다. 블로그로 정보를 찾거나 구글링을 하다 보면 사람들은 레퍼지토리 안에 master 브랜치를 기본으로 가지고 있고, 레퍼지토리를 생성하면 master 브랜치가 생성된다는데. 제가 레퍼지토리를 만들면 언제나 main 이라는 이름의 기본 브랜치가 생성되었거든요. &apos;내가 뭔가 설정을 잘못한걸까?&apos;하는 생각이 들어 구글링을 하기 시작했습니다. 그러다가 깃헙이 더이상 master branch라는 이름을 사용하지 않는다는 것을 알게되었어요. 왜일까? 궁금해서 이유를 찾아보니 생각보다 더 멋진 이유로 기본 브랜치의 이름을 main으로 바꿨다는 것을 알게 되어서 공유해 봅니다.</summary></entry><entry><title type="html">오라클 클라우드 DB와 자바 연결 / 이클립스에서 select 쿼리로 오라클 DB에 있는 정보 가져오기</title><link href="http://localhost:4000/til/jdbc/" rel="alternate" type="text/html" title="오라클 클라우드 DB와 자바 연결 / 이클립스에서 select 쿼리로 오라클 DB에 있는 정보 가져오기" /><published>2022-02-24T00:00:00+09:00</published><updated>2022-02-24T00:00:00+09:00</updated><id>http://localhost:4000/til/jdbc</id><content type="html" xml:base="http://localhost:4000/til/jdbc/">&lt;hr /&gt;
 
 &lt;p&gt;&lt;a href=&quot;https://velog.io/@zinhoxxl/Apple-Silicon-M1-%EC%9C%BC%EB%A1%9C-oracleeclipse-%EC%97%B0%EB%8F%99%ED%95%98%EA%B8%B0-3&quot;&gt;도움을 받은 글1&lt;/a&gt;&lt;br /&gt;
 &lt;a href=&quot;https://okky.kr/article/970368&quot;&gt;도움을 받은 글2&lt;/a&gt;&lt;/p&gt;
@@ -179,48 +400,6 @@ ojdbc8.jar&lt;/p&gt;
 
 
 &lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;</content><author><name>Mirae</name></author><category term="TIL" /><category term="learning" /><category term="공부 기록" /><summary type="html"></summary></entry><entry><title type="html">프로그래밍에서 Iterations란? / 코딜리티의 open reading material를 읽어보며 for 문에 대해 알아보자.</title><link href="http://localhost:4000/til/Iterations/" rel="alternate" type="text/html" title="프로그래밍에서 Iterations란? / 코딜리티의 open reading material를 읽어보며 for 문에 대해 알아보자." /><published>2022-02-20T00:00:00+09:00</published><updated>2022-02-20T00:00:00+09:00</updated><id>http://localhost:4000/til/Iterations</id><content type="html" xml:base="http://localhost:4000/til/Iterations/">&lt;hr /&gt;
-=======
-<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="4.2.1">Jekyll</generator><link href="http://localhost:4000/feed.xml" rel="self" type="application/atom+xml" /><link href="http://localhost:4000/" rel="alternate" type="text/html" /><updated>2022-03-03T23:30:31+09:00</updated><id>http://localhost:4000/feed.xml</id><title type="html">Mirae the Future</title><subtitle>An amazing website.</subtitle><author><name>Mirae</name></author><entry><title type="html">깃헙은 왜 기본 브랜치의 이름을 main으로 바꿨을까?</title><link href="http://localhost:4000/til/mastertomain/" rel="alternate" type="text/html" title="깃헙은 왜 기본 브랜치의 이름을 main으로 바꿨을까?" /><published>2022-03-02T00:00:00+09:00</published><updated>2022-03-02T00:00:00+09:00</updated><id>http://localhost:4000/til/mastertomain</id><content type="html" xml:base="http://localhost:4000/til/mastertomain/">&lt;h3&gt;💭&lt;/h3&gt;
->>>>>>> 1b025479c48820ad9f1fb7165891ca0f76a61a0d
-&lt;div class=&quot;notice&quot;&gt;
-  &lt;h4&gt;깃헙에 대해 배워가면서 한가지 궁금한 점이 생겼습니다.  &lt;/h4&gt;
-  &lt;p&gt;블로그로 정보를 찾거나 구글링을 하다 보면 사람들은 레퍼지토리 안에 master 브랜치를 기본으로 가지고 있고,  
-  레퍼지토리를 생성하면 master 브랜치가 생성된다는데. 제가 레퍼지토리를 만들면 언제나 main 이라는 이름의 기본 브랜치가 생성되었거든요.   
-  &apos;내가 뭔가 설정을 잘못한걸까?&apos;하는 생각이 들어 구글링을 하기 시작했습니다.  
-  그러다가 깃헙이 더이상 master branch라는 이름을 사용하지 않는다는 것을 알게되었어요. 왜일까? 궁금해서 이유를 찾아보니  
-  생각보다 더 멋진 이유로 기본 브랜치의 이름을 main으로 바꿨다는 것을 알게 되어서 공유해 봅니다.
-  &lt;/p&gt;
-&lt;/div&gt;
-
-&lt;h2 id=&quot;왜-깃헙은-master-branch의-이름을-main으로-바꾸었을까&quot;&gt;왜 깃헙은 master branch의 이름을 main으로 바꾸었을까?&lt;/h2&gt;
-&lt;p&gt;&lt;a href=&quot;https://www.theserverside.com/feature/Why-GitHub-renamed-its-master-branch-to-main#:~:text=GitHub%20took%20action%20based%20on,a%20different%20default%20for%20new&quot;&gt;Why GitHub renamed its master branch to main&lt;/a&gt;&lt;/p&gt;
-
-&lt;p&gt;여기 master branch에서 main branch로의 큰 변화가 일어난 이유가 있다.&lt;/p&gt;
-
-&lt;p&gt;시초부터, Git 분산 버전 관리 도구의 기본 branch name은 master로 설정되었다.&lt;br /&gt;
-모든 깃 repository는 master branch를 가지고 있었다. master branch는 소프트웨어 개발 분야에서 없어서는 안 될 역할을 담당하고 있었다.&lt;br /&gt;
-많은 프로젝트들에서 master branch는 실제 소스, 즉 모든 테스트를 거친 잘 작동하는 코드라는 것을 의미했다.&lt;/p&gt;
-
-&lt;p&gt;하지만 master 라는 용어는 컴퓨터 세계에서나 다른 세계에서나 더 이상 사람들이 좋아하지 않는 용어이다.
-Git 그리고 Github은 다른 사람들과 다르지 않았다. 2020년 10월 1일부터, 새롭게 생성되는 모든 깃헙의 레퍼지토리는 main 이라는 이름의 기본 branch를 생성한다. 깃헙은 더이상 master라는 기본 브랜치를 생성하지 않는다.&lt;br /&gt;
-왜 깃헙이 master 브랜치의 이름을 main 브랜치로 바꾸었는지, 그리고 이것이 개발자들에게 어떤 영향을 미칠지 알아보자.&lt;/p&gt;
-
-&lt;h2 id=&quot;문화적-정서&quot;&gt;문화적 정서&lt;/h2&gt;
-&lt;p&gt;2020년 여름, 컴퓨터 산업이 master and slave라는 용어를 사용한다는 것이 모두의 주목을 받았다.
-많은 시위와 커져가는 사회적 동요 속에서, 이 유해하고 한물간 용어는 더 이상 적합하지 않은 것으로 고려되었다.&lt;/p&gt;
-
-&lt;p&gt;Software Freedom Conservancy는 “Conservancy와 Git 프로젝트는 초기 브랜치 이름인 ‘master’가 일부 사람들에게 불쾌감을 준다는 것을 알고 있으며, 그 용어의 사용으로 인해 상처를 입은 사람들에게 공감합니다.”라고 말했다.&lt;/p&gt;
-
-&lt;p&gt;사람들이 생각하는 것과는 달리, 깃의 master 브랜치에는 특별한 기능이 없다.&lt;br /&gt;
-사용자들은 레퍼지토리에 해를 입히지 않고 master 브랜치를 삭제하거나 제거할 수 없다고 생각한다.
-이것은 잘못된 사실이다. master 브랜치는 레퍼지토리에 맨 처음 브랜치가 만들어졌을 때 함께 생성된 기본 설정된 이름이라는 점 빼고는 다른 브랜치들과 다른 점이 없다.  &lt;br /&gt;
-master 브랜치를 삭제하거나 이름을 바꾸거나 심지어는 삭제 후에 새로운 master 브랜치를 만들 수도 있다.&lt;/p&gt;
-
-&lt;p&gt;깃헙의 이런 변화는 과거의 만들어진 레퍼지토리에는 영향을 주지 않는다. 또한 만약 깃헙 사용자가 master라는 이름의 브랜치를 사용하고 싶다면 사용할 수 있다.&lt;br /&gt;
-깃헙은 master라는 용어를 금지하는 것은 아니다. 그저 사용을 격려하지 않는 것일 뿐이다.&lt;/p&gt;
-
-&lt;p&gt;매사추세츠주 캠브리지에 있는 HubSpot의 수석 설계자인 Whitney Sorenson은 깃헙이 master 브랜치의 이름을 main으로 변경하며 얻을 이점이 한시적으로 겪을 장애물보다 훨씬 크다고 했다. 그는 이러한 변화가 회사 시스템에 차별이 없는 언어를 더하기 위한 보다 큰 내부 계획의 일부라고 말했다. 그의 팀은 또한 whitelist와 blacklist를 allowlist와 blocklist로 교체하고 있다. Sorenson은 이메일로 “지금 이러한 변화를 만드는 것에는 시간이 걸리지만 그건 단지 일회적인 기술적 희생일 뿐, 내부적으로나 외부적으로 모두에 지속적인 영향을 미칠 것이다.”라고 말했다. 또 그는 “우리는 이 일을 장기전으로 보고 있으며, 차별이 없는 언어는 사람과 사람 사이의 소통에서 중요한 만큼 우리가 코딩하고, 그것으로 어떤 것을 구축할 때도 중요하다는 것을 안다.”라고 했다.&lt;/p&gt;</content><author><name>Mirae</name></author><category term="TIL" /><category term="learning" /><category term="공부 기록" /><category term="Github" /><category term="Article" /><summary type="html">💭 깃헙에 대해 배워가면서 한가지 궁금한 점이 생겼습니다. 블로그로 정보를 찾거나 구글링을 하다 보면 사람들은 레퍼지토리 안에 master 브랜치를 기본으로 가지고 있고, 레퍼지토리를 생성하면 master 브랜치가 생성된다는데. 제가 레퍼지토리를 만들면 언제나 main 이라는 이름의 기본 브랜치가 생성되었거든요. &apos;내가 뭔가 설정을 잘못한걸까?&apos;하는 생각이 들어 구글링을 하기 시작했습니다. 그러다가 깃헙이 더이상 master branch라는 이름을 사용하지 않는다는 것을 알게되었어요. 왜일까? 궁금해서 이유를 찾아보니 생각보다 더 멋진 이유로 기본 브랜치의 이름을 main으로 바꿨다는 것을 알게 되어서 공유해 봅니다.</summary></entry><entry><title type="html">프로그래밍에서 Iterations란? / 코딜리티의 open reading material를 읽어보며 for 문에 대해 알아보자.</title><link href="http://localhost:4000/til/Iterations/" rel="alternate" type="text/html" title="프로그래밍에서 Iterations란? / 코딜리티의 open reading material를 읽어보며 for 문에 대해 알아보자." /><published>2022-02-20T00:00:00+09:00</published><updated>2022-02-20T00:00:00+09:00</updated><id>http://localhost:4000/til/Iterations</id><content type="html" xml:base="http://localhost:4000/til/Iterations/">&lt;hr /&gt;
->>>>>>> b2c4a961d3528e213c661dac9380780a59d2fbd2
 
 &lt;h2&gt;🧱&lt;/h2&gt;
 &lt;div class=&quot;notice&quot;&gt;
@@ -658,359 +837,4 @@ Abstract class를 상속받는 자식클래스를 만들어서 자식클래스�
 &lt;p&gt;JSP 페이지는 JSP&lt;/p&gt;
 
 &lt;p&gt;&lt;strong&gt;✍️ Scriptlet&lt;/strong&gt;&lt;br /&gt;
-  JSP scriptlet는 자바 언어로 쓰여진 코드, 변수, 메서드 선언부, 기호, 부호 등을 담을 수 있다.&lt;/p&gt;</content><author><name>Mirae</name></author><category term="TIL" /><category term="learning" /><category term="JSP" /><category term="Java" /><category term="Tomcat Server" /><category term="Eclipse IDE" /><summary type="html"></summary></entry><entry><title type="html">Persist something? ORM과 JPA</title><link href="http://localhost:4000/til/%EA%B3%B5%EB%B6%80%20%EA%B8%B0%EB%A1%9D/aboutjpa/" rel="alternate" type="text/html" title="Persist something? ORM과 JPA" /><published>2022-01-24T00:00:00+09:00</published><updated>2022-01-24T00:00:00+09:00</updated><id>http://localhost:4000/til/%EA%B3%B5%EB%B6%80%20%EA%B8%B0%EB%A1%9D/aboutjpa</id><content type="html" xml:base="http://localhost:4000/til/%EA%B3%B5%EB%B6%80%20%EA%B8%B0%EB%A1%9D/aboutjpa/">&lt;hr /&gt;
-
-&lt;h3&gt;💭&lt;/h3&gt;
-
-&lt;h3 id=&quot;persist-something-persistence&quot;&gt;Persist something? Persistence?&lt;/h3&gt;
-&lt;p&gt;&lt;a href=&quot;https://stackoverflow.com/questions/27608224/jpa-what-exactly-does-it-mean-for-an-entity-object-to-persist-what-is-the-def&quot;&gt;이 페이지를 참고&lt;/a&gt; &lt;br /&gt;&lt;/p&gt;
-
-&lt;p&gt;Persistence는 아주 간단히 말하자면 영구적으로 저장(&lt;s&gt;담아 둔다는&lt;/s&gt;)한다는 뜻이다. 자바를 이용하면서 우리는 오브젝트의 값을 데이터베이스에 저장한다. ORM은 JPA가 제공하는 표준 규격을 이용해 오브젝트를 데이터 베이스에 담는다. (새 튜플의 형태로) JPA에서 오브젝트들은 Entity로 변환된다. (엔티티는 오브젝트를 데이터 베이스의 테이블로 매핑하기 위해 사용됨)&lt;br /&gt;
-persisting an entity는 오브젝트(엔티티로 변환된)를 데이터베이스에 영구적으로 저장한다는 뜻이다. &lt;br /&gt;
-‘Persist’는 어플리케이션이 종료된 후에도 계속해서 데이터가 남아있는 것을 의미한다.
-어플리케이션이 종료되거나 사용자가 세션을 종료하고 새 세션을 시작해도 에전 데이터가 사라지지 않고 계속해서 저장돼있는 것이다.&lt;/p&gt;
-
-&lt;h3 id=&quot;implementation&quot;&gt;Implementation&lt;/h3&gt;
-&lt;p&gt;&lt;a href=&quot;https://ko.wikipedia.org/wiki/%EA%B5%AC%ED%98%84&quot;&gt;이 페이지에서 가져옴&lt;/a&gt;&lt;br /&gt;
-컴퓨터 공학에서, Implementation(구현)이란 기술적으로 정리해놓은 규격서나 알고리즘을 프로그래밍 혹은 소프트웨어 배치를 통해 프로그램이나 소프트웨어의 부분, 다른 컴퓨터 시스템을 구축하는 것을 말한다. 하나의 규격서나 표준에도 다양한 구현이 있을 수 있다. 예를 들면, 웹 브라우저는 W3C에서 정한 규격서의 구현을 포함하고 있다. 또, 소프트웨어 개발 도구는 프로그래밍 언어의 구현을 포함하고 있다. &lt;br /&gt;&lt;/p&gt;
-
-&lt;hr /&gt;
-
-&lt;h3 id=&quot;jsp-java-server-pages&quot;&gt;JSP (Java Server Pages)&lt;/h3&gt;
-&lt;p&gt;&lt;a href=&quot;https://www.geeksforgeeks.org/introduction-to-jsp/&quot;&gt;이 페이지를 참고&lt;/a&gt;&lt;/p&gt;
-&lt;ul&gt;
-  &lt;li&gt;웹 어플리케이션을 만들기 위해 사용되는 서버 쪽 기술.&lt;/li&gt;
-  &lt;li&gt;동적 웹 컨텐트를 만들기 위해 사용된다.&lt;/li&gt;
-  &lt;li&gt;
-    &lt;s&gt;(이 페이지에서는)&lt;/s&gt;
-    &lt;p&gt;JSP 태그는 Java 코드를 HTML 페이지에 넣기 위해 사용된다.&lt;/p&gt;
-  &lt;/li&gt;
-  &lt;li&gt;Servlet Technology의 신식(?) 버전이다. (구글링 해보니 Servlet이 더 빠르지만 코드 작성하고 읽기는 JSP가 더 쉽다고 합니다.)&lt;/li&gt;
-&lt;/ul&gt;</content><author><name>Mirae</name></author><category term="TIL" /><category term="공부 기록" /><category term="software" /><category term="learning" /><category term="JPA" /><category term="ORM" /><category term="Persistence" /><summary type="html"></summary></entry><entry><title type="html">return Keyword in Java / Java statements</title><link href="http://localhost:4000/til/copy/" rel="alternate" type="text/html" title="return Keyword in Java / Java statements" /><published>2022-01-20T00:00:00+09:00</published><updated>2022-01-20T00:00:00+09:00</updated><id>http://localhost:4000/til/copy</id><content type="html" xml:base="http://localhost:4000/til/copy/">&lt;hr /&gt;
-
-&lt;h3&gt;💭&lt;/h3&gt;
-&lt;ul&gt;
-  &lt;li&gt;Java&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;h3 id=&quot;returning-a-value-from-a-method&quot;&gt;Returning a Value from a Method&lt;/h3&gt;
-&lt;p&gt;&lt;a href=&quot;https://docs.oracle.com/javase/tutorial/java/javaOO/returnvalue.html&quot;&gt;이 페이지를 참고&lt;/a&gt; &lt;br /&gt;
-메소드는 아래 상태가 되면 자신을 실행시킨 코드로 돌아온다.&lt;/p&gt;
-&lt;ul&gt;
-  &lt;li&gt;메소드의 모든 statements를 수행했을 때&lt;/li&gt;
-  &lt;li&gt;return statement에 도달 했을 때&lt;/li&gt;
-  &lt;li&gt;
-    &lt;s&gt;throws an exception (covered later),&lt;/s&gt;
-  &lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;p&gt;메소드를 정의할 때 return type을 선언한다. 메소드의 바디에서 값을 받기위해 &lt;em&gt;return&lt;/em&gt; statement를 사용한다. &lt;em&gt;void&lt;/em&gt; 로 정의된 메소드는 값을 리턴하지 않기 때문에 바디 부분에 return statement를 포함하지 않아도 된다. 포함 할 수도 있는데&lt;/p&gt;
-
-&lt;h3 id=&quot;java-statements&quot;&gt;Java Statements&lt;/h3&gt;
-&lt;p&gt;&lt;a href=&quot;https://study.com/academy/lesson/java-statements-definition-examples.html#:~:text=Lesson%20Summary-,Java%20statements%20are%20instructions%20that%20tell%20the%20programming%20language%20what,of%20blocks%20of%20other%20statements.&amp;amp;text=values%20to%20variables.-,If%20statements%2C%20while%20statements%2C%20and%20for%20loop%20statements,start%20and%20end%20with%20brackets.&quot;&gt;이 페이지를 참고&lt;/a&gt; &lt;br /&gt;
-Java statements 는 자바 프로그래밍 언어가 무엇을 해야하는지 지시해주는 것이다. assignment statement는 아래와 같이 값을 변수에 대입시킨다. (할당한다.)&lt;/p&gt;
-
-&lt;div class=&quot;language-java highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;kt&quot;&gt;double&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;entryFee&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;mf&quot;&gt;15.75&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;;&lt;/span&gt;
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
-
-&lt;p&gt;모든 Java statements는 세미콜론(;)으로 끝맺어야한다. Java는 세미콜론까지 정보들을 처리한다. 아래 declaration statement는 전달된 메소드를 이용해서 화면에 정보를 나타나게 한다.&lt;/p&gt;
-
-&lt;div class=&quot;language-java highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;nc&quot;&gt;System&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;out&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;println&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;Line 1&quot;&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;);&lt;/span&gt;
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;</content><author><name>Mirae</name></author><category term="TIL" /><category term="software" /><category term="learning" /><category term="공부 기록" /><summary type="html"></summary></entry><entry><title type="html">E-mail / 백준 2884번 문제 풀어보기</title><link href="http://localhost:4000/til/email/" rel="alternate" type="text/html" title="E-mail / 백준 2884번 문제 풀어보기" /><published>2022-01-18T00:00:00+09:00</published><updated>2022-01-18T00:00:00+09:00</updated><id>http://localhost:4000/til/email</id><content type="html" xml:base="http://localhost:4000/til/email/">&lt;hr /&gt;
-
-&lt;h3&gt;💭&lt;/h3&gt;
-&lt;ul&gt;
-  &lt;li&gt;&lt;a href=&quot;http://web.stanford.edu/class/msande91si/www-spr04/readings/week1/InternetWhitepaper.htm&quot;&gt;How Does the Internet Work?&lt;/a&gt; 라는 글 읽기&lt;/li&gt;
-  &lt;li&gt;백준 문제 풀기&lt;/li&gt;
-  &lt;li&gt;Java&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;h3 id=&quot;application-protocols-smtp-and-electronic-mail&quot;&gt;Application Protocols: SMTP and Electronic Mail&lt;/h3&gt;
-&lt;p&gt;많이 사용되는 인터넷 서비스 중 하나는 이메일이다. 이메일은 Simple Mail Transfer protocol 또는 SMTP 라고 불리는 어플리케이션 레벨의 통신규약을 사용한다. SMTP 역시 HTTP와 같은 텍스트 기반의 통신규약이지만 HTTP와 다르게 연결 지향적이다. SMTP는 HTTP보다 더 복잡하다. 더 많은 명령어들과 고려해야 할 사항들이 있다.&lt;/p&gt;
-
-&lt;p&gt;우리가 이메일을 읽기 위해 Mail client를 열었을 때 일어나는 일은 다음과 같다.&lt;/p&gt;
-
-&lt;ol&gt;
-  &lt;li&gt;Mail client(메일을 보내고 열기 위해 메일 서버에 접근하는 프로그램. 맥북이나 아이폰 기본 어플인 Apple mail, Google mail, Microsoft OUtlook 등이 있다.)가 기본 메일 서버에 연결한다. 메일 서버의 IP와 도메인 이름은 보통 메일 클라이언트가 설치 될 때 함께 설정 된다.&lt;/li&gt;
-  &lt;li&gt;메일 서버는 자신의 메일 클라이언트가 맞는지 확인하기 위해 언제나 첫번째 메시지를 보낼 것이다.&lt;/li&gt;
-  &lt;li&gt;클라이언트는 SMTP HELO 명령을 전송하고 서버는 250 OK 라는 메시지로 답할 것이다.&lt;/li&gt;
-  &lt;li&gt;클라이언트가 메일을 보내는지, 확인하는지 등의 따라 SMTP 명령을 보낼 것이고 서버는 그에 따라 맞는 답변을 보낼 것이다.&lt;/li&gt;
-  &lt;li&gt;이런 요청/응답 연결은 클라이언트가 SMTP QUIT라는 명령어를 보내기 전까지 계속될 것이다. SMTP QUIT 명령을 받은 서버는 goodbye 라고 응답할 것이고 연결은 끊어진다.&lt;br /&gt;
-&lt;br /&gt;&lt;/li&gt;
-&lt;/ol&gt;
-
-&lt;p&gt;(&lt;s&gt;이거를 메일 클라이언트들이 해준다는 거겠지?&lt;/s&gt;)&lt;/p&gt;
-
-&lt;p&gt;💭 &lt;br /&gt;
-이 글은 꽤 오래전에 쓰여졌는데 마지막 부분에서 작성자는, 이 글에 쓰여진 인터넷이 작동하는 원리가 얼마나 오래 같은 방식을 유지할 것인가에 대해 물었다. 나도 글을 읽으며 요즘도 이런 방식을 사용하는지 의문이 들기도 해서 최신의 정보도 함께 찾아보면 좋을 것 같다는 생각이 들었다.
-&lt;br /&gt;
-&lt;br /&gt;&lt;/p&gt;
-
-&lt;h3 id=&quot;백준-2884번-문제-풀기&quot;&gt;백준 2884번 문제 풀기&lt;/h3&gt;
-
-&lt;p&gt;아침잠이 많아 맨날 지각하는 상근이를 위해 친구 창영이가 아이디어를 던져줍니다.
-‘45분 빠르게 알람을 맞춰봐!’
-상근이는 자기가 45분 빠르게 알람을 맞추면 되는데..프로그램을 만들기로 결심했어요.
-나중에 개발자가 되려나봐요.🙃&lt;/p&gt;
-
-&lt;p&gt;시간과 분을 나타내는 정수 두개를 입력받고 45분 전으로 설정된 시간을 출력하는 문제입니다.&lt;/p&gt;
-
-&lt;p&gt;일단 if문 항목에 있는 문제라 if 문을 사용해야 한다는 힌트는 가지고 있습니다.&lt;br /&gt;
-분(m)으로 입력받은 값 m 이 45보다 크다면 45를 빼서 입력받은 시간과 함께 출력하면 되고
-45보다 작다면, m = 60 - (45 - m) 으로 생각하면서 코드를 써봤는데 틀렸다. 이클립스에서는 예제대로 작동하는데 뭔가 잘못된 것 같다. 이 문제에 시간을 많이 써서 답을 찾아보기로! (아래 코드는 내가 작성한 틀린 코드)&lt;/p&gt;
-
-&lt;div class=&quot;language-java highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;
-&lt;span class=&quot;kn&quot;&gt;import&lt;/span&gt; &lt;span class=&quot;nn&quot;&gt;java.util.*&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;;&lt;/span&gt;
-
-&lt;span class=&quot;kd&quot;&gt;class&lt;/span&gt; &lt;span class=&quot;nc&quot;&gt;Main&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;{&lt;/span&gt;
-    &lt;span class=&quot;kd&quot;&gt;public&lt;/span&gt; &lt;span class=&quot;kd&quot;&gt;static&lt;/span&gt; &lt;span class=&quot;kt&quot;&gt;void&lt;/span&gt; &lt;span class=&quot;nf&quot;&gt;main&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nc&quot;&gt;String&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;[]&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;args&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;{&lt;/span&gt;
-        &lt;span class=&quot;nc&quot;&gt;Scanner&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;sc&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;new&lt;/span&gt; &lt;span class=&quot;nc&quot;&gt;Scanner&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nc&quot;&gt;System&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;in&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;);&lt;/span&gt;
-        &lt;span class=&quot;kt&quot;&gt;int&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;h&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;m&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;;&lt;/span&gt;
-        &lt;span class=&quot;n&quot;&gt;h&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;sc&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;nextInt&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;();&lt;/span&gt;
-        &lt;span class=&quot;n&quot;&gt;m&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;sc&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;nextInt&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;();&lt;/span&gt;
-
-        &lt;span class=&quot;k&quot;&gt;if&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;h&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;&amp;gt;&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;0&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;&amp;amp;&amp;amp;&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;m&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;&amp;gt;=&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;45&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;{&lt;/span&gt;
-          &lt;span class=&quot;kt&quot;&gt;int&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;hour&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;h&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;;&lt;/span&gt;
-        	&lt;span class=&quot;kt&quot;&gt;int&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;min&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;m&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;-&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;45&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;;&lt;/span&gt;
-        	&lt;span class=&quot;nc&quot;&gt;System&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;out&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;println&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;hour&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;+&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;&quot; &quot;&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;+&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;min&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;);&lt;/span&gt;
-        &lt;span class=&quot;o&quot;&gt;}&lt;/span&gt;
-
-        &lt;span class=&quot;k&quot;&gt;if&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;h&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;&amp;gt;&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;0&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;&amp;amp;&amp;amp;&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;m&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;&amp;lt;&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;45&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;{&lt;/span&gt;
-        	&lt;span class=&quot;kt&quot;&gt;int&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;hour&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;h&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;-&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;1&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;;&lt;/span&gt;
-        	&lt;span class=&quot;kt&quot;&gt;int&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;min&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;60&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;-&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;45&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;-&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;m&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;);&lt;/span&gt;
-        	&lt;span class=&quot;nc&quot;&gt;System&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;out&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;println&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;hour&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;+&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;&quot; &quot;&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;+&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;min&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;);&lt;/span&gt;
-        &lt;span class=&quot;o&quot;&gt;}&lt;/span&gt;
-
-        &lt;span class=&quot;k&quot;&gt;if&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;h&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;==&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;0&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;&amp;amp;&amp;amp;&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;m&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;&amp;gt;=&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;45&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;{&lt;/span&gt;
-        	&lt;span class=&quot;kt&quot;&gt;int&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;hour&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;23&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;;&lt;/span&gt;
-          &lt;span class=&quot;kt&quot;&gt;int&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;min&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;m&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;-&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;45&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;;&lt;/span&gt;
-          &lt;span class=&quot;nc&quot;&gt;System&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;out&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;println&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;hour&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;+&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;&quot; &quot;&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;+&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;min&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;);&lt;/span&gt;
-        &lt;span class=&quot;o&quot;&gt;}&lt;/span&gt;
-
-        &lt;span class=&quot;k&quot;&gt;if&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;h&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;==&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;0&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;&amp;amp;&amp;amp;&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;m&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;&amp;lt;&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;45&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;{&lt;/span&gt;
-        	&lt;span class=&quot;kt&quot;&gt;int&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;hour&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;23&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;;&lt;/span&gt;
-          &lt;span class=&quot;kt&quot;&gt;int&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;min&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;60&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;-&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;45&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;-&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;m&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;);&lt;/span&gt;
-          &lt;span class=&quot;nc&quot;&gt;System&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;out&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;println&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;hour&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;+&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;&quot; &quot;&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;+&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;min&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;);&lt;/span&gt;
-        &lt;span class=&quot;o&quot;&gt;}&lt;/span&gt;
-    &lt;span class=&quot;o&quot;&gt;}&lt;/span&gt;
-
-&lt;span class=&quot;o&quot;&gt;}&lt;/span&gt;
-
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
-
-<<<<<<< HEAD
-&lt;p&gt;&lt;a href=&quot;https://st-lab.tistory.com/24&quot;&gt;답&lt;/a&gt; 구글링을 해보니 정말 간단하게 코드를 작성하셨다. 어떻게 코드를 작성하는지에 대해 생각해보면 좋을 것 같다. 가장 첫번째가 되어야 하는 조건을 구별하는 것을 연습해야겠다. 오늘은 문제 풀이에 시간을 더 쓸 수 없을 것 같아서 내일 한번 더 보고 생각해보기로! 언제나 블로그에 답 남겨주시는 개발자 분들께 감사하며..!&lt;/p&gt;</content><author><name>Mirae</name></author><category term="TIL" /><category term="software" /><category term="learning" /><category term="공부 기록" /><summary type="html"></summary></entry></feed>
-=======
-<<<<<<< HEAD
-&lt;p&gt;&lt;a href=&quot;https://st-lab.tistory.com/24&quot;&gt;답&lt;/a&gt; 구글링을 해보니 정말 간단하게 코드를 작성하셨다. 어떻게 코드를 작성하는지에 대해 생각해보면 좋을 것 같다. 가장 첫번째가 되어야 하는 조건을 구별하는 것을 연습해야겠다. 오늘은 문제 풀이에 시간을 더 쓸 수 없을 것 같아서 내일 한번 더 보고 생각해보기로! 언제나 블로그에 답 남겨주시는 개발자 분들께 감사하며..!&lt;/p&gt;</content><author><name>Mirae</name></author><category term="TIL" /><category term="software" /><category term="learning" /><category term="공부 기록" /><summary type="html"></summary></entry></feed>
-=======
-&lt;p&gt;&lt;a href=&quot;https://st-lab.tistory.com/24&quot;&gt;답&lt;/a&gt; 구글링을 해보니 정말 간단하게 코드를 작성하셨다. 어떻게 코드를 작성하는지에 대해 생각해보면 좋을 것 같다. 가장 첫번째가 되어야 하는 조건을 구별하는 것을 연습해야겠다. 오늘은 문제 풀이에 시간을 더 쓸 수 없을 것 같아서 내일 한번 더 보고 생각해보기로! 언제나 블로그에 답 남겨주시는 개발자 분들께 감사하며..!&lt;/p&gt;</content><author><name>Mirae</name></author><category term="TIL" /><category term="software" /><category term="learning" /><category term="공부 기록" /><summary type="html"></summary></entry><entry><title type="html">HTTP / 백준 2558번 / Java Abstraction</title><link href="http://localhost:4000/til/theinternet/" rel="alternate" type="text/html" title="HTTP / 백준 2558번 / Java Abstraction" /><published>2022-01-17T00:00:00+09:00</published><updated>2022-01-17T00:00:00+09:00</updated><id>http://localhost:4000/til/theinternet</id><content type="html" xml:base="http://localhost:4000/til/theinternet/">&lt;hr /&gt;
-
-&lt;h2&gt;💭&lt;/h2&gt;
-&lt;ul&gt;
-  &lt;li&gt;&lt;a href=&quot;https://roadmap.sh/backend&quot;&gt;백엔드 개발자 로드맵&lt;/a&gt;을 보고 각 항목에 관련된 글을 읽어보려 한다.&lt;/li&gt;
-  &lt;li&gt;백준 문제 풀이하며 레벨 올리기!&lt;/li&gt;
-  &lt;li&gt;Java에 대해 공부하기&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;h3 id=&quot;domain-name-resolution&quot;&gt;Domain name resolution&lt;/h3&gt;
-&lt;p&gt;&lt;a href=&quot;http://web.stanford.edu/class/msande91si/www-spr04/readings/week1/InternetWhitepaper.htm&quot;&gt;이 페이지를 참고&lt;/a&gt;&lt;br /&gt;
-Domain name resolution은 도메인 이름을 IP 주소로 변환하는 처리 과정을 말한다. 하나의 도메인 이름은 하나의 IP 주소와 연결되고, 하나의 IP 주소는 여러개의 도메인 이름들과 연결될 수 있다. 이것은 여러개의 도메인 이름이 하나의 같은 IP 주소를 가질 수 있는 것을 의미한다.&lt;/p&gt;
-
-&lt;h3 id=&quot;application-protocols--http-and-world-wide-web&quot;&gt;Application Protocols : HTTP and World Wide Web&lt;/h3&gt;
-&lt;p&gt;&lt;a href=&quot;http://web.stanford.edu/class/msande91si/www-spr04/readings/week1/InternetWhitepaper.htm&quot;&gt;이 페이지를 참고&lt;/a&gt;&lt;br /&gt;
-인터넷에서 가장 흔하게 사용되는 서비스 중 하나는 World Wide Web 이다. Web을 작동시키는 응용 프로그램 프로토콜은 HTTP(Hyper Text Transfer Protocol)이다. HTTP를 HTML과 헷갈리지 말자. HTML은 웹 페이지를 작성하는 언어이다. HTTP는 웹 브라우저와 웹 서버가 서로 정보를 교환하기 위해 사용하는 통신 규약이다. HTTP는 응용 프로그램 레벨의 통신규약인데, HTTP가 통신 규약 스택에서 TCP 위에 있고 특정 응용프로그램(웹 브라우저, 웹 서버와 같은)으로부터 이용되기 때문이다.&lt;/p&gt;
-
-&lt;p&gt;HTTP는 비연결형 문자 기반 프로토콜이다. 클라이언트(웹 브라우저)가 웹 서버에 이미지, 웹 페이지 등을 요청한다. 클라이언트가 요청한 뒤 이미지나 웹 페이지가 전송 완료되면 클라이언트와 서버 사이의 연결이 끊긴다. 새 요청이 있을 때마다 다시 연결한다. 대부분의 프로토콜은 연결 지향적이다. 이것은 서로 정보를 주고 받고 있는 컴퓨터가 인터넷을 통해 계속해서 연결을 유지한다는 뜻이다. HTTP는 그러지 않다. 클라이언트로부터 HTTP 요청이 이루어지기 전에 먼저 서버와 새롭게 연결이 되어야 한다.&lt;/p&gt;
-
-&lt;p&gt;&lt;strong&gt;당신이 웹 브라우저에 URL 을 입력할 때 어떤 일이 일어날까?&lt;/strong&gt;&lt;/p&gt;
-&lt;ol&gt;
-  &lt;li&gt;URL이 도메인 이름을 포함하고 있다면, 브라우저는 먼저 domain name server를 연결합니다. 그리고 도메인 이름에 연결된 IP 주소를 찾아옵니다.&lt;/li&gt;
-  &lt;li&gt;웹 브라우저는 웹 서버와 연결되고 원하는 웹 페이지를 불러오기 위해 HTTP 요청을 보냅니다. (통신 규약 스택을 통해)&lt;/li&gt;
-  &lt;li&gt;웹 서버는 요청을 확인하고 웹 페이지를 확인합니다. 만약 요청으로 들어온 페이지가 있다면, 웹 서버는 페이지를 전송합니다. 만약 서버가 요청 들어온 페이지를 찾을 수 없다면, 서버는 HTTP 404 error 메시지를 보냅니다. (웹서핑을 해본 사람이면 알겠지만 404 는 ‘페이지를 찾을 수 없음’을 의미합니다.)&lt;/li&gt;
-  &lt;li&gt;웹 브라우저가 요청한 페이지를 받으면 연결이 끊어집니다.&lt;/li&gt;
-  &lt;li&gt;그리고 브라우저가 페이지를 분석하며 어떤 요소들(이미지, 작은 응용프로그램들)이 더 필요한지 찾습니다.&lt;/li&gt;
-  &lt;li&gt;브라우저는 필요한 요소들을 가져오기 위해 서버에 새로이 연결하고, 요소들을 요청합니다. (각 요소마다 따로 따로 새 요청을 합니다.)&lt;/li&gt;
-  &lt;li&gt;브라우저가 모든 것들(이미지, 작은 응요프로그램 등)을 가져오면, 브라우저의 윈도우창에 완전한 페이지가 나타납니다.&lt;/li&gt;
-&lt;/ol&gt;
-
-&lt;hr /&gt;
-
-&lt;h3 id=&quot;백준-2588번-문제-풀어보기&quot;&gt;백준 2588번 문제 풀어보기&lt;/h3&gt;
-&lt;p&gt;&lt;a href=&quot;https://www.acmicpc.net/problem/2588&quot;&gt;2588번 문제&lt;/a&gt; &lt;br /&gt;
-아래 사진은 (세 자리 수) × (세 자리 수) 의 답을 구하는 과정을 보여준다. &lt;br /&gt;
-&lt;img src=&quot;/assets/images/2588.png&quot; alt=&quot;2588&quot; /&gt; &lt;br /&gt;
-(사진의 출처는 백준 사이트의 해당 문제 페이지입니다.)&lt;/p&gt;
-
-&lt;p&gt;여기서 (3),(4),(5),(6)에 해당하는 수들을 출력하는 프로그램을 만들면 된다.
-a = (1), b = (2) 라고 할 때, (3)은  a * (b의 1의 자리수), (4)은  a * (b의 10의 자리수), (5)은  a * (b의 100의 자리수) 이니까 입력 받은 b 를 먼저 각각 하나의 1의 자리 숫자로 쪼개고, 쪼개진 각 수에 a 를 곱해보자고 생각했다. 백의 자리수를 쪼개는 방법을 검색하다 이 &lt;a href=&quot;https://www.edureka.co/community/2687/how-can-i-separate-the-digits-of-an-int-number-in-java를&quot;&gt;페이지&lt;/a&gt; 찾았다. 아래 방법으로 숫자를 쪼개서 하나씩 구할 수 있다.&lt;/p&gt;
-
-&lt;div class=&quot;language-java highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;kd&quot;&gt;class&lt;/span&gt; &lt;span class=&quot;nc&quot;&gt;Main&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;{&lt;/span&gt;
-  &lt;span class=&quot;kd&quot;&gt;public&lt;/span&gt; &lt;span class=&quot;kd&quot;&gt;static&lt;/span&gt; &lt;span class=&quot;kt&quot;&gt;void&lt;/span&gt; &lt;span class=&quot;nf&quot;&gt;main&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nc&quot;&gt;String&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;[]&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;args&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;{&lt;/span&gt;
-
-    &lt;span class=&quot;kt&quot;&gt;int&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;num&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;1020&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;;&lt;/span&gt;
-
-    &lt;span class=&quot;k&quot;&gt;while&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;num&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;&amp;gt;&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;0&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;{&lt;/span&gt;
-
-      &lt;span class=&quot;nc&quot;&gt;System&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;out&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;println&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;(&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;num&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;%&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;10&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;);&lt;/span&gt;
-
-      &lt;span class=&quot;n&quot;&gt;num&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;num&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;/&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;10&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;;&lt;/span&gt;
-
-      &lt;span class=&quot;o&quot;&gt;}&lt;/span&gt;
-    &lt;span class=&quot;o&quot;&gt;}&lt;/span&gt;
-  &lt;span class=&quot;o&quot;&gt;}&lt;/span&gt;
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
-
-&lt;p&gt;그리고 세시간동안 혼자 생각해보며 (3), (4), (5) 까지는 구했는데 (아래처럼 작성) (6)을 구하지 못하고 답을 찾아봤다. 문제의 레벨을 봤을때 물론 엄청 간단할거라 생각했지만… 길을 잘못 들어도 한참 잘못 들었더라 하하..&lt;/p&gt;
-
-&lt;div class=&quot;language-java highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;kn&quot;&gt;import&lt;/span&gt; &lt;span class=&quot;nn&quot;&gt;java.util.*&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;;&lt;/span&gt;
-
-&lt;span class=&quot;kd&quot;&gt;class&lt;/span&gt; &lt;span class=&quot;nc&quot;&gt;Main&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;{&lt;/span&gt;
-    &lt;span class=&quot;kd&quot;&gt;public&lt;/span&gt; &lt;span class=&quot;kd&quot;&gt;static&lt;/span&gt; &lt;span class=&quot;kt&quot;&gt;void&lt;/span&gt; &lt;span class=&quot;nf&quot;&gt;main&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nc&quot;&gt;String&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;[]&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;args&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;{&lt;/span&gt;
-        &lt;span class=&quot;nc&quot;&gt;Scanner&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;sc&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;new&lt;/span&gt; &lt;span class=&quot;nc&quot;&gt;Scanner&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nc&quot;&gt;System&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;in&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;);&lt;/span&gt;
-        &lt;span class=&quot;kt&quot;&gt;int&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;a&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;b&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;;&lt;/span&gt;
-        &lt;span class=&quot;n&quot;&gt;a&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;sc&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;nextInt&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;();&lt;/span&gt;
-        &lt;span class=&quot;n&quot;&gt;b&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;sc&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;nextInt&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;();&lt;/span&gt;
-
-        &lt;span class=&quot;kt&quot;&gt;int&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;[]&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;arr&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;new&lt;/span&gt; &lt;span class=&quot;kt&quot;&gt;int&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;3&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;];&lt;/span&gt;
-        &lt;span class=&quot;kt&quot;&gt;int&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;[]&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;arr2&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;new&lt;/span&gt; &lt;span class=&quot;kt&quot;&gt;int&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;3&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;];&lt;/span&gt;
-
-        &lt;span class=&quot;k&quot;&gt;while&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;b&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;&amp;gt;&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;0&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;{&lt;/span&gt;
-        	&lt;span class=&quot;k&quot;&gt;for&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;kt&quot;&gt;int&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;i&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;0&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;;&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;i&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;&amp;lt;&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;arr&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;length&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;;&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;i&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;++)&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;{&lt;/span&gt;
-        	&lt;span class=&quot;n&quot;&gt;arr&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;i&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;]&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;b&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;%&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;10&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;;&lt;/span&gt;
-        	&lt;span class=&quot;n&quot;&gt;b&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;b&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;/&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;10&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;;&lt;/span&gt;
-        	&lt;span class=&quot;n&quot;&gt;arr2&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;i&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;]&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;a&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;*&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;arr&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;i&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;];&lt;/span&gt; 	
-
-        	&lt;span class=&quot;nc&quot;&gt;System&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;out&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;println&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;arr2&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;i&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;]);&lt;/span&gt;
-
-        &lt;span class=&quot;o&quot;&gt;}&lt;/span&gt;
-     &lt;span class=&quot;o&quot;&gt;}&lt;/span&gt;
-  &lt;span class=&quot;o&quot;&gt;}&lt;/span&gt;
-
-&lt;span class=&quot;o&quot;&gt;}&lt;/span&gt;              
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
-
-&lt;p&gt;다른 분이 올린 &lt;a href=&quot;https://javacoding.tistory.com/14&quot;&gt;답&lt;/a&gt;을 보고 생각해봅니다.&lt;/p&gt;
-
-&lt;div class=&quot;language-java highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;kn&quot;&gt;import&lt;/span&gt; &lt;span class=&quot;nn&quot;&gt;java.util.*&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;;&lt;/span&gt;
-
-&lt;span class=&quot;kd&quot;&gt;class&lt;/span&gt; &lt;span class=&quot;nc&quot;&gt;Main&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;{&lt;/span&gt;
-    &lt;span class=&quot;kd&quot;&gt;public&lt;/span&gt; &lt;span class=&quot;kd&quot;&gt;static&lt;/span&gt; &lt;span class=&quot;kt&quot;&gt;void&lt;/span&gt; &lt;span class=&quot;nf&quot;&gt;main&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nc&quot;&gt;String&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;[]&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;args&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;{&lt;/span&gt;
-        &lt;span class=&quot;nc&quot;&gt;Scanner&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;sc&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;new&lt;/span&gt; &lt;span class=&quot;nc&quot;&gt;Scanner&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nc&quot;&gt;System&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;in&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;);&lt;/span&gt;
-        &lt;span class=&quot;kt&quot;&gt;int&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;a&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;b&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;;&lt;/span&gt;
-        &lt;span class=&quot;n&quot;&gt;a&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;sc&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;nextInt&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;();&lt;/span&gt;
-        &lt;span class=&quot;n&quot;&gt;b&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;sc&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;nextInt&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;();&lt;/span&gt;
-
-        &lt;span class=&quot;nc&quot;&gt;System&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;out&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;println&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;a&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;*&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;b&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;%&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;10&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;));&lt;/span&gt;
-        &lt;span class=&quot;nc&quot;&gt;System&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;out&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;println&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;a&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;*&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;((&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;b&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;/&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;10&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;%&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;10&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;));&lt;/span&gt;
-        &lt;span class=&quot;nc&quot;&gt;System&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;out&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;println&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;a&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;*&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;b&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;/&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;100&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;));&lt;/span&gt;
-        &lt;span class=&quot;nc&quot;&gt;System&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;out&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;println&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;a&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;*&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;b&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;);&lt;/span&gt;
-
-   &lt;span class=&quot;o&quot;&gt;}&lt;/span&gt;
-
-&lt;span class=&quot;o&quot;&gt;}&lt;/span&gt;          
-
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
-&lt;p&gt;패드에 써가면서 생각해보기&lt;/p&gt;
-
-&lt;p&gt;&lt;img src=&quot;/assets/images/2588_2.png&quot; alt=&quot;2588&quot; /&gt; &lt;br /&gt;&lt;/p&gt;
-
-&lt;h3 id=&quot;java-abstraction&quot;&gt;Java Abstraction&lt;/h3&gt;
-&lt;p&gt;&lt;a href=&quot;https://www.w3schools.com/java/java_abstract.asp&quot;&gt;Abstract Classes and Methods&lt;/a&gt; &lt;br /&gt;
-데이터 추상화는 중요한 세부 정보들은 숨기고 꼭 보여져야하는 정보들만 유저들이 볼 수 있도록 하는 것이다. 데이터 추상화는 abstract classes 나 interfaces를 통해 이뤄질 수 있다. abstract 키워드는 non-access modifier 이다.&lt;br /&gt;
-아래 표는 Acccess Modifier 와 Non-Access Modifier 를 보여준다.&lt;/p&gt;
-
-&lt;table&gt;
-  &lt;thead&gt;
-    &lt;tr&gt;
-      &lt;th&gt;Acess Modifiers&lt;/th&gt;
-      &lt;th&gt;Non-Access Modifiers&lt;/th&gt;
-    &lt;/tr&gt;
-  &lt;/thead&gt;
-  &lt;tbody&gt;
-    &lt;tr&gt;
-      &lt;td&gt;private&lt;/td&gt;
-      &lt;td&gt;static&lt;/td&gt;
-    &lt;/tr&gt;
-    &lt;tr&gt;
-      &lt;td&gt;default or No Modifier&lt;/td&gt;
-      &lt;td&gt;final&lt;/td&gt;
-    &lt;/tr&gt;
-    &lt;tr&gt;
-      &lt;td&gt;protected&lt;/td&gt;
-      &lt;td&gt;abstract&lt;/td&gt;
-    &lt;/tr&gt;
-    &lt;tr&gt;
-      &lt;td&gt;public&lt;/td&gt;
-      &lt;td&gt;synchronized&lt;/td&gt;
-    &lt;/tr&gt;
-    &lt;tr&gt;
-      &lt;td&gt; &lt;/td&gt;
-      &lt;td&gt;trasient&lt;/td&gt;
-    &lt;/tr&gt;
-    &lt;tr&gt;
-      &lt;td&gt; &lt;/td&gt;
-      &lt;td&gt;volatile&lt;/td&gt;
-    &lt;/tr&gt;
-    &lt;tr&gt;
-      &lt;td&gt; &lt;/td&gt;
-      &lt;td&gt;strictfp&lt;/td&gt;
-    &lt;/tr&gt;
-  &lt;/tbody&gt;
-&lt;/table&gt;
-
-&lt;p&gt;&lt;br /&gt;&lt;/p&gt;
-&lt;ul&gt;
-  &lt;li&gt;
-    &lt;p&gt;Abstract class는 객체를 만들 수 없도록 제한된 클래스이다.&lt;/p&gt;
-  &lt;/li&gt;
-  &lt;li&gt;
-    &lt;p&gt;Abstract method는 Abstract class 에서만 사용될 수 있다. abstract methods는 바디 부분이 없다.&lt;/p&gt;
-  &lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;div class=&quot;language-java highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;kd&quot;&gt;abstract&lt;/span&gt; &lt;span class=&quot;kd&quot;&gt;class&lt;/span&gt; &lt;span class=&quot;nc&quot;&gt;Animal&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;{&lt;/span&gt;
-  &lt;span class=&quot;kd&quot;&gt;public&lt;/span&gt; &lt;span class=&quot;kd&quot;&gt;abstract&lt;/span&gt; &lt;span class=&quot;kt&quot;&gt;void&lt;/span&gt; &lt;span class=&quot;nf&quot;&gt;animalSound&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;();&lt;/span&gt; &lt;span class=&quot;c1&quot;&gt;// public 과 abstract 가 같이 사용되네..?&lt;/span&gt;
-  &lt;span class=&quot;kd&quot;&gt;public&lt;/span&gt; &lt;span class=&quot;kt&quot;&gt;void&lt;/span&gt; &lt;span class=&quot;nf&quot;&gt;sleep&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;()&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;{&lt;/span&gt;
-    &lt;span class=&quot;nc&quot;&gt;System&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;out&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;println&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;Zzz&quot;&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;);&lt;/span&gt;
-  &lt;span class=&quot;o&quot;&gt;}&lt;/span&gt;
-&lt;span class=&quot;o&quot;&gt;}&lt;/span&gt;
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
-
-&lt;p&gt;위 코드를 보면 알 수 있듯이, 하나의 abstract class는 abstract method와 일반적인 method 둘다 가질 수 있다.&lt;/p&gt;
-
-&lt;div class=&quot;language-java highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;nc&quot;&gt;Animal&lt;/span&gt; &lt;span class=&quot;nc&quot;&gt;Obj&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;new&lt;/span&gt; &lt;span class=&quot;nc&quot;&gt;Animal&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;();&lt;/span&gt; &lt;span class=&quot;c1&quot;&gt;// abstract class인 Animal 클래스는 객체를 만들 수 없으므로 에러 발생&lt;/span&gt;
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
-
-&lt;p&gt;Abstract class에 접근하기 위해서는 Abstract class를 상속 받는 subclass를 만들어야 한다.&lt;/p&gt;
-
-&lt;div class=&quot;language-java highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;c1&quot;&gt;// Abstract class&lt;/span&gt;
-&lt;span class=&quot;kd&quot;&gt;abstract&lt;/span&gt; &lt;span class=&quot;kd&quot;&gt;class&lt;/span&gt; &lt;span class=&quot;nc&quot;&gt;Animal&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;{&lt;/span&gt;
-  &lt;span class=&quot;c1&quot;&gt;// Abstract method&lt;/span&gt;
-  &lt;span class=&quot;kd&quot;&gt;public&lt;/span&gt; &lt;span class=&quot;kd&quot;&gt;abstract&lt;/span&gt; &lt;span class=&quot;nf&quot;&gt;animalSound&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;();&lt;/span&gt; &lt;span class=&quot;c1&quot;&gt;//바디 없음&lt;/span&gt;
-  &lt;span class=&quot;c1&quot;&gt;// Regular method&lt;/span&gt;
-  &lt;span class=&quot;kd&quot;&gt;public&lt;/span&gt; &lt;span class=&quot;kt&quot;&gt;void&lt;/span&gt; &lt;span class=&quot;nf&quot;&gt;sleep&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;()&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;{&lt;/span&gt;
-    &lt;span class=&quot;nc&quot;&gt;System&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;out&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;println&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;Zzz&quot;&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;);&lt;/span&gt;
-  &lt;span class=&quot;o&quot;&gt;}&lt;/span&gt;
-&lt;span class=&quot;o&quot;&gt;}&lt;/span&gt;
-
-&lt;span class=&quot;c1&quot;&gt;// Animal 클래스를 상속받는 Subclass&lt;/span&gt;
-&lt;span class=&quot;kd&quot;&gt;class&lt;/span&gt; &lt;span class=&quot;nc&quot;&gt;Pig&lt;/span&gt; &lt;span class=&quot;kd&quot;&gt;extends&lt;/span&gt; &lt;span class=&quot;nc&quot;&gt;Animal&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;{&lt;/span&gt;
-  &lt;span class=&quot;kd&quot;&gt;public&lt;/span&gt; &lt;span class=&quot;kt&quot;&gt;void&lt;/span&gt; &lt;span class=&quot;nf&quot;&gt;animalSound&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;()&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;{&lt;/span&gt;
-    &lt;span class=&quot;c1&quot;&gt;// 위 Abstract 메소드의 바디가 여기서 작성됨&lt;/span&gt;
-    &lt;span class=&quot;nc&quot;&gt;System&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;out&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;println&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;The pig says: wee wee&quot;&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;);&lt;/span&gt;
-  &lt;span class=&quot;o&quot;&gt;}&lt;/span&gt;
-&lt;span class=&quot;o&quot;&gt;}&lt;/span&gt;
-
-&lt;span class=&quot;kd&quot;&gt;class&lt;/span&gt; &lt;span class=&quot;nc&quot;&gt;Main&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;{&lt;/span&gt;
-  &lt;span class=&quot;kd&quot;&gt;public&lt;/span&gt; &lt;span class=&quot;kd&quot;&gt;static&lt;/span&gt; &lt;span class=&quot;kt&quot;&gt;void&lt;/span&gt; &lt;span class=&quot;nf&quot;&gt;main&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nc&quot;&gt;String&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;[]&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;args&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;{&lt;/span&gt;
-    &lt;span class=&quot;nc&quot;&gt;Pig&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;myPig&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;new&lt;/span&gt; &lt;span class=&quot;nc&quot;&gt;Pig&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;();&lt;/span&gt; &lt;span class=&quot;c1&quot;&gt;// Pig 객체 만들기&lt;/span&gt;
-    &lt;span class=&quot;n&quot;&gt;myPig&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;animalSound&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;();&lt;/span&gt;
-    &lt;span class=&quot;n&quot;&gt;myPig&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;sleep&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;();&lt;/span&gt; &lt;span class=&quot;c1&quot;&gt;//Pig 객체가 Anmal 클래스를 상속받으므로 sleep 메소드 사용 가능&lt;/span&gt;
-
-  &lt;span class=&quot;o&quot;&gt;}&lt;/span&gt;
-&lt;span class=&quot;o&quot;&gt;}&lt;/span&gt;
-
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;</content><author><name>Mirae</name></author><category term="TIL" /><category term="software" /><category term="learning" /><category term="공부 기록" /><summary type="html"></summary></entry></feed>
->>>>>>> b2c4a961d3528e213c661dac9380780a59d2fbd2
->>>>>>> 1b025479c48820ad9f1fb7165891ca0f76a61a0d
+  JSP scriptlet는 자바 언어로 쓰여진 코드, 변수, 메서드 선언부, 기호, 부호 등을 담을 수 있다.&lt;/p&gt;</content><author><name>Mirae</name></author><category term="TIL" /><category term="learning" /><category term="JSP" /><category term="Java" /><category term="Tomcat Server" /><category term="Eclipse IDE" /><summary type="html"></summary></entry></feed>

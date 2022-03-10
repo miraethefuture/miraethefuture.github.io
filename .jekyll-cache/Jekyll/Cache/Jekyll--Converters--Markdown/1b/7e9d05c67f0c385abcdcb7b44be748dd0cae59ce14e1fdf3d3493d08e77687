@@ -1,0 +1,36 @@
+I"�<h3 id="-">💭 ..</h3>
+<div class="notice">
+  <h4>Swift를 배워보자.</h4>
+  <p> 아래 링크의 유튜브 튜토리얼을 보며 먼저 전체적으로 한번 훓어보려고 한다.<br />    
+  그 과정에서 기록이 필요한 것들을 정리해본다.</p>
+</div>
+
+<h3 id="선택한-유투브-튜토리얼">선택한 유투브 튜토리얼</h3>
+<p><a href="https://www.youtube.com/watch?v=F2ojC6TNwws&amp;t=1s">2021 SwiftUI Tutorial for Beginners (3.5 hour Masterclass)</a> <br />
+이런 양질의 자료를 무료로 볼 수 있다는 것에 감사하며 시작!</p>
+
+<figure class="highlight"><pre><code class="language-swift" data-lang="swift"><table class="rouge-table"><tbody><tr><td class="gutter gl"><pre class="lineno">1
+2
+3
+4
+5
+6
+7
+8
+9
+10
+11
+</pre></td><td class="code"><pre>    <span class="kd">import</span> <span class="kt">SwiftUI</span>
+
+      <span class="kd">struct</span> <span class="kt">ContentView</span><span class="p">:</span> <span class="kt">View</span> <span class="p">{</span>
+        <span class="k">var</span> <span class="nv">body</span><span class="p">:</span> <span class="kd">some</span> <span class="kt">View</span> <span class="p">{</span>
+
+          <span class="kt">Text</span><span class="p">(</span><span class="s">"Hello!"</span><span class="p">)</span><span class="o">.</span><span class="nf">padding</span><span class="p">()</span>
+          <span class="o">&lt;!--</span> <span class="kt">Text는</span> <span class="n">element</span> <span class="n">padding은</span> <span class="n">modifier</span> <span class="o">--&gt;</span>
+        <span class="p">}</span>
+      <span class="p">}</span>
+
+  
+</pre></td></tr></tbody></table></code></pre></figure>
+
+:ET

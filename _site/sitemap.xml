@@ -1,298 +1,4 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<<<<<<< HEAD
-<urlset xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-        xsi:schemaLocation="http://www.sitemaps.org/schemas/sitemap/0.9 http://www.sitemaps.org/schemas/sitemap/0.9/sitemap.xsd"
-        xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
-    
-    <url>
-        <loc>http://localhost:4000/til/arrayCo/</loc>
-        
-        <lastmod>2022-03-05T00:00:00+09:00</lastmod>
-        
-
-        
-        <changefreq>weekly</changefreq>
-        
-
-        
-        <priority>0.5</priority>
-        
-
-    </url>
-    
-    <url>
-        <loc>http://localhost:4000/til/jdbc/</loc>
-        
-        <lastmod>2022-02-24T00:00:00+09:00</lastmod>
-        
-
-        
-        <changefreq>weekly</changefreq>
-        
-
-        
-        <priority>0.5</priority>
-        
-
-    </url>
-    
-    <url>
-        <loc>http://localhost:4000/til/Iterations/</loc>
-        
-        <lastmod>2022-02-20T00:00:00+09:00</lastmod>
-        
-
-        
-        <changefreq>weekly</changefreq>
-        
-
-        
-        <priority>0.5</priority>
-        
-
-    </url>
-    
-    <url>
-        <loc>http://localhost:4000/til/sql/</loc>
-        
-        <lastmod>2022-02-18T00:00:00+09:00</lastmod>
-        
-
-        
-        <changefreq>weekly</changefreq>
-        
-
-        
-        <priority>0.5</priority>
-        
-
-    </url>
-    
-    <url>
-        <loc>http://localhost:4000/til/overriding/</loc>
-        
-        <lastmod>2022-02-04T00:00:00+09:00</lastmod>
-        
-
-        
-        <changefreq>weekly</changefreq>
-        
-
-        
-        <priority>0.5</priority>
-        
-
-    </url>
-    
-    <url>
-        <loc>http://localhost:4000/til/decsendingOrder/</loc>
-        
-        <lastmod>2022-01-30T00:00:00+09:00</lastmod>
-        
-
-        
-        <changefreq>weekly</changefreq>
-        
-
-        
-        <priority>0.5</priority>
-        
-
-    </url>
-    
-    <url>
-        <loc>http://localhost:4000/til/aboutJSP/</loc>
-        
-        <lastmod>2022-01-28T00:00:00+09:00</lastmod>
-        
-
-        
-        <changefreq>weekly</changefreq>
-        
-
-        
-        <priority>0.5</priority>
-        
-
-    </url>
-    
-    <url>
-        <loc>http://localhost:4000/til/%EA%B3%B5%EB%B6%80%20%EA%B8%B0%EB%A1%9D/aboutjpa/</loc>
-        
-        <lastmod>2022-01-24T00:00:00+09:00</lastmod>
-        
-
-        
-        <changefreq>weekly</changefreq>
-        
-
-        
-        <priority>0.5</priority>
-        
-
-    </url>
-    
-    <url>
-        <loc>http://localhost:4000/til/copy/</loc>
-        
-        <lastmod>2022-01-20T00:00:00+09:00</lastmod>
-        
-
-        
-        <changefreq>weekly</changefreq>
-        
-
-        
-        <priority>0.5</priority>
-        
-
-    </url>
-    
-    <url>
-        <loc>http://localhost:4000/til/email/</loc>
-        
-        <lastmod>2022-01-18T00:00:00+09:00</lastmod>
-        
-
-        
-        <changefreq>weekly</changefreq>
-        
-
-        
-        <priority>0.5</priority>
-        
-
-    </url>
-    
-    <url>
-        <loc>http://localhost:4000/til/theinternet/</loc>
-        
-        <lastmod>2022-01-17T00:00:00+09:00</lastmod>
-        
-
-        
-        <changefreq>weekly</changefreq>
-        
-
-        
-        <priority>0.5</priority>
-        
-
-    </url>
-    
-    <url>
-        <loc>http://localhost:4000/til/%EA%B3%B5%EB%B6%80%20%EA%B8%B0%EB%A1%9D/go/</loc>
-        
-        <lastmod>2022-01-15T00:00:00+09:00</lastmod>
-        
-
-        
-        <changefreq>weekly</changefreq>
-        
-
-        
-        <priority>0.5</priority>
-        
-
-    </url>
-    
-    <url>
-        <loc>http://localhost:4000/til/java-continued/</loc>
-        
-        <lastmod>2022-01-14T00:00:00+09:00</lastmod>
-        
-
-        
-        <changefreq>weekly</changefreq>
-        
-
-        
-        <priority>0.5</priority>
-        
-
-    </url>
-    
-    <url>
-        <loc>http://localhost:4000/til/javaGui-copy/</loc>
-        
-        <lastmod>2022-01-13T00:00:00+09:00</lastmod>
-        
-
-        
-        <changefreq>weekly</changefreq>
-        
-
-        
-        <priority>0.5</priority>
-        
-
-    </url>
-    
-    <url>
-        <loc>http://localhost:4000/til/annoation/</loc>
-        
-        <lastmod>2022-01-11T00:00:00+09:00</lastmod>
-        
-
-        
-        <changefreq>weekly</changefreq>
-        
-
-        
-        <priority>0.5</priority>
-        
-
-    </url>
-    
-    <url>
-        <loc>http://localhost:4000/til/gradle/</loc>
-        
-        <lastmod>2022-01-07T00:00:00+09:00</lastmod>
-        
-
-        
-        <changefreq>weekly</changefreq>
-        
-
-        
-        <priority>0.5</priority>
-        
-
-    </url>
-    
-    <url>
-        <loc>http://localhost:4000/vocab/verb/</loc>
-        
-        <lastmod>2021-12-15T00:00:00+09:00</lastmod>
-        
-
-        
-        <changefreq>weekly</changefreq>
-        
-
-        
-        <priority>0.5</priority>
-        
-
-    </url>
-    
-    <url>
-        <loc>http://localhost:4000/posts/gugudan/</loc>
-        
-        <lastmod>2021-12-14T00:00:00+09:00</lastmod>
-        
-
-        
-        <changefreq>weekly</changefreq>
-        
-
-        
-        <priority>0.5</priority>
-        
-
-    </url>
-    
-=======
 <urlset xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.sitemaps.org/schemas/sitemap/0.9 http://www.sitemaps.org/schemas/sitemap/0.9/sitemap.xsd" xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
 <url>
 <loc>http://localhost:4000/posts/gugudan/</loc>
@@ -359,12 +65,24 @@
 <lastmod>2022-02-20T00:00:00+09:00</lastmod>
 </url>
 <url>
+<loc>http://localhost:4000/til/jdbc/</loc>
+<lastmod>2022-02-24T00:00:00+09:00</lastmod>
+</url>
+<url>
 <loc>http://localhost:4000/til/mastertomain/</loc>
 <lastmod>2022-03-02T00:00:00+09:00</lastmod>
 </url>
 <url>
-<loc>http://localhost:4000/til/Clang/</loc>
-<lastmod>2022-03-03T00:00:00+09:00</lastmod>
+<loc>http://localhost:4000/til/arrayCo/</loc>
+<lastmod>2022-03-05T00:00:00+09:00</lastmod>
+</url>
+<url>
+<loc>http://localhost:4000/til/basicSwift/</loc>
+<lastmod>2022-03-07T00:00:00+09:00</lastmod>
+</url>
+<url>
+<loc>http://localhost:4000/til/basicSwift2/</loc>
+<lastmod>2022-03-10T00:00:00+09:00</lastmod>
 </url>
 <url>
 <loc>http://localhost:4000/categories/</loc>
@@ -382,8 +100,10 @@
 <loc>http://localhost:4000/page2/</loc>
 </url>
 <url>
+<loc>http://localhost:4000/page3/</loc>
+</url>
+<url>
 <loc>http://localhost:4000/google2625d516aad6d973.html</loc>
 <lastmod>2022-02-28T20:26:13+09:00</lastmod>
 </url>
->>>>>>> b2c4a961d3528e213c661dac9380780a59d2fbd2
 </urlset>
