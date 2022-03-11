@@ -9,7 +9,7 @@
   <head>
     <meta charset="utf-8">
 
-<!-- begin _includes/seo.html --><title>오라클 클라우드 DB와 자바 연결 / 이클립스에서 select 쿼리로 오라클 DB에 있는 정보 가져오기 | Mirae the Future</title>
+<!-- begin _includes/seo.html --><title>오라클 클라우드 DB와 자바 연결하기 | Mirae the Future</title>
 <meta name="description" content="">
 
 
@@ -22,7 +22,7 @@
 <meta property="og:type" content="article">
 <meta property="og:locale" content="en_US">
 <meta property="og:site_name" content="Mirae the Future">
-<meta property="og:title" content="오라클 클라우드 DB와 자바 연결 / 이클립스에서 select 쿼리로 오라클 DB에 있는 정보 가져오기">
+<meta property="og:title" content="오라클 클라우드 DB와 자바 연결하기">
 <meta property="og:url" content="http://localhost:4000/til/jdbc/">
 
 
@@ -182,7 +182,7 @@
     
       
       
-        <li class="current">오라클 클라우드 DB와 자바 연결 / 이클립스에서 select 쿼리로 오라클 DB에 있는 정보 가져오기</li>
+        <li class="current">오라클 클라우드 DB와 자바 연결하기</li>
       
     
   </ol>
@@ -304,7 +304,7 @@
 
 
   <article class="page h-entry" itemscope itemtype="https://schema.org/CreativeWork">
-    <meta itemprop="headline" content="오라클 클라우드 DB와 자바 연결 / 이클립스에서 select 쿼리로 오라클 DB에 있는 정보 가져오기">
+    <meta itemprop="headline" content="오라클 클라우드 DB와 자바 연결하기">
     <meta itemprop="description" content="">
     <meta itemprop="datePublished" content="2022-02-24T00:00:00+09:00">
     
@@ -313,7 +313,7 @@
       
         <header>
           <h1 id="page-title" class="page__title p-name" itemprop="headline">
-            <a href="http://localhost:4000/til/jdbc/" class="u-url" itemprop="url">오라클 클라우드 DB와 자바 연결 / 이클립스에서 select 쿼리로 오라클 DB에 있는 정보 가져오기
+            <a href="http://localhost:4000/til/jdbc/" class="u-url" itemprop="url">오라클 클라우드 DB와 자바 연결하기
 </a>
           </h1>
           
@@ -342,30 +342,31 @@
           <aside class="sidebar__right sticky">
             <nav class="toc">
               <header><h4 class="nav__title"><i class="fas fa-cog"></i> 👷</h4></header>
-              
+              <ul class="toc__menu"><li><a href="#-">💭 ..</a></li><li><a href="#jdbc의-역할">JDBC의 역할</a></li><li><a href="#sql-developer를-이용해-테이블-만들기">SQL Developer를 이용해 테이블 만들기</a></li><li><a href="#코드로-보자">코드로 보자!</a></li></ul>
 
             </nav>
           </aside>
         
         <hr />
 
-<p><a href="https://velog.io/@zinhoxxl/Apple-Silicon-M1-%EC%9C%BC%EB%A1%9C-oracleeclipse-%EC%97%B0%EB%8F%99%ED%95%98%EA%B8%B0-3">도움을 받은 글1</a><br />
-<a href="https://okky.kr/article/970368">도움을 받은 글2</a></p>
+<h3 id="-">💭 ..</h3>
+<div class="notice">
+  <h4>맥북 유저에게 국비 수업이란...?</h4>
+  <p>처음 국비 수업을 듣기로 결심했을 때 가장 걱정이 되었던 것은 나에겐 Windows 운영체제를 사용하는 랩탑이 없다는 것이었다. 국비 수업은 Windows를 기준으로 진행되기 때문에 문제가 생기면 강사님의 도움을 받기가 쉽지 않다. 수업 전 진행된 오티에서 강사님은 되도록이면 Windows를 사용할 것을 권했다. 나는 macOS를 사용한 지 오래되었고, 국비 수업을 듣기 전 독학하며 구글링 실력을 꽤 키웠다고 생각했기 때문에 굳이 Windows 운영체제의 랩탑을 구하려고 하지 않았다. 내가 혼자 해결할 수 있을 거라는 원인 모를(ㅎㅎ) 자신감이 있었다. <br />이클립스 IDE나 Java는 이미 설치해서 사용하고 있었기 때문에 수업 중 설치하는 시간에 문제가 없었다. 그 후로 쭉 문제없이 수업을 잘 들었다. 작은 에러들은 구글링으로 해결할 수 있었다. 그러던 중 데이터베이스에 대해 배우는 주가 시작되었다. 국비 수업이 시작되기 전, 수업에 대한 정보들을 검색해 보던 중 m1 칩 맥북은 오라클을 사용할 수 없다는 것을 알게 되었고 아래 도움이 된 글 목록 중 첫 번째에 있는 블로그 글을 보고 미리 오라클 클라우드에 가입 후 DB를 생성하고 SQL Developer와 연동은 해둔 상태였다. 하지만 당시에는 DB와 Java를 연결하려면 JDBC를 이용해야 한다는 것을 몰랐다. DB와 Java를 연결하는 수업이 시작되었고 많은 분들이 JDBC driver를 다운로드하고 연결하는 과정에 어려움을 겪었다. 나도 다르지 않았다. <br />아무것도 모르던 4개월 전, 깃헙 페이지로 개발 블로그를 만들려고 구글링을 하며 오랜 시간을 삽질했던 때가 있었다. 그때는 한 가지 문제를 해결하려고 3일, 4일을 구글링하고도 원하는 답을 찾지 못할 때도 있었다. 그때의 기억이 떠올라서 식은땀이 쫙 났다.<br />  
+  'DB와 자바를 연결하지 못하면 수업을 듣기 힘들 텐데 어쩌나.. 밤을 새워서라도 해야겠다.'  라고 생각하고 있었는데 다행히 벌써 많은 분들이 애플 실리콘칩 맥북 + 오라클 클라우드 DB를 연동하는 방법에 대한 블로그 글을 올려주셨고 덕분에 생각보다 빠르게 해결할 수 있었다. 수업이 끝나기 전에 연결이 잘 되어서 엄청 기쁘고 다행이라는 생각이 들었다. <br />
+  다음에 또 필요할 때를 대비해 기록을 남겨둔다. 국비 수업을 들으려는 다른 macOS 유저들에게도 조금이나마 도움이 되길 바란다.</p>
+</div>
 
-<p><strong>환경</strong></p>
+<p><strong>🔦 도움이 된 글</strong><br />
+<a href="https://shanepark.tistory.com/208">1. Apple Silicon m1 맥북에서 Oracle Database 사용하기</a><br />
+<a href="https://velog.io/@zinhoxxl/Apple-Silicon-M1-%EC%9C%BC%EB%A1%9C-oracleeclipse-%EC%97%B0%EB%8F%99%ED%95%98%EA%B8%B0-3">2. Apple Silicon) M1 으로 oracle&amp;eclipse 연동하기 (3)</a><br />
+<a href="https://okky.kr/article/970368">3. okky 쿠잉님 댓글</a></p>
 
-<p>m1 macbook air 사용
-오라클 클라우드 자율 운영 데이터베이스
-이클립스
-ojdbc8.jar</p>
+<h3 id="jdbc의-역할">JDBC의 역할</h3>
 
-<p>처음 검색할 때는 JDBC를 자바에.. 뭐 어떻게 한다고..? 라는 생각이 들었습니다.
-아예 JDBC가 어떤 것인지 감이 잡히지 않았습니다.</p>
+<p>JDBC는 DB와 Java를 연결해 주는 API입니다. 자바 언어로 작성한 코드로 데이터 베이스에 접근하고 여러 가지 데이터 작업을 수행할 수 있게 되죠. 예를 들면, 이클립스에서 몇 가지 자바 클래스와 메서드 그리고 SQL 문을 사용하여 직접 DB에 접근해 데이터를 검색, 추가, 삭제, 수정할 수 있게 되는 것입니다.</p>
 
-<p>JDBC는 DB와 자바를 연결해줍니다. 자바 언어로 작성한 코드로 데이터 베이스에 접근하고 여러가지 데이터 작업을 할 수 있게 되는 것 입니다.</p>
-
-<p>오라클 클라우드를 사용하고 있다는 특성때문에 기존의 오라클 DB와 자바를 연결하는 방법과 조금 다릅니다.
-아주 조금..! 단계중 많은 부분은 똑같아요.</p>
+<h3 id="sql-developer를-이용해-테이블-만들기">SQL Developer를 이용해 테이블 만들기</h3>
 
 <p>먼저 저는 SQL Developer를 이용하여 오라클 클라우드 DB에 테이블을 하나 만들어 주었습니다.
 테이블 이름은 stardew_valley 입니다.</p>
@@ -403,9 +404,11 @@ ojdbc8.jar</p>
 
 <p><br /></p>
 
-<p>그리고 이클립스에서 코드 작성하여 테이블의 값들을 가져와보겠습니다.</p>
+<h3 id="코드로-보자">코드로 보자!</h3>
 
-<p>먼저 작업하고 있는 java project에 ojdbc8.jar를 추가합니다. (위에 블로그에 자세히 설명되어 있습니다. ojdbc10.jar 은 저도 안되더라고요.)</p>
+<p>그리고 자바 코드를 작성하여 테이블의 값들을 검색해보겠습니다.</p>
+
+<p>먼저 작업하고 있는 Java project에 ojdbc8.jar를 추가합니다. 위 도움을 받은 글 목록 중 두번째 블로그 글을 보면 꼭 ojdbc8.jar을 받아야 한다고 하셨는데요. 저도 처음에 다른 버전으로 받았다가 제대로 실행되지 않는 문제를 겪었습니다.</p>
 
 <div class="language-java highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kn">import</span> <span class="nn">java.sql.*</span><span class="o">;</span>
 
@@ -472,7 +475,13 @@ ojdbc8.jar</p>
     <strong><i class="fas fa-fw fa-tags" aria-hidden="true"></i> Tags: </strong>
     <span itemprop="keywords">
     
+      <a href="/tags/#database" class="page__taxonomy-item p-category" rel="tag">Database</a><span class="sep">, </span>
+    
+      <a href="/tags/#java" class="page__taxonomy-item p-category" rel="tag">Java</a><span class="sep">, </span>
+    
       <a href="/tags/#learning" class="page__taxonomy-item p-category" rel="tag">learning</a><span class="sep">, </span>
+    
+      <a href="/tags/#oracle-cloud" class="page__taxonomy-item p-category" rel="tag">Oracle Cloud</a><span class="sep">, </span>
     
       <a href="/tags/#%EA%B3%B5%EB%B6%80-%EA%B8%B0%EB%A1%9D" class="page__taxonomy-item p-category" rel="tag">공부 기록</a>
     
@@ -541,7 +550,7 @@ ojdbc8.jar</p>
     
     <h2 class="archive__item-title no_toc" itemprop="headline">
       
-        <a href="/til/basicSwift2/" rel="permalink">A Swift Tour
+        <a href="/til/basicSwift2/" rel="permalink">Swift 공식 가이드를 읽어봅니다.
 </a>
       
     </h2>

@@ -1,5 +1,5 @@
 ---
-title: "A Swift Tour"
+title: "Swift 공식 가이드를 읽어봅니다."
 categories:
   - TIL
 tags:
@@ -134,5 +134,3 @@ struct ContentView_Previews: PreviewProvider {
 시간 정보는 계속해서 바뀌므로 @State 키워드를 사용해서 바뀐 시간을 계속해서 반영해주고 문자열 date에 escape character '\'를 추가해서 Date()를 담고 있는 date 변수의 할당되어 있는 문자열을 가져온다.  
 
 ### 5. DateFormatter 사용
-
-...다음에 계속
