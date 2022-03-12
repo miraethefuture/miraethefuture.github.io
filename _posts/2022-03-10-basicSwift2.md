@@ -157,3 +157,42 @@ func timeString(date: Date) -> String {
 ```
 
 ### 6. Live Time  
+
+
+SwiftUI가 State variable에 일어난 변화들을 감시합니다. @State는 스스로 변화를 만들지는 않습니다.  
+Date() initializer는 시간의 한 지점을 가져옵니다. 우리가 방금 만든 디지털 시계가 자동으로 흘러가지 않는 이유이죠.
+
+우리가 보는 시계들처럼 초가 흘러가고 60초가 지나면 1분이 늘어나게 만드려면 매초마다 date variable을 새로 고침해주어야 합니다.  
+그러려면 Timer 객체를 사용하면 됩니다. Timer는 일정 시간이 지나면 특정 메세지를 타겟 객체에 보냅니다. Timer을 설정해주면
+SwiftUI가 @State의 변화를 인식하고 그것에 따라 우리의 시계를 업데이트 해줄 것입니다.
+
+ Timer 객체를 생성하는 코드를 작성해봅니다.
+
+```swift
+var updateTimer: Timer {
+  Timer.scheduledTimer(withTimeInterval; 1, repeats: true,
+    block: {
+      self.date = Date()
+      })  
+}
+
+```  
+scheduledTimer() 메서드를 이용합니다. 첫번째 인자는 withTimeInterval이고 시간의 간격을 입력해줍니다.  
+두번째는 repeat 입니다. 반복할 것인지 아닌지 bool 타입으로 입력해줍니다.  
+세번째는 block 입니다. Timer가 반복될 때마다 작동될 코드를 작성해줍니다.
+
+아직은 초마다 시계가 움직이지 않죠? 한 단계가 더 남아있습니다. Text View 아래에 .onAppear modifier을 사용하여
+Timer가 스크린에 나타나도록 해줍니다.
+
+```swift
+Text("\(timeString(date: date))")
+  .onAppear(perform: {let _ = self.updateTimer})
+```
+
+.onAppear(perform: action) 은 function modifier 입니다. View가 나타나면 action을 수행합니다.
+self.updateTimer function은 저장할 필요가 없는 값을 반환하기 때문에 'let _'을 사용했습니다. underscore 는 아무것도 할당하고 싶지 않다는 것을 나타냅니다.
+이 스텝까지 잘 마치셨다면 디지털 시계가 초마다 움직이는 것을 볼 수 있을 것입니다!
+
+
+
+... 다음에 계속
