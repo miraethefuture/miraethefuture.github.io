@@ -195,4 +195,62 @@ self.updateTimer function은 저장할 필요가 없는 값을 반환하기 때�
 
 
 
-... 다음에 계속
+### 7. Time of Day Greeting  
+
+시간에 따라 달라지는 인사말을 추가해볼 것입니다.
+- 4:00:00am to 11:59:59am -> Morning
+- 12:00:00pm to 4:59:59pm -> Afternoon
+- 5:00:00pm to 8:59:59pm -> Evening
+- 8:00:00pm to 3:59:59am -> Night  
+위의 기준으로 시간을 나누고 각 시간대의 인사말이 시계 아래에 나타나도록 해봅시다.
+
+```swift
+func greeting() -> String {
+        var greet = ""
+
+        let midNight0 = Calendar.current.date(bySettingHour: 0, minute: 00, second:00, of: date)!
+        let nightEnd = Calendar.current.date(bySettingHour: 3, minute: 59, second: 59, of: date)!
+
+        let morningStart = Calendar.current.date(bySettingHour: 4, minute: 00, second: 0, of: date)!
+        let morningEnd = Calendar.current.date(bySettingHour: 11, minute: 59, second: 59, of: date)!
+
+        let noonStart = Calendar.current.date(bySettingHour: 12, minute: 00, second: 00, of: date)!
+        let noonEnd = Calendar.current.date(bySettingHour: 16, minute: 59, second: 59, of: date)!
+
+        let eveStart = Calendar.current.date(bySettingHour: 17, minute: 00, second: 00, of: date)!
+        let eveEnd = Calendar.current.date(bySettingHour: 20, minute: 59, second: 59, of: date)!
+
+        let nightStart = Calendar.current.date(bySettingHour: 21, minute: 00, second: 00, of: date)!
+        let midNight24 = Calendar.current.date(bySettingHour: 23, minute: 59, second: 59, of: date)!
+
+        if ((date >= midNight0) && (date <= nightEnd)) {
+            greet = "Good Night."
+        } else if (date >= morningStart) && (date <= morningEnd) {
+            greet = "Good Morning"
+        } else if ((date >= noonStart) && (noonEnd >= date)) {
+            greet = "Good Afternoon."
+        } else if ((date >= eveStart) && (eveEnd >= date)) {
+            greet = "Good Evening."
+        } else if ((date >= nightStart) && (midNight24 >= date)) {
+            greet = "Good night."
+        }
+
+        return greet
+
+    }
+```
+
+
+Calendar.current.date(bySettingHour...) 메서드는 주어진 date 데이터에 특정한 시간을 나타내는 variable을 만듭니다.
+여기서는 우리가 위에서 만든 @State date가 주어진 날짜 데이터입니다.
+
+아래 부분은 나누어 놓은 시간대와 현재 시간을 비교하는 부분입니다.
+현재 시간과 비교해서 해당되는 인사말을 greet 변수에 담고 반환합니다.
+여기까지 하면 시간을 스크린에 띄우는 것은 완성!
+
+... 디지털시계 만들기는 계속 됩니다.
+<!--
+### 8. 이제부터는 화면을 꾸며보자.  
+
+시계의 배경 부분을 사진을 넣어 사용할 수 있었으면 좋겠다는 생각이 들었다.  
+검색 중 Unsplash API를 발견했고 적용해보고자 한다. -->
