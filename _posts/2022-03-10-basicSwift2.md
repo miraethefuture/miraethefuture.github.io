@@ -15,10 +15,12 @@ toc_icon: "cog"
 
 ### 💭 ..  
 <div class="notice">
-  <h4>Swift 배워보기</h4>
-  <p>Swift는 어떤 언어일까?</p>
+  <h4>Swift는 어떤 언어일까?</h4>
+  <p>Java를 공부한지 거의 5개월이 지났다. 국비수업 2개월 + 독학 3개월의 과정을 지났다. Java는 첫인상 보다는 매력있고 재미있는 언어였다.
+  가장 많이 사용되는 프로그래밍 언어 중 하나라 자료가 넘치도록 많다는 장점도 가지고 있다. 그러던 중 친구를 통해 Swift의 존재를 알게되었다.
+  원래 그 이름은 들어봤지만 Swift가 프로그래밍 언어인지 IDE인지 모를정도로 잘 알지 못했다. 그렇게 Swift에 대한 정보는 '잘 알지 못함'에서 '애플 개발자들이 사용하는 언어'로 승급했다. </p>
 </div>
-
+신호로 퇴실 처리했습니다 감사합니다
 
 ### 1. 📖
 [A Swift Tour](https://docs.swift.org/swift-book/GuidedTour/GuidedTour.html) 공식 가이드를 읽으며 공부합니다.
@@ -98,7 +100,7 @@ struct ContentView: View {
 }
 ```
 
-- '@State' 키워드는 해당 변수가 모니터링 되고 있다는 것을 의미한다. 만약 변수의 값이 바뀌면 View는 업데이트를 반영한다.
+- '@State' property wrapper는 해당 변수가 모니터링 되고 있다는 것을 의미한다. 만약 변수의 값이 바뀌면 View는 업데이트를 반영한다.
 
 - 'Date()'는 사용자가 있는 지역의 날짜와 시간 정보를 가져오는 initializer이다.  
 
@@ -126,7 +128,7 @@ struct ContentView_Previews: PreviewProvider {
 }
 ```
 
-시간 정보는 계속해서 바뀌므로 @State 키워드를 사용해서 바뀐 시간을 계속해서 반영해주고 문자열 date에 escape character '\'를 추가해서 Date()를 담고 있는 date 변수의 할당되어 있는 문자열을 가져온다.  
+시간 정보는 계속해서 바뀌므로 property wrapper인 @State 를 사용해서 바뀐 시간을 계속해서 반영해주고 문자열 date에 escape character '\'를 추가해서 Date()를 담고 있는 date 변수의 할당되어 있는 문자열을 가져온다.  
 
 ### 5. DateFormatter 사용
 

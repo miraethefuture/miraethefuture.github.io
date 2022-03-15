@@ -1,8 +1,131 @@
-<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="4.2.1">Jekyll</generator><link href="http://localhost:4000/feed.xml" rel="self" type="application/atom+xml" /><link href="http://localhost:4000/" rel="alternate" type="text/html" /><updated>2022-03-12T22:58:58+09:00</updated><id>http://localhost:4000/feed.xml</id><title type="html">Mirae the Future</title><subtitle>An amazing website.</subtitle><author><name>Mirae</name></author><entry><title type="html">A Swift Tour : 디지털 시계 앱을 만들며 스위프트 배워보기</title><link href="http://localhost:4000/til/basicSwift2/" rel="alternate" type="text/html" title="A Swift Tour : 디지털 시계 앱을 만들며 스위프트 배워보기" /><published>2022-03-10T00:00:00+09:00</published><updated>2022-03-10T00:00:00+09:00</updated><id>http://localhost:4000/til/basicSwift2</id><content type="html" xml:base="http://localhost:4000/til/basicSwift2/">&lt;h3 id=&quot;-&quot;&gt;💭 ..&lt;/h3&gt;
+<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="4.2.1">Jekyll</generator><link href="http://localhost:4000/feed.xml" rel="self" type="application/atom+xml" /><link href="http://localhost:4000/" rel="alternate" type="text/html" /><updated>2022-03-15T23:50:44+09:00</updated><id>http://localhost:4000/feed.xml</id><title type="html">Mirae the Future</title><subtitle>An amazing website.</subtitle><author><name>Mirae</name></author><entry><title type="html">SwiftUI Tutorial: 여러 개의 View를 만들고 결합하기</title><link href="http://localhost:4000/til/landmarks/" rel="alternate" type="text/html" title="SwiftUI Tutorial: 여러 개의 View를 만들고 결합하기" /><published>2022-03-14T00:00:00+09:00</published><updated>2022-03-14T00:00:00+09:00</updated><id>http://localhost:4000/til/landmarks</id><content type="html" xml:base="http://localhost:4000/til/landmarks/">&lt;p&gt;&lt;a href=&quot;https://developer.apple.com/tutorials/swiftui/creating-and-combining-views&quot;&gt;출처: SwiftUI Essentials:
+Creating and Combining Views&lt;/a&gt;&lt;/p&gt;
+
+&lt;h2 id=&quot;what-i-learned-from-this-tutorial&quot;&gt;&lt;strong&gt;What I Learned From This Tutorial:&lt;/strong&gt;&lt;/h2&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;SwiftUI 프레임워크와 다른 프레임워크를 함께 사용하는 방식&lt;/li&gt;
+  &lt;li&gt;여러개의 파일을 하나의 View로 합치기&lt;/li&gt;
+  &lt;li&gt;Stack의 사용법&lt;/li&gt;
+  &lt;li&gt;지도와 관련된 Structures&lt;/li&gt;
+  &lt;li&gt;alignment: .leading&lt;/li&gt;
+  &lt;li&gt;Divider()&lt;/li&gt;
+  &lt;li&gt;Spacer()
+&lt;!-- - Binding ($) --&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;&lt;br /&gt;&lt;/p&gt;
+
+&lt;center&gt;&lt;img src=&quot;/assets/images/directoryTree.png&quot; alt=&quot;tree&quot; width=&quot;300&quot; /&gt;
+&lt;/center&gt;
+&lt;p&gt;&lt;br /&gt;&lt;/p&gt;
+
+&lt;div class=&quot;language-swift highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;c1&quot;&gt;// ContentView.swift&lt;/span&gt;
+&lt;span class=&quot;c1&quot;&gt;// Landmarks&lt;/span&gt;
+
+&lt;span class=&quot;kd&quot;&gt;import&lt;/span&gt; &lt;span class=&quot;kt&quot;&gt;SwiftUI&lt;/span&gt;
+
+&lt;span class=&quot;kd&quot;&gt;struct&lt;/span&gt; &lt;span class=&quot;kt&quot;&gt;ContentView&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;kt&quot;&gt;View&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
+  &lt;span class=&quot;k&quot;&gt;var&lt;/span&gt; &lt;span class=&quot;nv&quot;&gt;body&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;kd&quot;&gt;some&lt;/span&gt; &lt;span class=&quot;kt&quot;&gt;View&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
+
+    &lt;span class=&quot;kt&quot;&gt;VStack&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nv&quot;&gt;alignment&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;leading&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
+
+        &lt;span class=&quot;kt&quot;&gt;Text&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;경복궁&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
+            &lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nf&quot;&gt;font&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;title&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
+            &lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nf&quot;&gt;foregroundColor&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;black&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
+
+        &lt;span class=&quot;kt&quot;&gt;HStack&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
+
+            &lt;span class=&quot;kt&quot;&gt;Text&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;Gyeongbokgung Palace&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
+                &lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nf&quot;&gt;font&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;subheadline&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
+            &lt;span class=&quot;kt&quot;&gt;Text&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;Korea&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
+                &lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nf&quot;&gt;font&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;subheadline&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
+        &lt;span class=&quot;p&quot;&gt;}&lt;/span&gt; &lt;span class=&quot;c1&quot;&gt;// HStack 끝&lt;/span&gt;
+        &lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nf&quot;&gt;font&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;subheadline&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
+        &lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nf&quot;&gt;foregroundColor&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;secondary&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
+
+        &lt;span class=&quot;kt&quot;&gt;Divider&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;()&lt;/span&gt;
+        &lt;span class=&quot;kt&quot;&gt;Text&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;About Gyeongbokgung&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
+            &lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nf&quot;&gt;font&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;title2&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
+        &lt;span class=&quot;kt&quot;&gt;Text&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;Gyeongbokgung, also known as Gyeongbokgung Palace or Gyeongbok Palace,
+        was the main royal palace of the Joseon dynasty.
+        Built in 1395, it is located in northern Seoul, South Korea.&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
+            &lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nf&quot;&gt;font&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;body&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
+
+    &lt;span class=&quot;p&quot;&gt;}&lt;/span&gt; &lt;span class=&quot;c1&quot;&gt;// VStack&lt;/span&gt;
+    &lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nf&quot;&gt;padding&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;()&lt;/span&gt;
+  &lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
+&lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
+
+&lt;span class=&quot;kd&quot;&gt;struct&lt;/span&gt; &lt;span class=&quot;kt&quot;&gt;ContentView_Previews&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;kt&quot;&gt;PreviewProvider&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
+  &lt;span class=&quot;kd&quot;&gt;static&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;var&lt;/span&gt; &lt;span class=&quot;nv&quot;&gt;previews&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;kd&quot;&gt;some&lt;/span&gt; &lt;span class=&quot;kt&quot;&gt;View&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
+      &lt;span class=&quot;kt&quot;&gt;ContentView&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;()&lt;/span&gt;
+    &lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
+&lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;p&gt;ContentView의 body부분에는 뒤에서 MapView()와 CircleImage()가 추가됩니다.&lt;/p&gt;
+
+&lt;div class=&quot;language-swift highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;c1&quot;&gt;// MapView.swift&lt;/span&gt;
+&lt;span class=&quot;c1&quot;&gt;// Landmarks&lt;/span&gt;
+
+&lt;span class=&quot;kd&quot;&gt;import&lt;/span&gt; &lt;span class=&quot;kt&quot;&gt;SwiftUI&lt;/span&gt;
+&lt;span class=&quot;kd&quot;&gt;import&lt;/span&gt; &lt;span class=&quot;kt&quot;&gt;MapKit&lt;/span&gt;
+
+&lt;span class=&quot;kd&quot;&gt;struct&lt;/span&gt; &lt;span class=&quot;kt&quot;&gt;MapView&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;kt&quot;&gt;View&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
+    &lt;span class=&quot;kd&quot;&gt;@State&lt;/span&gt; &lt;span class=&quot;kd&quot;&gt;private&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;var&lt;/span&gt; &lt;span class=&quot;nv&quot;&gt;region&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;kt&quot;&gt;MKCoordinateRegion&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;
+        &lt;span class=&quot;c1&quot;&gt;// 경복궁의 위도와 경도&lt;/span&gt;
+        &lt;span class=&quot;nv&quot;&gt;center&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;kt&quot;&gt;CLLocationCoordinate2D&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nv&quot;&gt;latitude&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;mf&quot;&gt;37.580_5&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;35&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;nv&quot;&gt;longitude&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;mf&quot;&gt;126.977_3&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;41&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;),&lt;/span&gt;
+        &lt;span class=&quot;nv&quot;&gt;span&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;kt&quot;&gt;MKCoordinateSpan&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nv&quot;&gt;latitudeDelta&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;mf&quot;&gt;0.05&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;nv&quot;&gt;longitudeDelta&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;mf&quot;&gt;0.05&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
+        &lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
+
+    &lt;span class=&quot;k&quot;&gt;var&lt;/span&gt; &lt;span class=&quot;nv&quot;&gt;body&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;kd&quot;&gt;some&lt;/span&gt; &lt;span class=&quot;kt&quot;&gt;View&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
+        &lt;span class=&quot;kt&quot;&gt;Map&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nv&quot;&gt;coordinateRegion&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;err&quot;&gt;$&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;region&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
+    &lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
+&lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
+
+&lt;span class=&quot;kd&quot;&gt;struct&lt;/span&gt; &lt;span class=&quot;kt&quot;&gt;MapView_Previews&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;kt&quot;&gt;PreviewProvider&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
+    &lt;span class=&quot;kd&quot;&gt;static&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;var&lt;/span&gt; &lt;span class=&quot;nv&quot;&gt;previews&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;kd&quot;&gt;some&lt;/span&gt; &lt;span class=&quot;kt&quot;&gt;View&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
+        &lt;span class=&quot;kt&quot;&gt;MapView&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;()&lt;/span&gt;
+    &lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
+&lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;p&gt;SwiftUI 프레임워크를 추가하고 그 외에 또 다른 프레임 워크를 추가하면,&lt;br /&gt;
+(여기서는 MapKit라는 프레임워크를 추가했습니다.)&lt;br /&gt;
+추가된 프레임워크와 관련된 SwiftUI의 특정 기능에 접근할 수 있게 됩니다.&lt;/p&gt;
+
+&lt;p&gt;MKCoordinateRegion는 위도, 경도로 표시된 특정 좌표 평면상의 지역을 직사각형의 형태로 가져오는 Structure입니다. 위 코드에서는 가져온 지역 정보를 region이라는 이름의 private state variable에 담았습니다.&lt;/p&gt;
+
+&lt;p&gt;center: 와 span:은 파라미터 입니다.&lt;br /&gt;
+center: 는 가운데 오게 될 지역의 위도, 경도&lt;br /&gt;
+span: 은 지도가 보여질 크기를 나타내는 horizontal span과 vertical span이 들어올 것입니다.&lt;/p&gt;
+
+&lt;p&gt;CLLocationCoordinate2D은 국제 좌표계를 기준으로 특정 지역의 위도 경도를 이용하여 지역 좌표 object를 생성하는 Structure입니다. center: 파라미터를 지나는 값이니 생성된 좌표 object를 중심점으로 사용한다는 뜻이겠죠?&lt;/p&gt;
+
+&lt;p&gt;MKCoordinateSpan은 지도로 표현된 지역의 가로와 세로 크기를 표현하는 Structure입니다. delta values를 이용해서 원하는 줌 레벨을 설정할 수 있습니다. delta value이 커지면 줌 레벨은 작아집니다. delta value가 작아지면 줌 레벨을 커지면서 더 가까이 지도를 볼 수 있습니다.&lt;/p&gt;
+
+&lt;p&gt;body property의 Map()은 Generic Structure로 사용할 지도 인터페이스를 보여주는 역할을 합니다. 위 코드에는 표현되지 않았지만 사용자의 위치를 보여주거나 이동경로를 추적하는 등의 기능을 합니다.&lt;br /&gt;
+&lt;br /&gt;&lt;/p&gt;
+
+&lt;center&gt;&lt;video src=&quot;https://user-images.githubusercontent.com/85061148/158296265-93e3410e-c9f0-46e2-9e10-b237f9ea7320.mov&quot; controls=&quot;controls&quot; style=&quot;max-width: 300px&quot;&gt;
+&lt;/video&gt;&lt;/center&gt;
+
+&lt;!-- ```swift
+var body: some View {
+  Map(coordinateRegion: $region)
+}
+``` --&gt;
+
+&lt;!-- $region Binding --&gt;
+&lt;!-- Generic Structure --&gt;</content><author><name>Mirae</name></author><category term="TIL" /><category term="learning" /><category term="공부 기록" /><category term="Swift" /><summary type="html">출처: SwiftUI Essentials: Creating and Combining Views</summary></entry><entry><title type="html">A Swift Tour : 디지털 시계 앱을 만들며 스위프트 배워보기</title><link href="http://localhost:4000/til/basicSwift2/" rel="alternate" type="text/html" title="A Swift Tour : 디지털 시계 앱을 만들며 스위프트 배워보기" /><published>2022-03-10T00:00:00+09:00</published><updated>2022-03-10T00:00:00+09:00</updated><id>http://localhost:4000/til/basicSwift2</id><content type="html" xml:base="http://localhost:4000/til/basicSwift2/">&lt;h3 id=&quot;-&quot;&gt;💭 ..&lt;/h3&gt;
 &lt;div class=&quot;notice&quot;&gt;
-  &lt;h4&gt;Swift 배워보기&lt;/h4&gt;
-  &lt;p&gt;Swift는 어떤 언어일까?&lt;/p&gt;
+  &lt;h4&gt;Swift는 어떤 언어일까?&lt;/h4&gt;
+  &lt;p&gt;Java를 공부한지 거의 5개월이 지났다. 국비수업 2개월 + 독학 3개월의 과정을 지났다. Java는 첫인상 보다는 매력있고 재미있는 언어였다.
+  가장 많이 사용되는 프로그래밍 언어 중 하나라 자료가 넘치도록 많다는 장점도 가지고 있다. 그러던 중 친구를 통해 Swift의 존재를 알게되었다.
+  원래 그 이름은 들어봤지만 Swift가 프로그래밍 언어인지 IDE인지 모를정도로 잘 알지 못했다. 그렇게 Swift에 대한 정보는 &apos;잘 알지 못함&apos;에서 &apos;애플 개발자들이 사용하는 언어&apos;로 승급했다. &lt;/p&gt;
 &lt;/div&gt;
+&lt;p&gt;신호로 퇴실 처리했습니다 감사합니다&lt;/p&gt;
 
 &lt;h3 id=&quot;1-&quot;&gt;1. 📖&lt;/h3&gt;
 &lt;p&gt;&lt;a href=&quot;https://docs.swift.org/swift-book/GuidedTour/GuidedTour.html&quot;&gt;A Swift Tour&lt;/a&gt; 공식 가이드를 읽으며 공부합니다.&lt;/p&gt;
@@ -36,7 +159,7 @@
 &lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
 
 &lt;h3 id=&quot;3-the-boilerplate-code&quot;&gt;3. The boilerplate code&lt;/h3&gt;
-&lt;p&gt;&lt;a href=&quot;https://medium.com/iu-women-in-computing/intro-to-swiftui-digital-clock-d0a60e05d394&quot;&gt;Intro to SwiftUI: Digital Clock&lt;/a&gt; &amp;lt;- 볼르그를 보며 공부합니다.&lt;/p&gt;
+&lt;p&gt;&lt;a href=&quot;https://medium.com/iu-women-in-computing/intro-to-swiftui-digital-clock-d0a60e05d394&quot;&gt;Intro to SwiftUI: Digital Clock&lt;/a&gt; &amp;lt;- 블로그를 보며 공부합니다.&lt;/p&gt;
 
 &lt;p&gt;이론만 읽다보니 지루해지기 시작합니다. 지금 가장 만들어보고 싶은 앱은 디지털 시계 앱입니다. 구글링을 해봅니다.
 여러개의 친절한 블로그를 발견했는데요. 그 중 하나를 읽어보며 코드 구조를 분석해봅니다.&lt;/p&gt;
@@ -78,7 +201,7 @@
 
 &lt;ul&gt;
   &lt;li&gt;
-    &lt;p&gt;‘@State’ 키워드는 해당 변수가 모니터링 되고 있다는 것을 의미한다. 만약 변수의 값이 바뀌면 View는 업데이트를 반영한다.&lt;/p&gt;
+    &lt;p&gt;‘@State’ property wrapper는 해당 변수가 모니터링 되고 있다는 것을 의미한다. 만약 변수의 값이 바뀌면 View는 업데이트를 반영한다.&lt;/p&gt;
   &lt;/li&gt;
   &lt;li&gt;
     &lt;p&gt;‘Date()’는 사용자가 있는 지역의 날짜와 시간 정보를 가져오는 initializer이다.&lt;/p&gt;
@@ -108,7 +231,7 @@
 &lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
 &lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
 
-&lt;p&gt;시간 정보는 계속해서 바뀌므로 @State 키워드를 사용해서 바뀐 시간을 계속해서 반영해주고 문자열 date에 escape character ‘&apos;를 추가해서 Date()를 담고 있는 date 변수의 할당되어 있는 문자열을 가져온다.&lt;/p&gt;
+&lt;p&gt;시간 정보는 계속해서 바뀌므로 property wrapper인 @State 를 사용해서 바뀐 시간을 계속해서 반영해주고 문자열 date에 escape character ‘&apos;를 추가해서 Date()를 담고 있는 date 변수의 할당되어 있는 문자열을 가져온다.&lt;/p&gt;
 
 &lt;h3 id=&quot;5-dateformatter-사용&quot;&gt;5. DateFormatter 사용&lt;/h3&gt;
 
@@ -138,17 +261,144 @@ dateFormat은 DateFormatter객체의 property이다. 주어진 날짜/시간 데
 &lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;s&lt;/span&gt;
 &lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
 
-&lt;h3 id=&quot;6-live-time&quot;&gt;6. Live Time&lt;/h3&gt;</content><author><name>Mirae</name></author><category term="TIL" /><category term="learning" /><category term="공부 기록" /><category term="Swift" /><summary type="html">💭 .. Swift 배워보기 Swift는 어떤 언어일까?</summary></entry><entry><title type="html">Swift</title><link href="http://localhost:4000/til/basicSwift/" rel="alternate" type="text/html" title="Swift" /><published>2022-03-07T00:00:00+09:00</published><updated>2022-03-07T00:00:00+09:00</updated><id>http://localhost:4000/til/basicSwift</id><content type="html" xml:base="http://localhost:4000/til/basicSwift/">&lt;h3 id=&quot;-&quot;&gt;💭 ..&lt;/h3&gt;
+&lt;h3 id=&quot;6-live-time&quot;&gt;6. Live Time&lt;/h3&gt;
+
+&lt;p&gt;SwiftUI가 State variable에 일어난 변화들을 감시합니다. @State는 스스로 변화를 만들지는 않습니다.&lt;br /&gt;
+Date() initializer는 시간의 한 지점을 가져옵니다. 우리가 방금 만든 디지털 시계가 자동으로 흘러가지 않는 이유이죠.&lt;/p&gt;
+
+&lt;p&gt;우리가 보는 시계들처럼 초가 흘러가고 60초가 지나면 1분이 늘어나게 만드려면 매초마다 date variable을 새로 고침해주어야 합니다.&lt;br /&gt;
+그러려면 Timer 객체를 사용하면 됩니다. Timer는 일정 시간이 지나면 특정 메세지를 타겟 객체에 보냅니다. Timer을 설정해주면
+SwiftUI가 @State의 변화를 인식하고 그것에 따라 우리의 시계를 업데이트 해줄 것입니다.&lt;/p&gt;
+
+&lt;p&gt;Timer 객체를 생성하는 코드를 작성해봅니다.&lt;/p&gt;
+
+&lt;div class=&quot;language-swift highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;k&quot;&gt;var&lt;/span&gt; &lt;span class=&quot;nv&quot;&gt;updateTimer&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;kt&quot;&gt;Timer&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
+  &lt;span class=&quot;kt&quot;&gt;Timer&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nf&quot;&gt;scheduledTimer&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;withTimeInterval&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;1&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;nv&quot;&gt;repeats&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;kc&quot;&gt;true&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;
+    &lt;span class=&quot;nv&quot;&gt;block&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
+      &lt;span class=&quot;k&quot;&gt;self&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;date&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;kt&quot;&gt;Date&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;()&lt;/span&gt;
+      &lt;span class=&quot;p&quot;&gt;})&lt;/span&gt;  
+&lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
+
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+&lt;p&gt;scheduledTimer() 메서드를 이용합니다. 첫번째 인자는 withTimeInterval이고 시간의 간격을 입력해줍니다.&lt;br /&gt;
+두번째는 repeat 입니다. 반복할 것인지 아닌지 bool 타입으로 입력해줍니다.&lt;br /&gt;
+세번째는 block 입니다. Timer가 반복될 때마다 작동될 코드를 작성해줍니다.&lt;/p&gt;
+
+&lt;p&gt;아직은 초마다 시계가 움직이지 않죠? 한 단계가 더 남아있습니다. Text View 아래에 .onAppear modifier을 사용하여
+Timer가 스크린에 나타나도록 해줍니다.&lt;/p&gt;
+
+&lt;div class=&quot;language-swift highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;kt&quot;&gt;Text&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;&lt;/span&gt;&lt;span class=&quot;se&quot;&gt;\(&lt;/span&gt;&lt;span class=&quot;nf&quot;&gt;timeString&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nv&quot;&gt;date&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;date&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;&lt;span class=&quot;se&quot;&gt;)&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
+  &lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nf&quot;&gt;onAppear&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nv&quot;&gt;perform&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;&lt;span class=&quot;k&quot;&gt;let&lt;/span&gt; &lt;span class=&quot;nv&quot;&gt;_&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;self&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;updateTimer&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;})&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;p&gt;.onAppear(perform: action) 은 function modifier 입니다. View가 나타나면 action을 수행합니다.
+self.updateTimer function은 저장할 필요가 없는 값을 반환하기 때문에 ‘let _‘을 사용했습니다. underscore 는 아무것도 할당하고 싶지 않다는 것을 나타냅니다.
+이 스텝까지 잘 마치셨다면 디지털 시계가 초마다 움직이는 것을 볼 수 있을 것입니다!&lt;/p&gt;
+
+&lt;h3 id=&quot;7-time-of-day-greeting&quot;&gt;7. Time of Day Greeting&lt;/h3&gt;
+
+&lt;p&gt;시간에 따라 달라지는 인사말을 추가해볼 것입니다.&lt;/p&gt;
+&lt;ul&gt;
+  &lt;li&gt;4:00:00am to 11:59:59am -&amp;gt; Morning&lt;/li&gt;
+  &lt;li&gt;12:00:00pm to 4:59:59pm -&amp;gt; Afternoon&lt;/li&gt;
+  &lt;li&gt;5:00:00pm to 8:59:59pm -&amp;gt; Evening&lt;/li&gt;
+  &lt;li&gt;8:00:00pm to 3:59:59am -&amp;gt; Night&lt;br /&gt;
+위의 기준으로 시간을 나누고 각 시간대의 인사말이 시계 아래에 나타나도록 해봅시다.&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;div class=&quot;language-swift highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;kd&quot;&gt;func&lt;/span&gt; &lt;span class=&quot;nf&quot;&gt;greeting&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;()&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;-&amp;gt;&lt;/span&gt; &lt;span class=&quot;kt&quot;&gt;String&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
+        &lt;span class=&quot;k&quot;&gt;var&lt;/span&gt; &lt;span class=&quot;nv&quot;&gt;greet&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;&quot;&quot;&lt;/span&gt;
+
+        &lt;span class=&quot;k&quot;&gt;let&lt;/span&gt; &lt;span class=&quot;nv&quot;&gt;midNight0&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;kt&quot;&gt;Calendar&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;current&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nf&quot;&gt;date&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nv&quot;&gt;bySettingHour&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;0&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;nv&quot;&gt;minute&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;mo&quot;&gt;00&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;nv&quot;&gt;second&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt;&lt;span class=&quot;mo&quot;&gt;00&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;nv&quot;&gt;of&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;date&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;!&lt;/span&gt;
+        &lt;span class=&quot;k&quot;&gt;let&lt;/span&gt; &lt;span class=&quot;nv&quot;&gt;nightEnd&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;kt&quot;&gt;Calendar&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;current&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nf&quot;&gt;date&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nv&quot;&gt;bySettingHour&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;3&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;nv&quot;&gt;minute&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;59&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;nv&quot;&gt;second&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;59&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;nv&quot;&gt;of&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;date&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;!&lt;/span&gt;
+
+        &lt;span class=&quot;k&quot;&gt;let&lt;/span&gt; &lt;span class=&quot;nv&quot;&gt;morningStart&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;kt&quot;&gt;Calendar&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;current&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nf&quot;&gt;date&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nv&quot;&gt;bySettingHour&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;4&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;nv&quot;&gt;minute&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;mo&quot;&gt;00&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;nv&quot;&gt;second&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;0&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;nv&quot;&gt;of&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;date&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;!&lt;/span&gt;
+        &lt;span class=&quot;k&quot;&gt;let&lt;/span&gt; &lt;span class=&quot;nv&quot;&gt;morningEnd&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;kt&quot;&gt;Calendar&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;current&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nf&quot;&gt;date&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nv&quot;&gt;bySettingHour&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;11&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;nv&quot;&gt;minute&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;59&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;nv&quot;&gt;second&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;59&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;nv&quot;&gt;of&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;date&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;!&lt;/span&gt;
+
+        &lt;span class=&quot;k&quot;&gt;let&lt;/span&gt; &lt;span class=&quot;nv&quot;&gt;noonStart&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;kt&quot;&gt;Calendar&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;current&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nf&quot;&gt;date&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nv&quot;&gt;bySettingHour&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;12&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;nv&quot;&gt;minute&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;mo&quot;&gt;00&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;nv&quot;&gt;second&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;mo&quot;&gt;00&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;nv&quot;&gt;of&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;date&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;!&lt;/span&gt;
+        &lt;span class=&quot;k&quot;&gt;let&lt;/span&gt; &lt;span class=&quot;nv&quot;&gt;noonEnd&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;kt&quot;&gt;Calendar&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;current&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nf&quot;&gt;date&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nv&quot;&gt;bySettingHour&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;16&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;nv&quot;&gt;minute&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;59&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;nv&quot;&gt;second&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;59&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;nv&quot;&gt;of&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;date&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;!&lt;/span&gt;
+
+        &lt;span class=&quot;k&quot;&gt;let&lt;/span&gt; &lt;span class=&quot;nv&quot;&gt;eveStart&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;kt&quot;&gt;Calendar&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;current&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nf&quot;&gt;date&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nv&quot;&gt;bySettingHour&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;17&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;nv&quot;&gt;minute&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;mo&quot;&gt;00&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;nv&quot;&gt;second&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;mo&quot;&gt;00&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;nv&quot;&gt;of&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;date&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;!&lt;/span&gt;
+        &lt;span class=&quot;k&quot;&gt;let&lt;/span&gt; &lt;span class=&quot;nv&quot;&gt;eveEnd&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;kt&quot;&gt;Calendar&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;current&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nf&quot;&gt;date&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nv&quot;&gt;bySettingHour&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;20&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;nv&quot;&gt;minute&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;59&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;nv&quot;&gt;second&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;59&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;nv&quot;&gt;of&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;date&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;!&lt;/span&gt;
+
+        &lt;span class=&quot;k&quot;&gt;let&lt;/span&gt; &lt;span class=&quot;nv&quot;&gt;nightStart&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;kt&quot;&gt;Calendar&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;current&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nf&quot;&gt;date&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nv&quot;&gt;bySettingHour&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;21&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;nv&quot;&gt;minute&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;mo&quot;&gt;00&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;nv&quot;&gt;second&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;mo&quot;&gt;00&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;nv&quot;&gt;of&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;date&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;!&lt;/span&gt;
+        &lt;span class=&quot;k&quot;&gt;let&lt;/span&gt; &lt;span class=&quot;nv&quot;&gt;midNight24&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;kt&quot;&gt;Calendar&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;current&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nf&quot;&gt;date&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nv&quot;&gt;bySettingHour&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;23&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;nv&quot;&gt;minute&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;59&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;nv&quot;&gt;second&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;59&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;nv&quot;&gt;of&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;date&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;!&lt;/span&gt;
+
+        &lt;span class=&quot;k&quot;&gt;if&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;((&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;date&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;&amp;gt;=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;midNight0&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;&amp;amp;&amp;amp;&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;date&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;&amp;lt;=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;nightEnd&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;))&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
+            &lt;span class=&quot;n&quot;&gt;greet&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;&quot;Good Night.&quot;&lt;/span&gt;
+        &lt;span class=&quot;p&quot;&gt;}&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;else&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;if&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;date&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;&amp;gt;=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;morningStart&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;&amp;amp;&amp;amp;&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;date&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;&amp;lt;=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;morningEnd&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
+            &lt;span class=&quot;n&quot;&gt;greet&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;&quot;Good Morning&quot;&lt;/span&gt;
+        &lt;span class=&quot;p&quot;&gt;}&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;else&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;if&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;((&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;date&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;&amp;gt;=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;noonStart&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;&amp;amp;&amp;amp;&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;noonEnd&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;&amp;gt;=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;date&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;))&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
+            &lt;span class=&quot;n&quot;&gt;greet&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;&quot;Good Afternoon.&quot;&lt;/span&gt;
+        &lt;span class=&quot;p&quot;&gt;}&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;else&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;if&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;((&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;date&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;&amp;gt;=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;eveStart&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;&amp;amp;&amp;amp;&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;eveEnd&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;&amp;gt;=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;date&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;))&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
+            &lt;span class=&quot;n&quot;&gt;greet&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;&quot;Good Evening.&quot;&lt;/span&gt;
+        &lt;span class=&quot;p&quot;&gt;}&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;else&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;if&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;((&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;date&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;&amp;gt;=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;nightStart&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;&amp;amp;&amp;amp;&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;midNight24&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;&amp;gt;=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;date&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;))&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
+            &lt;span class=&quot;n&quot;&gt;greet&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;&quot;Good night.&quot;&lt;/span&gt;
+        &lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
+
+        &lt;span class=&quot;k&quot;&gt;return&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;greet&lt;/span&gt;
+
+    &lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;p&gt;Calendar.current.date(bySettingHour…) 메서드는 주어진 date 데이터에 특정한 시간을 나타내는 variable을 만듭니다.
+여기서는 우리가 위에서 만든 @State date가 주어진 날짜 데이터입니다.&lt;/p&gt;
+
+&lt;p&gt;아래 부분은 나누어 놓은 시간대와 현재 시간을 비교하는 부분입니다.
+현재 시간과 비교해서 해당되는 인사말을 greet 변수에 담고 반환합니다.
+여기까지 하면 시간을 스크린에 띄우는 것은 완성!&lt;/p&gt;
+
+&lt;p&gt;… 디지털시계 만들기는 계속 됩니다.&lt;/p&gt;
+
+&lt;!--
+### 8. 이제부터는 화면을 꾸며보자.  
+
+시계의 배경 부분을 사진을 넣어 사용할 수 있었으면 좋겠다는 생각이 들었다.  
+검색 중 Unsplash API를 발견했고 적용해보고자 한다. --&gt;</content><author><name>Mirae</name></author><category term="TIL" /><category term="learning" /><category term="공부 기록" /><category term="Swift" /><summary type="html">💭 .. Swift는 어떤 언어일까? Java를 공부한지 거의 5개월이 지났다. 국비수업 2개월 + 독학 3개월의 과정을 지났다. Java는 첫인상 보다는 매력있고 재미있는 언어였다. 가장 많이 사용되는 프로그래밍 언어 중 하나라 자료가 넘치도록 많다는 장점도 가지고 있다. 그러던 중 친구를 통해 Swift의 존재를 알게되었다. 원래 그 이름은 들어봤지만 Swift가 프로그래밍 언어인지 IDE인지 모를정도로 잘 알지 못했다. 그렇게 Swift에 대한 정보는 &apos;잘 알지 못함&apos;에서 &apos;애플 개발자들이 사용하는 언어&apos;로 승급했다. 신호로 퇴실 처리했습니다 감사합니다</summary></entry><entry><title type="html">Swift</title><link href="http://localhost:4000/til/basicSwift/" rel="alternate" type="text/html" title="Swift" /><published>2022-03-07T00:00:00+09:00</published><updated>2022-03-07T00:00:00+09:00</updated><id>http://localhost:4000/til/basicSwift</id><content type="html" xml:base="http://localhost:4000/til/basicSwift/">&lt;h3 id=&quot;-&quot;&gt;💭 ..&lt;/h3&gt;
 &lt;div class=&quot;notice&quot;&gt;
   &lt;h4&gt;Swift를 배워보자.&lt;/h4&gt;
-  &lt;p&gt; 아래 링크의 유튜브 튜토리얼을 보며 먼저 전체적으로 한번 훓어보려고 한다.&lt;br /&gt;    
-  그 과정에서 기록이 필요한 것들을 정리해본다.&lt;/p&gt;
+  &lt;p&gt;유투브 튜토리얼, 애플 개발자 페이지의 튜토리얼, 구글링을 통해 Swift를 공부해보려고 합니다.&lt;br /&gt;    
+  그 과정에서 기록이 필요한 것들을 정리해봅니다.&lt;/p&gt;
 &lt;/div&gt;
 
-&lt;h3 id=&quot;선택한-유투브-튜토리얼&quot;&gt;선택한 유투브 튜토리얼&lt;/h3&gt;
-&lt;p&gt;&lt;a href=&quot;https://www.youtube.com/watch?v=F2ojC6TNwws&amp;amp;t=1s&quot;&gt;2021 SwiftUI Tutorial for Beginners (3.5 hour Masterclass)&lt;/a&gt; &lt;br /&gt;
-이런 양질의 자료를 무료로 볼 수 있다는 것에 감사하며 시작!&lt;/p&gt;
+&lt;h3 id=&quot;view에-대해-조사해보자&quot;&gt;View에 대해 조사해보자.&lt;/h3&gt;
+&lt;p&gt;애플 공식 문서 중 &lt;a href=&quot;https://developer.apple.com/documentation/swiftui/declaring-a-custom-view&quot;&gt;Declaring a Custom View&lt;/a&gt; 를 보며 알아봅니다.&lt;/p&gt;
 
+&lt;p&gt;컴퓨터 프로그래밍 분야에서 ‘Declare’는 어떤 의미로 사용될까요?
+a declaration은 변수와 같은 요소들의 이름과 데이터 타입을 결정하여 컴파일러에게 알려주는 것을 의미합니다. Declaring a Custom View는 Custom View의 이름을 정의하고 데이터 타입을 정하는 것이겠네요. Definition은 변수나 요소가 어디에 저장될지를 정하는 것입니다. (그 어디는 메모리일 가능성이 높겠죠?)&lt;/p&gt;
+
+&lt;p&gt;views를 선언(declaring)하는 방법으로 간단하게 user interface를 묘사할 수 있습니다.&lt;br /&gt;
+a hirarchy에 Text, Image, Button과 같은 뷰들을 선언하므로서 간단하게 user interface를 묘사할 수 있습니다. hirarchy는 계층인데요. VStack 아래에 views들이 있고 view들에는 적용된 modifier들이 있죠 그것들을 하나의 hirarchy라고 하는 것 같습니다. &lt;s&gt;(추론을 통한 뇌피셜;)&lt;/s&gt;
+이제 SwiftUI가 사용자로부터 받은 input이나 데이터의 변화등에 응답할 view들을 화면에 그리고 업데이트합니다.&lt;/p&gt;
+
+&lt;p&gt;SwiftUI가 제공하는 built-in view와 다른 view들을 함께 혼합해서 사용할 수 있습니다. modifier를 이용해서 뷰를 배치하고 data 모델에 연결할 수 있습니다. 그리고 custom view들을 화면에 보여지는 앱 뷰에 놓으면 됩니다.&lt;/p&gt;
+
+&lt;div class=&quot;language-swift highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;kd&quot;&gt;struct&lt;/span&gt; &lt;span class=&quot;kt&quot;&gt;MyView&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;kt&quot;&gt;View&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt; &lt;span class=&quot;c1&quot;&gt;// &amp;lt;- View Protocol 입니다.&lt;/span&gt;
+
+&lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+&lt;p&gt;View Protocol을 따르는 structure를 정의 했습니다.&lt;br /&gt;
+View protocol은 기능의 청사진을 제공합니다. 이 경우에는 SwiftUI가 화면에 그릴 각 요소들의 작동하는 방식을 제공합니다.&lt;/p&gt;
+
+&lt;p&gt;custom view를 view hirarchy에 포함되게 하려면 View protocol이 요구하는 몇가지 사항들을 충족시켜야 합니다.&lt;/p&gt;
+
+&lt;p&gt;View protocol의 주요구사항은 body computed property를 꼭 정의해주어야 한다는 것입니다.&lt;/p&gt;
+
+&lt;p&gt;…계속됩니다.😎&lt;/p&gt;
+
+&lt;!-- Protocol인 View와 Text, Image, Button 같은 SwiftUI built-in View, SwiftUI built-in view가 아닌 다른 framework의 view.  
+
+
+아래는 두번째 의미의 View중 하나인 Text를 나타내는 코드입니다. foregroundColor라는 modifier에 파라미터로 .red를 주어 글씨색이 빨간색으로 보이게 해주었습니다.
+```swift
+Text(&quot;Hello, World!&quot;)
+    .foregroundColor(.red) //Hello, World의 글자색이 빨간색으로 보여지게 하는 modifier 메서드
+
+### Text element 와 padding modifier
+&lt;!-- [2021 SwiftUI Tutorial for Beginners (3.5 hour Masterclass)](https://www.youtube.com/watch?v=F2ojC6TNwws&amp;t=1s)   
+좋은 강의를 유투브에서 볼 수 있다는 것에 감사하며 들어봅니다.
+
+  
 &lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-swift&quot; data-lang=&quot;swift&quot;&gt;&lt;table class=&quot;rouge-table&quot;&gt;&lt;tbody&gt;&lt;tr&gt;&lt;td class=&quot;gutter gl&quot;&gt;&lt;pre class=&quot;lineno&quot;&gt;1
 2
 3
@@ -159,19 +409,32 @@ dateFormat은 DateFormatter객체의 property이다. 주어진 날짜/시간 데
 8
 9
 10
-11
 &lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;    &lt;span class=&quot;kd&quot;&gt;import&lt;/span&gt; &lt;span class=&quot;kt&quot;&gt;SwiftUI&lt;/span&gt;
 
       &lt;span class=&quot;kd&quot;&gt;struct&lt;/span&gt; &lt;span class=&quot;kt&quot;&gt;ContentView&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;kt&quot;&gt;View&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
         &lt;span class=&quot;k&quot;&gt;var&lt;/span&gt; &lt;span class=&quot;nv&quot;&gt;body&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;kd&quot;&gt;some&lt;/span&gt; &lt;span class=&quot;kt&quot;&gt;View&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
 
           &lt;span class=&quot;kt&quot;&gt;Text&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;Hello!&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nf&quot;&gt;padding&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;()&lt;/span&gt;
-          &lt;span class=&quot;o&quot;&gt;&amp;lt;!--&lt;/span&gt; &lt;span class=&quot;kt&quot;&gt;Text는&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;element&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;padding은&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;modifier&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;--&amp;gt;&lt;/span&gt;
+          &lt;span class=&quot;c1&quot;&gt;//Text는 element padding은 modifier&lt;/span&gt;
         &lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
       &lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
-
   
-&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/tbody&gt;&lt;/table&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;</content><author><name>Mirae</name></author><category term="TIL" /><category term="learning" /><category term="공부 기록" /><category term="Swift" /><summary type="html">💭 .. Swift를 배워보자. 아래 링크의 유튜브 튜토리얼을 보며 먼저 전체적으로 한번 훓어보려고 한다. 그 과정에서 기록이 필요한 것들을 정리해본다.</summary></entry><entry><title type="html">코딜리티의 open reading material을 읽어보며 배열에 대해 알아보자.</title><link href="http://localhost:4000/til/arrayCo/" rel="alternate" type="text/html" title="코딜리티의 open reading material을 읽어보며 배열에 대해 알아보자." /><published>2022-03-05T00:00:00+09:00</published><updated>2022-03-05T00:00:00+09:00</updated><id>http://localhost:4000/til/arrayCo</id><content type="html" xml:base="http://localhost:4000/til/arrayCo/">&lt;hr /&gt;
+&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/tbody&gt;&lt;/table&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
+   --&gt;
+
+&lt;!-- ### A Source of Truth  
+
+  SwiftUI data flow(데이터의 흐름)은 데이터가 a single source of truth를 가지고 있다는 개념에 기초한다.
+
+  (전역변수와 비슷하게 느껴짐)
+
+  코드의 모든 부분에서 같은 데이터를 사용할 수 있게 해줌.
+
+  SwiftUI앱(SwiftUI 프레임워크를 사용하는 앱???)에서 변화할 수 있는 모든 데이터와 객체들은 a single source of truth를 필요로 한다.
+
+  뷰가 변경하거나 관찰할 수 있도록하는 방식을 필요로 한다.
+
+  poperty wrappers는 변경되기 쉬운 데이터들과 각각의 뷰들이 어떻게 상호작용을 하는지와 관련이 있다. --&gt;</content><author><name>Mirae</name></author><category term="TIL" /><category term="learning" /><category term="공부 기록" /><category term="Swift" /><summary type="html">💭 .. Swift를 배워보자. 유투브 튜토리얼, 애플 개발자 페이지의 튜토리얼, 구글링을 통해 Swift를 공부해보려고 합니다. 그 과정에서 기록이 필요한 것들을 정리해봅니다.</summary></entry><entry><title type="html">코딜리티의 open reading material을 읽어보며 배열에 대해 알아보자.</title><link href="http://localhost:4000/til/arrayCo/" rel="alternate" type="text/html" title="코딜리티의 open reading material을 읽어보며 배열에 대해 알아보자." /><published>2022-03-05T00:00:00+09:00</published><updated>2022-03-05T00:00:00+09:00</updated><id>http://localhost:4000/til/arrayCo</id><content type="html" xml:base="http://localhost:4000/til/arrayCo/">&lt;hr /&gt;
 
 &lt;h2 id=&quot;arrays&quot;&gt;Arrays&lt;/h2&gt;
 &lt;p&gt;&lt;a href=&quot;https://codility.com/media/train/0-Arrays.pdf&quot;&gt;Codility / Arrays&lt;/a&gt;&lt;/p&gt;
@@ -701,129 +964,4 @@ Abstract class를 상속받는 자식클래스를 만들어서 자식클래스�
 
 &lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
 
-&lt;p&gt;&lt;img src=&quot;/assets/images/descOrder.jpeg&quot; alt=&quot;desc&quot; /&gt;&lt;/p&gt;</content><author><name>Mirae</name></author><category term="TIL" /><category term="learning" /><category term="Java" /><category term="Array" /><category term="Descending order" /><summary type="html"></summary></entry><entry><title type="html">JSP란…? / Tomcat Server &amp;amp; Eclipse로 JSP 작성 후 실행해보기</title><link href="http://localhost:4000/til/aboutJSP/" rel="alternate" type="text/html" title="JSP란…? / Tomcat Server &amp;amp; Eclipse로 JSP 작성 후 실행해보기" /><published>2022-01-28T00:00:00+09:00</published><updated>2022-01-28T00:00:00+09:00</updated><id>http://localhost:4000/til/aboutJSP</id><content type="html" xml:base="http://localhost:4000/til/aboutJSP/">&lt;hr /&gt;
-
-&lt;h3 id=&quot;-&quot;&gt;💭 ..&lt;/h3&gt;
-
-&lt;div class=&quot;notice&quot;&gt;
-  &lt;h4&gt;자바 웹 개발자 과정 수업을 듣기 시작한지 일주일이 지났다.&lt;/h4&gt;
-  &lt;p&gt;자바의 기본적인 문법은 여러가지 온라인 강의를 통해서 예습을 하고 시작했던터라 어렵지 않게 수업을 듣고 있다. 수업 커리큘럼에 JSP가 포함되어 있는데, 아직 JSP가 어떤것인지 잘 몰라서 한번 알아보려고 한다. &lt;br /&gt;
-  요즘 어떤 정보에 대한 글을 읽거나, 기술에 대해 알아보기 전에 &apos;지금도 여전히 사용되는가?&apos; 라는 질문을 먼저 검색해보게 된다. 나의 수준에서는 뭐든 배워두면 도움이 되겠지만, 배울 것은 너무나 많고 시간은 충분하지 않아서 자꾸만 정보의 중요성에 대해 생각해보게 된다. 언제나 새로운 것들이 마구 쏟아지는 지금 같은 시대에는 주로 사용되는 기술들도 빠르게 변한다. 그렇기 때문에 자꾸 위와 같은 질문을 검색해보는 것 같다. 새로운 기술이 언제나 좋은 것은 아니지만 대부분의 경우 새로운 기술이 더 빠르거나, 더 간단하게 복잡한 일을 처리하거나, 전 기술의 단점을 보완해서 나오는 경우가 많이 때문에 새로운 기술들에 대해 더 알고 싶은 것 같다. &lt;br /&gt;
-  JSP에 대해서도 구글링해보니 새로운 프로젝트에는 더이상 사용되지 않는 것 같지만, JSP에 대한 기본적인 것들을 알아두면 도움이 되는 것 같다. 작은 프로젝트를 진행할때는 여전히 사용되기도 하고 예전에 만들어진 어플리케이션들을 살펴봐야 할 수도 있고, 서블릿과 JSP가 자바 웹 개발의 기본적인 것들이라 스프링, hibernate을 배우기 전에 배워야 한다는 의견도 있다. 그리고 나는 지금 듣는 과정중 JSP에 대해 배우게 될 것이고, 테스트도 봐야해서 기본적인 것들을 알아보려고 한다.&lt;/p&gt;
-&lt;/div&gt;
-
-&lt;h3 id=&quot;-jsp-java-server-pages&quot;&gt;🧑‍💻 JSP (Java Server Pages)&lt;/h3&gt;
-&lt;p&gt;&lt;a href=&quot;https://www.javatpoint.com/jsp-tutorial&quot;&gt;이 페이지의 내용을 참고&lt;/a&gt;&lt;/p&gt;
-
-&lt;p&gt;JSP는 서블릿처럼 웹 어플리케이션을 만드는 것에 사용된다. 서블릿과 같은 일을 하지만 더 많은 기능들을 가지고 있기 때문에 서블릿의 확장된 버전으로 생각해도 되겠다. JSP 페이지는 주로 HTML 태그와 JSP 태그로 이루어진다. (JSP 태그를 이용해서 자바 코드를 HTML 페이지에서 사용할 수 있다.) JSP페이지는 기술 파트와 디자인 파트를 나눌 수 있기 때문에 서블릿보다 유지가 쉽다. Expression Language와 Custom Tags와 같은 부가 기능을 제공하기도 한다.&lt;/p&gt;
-
-&lt;p&gt;&lt;strong&gt;💡 서블릿과 비교했을 때 JSP의 장점은 무엇이 있을까?&lt;/strong&gt;&lt;/p&gt;
-&lt;ul&gt;
-  &lt;li&gt;
-    &lt;p&gt;JSP는 서블릿을 확장한 기술이기 때문에 서블릿의 모든 기능들을 사용할 수 있다. implicit objects, predefined tags, expression language 그리고 custom tags와 같은 추가된 기능들을 사용할 수 있다.&lt;/p&gt;
-  &lt;/li&gt;
-  &lt;li&gt;
-    &lt;p&gt;JSP는 비즈니스 로직과 프레젠테이션 로직을 쉽게 분리 할 수 있다. 덕분에 JSP는 쉽게 관리 할 수 있다.&lt;/p&gt;
-  &lt;/li&gt;
-  &lt;li&gt;
-    &lt;p&gt;JSP 페이지가 수정되었더라도 프로젝트를 다시 컴파일 하거나 디플로이 할 필요가 없다. 서블릿 코드는 바뀐 부분들을 업데이트하고 리컴파일 해야하지만 JSP는 그럴 필요가 없기 때문에 빠르게 개발할 수 있다.&lt;/p&gt;
-  &lt;/li&gt;
-  &lt;li&gt;
-    &lt;p&gt;JSP에서는 Action tags, JSTL, Custom tags 등 많은 태그를 이용할 수 있기 때문에 서블릿보다 더 적은 코드 작성을 필요로 한다.&lt;/p&gt;
-  &lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;p&gt;&lt;strong&gt;💡 JSP의 Lifecycle&lt;/strong&gt;&lt;/p&gt;
-
-&lt;p&gt;JSP 페이지들은 아래 변화 단계를 따른다.&lt;/p&gt;
-&lt;ul&gt;
-  &lt;li&gt;Translation of JSP Page&lt;/li&gt;
-  &lt;li&gt;Compilation of JSP Page&lt;/li&gt;
-  &lt;li&gt;Classloading (the classloader loads class file)&lt;/li&gt;
-  &lt;li&gt;Instantiation (Object of the Generated Servlet is created).&lt;/li&gt;
-  &lt;li&gt;Initialization (the container invokes jspInit() method).&lt;/li&gt;
-  &lt;li&gt;Request processing (the container invokes _jspService() method).&lt;/li&gt;
-  &lt;li&gt;Destroy (the container invokes jspDestroy() method).&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;div class=&quot;notice&quot;&gt;
-  &lt;h4&gt;Note!&lt;/h4&gt;
-  &lt;p&gt;jspInit(), _jspService() and jspDestroy() 는 JSP의 라이프사이클 메서드.&lt;/p&gt;
-&lt;/div&gt;
-
-&lt;p&gt;JSP는 JSP translator의 도움을 받아 서블릿(.java file)으로 변환(&lt;s&gt;변형?&lt;/s&gt;)된다.
- JSP translator는 JSP 페이지를 서블릿으로 변환하는 웹 서버의 한 부분이다. 서블릿이 된 JSP 페이지는 compiler 에 의해 컴파일 되고 클래스 파일로 변환된다. 서블릿에서 일어나는 모든 프로세스들은 후에 JSP에서 수행된다.&lt;/p&gt;
-
-&lt;h3 id=&quot;-tomcat-server--eclipse로-jsp-작성-후-실행해보기&quot;&gt;🐈 Tomcat Server &amp;amp; Eclipse로 JSP 작성 후 실행해보기&lt;/h3&gt;
-&lt;p&gt;&lt;a href=&quot;https://www.geeksforgeeks.org/creating-jsp-in-eclipse-ide-with-tomcat-server/&quot;&gt;이 페이지의 내용을 참고&lt;/a&gt;&lt;/p&gt;
-
-&lt;p&gt;톰캣 서버는 가장 좋은 웹 서버 중 하나이고, 아파치에서 개발한 오픈소스 자바 서블릿 컨테이너이다. 톰캣은 고유의 특징과 빠른 속도, 그리고 J2EE specifications를 실행하는 점 때문에 많은 개발자들이 이용하고 있다.&lt;/p&gt;
-
-&lt;p&gt;위 페이지를 참고하며 이클립스와 톰캣을 이용해 JSP 페이지를 만들어본다.&lt;/p&gt;
-
-&lt;ol&gt;
-  &lt;li&gt;
-    &lt;p&gt;프로젝트 익스플로러에서 마우스 우클릭 New &amp;gt; Dynamic Web project ✅
-  &lt;img src=&quot;/assets/images/CJET.png&quot; alt=&quot;start&quot; /&gt;&lt;/p&gt;
-  &lt;/li&gt;
-  &lt;li&gt;
-    &lt;p&gt;프로젝트 이름을 입력 &amp;gt; Next ✅
-  &lt;img src=&quot;/assets/images/CJET2.png&quot; alt=&quot;new&quot; /&gt;&lt;/p&gt;
-  &lt;/li&gt;
-  &lt;li&gt;
-    &lt;p&gt;프로젝트 이름을 입력 &amp;gt; Next ✅
-  &lt;img src=&quot;/assets/images/CJET2.png&quot; alt=&quot;new&quot; /&gt;&lt;/p&gt;
-  &lt;/li&gt;
-  &lt;li&gt;
-    &lt;p&gt;Next &amp;gt; finish ✅
-  &lt;img src=&quot;/assets/images/CJET3.png&quot; alt=&quot;next&quot; /&gt;
-  &lt;img src=&quot;/assets/images/CJET4.png&quot; alt=&quot;finish&quot; /&gt;&lt;/p&gt;
-  &lt;/li&gt;
-  &lt;li&gt;
-    &lt;p&gt;프로젝트 익스플로러에 프로젝트가 만들어진 것을 볼 수 있습니다. ✅
-  &lt;img src=&quot;/assets/images/CJET5.png&quot; alt=&quot;projectMade&quot; /&gt;&lt;/p&gt;
-  &lt;/li&gt;
-  &lt;li&gt;
-    &lt;p&gt;src 위에서 우클릭 &amp;gt; New &amp;gt; JSP File ✅
-  &lt;img src=&quot;/assets/images/CJET6.png&quot; alt=&quot;projectMade&quot; /&gt;&lt;/p&gt;
-  &lt;/li&gt;
-  &lt;li&gt;
-    &lt;p&gt;Next &amp;gt;✅
-  &lt;img src=&quot;/assets/images/CJET7.png&quot; alt=&quot;projectMade&quot; /&gt;&lt;/p&gt;
-  &lt;/li&gt;
-  &lt;li&gt;
-    &lt;p&gt;Finish 버튼 클릭 ✅
-  &lt;img src=&quot;/assets/images/CJET8.png&quot; alt=&quot;projectMade&quot; /&gt;&lt;/p&gt;
-  &lt;/li&gt;
-  &lt;li&gt;
-    &lt;p&gt;JSP 파일이 만들어졌습니다. &amp;lt;body&amp;gt; 부분에 Hello Earth! 를 입력 ✅
-  &lt;img src=&quot;/assets/images/CJET9.png&quot; alt=&quot;HelloEarth&quot; /&gt;&lt;/p&gt;
-  &lt;/li&gt;
-  &lt;li&gt;
-    &lt;p&gt;프로젝트에서 우클릭 &amp;gt; Run As &amp;gt; 1 Run on Server ✅
-  &lt;img src=&quot;/assets/images/CJET10.png&quot; alt=&quot;runServer&quot; /&gt;&lt;/p&gt;
-  &lt;/li&gt;
-  &lt;li&gt;
-    &lt;p&gt;Apache &amp;gt; Tomcat 서버 클릭 &amp;gt; Next &amp;gt; Add and Remove 창에서 Finish ✅
-  &lt;img src=&quot;/assets/images/CJET11.png&quot; alt=&quot;projectMade&quot; /&gt;&lt;/p&gt;
-  &lt;/li&gt;
-  &lt;li&gt;
-    &lt;p&gt;자동으로 사파리 창이 뜹니다. 입력했던 Hello Earth!가 잘 뜨는걸 보니 JSP페이지가 잘 돌아가고 있습니다.
-  &lt;img src=&quot;/assets/images/CJET12.png&quot; alt=&quot;projectMade&quot; /&gt;&lt;/p&gt;
-  &lt;/li&gt;
-&lt;/ol&gt;
-
-&lt;h3 id=&quot;-jsp-syntax-어떻게-작성하는데&quot;&gt;🙋 JSP Syntax 어떻게 작성하는데?&lt;/h3&gt;
-
-&lt;ul&gt;
-  &lt;li&gt;아래 작성된 태그가 .jsp 파일 맨 위에 추가 된다.
-    &lt;blockquote&gt;
-      &lt;p&gt;&amp;lt;%@ page contentType=”text/html;charset=UTF-8” language=”java” %&amp;gt;&lt;/p&gt;
-    &lt;/blockquote&gt;
-  &lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;p&gt;JSP 페이지는 JSP&lt;/p&gt;
-
-&lt;p&gt;&lt;strong&gt;✍️ Scriptlet&lt;/strong&gt;&lt;br /&gt;
-  JSP scriptlet는 자바 언어로 쓰여진 코드, 변수, 메서드 선언부, 기호, 부호 등을 담을 수 있다.&lt;/p&gt;</content><author><name>Mirae</name></author><category term="TIL" /><category term="learning" /><category term="JSP" /><category term="Java" /><category term="Tomcat Server" /><category term="Eclipse IDE" /><summary type="html"></summary></entry></feed>
+&lt;p&gt;&lt;img src=&quot;/assets/images/descOrder.jpeg&quot; alt=&quot;desc&quot; /&gt;&lt;/p&gt;</content><author><name>Mirae</name></author><category term="TIL" /><category term="learning" /><category term="Java" /><category term="Array" /><category term="Descending order" /><summary type="html"></summary></entry></feed>

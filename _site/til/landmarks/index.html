@@ -1,0 +1,687 @@
+<!doctype html>
+<!--
+  Minimal Mistakes Jekyll Theme 4.24.0 by Michael Rose
+  Copyright 2013-2020 Michael Rose - mademistakes.com | @mmistakes
+  Free for personal and commercial use under the MIT license
+  https://github.com/mmistakes/minimal-mistakes/blob/master/LICENSE
+-->
+<html lang="en" class="no-js">
+  <head>
+    <meta charset="utf-8">
+
+<!-- begin _includes/seo.html --><title>SwiftUI Tutorial: 여러 개의 View를 만들고 결합하기 | Mirae the Future</title>
+<meta name="description" content="출처: SwiftUI Essentials: Creating and Combining Views">
+
+
+  <meta name="author" content="Mirae">
+  
+  <meta property="article:author" content="Mirae">
+  
+
+
+<meta property="og:type" content="article">
+<meta property="og:locale" content="en_US">
+<meta property="og:site_name" content="Mirae the Future">
+<meta property="og:title" content="SwiftUI Tutorial: 여러 개의 View를 만들고 결합하기">
+<meta property="og:url" content="http://localhost:4000/til/landmarks/">
+
+
+  <meta property="og:description" content="출처: SwiftUI Essentials: Creating and Combining Views">
+
+
+
+
+
+
+
+  <meta property="article:published_time" content="2022-03-14T00:00:00+09:00">
+
+
+
+
+
+  
+
+  
+
+
+<link rel="canonical" href="http://localhost:4000/til/landmarks/">
+
+
+
+
+<script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    
+      "@type": "Person",
+      "name": "Mirae the Future",
+      "url": "http://localhost:4000/"
+    
+  }
+</script>
+
+
+
+
+
+
+
+<!-- end _includes/seo.html -->
+
+
+
+  <link href="/feed.xml" type="application/atom+xml" rel="alternate" title="Mirae the Future Feed">
+
+
+<!-- https://t.co/dKP3o1e -->
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<script>
+  document.documentElement.className = document.documentElement.className.replace(/\bno-js\b/g, '') + ' js ';
+</script>
+
+<!-- For all browsers -->
+<link rel="stylesheet" href="/assets/css/main.css">
+<link rel="preload" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@5/css/all.min.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
+<noscript><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@5/css/all.min.css"></noscript>
+
+
+
+    <!-- start custom head snippets -->
+
+<!-- insert favicons. use https://realfavicongenerator.net/ -->
+<link rel="apple-touch-icon" sizes="152x152" href="/assets/images/apple-touch-icon.png">
+<link rel="icon" type="image/png" sizes="32x32" href="/assets/images/favicon-32x32.png">
+<link rel="icon" type="image/png" sizes="16x16" href="/assets/images/favicon-16x16.png">
+<link rel="manifest" href="/assets/images/site.webmanifest">
+<link rel="mask-icon" href="/assets/images/safari-pinned-tab.svg" color="#5bbad5">
+<meta name="msapplication-TileColor" content="#da532c">
+<meta name="theme-color" content="#ffffff">
+
+<!-- end custom head snippets -->
+
+  </head>
+
+  <body class="layout--single">
+    <nav class="skip-links">
+  <ul>
+    <li><a href="#site-nav" class="screen-reader-shortcut">Skip to primary navigation</a></li>
+    <li><a href="#main" class="screen-reader-shortcut">Skip to content</a></li>
+    <li><a href="#footer" class="screen-reader-shortcut">Skip to footer</a></li>
+  </ul>
+</nav>
+
+    <!--[if lt IE 9]>
+<div class="notice--danger align-center" style="margin: 0;">You are using an <strong>outdated</strong> browser. Please <a href="https://browsehappy.com/">upgrade your browser</a> to improve your experience.</div>
+<![endif]-->
+
+    
+
+<div class="masthead">
+  <div class="masthead__inner-wrap">
+    <div class="masthead__menu">
+      <nav id="site-nav" class="greedy-nav">
+        
+        <a class="site-title" href="/">
+          Mirae the Future
+          
+        </a>
+        <ul class="visible-links"><li class="masthead__menu-item">
+              <a href="/categories/">Categories</a>
+            </li><li class="masthead__menu-item">
+              <a href="/tags/">Tags</a>
+            </li></ul>
+        
+        <button class="search__toggle" type="button">
+          <span class="visually-hidden">Toggle search</span>
+          <i class="fas fa-search"></i>
+        </button>
+        
+        <button class="greedy-nav__toggle hidden" type="button">
+          <span class="visually-hidden">Toggle menu</span>
+          <div class="navicon"></div>
+        </button>
+        <ul class="hidden-links hidden"></ul>
+      </nav>
+    </div>
+  </div>
+</div>
+
+
+    <div class="initial-content">
+      
+
+
+  
+    
+
+
+
+<nav class="breadcrumbs">
+  <ol itemscope itemtype="https://schema.org/BreadcrumbList">
+    
+    
+    
+      
+        <li itemprop="itemListElement" itemscope itemtype="https://schema.org/ListItem">
+          <a href="/" itemprop="item"><span itemprop="name">Home</span></a>
+
+          <meta itemprop="position" content="1" />
+        </li>
+        <span class="sep">/</span>
+      
+      
+        
+        <li itemprop="itemListElement" itemscope itemtype="https://schema.org/ListItem">
+          <a href="/categories/#til" itemprop="item"><span itemprop="name">Til</span></a>
+          <meta itemprop="position" content="2" />
+        </li>
+        <span class="sep">/</span>
+      
+    
+      
+      
+        <li class="current">SwiftUI Tutorial: 여러 개의 View를 만들고 결합하기</li>
+      
+    
+  </ol>
+</nav>
+
+  
+
+
+<div id="main" role="main">
+  
+
+
+  <article class="page h-entry" itemscope itemtype="https://schema.org/CreativeWork">
+    <meta itemprop="headline" content="SwiftUI Tutorial: 여러 개의 View를 만들고 결합하기">
+    <meta itemprop="description" content="출처: SwiftUI Essentials:Creating and Combining Views">
+    <meta itemprop="datePublished" content="2022-03-14T00:00:00+09:00">
+    
+
+    <div class="page__inner-wrap">
+      
+        <header>
+          <h1 id="page-title" class="page__title p-name" itemprop="headline">
+            <a href="http://localhost:4000/til/landmarks/" class="u-url" itemprop="url">SwiftUI Tutorial: 여러 개의 View를 만들고 결합하기
+</a>
+          </h1>
+          
+
+  <p class="page__meta">
+    
+      
+      <span class="page__meta-date">
+        <i class="far fa-calendar-alt" aria-hidden="true"></i>
+        
+        <time datetime="2022-03-14T00:00:00+09:00">March 14, 2022</time>
+      </span>
+    
+
+    
+
+    
+  </p>
+
+
+        </header>
+      
+
+      <section class="page__content e-content" itemprop="text">
+        
+          <aside class="sidebar__right sticky">
+            <nav class="toc">
+              <header><h4 class="nav__title"><i class="fas fa-cog"></i> 👷</h4></header>
+              <ul class="toc__menu"><li><a href="#what-i-learned-from-this-tutorial">What I Learned From This Tutorial:</a></li></ul>
+
+            </nav>
+          </aside>
+        
+        <p><a href="https://developer.apple.com/tutorials/swiftui/creating-and-combining-views">출처: SwiftUI Essentials:
+Creating and Combining Views</a></p>
+
+<h2 id="what-i-learned-from-this-tutorial"><strong>What I Learned From This Tutorial:</strong></h2>
+
+<ul>
+  <li>SwiftUI 프레임워크와 다른 프레임워크를 함께 사용하는 방식</li>
+  <li>여러개의 파일을 하나의 View로 합치기</li>
+  <li>Stack의 사용법</li>
+  <li>지도와 관련된 Structures</li>
+  <li>alignment: .leading</li>
+  <li>Divider()</li>
+  <li>Spacer()
+<!-- - Binding ($) --></li>
+</ul>
+
+<p><br /></p>
+
+<center><img src="/assets/images/directoryTree.png" alt="tree" width="300" />
+</center>
+<p><br /></p>
+
+<div class="language-swift highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1">// ContentView.swift</span>
+<span class="c1">// Landmarks</span>
+
+<span class="kd">import</span> <span class="kt">SwiftUI</span>
+
+<span class="kd">struct</span> <span class="kt">ContentView</span><span class="p">:</span> <span class="kt">View</span> <span class="p">{</span>
+  <span class="k">var</span> <span class="nv">body</span><span class="p">:</span> <span class="kd">some</span> <span class="kt">View</span> <span class="p">{</span>
+
+    <span class="kt">VStack</span><span class="p">(</span><span class="nv">alignment</span><span class="p">:</span> <span class="o">.</span><span class="n">leading</span><span class="p">)</span> <span class="p">{</span>
+
+        <span class="kt">Text</span><span class="p">(</span><span class="s">"경복궁"</span><span class="p">)</span>
+            <span class="o">.</span><span class="nf">font</span><span class="p">(</span><span class="o">.</span><span class="n">title</span><span class="p">)</span>
+            <span class="o">.</span><span class="nf">foregroundColor</span><span class="p">(</span><span class="o">.</span><span class="n">black</span><span class="p">)</span>
+
+        <span class="kt">HStack</span> <span class="p">{</span>
+
+            <span class="kt">Text</span><span class="p">(</span><span class="s">"Gyeongbokgung Palace"</span><span class="p">)</span>
+                <span class="o">.</span><span class="nf">font</span><span class="p">(</span><span class="o">.</span><span class="n">subheadline</span><span class="p">)</span>
+            <span class="kt">Text</span><span class="p">(</span><span class="s">"Korea"</span><span class="p">)</span>
+                <span class="o">.</span><span class="nf">font</span><span class="p">(</span><span class="o">.</span><span class="n">subheadline</span><span class="p">)</span>
+        <span class="p">}</span> <span class="c1">// HStack 끝</span>
+        <span class="o">.</span><span class="nf">font</span><span class="p">(</span><span class="o">.</span><span class="n">subheadline</span><span class="p">)</span>
+        <span class="o">.</span><span class="nf">foregroundColor</span><span class="p">(</span><span class="o">.</span><span class="n">secondary</span><span class="p">)</span>
+
+        <span class="kt">Divider</span><span class="p">()</span>
+        <span class="kt">Text</span><span class="p">(</span><span class="s">"About Gyeongbokgung"</span><span class="p">)</span>
+            <span class="o">.</span><span class="nf">font</span><span class="p">(</span><span class="o">.</span><span class="n">title2</span><span class="p">)</span>
+        <span class="kt">Text</span><span class="p">(</span><span class="s">"Gyeongbokgung, also known as Gyeongbokgung Palace or Gyeongbok Palace,
+        was the main royal palace of the Joseon dynasty.
+        Built in 1395, it is located in northern Seoul, South Korea."</span><span class="p">)</span>
+            <span class="o">.</span><span class="nf">font</span><span class="p">(</span><span class="o">.</span><span class="n">body</span><span class="p">)</span>
+
+    <span class="p">}</span> <span class="c1">// VStack</span>
+    <span class="o">.</span><span class="nf">padding</span><span class="p">()</span>
+  <span class="p">}</span>
+<span class="p">}</span>
+
+<span class="kd">struct</span> <span class="kt">ContentView_Previews</span><span class="p">:</span> <span class="kt">PreviewProvider</span> <span class="p">{</span>
+  <span class="kd">static</span> <span class="k">var</span> <span class="nv">previews</span><span class="p">:</span> <span class="kd">some</span> <span class="kt">View</span> <span class="p">{</span>
+      <span class="kt">ContentView</span><span class="p">()</span>
+    <span class="p">}</span>
+<span class="p">}</span>
+</code></pre></div></div>
+
+<p>ContentView의 body부분에는 뒤에서 MapView()와 CircleImage()가 추가됩니다.</p>
+
+<div class="language-swift highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1">// MapView.swift</span>
+<span class="c1">// Landmarks</span>
+
+<span class="kd">import</span> <span class="kt">SwiftUI</span>
+<span class="kd">import</span> <span class="kt">MapKit</span>
+
+<span class="kd">struct</span> <span class="kt">MapView</span><span class="p">:</span> <span class="kt">View</span> <span class="p">{</span>
+    <span class="kd">@State</span> <span class="kd">private</span> <span class="k">var</span> <span class="nv">region</span> <span class="o">=</span> <span class="kt">MKCoordinateRegion</span><span class="p">(</span>
+        <span class="c1">// 경복궁의 위도와 경도</span>
+        <span class="nv">center</span><span class="p">:</span> <span class="kt">CLLocationCoordinate2D</span><span class="p">(</span><span class="nv">latitude</span><span class="p">:</span> <span class="mf">37.580_5</span><span class="mi">35</span><span class="p">,</span> <span class="nv">longitude</span><span class="p">:</span> <span class="mf">126.977_3</span><span class="mi">41</span><span class="p">),</span>
+        <span class="nv">span</span><span class="p">:</span> <span class="kt">MKCoordinateSpan</span><span class="p">(</span><span class="nv">latitudeDelta</span><span class="p">:</span> <span class="mf">0.05</span><span class="p">,</span> <span class="nv">longitudeDelta</span><span class="p">:</span> <span class="mf">0.05</span><span class="p">)</span>
+        <span class="p">)</span>
+
+    <span class="k">var</span> <span class="nv">body</span><span class="p">:</span> <span class="kd">some</span> <span class="kt">View</span> <span class="p">{</span>
+        <span class="kt">Map</span><span class="p">(</span><span class="nv">coordinateRegion</span><span class="p">:</span> <span class="err">$</span><span class="n">region</span><span class="p">)</span>
+    <span class="p">}</span>
+<span class="p">}</span>
+
+<span class="kd">struct</span> <span class="kt">MapView_Previews</span><span class="p">:</span> <span class="kt">PreviewProvider</span> <span class="p">{</span>
+    <span class="kd">static</span> <span class="k">var</span> <span class="nv">previews</span><span class="p">:</span> <span class="kd">some</span> <span class="kt">View</span> <span class="p">{</span>
+        <span class="kt">MapView</span><span class="p">()</span>
+    <span class="p">}</span>
+<span class="p">}</span>
+</code></pre></div></div>
+
+<p>SwiftUI 프레임워크를 추가하고 그 외에 또 다른 프레임 워크를 추가하면,<br />
+(여기서는 MapKit라는 프레임워크를 추가했습니다.)<br />
+추가된 프레임워크와 관련된 SwiftUI의 특정 기능에 접근할 수 있게 됩니다.</p>
+
+<p>MKCoordinateRegion는 위도, 경도로 표시된 특정 좌표 평면상의 지역을 직사각형의 형태로 가져오는 Structure입니다. 위 코드에서는 가져온 지역 정보를 region이라는 이름의 private state variable에 담았습니다.</p>
+
+<p>center: 와 span:은 파라미터 입니다.<br />
+center: 는 가운데 오게 될 지역의 위도, 경도<br />
+span: 은 지도가 보여질 크기를 나타내는 horizontal span과 vertical span이 들어올 것입니다.</p>
+
+<p>CLLocationCoordinate2D은 국제 좌표계를 기준으로 특정 지역의 위도 경도를 이용하여 지역 좌표 object를 생성하는 Structure입니다. center: 파라미터를 지나는 값이니 생성된 좌표 object를 중심점으로 사용한다는 뜻이겠죠?</p>
+
+<p>MKCoordinateSpan은 지도로 표현된 지역의 가로와 세로 크기를 표현하는 Structure입니다. delta values를 이용해서 원하는 줌 레벨을 설정할 수 있습니다. delta value이 커지면 줌 레벨은 작아집니다. delta value가 작아지면 줌 레벨을 커지면서 더 가까이 지도를 볼 수 있습니다.</p>
+
+<p>body property의 Map()은 Generic Structure로 사용할 지도 인터페이스를 보여주는 역할을 합니다. 위 코드에는 표현되지 않았지만 사용자의 위치를 보여주거나 이동경로를 추적하는 등의 기능을 합니다.<br />
+<br /></p>
+
+<center><video src="https://user-images.githubusercontent.com/85061148/158296265-93e3410e-c9f0-46e2-9e10-b237f9ea7320.mov" controls="controls" style="max-width: 300px">
+</video></center>
+
+<!-- ```swift
+var body: some View {
+  Map(coordinateRegion: $region)
+}
+``` -->
+
+<!-- $region Binding -->
+<!-- Generic Structure -->
+
+        
+      </section>
+
+      <footer class="page__meta">
+        
+        
+  
+
+
+  
+
+  <p class="page__taxonomy">
+    <strong><i class="fas fa-fw fa-tags" aria-hidden="true"></i> Tags: </strong>
+    <span itemprop="keywords">
+    
+      <a href="/tags/#learning" class="page__taxonomy-item p-category" rel="tag">learning</a><span class="sep">, </span>
+    
+      <a href="/tags/#swift" class="page__taxonomy-item p-category" rel="tag">Swift</a><span class="sep">, </span>
+    
+      <a href="/tags/#%EA%B3%B5%EB%B6%80-%EA%B8%B0%EB%A1%9D" class="page__taxonomy-item p-category" rel="tag">공부 기록</a>
+    
+    </span>
+  </p>
+
+
+
+
+  
+
+
+  
+
+  <p class="page__taxonomy">
+    <strong><i class="fas fa-fw fa-folder-open" aria-hidden="true"></i> Categories: </strong>
+    <span itemprop="keywords">
+    
+      <a href="/categories/#til" class="page__taxonomy-item p-category" rel="tag">TIL</a>
+    
+    </span>
+  </p>
+
+
+        
+
+  <p class="page__date"><strong><i class="fas fa-fw fa-calendar-alt" aria-hidden="true"></i> Updated:</strong> <time class="dt-published" datetime="2022-03-14T00:00:00+09:00">March 14, 2022</time></p>
+
+      </footer>
+
+      
+
+      
+  <nav class="pagination">
+    
+      <a href="/til/basicSwift2/" class="pagination--pager" title="A Swift Tour : 디지털 시계 앱을 만들며 스위프트 배워보기
+">Previous</a>
+    
+    
+      <a href="#" class="pagination--pager disabled">Next</a>
+    
+  </nav>
+
+    </div>
+
+    
+  </article>
+
+  
+  
+    <div class="page__related">
+      <h2 class="page__related-title">You may also enjoy</h2>
+      <div class="grid__wrapper">
+        
+          
+
+
+
+<div class="grid__item">
+  <article class="archive__item" itemscope itemtype="https://schema.org/CreativeWork">
+    
+      <div class="archive__item-teaser">
+        <img src="/assets/images/teaser.jpg" alt="">
+      </div>
+    
+    <h2 class="archive__item-title no_toc" itemprop="headline">
+      
+        <a href="/til/basicSwift2/" rel="permalink">A Swift Tour : 디지털 시계 앱을 만들며 스위프트 배워보기
+</a>
+      
+    </h2>
+    
+
+  <p class="page__meta">
+    
+      
+      <span class="page__meta-date">
+        <i class="far fa-calendar-alt" aria-hidden="true"></i>
+        
+        <time datetime="2022-03-10T00:00:00+09:00">March 10, 2022</time>
+      </span>
+    
+
+    
+
+    
+  </p>
+
+
+    <p class="archive__item-excerpt" itemprop="description">💭 ..
+
+  Swift는 어떤 언어일까?
+  Java를 공부한지 거의 5개월이 지났다. 국비수업 2개월 + 독학 3개월의 과정을 지났다. Java는 첫인상 보다는 매력있고 재미있는 언어였다.
+  가장 많이 사용되는 프로그래밍 언어 중 하나라 자료가 넘치도록 많다는 장점도 가지고 ...</p>
+  </article>
+</div>
+
+        
+          
+
+
+
+<div class="grid__item">
+  <article class="archive__item" itemscope itemtype="https://schema.org/CreativeWork">
+    
+      <div class="archive__item-teaser">
+        <img src="/assets/images/teaser.jpg" alt="">
+      </div>
+    
+    <h2 class="archive__item-title no_toc" itemprop="headline">
+      
+        <a href="/til/basicSwift/" rel="permalink">Swift
+</a>
+      
+    </h2>
+    
+
+  <p class="page__meta">
+    
+      
+      <span class="page__meta-date">
+        <i class="far fa-calendar-alt" aria-hidden="true"></i>
+        
+        <time datetime="2022-03-07T00:00:00+09:00">March 7, 2022</time>
+      </span>
+    
+
+    
+
+    
+  </p>
+
+
+    <p class="archive__item-excerpt" itemprop="description">💭 ..
+
+  Swift를 배워보자.
+  유투브 튜토리얼, 애플 개발자 페이지의 튜토리얼, 구글링을 통해 Swift를 공부해보려고 합니다.    
+  그 과정에서 기록이 필요한 것들을 정리해봅니다.
+
+</p>
+  </article>
+</div>
+
+        
+          
+
+
+
+<div class="grid__item">
+  <article class="archive__item" itemscope itemtype="https://schema.org/CreativeWork">
+    
+      <div class="archive__item-teaser">
+        <img src="/assets/images/teaser.jpg" alt="">
+      </div>
+    
+    <h2 class="archive__item-title no_toc" itemprop="headline">
+      
+        <a href="/til/arrayCo/" rel="permalink">코딜리티의 open reading material을 읽어보며 배열에 대해 알아보자.
+</a>
+      
+    </h2>
+    
+
+  <p class="page__meta">
+    
+      
+      <span class="page__meta-date">
+        <i class="far fa-calendar-alt" aria-hidden="true"></i>
+        
+        <time datetime="2022-03-05T00:00:00+09:00">March 5, 2022</time>
+      </span>
+    
+
+    
+
+    
+  </p>
+
+
+    <p class="archive__item-excerpt" itemprop="description">
+
+</p>
+  </article>
+</div>
+
+        
+          
+
+
+
+<div class="grid__item">
+  <article class="archive__item" itemscope itemtype="https://schema.org/CreativeWork">
+    
+      <div class="archive__item-teaser">
+        <img src="/assets/images/teaser.jpg" alt="">
+      </div>
+    
+    <h2 class="archive__item-title no_toc" itemprop="headline">
+      
+        <a href="/til/mastertomain/" rel="permalink">깃헙은 왜 기본 브랜치의 이름을 main으로 바꿨을까?
+</a>
+      
+    </h2>
+    
+
+  <p class="page__meta">
+    
+      
+      <span class="page__meta-date">
+        <i class="far fa-calendar-alt" aria-hidden="true"></i>
+        
+        <time datetime="2022-03-02T00:00:00+09:00">March 2, 2022</time>
+      </span>
+    
+
+    
+
+    
+  </p>
+
+
+    <p class="archive__item-excerpt" itemprop="description">💭
+
+  깃헙에 대해 배워가면서 한가지 궁금한 점이 생겼습니다.  
+  블로그로 정보를 찾거나 구글링을 하다 보면 사람들은 레퍼지토리 안에 master 브랜치를 기본으로 가지고 있고,  
+  레퍼지토리를 생성하면 master 브랜치가 생성된다는데. 제가 레퍼지토리를 만들면 언제나 ...</p>
+  </article>
+</div>
+
+        
+      </div>
+    </div>
+  
+  
+</div>
+    </div>
+
+    
+      <div class="search-content">
+        <div class="search-content__inner-wrap"><form class="search-content__form" onkeydown="return event.key != 'Enter';" role="search">
+    <label class="sr-only" for="search">
+      Enter your search term...
+    </label>
+    <input type="search" id="search" class="search-input" tabindex="-1" placeholder="Enter your search term..." />
+  </form>
+  <div id="results" class="results"></div></div>
+
+      </div>
+    
+
+    <div id="footer" class="page__footer">
+      <footer>
+        <!-- start custom footer snippets -->
+
+<!-- end custom footer snippets -->
+        <div class="page__footer-follow">
+  <ul class="social-icons">
+    
+      <li><strong>Follow:</strong></li>
+    
+
+    
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+
+    
+      <li><a href="/feed.xml"><i class="fas fa-fw fa-rss-square" aria-hidden="true"></i> Feed</a></li>
+    
+  </ul>
+</div>
+
+<div class="page__footer-copyright">&copy; 2022 Mirae the Future. Powered by <a href="https://jekyllrb.com" rel="nofollow">Jekyll</a> &amp; <a href="https://mademistakes.com/work/minimal-mistakes-jekyll-theme/" rel="nofollow">Minimal Mistakes</a>.</div>
+
+      </footer>
+    </div>
+
+    
+  <script src="/assets/js/main.min.js"></script>
+
+
+
+
+<script src="/assets/js/lunr/lunr.min.js"></script>
+<script src="/assets/js/lunr/lunr-store.js"></script>
+<script src="/assets/js/lunr/lunr-en.js"></script>
+
+
+
+
+
+
+
+  </body>
+</html>

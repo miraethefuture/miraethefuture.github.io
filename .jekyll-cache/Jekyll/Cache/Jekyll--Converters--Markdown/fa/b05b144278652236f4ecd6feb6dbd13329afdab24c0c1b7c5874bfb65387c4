@@ -1,4 +1,4 @@
-I"�#<!-- <div class="notice--info">
+I"8%<!-- <div class="notice--info">
   <h1 class="no_toc">words</h1>
 
 <p>description<br>  
@@ -112,6 +112,19 @@
 
 <ul>
   <li>This project is configured to fit the exaples in this tutorial.</li>
+</ul>
+
+</div>
+
+<div class="notice--info">
+  <h1 class="no_toc">conform</h1>
+
+<p> to obey a law, rule etc<br />규칙에 순응하다.</p>
+
+
+<ul>
+  <li>An app that uses SwiftUI app life cycle has a structure that conforms to the APP protocol<br />
+  SwiftUI 앱 라이프 사이클을 사용하는 앱은 그 앱의 프로토콜에 순응하는 구조를 가지고 있다. </li>
 </ul>
 
 </div>
