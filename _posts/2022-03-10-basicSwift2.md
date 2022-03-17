@@ -11,6 +11,8 @@ toc: true
 toc_sticky: true
 toc_label: "👷"
 toc_icon: "cog"
+header:
+  teaser: /assets/images/yourDigitalClock.png
 ---
 
 ### 💭 ..  
