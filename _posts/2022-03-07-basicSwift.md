@@ -21,6 +21,41 @@ toc_icon: "cog"
 </div>
 
 
+
+### 1. 📖
+[A Swift Tour](https://docs.swift.org/swift-book/GuidedTour/GuidedTour.html) 공식 가이드를 읽으며 공부합니다.
+
+새로운 프로그래밍 언어를 배울 때, 흔히 첫번째 프로그램으로 "Hello, world!"를 출력하는 프로그램을 만들곤 하죠. Swift에서는 단 한줄로 이 프로그램을 작성할 수 있습니다.
+
+```swift
+
+print("Hello, world!")
+
+```
+
+C 나 Objective-C로 코드를 작성해본 경험이 있다면 이 syntax가 낯설지 않을 것입니다. 스위프트에서 이 한줄의 코드는 완벽하게 한 프로그램입니다. input/output 또는 문자열을 다루기 위해 따로 라이브러리를 추가하지 않아도 됩니다. 전역 범위로 작성된 코드는 프로그램의 시작점으로 사용되므로 main() function 또한 필요하지 않습니다. 각각의 statement의 끝에 세미콜론(;)을 작성하지도 않습니다.
+
+### 2. 간단한 값들(Simple Values)  
+
+상수는 let, 변수는 var를 사용해서 만듭니다. var(변수)에는 다른 값을 다시 할당할 수 있고, let(상수)는 한번 값이 정해지면 바뀌지 않습니다.
+
+```swift
+
+var myVariable = 42
+myVariable = 50
+let myConstant = 42
+
+```
+var, let의 이름 뒤에 : 을 이용해서 데이터 타입을 지정할 수 있습니다. 컴파일러가 할당된 값이 어떤 데이터 자료형을 가지고 있는지 추측할 수 있는 경우에는 자료형을 명시하지 않아도 됩니다.
+
+```swift
+
+let implicitInteger = 70
+let implicitDouble = 70.0
+let explicitDouble: Double = 70
+
+```  
+
 ### View에 대해 조사해보자.  
 애플 공식 문서 중 [Declaring a Custom View](https://developer.apple.com/documentation/swiftui/declaring-a-custom-view) 를 보며 알아봅니다.  
 
