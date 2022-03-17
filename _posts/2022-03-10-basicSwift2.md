@@ -31,8 +31,8 @@ toc_icon: "cog"
 ### 1. The boilerplate code
 [Intro to SwiftUI: Digital Clock](https://medium.com/iu-women-in-computing/intro-to-swiftui-digital-clock-d0a60e05d394) <- 블로그를 보며 공부합니다.
 
-지금 가장 만들어보고 싶은 앱은 디지털 시계 앱입니다. 구글링을 해봅니다.
-여러개의 친절한 블로그를 발견했는데요. 그 중 하나를 읽어보며 코드 구조를 분석해봅니다.
+지금 가장 만들어보고 싶은 앱은 디지털시계 앱입니다. 구글링을 해봅니다.
+여러 개의 친절한 블로그를 발견했는데요. 그중 하나를 읽어보며 코드 구조를 분석해 봅니다.
 
 ```swift
 import SwiftUI
@@ -51,41 +51,37 @@ struct ContentView_Previews: PreviewProvider {
 ```
 
 ContentView 그리고 ContentView_Previews라는 이름의 structures입니다.
-처음 SwiftUI 프로젝트를 만들면 미리 생성되어 있습니다. 소제목에 boilerplate는 반복적으로 사용되는 어구를 뜻하는 표현입니다. 여기서는 반복적으로 사용되는 코드겠죠?
+처음 SwiftUI 프로젝트를 만들면 미리 생성되어 있습니다. 소제목에 boilerplate는 반복적으로 사용되는 어구를 뜻하는 표현입니다. ContentView에는 화면에 보여질 아이템들이 들어가고 ContentView_Previews는 그것을 화면에 미리 보여주는 기본적인 structure이기 때문에 많이 사용될 수밖에 없겠죠!
 
-View : 스크린에 렌더링 될 컨텐트를 담는 컨테이너다. subviews / parent views를 가질 수도 있다. View는 text, buttons, stacks, 그리고 lists 등 어떤 것이든 담을 수 있다.
+<code>ContentView: View</code>와 <code>var body: some View</code>에서 View는 이 structure가 View protocol을 따를 것이라는 의미입니다. 각 protocol에는 요구사항들이 있습니다. View 프로토콜의 가장 주요 요구사항은 body property가 있어야 한다는 것이죠.
 
-ContentView 안에 body 변수를 가진다. 뷰 컨텐츠의 배열이 형성되는 곳이다. var body : some View 처럼 some 키워드가 View 앞에 오는데 이것은 body 변수가 뷰의 컨텐츠가 어떤 것이든 View를 return한다는 것을 나타낸다.  
+body property 부분에는 스크린에 나타날 view들이 작성됩니다. 이때의 view는 프로토콜 view가 아닌 Text view, Image view, Button view와 같은 SwiftUI의 built-in view 또는 외부 프레임의 view들을 말합니다. 위 코드에서는 Text view가 body property 안에 작성되었습니다. 화면에는 아래와 같이 그려집니다.
+
+<center><img src="/assets/images/HelloIphone.png" alt="HelloIphone" width="300"></center>
 
 ### 2. 현재 날짜와 시간 정보 가져오기  
 
 ```swift
-
 struct ContentView: View {
   @State var date = Date()
 }
 ```
 
-- '@State' property wrapper는 해당 변수가 모니터링 되고 있다는 것을 의미한다. 만약 변수의 값이 바뀌면 View는 업데이트를 반영한다.
+- '@State' property wrapper는 해당 변수가 모니터링 되고 있다는 것을 의미합니다.
 
-- 'Date()'는 사용자가 있는 지역의 날짜와 시간 정보를 가져오는 initializer이다.  
+- 'Date()'는 사용자가 있는 지역의 날짜와 시간 정보를 가져옵니다.
 
 ```swift
-
 import SwiftUI
 
 struct ContentView: View {
     @State var date = Date()
-
     var body: some View {
-
         VStack {
-             Text("\(date)")
-
+          Text("\(date)")
         }
     }
 }
-
 
 struct ContentView_Previews: PreviewProvider {
     static var previews: some View {
@@ -94,11 +90,11 @@ struct ContentView_Previews: PreviewProvider {
 }
 ```
 
-시간 정보는 계속해서 바뀌므로 property wrapper인 @State 를 사용해서 바뀐 시간을 계속해서 반영해주고 문자열 date에 escape character '\'를 추가해서 Date()를 담고 있는 date 변수의 할당되어 있는 문자열을 가져온다.  
+시간 정보는 초마다 계속해서 바뀌므로 property wrapper인 @State 를 사용해서 바뀐 시간을 계속해서 업데이트, 반영해 주고 문자열 date에 escape character \ 를 추가해서 Date()를 담고 있는 date 변수의 할당되어 있는 정보를 문자열로 가져옵니다.
 
 ### 3. DateFormatter 사용
 
-body variable 아래에 DateFormatter를 사용하는 코드를 작성해봅니다.
+DateFormatter를 사용하여 가져온 날짜/시간 데이터를 우리가 원하는 형식으로 만들어 봅니다.
 
 ```swift
 var timeFormat: DateFormatter {
@@ -108,8 +104,9 @@ var timeFormat: DateFormatter {
 }
 ```
 
-이 코드를 분석해보자!  
-timeFormatter는 DateFormatter 객체이다. timeFormatter는 DateFormatter의 메서드를 호출할 수 있다.  
+### 여기까지 수정  
+
+timeFormat는 DateFormatter 객체이다. timeFormat는 DateFormatter의 메서드를 호출할 수 있다.  
 dateFormat은 DateFormatter객체의 property이다. 주어진 날짜/시간 데이터에서 우리가 원하는 것만 보여줄 수 있도록 해준다.
 - 소문자 "hh" = 12시간 표기법
 - 대문자 "HH" = 24시간 표기법

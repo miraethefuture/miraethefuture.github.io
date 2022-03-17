@@ -1,245 +1,4 @@
-<!doctype html>
-<!--
-  Minimal Mistakes Jekyll Theme 4.24.0 by Michael Rose
-  Copyright 2013-2020 Michael Rose - mademistakes.com | @mmistakes
-  Free for personal and commercial use under the MIT license
-  https://github.com/mmistakes/minimal-mistakes/blob/master/LICENSE
--->
-<html lang="en" class="no-js">
-  <head>
-    <meta charset="utf-8">
-
-<!-- begin _includes/seo.html --><title>A Swift Tour : 디지털 시계 앱을 만들며 스위프트 배워보기 | Mirae the Future</title>
-<meta name="description" content="💭 ..    Swift는 어떤 언어일까?   디지털시계 앱을 만들며 Swift의 기초적인 것들을 알아봅니다.">
-
-
-  <meta name="author" content="Mirae">
-  
-  <meta property="article:author" content="Mirae">
-  
-
-
-<meta property="og:type" content="article">
-<meta property="og:locale" content="en_US">
-<meta property="og:site_name" content="Mirae the Future">
-<meta property="og:title" content="A Swift Tour : 디지털 시계 앱을 만들며 스위프트 배워보기">
-<meta property="og:url" content="http://localhost:4000/til/basicSwift2/">
-
-
-  <meta property="og:description" content="💭 ..    Swift는 어떤 언어일까?   디지털시계 앱을 만들며 Swift의 기초적인 것들을 알아봅니다.">
-
-
-
-
-
-
-
-  <meta property="article:published_time" content="2022-03-10T00:00:00+09:00">
-
-
-
-
-
-  
-
-  
-
-
-<link rel="canonical" href="http://localhost:4000/til/basicSwift2/">
-
-
-
-
-<script type="application/ld+json">
-  {
-    "@context": "https://schema.org",
-    
-      "@type": "Person",
-      "name": "Mirae the Future",
-      "url": "http://localhost:4000/"
-    
-  }
-</script>
-
-
-
-
-
-
-
-<!-- end _includes/seo.html -->
-
-
-
-  <link href="/feed.xml" type="application/atom+xml" rel="alternate" title="Mirae the Future Feed">
-
-
-<!-- https://t.co/dKP3o1e -->
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-
-<script>
-  document.documentElement.className = document.documentElement.className.replace(/\bno-js\b/g, '') + ' js ';
-</script>
-
-<!-- For all browsers -->
-<link rel="stylesheet" href="/assets/css/main.css">
-<link rel="preload" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@5/css/all.min.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
-<noscript><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@5/css/all.min.css"></noscript>
-
-
-
-    <!-- start custom head snippets -->
-
-<!-- insert favicons. use https://realfavicongenerator.net/ -->
-<link rel="apple-touch-icon" sizes="152x152" href="/assets/images/apple-touch-icon.png">
-<link rel="icon" type="image/png" sizes="32x32" href="/assets/images/favicon-32x32.png">
-<link rel="icon" type="image/png" sizes="16x16" href="/assets/images/favicon-16x16.png">
-<link rel="manifest" href="/assets/images/site.webmanifest">
-<link rel="mask-icon" href="/assets/images/safari-pinned-tab.svg" color="#5bbad5">
-<meta name="msapplication-TileColor" content="#da532c">
-<meta name="theme-color" content="#ffffff">
-
-<!-- end custom head snippets -->
-
-  </head>
-
-  <body class="layout--single">
-    <nav class="skip-links">
-  <ul>
-    <li><a href="#site-nav" class="screen-reader-shortcut">Skip to primary navigation</a></li>
-    <li><a href="#main" class="screen-reader-shortcut">Skip to content</a></li>
-    <li><a href="#footer" class="screen-reader-shortcut">Skip to footer</a></li>
-  </ul>
-</nav>
-
-    <!--[if lt IE 9]>
-<div class="notice--danger align-center" style="margin: 0;">You are using an <strong>outdated</strong> browser. Please <a href="https://browsehappy.com/">upgrade your browser</a> to improve your experience.</div>
-<![endif]-->
-
-    
-
-<div class="masthead">
-  <div class="masthead__inner-wrap">
-    <div class="masthead__menu">
-      <nav id="site-nav" class="greedy-nav">
-        
-        <a class="site-title" href="/">
-          Mirae the Future
-          
-        </a>
-        <ul class="visible-links"><li class="masthead__menu-item">
-              <a href="/categories/">Categories</a>
-            </li><li class="masthead__menu-item">
-              <a href="/tags/">Tags</a>
-            </li></ul>
-        
-        <button class="search__toggle" type="button">
-          <span class="visually-hidden">Toggle search</span>
-          <i class="fas fa-search"></i>
-        </button>
-        
-        <button class="greedy-nav__toggle hidden" type="button">
-          <span class="visually-hidden">Toggle menu</span>
-          <div class="navicon"></div>
-        </button>
-        <ul class="hidden-links hidden"></ul>
-      </nav>
-    </div>
-  </div>
-</div>
-
-
-    <div class="initial-content">
-      
-
-
-  
-    
-
-
-
-<nav class="breadcrumbs">
-  <ol itemscope itemtype="https://schema.org/BreadcrumbList">
-    
-    
-    
-      
-        <li itemprop="itemListElement" itemscope itemtype="https://schema.org/ListItem">
-          <a href="/" itemprop="item"><span itemprop="name">Home</span></a>
-
-          <meta itemprop="position" content="1" />
-        </li>
-        <span class="sep">/</span>
-      
-      
-        
-        <li itemprop="itemListElement" itemscope itemtype="https://schema.org/ListItem">
-          <a href="/categories/#til" itemprop="item"><span itemprop="name">Til</span></a>
-          <meta itemprop="position" content="2" />
-        </li>
-        <span class="sep">/</span>
-      
-    
-      
-      
-        <li class="current">A Swift Tour : 디지털 시계 앱을 만들며 스위프트 배워보기</li>
-      
-    
-  </ol>
-</nav>
-
-  
-
-
-<div id="main" role="main">
-  
-
-
-  <article class="page h-entry" itemscope itemtype="https://schema.org/CreativeWork">
-    <meta itemprop="headline" content="A Swift Tour : 디지털 시계 앱을 만들며 스위프트 배워보기">
-    <meta itemprop="description" content="💭 ..  Swift는 어떤 언어일까?  디지털시계 앱을 만들며 Swift의 기초적인 것들을 알아봅니다.">
-    <meta itemprop="datePublished" content="2022-03-10T00:00:00+09:00">
-    
-
-    <div class="page__inner-wrap">
-      
-        <header>
-          <h1 id="page-title" class="page__title p-name" itemprop="headline">
-            <a href="http://localhost:4000/til/basicSwift2/" class="u-url" itemprop="url">A Swift Tour : 디지털 시계 앱을 만들며 스위프트 배워보기
-</a>
-          </h1>
-          
-
-  <p class="page__meta">
-    
-      
-      <span class="page__meta-date">
-        <i class="far fa-calendar-alt" aria-hidden="true"></i>
-        
-        <time datetime="2022-03-10T00:00:00+09:00">March 10, 2022</time>
-      </span>
-    
-
-    
-
-    
-  </p>
-
-
-        </header>
-      
-
-      <section class="page__content e-content" itemprop="text">
-        
-          <aside class="sidebar__right sticky">
-            <nav class="toc">
-              <header><h4 class="nav__title"><i class="fas fa-cog"></i> 👷</h4></header>
-              <ul class="toc__menu"><li><a href="#-">💭 ..</a></li><li><a href="#1-the-boilerplate-code">1. The boilerplate code</a></li><li><a href="#2-현재-날짜와-시간-정보-가져오기">2. 현재 날짜와 시간 정보 가져오기</a></li><li><a href="#3-dateformatter-사용">3. DateFormatter 사용</a></li><li><a href="#여기까지-수정">여기까지 수정</a></li><li><a href="#4-live-time">4. Live Time</a></li><li><a href="#5-time-of-day-greeting">5. Time of Day Greeting</a></li></ul>
-
-            </nav>
-          </aside>
-        
-        <h3 id="-">💭 ..</h3>
+I"r]<h3 id="-">💭 ..</h3>
 <div class="notice">
   <h4>Swift는 어떤 언어일까?</h4>
   <p>디지털시계 앱을 만들며 Swift의 기초적인 것들을 알아봅니다.</p>
@@ -256,8 +15,8 @@
 <h3 id="1-the-boilerplate-code">1. The boilerplate code</h3>
 <p><a href="https://medium.com/iu-women-in-computing/intro-to-swiftui-digital-clock-d0a60e05d394">Intro to SwiftUI: Digital Clock</a> &lt;- 블로그를 보며 공부합니다.</p>
 
-<p>지금 가장 만들어보고 싶은 앱은 디지털시계 앱입니다. 구글링을 해봅니다.
-여러 개의 친절한 블로그를 발견했는데요. 그중 하나를 읽어보며 코드 구조를 분석해 봅니다.</p>
+<p>지금 가장 만들어보고 싶은 앱은 디지털 시계 앱입니다. 구글링을 해봅니다.
+여러개의 친절한 블로그를 발견했는데요. 그 중 하나를 읽어보며 코드 구조를 분석해봅니다.</p>
 
 <div class="language-swift highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">import</span> <span class="kt">SwiftUI</span>
 
@@ -275,40 +34,46 @@
 </code></pre></div></div>
 
 <p>ContentView 그리고 ContentView_Previews라는 이름의 structures입니다.
-처음 SwiftUI 프로젝트를 만들면 미리 생성되어 있습니다. 소제목에 boilerplate는 반복적으로 사용되는 어구를 뜻하는 표현입니다. ContentView에는 화면에 보여질 아이템들이 들어가고 ContentView_Previews는 그것을 화면에 미리 보여주는 기본적인 structure이기 때문에 많이 사용될 수밖에 없겠죠!</p>
+처음 SwiftUI 프로젝트를 만들면 미리 생성되어 있습니다. 소제목에 boilerplate는 반복적으로 사용되는 어구를 뜻하는 표현입니다. ContentView에는 화면에 보여질 아이템들이 들어가고 ContentView_Previews는 그것을 화면에 미리 보여주는 기본적인 structure이기 때문에 많이 사용될 수 밖에 없겠죠!</p>
 
-<p><code>ContentView: View</code>와 <code>var body: some View</code>에서 View는 이 structure가 View protocol을 따를 것이라는 의미입니다. 각 protocol에는 요구사항들이 있습니다. View 프로토콜의 가장 주요 요구사항은 body property가 있어야 한다는 것이죠.</p>
+<p><code>ContentView: View</code>와 <code>var body: some View</code>에서 View는 이 structure가 View protocol을 따를 것이라는 의미입니다. 각 protocol에는 요구사항들이 있습니다. View 프로콜의 가장 주요 요구사항은 body property가 있어야 한다는 것이죠.</p>
 
-<p>body property 부분에는 스크린에 나타날 view들이 작성됩니다. 이때의 view는 프로토콜 view가 아닌 Text view, Image view, Button view와 같은 SwiftUI의 built-in view 또는 외부 프레임의 view들을 말합니다. 위 코드에서는 Text view가 body property 안에 작성되었습니다. 화면에는 아래와 같이 그려집니다.</p>
+<p>body property 부분에는 스크린에 나타날 view들이 작성됩니다. 이때의 view는 프로토콜 view가 아닌 Text view, Image view, Button view와 같은 SwiftUI의 built-in view 또는 외부 프레임의 view들을 말합니다. 위 코드에서는 Text view가 body property안에 작성되었습니다. 화면에는 아래와 같이 그려집니다.</p>
 
 <center><img src="/assets/images/HelloIphone.png" alt="HelloIphone" width="300" /></center>
 
 <h3 id="2-현재-날짜와-시간-정보-가져오기">2. 현재 날짜와 시간 정보 가져오기</h3>
 
-<div class="language-swift highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">struct</span> <span class="kt">ContentView</span><span class="p">:</span> <span class="kt">View</span> <span class="p">{</span>
+<div class="language-swift highlighter-rouge"><div class="highlight"><pre class="highlight"><code>
+<span class="kd">struct</span> <span class="kt">ContentView</span><span class="p">:</span> <span class="kt">View</span> <span class="p">{</span>
   <span class="kd">@State</span> <span class="k">var</span> <span class="nv">date</span> <span class="o">=</span> <span class="kt">Date</span><span class="p">()</span>
 <span class="p">}</span>
 </code></pre></div></div>
 
 <ul>
   <li>
-    <p>‘@State’ property wrapper는 해당 변수가 모니터링 되고 있다는 것을 의미합니다.</p>
+    <p>‘@State’ property wrapper는 해당 변수가 모니터링 되고 있다는 것을 의미한다. 만약 변수의 값이 바뀌면 View는 업데이트를 반영한다.</p>
   </li>
   <li>
-    <p>‘Date()’는 사용자가 있는 지역의 날짜와 시간 정보를 가져옵니다.</p>
+    <p>‘Date()’는 사용자가 있는 지역의 날짜와 시간 정보를 가져오는 initializer이다.</p>
   </li>
 </ul>
 
-<div class="language-swift highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">import</span> <span class="kt">SwiftUI</span>
+<div class="language-swift highlighter-rouge"><div class="highlight"><pre class="highlight"><code>
+<span class="kd">import</span> <span class="kt">SwiftUI</span>
 
 <span class="kd">struct</span> <span class="kt">ContentView</span><span class="p">:</span> <span class="kt">View</span> <span class="p">{</span>
     <span class="kd">@State</span> <span class="k">var</span> <span class="nv">date</span> <span class="o">=</span> <span class="kt">Date</span><span class="p">()</span>
+
     <span class="k">var</span> <span class="nv">body</span><span class="p">:</span> <span class="kd">some</span> <span class="kt">View</span> <span class="p">{</span>
+
         <span class="kt">VStack</span> <span class="p">{</span>
-          <span class="kt">Text</span><span class="p">(</span><span class="s">"</span><span class="se">\(</span><span class="n">date</span><span class="se">)</span><span class="s">"</span><span class="p">)</span>
+             <span class="kt">Text</span><span class="p">(</span><span class="s">"</span><span class="se">\(</span><span class="n">date</span><span class="se">)</span><span class="s">"</span><span class="p">)</span>
+
         <span class="p">}</span>
     <span class="p">}</span>
 <span class="p">}</span>
+
 
 <span class="kd">struct</span> <span class="kt">ContentView_Previews</span><span class="p">:</span> <span class="kt">PreviewProvider</span> <span class="p">{</span>
     <span class="kd">static</span> <span class="k">var</span> <span class="nv">previews</span><span class="p">:</span> <span class="kd">some</span> <span class="kt">View</span> <span class="p">{</span>
@@ -317,11 +82,11 @@
 <span class="p">}</span>
 </code></pre></div></div>
 
-<p>시간 정보는 초마다 계속해서 바뀌므로 property wrapper인 @State 를 사용해서 바뀐 시간을 계속해서 업데이트, 반영해 주고 문자열 date에 escape character \ 를 추가해서 Date()를 담고 있는 date 변수의 할당되어 있는 정보를 문자열로 가져옵니다.</p>
+<p>시간 정보는 계속해서 바뀌므로 property wrapper인 @State 를 사용해서 바뀐 시간을 계속해서 반영해주고 문자열 date에 escape character ‘'를 추가해서 Date()를 담고 있는 date 변수의 할당되어 있는 문자열을 가져온다.</p>
 
 <h3 id="3-dateformatter-사용">3. DateFormatter 사용</h3>
 
-<p>DateFormatter를 사용하여 가져온 날짜/시간 데이터를 우리가 원하는 형식으로 만들어 봅니다.</p>
+<p>body variable 아래에 DateFormatter를 사용하는 코드를 작성해봅니다.</p>
 
 <div class="language-swift highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">var</span> <span class="nv">timeFormat</span><span class="p">:</span> <span class="kt">DateFormatter</span> <span class="p">{</span>
   <span class="k">let</span> <span class="nv">formatter</span> <span class="o">=</span> <span class="kt">DateFormatter</span><span class="p">()</span>
@@ -330,9 +95,8 @@
 <span class="p">}</span>
 </code></pre></div></div>
 
-<h3 id="여기까지-수정">여기까지 수정</h3>
-
-<p>timeFormat는 DateFormatter 객체이다. timeFormat는 DateFormatter의 메서드를 호출할 수 있다.<br />
+<p>이 코드를 분석해보자!<br />
+timeFormatter는 DateFormatter 객체이다. timeFormatter는 DateFormatter의 메서드를 호출할 수 있다.<br />
 dateFormat은 DateFormatter객체의 property이다. 주어진 날짜/시간 데이터에서 우리가 원하는 것만 보여줄 수 있도록 해준다.</p>
 <ul>
   <li>소문자 “hh” = 12시간 표기법</li>
@@ -442,311 +206,4 @@ self.updateTimer function은 저장할 필요가 없는 값을 반환하기 때�
 
 시계의 배경 부분을 사진을 넣어 사용할 수 있었으면 좋겠다는 생각이 들었다.  
 검색 중 Unsplash API를 발견했고 적용해보고자 한다. -->
-
-        
-      </section>
-
-      <footer class="page__meta">
-        
-        
-  
-
-
-  
-
-  <p class="page__taxonomy">
-    <strong><i class="fas fa-fw fa-tags" aria-hidden="true"></i> Tags: </strong>
-    <span itemprop="keywords">
-    
-      <a href="/tags/#learning" class="page__taxonomy-item p-category" rel="tag">learning</a><span class="sep">, </span>
-    
-      <a href="/tags/#swift" class="page__taxonomy-item p-category" rel="tag">Swift</a><span class="sep">, </span>
-    
-      <a href="/tags/#%EA%B3%B5%EB%B6%80-%EA%B8%B0%EB%A1%9D" class="page__taxonomy-item p-category" rel="tag">공부 기록</a>
-    
-    </span>
-  </p>
-
-
-
-
-  
-
-
-  
-
-  <p class="page__taxonomy">
-    <strong><i class="fas fa-fw fa-folder-open" aria-hidden="true"></i> Categories: </strong>
-    <span itemprop="keywords">
-    
-      <a href="/categories/#til" class="page__taxonomy-item p-category" rel="tag">TIL</a>
-    
-    </span>
-  </p>
-
-
-        
-
-  <p class="page__date"><strong><i class="fas fa-fw fa-calendar-alt" aria-hidden="true"></i> Updated:</strong> <time class="dt-published" datetime="2022-03-10T00:00:00+09:00">March 10, 2022</time></p>
-
-      </footer>
-
-      
-
-      
-  <nav class="pagination">
-    
-      <a href="/til/basicSwift/" class="pagination--pager" title="Swift
-">Previous</a>
-    
-    
-      <a href="/til/landmarks/" class="pagination--pager" title="SwiftUI Tutorial: 여러 개의 View를 만들고 결합하기
-">Next</a>
-    
-  </nav>
-
-    </div>
-
-    
-  </article>
-
-  
-  
-    <div class="page__related">
-      <h2 class="page__related-title">You may also enjoy</h2>
-      <div class="grid__wrapper">
-        
-          
-
-
-
-<div class="grid__item">
-  <article class="archive__item" itemscope itemtype="https://schema.org/CreativeWork">
-    
-      <div class="archive__item-teaser">
-        <img src="/assets/images/teaser.jpg" alt="">
-      </div>
-    
-    <h2 class="archive__item-title no_toc" itemprop="headline">
-      
-        <a href="/til/octopusProject/" rel="permalink">웹 페이지를 만들며 HTML과 CSS에 대해 알아보기
-</a>
-      
-    </h2>
-    
-
-  <p class="page__meta">
-    
-      
-      <span class="page__meta-date">
-        <i class="far fa-calendar-alt" aria-hidden="true"></i>
-        
-        <time datetime="2022-03-16T00:00:00+09:00">March 16, 2022</time>
-      </span>
-    
-
-    
-
-    
-  </p>
-
-
-    <p class="archive__item-excerpt" itemprop="description">
-  Octopus Project
-  팀 프로젝트가 끝나고 바로 개인 프로젝트가 하나 있습니다.
-  7일정도 HTML과 CSS를 배우는데, 배운 것으로 웹 페이지를 만드는 것입니다.
-  자바 스크립트는 할 수도 안할 수도 있다는데 시간이 되면 자바 스크립트도 이용해서 페이지를 만들...</p>
-  </article>
-</div>
-
-        
-          
-
-
-
-<div class="grid__item">
-  <article class="archive__item" itemscope itemtype="https://schema.org/CreativeWork">
-    
-      <div class="archive__item-teaser">
-        <img src="/assets/images/teaser.jpg" alt="">
-      </div>
-    
-    <h2 class="archive__item-title no_toc" itemprop="headline">
-      
-        <a href="/cyclicRotation/" rel="permalink">Cyclicrotation
-</a>
-      
-    </h2>
-    
-
-
-    <p class="archive__item-excerpt" itemprop="description">
-</p>
-  </article>
-</div>
-
-        
-          
-
-
-
-<div class="grid__item">
-  <article class="archive__item" itemscope itemtype="https://schema.org/CreativeWork">
-    
-      <div class="archive__item-teaser">
-        <img src="/assets/images/teaser.jpg" alt="">
-      </div>
-    
-    <h2 class="archive__item-title no_toc" itemprop="headline">
-      
-        <a href="/til/landmarks/" rel="permalink">SwiftUI Tutorial: 여러 개의 View를 만들고 결합하기
-</a>
-      
-    </h2>
-    
-
-  <p class="page__meta">
-    
-      
-      <span class="page__meta-date">
-        <i class="far fa-calendar-alt" aria-hidden="true"></i>
-        
-        <time datetime="2022-03-14T00:00:00+09:00">March 14, 2022</time>
-      </span>
-    
-
-    
-
-    
-  </p>
-
-
-    <p class="archive__item-excerpt" itemprop="description">출처: SwiftUI Essentials:
-Creating and Combining Views
-</p>
-  </article>
-</div>
-
-        
-          
-
-
-
-<div class="grid__item">
-  <article class="archive__item" itemscope itemtype="https://schema.org/CreativeWork">
-    
-      <div class="archive__item-teaser">
-        <img src="/assets/images/teaser.jpg" alt="">
-      </div>
-    
-    <h2 class="archive__item-title no_toc" itemprop="headline">
-      
-        <a href="/til/basicSwift/" rel="permalink">Swift
-</a>
-      
-    </h2>
-    
-
-  <p class="page__meta">
-    
-      
-      <span class="page__meta-date">
-        <i class="far fa-calendar-alt" aria-hidden="true"></i>
-        
-        <time datetime="2022-03-07T00:00:00+09:00">March 7, 2022</time>
-      </span>
-    
-
-    
-
-    
-  </p>
-
-
-    <p class="archive__item-excerpt" itemprop="description">💭 ..
-
-  Swift를 배워보자.
-  유투브 튜토리얼, 애플 개발자 페이지의 튜토리얼, 구글링을 통해 Swift를 공부해보려고 합니다.    
-  그 과정에서 기록이 필요한 것들을 정리해봅니다.
-
-</p>
-  </article>
-</div>
-
-        
-      </div>
-    </div>
-  
-  
-</div>
-    </div>
-
-    
-      <div class="search-content">
-        <div class="search-content__inner-wrap"><form class="search-content__form" onkeydown="return event.key != 'Enter';" role="search">
-    <label class="sr-only" for="search">
-      Enter your search term...
-    </label>
-    <input type="search" id="search" class="search-input" tabindex="-1" placeholder="Enter your search term..." />
-  </form>
-  <div id="results" class="results"></div></div>
-
-      </div>
-    
-
-    <div id="footer" class="page__footer">
-      <footer>
-        <!-- start custom footer snippets -->
-
-<!-- end custom footer snippets -->
-        <div class="page__footer-follow">
-  <ul class="social-icons">
-    
-      <li><strong>Follow:</strong></li>
-    
-
-    
-      
-        
-      
-        
-      
-        
-      
-        
-      
-        
-      
-        
-      
-    
-
-    
-      <li><a href="/feed.xml"><i class="fas fa-fw fa-rss-square" aria-hidden="true"></i> Feed</a></li>
-    
-  </ul>
-</div>
-
-<div class="page__footer-copyright">&copy; 2022 Mirae the Future. Powered by <a href="https://jekyllrb.com" rel="nofollow">Jekyll</a> &amp; <a href="https://mademistakes.com/work/minimal-mistakes-jekyll-theme/" rel="nofollow">Minimal Mistakes</a>.</div>
-
-      </footer>
-    </div>
-
-    
-  <script src="/assets/js/main.min.js"></script>
-
-
-
-
-<script src="/assets/js/lunr/lunr.min.js"></script>
-<script src="/assets/js/lunr/lunr-store.js"></script>
-<script src="/assets/js/lunr/lunr-en.js"></script>
-
-
-
-
-
-
-
-  </body>
-</html>
+:ET

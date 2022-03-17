@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="4.2.1">Jekyll</generator><link href="http://localhost:4000/feed.xml" rel="self" type="application/atom+xml" /><link href="http://localhost:4000/" rel="alternate" type="text/html" /><updated>2022-03-17T22:24:12+09:00</updated><id>http://localhost:4000/feed.xml</id><title type="html">Mirae the Future</title><subtitle>An amazing website.</subtitle><author><name>Mirae</name></author><entry><title type="html">웹 페이지를 만들며 HTML과 CSS에 대해 알아보기</title><link href="http://localhost:4000/til/octopusProject/" rel="alternate" type="text/html" title="웹 페이지를 만들며 HTML과 CSS에 대해 알아보기" /><published>2022-03-16T00:00:00+09:00</published><updated>2022-03-16T00:00:00+09:00</updated><id>http://localhost:4000/til/octopusProject</id><content type="html" xml:base="http://localhost:4000/til/octopusProject/">&lt;div class=&quot;notice&quot;&gt;
+<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="4.2.1">Jekyll</generator><link href="http://localhost:4000/feed.xml" rel="self" type="application/atom+xml" /><link href="http://localhost:4000/" rel="alternate" type="text/html" /><updated>2022-03-17T23:30:55+09:00</updated><id>http://localhost:4000/feed.xml</id><title type="html">Mirae the Future</title><subtitle>An amazing website.</subtitle><author><name>Mirae</name></author><entry><title type="html">웹 페이지를 만들며 HTML과 CSS에 대해 알아보기</title><link href="http://localhost:4000/til/octopusProject/" rel="alternate" type="text/html" title="웹 페이지를 만들며 HTML과 CSS에 대해 알아보기" /><published>2022-03-16T00:00:00+09:00</published><updated>2022-03-16T00:00:00+09:00</updated><id>http://localhost:4000/til/octopusProject</id><content type="html" xml:base="http://localhost:4000/til/octopusProject/">&lt;div class=&quot;notice&quot;&gt;
   &lt;h4&gt;Octopus Project&lt;/h4&gt;
   &lt;p&gt;팀 프로젝트가 끝나고 바로 개인 프로젝트가 하나 있습니다.
   7일정도 HTML과 CSS를 배우는데, 배운 것으로 웹 페이지를 만드는 것입니다.
@@ -208,8 +208,8 @@ var body: some View {
 &lt;h3 id=&quot;1-the-boilerplate-code&quot;&gt;1. The boilerplate code&lt;/h3&gt;
 &lt;p&gt;&lt;a href=&quot;https://medium.com/iu-women-in-computing/intro-to-swiftui-digital-clock-d0a60e05d394&quot;&gt;Intro to SwiftUI: Digital Clock&lt;/a&gt; &amp;lt;- 블로그를 보며 공부합니다.&lt;/p&gt;
 
-&lt;p&gt;지금 가장 만들어보고 싶은 앱은 디지털 시계 앱입니다. 구글링을 해봅니다.
-여러개의 친절한 블로그를 발견했는데요. 그 중 하나를 읽어보며 코드 구조를 분석해봅니다.&lt;/p&gt;
+&lt;p&gt;지금 가장 만들어보고 싶은 앱은 디지털시계 앱입니다. 구글링을 해봅니다.
+여러 개의 친절한 블로그를 발견했는데요. 그중 하나를 읽어보며 코드 구조를 분석해 봅니다.&lt;/p&gt;
 
 &lt;div class=&quot;language-swift highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;kd&quot;&gt;import&lt;/span&gt; &lt;span class=&quot;kt&quot;&gt;SwiftUI&lt;/span&gt;
 
@@ -227,44 +227,40 @@ var body: some View {
 &lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
 
 &lt;p&gt;ContentView 그리고 ContentView_Previews라는 이름의 structures입니다.
-처음 SwiftUI 프로젝트를 만들면 미리 생성되어 있습니다. 소제목에 boilerplate는 반복적으로 사용되는 어구를 뜻하는 표현입니다. 여기서는 반복적으로 사용되는 코드겠죠?&lt;/p&gt;
+처음 SwiftUI 프로젝트를 만들면 미리 생성되어 있습니다. 소제목에 boilerplate는 반복적으로 사용되는 어구를 뜻하는 표현입니다. ContentView에는 화면에 보여질 아이템들이 들어가고 ContentView_Previews는 그것을 화면에 미리 보여주는 기본적인 structure이기 때문에 많이 사용될 수밖에 없겠죠!&lt;/p&gt;
 
-&lt;p&gt;View : 스크린에 렌더링 될 컨텐트를 담는 컨테이너다. subviews / parent views를 가질 수도 있다. View는 text, buttons, stacks, 그리고 lists 등 어떤 것이든 담을 수 있다.&lt;/p&gt;
+&lt;p&gt;&lt;code&gt;ContentView: View&lt;/code&gt;와 &lt;code&gt;var body: some View&lt;/code&gt;에서 View는 이 structure가 View protocol을 따를 것이라는 의미입니다. 각 protocol에는 요구사항들이 있습니다. View 프로토콜의 가장 주요 요구사항은 body property가 있어야 한다는 것이죠.&lt;/p&gt;
 
-&lt;p&gt;ContentView 안에 body 변수를 가진다. 뷰 컨텐츠의 배열이 형성되는 곳이다. var body : some View 처럼 some 키워드가 View 앞에 오는데 이것은 body 변수가 뷰의 컨텐츠가 어떤 것이든 View를 return한다는 것을 나타낸다.&lt;/p&gt;
+&lt;p&gt;body property 부분에는 스크린에 나타날 view들이 작성됩니다. 이때의 view는 프로토콜 view가 아닌 Text view, Image view, Button view와 같은 SwiftUI의 built-in view 또는 외부 프레임의 view들을 말합니다. 위 코드에서는 Text view가 body property 안에 작성되었습니다. 화면에는 아래와 같이 그려집니다.&lt;/p&gt;
+
+&lt;center&gt;&lt;img src=&quot;/assets/images/HelloIphone.png&quot; alt=&quot;HelloIphone&quot; width=&quot;300&quot; /&gt;&lt;/center&gt;
 
 &lt;h3 id=&quot;2-현재-날짜와-시간-정보-가져오기&quot;&gt;2. 현재 날짜와 시간 정보 가져오기&lt;/h3&gt;
 
-&lt;div class=&quot;language-swift highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;
-&lt;span class=&quot;kd&quot;&gt;struct&lt;/span&gt; &lt;span class=&quot;kt&quot;&gt;ContentView&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;kt&quot;&gt;View&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
+&lt;div class=&quot;language-swift highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;kd&quot;&gt;struct&lt;/span&gt; &lt;span class=&quot;kt&quot;&gt;ContentView&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;kt&quot;&gt;View&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
   &lt;span class=&quot;kd&quot;&gt;@State&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;var&lt;/span&gt; &lt;span class=&quot;nv&quot;&gt;date&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;kt&quot;&gt;Date&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;()&lt;/span&gt;
 &lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
 &lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
 
 &lt;ul&gt;
   &lt;li&gt;
-    &lt;p&gt;‘@State’ property wrapper는 해당 변수가 모니터링 되고 있다는 것을 의미한다. 만약 변수의 값이 바뀌면 View는 업데이트를 반영한다.&lt;/p&gt;
+    &lt;p&gt;‘@State’ property wrapper는 해당 변수가 모니터링 되고 있다는 것을 의미합니다.&lt;/p&gt;
   &lt;/li&gt;
   &lt;li&gt;
-    &lt;p&gt;‘Date()’는 사용자가 있는 지역의 날짜와 시간 정보를 가져오는 initializer이다.&lt;/p&gt;
+    &lt;p&gt;‘Date()’는 사용자가 있는 지역의 날짜와 시간 정보를 가져옵니다.&lt;/p&gt;
   &lt;/li&gt;
 &lt;/ul&gt;
 
-&lt;div class=&quot;language-swift highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;
-&lt;span class=&quot;kd&quot;&gt;import&lt;/span&gt; &lt;span class=&quot;kt&quot;&gt;SwiftUI&lt;/span&gt;
+&lt;div class=&quot;language-swift highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;kd&quot;&gt;import&lt;/span&gt; &lt;span class=&quot;kt&quot;&gt;SwiftUI&lt;/span&gt;
 
 &lt;span class=&quot;kd&quot;&gt;struct&lt;/span&gt; &lt;span class=&quot;kt&quot;&gt;ContentView&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;kt&quot;&gt;View&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
     &lt;span class=&quot;kd&quot;&gt;@State&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;var&lt;/span&gt; &lt;span class=&quot;nv&quot;&gt;date&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;kt&quot;&gt;Date&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;()&lt;/span&gt;
-
     &lt;span class=&quot;k&quot;&gt;var&lt;/span&gt; &lt;span class=&quot;nv&quot;&gt;body&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;kd&quot;&gt;some&lt;/span&gt; &lt;span class=&quot;kt&quot;&gt;View&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
-
         &lt;span class=&quot;kt&quot;&gt;VStack&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
-             &lt;span class=&quot;kt&quot;&gt;Text&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;&lt;/span&gt;&lt;span class=&quot;se&quot;&gt;\(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;date&lt;/span&gt;&lt;span class=&quot;se&quot;&gt;)&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
-
+          &lt;span class=&quot;kt&quot;&gt;Text&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;&lt;/span&gt;&lt;span class=&quot;se&quot;&gt;\(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;date&lt;/span&gt;&lt;span class=&quot;se&quot;&gt;)&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
         &lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
     &lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
 &lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
-
 
 &lt;span class=&quot;kd&quot;&gt;struct&lt;/span&gt; &lt;span class=&quot;kt&quot;&gt;ContentView_Previews&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;kt&quot;&gt;PreviewProvider&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
     &lt;span class=&quot;kd&quot;&gt;static&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;var&lt;/span&gt; &lt;span class=&quot;nv&quot;&gt;previews&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;kd&quot;&gt;some&lt;/span&gt; &lt;span class=&quot;kt&quot;&gt;View&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
@@ -273,11 +269,11 @@ var body: some View {
 &lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
 &lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
 
-&lt;p&gt;시간 정보는 계속해서 바뀌므로 property wrapper인 @State 를 사용해서 바뀐 시간을 계속해서 반영해주고 문자열 date에 escape character ‘&apos;를 추가해서 Date()를 담고 있는 date 변수의 할당되어 있는 문자열을 가져온다.&lt;/p&gt;
+&lt;p&gt;시간 정보는 초마다 계속해서 바뀌므로 property wrapper인 @State 를 사용해서 바뀐 시간을 계속해서 업데이트, 반영해 주고 문자열 date에 escape character \ 를 추가해서 Date()를 담고 있는 date 변수의 할당되어 있는 정보를 문자열로 가져옵니다.&lt;/p&gt;
 
 &lt;h3 id=&quot;3-dateformatter-사용&quot;&gt;3. DateFormatter 사용&lt;/h3&gt;
 
-&lt;p&gt;body variable 아래에 DateFormatter를 사용하는 코드를 작성해봅니다.&lt;/p&gt;
+&lt;p&gt;DateFormatter를 사용하여 가져온 날짜/시간 데이터를 우리가 원하는 형식으로 만들어 봅니다.&lt;/p&gt;
 
 &lt;div class=&quot;language-swift highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;k&quot;&gt;var&lt;/span&gt; &lt;span class=&quot;nv&quot;&gt;timeFormat&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;kt&quot;&gt;DateFormatter&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
   &lt;span class=&quot;k&quot;&gt;let&lt;/span&gt; &lt;span class=&quot;nv&quot;&gt;formatter&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;kt&quot;&gt;DateFormatter&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;()&lt;/span&gt;
@@ -286,8 +282,9 @@ var body: some View {
 &lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
 &lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
 
-&lt;p&gt;이 코드를 분석해보자!&lt;br /&gt;
-timeFormatter는 DateFormatter 객체이다. timeFormatter는 DateFormatter의 메서드를 호출할 수 있다.&lt;br /&gt;
+&lt;h3 id=&quot;여기까지-수정&quot;&gt;여기까지 수정&lt;/h3&gt;
+
+&lt;p&gt;timeFormat는 DateFormatter 객체이다. timeFormat는 DateFormatter의 메서드를 호출할 수 있다.&lt;br /&gt;
 dateFormat은 DateFormatter객체의 property이다. 주어진 날짜/시간 데이터에서 우리가 원하는 것만 보여줄 수 있도록 해준다.&lt;/p&gt;
 &lt;ul&gt;
   &lt;li&gt;소문자 “hh” = 12시간 표기법&lt;/li&gt;
