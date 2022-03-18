@@ -217,6 +217,8 @@ Calendar.current.date(bySettingHour...) 메서드는 주어진 date 데이터에
 
 ... 디지털시계 만들기는 계속 됩니다.
 
+<center><video src="https://user-images.githubusercontent.com/85061148/158997210-efaac4ad-797a-4da4-9039-5e5a123a39e9.mov" width="600"></video></center>
+
 
 <!--
 ### 8. 이제부터는 화면을 꾸며보자.  

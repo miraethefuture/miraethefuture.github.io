@@ -1,4 +1,4 @@
-I"m]<h3 id="-">💭 ..</h3>
+I"^<h3 id="-">💭 ..</h3>
 <div class="notice">
   <h4>Swift는 어떤 언어일까?</h4>
   <p>디지털시계 앱을 만들며 Swift의 기초적인 것들을 알아봅니다.</p>
@@ -195,6 +195,8 @@ self.updateTimer function은 저장할 필요가 없는 값을 반환하기 때�
 여기까지 하면 시간을 스크린에 띄우는 것은 완성!</p>
 
 <p>… 디지털시계 만들기는 계속 됩니다.</p>
+
+<center><video src="https://user-images.githubusercontent.com/85061148/158997210-efaac4ad-797a-4da4-9039-5e5a123a39e9.mov" width="600"></video></center>
 
 <!--
 ### 8. 이제부터는 화면을 꾸며보자.  

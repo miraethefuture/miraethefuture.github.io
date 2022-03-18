@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="4.2.1">Jekyll</generator><link href="http://localhost:4000/feed.xml" rel="self" type="application/atom+xml" /><link href="http://localhost:4000/" rel="alternate" type="text/html" /><updated>2022-03-18T00:19:53+09:00</updated><id>http://localhost:4000/feed.xml</id><title type="html">Mirae the Future</title><subtitle>An amazing website.</subtitle><author><name>Mirae</name></author><entry><title type="html">웹 페이지를 만들며 HTML과 CSS에 대해 알아보기</title><link href="http://localhost:4000/til/octopusProject/" rel="alternate" type="text/html" title="웹 페이지를 만들며 HTML과 CSS에 대해 알아보기" /><published>2022-03-16T00:00:00+09:00</published><updated>2022-03-16T00:00:00+09:00</updated><id>http://localhost:4000/til/octopusProject</id><content type="html" xml:base="http://localhost:4000/til/octopusProject/">&lt;div class=&quot;notice&quot;&gt;
+<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="4.2.1">Jekyll</generator><link href="http://localhost:4000/feed.xml" rel="self" type="application/atom+xml" /><link href="http://localhost:4000/" rel="alternate" type="text/html" /><updated>2022-03-18T20:46:45+09:00</updated><id>http://localhost:4000/feed.xml</id><title type="html">Mirae the Future</title><subtitle>An amazing website.</subtitle><author><name>Mirae</name></author><entry><title type="html">웹 페이지를 만들며 HTML과 CSS에 대해 알아보기</title><link href="http://localhost:4000/til/octopusProject/" rel="alternate" type="text/html" title="웹 페이지를 만들며 HTML과 CSS에 대해 알아보기" /><published>2022-03-16T00:00:00+09:00</published><updated>2022-03-16T00:00:00+09:00</updated><id>http://localhost:4000/til/octopusProject</id><content type="html" xml:base="http://localhost:4000/til/octopusProject/">&lt;div class=&quot;notice&quot;&gt;
   &lt;h4&gt;Octopus Project&lt;/h4&gt;
   &lt;p&gt;팀 프로젝트가 끝나고 바로 개인 프로젝트가 하나 있습니다.
   7일정도 HTML과 CSS를 배우는데, 배운 것으로 웹 페이지를 만드는 것입니다.
@@ -388,6 +388,8 @@ self.updateTimer function은 저장할 필요가 없는 값을 반환하기 때�
 여기까지 하면 시간을 스크린에 띄우는 것은 완성!&lt;/p&gt;
 
 &lt;p&gt;… 디지털시계 만들기는 계속 됩니다.&lt;/p&gt;
+
+&lt;center&gt;&lt;video src=&quot;https://user-images.githubusercontent.com/85061148/158997210-efaac4ad-797a-4da4-9039-5e5a123a39e9.mov&quot; width=&quot;600&quot;&gt;&lt;/video&gt;&lt;/center&gt;
 
 &lt;!--
 ### 8. 이제부터는 화면을 꾸며보자.  
