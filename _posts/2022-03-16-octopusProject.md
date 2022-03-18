@@ -23,16 +23,18 @@ toc_icon: "cog"
   단축키를 모아 놓은 웹 페이지를 만들어 보려고 합니다. (제가 자주 쓰는 프로그램들의 단축키를 모아모아) </p>
 </div>
 
+<img src="/assets/images/octo.png" alt="octopus">
+
 
 [Easy Tutorials: How To Make A Website Using HTML And CSS / Website Design In HTML And CSS](https://www.youtube.com/watch?v=-2LtZRi6Q0s)  
 
-# What I Learned From This Project:  
+## 1. What I Learned From This Project:     
 
 - <code>link</code> HTML element
 - linear-flex를 이용해서 목록을 옆으로 나열하기
 
 
-### <code>link</code> HTML element  
+## 2. link HTML element    
 
 ```html
 <link rel="stylesheet" href="style.css">
@@ -48,7 +50,7 @@ toc_icon: "cog"
 
 ```html
 <p style="color: blue">
-  The <code>style</code> attribute can override it, though.</p>
+  The style attribute can override it, though.</p>
 ```
 처럼 원래의 html 속성도 사용할 수 있습니다. override라고 하는걸 보니 html의 속성인 style이 외부 stylesheet에 작성된 CSS보다 더 우선순위에 있는 것 같습니다.  
 \<link> element는 \<head> 부분에 작성되어야 합니다.  

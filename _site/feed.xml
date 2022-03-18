@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="4.2.1">Jekyll</generator><link href="http://localhost:4000/feed.xml" rel="self" type="application/atom+xml" /><link href="http://localhost:4000/" rel="alternate" type="text/html" /><updated>2022-03-18T21:30:52+09:00</updated><id>http://localhost:4000/feed.xml</id><title type="html">Mirae the Future</title><subtitle>An amazing website.</subtitle><author><name>Mirae</name></author><entry><title type="html">웹 페이지를 만들며 HTML과 CSS에 대해 알아보기</title><link href="http://localhost:4000/til/octopusProject/" rel="alternate" type="text/html" title="웹 페이지를 만들며 HTML과 CSS에 대해 알아보기" /><published>2022-03-16T00:00:00+09:00</published><updated>2022-03-16T00:00:00+09:00</updated><id>http://localhost:4000/til/octopusProject</id><content type="html" xml:base="http://localhost:4000/til/octopusProject/">&lt;div class=&quot;notice&quot;&gt;
+<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="4.2.1">Jekyll</generator><link href="http://localhost:4000/feed.xml" rel="self" type="application/atom+xml" /><link href="http://localhost:4000/" rel="alternate" type="text/html" /><updated>2022-03-19T00:28:30+09:00</updated><id>http://localhost:4000/feed.xml</id><title type="html">Mirae the Future</title><subtitle>An amazing website.</subtitle><author><name>Mirae</name></author><entry><title type="html">웹 페이지를 만들며 HTML과 CSS에 대해 알아보기</title><link href="http://localhost:4000/til/octopusProject/" rel="alternate" type="text/html" title="웹 페이지를 만들며 HTML과 CSS에 대해 알아보기" /><published>2022-03-16T00:00:00+09:00</published><updated>2022-03-16T00:00:00+09:00</updated><id>http://localhost:4000/til/octopusProject</id><content type="html" xml:base="http://localhost:4000/til/octopusProject/">&lt;div class=&quot;notice&quot;&gt;
   &lt;h4&gt;Octopus Project&lt;/h4&gt;
   &lt;p&gt;팀 프로젝트가 끝나고 바로 개인 프로젝트가 하나 있습니다.
   7일정도 HTML과 CSS를 배우는데, 배운 것으로 웹 페이지를 만드는 것입니다.
@@ -6,16 +6,18 @@
   단축키를 모아 놓은 웹 페이지를 만들어 보려고 합니다. (제가 자주 쓰는 프로그램들의 단축키를 모아모아) &lt;/p&gt;
 &lt;/div&gt;
 
+&lt;p&gt;&lt;img src=&quot;/assets/images/octo.png&quot; alt=&quot;octopus&quot; /&gt;&lt;/p&gt;
+
 &lt;p&gt;&lt;a href=&quot;https://www.youtube.com/watch?v=-2LtZRi6Q0s&quot;&gt;Easy Tutorials: How To Make A Website Using HTML And CSS / Website Design In HTML And CSS&lt;/a&gt;&lt;/p&gt;
 
-&lt;h1 id=&quot;what-i-learned-from-this-project&quot;&gt;What I Learned From This Project:&lt;/h1&gt;
+&lt;h2 id=&quot;1-what-i-learned-from-this-project&quot;&gt;1. What I Learned From This Project:&lt;/h2&gt;
 
 &lt;ul&gt;
   &lt;li&gt;&lt;code&gt;link&lt;/code&gt; HTML element&lt;/li&gt;
   &lt;li&gt;linear-flex를 이용해서 목록을 옆으로 나열하기&lt;/li&gt;
 &lt;/ul&gt;
 
-&lt;h3 id=&quot;link-html-element&quot;&gt;&lt;code&gt;link&lt;/code&gt; HTML element&lt;/h3&gt;
+&lt;h2 id=&quot;2-link-html-element&quot;&gt;2. link HTML element&lt;/h2&gt;
 
 &lt;div class=&quot;language-html highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;nt&quot;&gt;&amp;lt;link&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;rel=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;stylesheet&quot;&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;href=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;style.css&quot;&lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;&amp;gt;&lt;/span&gt;
 &lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
@@ -29,7 +31,7 @@
 이제 stylesheet에서 CSS를 이용해 현 document의 태그들의 속성을 수정할 수 있게 되었습니다.&lt;/p&gt;
 
 &lt;div class=&quot;language-html highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;nt&quot;&gt;&amp;lt;p&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;style=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;color: blue&quot;&lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;&amp;gt;&lt;/span&gt;
-  The &lt;span class=&quot;nt&quot;&gt;&amp;lt;code&amp;gt;&lt;/span&gt;style&lt;span class=&quot;nt&quot;&gt;&amp;lt;/code&amp;gt;&lt;/span&gt; attribute can override it, though.&lt;span class=&quot;nt&quot;&gt;&amp;lt;/p&amp;gt;&lt;/span&gt;
+  The style attribute can override it, though.&lt;span class=&quot;nt&quot;&gt;&amp;lt;/p&amp;gt;&lt;/span&gt;
 &lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
 &lt;p&gt;처럼 원래의 html 속성도 사용할 수 있습니다. override라고 하는걸 보니 html의 속성인 style이 외부 stylesheet에 작성된 CSS보다 더 우선순위에 있는 것 같습니다.&lt;br /&gt;
 &amp;lt;link&amp;gt; element는 &amp;lt;head&amp;gt; 부분에 작성되어야 합니다.&lt;/p&gt;
@@ -70,8 +72,11 @@ c = b;
 b의 값이 c에 할당. c가 b의 값을 가지고 있다.&lt;/p&gt;
 
 &lt;p&gt;b = a;
-비어있는 b에 a를 할당한다. b에는 a의 값이 들어와있다. a가 오른쪽 인덱스로 한칸 이동했다. 
-0번째 인덱스에 있던 a를 b로 보낸다.&lt;/p&gt;</content><author><name>Mirae</name></author><summary type="html"></summary></entry><entry><title type="html">SwiftUI Tutorial: 여러 개의 View를 만들고 결합하기</title><link href="http://localhost:4000/til/landmarks/" rel="alternate" type="text/html" title="SwiftUI Tutorial: 여러 개의 View를 만들고 결합하기" /><published>2022-03-14T00:00:00+09:00</published><updated>2022-03-14T00:00:00+09:00</updated><id>http://localhost:4000/til/landmarks</id><content type="html" xml:base="http://localhost:4000/til/landmarks/">&lt;p&gt;&lt;a href=&quot;https://developer.apple.com/tutorials/swiftui/creating-and-combining-views&quot;&gt;출처: SwiftUI Essentials:
+비어있는 b에 a를 할당한다. b에는 a의 값이 들어와있다. a가 오른쪽 인덱스로 한칸 이동했다.
+0번째 인덱스에 있던 a를 b로 보낸다.&lt;/p&gt;
+
+&lt;p&gt;A[1] = a;
+A[2] = b;&lt;/p&gt;</content><author><name>Mirae</name></author><summary type="html"></summary></entry><entry><title type="html">SwiftUI Tutorial: 여러 개의 View를 만들고 결합하기</title><link href="http://localhost:4000/til/landmarks/" rel="alternate" type="text/html" title="SwiftUI Tutorial: 여러 개의 View를 만들고 결합하기" /><published>2022-03-14T00:00:00+09:00</published><updated>2022-03-14T00:00:00+09:00</updated><id>http://localhost:4000/til/landmarks</id><content type="html" xml:base="http://localhost:4000/til/landmarks/">&lt;p&gt;&lt;a href=&quot;https://developer.apple.com/tutorials/swiftui/creating-and-combining-views&quot;&gt;출처: SwiftUI Essentials:
 Creating and Combining Views&lt;/a&gt;&lt;/p&gt;
 
 &lt;h2 id=&quot;what-i-learned-from-this-tutorial&quot;&gt;&lt;strong&gt;What I Learned From This Tutorial:&lt;/strong&gt;&lt;/h2&gt;
