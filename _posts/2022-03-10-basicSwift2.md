@@ -106,8 +106,9 @@ var timeFormat: DateFormatter {
 }
 ```
 
-### 여기까지 수정  
+### DateFormatter  
 
+DateFormatter는 날짜 데이터를 문자열 형식으로 보여지게 하는 Class입니다.  
 timeFormat는 DateFormatter 객체이다. timeFormat는 DateFormatter의 메서드를 호출할 수 있다.  
 dateFormat은 DateFormatter객체의 property이다. 주어진 날짜/시간 데이터에서 우리가 원하는 것만 보여줄 수 있도록 해준다.
 - 소문자 "hh" = 12시간 표기법
@@ -217,9 +218,8 @@ Calendar.current.date(bySettingHour...) 메서드는 주어진 date 데이터에
 
 ... 디지털시계 만들기는 계속 됩니다.
 
-<center><video src="https://user-images.githubusercontent.com/85061148/158997210-efaac4ad-797a-4da4-9039-5e5a123a39e9.mov" width="600"></video></center>
-
-
+<center><video src="https://user-images.githubusercontent.com/85061148/158997210-efaac4ad-797a-4da4-9039-5e5a123a39e9.mov" controls="controls" style="max-width: 600px">
+</video></center>
 <!--
 ### 8. 이제부터는 화면을 꾸며보자.  
 

@@ -236,7 +236,7 @@
           <aside class="sidebar__right sticky">
             <nav class="toc">
               <header><h4 class="nav__title"><i class="fas fa-cog"></i> 👷</h4></header>
-              <ul class="toc__menu"><li><a href="#-">💭 ..</a></li><li><a href="#1-the-boilerplate-code">1. The boilerplate code</a></li><li><a href="#2-현재-날짜와-시간-정보-가져오기">2. 현재 날짜와 시간 정보 가져오기</a></li><li><a href="#3-dateformatter-사용">3. DateFormatter 사용</a></li><li><a href="#여기까지-수정">여기까지 수정</a></li><li><a href="#4-live-time">4. Live Time</a></li><li><a href="#5-time-of-day-greeting">5. Time of Day Greeting</a></li></ul>
+              <ul class="toc__menu"><li><a href="#-">💭 ..</a></li><li><a href="#1-the-boilerplate-code">1. The boilerplate code</a></li><li><a href="#2-현재-날짜와-시간-정보-가져오기">2. 현재 날짜와 시간 정보 가져오기</a></li><li><a href="#3-dateformatter-사용">3. DateFormatter 사용</a></li><li><a href="#dateformatter">DateFormatter</a></li><li><a href="#4-live-time">4. Live Time</a></li><li><a href="#5-time-of-day-greeting">5. Time of Day Greeting</a></li></ul>
 
             </nav>
           </aside>
@@ -332,9 +332,10 @@
 <span class="p">}</span>
 </code></pre></div></div>
 
-<h3 id="여기까지-수정">여기까지 수정</h3>
+<h3 id="dateformatter">DateFormatter</h3>
 
-<p>timeFormat는 DateFormatter 객체이다. timeFormat는 DateFormatter의 메서드를 호출할 수 있다.<br />
+<p>DateFormatter는 날짜 데이터를 문자열 형식으로 보여지게 하는 Class입니다.<br />
+timeFormat는 DateFormatter 객체이다. timeFormat는 DateFormatter의 메서드를 호출할 수 있다.<br />
 dateFormat은 DateFormatter객체의 property이다. 주어진 날짜/시간 데이터에서 우리가 원하는 것만 보여줄 수 있도록 해준다.</p>
 <ul>
   <li>소문자 “hh” = 12시간 표기법</li>
@@ -439,8 +440,8 @@ self.updateTimer function은 저장할 필요가 없는 값을 반환하기 때�
 
 <p>… 디지털시계 만들기는 계속 됩니다.</p>
 
-<center><video src="https://user-images.githubusercontent.com/85061148/158997210-efaac4ad-797a-4da4-9039-5e5a123a39e9.mov" width="600"></video></center>
-
+<center><video src="https://user-images.githubusercontent.com/85061148/158997210-efaac4ad-797a-4da4-9039-5e5a123a39e9.mov" controls="controls" style="max-width: 600px">
+</video></center>
 <!--
 ### 8. 이제부터는 화면을 꾸며보자.  
 
@@ -500,7 +501,7 @@ self.updateTimer function은 저장할 필요가 없는 값을 반환하기 때�
       
   <nav class="pagination">
     
-      <a href="/til/basicSwift/" class="pagination--pager" title="Swift
+      <a href="/til/basicSwift/" class="pagination--pager" title="Swift를 배워보자!
 ">Previous</a>
     
     
@@ -645,7 +646,7 @@ Creating and Combining Views
     
     <h2 class="archive__item-title no_toc" itemprop="headline">
       
-        <a href="/til/basicSwift/" rel="permalink">Swift
+        <a href="/til/basicSwift/" rel="permalink">Swift를 배워보자!
 </a>
       
     </h2>

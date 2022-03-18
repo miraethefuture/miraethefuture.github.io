@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="4.2.1">Jekyll</generator><link href="http://localhost:4000/feed.xml" rel="self" type="application/atom+xml" /><link href="http://localhost:4000/" rel="alternate" type="text/html" /><updated>2022-03-18T20:46:45+09:00</updated><id>http://localhost:4000/feed.xml</id><title type="html">Mirae the Future</title><subtitle>An amazing website.</subtitle><author><name>Mirae</name></author><entry><title type="html">웹 페이지를 만들며 HTML과 CSS에 대해 알아보기</title><link href="http://localhost:4000/til/octopusProject/" rel="alternate" type="text/html" title="웹 페이지를 만들며 HTML과 CSS에 대해 알아보기" /><published>2022-03-16T00:00:00+09:00</published><updated>2022-03-16T00:00:00+09:00</updated><id>http://localhost:4000/til/octopusProject</id><content type="html" xml:base="http://localhost:4000/til/octopusProject/">&lt;div class=&quot;notice&quot;&gt;
+<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="4.2.1">Jekyll</generator><link href="http://localhost:4000/feed.xml" rel="self" type="application/atom+xml" /><link href="http://localhost:4000/" rel="alternate" type="text/html" /><updated>2022-03-18T21:30:52+09:00</updated><id>http://localhost:4000/feed.xml</id><title type="html">Mirae the Future</title><subtitle>An amazing website.</subtitle><author><name>Mirae</name></author><entry><title type="html">웹 페이지를 만들며 HTML과 CSS에 대해 알아보기</title><link href="http://localhost:4000/til/octopusProject/" rel="alternate" type="text/html" title="웹 페이지를 만들며 HTML과 CSS에 대해 알아보기" /><published>2022-03-16T00:00:00+09:00</published><updated>2022-03-16T00:00:00+09:00</updated><id>http://localhost:4000/til/octopusProject</id><content type="html" xml:base="http://localhost:4000/til/octopusProject/">&lt;div class=&quot;notice&quot;&gt;
   &lt;h4&gt;Octopus Project&lt;/h4&gt;
   &lt;p&gt;팀 프로젝트가 끝나고 바로 개인 프로젝트가 하나 있습니다.
   7일정도 HTML과 CSS를 배우는데, 배운 것으로 웹 페이지를 만드는 것입니다.
@@ -282,9 +282,10 @@ var body: some View {
 &lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
 &lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
 
-&lt;h3 id=&quot;여기까지-수정&quot;&gt;여기까지 수정&lt;/h3&gt;
+&lt;h3 id=&quot;dateformatter&quot;&gt;DateFormatter&lt;/h3&gt;
 
-&lt;p&gt;timeFormat는 DateFormatter 객체이다. timeFormat는 DateFormatter의 메서드를 호출할 수 있다.&lt;br /&gt;
+&lt;p&gt;DateFormatter는 날짜 데이터를 문자열 형식으로 보여지게 하는 Class입니다.&lt;br /&gt;
+timeFormat는 DateFormatter 객체이다. timeFormat는 DateFormatter의 메서드를 호출할 수 있다.&lt;br /&gt;
 dateFormat은 DateFormatter객체의 property이다. 주어진 날짜/시간 데이터에서 우리가 원하는 것만 보여줄 수 있도록 해준다.&lt;/p&gt;
 &lt;ul&gt;
   &lt;li&gt;소문자 “hh” = 12시간 표기법&lt;/li&gt;
@@ -389,70 +390,65 @@ self.updateTimer function은 저장할 필요가 없는 값을 반환하기 때�
 
 &lt;p&gt;… 디지털시계 만들기는 계속 됩니다.&lt;/p&gt;
 
-&lt;center&gt;&lt;video src=&quot;https://user-images.githubusercontent.com/85061148/158997210-efaac4ad-797a-4da4-9039-5e5a123a39e9.mov&quot; width=&quot;600&quot;&gt;&lt;/video&gt;&lt;/center&gt;
-
+&lt;center&gt;&lt;video src=&quot;https://user-images.githubusercontent.com/85061148/158997210-efaac4ad-797a-4da4-9039-5e5a123a39e9.mov&quot; controls=&quot;controls&quot; style=&quot;max-width: 600px&quot;&gt;
+&lt;/video&gt;&lt;/center&gt;
 &lt;!--
 ### 8. 이제부터는 화면을 꾸며보자.  
 
 시계의 배경 부분을 사진을 넣어 사용할 수 있었으면 좋겠다는 생각이 들었다.  
-검색 중 Unsplash API를 발견했고 적용해보고자 한다. --&gt;</content><author><name>Mirae</name></author><category term="TIL" /><category term="learning" /><category term="공부 기록" /><category term="Swift" /><summary type="html">💭 .. Swift는 어떤 언어일까? 디지털시계 앱을 만들며 Swift의 기초적인 것들을 알아봅니다.</summary></entry><entry><title type="html">Swift</title><link href="http://localhost:4000/til/basicSwift/" rel="alternate" type="text/html" title="Swift" /><published>2022-03-07T00:00:00+09:00</published><updated>2022-03-07T00:00:00+09:00</updated><id>http://localhost:4000/til/basicSwift</id><content type="html" xml:base="http://localhost:4000/til/basicSwift/">&lt;h3 id=&quot;-&quot;&gt;💭 ..&lt;/h3&gt;
+검색 중 Unsplash API를 발견했고 적용해보고자 한다. --&gt;</content><author><name>Mirae</name></author><category term="TIL" /><category term="learning" /><category term="공부 기록" /><category term="Swift" /><summary type="html">💭 .. Swift는 어떤 언어일까? 디지털시계 앱을 만들며 Swift의 기초적인 것들을 알아봅니다.</summary></entry><entry><title type="html">Swift를 배워보자!</title><link href="http://localhost:4000/til/basicSwift/" rel="alternate" type="text/html" title="Swift를 배워보자!" /><published>2022-03-07T00:00:00+09:00</published><updated>2022-03-07T00:00:00+09:00</updated><id>http://localhost:4000/til/basicSwift</id><content type="html" xml:base="http://localhost:4000/til/basicSwift/">&lt;h3 id=&quot;-&quot;&gt;💭 ..&lt;/h3&gt;
 &lt;div class=&quot;notice&quot;&gt;
   &lt;h4&gt;Swift를 배워보자.&lt;/h4&gt;
   &lt;p&gt;유투브 튜토리얼, 애플 개발자 페이지의 튜토리얼, 구글링을 통해 Swift를 공부해보려고 합니다.&lt;br /&gt;    
   그 과정에서 기록이 필요한 것들을 정리해봅니다.&lt;/p&gt;
 &lt;/div&gt;
 
-&lt;h3 id=&quot;1-&quot;&gt;1. 📖&lt;/h3&gt;
+&lt;h3 id=&quot;1-hello-world&quot;&gt;1. Hello, world!&lt;/h3&gt;
 &lt;p&gt;&lt;a href=&quot;https://docs.swift.org/swift-book/GuidedTour/GuidedTour.html&quot;&gt;A Swift Tour&lt;/a&gt; 공식 가이드를 읽으며 공부합니다.&lt;/p&gt;
 
-&lt;p&gt;새로운 프로그래밍 언어를 배울 때, 흔히 첫번째 프로그램으로 “Hello, world!”를 출력하는 프로그램을 만들곤 하죠. Swift에서는 단 한줄로 이 프로그램을 작성할 수 있습니다.&lt;/p&gt;
-
-&lt;div class=&quot;language-swift highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;
-&lt;span class=&quot;nf&quot;&gt;print&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;Hello, world!&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
-
+&lt;div class=&quot;language-swift highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;nf&quot;&gt;print&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;Hello, world!&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
 &lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
 
-&lt;p&gt;C 나 Objective-C로 코드를 작성해본 경험이 있다면 이 syntax가 낯설지 않을 것입니다. 스위프트에서 이 한줄의 코드는 완벽하게 한 프로그램입니다. input/output 또는 문자열을 다루기 위해 따로 라이브러리를 추가하지 않아도 됩니다. 전역 범위로 작성된 코드는 프로그램의 시작점으로 사용되므로 main() function 또한 필요하지 않습니다. 각각의 statement의 끝에 세미콜론(;)을 작성하지도 않습니다.&lt;/p&gt;
+&lt;p&gt;스위프트에서 이 한줄의 코드는 완벽하게 한 프로그램입니다. input/output 또는 문자열을 다루기 위해 따로 라이브러리를 추가하지 않아도 됩니다. main() function 또한 필요하지 않습니다. 또한 Swift는 각각의 statement의 끝에 세미콜론(;)을 작성하지 않습니다.&lt;/p&gt;
 
 &lt;h3 id=&quot;2-간단한-값들simple-values&quot;&gt;2. 간단한 값들(Simple Values)&lt;/h3&gt;
 
-&lt;p&gt;상수는 let, 변수는 var를 사용해서 만듭니다. var(변수)에는 다른 값을 다시 할당할 수 있고, let(상수)는 한번 값이 정해지면 바뀌지 않습니다.&lt;/p&gt;
+&lt;p&gt;상수는 let, 변수는 var를 사용해서 만듭니다. var(변수)에는 다른 값을 다시 할당할 수 있고, let(상수)는 한번 값이 정해지면 다른 값을 할당할 수 없습니다.&lt;/p&gt;
 
-&lt;div class=&quot;language-swift highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;
-&lt;span class=&quot;k&quot;&gt;var&lt;/span&gt; &lt;span class=&quot;nv&quot;&gt;myVariable&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;42&lt;/span&gt;
+&lt;div class=&quot;language-swift highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;k&quot;&gt;var&lt;/span&gt; &lt;span class=&quot;nv&quot;&gt;myVariable&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;42&lt;/span&gt;
 &lt;span class=&quot;n&quot;&gt;myVariable&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;50&lt;/span&gt;
 &lt;span class=&quot;k&quot;&gt;let&lt;/span&gt; &lt;span class=&quot;nv&quot;&gt;myConstant&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;42&lt;/span&gt;
-
 &lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
 &lt;p&gt;var, let의 이름 뒤에 : 을 이용해서 데이터 타입을 지정할 수 있습니다. 컴파일러가 할당된 값이 어떤 데이터 자료형을 가지고 있는지 추측할 수 있는 경우에는 자료형을 명시하지 않아도 됩니다.&lt;/p&gt;
 
-&lt;div class=&quot;language-swift highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;
-&lt;span class=&quot;k&quot;&gt;let&lt;/span&gt; &lt;span class=&quot;nv&quot;&gt;implicitInteger&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;70&lt;/span&gt;
+&lt;div class=&quot;language-swift highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;k&quot;&gt;let&lt;/span&gt; &lt;span class=&quot;nv&quot;&gt;implicitInteger&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;70&lt;/span&gt;
 &lt;span class=&quot;k&quot;&gt;let&lt;/span&gt; &lt;span class=&quot;nv&quot;&gt;implicitDouble&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;mf&quot;&gt;70.0&lt;/span&gt;
 &lt;span class=&quot;k&quot;&gt;let&lt;/span&gt; &lt;span class=&quot;nv&quot;&gt;explicitDouble&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;kt&quot;&gt;Double&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;70&lt;/span&gt;
-
 &lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
 
-&lt;h3 id=&quot;view에-대해-조사해보자&quot;&gt;View에 대해 조사해보자.&lt;/h3&gt;
-&lt;p&gt;애플 공식 문서 중 &lt;a href=&quot;https://developer.apple.com/documentation/swiftui/declaring-a-custom-view&quot;&gt;Declaring a Custom View&lt;/a&gt; 를 보며 알아봅니다.&lt;/p&gt;
+&lt;h3 id=&quot;3-view에-대해-조사해보자&quot;&gt;3. View에 대해 조사해보자.&lt;/h3&gt;
+&lt;p&gt;애플 공식 문서 중 &lt;a href=&quot;https://developer.apple.com/documentation/swiftui/declaring-a-custom-view&quot;&gt;Declaring a Custom View&lt;/a&gt;를 보며 View에 대해 알아봅니다.&lt;/p&gt;
 
-&lt;p&gt;컴퓨터 프로그래밍 분야에서 ‘Declare’는 어떤 의미로 사용될까요?
-a declaration은 변수와 같은 요소들의 이름과 데이터 타입을 결정하여 컴파일러에게 알려주는 것을 의미합니다. Declaring a Custom View는 Custom View의 이름을 정의하고 데이터 타입을 정하는 것이겠네요. Definition은 변수나 요소가 어디에 저장될지를 정하는 것입니다. (그 어디는 메모리일 가능성이 높겠죠?)&lt;/p&gt;
+&lt;div class=&quot;notice&quot;&gt;
+  &lt;h4&gt;컴퓨터 프로그래밍 분야에서 &apos;Declare&apos;는 어떤 의미로 사용될까요?&lt;/h4&gt;
+  &lt;p&gt;a declaration은 변수와 같은 요소들의 이름과 데이터 타입을 결정하여 컴파일러에게 알려주는 것을 의미합니다.&lt;/p&gt;
+&lt;/div&gt;
 
-&lt;p&gt;views를 선언(declaring)하는 방법으로 간단하게 user interface를 묘사할 수 있습니다.&lt;br /&gt;
-a hirarchy에 Text, Image, Button과 같은 뷰들을 선언하므로서 간단하게 user interface를 묘사할 수 있습니다. hirarchy는 계층인데요. VStack 아래에 views들이 있고 view들에는 적용된 modifier들이 있죠 그것들을 하나의 hirarchy라고 하는 것 같습니다. &lt;s&gt;(추론을 통한 뇌피셜;)&lt;/s&gt;
+&lt;p&gt;&lt;strong&gt;Declaring a Custom View&lt;/strong&gt;&lt;br /&gt;
+Custom View의 이름과 데이터 타입을 정하고 컴파일러에게 알려주기.&lt;br /&gt;
+view를 선언(declaring)하는 방법으로 간단하게 user interface를 묘사할 수 있습니다.&lt;br /&gt;
+a hierarchy에 Text, Image, Button과 같은 뷰들을 선언하므로서 간단하게 user interface를 묘사할 수 있습니다. hierarchy는 계층인데요. VStack 아래에 views들이 있고 view들에는 적용된 modifier들이 있죠 그것들을 하나의 hierarchy라고 하는 것 같습니다.
 이제 SwiftUI가 사용자로부터 받은 input이나 데이터의 변화등에 응답할 view들을 화면에 그리고 업데이트합니다.&lt;/p&gt;
 
 &lt;p&gt;SwiftUI가 제공하는 built-in view와 다른 view들을 함께 혼합해서 사용할 수 있습니다. modifier를 이용해서 뷰를 배치하고 data 모델에 연결할 수 있습니다. 그리고 custom view들을 화면에 보여지는 앱 뷰에 놓으면 됩니다.&lt;/p&gt;
 
 &lt;div class=&quot;language-swift highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;kd&quot;&gt;struct&lt;/span&gt; &lt;span class=&quot;kt&quot;&gt;MyView&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;kt&quot;&gt;View&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt; &lt;span class=&quot;c1&quot;&gt;// &amp;lt;- View Protocol 입니다.&lt;/span&gt;
-
 &lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
 &lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
 &lt;p&gt;View Protocol을 따르는 structure를 정의 했습니다.&lt;br /&gt;
 View protocol은 기능의 청사진을 제공합니다. 이 경우에는 SwiftUI가 화면에 그릴 각 요소들의 작동하는 방식을 제공합니다.&lt;/p&gt;
 
-&lt;p&gt;custom view를 view hirarchy에 포함되게 하려면 View protocol이 요구하는 몇가지 사항들을 충족시켜야 합니다.&lt;/p&gt;
+&lt;p&gt;custom view를 view hierarchy에 포함되게 하려면 View protocol이 요구하는 몇가지 사항들을 충족시켜야 합니다.&lt;/p&gt;
 
 &lt;p&gt;View protocol의 주요구사항은 body computed property를 꼭 정의해주어야 한다는 것입니다.&lt;/p&gt;
 

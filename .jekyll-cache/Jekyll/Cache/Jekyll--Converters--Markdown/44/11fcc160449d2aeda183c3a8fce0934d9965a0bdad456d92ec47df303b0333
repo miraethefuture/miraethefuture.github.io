@@ -1,4 +1,4 @@
-I"�]<h3 id="-">💭 ..</h3>
+I"^<h3 id="-">💭 ..</h3>
 <div class="notice">
   <h4>Swift는 어떤 언어일까?</h4>
   <p>디지털시계 앱을 만들며 Swift의 기초적인 것들을 알아봅니다.</p>
@@ -89,7 +89,7 @@
 <span class="p">}</span>
 </code></pre></div></div>
 
-<h3 id="여기까지-수정">여기까지 수정</h3>
+<h3 id="dateformatter">DateFormatter</h3>
 
 <p>timeFormat는 DateFormatter 객체이다. timeFormat는 DateFormatter의 메서드를 호출할 수 있다.<br />
 dateFormat은 DateFormatter객체의 property이다. 주어진 날짜/시간 데이터에서 우리가 원하는 것만 보여줄 수 있도록 해준다.</p>
@@ -196,8 +196,8 @@ self.updateTimer function은 저장할 필요가 없는 값을 반환하기 때�
 
 <p>… 디지털시계 만들기는 계속 됩니다.</p>
 
-<video>https://user-images.githubusercontent.com/85061148/158997210-efaac4ad-797a-4da4-9039-5e5a123a39e9.mov</video>
-
+<center><video src="https://user-images.githubusercontent.com/85061148/158997210-efaac4ad-797a-4da4-9039-5e5a123a39e9.mov" controls="controls" style="max-width: 600px">
+</video></center>
 <!--
 ### 8. 이제부터는 화면을 꾸며보자.  
 
