@@ -10,7 +10,7 @@
     <meta charset="utf-8">
 
 <!-- begin _includes/seo.html --><title>SwiftUI Tutorial: 여러 개의 View를 만들고 결합하기 | Mirae the Future</title>
-<meta name="description" content="출처: SwiftUI Essentials: Creating and Combining Views">
+<meta name="description" content="SwiftUI Tutorial을 따라가며 아래 Landmark앱을 만들어 보겠습니다. 튜토리얼의 출처는 SwiftUI Essentials: Creating and Combining Views 입니다.">
 
 
   <meta name="author" content="Mirae">
@@ -26,7 +26,7 @@
 <meta property="og:url" content="http://localhost:4000/til/landmarks/">
 
 
-  <meta property="og:description" content="출처: SwiftUI Essentials: Creating and Combining Views">
+  <meta property="og:description" content="SwiftUI Tutorial을 따라가며 아래 Landmark앱을 만들어 보겠습니다. 튜토리얼의 출처는 SwiftUI Essentials: Creating and Combining Views 입니다.">
 
 
 
@@ -197,7 +197,7 @@
 
   <article class="page h-entry" itemscope itemtype="https://schema.org/CreativeWork">
     <meta itemprop="headline" content="SwiftUI Tutorial: 여러 개의 View를 만들고 결합하기">
-    <meta itemprop="description" content="출처: SwiftUI Essentials:Creating and Combining Views">
+    <meta itemprop="description" content="SwiftUI Tutorial을 따라가며 아래 Landmark앱을 만들어 보겠습니다. 튜토리얼의 출처는 SwiftUI Essentials:Creating and Combining Views 입니다.">
     <meta itemprop="datePublished" content="2022-03-14T00:00:00+09:00">
     
 
@@ -233,16 +233,19 @@
         
           <aside class="sidebar__right sticky">
             <nav class="toc">
-              <header><h4 class="nav__title"><i class="fas fa-cog"></i> 👷</h4></header>
-              <ul class="toc__menu"><li><a href="#what-i-learned-from-this-tutorial">What I Learned From This Tutorial:</a></li></ul>
+              <header><h4 class="nav__title"><i class="fas fa-📂"></i> 📂</h4></header>
+              <ul class="toc__menu"><li><a href="#️-what-i-learned-from-this-tutorial">☑️ What I Learned From This Tutorial:</a></li><li><a href="#1-stacks을-이용해-텍스트-배치하기-contentviewswift">1. Stacks을 이용해 텍스트 배치하기: ContentView.swift</a></li><li><a href="#2-지도와-관련된-데이터-불러오기-mapviewswift">2. 지도와 관련된 데이터 불러오기: MapView.swift</a></li><li><a href="#3-동그라미-모양으로-이미지-잘라내기-circleimageswift">3. 동그라미 모양으로 이미지 잘라내기: CircleImage.swift</a></li><li><a href="#4-views를-결합하기">4. Views를 결합하기</a></li></ul>
 
             </nav>
           </aside>
         
-        <p><a href="https://developer.apple.com/tutorials/swiftui/creating-and-combining-views">출처: SwiftUI Essentials:
-Creating and Combining Views</a></p>
+        <p>SwiftUI Tutorial을 따라가며 아래 Landmark앱을 만들어 보겠습니다. 튜토리얼의 출처는 <a href="https://developer.apple.com/tutorials/swiftui/creating-and-combining-views">SwiftUI Essentials:
+Creating and Combining Views</a> 입니다.</p>
 
-<h2 id="what-i-learned-from-this-tutorial"><strong>What I Learned From This Tutorial:</strong></h2>
+<center><video src="https://user-images.githubusercontent.com/85061148/159120793-a9d5166b-fad5-41f0-899a-fcfe0bee25da.mov" controls="controls" style="max-width: 300px">
+</video></center>
+
+<h2 id="️-what-i-learned-from-this-tutorial"><strong>☑️ What I Learned From This Tutorial:</strong></h2>
 
 <ul>
   <li>SwiftUI 프레임워크와 다른 프레임워크를 함께 사용하는 방식</li>
@@ -260,6 +263,8 @@ Creating and Combining Views</a></p>
 <center><img src="/assets/images/directoryTree.png" alt="tree" width="300" />
 </center>
 <p><br /></p>
+
+<h2 id="1-stacks을-이용해-텍스트-배치하기-contentviewswift">1. Stacks을 이용해 텍스트 배치하기: ContentView.swift</h2>
 
 <div class="language-swift highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1">// ContentView.swift</span>
 <span class="c1">// Landmarks</span>
@@ -305,7 +310,13 @@ Creating and Combining Views</a></p>
 <span class="p">}</span>
 </code></pre></div></div>
 
-<p>ContentView의 body부분에는 뒤에서 MapView()와 CircleImage()가 추가됩니다.</p>
+<p>이 부분에서는 Stack과 Spacer()를 이용해서 Text view를 배치하는 것에 대해 알아보았습니다. <code>.foregroundColor(.secondary)</code>는 옅은 회색을 화면에 보여줍니다. alignment가 기본적으로는 가운데로 지정되어 있고 왼쪽 정렬을 하려면 <code>(alignment: .leading)</code>을 사용하면 됩니다.<br />
+  아래는 위 코드가 화면에 그려진 결과입니다. Divider()를 이용해 콘텐츠를 나누는 줄을 그릴 수 있습니다.</p>
+
+<center><img src="/assets/images/gbg_text.png" alt="gbg" width="300" />
+</center>
+
+<h2 id="2-지도와-관련된-데이터-불러오기-mapviewswift">2. 지도와 관련된 데이터 불러오기: MapView.swift</h2>
 
 <div class="language-swift highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1">// MapView.swift</span>
 <span class="c1">// Landmarks</span>
@@ -346,11 +357,101 @@ span: 은 지도가 보여질 크기를 나타내는 horizontal span과 vertical
 
 <p>MKCoordinateSpan은 지도로 표현된 지역의 가로와 세로 크기를 표현하는 Structure입니다. delta values를 이용해서 원하는 줌 레벨을 설정할 수 있습니다. delta value이 커지면 줌 레벨은 작아집니다. delta value가 작아지면 줌 레벨을 커지면서 더 가까이 지도를 볼 수 있습니다.</p>
 
-<p>body property의 Map()은 Generic Structure로 사용할 지도 인터페이스를 보여주는 역할을 합니다. 위 코드에는 표현되지 않았지만 사용자의 위치를 보여주거나 이동경로를 추적하는 등의 기능을 합니다.<br />
+<p>body property의 Map()은 Generic Structure로, 사용할 지도 인터페이스를 보여주는 역할을 합니다. 위 코드에는 표현되지 않았지만 사용자의 위치를 보여주거나 이동경로를 추적하는 등의 기능을 합니다.<br />
+아래는 위 코드가 화면에 그려진 결과입니다. 더블 클릭을 하여 화면을 확대하거나, 양쪽으로 끌어 움직일 수 있습니다.
 <br /></p>
 
 <center><video src="https://user-images.githubusercontent.com/85061148/158296265-93e3410e-c9f0-46e2-9e10-b237f9ea7320.mov" controls="controls" style="max-width: 300px">
 </video></center>
+
+<h2 id="3-동그라미-모양으로-이미지-잘라내기-circleimageswift">3. 동그라미 모양으로 이미지 잘라내기: CircleImage.swift</h2>
+
+<div class="language-swift highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1">//  CircleImage.swift</span>
+<span class="c1">//  Landmarks</span>
+
+<span class="kd">import</span> <span class="kt">SwiftUI</span>
+
+<span class="kd">struct</span> <span class="kt">CircleImage</span><span class="p">:</span> <span class="kt">View</span> <span class="p">{</span>
+    <span class="k">var</span> <span class="nv">body</span><span class="p">:</span> <span class="kd">some</span> <span class="kt">View</span> <span class="p">{</span>
+        <span class="kt">Image</span><span class="p">(</span><span class="s">"kbpalace"</span><span class="p">)</span>
+            <span class="o">.</span><span class="nf">clipShape</span><span class="p">(</span><span class="kt">Circle</span><span class="p">())</span>
+            <span class="o">.</span><span class="n">overlay</span> <span class="p">{</span>
+                <span class="kt">Circle</span><span class="p">()</span><span class="o">.</span><span class="nf">stroke</span><span class="p">(</span><span class="o">.</span><span class="n">white</span><span class="p">,</span> <span class="nv">lineWidth</span><span class="p">:</span> <span class="mi">4</span><span class="p">)</span>
+            <span class="p">}</span> <span class="c1">//overlay {}</span>
+            <span class="o">.</span><span class="nf">shadow</span><span class="p">(</span><span class="nv">radius</span><span class="p">:</span> <span class="mi">7</span><span class="p">)</span>
+    <span class="p">}</span>
+<span class="p">}</span>
+
+<span class="kd">struct</span> <span class="kt">CircleImage_Previews</span><span class="p">:</span> <span class="kt">PreviewProvider</span> <span class="p">{</span>
+    <span class="kd">static</span> <span class="k">var</span> <span class="nv">previews</span><span class="p">:</span> <span class="kd">some</span> <span class="kt">View</span> <span class="p">{</span>
+        <span class="kt">CircleImage</span><span class="p">()</span>
+    <span class="p">}</span>
+<span class="p">}</span>
+</code></pre></div></div>
+<p>이 부분에서는 <code>.clipShape(Circle())</code> 메서드를 사용하여 이미지를 동그랗게 잘라냅니다. .overlay 부분에서는 테두리가 될 부분을 만들어 줍니다. overlay 메서드는 레이어를 만들어 줍니다. 우리가 앞에서 만들었던 동그라미 모양의 사진 위에 레이어가 한층 생기는 거죠. Circle().stroke(.white, lineWidth: 4)는 동그라미 모양의 테두리를 그려줍니다. .shadow는 그림자를 그려줍니다.</p>
+
+<center><img src="/assets/images/gbg_image.png" alt="CircleImage" width="300" /></center>
+
+<h2 id="4-views를-결합하기">4. Views를 결합하기</h2>
+
+<div class="language-swift highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1">//  ContentView.swift</span>
+<span class="c1">//  Landmarks</span>
+
+<span class="kd">import</span> <span class="kt">SwiftUI</span>
+
+<span class="kd">struct</span> <span class="kt">ContentView</span><span class="p">:</span> <span class="kt">View</span> <span class="p">{</span>
+    <span class="k">var</span> <span class="nv">body</span><span class="p">:</span> <span class="kd">some</span> <span class="kt">View</span> <span class="p">{</span>
+        <span class="kt">VStack</span> <span class="p">{</span>
+            <span class="kt">MapView</span><span class="p">()</span>
+                <span class="o">.</span><span class="nf">ignoresSafeArea</span><span class="p">(</span><span class="nv">edges</span><span class="p">:</span> <span class="o">.</span><span class="n">top</span><span class="p">)</span>
+                <span class="o">.</span><span class="nf">frame</span><span class="p">(</span><span class="nv">height</span><span class="p">:</span> <span class="mi">300</span><span class="p">)</span>
+
+            <span class="kt">CircleImage</span><span class="p">()</span>
+                <span class="o">.</span><span class="nf">offset</span><span class="p">(</span><span class="nv">y</span><span class="p">:</span> <span class="o">-</span><span class="mi">130</span><span class="p">)</span>
+                <span class="o">.</span><span class="nf">padding</span><span class="p">(</span><span class="o">.</span><span class="n">bottom</span><span class="p">,</span> <span class="o">-</span><span class="mi">130</span><span class="p">)</span>
+
+            <span class="kt">VStack</span><span class="p">(</span><span class="nv">alignment</span><span class="p">:</span> <span class="o">.</span><span class="n">leading</span><span class="p">)</span> <span class="p">{</span>
+                <span class="kt">Text</span><span class="p">(</span><span class="s">"경복궁"</span><span class="p">)</span>
+                    <span class="o">.</span><span class="nf">font</span><span class="p">(</span><span class="o">.</span><span class="n">title</span><span class="p">)</span>
+                <span class="o">.</span><span class="nf">foregroundColor</span><span class="p">(</span><span class="o">.</span><span class="n">black</span><span class="p">)</span>
+                <span class="kt">HStack</span> <span class="p">{</span>
+                    <span class="kt">Text</span><span class="p">(</span><span class="s">"Gyeongbokgung Palace"</span><span class="p">)</span>
+                        <span class="o">.</span><span class="nf">font</span><span class="p">(</span><span class="o">.</span><span class="n">subheadline</span><span class="p">)</span>
+                    <span class="kt">Spacer</span><span class="p">()</span>
+                    <span class="kt">Text</span><span class="p">(</span><span class="s">"Korea"</span><span class="p">)</span>
+                        <span class="o">.</span><span class="nf">font</span><span class="p">(</span><span class="o">.</span><span class="n">subheadline</span><span class="p">)</span>
+                <span class="p">}</span> <span class="c1">// HStack</span>
+                <span class="o">.</span><span class="nf">font</span><span class="p">(</span><span class="o">.</span><span class="n">subheadline</span><span class="p">)</span>
+                <span class="o">.</span><span class="nf">foregroundColor</span><span class="p">(</span><span class="o">.</span><span class="n">secondary</span><span class="p">)</span>
+
+                <span class="kt">Divider</span><span class="p">()</span>
+                <span class="kt">Spacer</span><span class="p">()</span>
+                <span class="kt">Text</span><span class="p">(</span><span class="s">"About Gyeongbokgung"</span><span class="p">)</span>
+                    <span class="o">.</span><span class="nf">font</span><span class="p">(</span><span class="o">.</span><span class="n">title2</span><span class="p">)</span>
+<span class="c1">//                Spacer()</span>
+                <span class="kt">Text</span><span class="p">(</span><span class="s">"Gyeongbokgung, also known as Gyeongbokgung Palace or Gyeongbok Palace, was the main royal palace of the Joseon dynasty. Built in 1395, it is located in northern Seoul, South Korea."</span><span class="p">)</span>
+                    <span class="o">.</span><span class="nf">font</span><span class="p">(</span><span class="o">.</span><span class="n">body</span><span class="p">)</span>
+                <span class="kt">Spacer</span><span class="p">()</span>
+
+
+            <span class="p">}</span> <span class="c1">// VStack</span>
+            <span class="o">.</span><span class="nf">padding</span><span class="p">()</span>
+
+            <span class="kt">Spacer</span><span class="p">()</span>
+        <span class="p">}</span> <span class="c1">// 가장 바깥쪽 VStack</span>
+
+    <span class="p">}</span>
+<span class="p">}</span>
+
+<span class="kd">struct</span> <span class="kt">ContentView_Previews</span><span class="p">:</span> <span class="kt">PreviewProvider</span> <span class="p">{</span>
+    <span class="kd">static</span> <span class="k">var</span> <span class="nv">previews</span><span class="p">:</span> <span class="kd">some</span> <span class="kt">View</span> <span class="p">{</span>
+        <span class="kt">ContentView</span><span class="p">()</span>
+    <span class="p">}</span>
+<span class="p">}</span>
+
+</code></pre></div></div>
+
+<p>이제 위에서 만든 모든 View 들은 합쳐줍니다. .offset() 메서드의 y 파라미터의 값을 주어 원래의 dimension에서 콘텐츠를 조금 올려줍니다. .offset() 메서드가 없다면 VStack 안에서 겹치지 않고 나열되어 있을 것입니다.</p>
 
 <!-- ```swift
 var body: some View {
@@ -418,7 +519,7 @@ var body: some View {
 ">Previous</a>
     
     
-      <a href="/cyclicRotation/" class="pagination--pager" title="Cyclicrotation
+      <a href="/til/octopusProject/" class="pagination--pager" title="웹 페이지를 만들며 HTML과 CSS에 대해 알아보기
 ">Next</a>
     
   </nav>
@@ -474,32 +575,6 @@ var body: some View {
   팀 프로젝트가 끝나고 바로 개인 프로젝트가 하나 있습니다.
   7일정도 HTML과 CSS를 배우는데, 배운 것으로 웹 페이지를 만드는 것입니다.
   자바 스크립트는 할 수도 안할 수도 있다는데 시간이 되면 자바 스크립트도 이용해서 페이지를 만들...</p>
-  </article>
-</div>
-
-        
-          
-
-
-
-<div class="grid__item">
-  <article class="archive__item" itemscope itemtype="https://schema.org/CreativeWork">
-    
-      <div class="archive__item-teaser">
-        <img src="/assets/images/teaser.jpg" alt="">
-      </div>
-    
-    <h2 class="archive__item-title no_toc" itemprop="headline">
-      
-        <a href="/cyclicRotation/" rel="permalink">Cyclicrotation
-</a>
-      
-    </h2>
-    
-
-
-    <p class="archive__item-excerpt" itemprop="description">
-</p>
   </article>
 </div>
 
@@ -589,6 +664,48 @@ var body: some View {
   Swift를 배워보자.
   유투브 튜토리얼, 애플 개발자 페이지의 튜토리얼, 구글링을 통해 Swift를 공부해보려고 합니다.    
   그 과정에서 기록이 필요한 것들을 정리해봅니다.
+
+</p>
+  </article>
+</div>
+
+        
+          
+
+
+
+<div class="grid__item">
+  <article class="archive__item" itemscope itemtype="https://schema.org/CreativeWork">
+    
+      <div class="archive__item-teaser">
+        <img src="/assets/images/teaser.jpg" alt="">
+      </div>
+    
+    <h2 class="archive__item-title no_toc" itemprop="headline">
+      
+        <a href="/til/arrayCo/" rel="permalink">코딜리티의 open reading material을 읽어보며 배열에 대해 알아보자.
+</a>
+      
+    </h2>
+    
+
+  <p class="page__meta">
+    
+      
+      <span class="page__meta-date">
+        <i class="far fa-calendar-alt" aria-hidden="true"></i>
+        
+        <time datetime="2022-03-05T00:00:00+09:00">March 5, 2022</time>
+      </span>
+    
+
+    
+
+    
+  </p>
+
+
+    <p class="archive__item-excerpt" itemprop="description">
 
 </p>
   </article>
