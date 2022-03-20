@@ -1,0 +1,700 @@
+<!doctype html>
+<!--
+  Minimal Mistakes Jekyll Theme 4.24.0 by Michael Rose
+  Copyright 2013-2020 Michael Rose - mademistakes.com | @mmistakes
+  Free for personal and commercial use under the MIT license
+  https://github.com/mmistakes/minimal-mistakes/blob/master/LICENSE
+-->
+<html lang="en" class="no-js">
+  <head>
+    <meta charset="utf-8">
+
+<!-- begin _includes/seo.html --><title>Codility_Developer Training: 배열 챕터의 문제 CyclicRotation | Mirae the Future</title>
+<meta name="description" content="CyclicRotation 문제 읽기">
+
+
+  <meta name="author" content="Mirae">
+  
+  <meta property="article:author" content="Mirae">
+  
+
+
+<meta property="og:type" content="article">
+<meta property="og:locale" content="en_US">
+<meta property="og:site_name" content="Mirae the Future">
+<meta property="og:title" content="Codility_Developer Training: 배열 챕터의 문제 CyclicRotation">
+<meta property="og:url" content="http://localhost:4000/til/cyclicRotation/">
+
+
+  <meta property="og:description" content="CyclicRotation 문제 읽기">
+
+
+
+
+
+
+
+  <meta property="article:published_time" content="2022-03-16T00:00:00+09:00">
+
+
+
+
+
+  
+
+  
+
+
+<link rel="canonical" href="http://localhost:4000/til/cyclicRotation/">
+
+
+
+
+<script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    
+      "@type": "Person",
+      "name": "Mirae the Future",
+      "url": "http://localhost:4000/"
+    
+  }
+</script>
+
+
+
+
+
+
+
+<!-- end _includes/seo.html -->
+
+
+
+  <link href="/feed.xml" type="application/atom+xml" rel="alternate" title="Mirae the Future Feed">
+
+
+<!-- https://t.co/dKP3o1e -->
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<script>
+  document.documentElement.className = document.documentElement.className.replace(/\bno-js\b/g, '') + ' js ';
+</script>
+
+<!-- For all browsers -->
+<link rel="stylesheet" href="/assets/css/main.css">
+<link rel="preload" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@5/css/all.min.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
+<noscript><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@5/css/all.min.css"></noscript>
+
+
+
+    <!-- start custom head snippets -->
+
+<!-- insert favicons. use https://realfavicongenerator.net/ -->
+<link rel="apple-touch-icon" sizes="152x152" href="/assets/images/apple-touch-icon.png">
+<link rel="icon" type="image/png" sizes="32x32" href="/assets/images/favicon-32x32.png">
+<link rel="icon" type="image/png" sizes="16x16" href="/assets/images/favicon-16x16.png">
+<link rel="manifest" href="/assets/images/site.webmanifest">
+<link rel="mask-icon" href="/assets/images/safari-pinned-tab.svg" color="#5bbad5">
+<meta name="msapplication-TileColor" content="#da532c">
+<meta name="theme-color" content="#ffffff">
+
+<!-- end custom head snippets -->
+
+  </head>
+
+  <body class="layout--single">
+    <nav class="skip-links">
+  <ul>
+    <li><a href="#site-nav" class="screen-reader-shortcut">Skip to primary navigation</a></li>
+    <li><a href="#main" class="screen-reader-shortcut">Skip to content</a></li>
+    <li><a href="#footer" class="screen-reader-shortcut">Skip to footer</a></li>
+  </ul>
+</nav>
+
+    <!--[if lt IE 9]>
+<div class="notice--danger align-center" style="margin: 0;">You are using an <strong>outdated</strong> browser. Please <a href="https://browsehappy.com/">upgrade your browser</a> to improve your experience.</div>
+<![endif]-->
+
+    
+
+<div class="masthead">
+  <div class="masthead__inner-wrap">
+    <div class="masthead__menu">
+      <nav id="site-nav" class="greedy-nav">
+        
+        <a class="site-title" href="/">
+          Mirae the Future
+          
+        </a>
+        <ul class="visible-links"><li class="masthead__menu-item">
+              <a href="/categories/">Categories</a>
+            </li><li class="masthead__menu-item">
+              <a href="/tags/">Tags</a>
+            </li></ul>
+        
+        <button class="search__toggle" type="button">
+          <span class="visually-hidden">Toggle search</span>
+          <i class="fas fa-search"></i>
+        </button>
+        
+        <button class="greedy-nav__toggle hidden" type="button">
+          <span class="visually-hidden">Toggle menu</span>
+          <div class="navicon"></div>
+        </button>
+        <ul class="hidden-links hidden"></ul>
+      </nav>
+    </div>
+  </div>
+</div>
+
+
+    <div class="initial-content">
+      
+
+
+  
+    
+
+
+
+<nav class="breadcrumbs">
+  <ol itemscope itemtype="https://schema.org/BreadcrumbList">
+    
+    
+    
+      
+        <li itemprop="itemListElement" itemscope itemtype="https://schema.org/ListItem">
+          <a href="/" itemprop="item"><span itemprop="name">Home</span></a>
+
+          <meta itemprop="position" content="1" />
+        </li>
+        <span class="sep">/</span>
+      
+      
+        
+        <li itemprop="itemListElement" itemscope itemtype="https://schema.org/ListItem">
+          <a href="/categories/#til" itemprop="item"><span itemprop="name">Til</span></a>
+          <meta itemprop="position" content="2" />
+        </li>
+        <span class="sep">/</span>
+      
+    
+      
+      
+        <li class="current">Codility_Developer Training: 배열 챕터의 문제 CyclicRotation</li>
+      
+    
+  </ol>
+</nav>
+
+  
+
+
+<div id="main" role="main">
+  
+
+
+  <article class="page h-entry" itemscope itemtype="https://schema.org/CreativeWork">
+    <meta itemprop="headline" content="Codility_Developer Training: 배열 챕터의 문제 CyclicRotation">
+    <meta itemprop="description" content="CyclicRotation 문제 읽기">
+    <meta itemprop="datePublished" content="2022-03-16T00:00:00+09:00">
+    
+
+    <div class="page__inner-wrap">
+      
+        <header>
+          <h1 id="page-title" class="page__title p-name" itemprop="headline">
+            <a href="http://localhost:4000/til/cyclicRotation/" class="u-url" itemprop="url">Codility_Developer Training: 배열 챕터의 문제 CyclicRotation
+</a>
+          </h1>
+          
+
+  <p class="page__meta">
+    
+      
+      <span class="page__meta-date">
+        <i class="far fa-calendar-alt" aria-hidden="true"></i>
+        
+        <time datetime="2022-03-16T00:00:00+09:00">March 16, 2022</time>
+      </span>
+    
+
+    
+
+    
+  </p>
+
+
+        </header>
+      
+
+      <section class="page__content e-content" itemprop="text">
+        
+          <aside class="sidebar__right sticky">
+            <nav class="toc">
+              <header><h4 class="nav__title"><i class="fas fa-cog"></i> 👷</h4></header>
+              <ul class="toc__menu"><li><a href="#1-문제를-파악해보자">1. 문제를 파악해보자</a></li><li><a href="#2-로직을-생각해보자">2. 로직을 생각해보자</a></li><li><a href="#3-이클립스에서-작성한-문제-해결-코드">3. 이클립스에서 작성한 문제 해결 코드</a></li><li><a href="#4-코딜리티에-제출한-문제-해결-코드">4. 코딜리티에 제출한 문제 해결 코드</a></li><li><a href="#추가해야-할-글">추가해야 할 글</a></li></ul>
+
+            </nav>
+          </aside>
+        
+        <p><a href="https://app.codility.com/programmers/lessons/2-arrays/cyclic_rotation/">CyclicRotation 문제 읽기</a></p>
+
+<h3 id="1-문제를-파악해보자">1. 문제를 파악해보자</h3>
+
+<p>N개의 정수로 이루어진 배열이 주어집니다. 배열의 Rotation이란 각각의 element를 오른쪽 인덱스로 옮긴다는 뜻입니다. 맨 마지막 인덱스에 있던 요소는 첫 인덱스로 이동합니다.</p>
+
+<div class="language-swift highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1">//the rotation of array A</span>
+<span class="kt">A</span> <span class="o">=</span> <span class="p">[</span><span class="mi">3</span><span class="p">,</span> <span class="mi">8</span><span class="p">,</span> <span class="mi">9</span><span class="p">,</span> <span class="mi">7</span><span class="p">,</span> <span class="mi">6</span><span class="p">]</span>
+<span class="c1">// is</span>
+<span class="kt">A</span> <span class="o">=</span> <span class="p">[</span><span class="mi">6</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">8</span><span class="p">,</span> <span class="mi">9</span><span class="p">,</span> <span class="mi">7</span><span class="p">]</span>
+</code></pre></div></div>
+<p>위의 예제는 배열 A를 한번 rotate한 결과입니다.</p>
+
+<p>목표는 배열 A를 K번 오른쪽 인덱스로 한칸씩 이동시키는 것입니다.</p>
+
+<div class="language-swift highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="p">[</span><span class="mi">3</span><span class="p">,</span> <span class="mi">8</span><span class="p">,</span> <span class="mi">9</span><span class="p">,</span> <span class="mi">7</span><span class="p">,</span> <span class="mi">6</span><span class="p">]</span> <span class="o">-&gt;</span> <span class="p">[</span><span class="mi">6</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">8</span><span class="p">,</span> <span class="mi">9</span><span class="p">,</span> <span class="mi">7</span><span class="p">]</span>
+<span class="p">[</span><span class="mi">6</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">8</span><span class="p">,</span> <span class="mi">9</span><span class="p">,</span> <span class="mi">7</span><span class="p">]</span> <span class="o">-&gt;</span> <span class="p">[</span><span class="mi">7</span><span class="p">,</span> <span class="mi">6</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">8</span><span class="p">,</span> <span class="mi">9</span><span class="p">]</span>
+<span class="p">[</span><span class="mi">7</span><span class="p">,</span> <span class="mi">6</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">8</span><span class="p">,</span> <span class="mi">9</span><span class="p">]</span> <span class="o">-&gt;</span> <span class="p">[</span><span class="mi">9</span><span class="p">,</span> <span class="mi">7</span><span class="p">,</span> <span class="mi">6</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">8</span><span class="p">]</span>
+</code></pre></div></div>
+<p>위의 예제는 3번 rotate한 결과입니다.</p>
+
+<h3 id="2-로직을-생각해보자">2. 로직을 생각해보자</h3>
+
+<p>일단 아직은 더 익숙한 언어인 Java로 구체적인 수를 적용하여 코드를 작성해봅니다.</p>
+<div class="language-java highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kn">package</span> <span class="nn">array</span><span class="o">;</span>
+
+<span class="kd">public</span> <span class="kd">class</span> <span class="nc">CyclicRotaion</span> <span class="o">{</span>
+  <span class="kd">public</span> <span class="kd">static</span> <span class="kt">void</span> <span class="nf">main</span><span class="o">(</span><span class="nc">String</span><span class="o">[]</span> <span class="n">args</span><span class="o">)</span> <span class="o">{</span>
+
+    <span class="c1">// 주어진 배열</span>
+    <span class="kt">int</span><span class="o">[]</span> <span class="no">A</span> <span class="o">=</span> <span class="o">{</span><span class="mi">3</span><span class="o">,</span> <span class="mi">8</span><span class="o">,</span> <span class="mi">9</span><span class="o">,</span> <span class="mi">7</span><span class="o">,</span> <span class="mi">6</span><span class="o">};</span>
+
+    <span class="c1">// 마지막 인덱스의 값 빈 변수에 할당하기</span>
+    <span class="kt">int</span> <span class="n">p</span> <span class="o">=</span> <span class="no">A</span><span class="o">[</span><span class="no">A</span><span class="o">.</span><span class="na">length</span><span class="o">-</span><span class="mi">1</span><span class="o">];</span>
+
+    <span class="c1">// 한칸씩 옮기기</span>
+    <span class="no">A</span><span class="o">[</span><span class="no">A</span><span class="o">.</span><span class="na">length</span><span class="o">-</span><span class="mi">1</span><span class="o">]</span> <span class="o">=</span> <span class="no">A</span><span class="o">[</span><span class="no">A</span><span class="o">.</span><span class="na">length</span><span class="o">-</span><span class="mi">2</span><span class="o">];</span>
+    <span class="no">A</span><span class="o">[</span><span class="no">A</span><span class="o">.</span><span class="na">length</span><span class="o">-</span><span class="mi">2</span><span class="o">]</span> <span class="o">=</span> <span class="no">A</span><span class="o">[</span><span class="no">A</span><span class="o">.</span><span class="na">length</span><span class="o">-</span><span class="mi">3</span><span class="o">];</span>
+    <span class="no">A</span><span class="o">[</span><span class="no">A</span><span class="o">.</span><span class="na">length</span><span class="o">-</span><span class="mi">3</span><span class="o">]</span> <span class="o">=</span> <span class="no">A</span><span class="o">[</span><span class="no">A</span><span class="o">.</span><span class="na">length</span><span class="o">-</span><span class="mi">4</span><span class="o">];</span>
+    <span class="no">A</span><span class="o">[</span><span class="no">A</span><span class="o">.</span><span class="na">length</span><span class="o">-</span><span class="mi">4</span><span class="o">]</span> <span class="o">=</span> <span class="no">A</span><span class="o">[</span><span class="no">A</span><span class="o">.</span><span class="na">length</span><span class="o">-</span><span class="mi">5</span><span class="o">];</span>
+
+    <span class="c1">// 0번째 인덱스에 옮겨두었던 마지막 인덱스 값 할당하기</span>
+    <span class="no">A</span><span class="o">[</span><span class="no">A</span><span class="o">.</span><span class="na">length</span><span class="o">-</span><span class="mi">5</span><span class="o">]</span> <span class="o">=</span> <span class="n">p</span><span class="o">;</span>
+
+    <span class="k">for</span><span class="o">(</span><span class="kt">int</span> <span class="n">i</span> <span class="o">=</span> <span class="mi">0</span><span class="o">;</span> <span class="n">i</span> <span class="o">&lt;</span> <span class="no">A</span><span class="o">.</span><span class="na">length</span><span class="o">;</span> <span class="n">i</span><span class="o">++)</span> <span class="o">{</span>
+      <span class="nc">System</span><span class="o">.</span><span class="na">out</span><span class="o">.</span><span class="na">print</span><span class="o">(</span><span class="no">A</span><span class="o">[</span><span class="n">i</span><span class="o">]</span> <span class="o">+</span> <span class="s">" "</span><span class="o">);</span>
+    <span class="o">}</span> <span class="c1">// for문</span>
+  <span class="o">}</span>
+<span class="o">}</span>
+</code></pre></div></div>
+<p>위 코드의 실행 결과는 <code>6, 3, 8, 9, 7</code>입니다.</p>
+
+<h3 id="3-이클립스에서-작성한-문제-해결-코드">3. 이클립스에서 작성한 문제 해결 코드</h3>
+
+<div class="language-java highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kn">package</span> <span class="nn">array</span><span class="o">;</span>
+
+<span class="kn">import</span> <span class="nn">java.util.Scanner</span><span class="o">;</span>
+
+<span class="kd">public</span> <span class="kd">class</span> <span class="nc">CyclicRotaion</span> <span class="o">{</span>
+  <span class="kd">public</span> <span class="kd">static</span> <span class="kt">void</span> <span class="nf">main</span><span class="o">(</span><span class="nc">String</span><span class="o">[]</span> <span class="n">args</span><span class="o">)</span> <span class="o">{</span>
+
+      <span class="c1">// 주어진 배열</span>
+      <span class="kt">int</span><span class="o">[]</span> <span class="no">A</span> <span class="o">=</span> <span class="o">{</span><span class="mi">3</span><span class="o">,</span> <span class="mi">8</span><span class="o">,</span> <span class="mi">9</span><span class="o">,</span> <span class="mi">7</span><span class="o">,</span> <span class="mi">6</span><span class="o">};</span>
+
+      <span class="c1">// 마지막 인덱스의 값 빈 변수에 할당하기</span>
+      <span class="c1">// 배열의 크기에 상관없이 항상 마지막 인덱스 값을 나타냄.</span>
+      <span class="kt">int</span> <span class="n">p</span> <span class="o">=</span> <span class="no">A</span><span class="o">[</span><span class="no">A</span><span class="o">.</span><span class="na">length</span><span class="o">-</span><span class="mi">1</span><span class="o">];</span>
+
+      <span class="k">for</span><span class="o">(</span><span class="kt">int</span> <span class="n">i</span> <span class="o">=</span> <span class="mi">1</span><span class="o">;</span> <span class="n">i</span> <span class="o">&lt;=</span> <span class="o">(</span><span class="no">A</span><span class="o">.</span><span class="na">length</span><span class="o">-</span><span class="mi">1</span><span class="o">);</span> <span class="n">i</span><span class="o">++)</span> <span class="o">{</span>
+          <span class="no">A</span><span class="o">[</span><span class="no">A</span><span class="o">.</span><span class="na">length</span><span class="o">-</span><span class="n">i</span><span class="o">]</span> <span class="o">=</span> <span class="no">A</span><span class="o">[</span><span class="no">A</span><span class="o">.</span><span class="na">length</span><span class="o">-(</span><span class="n">i</span><span class="o">+</span><span class="mi">1</span><span class="o">)];</span>
+      <span class="o">}</span>
+
+      <span class="c1">// 0번째 인덱스에 옮겨두었던 마지막 인덱스 값 할당하기</span>
+      <span class="no">A</span><span class="o">[</span><span class="no">A</span><span class="o">.</span><span class="na">length</span><span class="o">-</span><span class="no">A</span><span class="o">.</span><span class="na">length</span><span class="o">]</span> <span class="o">=</span> <span class="n">p</span><span class="o">;</span>
+
+      <span class="c1">// 배열의 값을 출력하는 for문</span>
+      <span class="k">for</span><span class="o">(</span><span class="kt">int</span> <span class="n">i</span> <span class="o">=</span> <span class="mi">0</span><span class="o">;</span> <span class="n">i</span> <span class="o">&lt;</span> <span class="no">A</span><span class="o">.</span><span class="na">length</span><span class="o">;</span> <span class="n">i</span><span class="o">++)</span> <span class="o">{</span>
+          <span class="nc">System</span><span class="o">.</span><span class="na">out</span><span class="o">.</span><span class="na">print</span><span class="o">(</span><span class="no">A</span><span class="o">[</span><span class="n">i</span><span class="o">]</span> <span class="o">+</span> <span class="s">" "</span><span class="o">);</span>
+      <span class="o">}</span>
+  <span class="o">}</span>
+<span class="o">}</span>
+</code></pre></div></div>
+<p>반복되는 부분을 for문을 사용하여 작성해줍니다.</p>
+
+<h3 id="4-코딜리티에-제출한-문제-해결-코드">4. 코딜리티에 제출한 문제 해결 코드</h3>
+
+<p>아래는 최종 정리해서 코딜리티에 제출한 코드입니다.</p>
+
+<div class="language-java highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">class</span> <span class="nc">Solution</span> <span class="o">{</span>
+  <span class="kd">public</span> <span class="kt">int</span><span class="o">[]</span> <span class="nf">solution</span><span class="o">(</span><span class="kt">int</span><span class="o">[]</span> <span class="no">A</span><span class="o">,</span> <span class="kt">int</span> <span class="no">K</span><span class="o">)</span> <span class="o">{</span>
+    <span class="c1">// write your code in Java SE 8</span>
+
+    <span class="kt">int</span> <span class="n">p</span> <span class="o">=</span> <span class="mi">0</span><span class="o">;</span> <span class="c1">// 마지막 인덱스의 값 옮겨둘 변수</span>
+
+    <span class="k">while</span><span class="o">(</span><span class="no">K</span> <span class="o">&gt;=</span> <span class="mi">1</span><span class="o">)</span> <span class="o">{</span> <span class="c1">// while문 사용하여 반복할 횟수 K이용</span>
+
+      <span class="n">p</span> <span class="o">=</span> <span class="no">A</span><span class="o">[</span><span class="no">A</span><span class="o">.</span><span class="na">length</span><span class="o">-</span><span class="mi">1</span><span class="o">];</span>
+
+      <span class="k">for</span><span class="o">(</span><span class="kt">int</span> <span class="n">i</span> <span class="o">=</span> <span class="mi">1</span><span class="o">;</span> <span class="n">i</span> <span class="o">&lt;=</span> <span class="o">(</span><span class="no">A</span><span class="o">.</span><span class="na">length</span><span class="o">-</span><span class="mi">1</span><span class="o">);</span> <span class="n">i</span><span class="o">++)</span> <span class="o">{</span>
+
+          <span class="no">A</span><span class="o">[</span><span class="no">A</span><span class="o">.</span><span class="na">length</span><span class="o">-</span><span class="n">i</span><span class="o">]</span> <span class="o">=</span> <span class="no">A</span><span class="o">[</span><span class="no">A</span><span class="o">.</span><span class="na">length</span><span class="o">-(</span><span class="n">i</span><span class="o">+</span><span class="mi">1</span><span class="o">)];</span>
+
+        <span class="o">}</span> <span class="c1">// for문 끝</span>
+
+      <span class="no">A</span><span class="o">[</span><span class="no">A</span><span class="o">.</span><span class="na">length</span><span class="o">-</span><span class="no">A</span><span class="o">.</span><span class="na">length</span><span class="o">]</span> <span class="o">=</span> <span class="n">p</span><span class="o">;</span>
+      <span class="no">K</span><span class="o">--;</span>
+
+    <span class="o">}</span> <span class="c1">// while 문 끝</span>
+
+    <span class="k">return</span> <span class="no">A</span><span class="o">;</span>
+  <span class="o">}</span> <span class="c1">// 메서드 끝</span>
+<span class="o">}</span>
+</code></pre></div></div>
+
+<center><img src="/assets/images/CyclicRotation1.png" alt="CR" width="900" /></center>
+<p><br /></p>
+
+<p>내가 푼 풀이의 정확도는 87%</p>
+
+<center><img src="/assets/images/CyclicRotation2.png" alt="CR" width="600" /></center>
+<p><br /></p>
+
+<p>분석 결과를 보니 빈 배열이 입력되었을 때 프로그램이 꺼지는 문제가 발생.</p>
+
+<p>… 문제 해결은 계속됩니다.</p>
+
+<h3 id="추가해야-할-글">추가해야 할 글</h3>
+
+<ul>
+  <li>문제 해결 과정</li>
+  <li>빈 배열이 입력되었을 때 프로그램이 꺼지는 문제 해결하기</li>
+</ul>
+
+        
+      </section>
+
+      <footer class="page__meta">
+        
+        
+  
+
+
+  
+
+  <p class="page__taxonomy">
+    <strong><i class="fas fa-fw fa-tags" aria-hidden="true"></i> Tags: </strong>
+    <span itemprop="keywords">
+    
+      <a href="/tags/#learning" class="page__taxonomy-item p-category" rel="tag">learning</a><span class="sep">, </span>
+    
+      <a href="/tags/#swift" class="page__taxonomy-item p-category" rel="tag">Swift</a><span class="sep">, </span>
+    
+      <a href="/tags/#%EA%B3%B5%EB%B6%80-%EA%B8%B0%EB%A1%9D" class="page__taxonomy-item p-category" rel="tag">공부 기록</a>
+    
+    </span>
+  </p>
+
+
+
+
+  
+
+
+  
+
+  <p class="page__taxonomy">
+    <strong><i class="fas fa-fw fa-folder-open" aria-hidden="true"></i> Categories: </strong>
+    <span itemprop="keywords">
+    
+      <a href="/categories/#til" class="page__taxonomy-item p-category" rel="tag">TIL</a>
+    
+    </span>
+  </p>
+
+
+        
+
+  <p class="page__date"><strong><i class="fas fa-fw fa-calendar-alt" aria-hidden="true"></i> Updated:</strong> <time class="dt-published" datetime="2022-03-16T00:00:00+09:00">March 16, 2022</time></p>
+
+      </footer>
+
+      
+
+      
+  <nav class="pagination">
+    
+      <a href="/til/landmarks/" class="pagination--pager" title="SwiftUI Tutorial: 여러 개의 View를 만들고 결합하기
+">Previous</a>
+    
+    
+      <a href="/til/octopusProject/" class="pagination--pager" title="웹 페이지를 만들며 HTML과 CSS에 대해 알아보기
+">Next</a>
+    
+  </nav>
+
+    </div>
+
+    
+  </article>
+
+  
+  
+    <div class="page__related">
+      <h2 class="page__related-title">You may also enjoy</h2>
+      <div class="grid__wrapper">
+        
+          
+
+
+
+<div class="grid__item">
+  <article class="archive__item" itemscope itemtype="https://schema.org/CreativeWork">
+    
+      <div class="archive__item-teaser">
+        <img src="/assets/images/teaser.jpg" alt="">
+      </div>
+    
+    <h2 class="archive__item-title no_toc" itemprop="headline">
+      
+        <a href="/til/octopusProject/" rel="permalink">웹 페이지를 만들며 HTML과 CSS에 대해 알아보기
+</a>
+      
+    </h2>
+    
+
+  <p class="page__meta">
+    
+      
+      <span class="page__meta-date">
+        <i class="far fa-calendar-alt" aria-hidden="true"></i>
+        
+        <time datetime="2022-03-16T00:00:00+09:00">March 16, 2022</time>
+      </span>
+    
+
+    
+
+    
+  </p>
+
+
+    <p class="archive__item-excerpt" itemprop="description">
+  Octopus Project
+  팀 프로젝트가 끝나고 바로 개인 프로젝트가 하나 있습니다.
+  7일정도 HTML과 CSS를 배우는데, 배운 것으로 웹 페이지를 만드는 것입니다.
+  자바 스크립트는 할 수도 안할 수도 있다는데 시간이 되면 자바 스크립트도 이용해서 페이지를 만들...</p>
+  </article>
+</div>
+
+        
+          
+
+
+
+<div class="grid__item">
+  <article class="archive__item" itemscope itemtype="https://schema.org/CreativeWork">
+    
+      <div class="archive__item-teaser">
+        <img src="/assets/images/teaser.jpg" alt="">
+      </div>
+    
+    <h2 class="archive__item-title no_toc" itemprop="headline">
+      
+        <a href="/til/landmarks/" rel="permalink">SwiftUI Tutorial: 여러 개의 View를 만들고 결합하기
+</a>
+      
+    </h2>
+    
+
+  <p class="page__meta">
+    
+      
+      <span class="page__meta-date">
+        <i class="far fa-calendar-alt" aria-hidden="true"></i>
+        
+        <time datetime="2022-03-14T00:00:00+09:00">March 14, 2022</time>
+      </span>
+    
+
+    
+
+    
+  </p>
+
+
+    <p class="archive__item-excerpt" itemprop="description">SwiftUI Tutorial을 따라가며 아래 Landmark앱을 만들어 보겠습니다. 튜토리얼의 출처는 SwiftUI Essentials:
+Creating and Combining Views 입니다.
+</p>
+  </article>
+</div>
+
+        
+          
+
+
+
+<div class="grid__item">
+  <article class="archive__item" itemscope itemtype="https://schema.org/CreativeWork">
+    
+      <div class="archive__item-teaser">
+        <img src="/assets/images/yourDigitalClock.png" alt="">
+      </div>
+    
+    <h2 class="archive__item-title no_toc" itemprop="headline">
+      
+        <a href="/til/basicSwift2/" rel="permalink">A Swift Tour : 디지털 시계 앱을 만들며 스위프트 배워보기
+</a>
+      
+    </h2>
+    
+
+  <p class="page__meta">
+    
+      
+      <span class="page__meta-date">
+        <i class="far fa-calendar-alt" aria-hidden="true"></i>
+        
+        <time datetime="2022-03-10T00:00:00+09:00">March 10, 2022</time>
+      </span>
+    
+
+    
+
+    
+  </p>
+
+
+    <p class="archive__item-excerpt" itemprop="description">💭 ..
+
+  Swift는 어떤 언어일까?
+  디지털시계 앱을 만들며 Swift의 기초적인 것들을 알아봅니다.
+
+</p>
+  </article>
+</div>
+
+        
+          
+
+
+
+<div class="grid__item">
+  <article class="archive__item" itemscope itemtype="https://schema.org/CreativeWork">
+    
+      <div class="archive__item-teaser">
+        <img src="/assets/images/teaser.jpg" alt="">
+      </div>
+    
+    <h2 class="archive__item-title no_toc" itemprop="headline">
+      
+        <a href="/til/basicSwift/" rel="permalink">Swift를 배워보자!
+</a>
+      
+    </h2>
+    
+
+  <p class="page__meta">
+    
+      
+      <span class="page__meta-date">
+        <i class="far fa-calendar-alt" aria-hidden="true"></i>
+        
+        <time datetime="2022-03-07T00:00:00+09:00">March 7, 2022</time>
+      </span>
+    
+
+    
+
+    
+  </p>
+
+
+    <p class="archive__item-excerpt" itemprop="description">💭 ..
+
+  Swift를 배워보자.
+  유투브 튜토리얼, 애플 개발자 페이지의 튜토리얼, 구글링을 통해 Swift를 공부해보려고 합니다.    
+  그 과정에서 기록이 필요한 것들을 정리해봅니다.
+
+</p>
+  </article>
+</div>
+
+        
+      </div>
+    </div>
+  
+  
+</div>
+    </div>
+
+    
+      <div class="search-content">
+        <div class="search-content__inner-wrap"><form class="search-content__form" onkeydown="return event.key != 'Enter';" role="search">
+    <label class="sr-only" for="search">
+      Enter your search term...
+    </label>
+    <input type="search" id="search" class="search-input" tabindex="-1" placeholder="Enter your search term..." />
+  </form>
+  <div id="results" class="results"></div></div>
+
+      </div>
+    
+
+    <div id="footer" class="page__footer">
+      <footer>
+        <!-- start custom footer snippets -->
+
+<!-- end custom footer snippets -->
+        <div class="page__footer-follow">
+  <ul class="social-icons">
+    
+      <li><strong>Follow:</strong></li>
+    
+
+    
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+
+    
+      <li><a href="/feed.xml"><i class="fas fa-fw fa-rss-square" aria-hidden="true"></i> Feed</a></li>
+    
+  </ul>
+</div>
+
+<div class="page__footer-copyright">&copy; 2022 Mirae the Future. Powered by <a href="https://jekyllrb.com" rel="nofollow">Jekyll</a> &amp; <a href="https://mademistakes.com/work/minimal-mistakes-jekyll-theme/" rel="nofollow">Minimal Mistakes</a>.</div>
+
+      </footer>
+    </div>
+
+    
+  <script src="/assets/js/main.min.js"></script>
+
+
+
+
+<script src="/assets/js/lunr/lunr.min.js"></script>
+<script src="/assets/js/lunr/lunr-store.js"></script>
+<script src="/assets/js/lunr/lunr-en.js"></script>
+
+
+
+
+
+
+
+  </body>
+</html>

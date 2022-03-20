@@ -236,7 +236,7 @@
           <aside class="sidebar__right sticky">
             <nav class="toc">
               <header><h4 class="nav__title"><i class="fas fa-cog"></i> 👷</h4></header>
-              <ul class="toc__menu"><li><a href="#-">💭 ..</a></li><li><a href="#1-the-boilerplate-code">1. The boilerplate code</a></li><li><a href="#2-현재-날짜와-시간-정보-가져오기">2. 현재 날짜와 시간 정보 가져오기</a></li><li><a href="#3-dateformatter-사용">3. DateFormatter 사용</a></li><li><a href="#dateformatter">DateFormatter</a></li><li><a href="#4-live-time">4. Live Time</a></li><li><a href="#5-time-of-day-greeting">5. Time of Day Greeting</a></li></ul>
+              <ul class="toc__menu"><li><a href="#-">💭 ..</a></li><li><a href="#1-contentview와-contentview_previews">1. ContentView와 ContentView_Previews</a></li><li><a href="#여기까지-수정-">여기까지 수정 👷</a></li><li><a href="#2-현재-날짜와-시간-정보-가져오기">2. 현재 날짜와 시간 정보 가져오기</a></li><li><a href="#3-dateformatter-사용">3. DateFormatter 사용</a></li><li><a href="#dateformatter">DateFormatter</a></li><li><a href="#4-live-time">4. Live Time</a></li><li><a href="#5-time-of-day-greeting">5. Time of Day Greeting</a></li></ul>
 
             </nav>
           </aside>
@@ -251,39 +251,133 @@
 가장 많이 사용되는 프로그래밍 언어 중 하나라 자료가 넘치도록 많다는 장점도 가지고 있다. 그러던 중 친구를 통해 Swift의 존재를 알게되었다.
 원래 그 이름은 들어봤지만 Swift가 프로그래밍 언어인지 IDE인지 모를정도로 잘 알지 못했다. 그렇게 Swift에 대한 정보는 '잘 알지 못함'에서 '애플 개발자들이 사용하는 언어'로 승급했다.  -->
 
-<p><img src="/assets/images/yourDigitalClock.png" alt="yourDigitalClock" /></p>
+<center><video src="https://user-images.githubusercontent.com/85061148/159151492-81fcd9d7-b468-460c-ad3a-f7f196d21755.mov" controls="controls" style="max-width: 600px">
+</video></center>
 
 <!-- What I Learned From This Project: -->
 
-<h3 id="1-the-boilerplate-code">1. The boilerplate code</h3>
-<p><a href="https://medium.com/iu-women-in-computing/intro-to-swiftui-digital-clock-d0a60e05d394">Intro to SwiftUI: Digital Clock</a> &lt;- 블로그를 보며 공부합니다.</p>
+<h3 id="1-contentview와-contentview_previews">1. ContentView와 ContentView_Previews</h3>
+<p><a href="https://medium.com/iu-women-in-computing/intro-to-swiftui-digital-clock-d0a60e05d394">Intro to SwiftUI: Digital Clock</a> &lt;- 블로그의 글을 보며 공부합니다.</p>
 
-<p>지금 가장 만들어보고 싶은 앱은 디지털시계 앱입니다. 구글링을 해봅니다.
-여러 개의 친절한 블로그를 발견했는데요. 그중 하나를 읽어보며 코드 구조를 분석해 봅니다.</p>
+<div class="language-swift highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1">//  ContentView.swift</span>
+<span class="c1">//  Your Digital Clock</span>
 
-<div class="language-swift highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">import</span> <span class="kt">SwiftUI</span>
+<span class="kd">import</span> <span class="kt">SwiftUI</span>
 
 <span class="kd">struct</span> <span class="kt">ContentView</span><span class="p">:</span> <span class="kt">View</span> <span class="p">{</span>
-    <span class="k">var</span> <span class="nv">body</span> <span class="p">:</span> <span class="kd">some</span> <span class="kt">View</span> <span class="p">{</span>
-        <span class="kt">Text</span><span class="p">(</span><span class="s">"Hello"</span><span class="p">)</span>
+    <span class="kd">@State</span> <span class="k">var</span> <span class="nv">date</span> <span class="o">=</span> <span class="kt">Date</span><span class="p">()</span>
+    <span class="k">var</span> <span class="nv">body</span><span class="p">:</span> <span class="kd">some</span> <span class="kt">View</span> <span class="p">{</span>
+
+        <span class="kt">ZStack</span> <span class="p">{</span>
+            <span class="kt">Image</span><span class="p">(</span><span class="s">"unsplash-photo"</span><span class="p">)</span>
+            <span class="o">.</span><span class="nf">resizable</span><span class="p">()</span>
+            <span class="o">.</span><span class="nf">scaledToFill</span><span class="p">()</span>
+            <span class="o">.</span><span class="nf">ignoresSafeArea</span><span class="p">()</span>
+
+        <span class="kt">VStack</span> <span class="p">{</span>
+             <span class="kt">Text</span><span class="p">(</span><span class="s">"</span><span class="se">\(</span><span class="nf">timeString</span><span class="p">(</span><span class="nv">date</span><span class="p">:</span> <span class="n">date</span><span class="p">)</span><span class="se">)</span><span class="s">"</span><span class="p">)</span>
+                 <span class="o">.</span><span class="nf">font</span><span class="p">(</span><span class="o">.</span><span class="nf">system</span><span class="p">(</span><span class="nv">size</span><span class="p">:</span> <span class="mi">160</span><span class="p">))</span>
+                 <span class="o">.</span><span class="nf">fontWeight</span><span class="p">(</span><span class="o">.</span><span class="n">bold</span><span class="p">)</span>
+                 <span class="o">.</span><span class="nf">foregroundColor</span><span class="p">(</span><span class="kt">Color</span><span class="o">.</span><span class="n">white</span><span class="p">)</span>
+                 <span class="o">.</span><span class="nf">onAppear</span><span class="p">(</span><span class="nv">perform</span><span class="p">:</span> <span class="p">{</span><span class="k">let</span> <span class="nv">_</span> <span class="o">=</span> <span class="k">self</span><span class="o">.</span><span class="n">updateTimer</span><span class="p">})</span>
+                <span class="c1">// 여기 이해 안됨. date: date</span>
+
+             <span class="kt">Text</span><span class="p">(</span><span class="s">"</span><span class="se">\(</span><span class="nf">greeting</span><span class="p">()</span><span class="se">)</span><span class="s">"</span><span class="p">)</span>
+                 <span class="o">.</span><span class="nf">font</span><span class="p">(</span><span class="o">.</span><span class="nf">system</span><span class="p">(</span><span class="nv">size</span><span class="p">:</span> <span class="mi">75</span><span class="p">))</span>
+                 <span class="o">.</span><span class="nf">foregroundColor</span><span class="p">(</span><span class="kt">Color</span><span class="o">.</span><span class="n">white</span><span class="p">)</span>
+
+             <span class="kt">Text</span><span class="p">(</span><span class="s">"</span><span class="se">\(</span><span class="nf">timeString2</span><span class="p">(</span><span class="nv">date</span><span class="p">:</span> <span class="n">date</span><span class="p">)</span><span class="se">)</span><span class="s">"</span><span class="p">)</span>
+                 <span class="o">.</span><span class="nf">font</span><span class="p">(</span><span class="o">.</span><span class="nf">system</span><span class="p">(</span><span class="nv">size</span><span class="p">:</span> <span class="mi">20</span><span class="p">))</span>
+                 <span class="o">.</span><span class="nf">foregroundColor</span><span class="p">(</span><span class="kt">Color</span><span class="o">.</span><span class="n">white</span><span class="p">)</span>
+                 <span class="o">.</span><span class="nf">onAppear</span><span class="p">(</span><span class="nv">perform</span><span class="p">:</span> <span class="p">{</span><span class="k">let</span> <span class="nv">_</span> <span class="o">=</span> <span class="k">self</span><span class="o">.</span><span class="n">updateTimer</span><span class="p">})</span>
+                 <span class="o">.</span><span class="nf">offset</span><span class="p">(</span><span class="nv">y</span><span class="p">:</span> <span class="mi">100</span><span class="p">)</span>
+               <span class="p">}</span> <span class="c1">// VStack</span>
+           <span class="p">}</span> <span class="c1">// ZStack</span>
+       <span class="p">}</span> <span class="c1">// body</span>
+
+
+    <span class="c1">// ContentView structure</span>
+    <span class="k">var</span> <span class="nv">timeFormat</span><span class="p">:</span> <span class="kt">DateFormatter</span> <span class="p">{</span>
+        <span class="k">let</span> <span class="nv">formatter</span> <span class="o">=</span> <span class="kt">DateFormatter</span><span class="p">()</span>
+        <span class="n">formatter</span><span class="o">.</span><span class="n">dateFormat</span> <span class="o">=</span> <span class="s">"hh:mm:ss a"</span>
+        <span class="k">return</span> <span class="n">formatter</span>
+    <span class="p">}</span> <span class="c1">// 시간 부분 Formatter</span>
+
+    <span class="k">var</span> <span class="nv">timeFormat2</span><span class="p">:</span> <span class="kt">DateFormatter</span> <span class="p">{</span>
+        <span class="k">let</span> <span class="nv">formatter</span> <span class="o">=</span> <span class="kt">DateFormatter</span><span class="p">()</span>
+        <span class="n">formatter</span><span class="o">.</span><span class="n">dateFormat</span> <span class="o">=</span> <span class="s">"yyyy/MM/dd EEEE"</span>
+        <span class="k">return</span> <span class="n">formatter</span>
     <span class="p">}</span>
-<span class="p">}</span>
+
+    <span class="kd">func</span> <span class="nf">timeString</span><span class="p">(</span><span class="nv">date</span><span class="p">:</span> <span class="kt">Date</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kt">String</span> <span class="p">{</span>
+        <span class="k">let</span> <span class="nv">time</span> <span class="o">=</span> <span class="n">timeFormat</span><span class="o">.</span><span class="nf">string</span><span class="p">(</span><span class="nv">from</span><span class="p">:</span> <span class="n">date</span><span class="p">)</span>
+        <span class="k">return</span> <span class="n">time</span>
+    <span class="p">}</span>
+
+    <span class="kd">func</span> <span class="nf">timeString2</span><span class="p">(</span><span class="nv">date</span><span class="p">:</span> <span class="kt">Date</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kt">String</span> <span class="p">{</span>
+        <span class="k">let</span> <span class="nv">time</span> <span class="o">=</span> <span class="n">timeFormat2</span><span class="o">.</span><span class="nf">string</span><span class="p">(</span><span class="nv">from</span><span class="p">:</span> <span class="n">date</span><span class="p">)</span>
+        <span class="k">return</span> <span class="n">time</span>
+    <span class="p">}</span>
+
+
+
+    <span class="k">var</span> <span class="nv">updateTimer</span><span class="p">:</span> <span class="kt">Timer</span> <span class="p">{</span>
+        <span class="kt">Timer</span><span class="o">.</span><span class="nf">scheduledTimer</span><span class="p">(</span><span class="nv">withTimeInterval</span><span class="p">:</span> <span class="mi">1</span><span class="p">,</span> <span class="nv">repeats</span><span class="p">:</span> <span class="kc">true</span><span class="p">,</span> <span class="nv">block</span><span class="p">:</span> <span class="p">{</span> <span class="n">_</span> <span class="k">in</span>
+            <span class="k">self</span><span class="o">.</span><span class="n">date</span> <span class="o">=</span> <span class="kt">Date</span><span class="p">()</span>
+        <span class="p">})</span>
+    <span class="p">}</span> <span class="c1">// timeInterval 마다 블락 안의 코드가 실행됨</span>
+
+    <span class="kd">func</span> <span class="nf">greeting</span><span class="p">()</span> <span class="o">-&gt;</span> <span class="kt">String</span> <span class="p">{</span>
+        <span class="k">var</span> <span class="nv">greet</span> <span class="o">=</span> <span class="s">""</span>
+
+        <span class="k">let</span> <span class="nv">midNight0</span> <span class="o">=</span> <span class="kt">Calendar</span><span class="o">.</span><span class="n">current</span><span class="o">.</span><span class="nf">date</span><span class="p">(</span><span class="nv">bySettingHour</span><span class="p">:</span> <span class="mi">0</span><span class="p">,</span> <span class="nv">minute</span><span class="p">:</span> <span class="mo">00</span><span class="p">,</span> <span class="nv">second</span><span class="p">:</span><span class="mo">00</span><span class="p">,</span> <span class="nv">of</span><span class="p">:</span> <span class="n">date</span><span class="p">)</span><span class="o">!</span>
+        <span class="k">let</span> <span class="nv">nightEnd</span> <span class="o">=</span> <span class="kt">Calendar</span><span class="o">.</span><span class="n">current</span><span class="o">.</span><span class="nf">date</span><span class="p">(</span><span class="nv">bySettingHour</span><span class="p">:</span> <span class="mi">3</span><span class="p">,</span> <span class="nv">minute</span><span class="p">:</span> <span class="mi">59</span><span class="p">,</span> <span class="nv">second</span><span class="p">:</span> <span class="mi">59</span><span class="p">,</span> <span class="nv">of</span><span class="p">:</span> <span class="n">date</span><span class="p">)</span><span class="o">!</span>
+
+        <span class="k">let</span> <span class="nv">morningStart</span> <span class="o">=</span> <span class="kt">Calendar</span><span class="o">.</span><span class="n">current</span><span class="o">.</span><span class="nf">date</span><span class="p">(</span><span class="nv">bySettingHour</span><span class="p">:</span> <span class="mi">4</span><span class="p">,</span> <span class="nv">minute</span><span class="p">:</span> <span class="mo">00</span><span class="p">,</span> <span class="nv">second</span><span class="p">:</span> <span class="mi">0</span><span class="p">,</span> <span class="nv">of</span><span class="p">:</span> <span class="n">date</span><span class="p">)</span><span class="o">!</span>
+        <span class="k">let</span> <span class="nv">morningEnd</span> <span class="o">=</span> <span class="kt">Calendar</span><span class="o">.</span><span class="n">current</span><span class="o">.</span><span class="nf">date</span><span class="p">(</span><span class="nv">bySettingHour</span><span class="p">:</span> <span class="mi">11</span><span class="p">,</span> <span class="nv">minute</span><span class="p">:</span> <span class="mi">59</span><span class="p">,</span> <span class="nv">second</span><span class="p">:</span> <span class="mi">59</span><span class="p">,</span> <span class="nv">of</span><span class="p">:</span> <span class="n">date</span><span class="p">)</span><span class="o">!</span>
+
+        <span class="k">let</span> <span class="nv">noonStart</span> <span class="o">=</span> <span class="kt">Calendar</span><span class="o">.</span><span class="n">current</span><span class="o">.</span><span class="nf">date</span><span class="p">(</span><span class="nv">bySettingHour</span><span class="p">:</span> <span class="mi">12</span><span class="p">,</span> <span class="nv">minute</span><span class="p">:</span> <span class="mo">00</span><span class="p">,</span> <span class="nv">second</span><span class="p">:</span> <span class="mo">00</span><span class="p">,</span> <span class="nv">of</span><span class="p">:</span> <span class="n">date</span><span class="p">)</span><span class="o">!</span>
+        <span class="k">let</span> <span class="nv">noonEnd</span> <span class="o">=</span> <span class="kt">Calendar</span><span class="o">.</span><span class="n">current</span><span class="o">.</span><span class="nf">date</span><span class="p">(</span><span class="nv">bySettingHour</span><span class="p">:</span> <span class="mi">16</span><span class="p">,</span> <span class="nv">minute</span><span class="p">:</span> <span class="mi">59</span><span class="p">,</span> <span class="nv">second</span><span class="p">:</span> <span class="mi">59</span><span class="p">,</span> <span class="nv">of</span><span class="p">:</span> <span class="n">date</span><span class="p">)</span><span class="o">!</span>
+
+        <span class="k">let</span> <span class="nv">eveStart</span> <span class="o">=</span> <span class="kt">Calendar</span><span class="o">.</span><span class="n">current</span><span class="o">.</span><span class="nf">date</span><span class="p">(</span><span class="nv">bySettingHour</span><span class="p">:</span> <span class="mi">17</span><span class="p">,</span> <span class="nv">minute</span><span class="p">:</span> <span class="mo">00</span><span class="p">,</span> <span class="nv">second</span><span class="p">:</span> <span class="mo">00</span><span class="p">,</span> <span class="nv">of</span><span class="p">:</span> <span class="n">date</span><span class="p">)</span><span class="o">!</span>
+        <span class="k">let</span> <span class="nv">eveEnd</span> <span class="o">=</span> <span class="kt">Calendar</span><span class="o">.</span><span class="n">current</span><span class="o">.</span><span class="nf">date</span><span class="p">(</span><span class="nv">bySettingHour</span><span class="p">:</span> <span class="mi">20</span><span class="p">,</span> <span class="nv">minute</span><span class="p">:</span> <span class="mi">59</span><span class="p">,</span> <span class="nv">second</span><span class="p">:</span> <span class="mi">59</span><span class="p">,</span> <span class="nv">of</span><span class="p">:</span> <span class="n">date</span><span class="p">)</span><span class="o">!</span>
+
+        <span class="k">let</span> <span class="nv">nightStart</span> <span class="o">=</span> <span class="kt">Calendar</span><span class="o">.</span><span class="n">current</span><span class="o">.</span><span class="nf">date</span><span class="p">(</span><span class="nv">bySettingHour</span><span class="p">:</span> <span class="mi">21</span><span class="p">,</span> <span class="nv">minute</span><span class="p">:</span> <span class="mo">00</span><span class="p">,</span> <span class="nv">second</span><span class="p">:</span> <span class="mo">00</span><span class="p">,</span> <span class="nv">of</span><span class="p">:</span> <span class="n">date</span><span class="p">)</span><span class="o">!</span>
+        <span class="k">let</span> <span class="nv">midNight24</span> <span class="o">=</span> <span class="kt">Calendar</span><span class="o">.</span><span class="n">current</span><span class="o">.</span><span class="nf">date</span><span class="p">(</span><span class="nv">bySettingHour</span><span class="p">:</span> <span class="mi">23</span><span class="p">,</span> <span class="nv">minute</span><span class="p">:</span> <span class="mi">59</span><span class="p">,</span> <span class="nv">second</span><span class="p">:</span> <span class="mi">59</span><span class="p">,</span> <span class="nv">of</span><span class="p">:</span> <span class="n">date</span><span class="p">)</span><span class="o">!</span>
+
+        <span class="k">if</span> <span class="p">((</span><span class="n">date</span> <span class="o">&gt;=</span> <span class="n">midNight0</span><span class="p">)</span> <span class="o">&amp;&amp;</span> <span class="p">(</span><span class="n">date</span> <span class="o">&lt;=</span> <span class="n">nightEnd</span><span class="p">))</span> <span class="p">{</span>
+            <span class="n">greet</span> <span class="o">=</span> <span class="s">"Good Night"</span>
+        <span class="p">}</span> <span class="k">else</span> <span class="k">if</span> <span class="p">(</span><span class="n">date</span> <span class="o">&gt;=</span> <span class="n">morningStart</span><span class="p">)</span> <span class="o">&amp;&amp;</span> <span class="p">(</span><span class="n">date</span> <span class="o">&lt;=</span> <span class="n">morningEnd</span><span class="p">)</span> <span class="p">{</span>
+            <span class="n">greet</span> <span class="o">=</span> <span class="s">"Good Morning"</span>
+        <span class="p">}</span> <span class="k">else</span> <span class="k">if</span> <span class="p">((</span><span class="n">date</span> <span class="o">&gt;=</span> <span class="n">noonStart</span><span class="p">)</span> <span class="o">&amp;&amp;</span> <span class="p">(</span><span class="n">noonEnd</span> <span class="o">&gt;=</span> <span class="n">date</span><span class="p">))</span> <span class="p">{</span>
+            <span class="n">greet</span> <span class="o">=</span> <span class="s">"Good Afternoon"</span>
+        <span class="p">}</span> <span class="k">else</span> <span class="k">if</span> <span class="p">((</span><span class="n">date</span> <span class="o">&gt;=</span> <span class="n">eveStart</span><span class="p">)</span> <span class="o">&amp;&amp;</span> <span class="p">(</span><span class="n">eveEnd</span> <span class="o">&gt;=</span> <span class="n">date</span><span class="p">))</span> <span class="p">{</span>
+            <span class="n">greet</span> <span class="o">=</span> <span class="s">"Good Evening"</span>
+        <span class="p">}</span> <span class="k">else</span> <span class="k">if</span> <span class="p">((</span><span class="n">date</span> <span class="o">&gt;=</span> <span class="n">nightStart</span><span class="p">)</span> <span class="o">&amp;&amp;</span> <span class="p">(</span><span class="n">midNight24</span> <span class="o">&gt;=</span> <span class="n">date</span><span class="p">))</span> <span class="p">{</span>
+            <span class="n">greet</span> <span class="o">=</span> <span class="s">"Good Night"</span>
+        <span class="p">}</span>
+
+        <span class="k">return</span> <span class="n">greet</span>
+
+    <span class="p">}</span> <span class="c1">// func greeting</span>
+
+<span class="p">}</span> <span class="c1">// ContentView 끝</span>
+
 
 <span class="kd">struct</span> <span class="kt">ContentView_Previews</span><span class="p">:</span> <span class="kt">PreviewProvider</span> <span class="p">{</span>
     <span class="kd">static</span> <span class="k">var</span> <span class="nv">previews</span><span class="p">:</span> <span class="kd">some</span> <span class="kt">View</span> <span class="p">{</span>
         <span class="kt">ContentView</span><span class="p">()</span>
+        <span class="o">.</span><span class="nf">previewInterfaceOrientation</span><span class="p">(</span><span class="o">.</span><span class="n">landscapeLeft</span><span class="p">)</span>
     <span class="p">}</span>
 <span class="p">}</span>
 </code></pre></div></div>
+<p>Xcode에서 처음 프로젝트를 열면 ContentView 그리고 ContentView_Previews라는 이름을 가진 두개의 structure가 기본적으로 생성되어 있습니다. 이 글에서는 이 두가지의 structure를 이용하여 간단한 디지털 시계앱을 만들어보며 시간/날짜 정보를 불러오는 방법에 대해 알아보겠습니다.</p>
 
-<p>ContentView 그리고 ContentView_Previews라는 이름의 structures입니다.
-처음 SwiftUI 프로젝트를 만들면 미리 생성되어 있습니다. 소제목에 boilerplate는 반복적으로 사용되는 어구를 뜻하는 표현입니다. ContentView에는 화면에 보여질 아이템들이 들어가고 ContentView_Previews는 그것을 화면에 미리 보여주는 기본적인 structure이기 때문에 많이 사용될 수밖에 없겠죠!</p>
+<p><code>ContentView: View</code>와 <code>var body: some View</code>에서 View는 이 structure가 View protocol을 따를 것이라는 의미입니다. Protocol은 요구사항을 가지고 있습니다. View 프로토콜의 가장 주요한 요구사항은 body property가 있어야 한다는 것입니다.</p>
 
-<p><code>ContentView: View</code>와 <code>var body: some View</code>에서 View는 이 structure가 View protocol을 따를 것이라는 의미입니다. 각 protocol에는 요구사항들이 있습니다. View 프로토콜의 가장 주요 요구사항은 body property가 있어야 한다는 것이죠.</p>
+<p>body property 부분에는 스크린에 나타날 view들이 작성됩니다. 이때의 view는 프로토콜 view가 아닌 Text view, Image view, Button view와 같은 SwiftUI의 built-in view 또는 외부 프레임의 view들을 말합니다. 위 코드에서는 ZStack의 하위에 Image view와 VStack이, 그리고 VStack 하위에는 Text view가 body property 안에 작성되었습니다.</p>
 
-<p>body property 부분에는 스크린에 나타날 view들이 작성됩니다. 이때의 view는 프로토콜 view가 아닌 Text view, Image view, Button view와 같은 SwiftUI의 built-in view 또는 외부 프레임의 view들을 말합니다. 위 코드에서는 Text view가 body property 안에 작성되었습니다. 화면에는 아래와 같이 그려집니다.</p>
-
-<center><img src="/assets/images/HelloIphone.png" alt="HelloIphone" width="300" /></center>
+<h3 id="여기까지-수정-">여기까지 수정 👷</h3>
 
 <h3 id="2-현재-날짜와-시간-정보-가져오기">2. 현재 날짜와 시간 정보 가져오기</h3>
 
@@ -578,6 +672,47 @@ self.updateTimer function은 저장할 필요가 없는 값을 반환하기 때�
     
     <h2 class="archive__item-title no_toc" itemprop="headline">
       
+        <a href="/til/cyclicRotation/" rel="permalink">Codility_Developer Training: 배열 챕터의 문제 CyclicRotation
+</a>
+      
+    </h2>
+    
+
+  <p class="page__meta">
+    
+      
+      <span class="page__meta-date">
+        <i class="far fa-calendar-alt" aria-hidden="true"></i>
+        
+        <time datetime="2022-03-16T00:00:00+09:00">March 16, 2022</time>
+      </span>
+    
+
+    
+
+    
+  </p>
+
+
+    <p class="archive__item-excerpt" itemprop="description">CyclicRotation 문제 읽기
+</p>
+  </article>
+</div>
+
+        
+          
+
+
+
+<div class="grid__item">
+  <article class="archive__item" itemscope itemtype="https://schema.org/CreativeWork">
+    
+      <div class="archive__item-teaser">
+        <img src="/assets/images/teaser.jpg" alt="">
+      </div>
+    
+    <h2 class="archive__item-title no_toc" itemprop="headline">
+      
         <a href="/til/landmarks/" rel="permalink">SwiftUI Tutorial: 여러 개의 View를 만들고 결합하기
 </a>
       
@@ -647,48 +782,6 @@ Creating and Combining Views 입니다.
   Swift를 배워보자.
   유투브 튜토리얼, 애플 개발자 페이지의 튜토리얼, 구글링을 통해 Swift를 공부해보려고 합니다.    
   그 과정에서 기록이 필요한 것들을 정리해봅니다.
-
-</p>
-  </article>
-</div>
-
-        
-          
-
-
-
-<div class="grid__item">
-  <article class="archive__item" itemscope itemtype="https://schema.org/CreativeWork">
-    
-      <div class="archive__item-teaser">
-        <img src="/assets/images/teaser.jpg" alt="">
-      </div>
-    
-    <h2 class="archive__item-title no_toc" itemprop="headline">
-      
-        <a href="/til/arrayCo/" rel="permalink">코딜리티의 open reading material을 읽어보며 배열에 대해 알아보자.
-</a>
-      
-    </h2>
-    
-
-  <p class="page__meta">
-    
-      
-      <span class="page__meta-date">
-        <i class="far fa-calendar-alt" aria-hidden="true"></i>
-        
-        <time datetime="2022-03-05T00:00:00+09:00">March 5, 2022</time>
-      </span>
-    
-
-    
-
-    
-  </p>
-
-
-    <p class="archive__item-excerpt" itemprop="description">
 
 </p>
   </article>

@@ -26,40 +26,134 @@ header:
 원래 그 이름은 들어봤지만 Swift가 프로그래밍 언어인지 IDE인지 모를정도로 잘 알지 못했다. 그렇게 Swift에 대한 정보는 '잘 알지 못함'에서 '애플 개발자들이 사용하는 언어'로 승급했다.  -->
 
 
-<img src="/assets/images/yourDigitalClock.png" alt="yourDigitalClock">
+<center><video src="https://user-images.githubusercontent.com/85061148/159151492-81fcd9d7-b468-460c-ad3a-f7f196d21755.mov" controls="controls" style="max-width: 600px">
+</video></center>
 
 <!-- What I Learned From This Project: -->
 
-### 1. The boilerplate code
-[Intro to SwiftUI: Digital Clock](https://medium.com/iu-women-in-computing/intro-to-swiftui-digital-clock-d0a60e05d394) <- 블로그를 보며 공부합니다.
-
-지금 가장 만들어보고 싶은 앱은 디지털시계 앱입니다. 구글링을 해봅니다.
-여러 개의 친절한 블로그를 발견했는데요. 그중 하나를 읽어보며 코드 구조를 분석해 봅니다.
+### 1. ContentView와 ContentView_Previews
+[Intro to SwiftUI: Digital Clock](https://medium.com/iu-women-in-computing/intro-to-swiftui-digital-clock-d0a60e05d394) <- 블로그의 글을 보며 공부합니다.
 
 ```swift
+//  ContentView.swift
+//  Your Digital Clock
+
 import SwiftUI
 
 struct ContentView: View {
-    var body : some View {
-        Text("Hello")
+    @State var date = Date()
+    var body: some View {
+
+        ZStack {
+            Image("unsplash-photo")
+            .resizable()
+            .scaledToFill()
+            .ignoresSafeArea()
+
+        VStack {
+             Text("\(timeString(date: date))")
+                 .font(.system(size: 160))
+                 .fontWeight(.bold)
+                 .foregroundColor(Color.white)
+                 .onAppear(perform: {let _ = self.updateTimer})
+                // 여기 이해 안됨. date: date
+
+             Text("\(greeting())")
+                 .font(.system(size: 75))
+                 .foregroundColor(Color.white)
+
+             Text("\(timeString2(date: date))")
+                 .font(.system(size: 20))
+                 .foregroundColor(Color.white)
+                 .onAppear(perform: {let _ = self.updateTimer})
+                 .offset(y: 100)
+               } // VStack
+           } // ZStack
+       } // body
+
+
+    // ContentView structure
+    var timeFormat: DateFormatter {
+        let formatter = DateFormatter()
+        formatter.dateFormat = "hh:mm:ss a"
+        return formatter
+    } // 시간 부분 Formatter
+
+    var timeFormat2: DateFormatter {
+        let formatter = DateFormatter()
+        formatter.dateFormat = "yyyy/MM/dd EEEE"
+        return formatter
     }
-}
+
+    func timeString(date: Date) -> String {
+        let time = timeFormat.string(from: date)
+        return time
+    }
+
+    func timeString2(date: Date) -> String {
+        let time = timeFormat2.string(from: date)
+        return time
+    }
+
+
+
+    var updateTimer: Timer {
+        Timer.scheduledTimer(withTimeInterval: 1, repeats: true, block: { _ in
+            self.date = Date()
+        })
+    } // timeInterval 마다 블락 안의 코드가 실행됨
+
+    func greeting() -> String {
+        var greet = ""
+
+        let midNight0 = Calendar.current.date(bySettingHour: 0, minute: 00, second:00, of: date)!
+        let nightEnd = Calendar.current.date(bySettingHour: 3, minute: 59, second: 59, of: date)!
+
+        let morningStart = Calendar.current.date(bySettingHour: 4, minute: 00, second: 0, of: date)!
+        let morningEnd = Calendar.current.date(bySettingHour: 11, minute: 59, second: 59, of: date)!
+
+        let noonStart = Calendar.current.date(bySettingHour: 12, minute: 00, second: 00, of: date)!
+        let noonEnd = Calendar.current.date(bySettingHour: 16, minute: 59, second: 59, of: date)!
+
+        let eveStart = Calendar.current.date(bySettingHour: 17, minute: 00, second: 00, of: date)!
+        let eveEnd = Calendar.current.date(bySettingHour: 20, minute: 59, second: 59, of: date)!
+
+        let nightStart = Calendar.current.date(bySettingHour: 21, minute: 00, second: 00, of: date)!
+        let midNight24 = Calendar.current.date(bySettingHour: 23, minute: 59, second: 59, of: date)!
+
+        if ((date >= midNight0) && (date <= nightEnd)) {
+            greet = "Good Night"
+        } else if (date >= morningStart) && (date <= morningEnd) {
+            greet = "Good Morning"
+        } else if ((date >= noonStart) && (noonEnd >= date)) {
+            greet = "Good Afternoon"
+        } else if ((date >= eveStart) && (eveEnd >= date)) {
+            greet = "Good Evening"
+        } else if ((date >= nightStart) && (midNight24 >= date)) {
+            greet = "Good Night"
+        }
+
+        return greet
+
+    } // func greeting
+
+} // ContentView 끝
+
 
 struct ContentView_Previews: PreviewProvider {
     static var previews: some View {
         ContentView()
+        .previewInterfaceOrientation(.landscapeLeft)
     }
 }
 ```
+Xcode에서 처음 프로젝트를 열면 ContentView 그리고 ContentView_Previews라는 이름을 가진 두개의 structure가 기본적으로 생성되어 있습니다. 이 글에서는 이 두가지의 structure를 이용하여 간단한 디지털 시계앱을 만들어보며 시간/날짜 정보를 불러오는 방법에 대해 알아보겠습니다.
 
-ContentView 그리고 ContentView_Previews라는 이름의 structures입니다.
-처음 SwiftUI 프로젝트를 만들면 미리 생성되어 있습니다. 소제목에 boilerplate는 반복적으로 사용되는 어구를 뜻하는 표현입니다. ContentView에는 화면에 보여질 아이템들이 들어가고 ContentView_Previews는 그것을 화면에 미리 보여주는 기본적인 structure이기 때문에 많이 사용될 수밖에 없겠죠!
+<code>ContentView: View</code>와 <code>var body: some View</code>에서 View는 이 structure가 View protocol을 따를 것이라는 의미입니다. Protocol은 요구사항을 가지고 있습니다. View 프로토콜의 가장 주요한 요구사항은 body property가 있어야 한다는 것입니다.
 
-<code>ContentView: View</code>와 <code>var body: some View</code>에서 View는 이 structure가 View protocol을 따를 것이라는 의미입니다. 각 protocol에는 요구사항들이 있습니다. View 프로토콜의 가장 주요 요구사항은 body property가 있어야 한다는 것이죠.
+body property 부분에는 스크린에 나타날 view들이 작성됩니다. 이때의 view는 프로토콜 view가 아닌 Text view, Image view, Button view와 같은 SwiftUI의 built-in view 또는 외부 프레임의 view들을 말합니다. 위 코드에서는 ZStack의 하위에 Image view와 VStack이, 그리고 VStack 하위에는 Text view가 body property 안에 작성되었습니다.
 
-body property 부분에는 스크린에 나타날 view들이 작성됩니다. 이때의 view는 프로토콜 view가 아닌 Text view, Image view, Button view와 같은 SwiftUI의 built-in view 또는 외부 프레임의 view들을 말합니다. 위 코드에서는 Text view가 body property 안에 작성되었습니다. 화면에는 아래와 같이 그려집니다.
-
-<center><img src="/assets/images/HelloIphone.png" alt="HelloIphone" width="300"></center>
+### 여기까지 수정 👷
 
 ### 2. 현재 날짜와 시간 정보 가져오기  
 

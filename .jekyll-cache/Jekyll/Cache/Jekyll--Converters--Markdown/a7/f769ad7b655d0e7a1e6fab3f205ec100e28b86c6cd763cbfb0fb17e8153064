@@ -1,0 +1,106 @@
+I"B;<p><a href="https://app.codility.com/programmers/lessons/2-arrays/cyclic_rotation/">CyclicRotation 문제 읽기</a></p>
+
+<h3 id="1-문제를-파악해보자">1. 문제를 파악해보자</h3>
+
+<p>N개의 정수로 이루어진 배열이 주어집니다. 배열의 Rotation이란 각각의 element를 오른쪽 인덱스로 옮긴다는 뜻입니다. 맨 마지막 인덱스에 있던 요소는 첫 인덱스로 이동합니다.</p>
+
+<div class="language-swift highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1">//the rotation of array A</span>
+<span class="kt">A</span> <span class="o">=</span> <span class="p">[</span><span class="mi">3</span><span class="p">,</span> <span class="mi">8</span><span class="p">,</span> <span class="mi">9</span><span class="p">,</span> <span class="mi">7</span><span class="p">,</span> <span class="mi">6</span><span class="p">]</span>
+<span class="c1">// is</span>
+<span class="kt">A</span> <span class="o">=</span> <span class="p">[</span><span class="mi">6</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">8</span><span class="p">,</span> <span class="mi">9</span><span class="p">,</span> <span class="mi">7</span><span class="p">]</span>
+</code></pre></div></div>
+<p>위의 예제는 배열 A를 한번 rotate한 결과입니다.</p>
+
+<p>목표는 배열 A를 K번 오른쪽 인덱스로 한칸씩 이동시키는 것입니다.</p>
+
+<div class="language-swift highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="p">[</span><span class="mi">3</span><span class="p">,</span> <span class="mi">8</span><span class="p">,</span> <span class="mi">9</span><span class="p">,</span> <span class="mi">7</span><span class="p">,</span> <span class="mi">6</span><span class="p">]</span> <span class="o">-&gt;</span> <span class="p">[</span><span class="mi">6</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">8</span><span class="p">,</span> <span class="mi">9</span><span class="p">,</span> <span class="mi">7</span><span class="p">]</span>
+<span class="p">[</span><span class="mi">6</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">8</span><span class="p">,</span> <span class="mi">9</span><span class="p">,</span> <span class="mi">7</span><span class="p">]</span> <span class="o">-&gt;</span> <span class="p">[</span><span class="mi">7</span><span class="p">,</span> <span class="mi">6</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">8</span><span class="p">,</span> <span class="mi">9</span><span class="p">]</span>
+<span class="p">[</span><span class="mi">7</span><span class="p">,</span> <span class="mi">6</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">8</span><span class="p">,</span> <span class="mi">9</span><span class="p">]</span> <span class="o">-&gt;</span> <span class="p">[</span><span class="mi">9</span><span class="p">,</span> <span class="mi">7</span><span class="p">,</span> <span class="mi">6</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">8</span><span class="p">]</span>
+</code></pre></div></div>
+<p>위의 예제는 3번 rotate한 결과입니다.</p>
+
+<h3 id="2-로직을-생각해보자">2. 로직을 생각해보자</h3>
+
+<p>일단 아직은 더 익숙한 언어인 Java로 구체적인 수를 적용하여 코드를 작성해봅니다.</p>
+<div class="language-java highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kn">package</span> <span class="nn">array</span><span class="o">;</span>
+
+<span class="kd">public</span> <span class="kd">class</span> <span class="nc">CyclicRotaion</span> <span class="o">{</span>
+  <span class="kd">public</span> <span class="kd">static</span> <span class="kt">void</span> <span class="nf">main</span><span class="o">(</span><span class="nc">String</span><span class="o">[]</span> <span class="n">args</span><span class="o">)</span> <span class="o">{</span>
+
+    <span class="c1">// 주어진 배열</span>
+    <span class="kt">int</span><span class="o">[]</span> <span class="no">A</span> <span class="o">=</span> <span class="o">{</span><span class="mi">3</span><span class="o">,</span> <span class="mi">8</span><span class="o">,</span> <span class="mi">9</span><span class="o">,</span> <span class="mi">7</span><span class="o">,</span> <span class="mi">6</span><span class="o">};</span>
+
+    <span class="c1">// 마지막 인덱스의 값 빈 변수에 할당하기</span>
+    <span class="kt">int</span> <span class="n">p</span> <span class="o">=</span> <span class="no">A</span><span class="o">[</span><span class="no">A</span><span class="o">.</span><span class="na">length</span><span class="o">-</span><span class="mi">1</span><span class="o">];</span>
+
+    <span class="c1">// 한칸씩 옮기기</span>
+    <span class="no">A</span><span class="o">[</span><span class="no">A</span><span class="o">.</span><span class="na">length</span><span class="o">-</span><span class="mi">1</span><span class="o">]</span> <span class="o">=</span> <span class="no">A</span><span class="o">[</span><span class="no">A</span><span class="o">.</span><span class="na">length</span><span class="o">-</span><span class="mi">2</span><span class="o">];</span>
+    <span class="no">A</span><span class="o">[</span><span class="no">A</span><span class="o">.</span><span class="na">length</span><span class="o">-</span><span class="mi">2</span><span class="o">]</span> <span class="o">=</span> <span class="no">A</span><span class="o">[</span><span class="no">A</span><span class="o">.</span><span class="na">length</span><span class="o">-</span><span class="mi">3</span><span class="o">];</span>
+    <span class="no">A</span><span class="o">[</span><span class="no">A</span><span class="o">.</span><span class="na">length</span><span class="o">-</span><span class="mi">3</span><span class="o">]</span> <span class="o">=</span> <span class="no">A</span><span class="o">[</span><span class="no">A</span><span class="o">.</span><span class="na">length</span><span class="o">-</span><span class="mi">4</span><span class="o">];</span>
+    <span class="no">A</span><span class="o">[</span><span class="no">A</span><span class="o">.</span><span class="na">length</span><span class="o">-</span><span class="mi">4</span><span class="o">]</span> <span class="o">=</span> <span class="no">A</span><span class="o">[</span><span class="no">A</span><span class="o">.</span><span class="na">length</span><span class="o">-</span><span class="mi">5</span><span class="o">];</span>
+
+    <span class="c1">// 0번째 인덱스에 옮겨두었던 마지막 인덱스 값 할당하기</span>
+    <span class="no">A</span><span class="o">[</span><span class="no">A</span><span class="o">.</span><span class="na">length</span><span class="o">-</span><span class="mi">5</span><span class="o">]</span> <span class="o">=</span> <span class="n">p</span><span class="o">;</span>
+
+    <span class="k">for</span><span class="o">(</span><span class="kt">int</span> <span class="n">i</span> <span class="o">=</span> <span class="mi">0</span><span class="o">;</span> <span class="n">i</span> <span class="o">&lt;</span> <span class="no">A</span><span class="o">.</span><span class="na">length</span><span class="o">;</span> <span class="n">i</span><span class="o">++)</span> <span class="o">{</span>
+      <span class="nc">System</span><span class="o">.</span><span class="na">out</span><span class="o">.</span><span class="na">print</span><span class="o">(</span><span class="no">A</span><span class="o">[</span><span class="n">i</span><span class="o">]</span> <span class="o">+</span> <span class="s">" "</span><span class="o">);</span>
+    <span class="o">}</span> <span class="c1">// for문</span>
+  <span class="o">}</span>
+<span class="o">}</span>
+</code></pre></div></div>
+<p>위 코드의 실행 결과는 <code>6, 3, 8, 9, 7</code>입니다.</p>
+
+<div class="language-java highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kn">package</span> <span class="nn">array</span><span class="o">;</span>
+
+<span class="kn">import</span> <span class="nn">java.util.Scanner</span><span class="o">;</span>
+
+<span class="kd">public</span> <span class="kd">class</span> <span class="nc">CyclicRotaion</span> <span class="o">{</span>
+  <span class="kd">public</span> <span class="kd">static</span> <span class="kt">void</span> <span class="nf">main</span><span class="o">(</span><span class="nc">String</span><span class="o">[]</span> <span class="n">args</span><span class="o">)</span> <span class="o">{</span>
+
+      <span class="c1">// 주어진 배열</span>
+      <span class="kt">int</span><span class="o">[]</span> <span class="no">A</span> <span class="o">=</span> <span class="o">{</span><span class="mi">3</span><span class="o">,</span> <span class="mi">8</span><span class="o">,</span> <span class="mi">9</span><span class="o">,</span> <span class="mi">7</span><span class="o">,</span> <span class="mi">6</span><span class="o">};</span>
+
+      <span class="c1">// 마지막 인덱스의 값 빈 변수에 할당하기</span>
+      <span class="c1">// 배열의 크기에 상관없이 항상 마지막 인덱스 값을 나타냄.</span>
+      <span class="kt">int</span> <span class="n">p</span> <span class="o">=</span> <span class="no">A</span><span class="o">[</span><span class="no">A</span><span class="o">.</span><span class="na">length</span><span class="o">-</span><span class="mi">1</span><span class="o">];</span>
+
+      <span class="k">for</span><span class="o">(</span><span class="kt">int</span> <span class="n">i</span> <span class="o">=</span> <span class="mi">1</span><span class="o">;</span> <span class="n">i</span> <span class="o">&lt;=</span> <span class="o">(</span><span class="no">A</span><span class="o">.</span><span class="na">length</span><span class="o">-</span><span class="mi">1</span><span class="o">);</span> <span class="n">i</span><span class="o">++)</span> <span class="o">{</span>
+          <span class="no">A</span><span class="o">[</span><span class="no">A</span><span class="o">.</span><span class="na">length</span><span class="o">-</span><span class="n">i</span><span class="o">]</span> <span class="o">=</span> <span class="no">A</span><span class="o">[</span><span class="no">A</span><span class="o">.</span><span class="na">length</span><span class="o">-(</span><span class="n">i</span><span class="o">+</span><span class="mi">1</span><span class="o">)];</span>
+      <span class="o">}</span>
+
+      <span class="c1">// 0번째 인덱스에 옮겨두었던 마지막 인덱스 값 할당하기</span>
+      <span class="no">A</span><span class="o">[</span><span class="no">A</span><span class="o">.</span><span class="na">length</span><span class="o">-</span><span class="no">A</span><span class="o">.</span><span class="na">length</span><span class="o">]</span> <span class="o">=</span> <span class="n">p</span><span class="o">;</span>
+
+      <span class="c1">// 배열의 값을 출력하는 for문</span>
+      <span class="k">for</span><span class="o">(</span><span class="kt">int</span> <span class="n">i</span> <span class="o">=</span> <span class="mi">0</span><span class="o">;</span> <span class="n">i</span> <span class="o">&lt;</span> <span class="no">A</span><span class="o">.</span><span class="na">length</span><span class="o">;</span> <span class="n">i</span><span class="o">++)</span> <span class="o">{</span>
+          <span class="nc">System</span><span class="o">.</span><span class="na">out</span><span class="o">.</span><span class="na">print</span><span class="o">(</span><span class="no">A</span><span class="o">[</span><span class="n">i</span><span class="o">]</span> <span class="o">+</span> <span class="s">" "</span><span class="o">);</span>
+      <span class="o">}</span>
+  <span class="o">}</span>
+<span class="o">}</span>
+</code></pre></div></div>
+<p>반복되는 부분을 for문을 사용하여 작성해줍니다.</p>
+
+<div class="language-java highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">class</span> <span class="nc">Solution</span> <span class="o">{</span>
+  <span class="kd">public</span> <span class="kt">int</span><span class="o">[]</span> <span class="nf">solution</span><span class="o">(</span><span class="kt">int</span><span class="o">[]</span> <span class="no">A</span><span class="o">,</span> <span class="kt">int</span> <span class="no">K</span><span class="o">)</span> <span class="o">{</span>
+    <span class="c1">// write your code in Java SE 8</span>
+
+    <span class="kt">int</span> <span class="n">p</span> <span class="o">=</span> <span class="mi">0</span><span class="o">;</span> <span class="c1">// 마지막 인덱스의 값 옮겨둘 변수</span>
+
+    <span class="k">while</span><span class="o">(</span><span class="no">K</span> <span class="o">&gt;=</span> <span class="mi">1</span><span class="o">)</span> <span class="o">{</span> <span class="c1">// while문 사용하여 반복할 횟수 K이용</span>
+
+      <span class="n">p</span> <span class="o">=</span> <span class="no">A</span><span class="o">[</span><span class="no">A</span><span class="o">.</span><span class="na">length</span><span class="o">-</span><span class="mi">1</span><span class="o">];</span>
+
+      <span class="k">for</span><span class="o">(</span><span class="kt">int</span> <span class="n">i</span> <span class="o">=</span> <span class="mi">1</span><span class="o">;</span> <span class="n">i</span> <span class="o">&lt;=</span> <span class="o">(</span><span class="no">A</span><span class="o">.</span><span class="na">length</span><span class="o">-</span><span class="mi">1</span><span class="o">);</span> <span class="n">i</span><span class="o">++)</span> <span class="o">{</span>
+
+          <span class="no">A</span><span class="o">[</span><span class="no">A</span><span class="o">.</span><span class="na">length</span><span class="o">-</span><span class="n">i</span><span class="o">]</span> <span class="o">=</span> <span class="no">A</span><span class="o">[</span><span class="no">A</span><span class="o">.</span><span class="na">length</span><span class="o">-(</span><span class="n">i</span><span class="o">+</span><span class="mi">1</span><span class="o">)];</span>
+
+        <span class="o">}</span> <span class="c1">// for문 끝</span>
+        <span class="no">A</span><span class="o">[</span><span class="no">A</span><span class="o">.</span><span class="na">length</span><span class="o">-</span><span class="no">A</span><span class="o">.</span><span class="na">length</span><span class="o">]</span> <span class="o">=</span> <span class="n">p</span><span class="o">;</span>
+        <span class="no">K</span><span class="o">--;</span>
+    <span class="o">}</span> <span class="c1">// while 문 끝</span>
+
+<span class="k">return</span> <span class="no">A</span><span class="o">;</span>
+<span class="o">}</span>
+<span class="o">}</span>
+</code></pre></div></div>
+:ET
