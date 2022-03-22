@@ -15,7 +15,7 @@ header:
   teaser: /assets/images/yourDigitalClock.png
 ---
 
-### 💭 ..  
+### 💭 ..    
 <div class="notice">
   <h4>Swift는 어떤 언어일까?</h4>
   <p>디지털시계 앱을 만들며 Swift의 기초적인 것들을 알아봅니다.</p>
@@ -28,8 +28,6 @@ header:
 
 <center><video src="https://user-images.githubusercontent.com/85061148/159151492-81fcd9d7-b468-460c-ad3a-f7f196d21755.mov" controls="controls" style="max-width: 600px">
 </video></center>
-
-<!-- What I Learned From This Project: -->
 
 ### 1. ContentView와 ContentView_Previews
 [Intro to SwiftUI: Digital Clock](https://medium.com/iu-women-in-computing/intro-to-swiftui-digital-clock-d0a60e05d394) <- 블로그의 글을 보며 공부합니다.
@@ -62,7 +60,7 @@ struct ContentView: View {
                  .font(.system(size: 75))
                  .foregroundColor(Color.white)
 
-             Text("\(timeString2(date: date))")
+             Text("\(dateString(date: date))")
                  .font(.system(size: 20))
                  .foregroundColor(Color.white)
                  .onAppear(perform: {let _ = self.updateTimer})
@@ -79,7 +77,7 @@ struct ContentView: View {
         return formatter
     } // 시간 부분 Formatter
 
-    var timeFormat2: DateFormatter {
+    var dateFormat: DateFormatter {
         let formatter = DateFormatter()
         formatter.dateFormat = "yyyy/MM/dd EEEE"
         return formatter
@@ -90,11 +88,10 @@ struct ContentView: View {
         return time
     }
 
-    func timeString2(date: Date) -> String {
-        let time = timeFormat2.string(from: date)
+    func dateString(date: Date) -> String {
+        let time = dateFormat.string(from: date)
         return time
     }
-
 
 
     var updateTimer: Timer {
@@ -153,8 +150,6 @@ Xcode에서 처음 프로젝트를 열면 ContentView 그리고 ContentView_Prev
 
 body property 부분에는 스크린에 나타날 view들이 작성됩니다. 이때의 view는 프로토콜 view가 아닌 Text view, Image view, Button view와 같은 SwiftUI의 built-in view 또는 외부 프레임의 view들을 말합니다. 위 코드에서는 ZStack의 하위에 Image view와 VStack이, 그리고 VStack 하위에는 Text view가 body property 안에 작성되었습니다.
 
-### 여기까지 수정 👷
-
 ### 2. 현재 날짜와 시간 정보 가져오기  
 
 ```swift
@@ -188,35 +183,55 @@ struct ContentView_Previews: PreviewProvider {
 
 시간 정보는 초마다 계속해서 바뀌므로 property wrapper인 @State 를 사용해서 바뀐 시간을 계속해서 업데이트, 반영해 주고 문자열 date에 escape character \ 를 추가해서 Date()를 담고 있는 date 변수의 할당되어 있는 정보를 문자열로 가져옵니다.
 
-### 3. DateFormatter 사용
 
-DateFormatter를 사용하여 가져온 날짜/시간 데이터를 우리가 원하는 형식으로 만들어 봅니다.
+### 3. DateFormatter
+```swift
+import SwiftUI
+
+struct dateString: View {
+    @State var date = Date()
+    var body: some View {
+        Text("\(date)")
+    }
+}
+
+struct dateString_Previews: PreviewProvider {
+    static var previews: some View {
+        dateString()
+    }
+}
+```
+
+위 코드로 가져온 날짜/시간 데이터를 화면에 출력해봅니다. 아직 형식을 지정해주지 않았기 때문에 아래 사진처럼 보여집니다. 날짜, 시간, 분이라는 정보가 포함되어 있지 않고 나열된 문자열로써 나타납니다.
+
+<img src="/assets/images/date_original.png" alt="date_original" width="550">
+
+시간 부분의 형식을 먼저 지정해보겠습니다.
 
 ```swift
 var timeFormat: DateFormatter {
   let formatter = DateFormatter()
-  formatter.dateFormat = ("hh:mm:ss a")
+  formatter.dateFormat = "hh:mm:ss a"
   return formatter
 }
 ```
 
-### DateFormatter  
+**DateFormatter**는 시간/날짜 데이터를 문자열 형식으로 보여지게 하는 Class입니다. dateFormat은 DateFormatter Class의 instance property입니다. 데이터를 받은 사람이 사용할 수 있는 날짜/시간 데이터의 형식 중 하나입니다.
+- hh - 12시간 표기법 시간
+- mm -  분
+- ss -  초
+- a - am/pm
 
-DateFormatter는 날짜 데이터를 문자열 형식으로 보여지게 하는 Class입니다.  
-timeFormat는 DateFormatter 객체이다. timeFormat는 DateFormatter의 메서드를 호출할 수 있다.  
-dateFormat은 DateFormatter객체의 property이다. 주어진 날짜/시간 데이터에서 우리가 원하는 것만 보여줄 수 있도록 해준다.
-- 소문자 "hh" = 12시간 표기법
-- 대문자 "HH" = 24시간 표기법
-- "mm" = 분, "ss" = 초  
-- a는 am/pm을 보여준다.  
-
-그 다음으로는 가져온 날짜 데이터를 문자열로 바꿔주는 function을 작성해봅니다.  
+그 다음으로는 가져온 시간 데이터를 문자열로 바꿔주는 function을 작성해봅니다.  
 ```swift
 func timeString(date: Date) -> String {
   let time = timeFormat.string(from: date)
   return time
-}s
+}
 ```
+
+### 여기까지 수정 👷
+
 
 ### 4. Live Time  
 

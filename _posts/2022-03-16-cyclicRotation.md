@@ -5,7 +5,8 @@ categories:
 tags:
   - learning
   - 공부 기록
-  - Swift
+  - Codility
+  - 코테
 show_date: true
 toc: true
 toc_sticky: true

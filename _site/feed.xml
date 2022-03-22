@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="4.2.1">Jekyll</generator><link href="http://localhost:4000/feed.xml" rel="self" type="application/atom+xml" /><link href="http://localhost:4000/" rel="alternate" type="text/html" /><updated>2022-03-20T23:30:47+09:00</updated><id>http://localhost:4000/feed.xml</id><title type="html">Mirae the Future</title><subtitle>An amazing website.</subtitle><author><name>Mirae</name></author><entry><title type="html">웹 페이지를 만들며 HTML과 CSS에 대해 알아보기</title><link href="http://localhost:4000/til/octopusProject/" rel="alternate" type="text/html" title="웹 페이지를 만들며 HTML과 CSS에 대해 알아보기" /><published>2022-03-16T00:00:00+09:00</published><updated>2022-03-16T00:00:00+09:00</updated><id>http://localhost:4000/til/octopusProject</id><content type="html" xml:base="http://localhost:4000/til/octopusProject/">&lt;div class=&quot;notice&quot;&gt;
+<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="4.2.1">Jekyll</generator><link href="http://localhost:4000/feed.xml" rel="self" type="application/atom+xml" /><link href="http://localhost:4000/" rel="alternate" type="text/html" /><updated>2022-03-22T16:07:21+09:00</updated><id>http://localhost:4000/feed.xml</id><title type="html">Mirae the Future</title><subtitle>An amazing website.</subtitle><author><name>Mirae</name></author><entry><title type="html">웹 페이지를 만들며 HTML과 CSS에 대해 알아보기</title><link href="http://localhost:4000/til/octopusProject/" rel="alternate" type="text/html" title="웹 페이지를 만들며 HTML과 CSS에 대해 알아보기" /><published>2022-03-16T00:00:00+09:00</published><updated>2022-03-16T00:00:00+09:00</updated><id>http://localhost:4000/til/octopusProject</id><content type="html" xml:base="http://localhost:4000/til/octopusProject/">&lt;div class=&quot;notice&quot;&gt;
   &lt;h4&gt;Octopus Project&lt;/h4&gt;
   &lt;p&gt;팀 프로젝트가 끝나고 바로 개인 프로젝트가 하나 있습니다.
   7일정도 HTML과 CSS를 배우는데, 배운 것으로 웹 페이지를 만드는 것입니다.
@@ -172,7 +172,7 @@ stylesheet, icon, tag 등 여러가지 관계들이 있습니다. link types는 
 &lt;ul&gt;
   &lt;li&gt;문제 해결 과정&lt;/li&gt;
   &lt;li&gt;빈 배열이 입력되었을 때 프로그램이 꺼지는 문제 해결하기&lt;/li&gt;
-&lt;/ul&gt;</content><author><name>Mirae</name></author><category term="TIL" /><category term="learning" /><category term="공부 기록" /><category term="Swift" /><summary type="html">CyclicRotation 문제 읽기</summary></entry><entry><title type="html">SwiftUI Tutorial: 여러 개의 View를 만들고 결합하기</title><link href="http://localhost:4000/til/landmarks/" rel="alternate" type="text/html" title="SwiftUI Tutorial: 여러 개의 View를 만들고 결합하기" /><published>2022-03-14T00:00:00+09:00</published><updated>2022-03-14T00:00:00+09:00</updated><id>http://localhost:4000/til/landmarks</id><content type="html" xml:base="http://localhost:4000/til/landmarks/">&lt;p&gt;SwiftUI Tutorial을 따라가며 아래 Landmark앱을 만들어 보겠습니다. 튜토리얼의 출처는 &lt;a href=&quot;https://developer.apple.com/tutorials/swiftui/creating-and-combining-views&quot;&gt;SwiftUI Essentials:
+&lt;/ul&gt;</content><author><name>Mirae</name></author><category term="TIL" /><category term="learning" /><category term="공부 기록" /><category term="Codility" /><category term="코테" /><summary type="html">CyclicRotation 문제 읽기</summary></entry><entry><title type="html">SwiftUI Tutorial: 여러 개의 View를 만들고 결합하기</title><link href="http://localhost:4000/til/landmarks/" rel="alternate" type="text/html" title="SwiftUI Tutorial: 여러 개의 View를 만들고 결합하기" /><published>2022-03-14T00:00:00+09:00</published><updated>2022-03-14T00:00:00+09:00</updated><id>http://localhost:4000/til/landmarks</id><content type="html" xml:base="http://localhost:4000/til/landmarks/">&lt;p&gt;SwiftUI Tutorial을 따라가며 아래 Landmark앱을 만들어 보겠습니다. 튜토리얼의 출처는 &lt;a href=&quot;https://developer.apple.com/tutorials/swiftui/creating-and-combining-views&quot;&gt;SwiftUI Essentials:
 Creating and Combining Views&lt;/a&gt; 입니다.&lt;/p&gt;
 
 &lt;center&gt;&lt;video src=&quot;https://user-images.githubusercontent.com/85061148/159120793-a9d5166b-fad5-41f0-899a-fcfe0bee25da.mov&quot; controls=&quot;controls&quot; style=&quot;max-width: 300px&quot;&gt;
@@ -406,8 +406,6 @@ var body: some View {
 &lt;center&gt;&lt;video src=&quot;https://user-images.githubusercontent.com/85061148/159151492-81fcd9d7-b468-460c-ad3a-f7f196d21755.mov&quot; controls=&quot;controls&quot; style=&quot;max-width: 600px&quot;&gt;
 &lt;/video&gt;&lt;/center&gt;
 
-&lt;!-- What I Learned From This Project: --&gt;
-
 &lt;h3 id=&quot;1-contentview와-contentview_previews&quot;&gt;1. ContentView와 ContentView_Previews&lt;/h3&gt;
 &lt;p&gt;&lt;a href=&quot;https://medium.com/iu-women-in-computing/intro-to-swiftui-digital-clock-d0a60e05d394&quot;&gt;Intro to SwiftUI: Digital Clock&lt;/a&gt; &amp;lt;- 블로그의 글을 보며 공부합니다.&lt;/p&gt;
 
@@ -438,7 +436,7 @@ var body: some View {
                  &lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nf&quot;&gt;font&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nf&quot;&gt;system&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nv&quot;&gt;size&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;75&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;))&lt;/span&gt;
                  &lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nf&quot;&gt;foregroundColor&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;kt&quot;&gt;Color&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;white&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
 
-             &lt;span class=&quot;kt&quot;&gt;Text&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;&lt;/span&gt;&lt;span class=&quot;se&quot;&gt;\(&lt;/span&gt;&lt;span class=&quot;nf&quot;&gt;timeString2&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nv&quot;&gt;date&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;date&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;&lt;span class=&quot;se&quot;&gt;)&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
+             &lt;span class=&quot;kt&quot;&gt;Text&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;&lt;/span&gt;&lt;span class=&quot;se&quot;&gt;\(&lt;/span&gt;&lt;span class=&quot;nf&quot;&gt;dateString&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nv&quot;&gt;date&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;date&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;&lt;span class=&quot;se&quot;&gt;)&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
                  &lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nf&quot;&gt;font&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nf&quot;&gt;system&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nv&quot;&gt;size&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;20&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;))&lt;/span&gt;
                  &lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nf&quot;&gt;foregroundColor&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;kt&quot;&gt;Color&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;white&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
                  &lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nf&quot;&gt;onAppear&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nv&quot;&gt;perform&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;&lt;span class=&quot;k&quot;&gt;let&lt;/span&gt; &lt;span class=&quot;nv&quot;&gt;_&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;self&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;updateTimer&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;})&lt;/span&gt;
@@ -455,7 +453,7 @@ var body: some View {
         &lt;span class=&quot;k&quot;&gt;return&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;formatter&lt;/span&gt;
     &lt;span class=&quot;p&quot;&gt;}&lt;/span&gt; &lt;span class=&quot;c1&quot;&gt;// 시간 부분 Formatter&lt;/span&gt;
 
-    &lt;span class=&quot;k&quot;&gt;var&lt;/span&gt; &lt;span class=&quot;nv&quot;&gt;timeFormat2&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;kt&quot;&gt;DateFormatter&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
+    &lt;span class=&quot;k&quot;&gt;var&lt;/span&gt; &lt;span class=&quot;nv&quot;&gt;dateFormat&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;kt&quot;&gt;DateFormatter&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
         &lt;span class=&quot;k&quot;&gt;let&lt;/span&gt; &lt;span class=&quot;nv&quot;&gt;formatter&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;kt&quot;&gt;DateFormatter&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;()&lt;/span&gt;
         &lt;span class=&quot;n&quot;&gt;formatter&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;dateFormat&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;&quot;yyyy/MM/dd EEEE&quot;&lt;/span&gt;
         &lt;span class=&quot;k&quot;&gt;return&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;formatter&lt;/span&gt;
@@ -466,11 +464,10 @@ var body: some View {
         &lt;span class=&quot;k&quot;&gt;return&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;time&lt;/span&gt;
     &lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
 
-    &lt;span class=&quot;kd&quot;&gt;func&lt;/span&gt; &lt;span class=&quot;nf&quot;&gt;timeString2&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nv&quot;&gt;date&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;kt&quot;&gt;Date&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;-&amp;gt;&lt;/span&gt; &lt;span class=&quot;kt&quot;&gt;String&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
-        &lt;span class=&quot;k&quot;&gt;let&lt;/span&gt; &lt;span class=&quot;nv&quot;&gt;time&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;timeFormat2&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nf&quot;&gt;string&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nv&quot;&gt;from&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;date&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
+    &lt;span class=&quot;kd&quot;&gt;func&lt;/span&gt; &lt;span class=&quot;nf&quot;&gt;dateString&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nv&quot;&gt;date&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;kt&quot;&gt;Date&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;-&amp;gt;&lt;/span&gt; &lt;span class=&quot;kt&quot;&gt;String&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
+        &lt;span class=&quot;k&quot;&gt;let&lt;/span&gt; &lt;span class=&quot;nv&quot;&gt;time&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;dateFormat&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nf&quot;&gt;string&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nv&quot;&gt;from&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;date&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
         &lt;span class=&quot;k&quot;&gt;return&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;time&lt;/span&gt;
     &lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
-
 
 
     &lt;span class=&quot;k&quot;&gt;var&lt;/span&gt; &lt;span class=&quot;nv&quot;&gt;updateTimer&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;kt&quot;&gt;Timer&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
@@ -529,8 +526,6 @@ var body: some View {
 
 &lt;p&gt;body property 부분에는 스크린에 나타날 view들이 작성됩니다. 이때의 view는 프로토콜 view가 아닌 Text view, Image view, Button view와 같은 SwiftUI의 built-in view 또는 외부 프레임의 view들을 말합니다. 위 코드에서는 ZStack의 하위에 Image view와 VStack이, 그리고 VStack 하위에는 Text view가 body property 안에 작성되었습니다.&lt;/p&gt;
 
-&lt;h3 id=&quot;여기까지-수정-&quot;&gt;여기까지 수정 👷&lt;/h3&gt;
-
 &lt;h3 id=&quot;2-현재-날짜와-시간-정보-가져오기&quot;&gt;2. 현재 날짜와 시간 정보 가져오기&lt;/h3&gt;
 
 &lt;div class=&quot;language-swift highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;kd&quot;&gt;struct&lt;/span&gt; &lt;span class=&quot;kt&quot;&gt;ContentView&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;kt&quot;&gt;View&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
@@ -567,35 +562,52 @@ var body: some View {
 
 &lt;p&gt;시간 정보는 초마다 계속해서 바뀌므로 property wrapper인 @State 를 사용해서 바뀐 시간을 계속해서 업데이트, 반영해 주고 문자열 date에 escape character \ 를 추가해서 Date()를 담고 있는 date 변수의 할당되어 있는 정보를 문자열로 가져옵니다.&lt;/p&gt;
 
-&lt;h3 id=&quot;3-dateformatter-사용&quot;&gt;3. DateFormatter 사용&lt;/h3&gt;
+&lt;h3 id=&quot;3-dateformatter&quot;&gt;3. DateFormatter&lt;/h3&gt;
+&lt;div class=&quot;language-swift highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;kd&quot;&gt;import&lt;/span&gt; &lt;span class=&quot;kt&quot;&gt;SwiftUI&lt;/span&gt;
 
-&lt;p&gt;DateFormatter를 사용하여 가져온 날짜/시간 데이터를 우리가 원하는 형식으로 만들어 봅니다.&lt;/p&gt;
+&lt;span class=&quot;kd&quot;&gt;struct&lt;/span&gt; &lt;span class=&quot;nv&quot;&gt;dateString&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;kt&quot;&gt;View&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
+    &lt;span class=&quot;kd&quot;&gt;@State&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;var&lt;/span&gt; &lt;span class=&quot;nv&quot;&gt;date&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;kt&quot;&gt;Date&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;()&lt;/span&gt;
+    &lt;span class=&quot;k&quot;&gt;var&lt;/span&gt; &lt;span class=&quot;nv&quot;&gt;body&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;kd&quot;&gt;some&lt;/span&gt; &lt;span class=&quot;kt&quot;&gt;View&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
+        &lt;span class=&quot;kt&quot;&gt;Text&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;&lt;/span&gt;&lt;span class=&quot;se&quot;&gt;\(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;date&lt;/span&gt;&lt;span class=&quot;se&quot;&gt;)&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
+    &lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
+&lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
+
+&lt;span class=&quot;kd&quot;&gt;struct&lt;/span&gt; &lt;span class=&quot;nv&quot;&gt;dateString_Previews&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;kt&quot;&gt;PreviewProvider&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
+    &lt;span class=&quot;kd&quot;&gt;static&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;var&lt;/span&gt; &lt;span class=&quot;nv&quot;&gt;previews&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;kd&quot;&gt;some&lt;/span&gt; &lt;span class=&quot;kt&quot;&gt;View&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
+        &lt;span class=&quot;nf&quot;&gt;dateString&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;()&lt;/span&gt;
+    &lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
+&lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;p&gt;위 코드로 가져온 날짜/시간 데이터를 화면에 출력해봅니다. 아직 형식을 지정해주지 않았기 때문에 아래 사진처럼 보여집니다. 날짜, 시간, 분이라는 정보가 포함되어 있지 않고 나열된 문자열로써 나타납니다.&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;/assets/images/date_original.png&quot; alt=&quot;date_original&quot; width=&quot;550&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;시간 부분의 형식을 먼저 지정해보겠습니다.&lt;/p&gt;
 
 &lt;div class=&quot;language-swift highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;k&quot;&gt;var&lt;/span&gt; &lt;span class=&quot;nv&quot;&gt;timeFormat&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;kt&quot;&gt;DateFormatter&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
   &lt;span class=&quot;k&quot;&gt;let&lt;/span&gt; &lt;span class=&quot;nv&quot;&gt;formatter&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;kt&quot;&gt;DateFormatter&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;()&lt;/span&gt;
-  &lt;span class=&quot;n&quot;&gt;formatter&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;dateFormat&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;hh:mm:ss a&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
+  &lt;span class=&quot;n&quot;&gt;formatter&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;dateFormat&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;&quot;hh:mm:ss a&quot;&lt;/span&gt;
   &lt;span class=&quot;k&quot;&gt;return&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;formatter&lt;/span&gt;
 &lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
 &lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
 
-&lt;h3 id=&quot;dateformatter&quot;&gt;DateFormatter&lt;/h3&gt;
-
-&lt;p&gt;DateFormatter는 날짜 데이터를 문자열 형식으로 보여지게 하는 Class입니다.&lt;br /&gt;
-timeFormat는 DateFormatter 객체이다. timeFormat는 DateFormatter의 메서드를 호출할 수 있다.&lt;br /&gt;
-dateFormat은 DateFormatter객체의 property이다. 주어진 날짜/시간 데이터에서 우리가 원하는 것만 보여줄 수 있도록 해준다.&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;DateFormatter&lt;/strong&gt;는 시간/날짜 데이터를 문자열 형식으로 보여지게 하는 Class입니다. dateFormat은 DateFormatter Class의 instance property입니다. 데이터를 받은 사람이 사용할 수 있는 날짜/시간 데이터의 형식 중 하나입니다.&lt;/p&gt;
 &lt;ul&gt;
-  &lt;li&gt;소문자 “hh” = 12시간 표기법&lt;/li&gt;
-  &lt;li&gt;대문자 “HH” = 24시간 표기법&lt;/li&gt;
-  &lt;li&gt;“mm” = 분, “ss” = 초&lt;/li&gt;
-  &lt;li&gt;a는 am/pm을 보여준다.&lt;/li&gt;
+  &lt;li&gt;hh - 12시간 표기법 시간&lt;/li&gt;
+  &lt;li&gt;mm -  분&lt;/li&gt;
+  &lt;li&gt;ss -  초&lt;/li&gt;
+  &lt;li&gt;a - am/pm&lt;/li&gt;
 &lt;/ul&gt;
 
-&lt;p&gt;그 다음으로는 가져온 날짜 데이터를 문자열로 바꿔주는 function을 작성해봅니다.&lt;/p&gt;
+&lt;p&gt;그 다음으로는 가져온 시간 데이터를 문자열로 바꿔주는 function을 작성해봅니다.&lt;/p&gt;
 &lt;div class=&quot;language-swift highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;kd&quot;&gt;func&lt;/span&gt; &lt;span class=&quot;nf&quot;&gt;timeString&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nv&quot;&gt;date&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;kt&quot;&gt;Date&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;-&amp;gt;&lt;/span&gt; &lt;span class=&quot;kt&quot;&gt;String&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
   &lt;span class=&quot;k&quot;&gt;let&lt;/span&gt; &lt;span class=&quot;nv&quot;&gt;time&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;timeFormat&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nf&quot;&gt;string&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nv&quot;&gt;from&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;date&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
   &lt;span class=&quot;k&quot;&gt;return&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;time&lt;/span&gt;
-&lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;s&lt;/span&gt;
+&lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
 &lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;h3 id=&quot;여기까지-수정-&quot;&gt;여기까지 수정 👷&lt;/h3&gt;
 
 &lt;h3 id=&quot;4-live-time&quot;&gt;4. Live Time&lt;/h3&gt;
 
@@ -747,6 +759,20 @@ View protocol은 기능의 청사진을 제공합니다. 이 경우에는 SwiftU
 &lt;p&gt;custom view를 view hierarchy에 포함되게 하려면 View protocol이 요구하는 몇가지 사항들을 충족시켜야 합니다.&lt;/p&gt;
 
 &lt;p&gt;View protocol의 주요구사항은 body computed property를 꼭 정의해주어야 한다는 것입니다.&lt;/p&gt;
+
+&lt;h3 id=&quot;4-인스턴스instances&quot;&gt;4. 인스턴스(Instances)&lt;/h3&gt;
+
+&lt;h3 id=&quot;5-properties는-뭘까요&quot;&gt;5. Properties는 뭘까요?&lt;/h3&gt;
+
+&lt;p&gt;Properties는 값(values)와 특정 class, structure, enumeration을 연결시킵니다.&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;Stored properties&lt;/li&gt;
+  &lt;li&gt;Computed properties&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;Stored properties는 instance의 한 부분을 하는 변수와 상수를 담는 역할을 합니다. 그에 반해, computed properties는 값을 담기 보다는 계산합니다.&lt;br /&gt;
+Computed properties는 class, structure, enumeration으로 부터 제공, 사용되고 stored properties는 class와 structure로 부터 제공, 사용됩니다.&lt;/p&gt;
 
 &lt;p&gt;…계속됩니다.😎&lt;/p&gt;
 

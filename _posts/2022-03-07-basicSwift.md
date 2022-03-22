@@ -74,6 +74,24 @@ custom view를 view hierarchy에 포함되게 하려면 View protocol이 요구�
 
 View protocol의 주요구사항은 body computed property를 꼭 정의해주어야 한다는 것입니다.
 
+### 4. 인스턴스(Instances)  
+
+
+
+### 5. Properties는 뭘까요?  
+
+Properties는 값(values)와 특정 class, structure, enumeration을 연결시킵니다.
+
+- Stored properties
+- Computed properties
+
+Stored properties는 instance의 한 부분을 하는 변수와 상수를 담는 역할을 합니다. 그에 반해, computed properties는 값을 담기 보다는 계산합니다.  
+Computed properties는 class, structure, enumeration으로 부터 제공, 사용되고 stored properties는 class와 structure로 부터 제공, 사용됩니다.
+
+
+
+
+
 ...계속됩니다.😎
 
 
