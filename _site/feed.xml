@@ -1,47 +1,82 @@
-<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="4.2.1">Jekyll</generator><link href="http://localhost:4000/feed.xml" rel="self" type="application/atom+xml" /><link href="http://localhost:4000/" rel="alternate" type="text/html" /><updated>2022-03-22T16:07:21+09:00</updated><id>http://localhost:4000/feed.xml</id><title type="html">Mirae the Future</title><subtitle>An amazing website.</subtitle><author><name>Mirae</name></author><entry><title type="html">웹 페이지를 만들며 HTML과 CSS에 대해 알아보기</title><link href="http://localhost:4000/til/octopusProject/" rel="alternate" type="text/html" title="웹 페이지를 만들며 HTML과 CSS에 대해 알아보기" /><published>2022-03-16T00:00:00+09:00</published><updated>2022-03-16T00:00:00+09:00</updated><id>http://localhost:4000/til/octopusProject</id><content type="html" xml:base="http://localhost:4000/til/octopusProject/">&lt;div class=&quot;notice&quot;&gt;
-  &lt;h4&gt;Octopus Project&lt;/h4&gt;
-  &lt;p&gt;팀 프로젝트가 끝나고 바로 개인 프로젝트가 하나 있습니다.
-  7일정도 HTML과 CSS를 배우는데, 배운 것으로 웹 페이지를 만드는 것입니다.
-  자바 스크립트는 할 수도 안할 수도 있다는데 시간이 되면 자바 스크립트도 이용해서 페이지를 만들어보면 좋을 것 같습니다.&lt;br /&gt;
-  단축키를 모아 놓은 웹 페이지를 만들어 보려고 합니다. (제가 자주 쓰는 프로그램들의 단축키를 모아모아)&lt;br /&gt;
-  유투브에서 맘에 드는 강의를 찾아 따라해보고 코드를 분석해봅니다.&lt;/p&gt;
-&lt;/div&gt;
+<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="4.2.1">Jekyll</generator><link href="http://localhost:4000/feed.xml" rel="self" type="application/atom+xml" /><link href="http://localhost:4000/" rel="alternate" type="text/html" /><updated>2022-03-23T00:49:59+09:00</updated><id>http://localhost:4000/feed.xml</id><title type="html">Mirae the Future</title><subtitle>An amazing website.</subtitle><author><name>Mirae</name></author><entry><title type="html">SwiftUI Essentials: Building Lists and Navigation</title><link href="http://localhost:4000/til/list-and-navi/" rel="alternate" type="text/html" title="SwiftUI Essentials: Building Lists and Navigation" /><published>2022-03-22T00:00:00+09:00</published><updated>2022-03-22T00:00:00+09:00</updated><id>http://localhost:4000/til/list-and-navi</id><content type="html" xml:base="http://localhost:4000/til/list-and-navi/">&lt;p&gt;튜토리얼의 출처는 &lt;a href=&quot;https://developer.apple.com/tutorials/swiftui/building-lists-and-navigation&quot;&gt;SwiftUI Essentials:
+Building Lists and Navigation&lt;/a&gt; 입니다.&lt;/p&gt;
 
-&lt;p&gt;&lt;img src=&quot;/assets/images/octo.png&quot; alt=&quot;octopus&quot; /&gt;&lt;/p&gt;
+&lt;!-- &lt;center&gt;&lt;video src=&quot;https://user-images.githubusercontent.com/85061148/159120793-a9d5166b-fad5-41f0-899a-fcfe0bee25da.mov&quot; controls=&quot;controls&quot; style=&quot;max-width: 300px&quot;&gt;
+&lt;/video&gt;&lt;/center&gt; --&gt;
 
-&lt;p&gt;&lt;a href=&quot;https://www.youtube.com/watch?v=-2LtZRi6Q0s&quot;&gt;Easy Tutorials: How To Make A Website Using HTML And CSS / Website Design In HTML And CSS&lt;/a&gt;&lt;/p&gt;
-
-&lt;h2 id=&quot;1-what-i-learned-from-this-project&quot;&gt;1. What I Learned From This Project:&lt;/h2&gt;
+&lt;h2 id=&quot;️-what-i-learned-from-this-tutorial&quot;&gt;&lt;strong&gt;☑️ What I Learned From This Tutorial:&lt;/strong&gt;&lt;/h2&gt;
 
 &lt;ul&gt;
-  &lt;li&gt;&lt;code&gt;link&lt;/code&gt; HTML element&lt;/li&gt;
-  &lt;li&gt;linear-flex를 이용해서 목록을 옆으로 나열하기&lt;/li&gt;
+  &lt;li&gt;데이터를 이용하기&lt;/li&gt;
+  &lt;li&gt;Foundation module의 사용&lt;/li&gt;
+  &lt;li&gt;Codable / Hashable conformance&lt;/li&gt;
+  &lt;li&gt;Guard
+&lt;!-- - Binding ($) --&gt;&lt;/li&gt;
 &lt;/ul&gt;
 
-&lt;h2 id=&quot;2-link-html-element&quot;&gt;2. link HTML element&lt;/h2&gt;
+&lt;!-- &lt;br&gt;
 
-&lt;div class=&quot;language-html highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;nt&quot;&gt;&amp;lt;link&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;rel=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;stylesheet&quot;&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;href=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;style.css&quot;&lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;&amp;gt;&lt;/span&gt;
+&lt;center&gt;&lt;img src=&quot;/assets/images/directoryTree.png&quot; alt=&quot;tree&quot; width= &quot;300&quot;&gt;
+&lt;/center&gt;
+&lt;br&gt; --&gt;
+
+&lt;h2 id=&quot;section-1-landmark-model-생성하기&quot;&gt;Section 1: Landmark model 생성하기&lt;/h2&gt;
+
+&lt;h3 id=&quot;샘플-데이터-파일-추가하기&quot;&gt;샘플 데이터 파일 추가하기&lt;/h3&gt;
+
+&lt;p&gt;다운받은 프로젝트 파일에 압축을 풀면 Resources 폴더에 landmarkData.json 파일이 있습니다. 튜토리얼 Creating and Combining Views에서 만들었던 프로젝트를 그대로 사용합니다. 왼쪽에 위치한 프로젝트의 navigation pane 부분에 landmarkData.json 파일을 드래그해서 넣어줍니다. 다이얼로그 창이 나타나면 ‘Copy items if needed’을 선택하고 Add to targets: 에 Landmarks를 선택하고 Finish 버튼을 눌러줍니다. 앞으로의 튜토리얼을 진행하며 게속해서 이 샘플 데이터를 사용할 것입니다.&lt;/p&gt;
+
+&lt;center&gt;&lt;img src=&quot;/assets/images/navi1.png&quot; alt=&quot;json&quot; /&gt;
+  &lt;/center&gt;
+&lt;center&gt;&lt;sup&gt;(샘플 데이터인 landmarkData.json 파일을 추가해 준 모습)&lt;/sup&gt;&lt;/center&gt;
+&lt;p&gt;&lt;br /&gt;&lt;/p&gt;
+
+&lt;h3 id=&quot;새로-만든-landmarkswift-파일에-structure-생성&quot;&gt;새로 만든 Landmark.swift 파일에 structure 생성&lt;/h3&gt;
+
+&lt;div class=&quot;language-swift highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;  &lt;span class=&quot;c1&quot;&gt;//  Landmark.swift&lt;/span&gt;
+
+  &lt;span class=&quot;kd&quot;&gt;import&lt;/span&gt; &lt;span class=&quot;kt&quot;&gt;Foundation&lt;/span&gt;
+
+  &lt;span class=&quot;kd&quot;&gt;struct&lt;/span&gt; &lt;span class=&quot;kt&quot;&gt;Landmark&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;kt&quot;&gt;Hashable&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;kt&quot;&gt;Codable&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
+      &lt;span class=&quot;k&quot;&gt;var&lt;/span&gt; &lt;span class=&quot;nv&quot;&gt;id&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;kt&quot;&gt;Int&lt;/span&gt;
+      &lt;span class=&quot;k&quot;&gt;var&lt;/span&gt; &lt;span class=&quot;nv&quot;&gt;name&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;kt&quot;&gt;String&lt;/span&gt;
+      &lt;span class=&quot;k&quot;&gt;var&lt;/span&gt; &lt;span class=&quot;nv&quot;&gt;park&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;kt&quot;&gt;String&lt;/span&gt;
+      &lt;span class=&quot;k&quot;&gt;var&lt;/span&gt; &lt;span class=&quot;nv&quot;&gt;state&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;kt&quot;&gt;String&lt;/span&gt;
+      &lt;span class=&quot;k&quot;&gt;var&lt;/span&gt; &lt;span class=&quot;nv&quot;&gt;description&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;kt&quot;&gt;String&lt;/span&gt;
+  &lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
 &lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+&lt;p&gt;Landmark.swift라는 이름의 스위프트 파일을 만들어 줍니다. Landmark structure를 정의하고 landmarkData.json 파일에 있는 키와 이름이 같은 property 몇개를 만들어줍니다.&lt;/p&gt;
 
-&lt;p&gt;&amp;lt;link&amp;gt; element는 외부 리소스와 현재 작업중인 document의 관계를 지정해줍니다. 주로 stylesheeys와 연결할 때 많이 사용됩니다. 또한 아이콘을 설정해줄때도 사용됩니다. 저도 블로그 타이틀에 파비콘을 추가했을 때 &amp;lt;link&amp;gt; 를 사용했던 기억이 납니다.&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;Codable conformance&lt;/strong&gt;는 데이터 파일과 structure사이에서 데이터를 이동시키는 것을 더 쉽게 만들어줍니다. &lt;s&gt;아직 Codable이 뭔지 잘 모르겠지만 데이터와 관련된 protocol인 것 같습니다.&lt;/s&gt;&lt;/p&gt;
 
-&lt;p&gt;&lt;img src=&quot;/assets/images/myFavicon.png&quot; alt=&quot;my_favicon&quot; width=&quot;400&quot; /&gt;&lt;br /&gt;
-(아이폰 이모지를 이용한 제 블로그의 파비콘. 노션의 파비콘은 노션의 이미지와 잘 어울려요!)&lt;/p&gt;
+&lt;h3 id=&quot;json-data를-가져오는-메서드-생성하기&quot;&gt;JSON data를 가져오는 메서드 생성하기&lt;/h3&gt;
 
-&lt;p&gt;위 코드에서는 외부에 작성된 stylesheet와 현재 html파일의 관계를 &amp;lt;link&amp;gt; 로 연결해줍니다.
-이제 stylesheet에서 CSS를 이용해 현 document의 태그들의 속성을 수정할 수 있게 되었습니다.&lt;/p&gt;
+&lt;div class=&quot;language-swift highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;  &lt;span class=&quot;c1&quot;&gt;//  ModelData.swift&lt;/span&gt;
 
-&lt;div class=&quot;language-html highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;nt&quot;&gt;&amp;lt;p&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;style=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;color: blue&quot;&lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;&amp;gt;&lt;/span&gt;
-  The style attribute can override it, though.&lt;span class=&quot;nt&quot;&gt;&amp;lt;/p&amp;gt;&lt;/span&gt;
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
-&lt;p&gt;처럼 html 속성도 사용할 수 있습니다. 이 경우 html의 속성이 CSS style sheet에서 적용된 속성보다 우선 순위에 있습니다.&lt;/p&gt;
-&lt;ul&gt;
-  &lt;li&gt;&amp;lt;link&amp;gt; element는 &amp;lt;head&amp;gt; 부분에 작성되어야 합니다.&lt;/li&gt;
-&lt;/ul&gt;
+  &lt;span class=&quot;kd&quot;&gt;import&lt;/span&gt; &lt;span class=&quot;kt&quot;&gt;Foundation&lt;/span&gt;
 
-&lt;p&gt;&lt;code&gt;rel&lt;/code&gt; attribute는 relationship을 의미합니다. &amp;lt;link&amp;gt; element의 가장 중요한 기능 중 하나입니다.&lt;br /&gt;
-rel에 지정된 값은 연결된 외부 리소스와 현 document가 어떤 관계를 가지고 있는지 나타내줍니다. 이것들을 Link types라고 합니다.
-stylesheet, icon, tag 등 여러가지 관계들이 있습니다. link types는 두 문서들간의 관계를 나타내는 역할을 합니다.&lt;/p&gt;</content><author><name>Mirae</name></author><category term="TIL" /><category term="learning" /><category term="공부 기록" /><category term="HTML" /><category term="CSS" /><summary type="html">Octopus Project 팀 프로젝트가 끝나고 바로 개인 프로젝트가 하나 있습니다. 7일정도 HTML과 CSS를 배우는데, 배운 것으로 웹 페이지를 만드는 것입니다. 자바 스크립트는 할 수도 안할 수도 있다는데 시간이 되면 자바 스크립트도 이용해서 페이지를 만들어보면 좋을 것 같습니다. 단축키를 모아 놓은 웹 페이지를 만들어 보려고 합니다. (제가 자주 쓰는 프로그램들의 단축키를 모아모아) 유투브에서 맘에 드는 강의를 찾아 따라해보고 코드를 분석해봅니다.</summary></entry><entry><title type="html">Codility_Developer Training: 배열 챕터의 문제 CyclicRotation</title><link href="http://localhost:4000/til/cyclicRotation/" rel="alternate" type="text/html" title="Codility_Developer Training: 배열 챕터의 문제 CyclicRotation" /><published>2022-03-16T00:00:00+09:00</published><updated>2022-03-16T00:00:00+09:00</updated><id>http://localhost:4000/til/cyclicRotation</id><content type="html" xml:base="http://localhost:4000/til/cyclicRotation/">&lt;p&gt;&lt;a href=&quot;https://app.codility.com/programmers/lessons/2-arrays/cyclic_rotation/&quot;&gt;CyclicRotation 문제 읽기&lt;/a&gt;&lt;/p&gt;
+  &lt;span class=&quot;kd&quot;&gt;func&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;load&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;&amp;lt;&lt;/span&gt;&lt;span class=&quot;kt&quot;&gt;T&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;kt&quot;&gt;Decodable&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;&amp;gt;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;_&lt;/span&gt; &lt;span class=&quot;nv&quot;&gt;filename&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;kt&quot;&gt;String&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;-&amp;gt;&lt;/span&gt; &lt;span class=&quot;kt&quot;&gt;T&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
+      &lt;span class=&quot;k&quot;&gt;let&lt;/span&gt; &lt;span class=&quot;nv&quot;&gt;data&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;kt&quot;&gt;Data&lt;/span&gt; &lt;span class=&quot;c1&quot;&gt;// Data protocal? Data..structure type? 뭔데?&lt;/span&gt;
+
+      &lt;span class=&quot;k&quot;&gt;guard&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;let&lt;/span&gt; &lt;span class=&quot;nv&quot;&gt;file&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;kt&quot;&gt;Bundle&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;main&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nf&quot;&gt;url&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nv&quot;&gt;forResource&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;filename&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;nv&quot;&gt;withExtension&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;kc&quot;&gt;nil&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
+      &lt;span class=&quot;k&quot;&gt;else&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
+          &lt;span class=&quot;nf&quot;&gt;fatalError&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;Couldn&apos;t find &lt;/span&gt;&lt;span class=&quot;se&quot;&gt;\(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;filename&lt;/span&gt;&lt;span class=&quot;se&quot;&gt;)&lt;/span&gt;&lt;span class=&quot;s&quot;&gt; in main bundle.&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
+      &lt;span class=&quot;p&quot;&gt;}&lt;/span&gt; &lt;span class=&quot;c1&quot;&gt;// else문&lt;/span&gt;
+
+      &lt;span class=&quot;k&quot;&gt;do&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
+          &lt;span class=&quot;n&quot;&gt;data&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;try&lt;/span&gt; &lt;span class=&quot;kt&quot;&gt;Data&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nv&quot;&gt;contentsOf&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;file&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
+      &lt;span class=&quot;p&quot;&gt;}&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;catch&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
+          &lt;span class=&quot;nf&quot;&gt;fatalError&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;Couldn&apos;t load &lt;/span&gt;&lt;span class=&quot;se&quot;&gt;\(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;filename&lt;/span&gt;&lt;span class=&quot;se&quot;&gt;)&lt;/span&gt;&lt;span class=&quot;s&quot;&gt; from main bundle.&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;c1&quot;&gt;// main bundle이 뭐야?&lt;/span&gt;
+      &lt;span class=&quot;p&quot;&gt;}&lt;/span&gt; &lt;span class=&quot;c1&quot;&gt;// catch문&lt;/span&gt;
+
+      &lt;span class=&quot;k&quot;&gt;do&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
+          &lt;span class=&quot;k&quot;&gt;let&lt;/span&gt; &lt;span class=&quot;nv&quot;&gt;decoder&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;kt&quot;&gt;JSONDecoder&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;()&lt;/span&gt;
+          &lt;span class=&quot;k&quot;&gt;return&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;try&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;decoder&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nf&quot;&gt;decode&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;kt&quot;&gt;T&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;k&quot;&gt;self&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;nv&quot;&gt;from&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;data&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
+      &lt;span class=&quot;p&quot;&gt;}&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;catch&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
+          &lt;span class=&quot;nf&quot;&gt;fatalError&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;Couldn&apos;t parse &lt;/span&gt;&lt;span class=&quot;se&quot;&gt;\(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;filename&lt;/span&gt;&lt;span class=&quot;se&quot;&gt;)&lt;/span&gt;&lt;span class=&quot;s&quot;&gt; as &lt;/span&gt;&lt;span class=&quot;se&quot;&gt;\(&lt;/span&gt;&lt;span class=&quot;kt&quot;&gt;T&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;k&quot;&gt;self&lt;/span&gt;&lt;span class=&quot;se&quot;&gt;)&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;:&lt;/span&gt;&lt;span class=&quot;se&quot;&gt;\n\(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;error&lt;/span&gt;&lt;span class=&quot;se&quot;&gt;)&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
+      &lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
+  &lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;</content><author><name>Mirae</name></author><category term="TIL" /><category term="learning" /><category term="공부 기록" /><category term="Swift" /><summary type="html">튜토리얼의 출처는 SwiftUI Essentials: Building Lists and Navigation 입니다.</summary></entry><entry><title type="html">Codility_Developer Training: 배열 챕터의 문제 CyclicRotation</title><link href="http://localhost:4000/til/cyclicRotation/" rel="alternate" type="text/html" title="Codility_Developer Training: 배열 챕터의 문제 CyclicRotation" /><published>2022-03-16T00:00:00+09:00</published><updated>2022-03-16T00:00:00+09:00</updated><id>http://localhost:4000/til/cyclicRotation</id><content type="html" xml:base="http://localhost:4000/til/cyclicRotation/">&lt;p&gt;&lt;a href=&quot;https://app.codility.com/programmers/lessons/2-arrays/cyclic_rotation/&quot;&gt;CyclicRotation 문제 읽기&lt;/a&gt;&lt;/p&gt;
 
 &lt;h3 id=&quot;1-문제를-파악해보자&quot;&gt;1. 문제를 파악해보자&lt;/h3&gt;
 
@@ -172,7 +207,50 @@ stylesheet, icon, tag 등 여러가지 관계들이 있습니다. link types는 
 &lt;ul&gt;
   &lt;li&gt;문제 해결 과정&lt;/li&gt;
   &lt;li&gt;빈 배열이 입력되었을 때 프로그램이 꺼지는 문제 해결하기&lt;/li&gt;
-&lt;/ul&gt;</content><author><name>Mirae</name></author><category term="TIL" /><category term="learning" /><category term="공부 기록" /><category term="Codility" /><category term="코테" /><summary type="html">CyclicRotation 문제 읽기</summary></entry><entry><title type="html">SwiftUI Tutorial: 여러 개의 View를 만들고 결합하기</title><link href="http://localhost:4000/til/landmarks/" rel="alternate" type="text/html" title="SwiftUI Tutorial: 여러 개의 View를 만들고 결합하기" /><published>2022-03-14T00:00:00+09:00</published><updated>2022-03-14T00:00:00+09:00</updated><id>http://localhost:4000/til/landmarks</id><content type="html" xml:base="http://localhost:4000/til/landmarks/">&lt;p&gt;SwiftUI Tutorial을 따라가며 아래 Landmark앱을 만들어 보겠습니다. 튜토리얼의 출처는 &lt;a href=&quot;https://developer.apple.com/tutorials/swiftui/creating-and-combining-views&quot;&gt;SwiftUI Essentials:
+&lt;/ul&gt;</content><author><name>Mirae</name></author><category term="TIL" /><category term="learning" /><category term="공부 기록" /><category term="Codility" /><category term="코테" /><summary type="html">CyclicRotation 문제 읽기</summary></entry><entry><title type="html">웹 페이지를 만들며 HTML과 CSS에 대해 알아보기</title><link href="http://localhost:4000/til/octopusProject/" rel="alternate" type="text/html" title="웹 페이지를 만들며 HTML과 CSS에 대해 알아보기" /><published>2022-03-16T00:00:00+09:00</published><updated>2022-03-16T00:00:00+09:00</updated><id>http://localhost:4000/til/octopusProject</id><content type="html" xml:base="http://localhost:4000/til/octopusProject/">&lt;div class=&quot;notice&quot;&gt;
+  &lt;h4&gt;Octopus Project&lt;/h4&gt;
+  &lt;p&gt;팀 프로젝트가 끝나고 바로 개인 프로젝트가 하나 있습니다.
+  7일정도 HTML과 CSS를 배우는데, 배운 것으로 웹 페이지를 만드는 것입니다.
+  자바 스크립트는 할 수도 안할 수도 있다는데 시간이 되면 자바 스크립트도 이용해서 페이지를 만들어보면 좋을 것 같습니다.&lt;br /&gt;
+  단축키를 모아 놓은 웹 페이지를 만들어 보려고 합니다. (제가 자주 쓰는 프로그램들의 단축키를 모아모아)&lt;br /&gt;
+  유투브에서 맘에 드는 강의를 찾아 따라해보고 코드를 분석해봅니다.&lt;/p&gt;
+&lt;/div&gt;
+
+&lt;p&gt;&lt;img src=&quot;/assets/images/octo.png&quot; alt=&quot;octopus&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;a href=&quot;https://www.youtube.com/watch?v=-2LtZRi6Q0s&quot;&gt;Easy Tutorials: How To Make A Website Using HTML And CSS / Website Design In HTML And CSS&lt;/a&gt;&lt;/p&gt;
+
+&lt;h2 id=&quot;1-what-i-learned-from-this-project&quot;&gt;1. What I Learned From This Project:&lt;/h2&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;&lt;code&gt;link&lt;/code&gt; HTML element&lt;/li&gt;
+  &lt;li&gt;linear-flex를 이용해서 목록을 옆으로 나열하기&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h2 id=&quot;2-link-html-element&quot;&gt;2. link HTML element&lt;/h2&gt;
+
+&lt;div class=&quot;language-html highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;nt&quot;&gt;&amp;lt;link&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;rel=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;stylesheet&quot;&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;href=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;style.css&quot;&lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;&amp;gt;&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;p&gt;&amp;lt;link&amp;gt; element는 외부 리소스와 현재 작업중인 document의 관계를 지정해줍니다. 주로 stylesheeys와 연결할 때 많이 사용됩니다. 또한 아이콘을 설정해줄때도 사용됩니다. 저도 블로그 타이틀에 파비콘을 추가했을 때 &amp;lt;link&amp;gt; 를 사용했던 기억이 납니다.&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;/assets/images/myFavicon.png&quot; alt=&quot;my_favicon&quot; width=&quot;400&quot; /&gt;&lt;br /&gt;
+(아이폰 이모지를 이용한 제 블로그의 파비콘. 노션의 파비콘은 노션의 이미지와 잘 어울려요!)&lt;/p&gt;
+
+&lt;p&gt;위 코드에서는 외부에 작성된 stylesheet와 현재 html파일의 관계를 &amp;lt;link&amp;gt; 로 연결해줍니다.
+이제 stylesheet에서 CSS를 이용해 현 document의 태그들의 속성을 수정할 수 있게 되었습니다.&lt;/p&gt;
+
+&lt;div class=&quot;language-html highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;nt&quot;&gt;&amp;lt;p&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;style=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;color: blue&quot;&lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;&amp;gt;&lt;/span&gt;
+  The style attribute can override it, though.&lt;span class=&quot;nt&quot;&gt;&amp;lt;/p&amp;gt;&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+&lt;p&gt;처럼 html 속성도 사용할 수 있습니다. 이 경우 html의 속성이 CSS style sheet에서 적용된 속성보다 우선 순위에 있습니다.&lt;/p&gt;
+&lt;ul&gt;
+  &lt;li&gt;&amp;lt;link&amp;gt; element는 &amp;lt;head&amp;gt; 부분에 작성되어야 합니다.&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;&lt;code&gt;rel&lt;/code&gt; attribute는 relationship을 의미합니다. &amp;lt;link&amp;gt; element의 가장 중요한 기능 중 하나입니다.&lt;br /&gt;
+rel에 지정된 값은 연결된 외부 리소스와 현 document가 어떤 관계를 가지고 있는지 나타내줍니다. 이것들을 Link types라고 합니다.
+stylesheet, icon, tag 등 여러가지 관계들이 있습니다. link types는 두 문서들간의 관계를 나타내는 역할을 합니다.&lt;/p&gt;</content><author><name>Mirae</name></author><category term="TIL" /><category term="learning" /><category term="공부 기록" /><category term="HTML" /><category term="CSS" /><summary type="html">Octopus Project 팀 프로젝트가 끝나고 바로 개인 프로젝트가 하나 있습니다. 7일정도 HTML과 CSS를 배우는데, 배운 것으로 웹 페이지를 만드는 것입니다. 자바 스크립트는 할 수도 안할 수도 있다는데 시간이 되면 자바 스크립트도 이용해서 페이지를 만들어보면 좋을 것 같습니다. 단축키를 모아 놓은 웹 페이지를 만들어 보려고 합니다. (제가 자주 쓰는 프로그램들의 단축키를 모아모아) 유투브에서 맘에 드는 강의를 찾아 따라해보고 코드를 분석해봅니다.</summary></entry><entry><title type="html">SwiftUI Tutorial: 여러 개의 View를 만들고 결합하기</title><link href="http://localhost:4000/til/landmarks/" rel="alternate" type="text/html" title="SwiftUI Tutorial: 여러 개의 View를 만들고 결합하기" /><published>2022-03-14T00:00:00+09:00</published><updated>2022-03-14T00:00:00+09:00</updated><id>http://localhost:4000/til/landmarks</id><content type="html" xml:base="http://localhost:4000/til/landmarks/">&lt;p&gt;SwiftUI Tutorial을 따라가며 아래 Landmark앱을 만들어 보겠습니다. 튜토리얼의 출처는 &lt;a href=&quot;https://developer.apple.com/tutorials/swiftui/creating-and-combining-views&quot;&gt;SwiftUI Essentials:
 Creating and Combining Views&lt;/a&gt; 입니다.&lt;/p&gt;
 
 &lt;center&gt;&lt;video src=&quot;https://user-images.githubusercontent.com/85061148/159120793-a9d5166b-fad5-41f0-899a-fcfe0bee25da.mov&quot; controls=&quot;controls&quot; style=&quot;max-width: 300px&quot;&gt;
@@ -935,7 +1013,7 @@ master 브랜치를 삭제하거나 이름을 바꾸거나 심지어는 삭제 �
 &lt;h3 id=&quot;-&quot;&gt;💭 ..&lt;/h3&gt;
 &lt;div class=&quot;notice&quot;&gt;
   &lt;h4&gt;맥북 유저에게 국비 수업이란...?&lt;/h4&gt;
-  &lt;p&gt;처음 국비 수업을 듣기로 결심했을 때 가장 걱정이 되었던 것은 나에겐 Windows 운영체제를 사용하는 랩탑이 없다는 것이었다. 국비 수업은 Windows를 기준으로 진행되기 때문에 문제가 생기면 강사님의 도움을 받기가 쉽지 않다. 수업 전 진행된 오티에서 강사님은 되도록이면 Windows를 사용할 것을 권했다. 나는 macOS를 사용한 지 오래되었고, 국비 수업을 듣기 전 독학하며 구글링 실력을 꽤 키웠다고 생각했기 때문에 굳이 Windows 운영체제의 랩탑을 구하려고 하지 않았다. 내가 혼자 해결할 수 있을 거라는 원인 모를(ㅎㅎ) 자신감이 있었다. &lt;br /&gt;이클립스 IDE나 Java는 이미 설치해서 사용하고 있었기 때문에 수업 중 설치하는 시간에 문제가 없었다. 그 후로 쭉 문제없이 수업을 잘 들었다. 작은 에러들은 구글링으로 해결할 수 있었다. 그러던 중 데이터베이스에 대해 배우는 주가 시작되었다. 국비 수업이 시작되기 전, 수업에 대한 정보들을 검색해 보던 중 m1 칩 맥북은 오라클을 사용할 수 없다는 것을 알게 되었고 아래 도움이 된 글 목록 중 첫 번째에 있는 블로그 글을 보고 미리 오라클 클라우드에 가입 후 DB를 생성하고 SQL Developer와 연동은 해둔 상태였다. 하지만 당시에는 DB와 Java를 연결하려면 JDBC를 이용해야 한다는 것을 몰랐다. DB와 Java를 연결하는 수업이 시작되었고 많은 분들이 JDBC driver를 다운로드하고 연결하는 과정에 어려움을 겪었다. 나도 다르지 않았다. &lt;br /&gt;아무것도 모르던 4개월 전, 깃헙 페이지로 개발 블로그를 만들려고 구글링을 하며 오랜 시간을 삽질했던 때가 있었다. 그때는 한 가지 문제를 해결하려고 3일, 4일을 구글링하고도 원하는 답을 찾지 못할 때도 있었다. 그때의 기억이 떠올라서 식은땀이 쫙 났다.&lt;br /&gt;  
+  &lt;p&gt;처음 국비 수업을 듣기로 결심했을 때 가장 걱정이 되었던 것은 나에겐 Windows 운영체제를 사용하는 랩탑이 없다는 것이었다. 국비 수업은 Windows를 기준으로 진행되기 때문에 macOS로 수업을 듣다가 문제가 생기면 강사님의 도움을 받기가 쉽지 않다. 수업 전 진행된 오티에서 강사님도 되도록이면 Windows를 사용할 것을 권했다. 나는 macOS를 사용한 지 오래되었고, 국비 수업을 듣기 전 독학하며 구글링 실력을 꽤 키웠다고 생각했기 때문에 굳이 Windows 운영체제의 랩탑을 구하려고 하지 않았다. 내가 혼자 해결할 수 있을 거라는 원인 모를(ㅎㅎ) 자신감이 있었다. &lt;br /&gt;이클립스 IDE나 Java는 이미 설치해서 사용하고 있었기 때문에 수업 중 설치하는 시간에 문제가 없었다. 그 후로 쭉 문제없이 수업을 잘 들었다. 작은 에러들은 구글링으로 해결할 수 있었다. 그러던 중 데이터베이스에 대해 배우는 주가 시작되었다. 국비 수업이 시작되기 전, 수업에 대한 정보들을 검색해 보던 중 m1 칩 맥북은 오라클을 사용할 수 없다는 것을 알게 되었고 아래 도움이 된 글 목록 중 첫 번째에 있는 블로그의 글을 보고 미리 오라클 클라우드에 가입 후 DB를 생성하고 SQL Developer와 연동은 해둔 상태였다. 하지만 당시에는 DB와 Java로 작성된 프로그램을 연결하려면 JDBC를 이용해야 한다는 것을 몰랐다. DB와 Java를 연결하는 수업이 시작되었고 많은 분들이 JDBC driver를 다운로드하고 연결하는 과정에 어려움을 겪었다. 나도 다르지 않았다. &lt;br /&gt;아무것도 모르던 4개월 전, 깃헙 페이지로 개발 블로그를 만들려고 구글링을 하며 오랜 시간을 삽질했던 때가 있었다. 그때는 한 가지 문제를 해결하려고 3일, 4일을 구글링하고도 원하는 답을 찾지 못할 때도 있었다. 그때의 기억이 떠올라서 식은땀이 쫙 났다.&lt;br /&gt;  
   &apos;DB와 자바를 연결하지 못하면 수업을 듣기 힘들 텐데 어쩌나.. 밤을 새워서라도 해야겠다.&apos;  라고 생각하고 있었는데 다행히 벌써 많은 분들이 애플 실리콘칩 맥북 + 오라클 클라우드 DB를 연동하는 방법에 대한 블로그 글을 올려주셨고 덕분에 생각보다 빠르게 해결할 수 있었다. 수업이 끝나기 전에 연결이 잘 되어서 엄청 기쁘고 다행이라는 생각이 들었다. &lt;br /&gt;
   다음에 또 필요할 때를 대비해 기록을 남겨둔다. 국비 수업을 들으려는 다른 macOS 유저들에게도 조금이나마 도움이 되길 바란다.&lt;/p&gt;
 &lt;/div&gt;
@@ -945,13 +1023,13 @@ master 브랜치를 삭제하거나 이름을 바꾸거나 심지어는 삭제 �
 &lt;a href=&quot;https://velog.io/@zinhoxxl/Apple-Silicon-M1-%EC%9C%BC%EB%A1%9C-oracleeclipse-%EC%97%B0%EB%8F%99%ED%95%98%EA%B8%B0-3&quot;&gt;2. Apple Silicon) M1 으로 oracle&amp;amp;eclipse 연동하기 (3)&lt;/a&gt;&lt;br /&gt;
 &lt;a href=&quot;https://okky.kr/article/970368&quot;&gt;3. okky 쿠잉님 댓글&lt;/a&gt;&lt;/p&gt;
 
-&lt;h3 id=&quot;jdbc의-역할&quot;&gt;JDBC의 역할&lt;/h3&gt;
+&lt;h3 id=&quot;1-jdbc의-역할&quot;&gt;1. JDBC의 역할&lt;/h3&gt;
 
-&lt;p&gt;JDBC는 DB와 Java를 연결해 주는 API입니다. 자바 언어로 작성한 코드로 데이터 베이스에 접근하고 여러 가지 데이터 작업을 수행할 수 있게 되죠. 예를 들면, 이클립스에서 몇 가지 자바 클래스와 메서드 그리고 SQL 문을 사용하여 직접 DB에 접근해 데이터를 검색, 추가, 삭제, 수정할 수 있게 되는 것입니다.&lt;/p&gt;
+&lt;p&gt;JDBC는 DB와 Java를 연결해 주는 API입니다. 자바 언어로 작성한 프로그램에서 데이터 베이스에 접근하고 여러 가지 데이터와 관련된 작업을 수행할 수 있게 되죠. 예를 들면, 이클립스에서 몇 가지 자바 클래스와 메서드 그리고 SQL 문을 사용하여 직접 DB에 접근해 데이터를 검색, 추가, 삭제, 수정할 수 있게 되는 것입니다.&lt;/p&gt;
 
-&lt;h3 id=&quot;sql-developer를-이용해-테이블-만들기&quot;&gt;SQL Developer를 이용해 테이블 만들기&lt;/h3&gt;
+&lt;h3 id=&quot;2-sql-developer를-이용해-테이블-만들기&quot;&gt;2. SQL Developer를 이용해 테이블 만들기&lt;/h3&gt;
 
-&lt;p&gt;먼저 저는 SQL Developer를 이용하여 오라클 클라우드 DB에 테이블을 하나 만들어 주었습니다.
+&lt;p&gt;먼저 저는 SQL Developer를 이용하여 오라클 클라우드 DB에 간단한 테이블을 하나 만들어 주었습니다.
 테이블 이름은 stardew_valley 입니다.&lt;/p&gt;
 
 &lt;table&gt;
@@ -986,10 +1064,7 @@ master 브랜치를 삭제하거나 이름을 바꾸거나 심지어는 삭제 �
 &lt;/table&gt;
 
 &lt;p&gt;&lt;br /&gt;&lt;/p&gt;
-
-&lt;h3 id=&quot;코드로-보자&quot;&gt;코드로 보자!&lt;/h3&gt;
-
-&lt;p&gt;그리고 자바 코드를 작성하여 테이블의 값들을 검색해보겠습니다.&lt;/p&gt;
+&lt;h3 id=&quot;3-java-프로그램-내에서-연결된-db의-데이터에-접근하기&quot;&gt;3. Java 프로그램 내에서 연결된 DB의 데이터에 접근하기&lt;/h3&gt;
 
 &lt;p&gt;먼저 작업하고 있는 Java project에 ojdbc8.jar를 추가합니다. 위 도움을 받은 글 목록 중 두번째 블로그 글을 보면 꼭 ojdbc8.jar을 받아야 한다고 하셨는데요. 저도 처음에 다른 버전으로 받았다가 제대로 실행되지 않는 문제를 겪었습니다.&lt;/p&gt;
 
@@ -1026,6 +1101,7 @@ master 브랜치를 삭제하거나 이름을 바꾸거나 심지어는 삭제 �
         &lt;span class=&quot;nc&quot;&gt;String&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;address&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;rs&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;getString&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;address&quot;&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;);&lt;/span&gt;
         &lt;span class=&quot;kt&quot;&gt;int&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;age&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;rs&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;getInt&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;age&quot;&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;);&lt;/span&gt;
 
+        &lt;span class=&quot;c1&quot;&gt;// 임시 header 출력&lt;/span&gt;
         &lt;span class=&quot;nc&quot;&gt;System&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;out&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;println&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;vname&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;+&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;&quot;\t&quot;&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;+&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;address&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;+&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;&quot;\t&quot;&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;+&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;age&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;);&lt;/span&gt;
 
       &lt;span class=&quot;o&quot;&gt;}&lt;/span&gt;
@@ -1036,12 +1112,10 @@ master 브랜치를 삭제하거나 이름을 바꾸거나 심지어는 삭제 �
     &lt;span class=&quot;o&quot;&gt;}&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;catch&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nc&quot;&gt;Exception&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;e&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;{&lt;/span&gt;
       &lt;span class=&quot;n&quot;&gt;e&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;printStackTrace&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;();&lt;/span&gt;
     &lt;span class=&quot;o&quot;&gt;}&lt;/span&gt;
-
   &lt;span class=&quot;o&quot;&gt;}&lt;/span&gt;
 &lt;span class=&quot;o&quot;&gt;}&lt;/span&gt;
-
-
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;</content><author><name>Mirae</name></author><category term="TIL" /><category term="learning" /><category term="공부 기록" /><category term="Java" /><category term="Oracle Cloud" /><category term="Database" /><summary type="html"></summary></entry><entry><title type="html">프로그래밍에서 Iterations란? / 코딜리티의 open reading material를 읽어보며 for 문에 대해 알아보자.</title><link href="http://localhost:4000/til/Iterations/" rel="alternate" type="text/html" title="프로그래밍에서 Iterations란? / 코딜리티의 open reading material를 읽어보며 for 문에 대해 알아보자." /><published>2022-02-20T00:00:00+09:00</published><updated>2022-02-20T00:00:00+09:00</updated><id>http://localhost:4000/til/Iterations</id><content type="html" xml:base="http://localhost:4000/til/Iterations/">&lt;hr /&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+&lt;p&gt;실행하면 작성해 준 임시 header 아래로 위 표와 같은 모든 데이터를 console 창에 출력합니다.&lt;/p&gt;</content><author><name>Mirae</name></author><category term="TIL" /><category term="learning" /><category term="공부 기록" /><category term="Java" /><category term="Oracle Cloud" /><category term="Database" /><summary type="html"></summary></entry><entry><title type="html">프로그래밍에서 Iterations란? / 코딜리티의 open reading material를 읽어보며 for 문에 대해 알아보자.</title><link href="http://localhost:4000/til/Iterations/" rel="alternate" type="text/html" title="프로그래밍에서 Iterations란? / 코딜리티의 open reading material를 읽어보며 for 문에 대해 알아보자." /><published>2022-02-20T00:00:00+09:00</published><updated>2022-02-20T00:00:00+09:00</updated><id>http://localhost:4000/til/Iterations</id><content type="html" xml:base="http://localhost:4000/til/Iterations/">&lt;hr /&gt;
 
 &lt;h2&gt;🧱&lt;/h2&gt;
 &lt;div class=&quot;notice&quot;&gt;
@@ -1114,68 +1188,4 @@ master 브랜치를 삭제하거나 이름을 바꾸거나 심지어는 삭제 �
     &lt;span class=&quot;k&quot;&gt;print&lt;/span&gt;  
 &lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
 &lt;p&gt;위의 코드로 별을 출력해보면 (출력되도록 print 부분을 수정하더라도) 공백을 찍는 부분의 식이 좀 잘못되어 있는 같다. 이 예제의 두번째줄이 공백을 출력하는 부분인데 n = 4 일때 (n-i)로 공백을 출력하게 되면 0, 1, 2, 3개의 공백을 출력하게 된다. 예제에서 출력되어야 하는 공백의 수는 0, 2, 4 이다.&lt;br /&gt;
-  만약 별과 별 사이에 공백이 없다면 위의 코드가 맞는데,, 내가 파악하지 못한 부분이 있는걸까?&lt;/p&gt;</content><author><name>Mirae</name></author><category term="TIL" /><category term="learning" /><category term="공부 기록" /><category term="python" /><category term="코딜리티" /><summary type="html"></summary></entry><entry><title type="html">SQL 정리</title><link href="http://localhost:4000/til/sql/" rel="alternate" type="text/html" title="SQL 정리" /><published>2022-02-18T00:00:00+09:00</published><updated>2022-02-18T00:00:00+09:00</updated><id>http://localhost:4000/til/sql</id><content type="html" xml:base="http://localhost:4000/til/sql/">&lt;hr /&gt;
-
-&lt;h3&gt;💭&lt;/h3&gt;
-&lt;div class=&quot;notice&quot;&gt;
-  &lt;h4&gt;SQL&lt;/h4&gt;
-  &lt;p&gt;오늘은 IT국비지원교육 18일차 날이다. 16일간의 자바 여행을 잠깐 마치고 SQL 을 배우기 시작했다.  
-  SQL은 생각보다 어렵지 않아서 자바를 배울 때보다는 편한 마음으로 수업을 듣고 있다.  
-  기본적인 statements들은 많이 사용해 보면 외우게 될 것 같지만 머릿속에서 정리가 덜 된 느낌이라 블로그 글로 정리해 본다. &lt;/p&gt;
-&lt;/div&gt;
-
-&lt;h3 id=&quot;️-sqlstructured-query-language&quot;&gt;⌨️ SQL(Structured Query Language)&lt;/h3&gt;
-
-&lt;p&gt;SQL(Structured Query Language)은 데이터베이스에 저장된 데이터에 접근하고 조작하기 위해 사용되는 표준 언어다.&lt;/p&gt;
-
-&lt;h3 id=&quot;️-sql-statements-프로그래밍-언어에서-statements-란&quot;&gt;✍️ SQL Statements? 프로그래밍 언어에서 Statements 란?&lt;/h3&gt;
-&lt;hr /&gt;
-&lt;p&gt;✋ 잠깐 Statements가 무엇인지 예시를 보며 알아보자.&lt;/p&gt;
-
-&lt;div class=&quot;language-java highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;    &lt;span class=&quot;nc&quot;&gt;System&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;out&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;println&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;Hello World&quot;&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;);&lt;/span&gt;
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
-&lt;p&gt;-&amp;gt; 자바에서 Hello World를 화면에 출력하는 Statement&lt;/p&gt;
-
-&lt;div class=&quot;language-java highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;    &lt;span class=&quot;nc&quot;&gt;Bicycle&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;redBike&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;new&lt;/span&gt; &lt;span class=&quot;nc&quot;&gt;Bicycle&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;();&lt;/span&gt;
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
-&lt;p&gt;-&amp;gt; 자바에서 객체를 만드는 Statement&lt;/p&gt;
-
-&lt;div class=&quot;language-sql highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;      &lt;span class=&quot;k&quot;&gt;SELECT&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;*&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;FROM&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;Friends&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
-&lt;p&gt;-&amp;gt; Friends 라는 이름의 테이블의 모든 컬럼을 가져와 보여주는 Statement&lt;/p&gt;
-
-&lt;div class=&quot;language-sql highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;    &lt;span class=&quot;k&quot;&gt;SELECT&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;Fname&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;FROM&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;Friends&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
-&lt;p&gt;-&amp;gt; Friends 테이블의 Fname 컬럼의 정보를 가져와 보여주는 Statement&lt;/p&gt;
-
-&lt;p&gt;Statements란 각 프로그래밍 언어의 문법에 맞게 쓰여진 문장으로, 수행되어야 하는 작업을 표현한 문장이라고도 할 수 있겠다.&lt;/p&gt;
-
-&lt;h3 id=&quot;sql을-이용해서-데이터-베이스에-테이블을-만들어보자&quot;&gt;🤘SQL을 이용해서 데이터 베이스에 테이블을 만들어보자&lt;/h3&gt;
-
-&lt;div class=&quot;language-sql highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;  &lt;span class=&quot;k&quot;&gt;CREATE&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;TABLE&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;your_table&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;
-    &lt;span class=&quot;n&quot;&gt;column1&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;varchar2&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;10&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;primary&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;key&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;
-    &lt;span class=&quot;n&quot;&gt;column2&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;number&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;5&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;not&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;null&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;
-    &lt;span class=&quot;n&quot;&gt;column3&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;varchar2&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;15&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;),&lt;/span&gt;
-    &lt;span class=&quot;n&quot;&gt;column4&lt;/span&gt; &lt;span class=&quot;nb&quot;&gt;date&lt;/span&gt;
-  &lt;span class=&quot;p&quot;&gt;);&lt;/span&gt;
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
-&lt;p&gt;위의 SQL 쿼리로 테이블을 만들 수 있다. ↓ 아래는 만들어진 테이블. (아직 데이터는 입력하지 않았다.)
-  &lt;img src=&quot;/assets/images/sql1_table_created.jpg&quot; alt=&quot;sql1_table_created&quot; /&gt;&lt;/p&gt;
-
-&lt;p&gt;&lt;a href=&quot;https://youtu.be/wu2twZdrM-E?t=906&quot;&gt;🔊run a SQL query&lt;/a&gt;&lt;/p&gt;
-
-&lt;!-- ### SQL로
-[이 페이지를 참고](https://www.w3schools.com/sql/sql_select.asp)
-
-
-CREATE TABLE 테이블명 (
-  컬럼명 자료형(크기)
-  deptno number(2,0),
-  loc    varchar2(13),
-  dname  varchar(14)
-  constraint pk_deptno primary key (deptno)
-  );
-
-
-
-오라클의 SQL Developer는 데이터 베이스 관련 개발을 더 쉽게 만들어주어 생산성을 높여주는 무료 그래픽 툴이다. 사용자들은 SQL Developer를 이용해서 데이터 베이스에서 검색을 할 수 있고 --&gt;</content><author><name>Mirae</name></author><category term="TIL" /><category term="learning" /><category term="공부 기록" /><category term="Java" /><summary type="html"></summary></entry></feed>
+  만약 별과 별 사이에 공백이 없다면 위의 코드가 맞는데,, 내가 파악하지 못한 부분이 있는걸까?&lt;/p&gt;</content><author><name>Mirae</name></author><category term="TIL" /><category term="learning" /><category term="공부 기록" /><category term="python" /><category term="코딜리티" /><summary type="html"></summary></entry></feed>

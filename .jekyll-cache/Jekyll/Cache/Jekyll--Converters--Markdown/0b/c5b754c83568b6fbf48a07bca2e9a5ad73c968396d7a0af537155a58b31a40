@@ -1,0 +1,27 @@
+I"�<p>튜토리얼의 출처는 <a href="https://developer.apple.com/tutorials/swiftui/building-lists-and-navigation">SwiftUI Essentials:
+Building Lists and Navigation</a> 입니다.</p>
+
+<!-- <center><video src="https://user-images.githubusercontent.com/85061148/159120793-a9d5166b-fad5-41f0-899a-fcfe0bee25da.mov" controls="controls" style="max-width: 300px">
+</video></center> -->
+
+<h2 id="️-what-i-learned-from-this-tutorial"><strong>☑️ What I Learned From This Tutorial:</strong></h2>
+
+<ul>
+  <li>SwiftUI 프레임워크와 다른 프레임워크를 함께 사용하는 방식
+<!-- - Binding ($) --></li>
+</ul>
+
+<!-- <br>
+
+<center><img src="/assets/images/directoryTree.png" alt="tree" width= "300">
+</center>
+<br> -->
+
+<h2 id="section-1-landmark-model-생성하기">Section 1: Landmark model 생성하기</h2>
+
+<p>다운받은 프로젝트 파일에 압축을 풀면 Resources 폴더에 landmarkData.json 파일이 있습니다. 튜토리얼 Creating and Combining Views에서 만들었던 프로젝트를 그대로 사용합니다. 왼쪽에 위치한 프로젝트의 navigation pane 부분에 landmarkData.json 파일을 드래그해서 넣어줍니다. 다이얼로그 창이 나타나면 ‘Copy items if needed’을 선택하고 Add to targets: 에 Landmarks를 선택하고 Finish 버튼을 눌러줍니다. 앞으로의 튜토리얼을 진행하며 게속해서 이 샘플 데이터를 사용할 것입니다.</p>
+
+<center><img src="/assets/images/navi1.png" alt="json" width="300" />
+  </center>
+<p><br /></p>
+:ET
