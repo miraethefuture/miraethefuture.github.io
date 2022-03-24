@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="4.2.1">Jekyll</generator><link href="http://localhost:4000/feed.xml" rel="self" type="application/atom+xml" /><link href="http://localhost:4000/" rel="alternate" type="text/html" /><updated>2022-03-24T12:13:12+09:00</updated><id>http://localhost:4000/feed.xml</id><title type="html">Mirae the Future</title><subtitle>An amazing website.</subtitle><author><name>Mirae</name></author><entry><title type="html">JavaScript: 팝업창 가운데에 띄우기</title><link href="http://localhost:4000/til/popup-center/" rel="alternate" type="text/html" title="JavaScript: 팝업창 가운데에 띄우기" /><published>2022-03-24T00:00:00+09:00</published><updated>2022-03-24T00:00:00+09:00</updated><id>http://localhost:4000/til/popup-center</id><content type="html" xml:base="http://localhost:4000/til/popup-center/">&lt;p&gt;아무런 설정을 하지 않고 window.open() 메서드를 사용해서 팝업창을 띄웠더니 화면 맨 왼쪽 위에 팝업창이 나타납니다. 이 팝업창을 가운데로 옮겨보았습니다.&lt;/p&gt;
+<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="4.2.1">Jekyll</generator><link href="http://localhost:4000/feed.xml" rel="self" type="application/atom+xml" /><link href="http://localhost:4000/" rel="alternate" type="text/html" /><updated>2022-03-24T14:13:55+09:00</updated><id>http://localhost:4000/feed.xml</id><title type="html">Mirae the Future</title><subtitle>An amazing website.</subtitle><author><name>Mirae</name></author><entry><title type="html">JavaScript: 팝업창 가운데에 띄우기</title><link href="http://localhost:4000/til/popup-center/" rel="alternate" type="text/html" title="JavaScript: 팝업창 가운데에 띄우기" /><published>2022-03-24T00:00:00+09:00</published><updated>2022-03-24T00:00:00+09:00</updated><id>http://localhost:4000/til/popup-center</id><content type="html" xml:base="http://localhost:4000/til/popup-center/">&lt;p&gt;아무런 설정을 하지 않고 window.open() 메서드를 사용해서 팝업창을 띄웠더니 화면 맨 왼쪽 위에 팝업창이 나타납니다. 이 팝업창을 가운데로 옮겨보았습니다.&lt;/p&gt;
 
 &lt;p&gt;&lt;a href=&quot;https://www.geeksforgeeks.org/how-to-center-a-popup-window-on-screen/&quot;&gt;도움을 받은 글: How to center a popup window on screen?&lt;/a&gt;&lt;/p&gt;
 
@@ -17,21 +17,30 @@
     &lt;span class=&quot;nt&quot;&gt;&amp;lt;/script&amp;gt;&lt;/span&gt;
   &lt;span class=&quot;nt&quot;&gt;&amp;lt;/head&amp;gt;&lt;/span&gt;
 &lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
-&lt;script&gt; 태그 안에 자바 스크립트 function을 작성해줍니다.  
-  저는 로그인하는 팝업창을 띄우는 것이라 function의 이름을 login_window라고 하였습니다. (url, title, w, h)와 같이 네 개의 패러미터를 작성해줍니다. 이때는 패러미터의 이름이라 아무 이름이나 적어줍니다.
+&lt;p&gt;script 태그 안에 자바 스크립트 function을 작성해 줍니다.
+  저는 로그인하는 팝업창을 띄우는 것이라 function의 이름을 login_window라고 하였습니다. url, title, w, h와 같이 네 개의 파라미터를 작성해 줍니다. 이때는 파라미터의 이름이라 아무 이름이나 적어줍니다.&lt;/p&gt;
 
-### left, top 변수  
+&lt;h3 id=&quot;left-top-변수&quot;&gt;left, top 변수&lt;/h3&gt;
 
-    두 개의 변수를 만들어 줍니다. 각각의 변수에는 (전체 스크린 한 면의 길이 - 내 팝업창 한 면의 길이) / 2 값이 할당됩니다. 그 값이 내 팝업창의 왼쪽면의 위치, 윗쪽면의 위치가 됩니다.
+&lt;p&gt;두 개의 변수를 만들어 줍니다. 각각의 변수에는 (전체 스크린 한 면의 길이 - 내 팝업창 한 면의 길이) / 2 값이 할당됩니다. 그 값이 내 팝업창의 왼쪽 면의 위치, 위쪽 면의 위치가 됩니다.&lt;/p&gt;
 
-### window.open() 메서드  
+&lt;h3 id=&quot;windowopen-메서드&quot;&gt;window.open() 메서드&lt;/h3&gt;
 
-    window.open() 메서드에 패러미터를 작성해줍니다. 이때는 function에서 적어주었던 패러미터를 이용합니다.
-    ```html
-    window.open(url, title, resizable=yes, width= w, height= h, top= top, left= left);
-    ```
-    보기 편하게 작성해 본 패러미터입니다. url, title은 똑같이 작성해주고 resizable은 yes, width에는 function의 패러미터를 통과해서 들어온 w를 사용, height에는 h를 사용합니다. 변수의 이름과 문자열을 함께
-&lt;/script&gt;</content><author><name>Mirae</name></author><category term="TIL" /><category term="learning" /><category term="공부 기록" /><category term="HTML" /><category term="CSS" /><category term="JavaScript" /><summary type="html">아무런 설정을 하지 않고 window.open() 메서드를 사용해서 팝업창을 띄웠더니 화면 맨 왼쪽 위에 팝업창이 나타납니다. 이 팝업창을 가운데로 옮겨보았습니다.</summary></entry><entry><title type="html">SwiftUI Essentials: Building Lists and Navigation</title><link href="http://localhost:4000/til/list-and-navi/" rel="alternate" type="text/html" title="SwiftUI Essentials: Building Lists and Navigation" /><published>2022-03-22T00:00:00+09:00</published><updated>2022-03-22T00:00:00+09:00</updated><id>http://localhost:4000/til/list-and-navi</id><content type="html" xml:base="http://localhost:4000/til/list-and-navi/">&lt;p&gt;튜토리얼의 출처는 &lt;a href=&quot;https://developer.apple.com/tutorials/swiftui/building-lists-and-navigation&quot;&gt;SwiftUI Essentials:
+&lt;p&gt;window.open() 메서드에 파라미터를 작성해 줍니다. 이때는 function에서 적어주었던 파라미터를 이용합니다. url, title은 똑같이 작성해 주고 resizable은 yes, width에는 function의 파라미터를 통과해서 들어온 w를 사용, height에는 h를 사용합니다. left와 top 변수도 사용합니다.&lt;/p&gt;
+
+&lt;h2 id=&quot;2-body-태그-부분-작성&quot;&gt;2. body 태그 부분 작성&lt;/h2&gt;
+
+&lt;div class=&quot;language-html highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;  &lt;span class=&quot;nt&quot;&gt;&amp;lt;body&amp;gt;&lt;/span&gt;
+    &lt;span class=&quot;nt&quot;&gt;&amp;lt;ul&amp;gt;&lt;/span&gt;  
+      &lt;span class=&quot;nt&quot;&gt;&amp;lt;li&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;class=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;signin-btn&quot;&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;onclick=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;login_window(&apos;signin.html&apos;, &apos;Sign in to Otopi&apos;, &apos;380&apos;, &apos;500&apos;)&quot;&lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;&amp;gt;&amp;lt;span&amp;gt;&lt;/span&gt;Sign in&lt;span class=&quot;nt&quot;&gt;&amp;lt;/span&amp;gt;&amp;lt;/li&amp;gt;&lt;/span&gt;
+    &lt;span class=&quot;nt&quot;&gt;&amp;lt;/ul&amp;gt;&lt;/span&gt;
+  &lt;span class=&quot;nt&quot;&gt;&amp;lt;/body&amp;gt;&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+&lt;p&gt;body 부분에 function을 사용할 곳에 function 이름과 파라미터를 사용하여 작성해 줍니다. 제가 만든 웹 페이지에서는 Sign in이라는 리스트를 클릭하면 팝업창이 생성됩니다. 클릭 시 function login_window가 실행됩니다. 파라미터를 통해 팝업창의 url, title, w, h의 크기를 전달합니다. 크기를 작성할 때 px을 적지 않도록 주의해 줍니다.&lt;/p&gt;
+
+&lt;h2 id=&quot;3-가운데-정렬된-모습&quot;&gt;3. 가운데 정렬된 모습&lt;/h2&gt;
+
+&lt;p&gt;&lt;img src=&quot;/assets/images/main_octopi.png&quot; alt=&quot;main&quot; /&gt;&lt;/p&gt;</content><author><name>Mirae</name></author><category term="TIL" /><category term="learning" /><category term="공부 기록" /><category term="HTML" /><category term="CSS" /><category term="JavaScript" /><summary type="html">아무런 설정을 하지 않고 window.open() 메서드를 사용해서 팝업창을 띄웠더니 화면 맨 왼쪽 위에 팝업창이 나타납니다. 이 팝업창을 가운데로 옮겨보았습니다.</summary></entry><entry><title type="html">SwiftUI Essentials: Building Lists and Navigation</title><link href="http://localhost:4000/til/list-and-navi/" rel="alternate" type="text/html" title="SwiftUI Essentials: Building Lists and Navigation" /><published>2022-03-22T00:00:00+09:00</published><updated>2022-03-22T00:00:00+09:00</updated><id>http://localhost:4000/til/list-and-navi</id><content type="html" xml:base="http://localhost:4000/til/list-and-navi/">&lt;p&gt;튜토리얼의 출처는 &lt;a href=&quot;https://developer.apple.com/tutorials/swiftui/building-lists-and-navigation&quot;&gt;SwiftUI Essentials:
 Building Lists and Navigation&lt;/a&gt; 입니다.&lt;/p&gt;
 
 &lt;!-- &lt;center&gt;&lt;video src=&quot;https://user-images.githubusercontent.com/85061148/159120793-a9d5166b-fad5-41f0-899a-fcfe0bee25da.mov&quot; controls=&quot;controls&quot; style=&quot;max-width: 300px&quot;&gt;
@@ -131,7 +140,7 @@ Building Lists and Navigation&lt;/a&gt; 입니다.&lt;/p&gt;
 &lt;ul&gt;
   &lt;li&gt;HTML link element&lt;/li&gt;
   &lt;li&gt;linear-flex를 이용해서 목록을 옆으로 나열하기&lt;/li&gt;
-  &lt;li&gt;Octopi가 Octopus의 복수형 두가지 중 하나라는 사실 😂&lt;/li&gt;
+  &lt;li&gt;!important&lt;/li&gt;
 &lt;/ul&gt;
 
 &lt;p&gt;&lt;br /&gt;&lt;/p&gt;

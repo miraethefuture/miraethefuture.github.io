@@ -1,4 +1,4 @@
-I"�<p>아무런 설정을 하지 않고 window.open() 메서드를 사용해서 팝업창을 띄웠더니 화면 맨 왼쪽 위에 팝업창이 나타납니다. 이 팝업창을 가운데로 옮겨보았습니다.</p>
+I"�<p>아무런 설정을 하지 않고 window.open() 메서드를 사용해서 팝업창을 띄웠더니 화면 맨 왼쪽 위에 팝업창이 나타납니다. 이 팝업창을 가운데로 옮겨보았습니다.</p>
 
 <p><a href="https://www.geeksforgeeks.org/how-to-center-a-popup-window-on-screen/">도움을 받은 글: How to center a popup window on screen?</a></p>
 
@@ -17,7 +17,29 @@
     <span class="nt">&lt;/script&gt;</span>
   <span class="nt">&lt;/head&gt;</span>
 </code></pre></div></div>
-<p>ㅇㅇㅇㅇ
-  <script> 태그 안에 자바 스크립트 function을 작성해줍니다.  
-  저는 로그인하는 팝업창을 띄우는 것이라 function의 이름을 login_window라고 하였습니다. (url, title, w, h)와 같이 네 개의 패러미터를 작성해줍니다. 이때는 패러미터의 이름이라 아무 이름이나 적어줍니다.</script></p>
+<p>script 태그 안에 자바 스크립트 function을 작성해줍니다.<br />
+  저는 로그인하는 팝업창을 띄우는 것이라 function의 이름을 login_window 라고 하였습니다. url, title, w, h와 같이 네 개의 패러미터를 작성해줍니다. 이때는 패러미터의 이름이라 아무 이름이나 적어줍니다.</p>
+
+<h3 id="left-top-변수">left, top 변수</h3>
+
+<p>두 개의 변수를 만들어 줍니다. 각각의 변수에는 (전체 스크린 한 면의 길이 - 내 팝업창 한 면의 길이) / 2 값이 할당됩니다. 그 값이 내 팝업창의 왼쪽면의 위치, 윗쪽면의 위치가 됩니다.</p>
+
+<h3 id="windowopen-메서드">window.open() 메서드</h3>
+
+<p>window.open() 메서드에 패러미터를 작성해줍니다. 이때는 function에서 적어주었던 패러미터를 이용합니다. url, title은 똑같이 작성해주고 resizable은 yes, width에는 function의 패러미터를 통과해서 들어온 w를 사용, height에는 h를 사용합니다. left와 top 변수도 사용합니다.</p>
+
+<h2 id="2">2.</h2>
+
+<div class="language-html highlighter-rouge"><div class="highlight"><pre class="highlight"><code>  <span class="nt">&lt;body&gt;</span>
+    <span class="nt">&lt;ul&gt;</span>  
+      <span class="nt">&lt;li</span> <span class="na">class=</span><span class="s">"signin-btn"</span> <span class="na">onclick=</span><span class="s">"login_window('signin.html', 'Sign in to Otopi', '380', '500')"</span><span class="nt">&gt;&lt;span&gt;</span>Sign in<span class="nt">&lt;/span&gt;&lt;/li&gt;</span>
+    <span class="nt">&lt;/ul&gt;</span>
+  <span class="nt">&lt;/body&gt;</span>
+</code></pre></div></div>
+<p>body 부분에 function을 사용할 곳에 function 이름과 패러미터를 사용하여 작성해줍니다. 
+  Sign in 이라는 리스트를 클릭하면 팝업창이 생성됩니다. 클릭시 function login_window가 실행됩니다. 패러미터를 통해 팝업창의 url, title, w, h의 크기를 전달합니다. 크기를 작성할 때 px을 적지 않도록 주의해줍니다.</p>
+
+<h2 id="3-가운데-정렬된-모습">3. 가운데 정렬된 모습</h2>
+
+<p><img src="/assets/images/main_octopi.png" alt="main" /></p>
 :ET
