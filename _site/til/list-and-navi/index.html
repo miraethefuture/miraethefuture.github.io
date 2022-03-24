@@ -234,7 +234,7 @@
           <aside class="sidebar__right sticky">
             <nav class="toc">
               <header><h4 class="nav__title"><i class="fas fa-kiwi-bird"></i> 👷</h4></header>
-              <ul class="toc__menu"><li><a href="#️-what-i-learned-from-this-tutorial">☑️ What I Learned From This Tutorial:</a></li><li><a href="#section-1-landmark-model-생성하기">Section 1: Landmark model 생성하기</a><ul><li><a href="#샘플-데이터-파일-추가하기">샘플 데이터 파일 추가하기</a></li><li><a href="#새로-만든-landmarkswift-파일에-structure-생성">새로 만든 Landmark.swift 파일에 structure 생성</a></li><li><a href="#json-data를-가져오는-메서드-생성하기">JSON data를 가져오는 메서드 생성하기</a></li></ul></li></ul>
+              <ul class="toc__menu"><li><a href="#️-what-i-learned-from-this-tutorial">☑️ What I Learned From This Tutorial:</a></li><li><a href="#section-1-landmark-model-생성하기">Section 1: Landmark model 생성하기</a></li><li><a href="#샘플-데이터-파일-추가하기">샘플 데이터 파일 추가하기</a></li><li><a href="#새로-만든-landmarkswift-파일에-structure-생성">새로 만든 Landmark.swift 파일에 structure 생성</a><ul><li><a href="#-작성하는-중">👷 작성하는 중..</a></li></ul></li><li><a href="#foundation-framework">Foundation framework</a><ul><li><a href="#codable-conformance">Codable conformance</a></li><li><a href="#json-data를-가져오는-메서드-생성하기">JSON data를 가져오는 메서드 생성하기</a></li><li><a href="#bundle">Bundle</a></li></ul></li></ul>
 
             </nav>
           </aside>
@@ -249,7 +249,7 @@ Building Lists and Navigation</a> 입니다.</p>
 
 <ul>
   <li>데이터를 이용하기</li>
-  <li>Foundation module의 사용</li>
+  <li>Foundation framework의 사용</li>
   <li>Codable / Hashable conformance</li>
   <li>Guard
 <!-- - Binding ($) --></li>
@@ -263,7 +263,7 @@ Building Lists and Navigation</a> 입니다.</p>
 
 <h2 id="section-1-landmark-model-생성하기">Section 1: Landmark model 생성하기</h2>
 
-<h3 id="샘플-데이터-파일-추가하기">샘플 데이터 파일 추가하기</h3>
+<h2 id="샘플-데이터-파일-추가하기">샘플 데이터 파일 추가하기</h2>
 
 <p>다운받은 프로젝트 파일에 압축을 풀면 Resources 폴더에 landmarkData.json 파일이 있습니다. 튜토리얼 Creating and Combining Views에서 만들었던 프로젝트를 그대로 사용합니다. 왼쪽에 위치한 프로젝트의 navigation pane 부분에 landmarkData.json 파일을 드래그해서 넣어줍니다. 다이얼로그 창이 나타나면 ‘Copy items if needed’을 선택하고 Add to targets: 에 Landmarks를 선택하고 Finish 버튼을 눌러줍니다. 앞으로의 튜토리얼을 진행하며 게속해서 이 샘플 데이터를 사용할 것입니다.</p>
 
@@ -272,7 +272,7 @@ Building Lists and Navigation</a> 입니다.</p>
 <center><sup>(샘플 데이터인 landmarkData.json 파일을 추가해 준 모습)</sup></center>
 <p><br /></p>
 
-<h3 id="새로-만든-landmarkswift-파일에-structure-생성">새로 만든 Landmark.swift 파일에 structure 생성</h3>
+<h2 id="새로-만든-landmarkswift-파일에-structure-생성">새로 만든 Landmark.swift 파일에 structure 생성</h2>
 
 <div class="language-swift highlighter-rouge"><div class="highlight"><pre class="highlight"><code>  <span class="c1">//  Landmark.swift</span>
 
@@ -288,7 +288,17 @@ Building Lists and Navigation</a> 입니다.</p>
 </code></pre></div></div>
 <p>Landmark.swift라는 이름의 스위프트 파일을 만들어 줍니다. Landmark structure를 정의하고 landmarkData.json 파일에 있는 키와 이름이 같은 property 몇개를 만들어줍니다.</p>
 
-<p><strong>Codable conformance</strong>는 데이터 파일과 structure사이에서 데이터를 이동시키는 것을 더 쉽게 만들어줍니다. <s>아직 Codable이 뭔지 잘 모르겠지만 데이터와 관련된 protocol인 것 같습니다.</s></p>
+<h3 id="-작성하는-중">👷 작성하는 중..</h3>
+
+<h2 id="foundation-framework">Foundation framework</h2>
+
+<p>Foundation framework는 가장 기본적인 data types과 collections 그리고 운영체제 서비스에 접근하도록 합니다. 데이터를 저장 또는 유지하기, 텍스트의 처리, 날짜와 시간의 계산, 정렬 및 필터링, 그리고 네트워킹과 같은 가장 기본적인 기능을 하는 layer를 정의합니다. Foundation으로부터 정의된 클래스, 프로토콜, 데이터 자료형들은 macOS, iOS, watchOS, tvOS SDKs의 모든 범위에서 사용됩니다.</p>
+
+<p><!-- Framework들은 큰 가지처럼 느껴집니다. Classes, protocols, data types를 크게 구분해 놓은 바구니 처럼 느껴집니다.  --></p>
+
+<h3 id="codable-conformance">Codable conformance</h3>
+
+<p>Codable은 데이터 파일과 structure사이에서 데이터를 이동시키는 것을 더 쉽게 만들어줍니다.</p>
 
 <h3 id="json-data를-가져오는-메서드-생성하기">JSON data를 가져오는 메서드 생성하기</h3>
 
@@ -318,6 +328,9 @@ Building Lists and Navigation</a> 입니다.</p>
       <span class="p">}</span>
   <span class="p">}</span>
 </code></pre></div></div>
+<h3 id="bundle">Bundle</h3>
+
+<p>Bundles는 macOS와 iOS에서 사용되는 코드와 resource를 캡슐화하기 위해 사용되는 기술입니다. 개발자가 필요로하는 resource의 위치를 제공함으로써 개발을 단순화 해줍니다. Bundles는 디렉토리와 파일을 사용합니다. Binary files 보다 더 쉽고 개발 과정이나 배포후에도 쉽게 수정할 수 있습니다.</p>
 
         
       </section>
@@ -372,11 +385,11 @@ Building Lists and Navigation</a> 입니다.</p>
       
   <nav class="pagination">
     
-      <a href="/til/octopusProject/" class="pagination--pager" title="웹 페이지를 만들며 HTML과 CSS에 대해 알아보기
+      <a href="/til/myOctopi/" class="pagination--pager" title="웹 페이지를 만들며 HTML과 CSS에 대해 알아보기
 ">Previous</a>
     
     
-      <a href="/til/OddOccurrence/" class="pagination--pager" title="Codility_Developer Training: 배열 챕터의 문제 CyclicRotation
+      <a href="/til/popup-center/" class="pagination--pager" title="JavaScript: 팝업창 가운데에 띄우기
 ">Next</a>
     
   </nav>
@@ -405,7 +418,7 @@ Building Lists and Navigation</a> 입니다.</p>
     
     <h2 class="archive__item-title no_toc" itemprop="headline">
       
-        <a href="/til/OddOccurrence/" rel="permalink">Codility_Developer Training: 배열 챕터의 문제 CyclicRotation
+        <a href="/til/popup-center/" rel="permalink">JavaScript: 팝업창 가운데에 띄우기
 </a>
       
     </h2>
@@ -417,7 +430,7 @@ Building Lists and Navigation</a> 입니다.</p>
       <span class="page__meta-date">
         <i class="far fa-calendar-alt" aria-hidden="true"></i>
         
-        <time datetime="2022-03-23T00:00:00+09:00">March 23, 2022</time>
+        <time datetime="2022-03-24T00:00:00+09:00">March 24, 2022</time>
       </span>
     
 
@@ -427,7 +440,7 @@ Building Lists and Navigation</a> 입니다.</p>
   </p>
 
 
-    <p class="archive__item-excerpt" itemprop="description">OddOccurrencesInArray 문제 읽기
+    <p class="archive__item-excerpt" itemprop="description">아무런 설정을 하지 않고 window.open() 메서드를 사용해서 팝업창을 띄웠더니 화면 맨 왼쪽 위에 팝업창이 나타납니다. 이 팝업창을 가운데로 옮겨보았습니다.
 </p>
   </article>
 </div>
@@ -446,7 +459,7 @@ Building Lists and Navigation</a> 입니다.</p>
     
     <h2 class="archive__item-title no_toc" itemprop="headline">
       
-        <a href="/til/octopusProject/" rel="permalink">웹 페이지를 만들며 HTML과 CSS에 대해 알아보기
+        <a href="/til/myOctopi/" rel="permalink">웹 페이지를 만들며 HTML과 CSS에 대해 알아보기
 </a>
       
     </h2>
@@ -468,11 +481,8 @@ Building Lists and Navigation</a> 입니다.</p>
   </p>
 
 
-    <p class="archive__item-excerpt" itemprop="description">
-  Octopus Project
-  팀 프로젝트가 끝나고 바로 개인 프로젝트가 하나 있습니다.
-  7일정도 HTML과 CSS를 배우는데, 배운 것으로 웹 페이지를 만드는 것입니다.
-  자바 스크립트는 할 수도 안할 수도 있다는데 시간이 되면 자바 스크립트도 이용해서 페이지를 만들...</p>
+    <p class="archive__item-excerpt" itemprop="description">튜토리얼 출처: Easy Tutorials: How To Make A Website Using HTML And CSS
+</p>
   </article>
 </div>
 

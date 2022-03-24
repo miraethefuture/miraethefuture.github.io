@@ -1,0 +1,23 @@
+I"�<p>아무런 설정을 하지 않고 window.open() 메서드를 사용해서 팝업창을 띄웠더니 화면 맨 왼쪽 위에 팝업창이 나타납니다. 이 팝업창을 가운데로 옮겨보았습니다.</p>
+
+<p><a href="https://www.geeksforgeeks.org/how-to-center-a-popup-window-on-screen/">도움을 받은 글: How to center a popup window on screen?</a></p>
+
+<h2 id="1-head태그-안에-js-function-작성하기">1. &lt;head&gt;태그 안에 JS function 작성하기</h2>
+
+<div class="language-html highlighter-rouge"><div class="highlight"><pre class="highlight"><code>  <span class="cp">&lt;!DOCTYPE html&gt;</span>
+  <span class="nt">&lt;html&gt;</span>
+  <span class="nt">&lt;head&gt;</span>
+    <span class="nt">&lt;title&gt;</span>Title of the document<span class="nt">&lt;/title&gt;</span>
+    <span class="nt">&lt;script </span><span class="na">type=</span><span class="s">"text/javascript"</span><span class="nt">&gt;</span>
+            <span class="kd">function</span> <span class="nx">login_window</span><span class="p">(</span><span class="nx">url</span><span class="p">,</span> <span class="nx">title</span><span class="p">,</span> <span class="nx">w</span><span class="p">,</span> <span class="nx">h</span><span class="p">)</span> <span class="p">{</span>
+                <span class="kd">var</span> <span class="nx">left</span> <span class="o">=</span> <span class="p">(</span><span class="nx">screen</span><span class="p">.</span><span class="nx">width</span> <span class="o">-</span> <span class="nx">w</span><span class="p">)</span> <span class="o">/</span> <span class="mi">2</span><span class="p">;</span>
+                <span class="kd">var</span> <span class="nx">top</span> <span class="o">=</span> <span class="p">(</span><span class="nx">screen</span><span class="p">.</span><span class="nx">height</span> <span class="o">-</span> <span class="nx">h</span><span class="p">)</span> <span class="o">/</span> <span class="mi">2</span><span class="p">;</span>
+                <span class="kd">var</span> <span class="nx">myWindow</span> <span class="o">=</span> <span class="nb">window</span><span class="p">.</span><span class="nx">open</span><span class="p">(</span><span class="nx">url</span><span class="p">,</span> <span class="nx">title</span><span class="p">,</span> <span class="dl">'</span><span class="s1">resizable=yes, width=</span><span class="dl">'</span> <span class="o">+</span> <span class="nx">w</span> <span class="o">+</span> <span class="dl">'</span><span class="s1">, height=</span><span class="dl">'</span> <span class="o">+</span> <span class="nx">h</span> <span class="o">+</span> <span class="dl">'</span><span class="s1">, top=</span><span class="dl">'</span> <span class="o">+</span> <span class="nx">top</span> <span class="o">+</span> <span class="dl">'</span><span class="s1">, left=</span><span class="dl">'</span> <span class="o">+</span> <span class="nx">left</span><span class="p">);</span>
+            <span class="p">}</span>
+    <span class="nt">&lt;/script&gt;</span>
+  <span class="nt">&lt;/head&gt;</span>
+</code></pre></div></div>
+<script> 태그 안에 자바 스크립트 function을 작성해줍니다.  
+  저는 로그인하는 팝업창을 띄우는 것이라 function의 이름을 login_window라고 하였습니다. (url, title, w, h)와 같이 네 개의 패러미터를 작성해줍니다. 이때는 패러미터의 이름이라 아무 이름이나 적어줍니다.
+</script>
+:ET
