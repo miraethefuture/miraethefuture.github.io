@@ -1,4 +1,164 @@
-<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="4.2.1">Jekyll</generator><link href="http://localhost:4000/feed.xml" rel="self" type="application/atom+xml" /><link href="http://localhost:4000/" rel="alternate" type="text/html" /><updated>2022-03-24T14:13:55+09:00</updated><id>http://localhost:4000/feed.xml</id><title type="html">Mirae the Future</title><subtitle>An amazing website.</subtitle><author><name>Mirae</name></author><entry><title type="html">JavaScript: 팝업창 가운데에 띄우기</title><link href="http://localhost:4000/til/popup-center/" rel="alternate" type="text/html" title="JavaScript: 팝업창 가운데에 띄우기" /><published>2022-03-24T00:00:00+09:00</published><updated>2022-03-24T00:00:00+09:00</updated><id>http://localhost:4000/til/popup-center</id><content type="html" xml:base="http://localhost:4000/til/popup-center/">&lt;p&gt;아무런 설정을 하지 않고 window.open() 메서드를 사용해서 팝업창을 띄웠더니 화면 맨 왼쪽 위에 팝업창이 나타납니다. 이 팝업창을 가운데로 옮겨보았습니다.&lt;/p&gt;
+<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="4.2.1">Jekyll</generator><link href="http://localhost:4000/feed.xml" rel="self" type="application/atom+xml" /><link href="http://localhost:4000/" rel="alternate" type="text/html" /><updated>2022-03-29T21:02:19+09:00</updated><id>http://localhost:4000/feed.xml</id><title type="html">Mirae the Future</title><subtitle>An amazing website.</subtitle><author><name>Mirae</name></author><entry><title type="html">Playgrounds</title><link href="http://localhost:4000/til/playgrounds/" rel="alternate" type="text/html" title="Playgrounds" /><published>2022-03-29T00:00:00+09:00</published><updated>2022-03-29T00:00:00+09:00</updated><id>http://localhost:4000/til/playgrounds</id><content type="html" xml:base="http://localhost:4000/til/playgrounds/">&lt;h1 id=&quot;playgrounds-learn-to-code-1&quot;&gt;Playgrounds: Learn to Code 1&lt;/h1&gt;
+&lt;p&gt;아래 모든 내용들은 Playgrounds에서 학습하며 정리한 내용입니다.&lt;br /&gt;
+  모든 내용의 출처는 Playgrounds임을 밝힙니다.&lt;/p&gt;
+
+&lt;h2 id=&quot;function-grouping-tasks&quot;&gt;Function: Grouping Tasks&lt;/h2&gt;
+
+&lt;p&gt;Function은 여러개의 commands를 하나로 묶어 이름을 붙인 것입니다.&lt;br /&gt;
+  그리고 아무때나 원할 때 호출하여(call) 사용할 수 있습니다.&lt;/p&gt;
+
+&lt;div class=&quot;language-swift highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;  &lt;span class=&quot;kd&quot;&gt;func&lt;/span&gt; &lt;span class=&quot;nf&quot;&gt;tieMyShoe&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;()&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
+    &lt;span class=&quot;nf&quot;&gt;loop&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;()&lt;/span&gt;
+    &lt;span class=&quot;nf&quot;&gt;swoop&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;()&lt;/span&gt;
+    &lt;span class=&quot;nf&quot;&gt;pull&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;()&lt;/span&gt;
+  &lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;ol&gt;
+  &lt;li&gt;func 키워드 사용&lt;/li&gt;
+  &lt;li&gt;function에 이름을 지어줍니다.&lt;/li&gt;
+  &lt;li&gt;function은 언제나 이름 뒤에 ()를 붙여줍니다.&lt;/li&gt;
+  &lt;li&gt;curly braces(중괄호 { }) 안에 commands를 추가해줌으로써 function이 어떤 기능들을 수행할지 정합니다.&lt;/li&gt;
+  &lt;li&gt;필요할 때 언제든 tieMyShoe() 라는 이름을 사용하여 호출, 사용할 수 있습니다.&lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;h3 id=&quot;composition&quot;&gt;Composition&lt;/h3&gt;
+
+&lt;p&gt;가끔씩 coding problem을 해결하려면 새로운 behavior을 수행하기 위해서 기존의 가지고 있던 commands를 혼합하여 함께 사용해야 할 떄가 있습니다. 이 과정을 compositon이라고 합니다. 원하는 행동을 수행할 command는 없지만 기존의 code를 합침으로써 원하는 행동을 할 수 있게 됩니다. 만약 여러번 같은 compositon을 수행해야 한다면 어떨까요? 그렇다면 여러개의 혼합된 코드를 여러번 사용하게 됩니다. 이럴때는 이 composition을 하나로 묶어 function으로 만들 수 있습니다.
+  function을 사용하므로써 코드를 간단하게 만들고 복잡한 일도 더 간단하게 처리할 수 있습니다.&lt;/p&gt;
+
+&lt;ol&gt;
+  &lt;li&gt;반복되는 패턴을 파악합니다.&lt;/li&gt;
+  &lt;li&gt;그 패턴을 function으로 만듭니다.&lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;h3 id=&quot;decomposition&quot;&gt;Decomposition&lt;/h3&gt;
+
+&lt;p&gt;function 안에 다른 function을 호출할 수 있습니다. 더 큰 문제를 더 작은 조각으로 나누는 과정을 Decomposition이라고 합니다. 작은 일을 처리하는 function을 만들고 다른 funtion안에 그 functions을 사용하므로서 더 큰 문제를 해결하는 것 - 더 큰 문제를 작은 function으로 나누는 것을 Decomposition 이라 합니다.&lt;/p&gt;
+
+&lt;h3 id=&quot;decompose-a-solution-across-multiple-function&quot;&gt;Decompose a solution across multiple Function&lt;/h3&gt;
+
+&lt;p&gt;작은 tasks를 해결하는 functions을 이용하는 것은 도움이 됩니다. 이 작은 일을 처리하는 function을 다른 function안에서 호출하므로써 더 큰 task를 해결 할 수 있게 됩니다. 더 작은 function으로 나누는 것은 코드의 가독성도 높여줍니다. 보통 function의 이름은 각 기능을 나타내도록 짓기 때문이죠.
+  또, 코드를 작성하는 과정을 단순화 시켜줍니다. 더 큰 task를 해결하기 위한 function을 작성한 뒤에는 작은 일을 처리하는 각각의 commands들은 신경쓰지 않을 수 있죠.&lt;/p&gt;
+
+&lt;ol&gt;
+  &lt;li&gt;작은 명령 패턴을 찾는다.&lt;/li&gt;
+  &lt;li&gt;명령들을 호출하는 function을 만든다.&lt;/li&gt;
+  &lt;li&gt;만들어진 function으로 문제를 해결한다.&lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;p&gt;앱을 만든다는 것은 엄청나게 많은 작은 문제들의 해결방법을 찾는 것입니다. 작은 문제들의 해결책을 찾은 뒤에 코더들은 그 해결책을 모아 더 큰 문제를 해결합니다.&lt;/p&gt;
+
+&lt;h3 id=&quot;-틈새-영어-단어&quot;&gt;📖 틈새 영어 단어&lt;/h3&gt;
+&lt;div class=&quot;notice&quot;&gt;
+   &lt;h4&gt;Tweak the code inside solveRow():&lt;/h4&gt;
+   &lt;p&gt;tweak은 작은 변화를 만든다는 뜻입니다.&lt;/p&gt;
+&lt;/div&gt;
+
+&lt;h2 id=&quot;️-여기까지-정리&quot;&gt;👷‍♂️ 여기까지 정리&lt;/h2&gt;
+
+&lt;h2 id=&quot;for-loops&quot;&gt;For loops&lt;/h2&gt;
+
+&lt;ol&gt;
+  &lt;li&gt;‘for’ 사용한다.&lt;/li&gt;
+  &lt;li&gt;loop가 실행 될 횟수를 적어준다.&lt;/li&gt;
+  &lt;li&gt;curly braces 안에 반복할 commands를 적어준다.&lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;div class=&quot;language-swift highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;  &lt;span class=&quot;k&quot;&gt;for&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;eachSeed&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;in&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;1&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;...&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;4&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
+    &lt;span class=&quot;nf&quot;&gt;makeHole&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;()&lt;/span&gt;
+    &lt;span class=&quot;nf&quot;&gt;placeSeed&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;()&lt;/span&gt;
+    &lt;span class=&quot;nf&quot;&gt;moveFiveInchesForward&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;()&lt;/span&gt;
+  &lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;p&gt;coding tasks를 분할하기 위해 반복되는 패턴을 function으로 만들어 보았습니다. loop를 이용하며 한 function을 여러번 반복해서 호출할 수 있습니다. 어떤 코드를 순서대로 반복하는 것입니다. loops를 이용하면 반복해서 해야 할 일을 단순화 시킬 수 있습니다.&lt;/p&gt;
+
+&lt;ol&gt;
+  &lt;li&gt;작은 문제를 해결 할 패턴을 찾는다.&lt;/li&gt;
+  &lt;li&gt;다음 문제에서도 이 패턴이 적용되는지 알아본다.&lt;/li&gt;
+  &lt;li&gt;된다면 반복한다.&lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;p&gt;해결할 수 있는 작은 문제에 대한 해결책을 찾고 여러개의 해결책을 모아 큰 문제를 해결하는 것은 좋은 문제 해결 방법 접근입니다.&lt;/p&gt;
+
+&lt;h2 id=&quot;conditional-code&quot;&gt;Conditional Code&lt;/h2&gt;
+
+&lt;p&gt;예상할 수 없는 것에 대해 어떻게 계획을 짤까요?&lt;br /&gt;
+  코드 안에서는 if문을 이용하여 다른 조건들에 대한 계획을 짭니다.&lt;/p&gt;
+
+&lt;div class=&quot;language-swift highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;  &lt;span class=&quot;k&quot;&gt;if&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;lightIsGreen&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
+    &lt;span class=&quot;nf&quot;&gt;moveForward&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;()&lt;/span&gt;
+  &lt;span class=&quot;p&quot;&gt;}&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;else&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
+    &lt;span class=&quot;nf&quot;&gt;wait&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;()&lt;/span&gt;
+  &lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
+
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+&lt;ol&gt;
+  &lt;li&gt;‘if’ 키워드 적기&lt;/li&gt;
+  &lt;li&gt;예 / 아니오로 답할 수 있는 조건 적기&lt;/li&gt;
+  &lt;li&gt;조건이 true일 때 실행 할 commands를 if block 안에 적어주기&lt;/li&gt;
+  &lt;li&gt;조건이 false 일 때 실행될 코드는 else를 이용해서 적어줍니다.&lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;p&gt;메세지가 오면 메세지가 왔다는 알림 소리가 울리고, 사파리는 웬 사이트를 열기 전에 인터넷이 연결되어 있는지 확인합니다. 연결되어 있다’면’ 웹사이트로 이동하죠.&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;Boolean condition&lt;/strong&gt;&lt;/p&gt;
+
+&lt;p&gt;if else문에서 if의 Boolean 조건문이 true이면 if {} 안의 코드가 실행되고
+  false이면 else {} 블락 안의 조건이 실행됩니다.&lt;/p&gt;
+
+&lt;div class=&quot;language-swift highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;  &lt;span class=&quot;kd&quot;&gt;func&lt;/span&gt; &lt;span class=&quot;nf&quot;&gt;solveRightSide&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;()&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
+    &lt;span class=&quot;k&quot;&gt;if&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;isOnGem&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
+      &lt;span class=&quot;nf&quot;&gt;turnLeft&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;()&lt;/span&gt;
+      &lt;span class=&quot;nf&quot;&gt;collectGem&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;()&lt;/span&gt;
+    &lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
+  &lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
+
+  &lt;span class=&quot;k&quot;&gt;for&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;i&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;in&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;1&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;...&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;2&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
+    &lt;span class=&quot;nf&quot;&gt;solveRightSide&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;()&lt;/span&gt;
+    &lt;span class=&quot;nf&quot;&gt;moveForward&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;()&lt;/span&gt;
+  &lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;p&gt;위와 같은 방식으로도 사용할 수 있다. function안에 if문을 작성하고 for문을 이용해서 fuction을 호출하는 방식이다. 이렇게 하므로써 코드를 재사용할 수 있게 된다.&lt;/p&gt;
+
+&lt;h3 id=&quot;logical-operators&quot;&gt;Logical Operators&lt;/h3&gt;
+
+&lt;p&gt;code에서 operator는 action을 보여주는 심볼입니다. 논리연산자는 조건문을 더 명확하게 특정지어줍니다.&lt;/p&gt;
+&lt;ul&gt;
+  &lt;li&gt;&amp;amp;&amp;amp; (AND)&lt;/li&gt;
+  &lt;li&gt;
+    &lt;table&gt;
+      &lt;tbody&gt;
+        &lt;tr&gt;
+          &lt;td&gt; &lt;/td&gt;
+          &lt;td&gt;(OR)&lt;/td&gt;
+        &lt;/tr&gt;
+      &lt;/tbody&gt;
+    &lt;/table&gt;
+  &lt;/li&gt;
+  &lt;li&gt;! (NOT)
+  위의 각 연산자들은 각자의 방법으로 조건문을 변화시킵니다.&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;ol&gt;
+  &lt;li&gt;AND(&amp;amp;&amp;amp;) 논리 연산자는 모든 조건들이 true일 때만 코드가 실행됩니다.&lt;/li&gt;
+  &lt;li&gt;
+    &lt;table&gt;
+      &lt;tbody&gt;
+        &lt;tr&gt;
+          &lt;td&gt;OR(&lt;/td&gt;
+          &lt;td&gt; &lt;/td&gt;
+          &lt;td&gt;) 논리 연산자는 조건 중 적어도 하나가 true일 때 코드가 실행됩니다.&lt;/td&gt;
+        &lt;/tr&gt;
+      &lt;/tbody&gt;
+    &lt;/table&gt;
+  &lt;/li&gt;
+  &lt;li&gt;NOT(!) 논리 연산자는 조건을 반대로 만듭니다.&lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;h2 id=&quot;while-loops&quot;&gt;While Loops&lt;/h2&gt;</content><author><name>Mirae</name></author><category term="TIL" /><category term="learning" /><category term="공부 기록" /><category term="Swift" /><summary type="html">Playgrounds: Learn to Code 1 아래 모든 내용들은 Playgrounds에서 학습하며 정리한 내용입니다. 모든 내용의 출처는 Playgrounds임을 밝힙니다.</summary></entry><entry><title type="html">JavaScript: 팝업창 가운데에 띄우기</title><link href="http://localhost:4000/til/popup-center/" rel="alternate" type="text/html" title="JavaScript: 팝업창 가운데에 띄우기" /><published>2022-03-24T00:00:00+09:00</published><updated>2022-03-24T00:00:00+09:00</updated><id>http://localhost:4000/til/popup-center</id><content type="html" xml:base="http://localhost:4000/til/popup-center/">&lt;p&gt;아무런 설정을 하지 않고 window.open() 메서드를 사용해서 팝업창을 띄웠더니 화면 맨 왼쪽 위에 팝업창이 나타납니다. 이 팝업창을 가운데로 옮겨보았습니다.&lt;/p&gt;
 
 &lt;p&gt;&lt;a href=&quot;https://www.geeksforgeeks.org/how-to-center-a-popup-window-on-screen/&quot;&gt;도움을 받은 글: How to center a popup window on screen?&lt;/a&gt;&lt;/p&gt;
 
@@ -131,47 +291,7 @@ Building Lists and Navigation&lt;/a&gt; 입니다.&lt;/p&gt;
 &lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
 &lt;h3 id=&quot;bundle&quot;&gt;Bundle&lt;/h3&gt;
 
-&lt;p&gt;Bundles는 macOS와 iOS에서 사용되는 코드와 resource를 캡슐화하기 위해 사용되는 기술입니다. 개발자가 필요로하는 resource의 위치를 제공함으로써 개발을 단순화 해줍니다. Bundles는 디렉토리와 파일을 사용합니다. Binary files 보다 더 쉽고 개발 과정이나 배포후에도 쉽게 수정할 수 있습니다.&lt;/p&gt;</content><author><name>Mirae</name></author><category term="TIL" /><category term="learning" /><category term="공부 기록" /><category term="Swift" /><summary type="html">튜토리얼의 출처는 SwiftUI Essentials: Building Lists and Navigation 입니다.</summary></entry><entry><title type="html">웹 페이지를 만들며 HTML과 CSS에 대해 알아보기</title><link href="http://localhost:4000/til/myOctopi/" rel="alternate" type="text/html" title="웹 페이지를 만들며 HTML과 CSS에 대해 알아보기" /><published>2022-03-16T00:00:00+09:00</published><updated>2022-03-16T00:00:00+09:00</updated><id>http://localhost:4000/til/myOctopi</id><content type="html" xml:base="http://localhost:4000/til/myOctopi/">&lt;p&gt;&lt;sup&gt;&lt;a href=&quot;https://www.youtube.com/watch?v=-2LtZRi6Q0s&quot;&gt;튜토리얼 출처: Easy Tutorials: How To Make A Website Using HTML And CSS&lt;/a&gt;&lt;/sup&gt;&lt;/p&gt;
-
-&lt;p&gt;&lt;img src=&quot;/assets/images/octo.png&quot; alt=&quot;octopus&quot; /&gt;&lt;/p&gt;
-
-&lt;h2 id=&quot;what-i-learned-from-this-project&quot;&gt;What I Learned From This Project:&lt;/h2&gt;
-
-&lt;ul&gt;
-  &lt;li&gt;HTML link element&lt;/li&gt;
-  &lt;li&gt;linear-flex를 이용해서 목록을 옆으로 나열하기&lt;/li&gt;
-  &lt;li&gt;!important&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;p&gt;&lt;br /&gt;&lt;/p&gt;
-&lt;div class=&quot;notice&quot;&gt;
-  &lt;h4&gt;Octopi Project&lt;/h4&gt;
-  &lt;p&gt;HTML과 CSS(+JS 한스푼)을 공부하며 웹 페이지를 만들어 봅니다. 기획 보다는 HTML과 CSS를 공부하는 느낌으로 만들 것이기 때문에 웹 페이지의 주제는 고민하지 않고 머릿속에 떠오른 단축키를 모아놓은 웹 사이트로 가보겠습니다.&lt;br /&gt;&lt;/p&gt;
-&lt;/div&gt;
-
-&lt;h2 id=&quot;link-html-element&quot;&gt;link HTML element&lt;/h2&gt;
-
-&lt;div class=&quot;language-html highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;nt&quot;&gt;&amp;lt;link&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;rel=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;stylesheet&quot;&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;href=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;style.css&quot;&lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;&amp;gt;&lt;/span&gt;
-&lt;span class=&quot;c&quot;&gt;&amp;lt;!-- &amp;lt;link&amp;gt;는 &amp;lt;head&amp;gt; 부분에 작성되어야 합니다. --&amp;gt;&lt;/span&gt;
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
-&lt;p&gt;&amp;lt;link&amp;gt; element는 외부 리소스와 현재 작업 중인 document의 관계를 지정해 줍니다. 주로 stylesheets와 연결할 때 많이 사용됩니다. 또한 아이콘을 설정해 줄 때도 사용됩니다. 저도 블로그 타이틀에 파비콘을 추가했을 때 &amp;lt;link&amp;gt;를 사용했던 기억이 나네요.
-&lt;br /&gt;
-&lt;br /&gt;&lt;/p&gt;
-&lt;center&gt;&lt;img src=&quot;/assets/images/myFavicon.png&quot; alt=&quot;my_favicon&quot; width=&quot;400&quot; /&gt;&lt;/center&gt;
-&lt;center&gt;&lt;sub&gt;(내 블로그 파비콘과 노션 파비콘)&lt;/sub&gt;&lt;/center&gt;
-&lt;p&gt;&lt;br /&gt;&lt;/p&gt;
-
-&lt;p&gt;위 코드에서는 외부에 작성된 stylesheet와 현재 html파일의 관계를 &amp;lt;link&amp;gt; 로 연결해줍니다.
-이제 stylesheet에서 CSS를 이용해 현 document에 있는 태그들의 속성을 수정할 수 있게 되었습니다.&lt;/p&gt;
-
-&lt;div class=&quot;language-html highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;nt&quot;&gt;&amp;lt;p&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;style=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;color: blue&quot;&lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;&amp;gt;&lt;/span&gt;
-  The style attribute can override it, though.&lt;span class=&quot;nt&quot;&gt;&amp;lt;/p&amp;gt;&lt;/span&gt;
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
-&lt;p&gt;style.css 파일을 연결하여 작업하는 중 위 예제 코드처럼 html 파일에서 바로 속성을 사용할 수도 있습니다. 이 경우 html의 속성이 CSS style sheet에서 적용된 속성보다 우선 순위에 있습니다.&lt;/p&gt;
-
-&lt;p&gt;&lt;code&gt;rel&lt;/code&gt;은 relationship을 의미합니다. &amp;lt;link&amp;gt; element의 가장 중요한 기능 중 하나입니다.
-&lt;code&gt;rel&lt;/code&gt;에 지정된 값은 연결된 외부 리소스와 현 document가 어떤 관계를 가지고 있는지 나타내줍니다. 이것들을 Link types라고 합니다.
-stylesheet, icon, tag 등 여러가지 관계들이 있습니다. link types는 두 문서들간의 관계를 나타냅니다.&lt;/p&gt;</content><author><name>Mirae</name></author><category term="TIL" /><category term="learning" /><category term="공부 기록" /><category term="HTML" /><category term="CSS" /><category term="JavaScript" /><summary type="html">튜토리얼 출처: Easy Tutorials: How To Make A Website Using HTML And CSS</summary></entry><entry><title type="html">Codility_Developer Training: 배열 챕터의 문제 CyclicRotation</title><link href="http://localhost:4000/til/cyclicRotation/" rel="alternate" type="text/html" title="Codility_Developer Training: 배열 챕터의 문제 CyclicRotation" /><published>2022-03-16T00:00:00+09:00</published><updated>2022-03-16T00:00:00+09:00</updated><id>http://localhost:4000/til/cyclicRotation</id><content type="html" xml:base="http://localhost:4000/til/cyclicRotation/">&lt;p&gt;&lt;a href=&quot;https://app.codility.com/programmers/lessons/2-arrays/cyclic_rotation/&quot;&gt;CyclicRotation 문제 읽기&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;Bundles는 macOS와 iOS에서 사용되는 코드와 resource를 캡슐화하기 위해 사용되는 기술입니다. 개발자가 필요로하는 resource의 위치를 제공함으로써 개발을 단순화 해줍니다. Bundles는 디렉토리와 파일을 사용합니다. Binary files 보다 더 쉽고 개발 과정이나 배포후에도 쉽게 수정할 수 있습니다.&lt;/p&gt;</content><author><name>Mirae</name></author><category term="TIL" /><category term="learning" /><category term="공부 기록" /><category term="Swift" /><summary type="html">튜토리얼의 출처는 SwiftUI Essentials: Building Lists and Navigation 입니다.</summary></entry><entry><title type="html">Codility_Developer Training: 배열 챕터의 문제 CyclicRotation</title><link href="http://localhost:4000/til/cyclicRotation/" rel="alternate" type="text/html" title="Codility_Developer Training: 배열 챕터의 문제 CyclicRotation" /><published>2022-03-16T00:00:00+09:00</published><updated>2022-03-16T00:00:00+09:00</updated><id>http://localhost:4000/til/cyclicRotation</id><content type="html" xml:base="http://localhost:4000/til/cyclicRotation/">&lt;p&gt;&lt;a href=&quot;https://app.codility.com/programmers/lessons/2-arrays/cyclic_rotation/&quot;&gt;CyclicRotation 문제 읽기&lt;/a&gt;&lt;/p&gt;
 
 &lt;h3 id=&quot;1-문제를-파악해보자&quot;&gt;1. 문제를 파악해보자&lt;/h3&gt;
 
@@ -302,7 +422,47 @@ stylesheet, icon, tag 등 여러가지 관계들이 있습니다. link types는 
 &lt;ul&gt;
   &lt;li&gt;문제 해결 과정&lt;/li&gt;
   &lt;li&gt;빈 배열이 입력되었을 때 프로그램이 꺼지는 문제 해결하기&lt;/li&gt;
-&lt;/ul&gt;</content><author><name>Mirae</name></author><category term="TIL" /><category term="learning" /><category term="공부 기록" /><category term="Codility" /><category term="코테" /><summary type="html">CyclicRotation 문제 읽기</summary></entry><entry><title type="html">SwiftUI Tutorial: 여러 개의 View를 만들고 결합하기</title><link href="http://localhost:4000/til/landmarks/" rel="alternate" type="text/html" title="SwiftUI Tutorial: 여러 개의 View를 만들고 결합하기" /><published>2022-03-14T00:00:00+09:00</published><updated>2022-03-14T00:00:00+09:00</updated><id>http://localhost:4000/til/landmarks</id><content type="html" xml:base="http://localhost:4000/til/landmarks/">&lt;p&gt;SwiftUI Tutorial을 따라가며 아래 Landmark앱을 만들어 보겠습니다. 튜토리얼의 출처는 &lt;a href=&quot;https://developer.apple.com/tutorials/swiftui/creating-and-combining-views&quot;&gt;SwiftUI Essentials:
+&lt;/ul&gt;</content><author><name>Mirae</name></author><category term="TIL" /><category term="learning" /><category term="공부 기록" /><category term="Codility" /><category term="코테" /><summary type="html">CyclicRotation 문제 읽기</summary></entry><entry><title type="html">웹 페이지를 만들며 HTML과 CSS에 대해 알아보기</title><link href="http://localhost:4000/til/myOctopi/" rel="alternate" type="text/html" title="웹 페이지를 만들며 HTML과 CSS에 대해 알아보기" /><published>2022-03-16T00:00:00+09:00</published><updated>2022-03-16T00:00:00+09:00</updated><id>http://localhost:4000/til/myOctopi</id><content type="html" xml:base="http://localhost:4000/til/myOctopi/">&lt;p&gt;&lt;sup&gt;&lt;a href=&quot;https://www.youtube.com/watch?v=-2LtZRi6Q0s&quot;&gt;튜토리얼 출처: Easy Tutorials: How To Make A Website Using HTML And CSS&lt;/a&gt;&lt;/sup&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;/assets/images/octo.png&quot; alt=&quot;octopus&quot; /&gt;&lt;/p&gt;
+
+&lt;h2 id=&quot;what-i-learned-from-this-project&quot;&gt;What I Learned From This Project:&lt;/h2&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;HTML link element&lt;/li&gt;
+  &lt;li&gt;linear-flex를 이용해서 목록을 옆으로 나열하기&lt;/li&gt;
+  &lt;li&gt;!important&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;&lt;br /&gt;&lt;/p&gt;
+&lt;div class=&quot;notice&quot;&gt;
+  &lt;h4&gt;Octopi Project&lt;/h4&gt;
+  &lt;p&gt;HTML과 CSS(+JS 한스푼)을 공부하며 웹 페이지를 만들어 봅니다. 기획 보다는 HTML과 CSS를 공부하는 느낌으로 만들 것이기 때문에 웹 페이지의 주제는 고민하지 않고 머릿속에 떠오른 단축키를 모아놓은 웹 사이트로 가보겠습니다.&lt;br /&gt;&lt;/p&gt;
+&lt;/div&gt;
+
+&lt;h2 id=&quot;link-html-element&quot;&gt;link HTML element&lt;/h2&gt;
+
+&lt;div class=&quot;language-html highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;nt&quot;&gt;&amp;lt;link&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;rel=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;stylesheet&quot;&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;href=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;style.css&quot;&lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;&amp;gt;&lt;/span&gt;
+&lt;span class=&quot;c&quot;&gt;&amp;lt;!-- &amp;lt;link&amp;gt;는 &amp;lt;head&amp;gt; 부분에 작성되어야 합니다. --&amp;gt;&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+&lt;p&gt;&amp;lt;link&amp;gt; element는 외부 리소스와 현재 작업 중인 document의 관계를 지정해 줍니다. 주로 stylesheets와 연결할 때 많이 사용됩니다. 또한 아이콘을 설정해 줄 때도 사용됩니다. 저도 블로그 타이틀에 파비콘을 추가했을 때 &amp;lt;link&amp;gt;를 사용했던 기억이 나네요.
+&lt;br /&gt;
+&lt;br /&gt;&lt;/p&gt;
+&lt;center&gt;&lt;img src=&quot;/assets/images/myFavicon.png&quot; alt=&quot;my_favicon&quot; width=&quot;400&quot; /&gt;&lt;/center&gt;
+&lt;center&gt;&lt;sub&gt;(내 블로그 파비콘과 노션 파비콘)&lt;/sub&gt;&lt;/center&gt;
+&lt;p&gt;&lt;br /&gt;&lt;/p&gt;
+
+&lt;p&gt;위 코드에서는 외부에 작성된 stylesheet와 현재 html파일의 관계를 &amp;lt;link&amp;gt; 로 연결해줍니다.
+이제 stylesheet에서 CSS를 이용해 현 document에 있는 태그들의 속성을 수정할 수 있게 되었습니다.&lt;/p&gt;
+
+&lt;div class=&quot;language-html highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;nt&quot;&gt;&amp;lt;p&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;style=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;color: blue&quot;&lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;&amp;gt;&lt;/span&gt;
+  The style attribute can override it, though.&lt;span class=&quot;nt&quot;&gt;&amp;lt;/p&amp;gt;&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+&lt;p&gt;style.css 파일을 연결하여 작업하는 중 위 예제 코드처럼 html 파일에서 바로 속성을 사용할 수도 있습니다. 이 경우 html의 속성이 CSS style sheet에서 적용된 속성보다 우선 순위에 있습니다.&lt;/p&gt;
+
+&lt;p&gt;&lt;code&gt;rel&lt;/code&gt;은 relationship을 의미합니다. &amp;lt;link&amp;gt; element의 가장 중요한 기능 중 하나입니다.
+&lt;code&gt;rel&lt;/code&gt;에 지정된 값은 연결된 외부 리소스와 현 document가 어떤 관계를 가지고 있는지 나타내줍니다. 이것들을 Link types라고 합니다.
+stylesheet, icon, tag 등 여러가지 관계들이 있습니다. link types는 두 문서들간의 관계를 나타냅니다.&lt;/p&gt;</content><author><name>Mirae</name></author><category term="TIL" /><category term="learning" /><category term="공부 기록" /><category term="HTML" /><category term="CSS" /><category term="JavaScript" /><summary type="html">튜토리얼 출처: Easy Tutorials: How To Make A Website Using HTML And CSS</summary></entry><entry><title type="html">SwiftUI Tutorial: 여러 개의 View를 만들고 결합하기</title><link href="http://localhost:4000/til/landmarks/" rel="alternate" type="text/html" title="SwiftUI Tutorial: 여러 개의 View를 만들고 결합하기" /><published>2022-03-14T00:00:00+09:00</published><updated>2022-03-14T00:00:00+09:00</updated><id>http://localhost:4000/til/landmarks</id><content type="html" xml:base="http://localhost:4000/til/landmarks/">&lt;p&gt;SwiftUI Tutorial을 따라가며 아래 Landmark앱을 만들어 보겠습니다. 튜토리얼의 출처는 &lt;a href=&quot;https://developer.apple.com/tutorials/swiftui/creating-and-combining-views&quot;&gt;SwiftUI Essentials:
 Creating and Combining Views&lt;/a&gt; 입니다.&lt;/p&gt;
 
 &lt;center&gt;&lt;video src=&quot;https://user-images.githubusercontent.com/85061148/159120793-a9d5166b-fad5-41f0-899a-fcfe0bee25da.mov&quot; controls=&quot;controls&quot; style=&quot;max-width: 300px&quot;&gt;
@@ -1060,111 +1220,4 @@ master 브랜치를 삭제하거나 이름을 바꾸거나 심지어는 삭제 �
 &lt;p&gt;깃헙의 이런 변화는 과거의 만들어진 레퍼지토리에는 영향을 주지 않는다. 또한 만약 깃헙 사용자가 master라는 이름의 브랜치를 사용하고 싶다면 사용할 수 있다.&lt;br /&gt;
 깃헙은 master라는 용어를 금지하는 것은 아니다. 그저 사용을 격려하지 않는 것일 뿐이다.&lt;/p&gt;
 
-&lt;p&gt;매사추세츠주 캠브리지에 있는 HubSpot의 수석 설계자인 Whitney Sorenson은 깃헙이 master 브랜치의 이름을 main으로 변경하며 얻을 이점이 한시적으로 겪을 장애물보다 훨씬 크다고 했다. 그는 이러한 변화가 회사 시스템에 차별이 없는 언어를 더하기 위한 보다 큰 내부 계획의 일부라고 말했다. 그의 팀은 또한 whitelist와 blacklist를 allowlist와 blocklist로 교체하고 있다. Sorenson은 이메일로 “지금 이러한 변화를 만드는 것에는 시간이 걸리지만 그건 단지 일회적인 기술적 희생일 뿐, 내부적으로나 외부적으로 모두에 지속적인 영향을 미칠 것이다.”라고 말했다. 또 그는 “우리는 이 일을 장기전으로 보고 있으며, 차별이 없는 언어는 사람과 사람 사이의 소통에서 중요한 만큼 우리가 코딩하고, 그것으로 어떤 것을 구축할 때도 중요하다는 것을 안다.”라고 했다.&lt;/p&gt;</content><author><name>Mirae</name></author><category term="TIL" /><category term="learning" /><category term="공부 기록" /><category term="Github" /><category term="Article" /><summary type="html">💭 깃헙에 대해 배워가면서 한가지 궁금한 점이 생겼습니다. 블로그로 정보를 찾거나 구글링을 하다 보면 사람들은 레퍼지토리 안에 master 브랜치를 기본으로 가지고 있고, 레퍼지토리를 생성하면 master 브랜치가 생성된다는데. 제가 레퍼지토리를 만들면 언제나 main 이라는 이름의 기본 브랜치가 생성되었거든요. &apos;내가 뭔가 설정을 잘못한걸까?&apos;하는 생각이 들어 구글링을 하기 시작했습니다. 그러다가 깃헙이 더이상 master branch라는 이름을 사용하지 않는다는 것을 알게되었어요. 왜일까? 궁금해서 이유를 찾아보니 생각보다 더 멋진 이유로 기본 브랜치의 이름을 main으로 바꿨다는 것을 알게 되어서 공유해 봅니다.</summary></entry><entry><title type="html">JDBC로 오라클 클라우드 DB와 연결하여 이클립스 콘솔 창에 데이터 불러오기</title><link href="http://localhost:4000/til/jdbc/" rel="alternate" type="text/html" title="JDBC로 오라클 클라우드 DB와 연결하여 이클립스 콘솔 창에 데이터 불러오기" /><published>2022-02-24T00:00:00+09:00</published><updated>2022-02-24T00:00:00+09:00</updated><id>http://localhost:4000/til/jdbc</id><content type="html" xml:base="http://localhost:4000/til/jdbc/">&lt;hr /&gt;
-
-&lt;h3 id=&quot;-&quot;&gt;💭 ..&lt;/h3&gt;
-&lt;div class=&quot;notice&quot;&gt;
-  &lt;h4&gt;맥북 유저에게 국비 수업이란...?&lt;/h4&gt;
-  &lt;p&gt;처음 국비 수업을 듣기로 결심했을 때 가장 걱정이 되었던 것은 나에겐 Windows 운영체제를 사용하는 랩탑이 없다는 것이었다. 국비 수업은 Windows를 기준으로 진행되기 때문에 macOS로 수업을 듣다가 문제가 생기면 강사님의 도움을 받기가 쉽지 않다. 수업 전 진행된 오티에서 강사님도 되도록이면 Windows를 사용할 것을 권했다. 나는 macOS를 사용한 지 오래되었고, 국비 수업을 듣기 전 독학하며 구글링 실력을 꽤 키웠다고 생각했기 때문에 굳이 Windows 운영체제의 랩탑을 구하려고 하지 않았다. 내가 혼자 해결할 수 있을 거라는 원인 모를(ㅎㅎ) 자신감이 있었다. &lt;br /&gt;이클립스 IDE나 Java는 이미 설치해서 사용하고 있었기 때문에 수업 중 설치하는 시간에 문제가 없었다. 그 후로 쭉 문제없이 수업을 잘 들었다. 작은 에러들은 구글링으로 해결할 수 있었다. 그러던 중 데이터베이스에 대해 배우는 주가 시작되었다. 국비 수업이 시작되기 전, 수업에 대한 정보들을 검색해 보던 중 m1 칩 맥북은 오라클을 사용할 수 없다는 것을 알게 되었고 아래 도움이 된 글 목록 중 첫 번째에 있는 블로그의 글을 보고 미리 오라클 클라우드에 가입 후 DB를 생성하고 SQL Developer와 연동은 해둔 상태였다. 하지만 당시에는 DB와 Java로 작성된 프로그램을 연결하려면 JDBC를 이용해야 한다는 것을 몰랐다. DB와 Java를 연결하는 수업이 시작되었고 많은 분들이 JDBC driver를 다운로드하고 연결하는 과정에 어려움을 겪었다. 나도 다르지 않았다. &lt;br /&gt;아무것도 모르던 4개월 전, 깃헙 페이지로 개발 블로그를 만들려고 구글링을 하며 오랜 시간을 삽질했던 때가 있었다. 그때는 한 가지 문제를 해결하려고 3일, 4일을 구글링하고도 원하는 답을 찾지 못할 때도 있었다. 그때의 기억이 떠올라서 식은땀이 쫙 났다.&lt;br /&gt;  
-  &apos;DB와 자바를 연결하지 못하면 수업을 듣기 힘들 텐데 어쩌나.. 밤을 새워서라도 해야겠다.&apos;  라고 생각하고 있었는데 다행히 벌써 많은 분들이 애플 실리콘칩 맥북 + 오라클 클라우드 DB를 연동하는 방법에 대한 블로그 글을 올려주셨고 덕분에 생각보다 빠르게 해결할 수 있었다. 수업이 끝나기 전에 연결이 잘 되어서 엄청 기쁘고 다행이라는 생각이 들었다. &lt;br /&gt;
-  다음에 또 필요할 때를 대비해 기록을 남겨둔다. 국비 수업을 들으려는 다른 macOS 유저들에게도 조금이나마 도움이 되길 바란다.&lt;/p&gt;
-&lt;/div&gt;
-
-&lt;p&gt;&lt;strong&gt;🔦 도움이 된 글&lt;/strong&gt;&lt;br /&gt;
-&lt;a href=&quot;https://shanepark.tistory.com/208&quot;&gt;1. Apple Silicon m1 맥북에서 Oracle Database 사용하기&lt;/a&gt;&lt;br /&gt;
-&lt;a href=&quot;https://velog.io/@zinhoxxl/Apple-Silicon-M1-%EC%9C%BC%EB%A1%9C-oracleeclipse-%EC%97%B0%EB%8F%99%ED%95%98%EA%B8%B0-3&quot;&gt;2. Apple Silicon) M1 으로 oracle&amp;amp;eclipse 연동하기 (3)&lt;/a&gt;&lt;br /&gt;
-&lt;a href=&quot;https://okky.kr/article/970368&quot;&gt;3. okky 쿠잉님 댓글&lt;/a&gt;&lt;/p&gt;
-
-&lt;h3 id=&quot;1-jdbc의-역할&quot;&gt;1. JDBC의 역할&lt;/h3&gt;
-
-&lt;p&gt;JDBC는 DB와 Java를 연결해 주는 API입니다. 자바 언어로 작성한 프로그램에서 데이터 베이스에 접근하고 여러 가지 데이터와 관련된 작업을 수행할 수 있게 되죠. 예를 들면, 이클립스에서 몇 가지 자바 클래스와 메서드 그리고 SQL 문을 사용하여 직접 DB에 접근해 데이터를 검색, 추가, 삭제, 수정할 수 있게 되는 것입니다.&lt;/p&gt;
-
-&lt;h3 id=&quot;2-sql-developer를-이용해-테이블-만들기&quot;&gt;2. SQL Developer를 이용해 테이블 만들기&lt;/h3&gt;
-
-&lt;p&gt;먼저 저는 SQL Developer를 이용하여 오라클 클라우드 DB에 간단한 테이블을 하나 만들어 주었습니다.
-테이블 이름은 stardew_valley 입니다.&lt;/p&gt;
-
-&lt;table&gt;
-  &lt;thead&gt;
-    &lt;tr&gt;
-      &lt;th&gt; &lt;/th&gt;
-      &lt;th&gt;VNAME&lt;/th&gt;
-      &lt;th&gt;ADDRESS&lt;/th&gt;
-      &lt;th&gt;AGE&lt;/th&gt;
-    &lt;/tr&gt;
-  &lt;/thead&gt;
-  &lt;tbody&gt;
-    &lt;tr&gt;
-      &lt;td&gt;1&lt;/td&gt;
-      &lt;td&gt;Gus&lt;/td&gt;
-      &lt;td&gt;The Stardrop Saloon&lt;/td&gt;
-      &lt;td&gt;48&lt;/td&gt;
-    &lt;/tr&gt;
-    &lt;tr&gt;
-      &lt;td&gt;2&lt;/td&gt;
-      &lt;td&gt;Abigail&lt;/td&gt;
-      &lt;td&gt;Pierres General Store&lt;/td&gt;
-      &lt;td&gt;24&lt;/td&gt;
-    &lt;/tr&gt;
-    &lt;tr&gt;
-      &lt;td&gt;3&lt;/td&gt;
-      &lt;td&gt;Sebastian&lt;/td&gt;
-      &lt;td&gt;24 Mountain Road&lt;/td&gt;
-      &lt;td&gt;26&lt;/td&gt;
-    &lt;/tr&gt;
-  &lt;/tbody&gt;
-&lt;/table&gt;
-
-&lt;p&gt;&lt;br /&gt;&lt;/p&gt;
-&lt;h3 id=&quot;3-java-프로그램-내에서-연결된-db의-데이터에-접근하기&quot;&gt;3. Java 프로그램 내에서 연결된 DB의 데이터에 접근하기&lt;/h3&gt;
-
-&lt;p&gt;먼저 작업하고 있는 Java project에 ojdbc8.jar를 추가합니다. 위 도움을 받은 글 목록 중 두번째 블로그 글을 보면 꼭 ojdbc8.jar을 받아야 한다고 하셨는데요. 저도 처음에 다른 버전으로 받았다가 제대로 실행되지 않는 문제를 겪었습니다.&lt;/p&gt;
-
-&lt;div class=&quot;language-java highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;kn&quot;&gt;import&lt;/span&gt; &lt;span class=&quot;nn&quot;&gt;java.sql.*&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;;&lt;/span&gt;
-
-&lt;span class=&quot;kd&quot;&gt;public&lt;/span&gt; &lt;span class=&quot;kd&quot;&gt;class&lt;/span&gt; &lt;span class=&quot;nc&quot;&gt;Jdbc_test&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;{&lt;/span&gt;
-  &lt;span class=&quot;kd&quot;&gt;public&lt;/span&gt; &lt;span class=&quot;kd&quot;&gt;static&lt;/span&gt; &lt;span class=&quot;kt&quot;&gt;void&lt;/span&gt; &lt;span class=&quot;nf&quot;&gt;main&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nc&quot;&gt;String&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;[]&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;args&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;{&lt;/span&gt;
-
-    &lt;span class=&quot;nc&quot;&gt;String&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;url&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;&quot;jdbc:oracle:thin:@데이터 베이스 이름_high?TNS_ADMIN=전자지갑 압출 풀어준 폴더의 경로&quot;&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;;&lt;/span&gt;
-    &lt;span class=&quot;nc&quot;&gt;String&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;userid&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;&quot;데이터베이스 userid&quot;&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;;&lt;/span&gt; &lt;span class=&quot;c1&quot;&gt;// 변경하지 않았다면 admin&lt;/span&gt;
-    &lt;span class=&quot;nc&quot;&gt;String&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;pwd&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;&quot;데이터베이스 접속 비밀번호&quot;&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;;&lt;/span&gt; &lt;span class=&quot;c1&quot;&gt;// DB 생성 시 지정했던 비밀번호&lt;/span&gt;
-
-
-    &lt;span class=&quot;k&quot;&gt;try&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;{&lt;/span&gt;
-
-      &lt;span class=&quot;c1&quot;&gt;// 오라클 드라이버 로딩&lt;/span&gt;
-      &lt;span class=&quot;nc&quot;&gt;Class&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;forName&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;oracle.jdbc.OracleDriver&quot;&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;);&lt;/span&gt;
-
-      &lt;span class=&quot;c1&quot;&gt;// DB에 연결&lt;/span&gt;
-      &lt;span class=&quot;nc&quot;&gt;Connection&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;con&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;nc&quot;&gt;DriverManager&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;getConnection&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;url&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;userid&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;pwd&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;);&lt;/span&gt;
-
-      &lt;span class=&quot;c1&quot;&gt;// sql문 작성 - DB에 저장되어있는 테이블에서 모든 레코드 정보 가져오기&lt;/span&gt;
-      &lt;span class=&quot;nc&quot;&gt;String&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;sql&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;&quot;select * from stardew_valley&quot;&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;;&lt;/span&gt; &lt;span class=&quot;c1&quot;&gt;// &quot;&quot;; 안에 sql문 작성 후 sql 변수에 할당&lt;/span&gt;
-
-      &lt;span class=&quot;c1&quot;&gt;// 작성한 sql문을 DB로 전달하기 위해 연결&lt;/span&gt;
-      &lt;span class=&quot;nc&quot;&gt;PreparedStatement&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;ps&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;con&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;prepareStatement&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;sql&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;);&lt;/span&gt;
-
-      &lt;span class=&quot;c1&quot;&gt;// 실행 후 결과값을 ResultSet 타입의 변수에 할당&lt;/span&gt;
-      &lt;span class=&quot;nc&quot;&gt;ResultSet&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;rs&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;ps&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;executeQuery&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;();&lt;/span&gt;
-
-      &lt;span class=&quot;c1&quot;&gt;// 반복문 이용 결과값 출력&lt;/span&gt;
-      &lt;span class=&quot;k&quot;&gt;while&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;rs&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;next&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;())&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;{&lt;/span&gt; &lt;span class=&quot;c1&quot;&gt;// next() 메서드는 값이 있으면 true 반환 -&amp;gt; 값이 없을 때가지 반복&lt;/span&gt;
-        &lt;span class=&quot;nc&quot;&gt;String&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;vname&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;rs&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;getString&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;vname&quot;&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;);&lt;/span&gt;
-        &lt;span class=&quot;nc&quot;&gt;String&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;address&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;rs&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;getString&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;address&quot;&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;);&lt;/span&gt;
-        &lt;span class=&quot;kt&quot;&gt;int&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;age&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;rs&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;getInt&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;age&quot;&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;);&lt;/span&gt;
-
-        &lt;span class=&quot;c1&quot;&gt;// 임시 header 출력&lt;/span&gt;
-        &lt;span class=&quot;nc&quot;&gt;System&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;out&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;println&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;vname&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;+&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;&quot;\t&quot;&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;+&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;address&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;+&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;&quot;\t&quot;&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;+&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;age&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;);&lt;/span&gt;
-
-      &lt;span class=&quot;o&quot;&gt;}&lt;/span&gt;
-
-      &lt;span class=&quot;c1&quot;&gt;// 연결되어있던 객체들 닫아주기&lt;/span&gt;
-      &lt;span class=&quot;n&quot;&gt;ps&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;close&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;();&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;con&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;close&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;();&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;rs&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;close&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;();&lt;/span&gt;
-
-    &lt;span class=&quot;o&quot;&gt;}&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;catch&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nc&quot;&gt;Exception&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;e&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;{&lt;/span&gt;
-      &lt;span class=&quot;n&quot;&gt;e&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;printStackTrace&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;();&lt;/span&gt;
-    &lt;span class=&quot;o&quot;&gt;}&lt;/span&gt;
-  &lt;span class=&quot;o&quot;&gt;}&lt;/span&gt;
-&lt;span class=&quot;o&quot;&gt;}&lt;/span&gt;
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
-&lt;p&gt;실행하면 작성해 준 임시 header 아래로 위 표와 같은 모든 데이터를 console 창에 출력합니다.&lt;/p&gt;</content><author><name>Mirae</name></author><category term="TIL" /><category term="learning" /><category term="공부 기록" /><category term="Java" /><category term="Oracle Cloud" /><category term="Database" /><summary type="html"></summary></entry></feed>
+&lt;p&gt;매사추세츠주 캠브리지에 있는 HubSpot의 수석 설계자인 Whitney Sorenson은 깃헙이 master 브랜치의 이름을 main으로 변경하며 얻을 이점이 한시적으로 겪을 장애물보다 훨씬 크다고 했다. 그는 이러한 변화가 회사 시스템에 차별이 없는 언어를 더하기 위한 보다 큰 내부 계획의 일부라고 말했다. 그의 팀은 또한 whitelist와 blacklist를 allowlist와 blocklist로 교체하고 있다. Sorenson은 이메일로 “지금 이러한 변화를 만드는 것에는 시간이 걸리지만 그건 단지 일회적인 기술적 희생일 뿐, 내부적으로나 외부적으로 모두에 지속적인 영향을 미칠 것이다.”라고 말했다. 또 그는 “우리는 이 일을 장기전으로 보고 있으며, 차별이 없는 언어는 사람과 사람 사이의 소통에서 중요한 만큼 우리가 코딩하고, 그것으로 어떤 것을 구축할 때도 중요하다는 것을 안다.”라고 했다.&lt;/p&gt;</content><author><name>Mirae</name></author><category term="TIL" /><category term="learning" /><category term="공부 기록" /><category term="Github" /><category term="Article" /><summary type="html">💭 깃헙에 대해 배워가면서 한가지 궁금한 점이 생겼습니다. 블로그로 정보를 찾거나 구글링을 하다 보면 사람들은 레퍼지토리 안에 master 브랜치를 기본으로 가지고 있고, 레퍼지토리를 생성하면 master 브랜치가 생성된다는데. 제가 레퍼지토리를 만들면 언제나 main 이라는 이름의 기본 브랜치가 생성되었거든요. &apos;내가 뭔가 설정을 잘못한걸까?&apos;하는 생각이 들어 구글링을 하기 시작했습니다. 그러다가 깃헙이 더이상 master branch라는 이름을 사용하지 않는다는 것을 알게되었어요. 왜일까? 궁금해서 이유를 찾아보니 생각보다 더 멋진 이유로 기본 브랜치의 이름을 main으로 바꿨다는 것을 알게 되어서 공유해 봅니다.</summary></entry></feed>

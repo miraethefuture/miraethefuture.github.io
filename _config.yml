@@ -104,7 +104,7 @@ analytics:
 author:
   name             : "Mirae"
   avatar           : "/assets/images/bio-photo.jpg" # path of avatar image, e.g. "/assets/images/bio-photo.jpg"
-  bio              : "배우고, 기록하고, 공유합니다."
+  bio              : "배우고 기록하고 공유합니다."
   location         :
   email            :
   links:
