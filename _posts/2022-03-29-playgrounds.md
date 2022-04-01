@@ -302,4 +302,71 @@ toc_icon: "kiwi-bird"
 
   instance에 이름을 부여하고 이름으로 그것을 나타내는 것은 프로그램 안에서 인스턴스의 요소들을 이용할 수 있게 해줍니다.
 
-  더 효율적인 문제 해결법을 찾는 것은 프로그램이 더 빠르게 작동한다는 것이고 그것은 사용자들이 앱을 사용할 때 행복해진다는 것입니다. 그리고 배터리가 얼만큼 오래 보존되는지와도 관련이 있습니다. 
+  더 효율적인 문제 해결법을 찾는 것은 프로그램이 더 빠르게 작동한다는 것이고 그것은 사용자들이 앱을 사용할 때 행복해진다는 것입니다. 그리고 배터리가 얼만큼 오래 보존되는지와도 관련이 있습니다.
+
+### Factoring  
+
+  코드를 효율적으로 작성하는 방법에 대해 생각해보는 것은 중요합니다. 작동하는 방식을 작은 단위로 나누어 재사용 가능한 function을 작성한다면 전체적으로는 더 적은 라인의 수로 코드를 작성할 수 있습니다. 이런 것을 factoring 코드라고 합니다. factoring the code는 재사용성을 높여줄 뿐 아니라 코드의 가독성을 높여주어 작성자 뿐 아니라 다른 누구든 코드가 어떻게 작성된건지 알아보기 쉽게 해줍니다.
+
+  //👷‍♂️ Learn to Code 2: Random Gems Everywhere 다시 풀기
+
+## Initialization  
+
+  Initialization을 통해 instance를 만들 수 있습니다.
+
+  ```swift
+  let expert = Expert()
+  ```
+  1. let 키워드를 사용하여 constant를 생성합니다.
+  2. Type의 이름 + ()를 우측에 작성하여 초기화(Initialize) 합니다.
+
+  ```swift
+  expert.turnLockUp()
+  ```
+  expert라는 instance의 메서드 turnLockUp()을 호출하는 방식입니다. dot notation을 사용합니다. 메서드를 사용하기 위해서는 먼저 Initialize 해주어야 한다는 것을 기억합시다.
+
+### 여러개의 instances  
+
+  코드를 작성할 때는 큰 문제를 해결하기 위해 보통 여러개의 instance와 element를 함께 사용하게 됩니다. 만약 사진 편집 앱을 만든다면 이미지를 촬영하기 위해 카메라 앱을, 효과를 적용하기 위해 필터 라이브러리를 사용할 것입니다.
+
+  하나 이상의 instance를 사용할 때는 instance의 이름을 사용하여 각 instance의 메서드를 호출합니다.
+
+## Parameters  
+
+  집을 여러가지 색으로 페인트 칠한다고 상상해 봅니다. 그렇다면 색마다 각기 다른 메서드를 만들 수 있겠죠.
+  ~~~swift
+  paintGreen()
+  paintBlue()
+  paintOrange()
+  ~~~
+  만약 초록색 페인트로 세 레이어에 걸쳐 색을 칠하고 싶다면 아래처럼 세번 paintGreen() 메서드를 호출할 수 있습니다.
+  ```swift
+  paintGreen()
+  paintGreen()
+  paintGreen()
+  ```
+
+  각 색마다 function을 만들어 사용하  대신에 Parameter를 이용해서 원하는 색을 사용할 수 있습니다.
+  ```swift
+  func paint(color: Color)
+  ```
+  color parameter는 function의 input value입니다. 패러미터는 Color와 같은 특정한 Type을 가집니다. function을 호출하면 작동방식 중 사용할 argument를 통과 시킵니다.
+  ```swift
+  func paint(color: Color, layers: 3)
+  ```
+  여러개의 패러미터를 가질 수 있습니다.
+
+  ```swift
+  func move(count: Int) {
+    for i in 1...count {
+      moveForward()
+    }
+  }
+  ```
+  Int Type의 count라는 패러미터를 가진 function move입니다. count는 function의 바디 부분에서 for문이 얼만큼 반복될지를 특정합니다. move function을 호출 시
+  ```swift
+  move(count: 3)
+  ```
+  argument 3을 통과시킴으로써 for문을 세번 돌릴 수 있게 됩니다.  
+
+ 여러개의 parameter를 이용하며 function이 동작하는 중 많은 부분을 커스터마이징 할 수 있습니다. 몇 번 반복문을 동작시킬지, Bool타입을 이용한다면 동작을 시킬지 시키지 않을지 등 많은 부분을 원하는대로 특정 지을 수 있습니다.
