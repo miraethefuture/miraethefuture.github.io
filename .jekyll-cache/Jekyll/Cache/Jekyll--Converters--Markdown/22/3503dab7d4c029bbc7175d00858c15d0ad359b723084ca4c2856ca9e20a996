@@ -1,4 +1,4 @@
-I"�_<h1 id="playgrounds-learn-to-code-1">Playgrounds: Learn to Code 1</h1>
+I"[�<h1 id="playgrounds-learn-to-code-1">Playgrounds: Learn to Code 1</h1>
 <p>아래 모든 내용들은 Playgrounds에서 학습하며 정리한 내용입니다.<br />
   모든 내용의 출처는 Playgrounds임을 밝힙니다.</p>
 
@@ -339,4 +339,96 @@
 <p>하나 이상의 instance를 사용할 때는 instance의 이름을 사용하여 각 instance의 메서드를 호출합니다.</p>
 
 <h2 id="parameters">Parameters</h2>
+
+<p>집을 여러가지 색으로 페인트 칠한다고 상상해 봅니다. 그렇다면 색마다 각기 다른 메서드를 만들 수 있겠죠.</p>
+<div class="language-swift highlighter-rouge"><div class="highlight"><pre class="highlight"><code>  <span class="nf">paintGreen</span><span class="p">()</span>
+  <span class="nf">paintBlue</span><span class="p">()</span>
+  <span class="nf">paintOrange</span><span class="p">()</span>
+</code></pre></div></div>
+<p>만약 초록색 페인트로 세 레이어에 걸쳐 색을 칠하고 싶다면 아래처럼 세번 paintGreen() 메서드를 호출할 수 있습니다.</p>
+<div class="language-swift highlighter-rouge"><div class="highlight"><pre class="highlight"><code>  <span class="nf">paintGreen</span><span class="p">()</span>
+  <span class="nf">paintGreen</span><span class="p">()</span>
+  <span class="nf">paintGreen</span><span class="p">()</span>
+</code></pre></div></div>
+
+<p>각 색마다 function을 만들어 사용하  대신에 Parameter를 이용해서 원하는 색을 사용할 수 있습니다.</p>
+<div class="language-swift highlighter-rouge"><div class="highlight"><pre class="highlight"><code>  <span class="kd">func</span> <span class="nf">paint</span><span class="p">(</span><span class="nv">color</span><span class="p">:</span> <span class="kt">Color</span><span class="p">)</span>
+</code></pre></div></div>
+<p>color parameter는 function의 input value입니다. 패러미터는 Color와 같은 특정한 Type을 가집니다. function을 호출하면 작동방식 중 사용할 argument를 통과 시킵니다.</p>
+<div class="language-swift highlighter-rouge"><div class="highlight"><pre class="highlight"><code>  <span class="kd">func</span> <span class="nf">paint</span><span class="p">(</span><span class="nv">color</span><span class="p">:</span> <span class="kt">Color</span><span class="p">,</span> <span class="nv">layers</span><span class="p">:</span> <span class="mi">3</span><span class="p">)</span>
+</code></pre></div></div>
+<p>여러개의 패러미터를 가질 수 있습니다.</p>
+
+<div class="language-swift highlighter-rouge"><div class="highlight"><pre class="highlight"><code>  <span class="kd">func</span> <span class="nf">move</span><span class="p">(</span><span class="nv">count</span><span class="p">:</span> <span class="kt">Int</span><span class="p">)</span> <span class="p">{</span>
+    <span class="k">for</span> <span class="n">i</span> <span class="k">in</span> <span class="mi">1</span><span class="o">...</span><span class="n">count</span> <span class="p">{</span>
+      <span class="nf">moveForward</span><span class="p">()</span>
+    <span class="p">}</span>
+  <span class="p">}</span>
+</code></pre></div></div>
+<p>Int Type의 count라는 패러미터를 가진 function move입니다. count는 function의 바디 부분에서 for문이 얼만큼 반복될지를 특정합니다. move function을 호출 시</p>
+<div class="language-swift highlighter-rouge"><div class="highlight"><pre class="highlight"><code>  <span class="nf">move</span><span class="p">(</span><span class="nv">count</span><span class="p">:</span> <span class="mi">3</span><span class="p">)</span>
+</code></pre></div></div>
+<p>argument 3을 통과시킴으로써 for문을 세번 돌릴 수 있게 됩니다.</p>
+
+<p>여러개의 parameter를 이용하며 function이 동작하는 중 많은 부분을 커스터마이징 할 수 있습니다. 몇 번 반복문을 동작시킬지, Bool타입을 이용한다면 동작을 시킬지 시키지 않을지 등 많은 부분을 원하는대로 특정 지을 수 있습니다.</p>
+
+<div class="language-swift highlighter-rouge"><div class="highlight"><pre class="highlight"><code> <span class="k">let</span> <span class="nv">expert</span> <span class="o">=</span> <span class="kt">Expert</span><span class="p">()</span>
+ <span class="k">let</span> <span class="nv">character</span> <span class="o">=</span> <span class="kt">Character</span><span class="p">()</span>
+
+ <span class="k">var</span> <span class="nv">gemCount</span> <span class="o">=</span> <span class="mi">0</span>
+
+ <span class="kd">func</span> <span class="nf">turnMethod</span><span class="p">(</span><span class="nv">up</span><span class="p">:</span> <span class="kt">Bool</span><span class="p">,</span> <span class="nv">times</span><span class="p">:</span> <span class="kt">Int</span><span class="p">)</span> <span class="p">{</span>
+     <span class="k">if</span> <span class="n">up</span> <span class="o">==</span> <span class="kc">true</span> <span class="p">{</span>
+         <span class="k">for</span> <span class="n">i</span> <span class="k">in</span> <span class="mi">1</span><span class="o">...</span><span class="n">times</span> <span class="p">{</span>
+             <span class="n">expert</span><span class="o">.</span><span class="nf">turnLockUp</span><span class="p">()</span>
+         <span class="p">}</span>
+         <span class="n">expert</span><span class="o">.</span><span class="nf">turnRight</span><span class="p">()</span>
+     <span class="p">}</span> <span class="k">else</span> <span class="p">{</span>
+         <span class="k">for</span> <span class="n">i</span> <span class="k">in</span> <span class="mi">1</span><span class="o">...</span><span class="n">times</span> <span class="p">{</span>
+             <span class="n">expert</span><span class="o">.</span><span class="nf">turnLockDown</span><span class="p">()</span>
+         <span class="p">}</span>
+         <span class="n">expert</span><span class="o">.</span><span class="nf">turnRight</span><span class="p">()</span>
+     <span class="p">}</span>
+ <span class="p">}</span>
+
+ <span class="k">for</span> <span class="n">i</span> <span class="k">in</span> <span class="mi">1</span><span class="o">...</span><span class="mi">4</span> <span class="p">{</span>
+     <span class="nf">turnMethod</span><span class="p">(</span><span class="nv">up</span><span class="p">:</span> <span class="kc">true</span><span class="p">,</span> <span class="nv">times</span><span class="p">:</span> <span class="mi">4</span><span class="p">)</span>
+ <span class="p">}</span>
+
+ <span class="k">while</span> <span class="n">gemCount</span> <span class="o">!=</span> <span class="mi">3</span> <span class="p">{</span>
+     <span class="k">if</span> <span class="n">character</span><span class="o">.</span><span class="n">isOnGem</span> <span class="p">{</span>
+         <span class="n">character</span><span class="o">.</span><span class="nf">collectGem</span><span class="p">()</span>
+         <span class="n">gemCount</span> <span class="o">+=</span> <span class="mi">1</span>
+         <span class="n">character</span><span class="o">.</span><span class="nf">turnRight</span><span class="p">()</span>
+
+     <span class="p">}</span>
+     <span class="n">character</span><span class="o">.</span><span class="nf">moveForward</span><span class="p">()</span>
+ <span class="p">}</span>
+
+ <span class="k">for</span> <span class="n">i</span> <span class="k">in</span> <span class="mi">1</span><span class="o">...</span><span class="mi">4</span> <span class="p">{</span>
+     <span class="nf">turnMethod</span><span class="p">(</span><span class="nv">up</span><span class="p">:</span> <span class="kc">false</span><span class="p">,</span> <span class="nv">times</span><span class="p">:</span> <span class="mi">3</span><span class="p">)</span>
+ <span class="p">}</span>
+
+ <span class="k">while</span> <span class="n">gemCount</span> <span class="o">&lt;</span> <span class="mi">7</span> <span class="p">{</span>
+     <span class="k">if</span> <span class="o">!</span><span class="n">character</span><span class="o">.</span><span class="n">isBlockedRight</span> <span class="o">&amp;&amp;</span> <span class="n">gemCount</span> <span class="o">&gt;</span> <span class="mi">5</span> <span class="p">{</span>
+         <span class="n">character</span><span class="o">.</span><span class="nf">moveForward</span><span class="p">()</span>
+     <span class="p">}</span> <span class="k">else</span> <span class="k">if</span> <span class="n">character</span><span class="o">.</span><span class="n">isBlockedRight</span> <span class="o">&amp;&amp;</span> <span class="n">character</span><span class="o">.</span><span class="n">isBlockedLeft</span><span class="p">{</span>
+         <span class="n">character</span><span class="o">.</span><span class="nf">moveForward</span><span class="p">()</span>
+     <span class="p">}</span> <span class="k">else</span> <span class="k">if</span> <span class="o">!</span><span class="n">character</span><span class="o">.</span><span class="n">isBlockedRight</span> <span class="p">{</span>
+         <span class="n">character</span><span class="o">.</span><span class="nf">turnRight</span><span class="p">()</span>
+         <span class="n">character</span><span class="o">.</span><span class="nf">moveForward</span><span class="p">()</span>
+     <span class="p">}</span> <span class="k">else</span> <span class="k">if</span> <span class="n">character</span><span class="o">.</span><span class="n">isBlockedRight</span> <span class="o">&amp;&amp;</span> <span class="n">gemCount</span> <span class="o">==</span> <span class="mi">6</span> <span class="p">{</span>
+         <span class="n">character</span><span class="o">.</span><span class="nf">moveForward</span><span class="p">()</span>
+     <span class="p">}</span>
+
+     <span class="k">if</span> <span class="n">character</span><span class="o">.</span><span class="n">isOnGem</span> <span class="p">{</span>
+         <span class="n">character</span><span class="o">.</span><span class="nf">collectGem</span><span class="p">()</span>
+         <span class="n">gemCount</span> <span class="o">+=</span> <span class="mi">1</span>
+         <span class="n">character</span><span class="o">.</span><span class="nf">turnLeft</span><span class="p">()</span>
+         <span class="n">character</span><span class="o">.</span><span class="nf">turnLeft</span><span class="p">()</span>
+         <span class="n">character</span><span class="o">.</span><span class="nf">moveForward</span><span class="p">()</span>
+     <span class="p">}</span>
+ <span class="p">}</span>
+</code></pre></div></div>
+<p>(패러미터를 이용한 funtion의 이용을 공부하며 작성해본 예제입니다. 더 적은 라인의 코드로 문제를 해결할 수 있을 것 같은데 아직은 자꾸만 코드가 길어집니다.)</p>
 :ET

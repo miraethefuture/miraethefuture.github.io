@@ -369,6 +369,69 @@ toc_icon: "kiwi-bird"
   ```
   argument 3을 통과시킴으로써 for문을 세번 돌릴 수 있게 됩니다.  
 
- 여러개의 parameter를 이용하며 function이 동작하는 중 많은 부분을 커스터마이징 할 수 있습니다. 몇 번 반복문을 동작시킬지, Bool타입을 이용한다면 동작을 시킬지 시키지 않을지 등 많은 부분을 원하는대로 특정 지을 수 있습니다.
+   여러개의 parameter를 이용하며 function이 동작하는 중 많은 부분을 커스터마이징 할 수 있습니다. 몇 번 반복문을 동작시킬지, Bool타입을 이용한다면 동작을 시킬지 시키지 않을지 등 많은 부분을 원하는대로 특정 지을 수 있습니다.
 
- 
+### 문제를 해결하며 작성해 본 예제 코드  
+
+ ```swift
+ let expert = Expert()
+ let character = Character()
+
+ var gemCount = 0
+
+ func turnMethod(up: Bool, times: Int) {
+     if up == true {
+         for i in 1...times {
+             expert.turnLockUp()
+         }
+         expert.turnRight()
+     } else {
+         for i in 1...times {
+             expert.turnLockDown()
+         }
+         expert.turnRight()
+     }
+ }
+
+ for i in 1...4 {
+     turnMethod(up: true, times: 4)
+ }
+
+ while gemCount != 3 {
+     if character.isOnGem {
+         character.collectGem()
+         gemCount += 1
+         character.turnRight()
+
+     }
+     character.moveForward()
+ }
+
+ for i in 1...4 {
+     turnMethod(up: false, times: 3)
+ }
+
+ while gemCount < 7 {
+     if !character.isBlockedRight && gemCount > 5 {
+         character.moveForward()
+     } else if character.isBlockedRight && character.isBlockedLeft{
+         character.moveForward()
+     } else if !character.isBlockedRight {
+         character.turnRight()
+         character.moveForward()
+     } else if character.isBlockedRight && gemCount == 6 {
+         character.moveForward()
+     }
+
+     if character.isOnGem {
+         character.collectGem()
+         gemCount += 1
+         character.turnLeft()
+         character.turnLeft()
+         character.moveForward()
+     }
+ }
+ ```
+   (패러미터를 이용한 funtion의 이용을 공부하며 작성해본 예제입니다. 더 적은 라인의 코드로 문제를 해결할 수 있을 것 같은데 아직은 자꾸만 코드가 길어집니다.)
+
+   

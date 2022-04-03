@@ -234,7 +234,7 @@
           <aside class="sidebar__right sticky">
             <nav class="toc">
               <header><h4 class="nav__title"><i class="fas fa-kiwi-bird"></i> 👷</h4></header>
-              <ul class="toc__menu"><li><a href="#playgrounds-learn-to-code-1">Playgrounds: Learn to Code 1</a><ul><li><a href="#function-grouping-tasks">Function: Grouping Tasks</a><ul><li><a href="#composition">Composition</a></li><li><a href="#decomposition">Decomposition</a></li><li><a href="#decompose-a-solution-across-multiple-function">Decompose a solution across multiple Function</a></li><li><a href="#-틈새-영어-단어-tweak">📖 틈새 영어 단어: Tweak</a></li></ul></li><li><a href="#for-loops">For loops</a></li><li><a href="#conditional-code">Conditional Code</a><ul><li><a href="#boolean-condition">Boolean condition</a></li></ul></li><li><a href="#️-여기까지-정리">👷‍♂️ 여기까지 정리</a><ul><li><a href="#logical-operators">Logical Operators</a></li></ul></li><li><a href="#while-loops">While Loops</a><ul><li><a href="#land-of-bounty-다시-해보기">Land of bounty 다시 해보기</a></li><li><a href="#nesting-loops">Nesting loops</a></li></ul></li><li><a href="#algorithms">Algorithms</a></li></ul></li><li><a href="#playgrounds-learn-to-code-2">Playgrounds: Learn to Code 2</a><ul><li><a href="#variables">Variables</a><ul><li><a href="#-틈새-영어-단어-a-whole-number">📖 틈새 영어 단어: a whole number</a></li><li><a href="#incrementing-a-value">incrementing a value</a></li><li><a href="#변수-이름-정하기">변수 이름 정하기</a></li><li><a href="#constant">Constant</a></li><li><a href="#compound-assignment-operator">Compound assignment operator</a></li></ul></li><li><a href="#자료형types">자료형(Types)</a><ul><li><a href="#using-dot-notation-syntax">Using dot notation syntax</a></li><li><a href="#factoring">Factoring</a></li></ul></li><li><a href="#initialization">Initialization</a><ul><li><a href="#여러개의-instances">여러개의 instances</a></li></ul></li><li><a href="#parameters">Parameters</a></li></ul></li></ul>
+              <ul class="toc__menu"><li><a href="#playgrounds-learn-to-code-1">Playgrounds: Learn to Code 1</a><ul><li><a href="#function-grouping-tasks">Function: Grouping Tasks</a><ul><li><a href="#composition">Composition</a></li><li><a href="#decomposition">Decomposition</a></li><li><a href="#decompose-a-solution-across-multiple-function">Decompose a solution across multiple Function</a></li><li><a href="#-틈새-영어-단어-tweak">📖 틈새 영어 단어: Tweak</a></li></ul></li><li><a href="#for-loops">For loops</a></li><li><a href="#conditional-code">Conditional Code</a><ul><li><a href="#boolean-condition">Boolean condition</a></li></ul></li><li><a href="#️-여기까지-정리">👷‍♂️ 여기까지 정리</a><ul><li><a href="#logical-operators">Logical Operators</a></li></ul></li><li><a href="#while-loops">While Loops</a><ul><li><a href="#land-of-bounty-다시-해보기">Land of bounty 다시 해보기</a></li><li><a href="#nesting-loops">Nesting loops</a></li></ul></li><li><a href="#algorithms">Algorithms</a></li></ul></li><li><a href="#playgrounds-learn-to-code-2">Playgrounds: Learn to Code 2</a><ul><li><a href="#variables">Variables</a><ul><li><a href="#-틈새-영어-단어-a-whole-number">📖 틈새 영어 단어: a whole number</a></li><li><a href="#incrementing-a-value">incrementing a value</a></li><li><a href="#변수-이름-정하기">변수 이름 정하기</a></li><li><a href="#constant">Constant</a></li><li><a href="#compound-assignment-operator">Compound assignment operator</a></li></ul></li><li><a href="#자료형types">자료형(Types)</a><ul><li><a href="#using-dot-notation-syntax">Using dot notation syntax</a></li><li><a href="#factoring">Factoring</a></li></ul></li><li><a href="#initialization">Initialization</a><ul><li><a href="#여러개의-instances">여러개의 instances</a></li></ul></li><li><a href="#parameters">Parameters</a><ul><li><a href="#문제를-해결하며-작성해-본-예제-코드">문제를 해결하며 작성해 본 예제 코드</a></li></ul></li></ul></li></ul>
 
             </nav>
           </aside>
@@ -612,6 +612,69 @@
 <p>argument 3을 통과시킴으로써 for문을 세번 돌릴 수 있게 됩니다.</p>
 
 <p>여러개의 parameter를 이용하며 function이 동작하는 중 많은 부분을 커스터마이징 할 수 있습니다. 몇 번 반복문을 동작시킬지, Bool타입을 이용한다면 동작을 시킬지 시키지 않을지 등 많은 부분을 원하는대로 특정 지을 수 있습니다.</p>
+
+<h3 id="문제를-해결하며-작성해-본-예제-코드">문제를 해결하며 작성해 본 예제 코드</h3>
+
+<div class="language-swift highlighter-rouge"><div class="highlight"><pre class="highlight"><code> <span class="k">let</span> <span class="nv">expert</span> <span class="o">=</span> <span class="kt">Expert</span><span class="p">()</span>
+ <span class="k">let</span> <span class="nv">character</span> <span class="o">=</span> <span class="kt">Character</span><span class="p">()</span>
+
+ <span class="k">var</span> <span class="nv">gemCount</span> <span class="o">=</span> <span class="mi">0</span>
+
+ <span class="kd">func</span> <span class="nf">turnMethod</span><span class="p">(</span><span class="nv">up</span><span class="p">:</span> <span class="kt">Bool</span><span class="p">,</span> <span class="nv">times</span><span class="p">:</span> <span class="kt">Int</span><span class="p">)</span> <span class="p">{</span>
+     <span class="k">if</span> <span class="n">up</span> <span class="o">==</span> <span class="kc">true</span> <span class="p">{</span>
+         <span class="k">for</span> <span class="n">i</span> <span class="k">in</span> <span class="mi">1</span><span class="o">...</span><span class="n">times</span> <span class="p">{</span>
+             <span class="n">expert</span><span class="o">.</span><span class="nf">turnLockUp</span><span class="p">()</span>
+         <span class="p">}</span>
+         <span class="n">expert</span><span class="o">.</span><span class="nf">turnRight</span><span class="p">()</span>
+     <span class="p">}</span> <span class="k">else</span> <span class="p">{</span>
+         <span class="k">for</span> <span class="n">i</span> <span class="k">in</span> <span class="mi">1</span><span class="o">...</span><span class="n">times</span> <span class="p">{</span>
+             <span class="n">expert</span><span class="o">.</span><span class="nf">turnLockDown</span><span class="p">()</span>
+         <span class="p">}</span>
+         <span class="n">expert</span><span class="o">.</span><span class="nf">turnRight</span><span class="p">()</span>
+     <span class="p">}</span>
+ <span class="p">}</span>
+
+ <span class="k">for</span> <span class="n">i</span> <span class="k">in</span> <span class="mi">1</span><span class="o">...</span><span class="mi">4</span> <span class="p">{</span>
+     <span class="nf">turnMethod</span><span class="p">(</span><span class="nv">up</span><span class="p">:</span> <span class="kc">true</span><span class="p">,</span> <span class="nv">times</span><span class="p">:</span> <span class="mi">4</span><span class="p">)</span>
+ <span class="p">}</span>
+
+ <span class="k">while</span> <span class="n">gemCount</span> <span class="o">!=</span> <span class="mi">3</span> <span class="p">{</span>
+     <span class="k">if</span> <span class="n">character</span><span class="o">.</span><span class="n">isOnGem</span> <span class="p">{</span>
+         <span class="n">character</span><span class="o">.</span><span class="nf">collectGem</span><span class="p">()</span>
+         <span class="n">gemCount</span> <span class="o">+=</span> <span class="mi">1</span>
+         <span class="n">character</span><span class="o">.</span><span class="nf">turnRight</span><span class="p">()</span>
+
+     <span class="p">}</span>
+     <span class="n">character</span><span class="o">.</span><span class="nf">moveForward</span><span class="p">()</span>
+ <span class="p">}</span>
+
+ <span class="k">for</span> <span class="n">i</span> <span class="k">in</span> <span class="mi">1</span><span class="o">...</span><span class="mi">4</span> <span class="p">{</span>
+     <span class="nf">turnMethod</span><span class="p">(</span><span class="nv">up</span><span class="p">:</span> <span class="kc">false</span><span class="p">,</span> <span class="nv">times</span><span class="p">:</span> <span class="mi">3</span><span class="p">)</span>
+ <span class="p">}</span>
+
+ <span class="k">while</span> <span class="n">gemCount</span> <span class="o">&lt;</span> <span class="mi">7</span> <span class="p">{</span>
+     <span class="k">if</span> <span class="o">!</span><span class="n">character</span><span class="o">.</span><span class="n">isBlockedRight</span> <span class="o">&amp;&amp;</span> <span class="n">gemCount</span> <span class="o">&gt;</span> <span class="mi">5</span> <span class="p">{</span>
+         <span class="n">character</span><span class="o">.</span><span class="nf">moveForward</span><span class="p">()</span>
+     <span class="p">}</span> <span class="k">else</span> <span class="k">if</span> <span class="n">character</span><span class="o">.</span><span class="n">isBlockedRight</span> <span class="o">&amp;&amp;</span> <span class="n">character</span><span class="o">.</span><span class="n">isBlockedLeft</span><span class="p">{</span>
+         <span class="n">character</span><span class="o">.</span><span class="nf">moveForward</span><span class="p">()</span>
+     <span class="p">}</span> <span class="k">else</span> <span class="k">if</span> <span class="o">!</span><span class="n">character</span><span class="o">.</span><span class="n">isBlockedRight</span> <span class="p">{</span>
+         <span class="n">character</span><span class="o">.</span><span class="nf">turnRight</span><span class="p">()</span>
+         <span class="n">character</span><span class="o">.</span><span class="nf">moveForward</span><span class="p">()</span>
+     <span class="p">}</span> <span class="k">else</span> <span class="k">if</span> <span class="n">character</span><span class="o">.</span><span class="n">isBlockedRight</span> <span class="o">&amp;&amp;</span> <span class="n">gemCount</span> <span class="o">==</span> <span class="mi">6</span> <span class="p">{</span>
+         <span class="n">character</span><span class="o">.</span><span class="nf">moveForward</span><span class="p">()</span>
+     <span class="p">}</span>
+
+     <span class="k">if</span> <span class="n">character</span><span class="o">.</span><span class="n">isOnGem</span> <span class="p">{</span>
+         <span class="n">character</span><span class="o">.</span><span class="nf">collectGem</span><span class="p">()</span>
+         <span class="n">gemCount</span> <span class="o">+=</span> <span class="mi">1</span>
+         <span class="n">character</span><span class="o">.</span><span class="nf">turnLeft</span><span class="p">()</span>
+         <span class="n">character</span><span class="o">.</span><span class="nf">turnLeft</span><span class="p">()</span>
+         <span class="n">character</span><span class="o">.</span><span class="nf">moveForward</span><span class="p">()</span>
+     <span class="p">}</span>
+ <span class="p">}</span>
+</code></pre></div></div>
+<p>(패러미터를 이용한 funtion의 이용을 공부하며 작성해본 예제입니다. 더 적은 라인의 코드로 문제를 해결할 수 있을 것 같은데 아직은 자꾸만 코드가 길어집니다.)</p>
+
 
         
       </section>
