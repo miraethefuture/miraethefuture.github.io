@@ -373,65 +373,176 @@ toc_icon: "kiwi-bird"
 
 ### 문제를 해결하며 작성해 본 예제 코드  
 
- ```swift
- let expert = Expert()
- let character = Character()
+   ```swift
+   let expert = Expert()
+   let character = Character()
 
- var gemCount = 0
+   var gemCount = 0
 
- func turnMethod(up: Bool, times: Int) {
-     if up == true {
-         for i in 1...times {
-             expert.turnLockUp()
-         }
-         expert.turnRight()
-     } else {
-         for i in 1...times {
-             expert.turnLockDown()
-         }
-         expert.turnRight()
-     }
- }
+   func turnMethod(up: Bool, times: Int) {
+       if up == true {
+           for i in 1...times {
+               expert.turnLockUp()
+           }
+           expert.turnRight()
+       } else {
+           for i in 1...times {
+               expert.turnLockDown()
+           }
+           expert.turnRight()
+       }
+   }
 
- for i in 1...4 {
-     turnMethod(up: true, times: 4)
- }
+   for i in 1...4 {
+       turnMethod(up: true, times: 4)
+   }
 
- while gemCount != 3 {
-     if character.isOnGem {
-         character.collectGem()
-         gemCount += 1
-         character.turnRight()
+   while gemCount != 3 {
+       if character.isOnGem {
+           character.collectGem()
+           gemCount += 1
+           character.turnRight()
 
-     }
-     character.moveForward()
- }
+       }
+       character.moveForward()
+   }
 
- for i in 1...4 {
-     turnMethod(up: false, times: 3)
- }
+   for i in 1...4 {
+       turnMethod(up: false, times: 3)
+   }
 
- while gemCount < 7 {
-     if !character.isBlockedRight && gemCount > 5 {
-         character.moveForward()
-     } else if character.isBlockedRight && character.isBlockedLeft{
-         character.moveForward()
-     } else if !character.isBlockedRight {
-         character.turnRight()
-         character.moveForward()
-     } else if character.isBlockedRight && gemCount == 6 {
-         character.moveForward()
-     }
+   while gemCount < 7 {
+       if !character.isBlockedRight && gemCount > 5 {
+           character.moveForward()
+       } else if character.isBlockedRight && character.isBlockedLeft{
+           character.moveForward()
+       } else if !character.isBlockedRight {
+           character.turnRight()
+           character.moveForward()
+       } else if character.isBlockedRight && gemCount == 6 {
+           character.moveForward()
+       }
 
-     if character.isOnGem {
-         character.collectGem()
-         gemCount += 1
-         character.turnLeft()
-         character.turnLeft()
-         character.moveForward()
-     }
- }
- ```
-   (패러미터를 이용한 funtion의 이용을 공부하며 작성해본 예제입니다. 더 적은 라인의 코드로 문제를 해결할 수 있을 것 같은데 아직은 자꾸만 코드가 길어집니다.)
+       if character.isOnGem {
+           character.collectGem()
+           gemCount += 1
+           character.turnLeft()
+           character.turnLeft()
+           character.moveForward()
+       }
+   }
+   ```
+  (패러미터를 이용한 funtion의 이용을 공부하며 작성해본 예제입니다. 더 적은 라인의 코드로 문제를 해결할 수 있을 것 같은데 아직은 자꾸만 코드가 길어집니다.)
 
-   
+### type과 instances  
+
+  하나의 type을 이용해 여러개의 instance를 만들 수 있습니다. type은 설계도, 청사진에 자주 비유됩니다. 같은 설계도를 사용해서 만든 instance이므로 같은 메서드를 사용해 같은 속성들에 접근, 이용할 수 있습니다.
+
+## World Building  
+
+  ```swift
+  let block1 = Block()
+  let block2 = Block()
+  let block3 = Block()
+  let block4 = Block()
+  let block5 = Block()
+
+  var gemCounter = 0
+
+  func stackBlocks(block: Block, col: Int, row: Int) {
+          world.place(block, atColumn: col, row: row)
+  }
+  func turnAround() {
+      turnLeft()
+      turnLeft()
+  }
+  func moveAndCollect(times: Int) {
+      for i in 1...times {
+          moveForward()
+          if isOnGem {
+              collectGem()
+              turnAround()
+          }
+      }
+  }
+
+  // stack blocks to get gems
+  stackBlocks(block: block1, col: 2, row: 2)
+  stackBlocks(block: block2, col: 2, row: 2)
+  stackBlocks(block: block3, col: 4, row: 2)
+  stackBlocks(block: block4, col: 6, row: 2)
+  stackBlocks(block: block5, col: 6, row: 2)
+
+  while gemCounter < 3 {
+      moveForward()
+      if isOnClosedSwitch {
+          toggleSwitch()
+          turnRight()
+      } else if isBlocked && isOnGem {
+          collectGem()
+          gemCounter += 1
+          turnAround()
+      } else if isOnOpenSwitch && gemCounter >= 1{
+          turnRight()
+      }
+  }
+  ```
+  (여러개의 instance 사용 / factor codes into a function을 공부하며 작성한 예제. 처음 작성했을때는 else if가 세개 더 있었는데 문제를 해결하며 코드를 줄일 수 있었다.)
+
+## Array  
+
+  - [] = square brakets
+  - , = a comma
+
+  위 두가지를 이용하여 배열(Array)를 만듭니다.
+
+  ```swift
+  var ingredients = [icecream, bananas, chocolate, cherries]
+  ```
+
+  배열은 아이템을 순서대로 나열한 목록입니다. 순서는 Index로 표현합니다. Index를 이용하여 각 item을 변경할 수 있습니다.
+
+  ```swift
+  [icecream, bananas, chocolate, cherries]
+      0         1         2          3
+
+  ingredients[1] = strawberries
+  ingredients[3] = sprinkles
+
+  [icecream, strawberries, chocolate, sprinkles]
+      0           1            2          3
+  ```
+
+  컴퓨터는 0부터 수를 세기 때문에 index 역시 0부터 시작합니다.
+
+### Array Methods  
+
+  Swift에는 아이템을 삭제, 추가하는 등 간단한 동작을 수행하기 위해 array와 함께 사용되는 메서드가 있습니다.
+
+  ```swift
+  [icecream, bananas, chocolate, cherries]
+      0         1         2          3
+
+  // remove(at: index numbers) 메서드
+  ingredients.remove(at: 2)
+
+  [icecream, bananas, cherries]
+      0         1         2      
+
+  // append() 메서드
+  ingredients.append(sprinkles)
+
+  [icecream, bananas, cherries, sprinkles]
+      0         1         2         3
+
+  // insert(item, at: index number)
+  ingredients.insert(strawberries, at: 1)
+
+  [icecream, strawberries, bananas, cherries, sprinkles]
+      0            1         2         3          4
+  ```   
+  item이 추가, 삭제됨에 따라 index 번호가 자동으로 바뀝니다.
+
+### Iteration  
+
+  

@@ -1,4 +1,4 @@
-I"ш<h1 id="playgrounds-learn-to-code-1">Playgrounds: Learn to Code 1</h1>
+I"E�<h1 id="playgrounds-learn-to-code-1">Playgrounds: Learn to Code 1</h1>
 <p>아래 모든 내용들은 Playgrounds에서 학습하며 정리한 내용입니다.<br />
   모든 내용의 출처는 Playgrounds임을 밝힙니다.</p>
 
@@ -374,64 +374,144 @@
 
 <h3 id="문제를-해결하며-작성해-본-예제-코드">문제를 해결하며 작성해 본 예제 코드</h3>
 
-<div class="language-swift highlighter-rouge"><div class="highlight"><pre class="highlight"><code> <span class="k">let</span> <span class="nv">expert</span> <span class="o">=</span> <span class="kt">Expert</span><span class="p">()</span>
- <span class="k">let</span> <span class="nv">character</span> <span class="o">=</span> <span class="kt">Character</span><span class="p">()</span>
+<div class="language-swift highlighter-rouge"><div class="highlight"><pre class="highlight"><code>   <span class="k">let</span> <span class="nv">expert</span> <span class="o">=</span> <span class="kt">Expert</span><span class="p">()</span>
+   <span class="k">let</span> <span class="nv">character</span> <span class="o">=</span> <span class="kt">Character</span><span class="p">()</span>
 
- <span class="k">var</span> <span class="nv">gemCount</span> <span class="o">=</span> <span class="mi">0</span>
+   <span class="k">var</span> <span class="nv">gemCount</span> <span class="o">=</span> <span class="mi">0</span>
 
- <span class="kd">func</span> <span class="nf">turnMethod</span><span class="p">(</span><span class="nv">up</span><span class="p">:</span> <span class="kt">Bool</span><span class="p">,</span> <span class="nv">times</span><span class="p">:</span> <span class="kt">Int</span><span class="p">)</span> <span class="p">{</span>
-     <span class="k">if</span> <span class="n">up</span> <span class="o">==</span> <span class="kc">true</span> <span class="p">{</span>
-         <span class="k">for</span> <span class="n">i</span> <span class="k">in</span> <span class="mi">1</span><span class="o">...</span><span class="n">times</span> <span class="p">{</span>
-             <span class="n">expert</span><span class="o">.</span><span class="nf">turnLockUp</span><span class="p">()</span>
-         <span class="p">}</span>
-         <span class="n">expert</span><span class="o">.</span><span class="nf">turnRight</span><span class="p">()</span>
-     <span class="p">}</span> <span class="k">else</span> <span class="p">{</span>
-         <span class="k">for</span> <span class="n">i</span> <span class="k">in</span> <span class="mi">1</span><span class="o">...</span><span class="n">times</span> <span class="p">{</span>
-             <span class="n">expert</span><span class="o">.</span><span class="nf">turnLockDown</span><span class="p">()</span>
-         <span class="p">}</span>
-         <span class="n">expert</span><span class="o">.</span><span class="nf">turnRight</span><span class="p">()</span>
-     <span class="p">}</span>
- <span class="p">}</span>
+   <span class="kd">func</span> <span class="nf">turnMethod</span><span class="p">(</span><span class="nv">up</span><span class="p">:</span> <span class="kt">Bool</span><span class="p">,</span> <span class="nv">times</span><span class="p">:</span> <span class="kt">Int</span><span class="p">)</span> <span class="p">{</span>
+       <span class="k">if</span> <span class="n">up</span> <span class="o">==</span> <span class="kc">true</span> <span class="p">{</span>
+           <span class="k">for</span> <span class="n">i</span> <span class="k">in</span> <span class="mi">1</span><span class="o">...</span><span class="n">times</span> <span class="p">{</span>
+               <span class="n">expert</span><span class="o">.</span><span class="nf">turnLockUp</span><span class="p">()</span>
+           <span class="p">}</span>
+           <span class="n">expert</span><span class="o">.</span><span class="nf">turnRight</span><span class="p">()</span>
+       <span class="p">}</span> <span class="k">else</span> <span class="p">{</span>
+           <span class="k">for</span> <span class="n">i</span> <span class="k">in</span> <span class="mi">1</span><span class="o">...</span><span class="n">times</span> <span class="p">{</span>
+               <span class="n">expert</span><span class="o">.</span><span class="nf">turnLockDown</span><span class="p">()</span>
+           <span class="p">}</span>
+           <span class="n">expert</span><span class="o">.</span><span class="nf">turnRight</span><span class="p">()</span>
+       <span class="p">}</span>
+   <span class="p">}</span>
 
- <span class="k">for</span> <span class="n">i</span> <span class="k">in</span> <span class="mi">1</span><span class="o">...</span><span class="mi">4</span> <span class="p">{</span>
-     <span class="nf">turnMethod</span><span class="p">(</span><span class="nv">up</span><span class="p">:</span> <span class="kc">true</span><span class="p">,</span> <span class="nv">times</span><span class="p">:</span> <span class="mi">4</span><span class="p">)</span>
- <span class="p">}</span>
+   <span class="k">for</span> <span class="n">i</span> <span class="k">in</span> <span class="mi">1</span><span class="o">...</span><span class="mi">4</span> <span class="p">{</span>
+       <span class="nf">turnMethod</span><span class="p">(</span><span class="nv">up</span><span class="p">:</span> <span class="kc">true</span><span class="p">,</span> <span class="nv">times</span><span class="p">:</span> <span class="mi">4</span><span class="p">)</span>
+   <span class="p">}</span>
 
- <span class="k">while</span> <span class="n">gemCount</span> <span class="o">!=</span> <span class="mi">3</span> <span class="p">{</span>
-     <span class="k">if</span> <span class="n">character</span><span class="o">.</span><span class="n">isOnGem</span> <span class="p">{</span>
-         <span class="n">character</span><span class="o">.</span><span class="nf">collectGem</span><span class="p">()</span>
-         <span class="n">gemCount</span> <span class="o">+=</span> <span class="mi">1</span>
-         <span class="n">character</span><span class="o">.</span><span class="nf">turnRight</span><span class="p">()</span>
+   <span class="k">while</span> <span class="n">gemCount</span> <span class="o">!=</span> <span class="mi">3</span> <span class="p">{</span>
+       <span class="k">if</span> <span class="n">character</span><span class="o">.</span><span class="n">isOnGem</span> <span class="p">{</span>
+           <span class="n">character</span><span class="o">.</span><span class="nf">collectGem</span><span class="p">()</span>
+           <span class="n">gemCount</span> <span class="o">+=</span> <span class="mi">1</span>
+           <span class="n">character</span><span class="o">.</span><span class="nf">turnRight</span><span class="p">()</span>
 
-     <span class="p">}</span>
-     <span class="n">character</span><span class="o">.</span><span class="nf">moveForward</span><span class="p">()</span>
- <span class="p">}</span>
+       <span class="p">}</span>
+       <span class="n">character</span><span class="o">.</span><span class="nf">moveForward</span><span class="p">()</span>
+   <span class="p">}</span>
 
- <span class="k">for</span> <span class="n">i</span> <span class="k">in</span> <span class="mi">1</span><span class="o">...</span><span class="mi">4</span> <span class="p">{</span>
-     <span class="nf">turnMethod</span><span class="p">(</span><span class="nv">up</span><span class="p">:</span> <span class="kc">false</span><span class="p">,</span> <span class="nv">times</span><span class="p">:</span> <span class="mi">3</span><span class="p">)</span>
- <span class="p">}</span>
+   <span class="k">for</span> <span class="n">i</span> <span class="k">in</span> <span class="mi">1</span><span class="o">...</span><span class="mi">4</span> <span class="p">{</span>
+       <span class="nf">turnMethod</span><span class="p">(</span><span class="nv">up</span><span class="p">:</span> <span class="kc">false</span><span class="p">,</span> <span class="nv">times</span><span class="p">:</span> <span class="mi">3</span><span class="p">)</span>
+   <span class="p">}</span>
 
- <span class="k">while</span> <span class="n">gemCount</span> <span class="o">&lt;</span> <span class="mi">7</span> <span class="p">{</span>
-     <span class="k">if</span> <span class="o">!</span><span class="n">character</span><span class="o">.</span><span class="n">isBlockedRight</span> <span class="o">&amp;&amp;</span> <span class="n">gemCount</span> <span class="o">&gt;</span> <span class="mi">5</span> <span class="p">{</span>
-         <span class="n">character</span><span class="o">.</span><span class="nf">moveForward</span><span class="p">()</span>
-     <span class="p">}</span> <span class="k">else</span> <span class="k">if</span> <span class="n">character</span><span class="o">.</span><span class="n">isBlockedRight</span> <span class="o">&amp;&amp;</span> <span class="n">character</span><span class="o">.</span><span class="n">isBlockedLeft</span><span class="p">{</span>
-         <span class="n">character</span><span class="o">.</span><span class="nf">moveForward</span><span class="p">()</span>
-     <span class="p">}</span> <span class="k">else</span> <span class="k">if</span> <span class="o">!</span><span class="n">character</span><span class="o">.</span><span class="n">isBlockedRight</span> <span class="p">{</span>
-         <span class="n">character</span><span class="o">.</span><span class="nf">turnRight</span><span class="p">()</span>
-         <span class="n">character</span><span class="o">.</span><span class="nf">moveForward</span><span class="p">()</span>
-     <span class="p">}</span> <span class="k">else</span> <span class="k">if</span> <span class="n">character</span><span class="o">.</span><span class="n">isBlockedRight</span> <span class="o">&amp;&amp;</span> <span class="n">gemCount</span> <span class="o">==</span> <span class="mi">6</span> <span class="p">{</span>
-         <span class="n">character</span><span class="o">.</span><span class="nf">moveForward</span><span class="p">()</span>
-     <span class="p">}</span>
+   <span class="k">while</span> <span class="n">gemCount</span> <span class="o">&lt;</span> <span class="mi">7</span> <span class="p">{</span>
+       <span class="k">if</span> <span class="o">!</span><span class="n">character</span><span class="o">.</span><span class="n">isBlockedRight</span> <span class="o">&amp;&amp;</span> <span class="n">gemCount</span> <span class="o">&gt;</span> <span class="mi">5</span> <span class="p">{</span>
+           <span class="n">character</span><span class="o">.</span><span class="nf">moveForward</span><span class="p">()</span>
+       <span class="p">}</span> <span class="k">else</span> <span class="k">if</span> <span class="n">character</span><span class="o">.</span><span class="n">isBlockedRight</span> <span class="o">&amp;&amp;</span> <span class="n">character</span><span class="o">.</span><span class="n">isBlockedLeft</span><span class="p">{</span>
+           <span class="n">character</span><span class="o">.</span><span class="nf">moveForward</span><span class="p">()</span>
+       <span class="p">}</span> <span class="k">else</span> <span class="k">if</span> <span class="o">!</span><span class="n">character</span><span class="o">.</span><span class="n">isBlockedRight</span> <span class="p">{</span>
+           <span class="n">character</span><span class="o">.</span><span class="nf">turnRight</span><span class="p">()</span>
+           <span class="n">character</span><span class="o">.</span><span class="nf">moveForward</span><span class="p">()</span>
+       <span class="p">}</span> <span class="k">else</span> <span class="k">if</span> <span class="n">character</span><span class="o">.</span><span class="n">isBlockedRight</span> <span class="o">&amp;&amp;</span> <span class="n">gemCount</span> <span class="o">==</span> <span class="mi">6</span> <span class="p">{</span>
+           <span class="n">character</span><span class="o">.</span><span class="nf">moveForward</span><span class="p">()</span>
+       <span class="p">}</span>
 
-     <span class="k">if</span> <span class="n">character</span><span class="o">.</span><span class="n">isOnGem</span> <span class="p">{</span>
-         <span class="n">character</span><span class="o">.</span><span class="nf">collectGem</span><span class="p">()</span>
-         <span class="n">gemCount</span> <span class="o">+=</span> <span class="mi">1</span>
-         <span class="n">character</span><span class="o">.</span><span class="nf">turnLeft</span><span class="p">()</span>
-         <span class="n">character</span><span class="o">.</span><span class="nf">turnLeft</span><span class="p">()</span>
-         <span class="n">character</span><span class="o">.</span><span class="nf">moveForward</span><span class="p">()</span>
-     <span class="p">}</span>
- <span class="p">}</span>
+       <span class="k">if</span> <span class="n">character</span><span class="o">.</span><span class="n">isOnGem</span> <span class="p">{</span>
+           <span class="n">character</span><span class="o">.</span><span class="nf">collectGem</span><span class="p">()</span>
+           <span class="n">gemCount</span> <span class="o">+=</span> <span class="mi">1</span>
+           <span class="n">character</span><span class="o">.</span><span class="nf">turnLeft</span><span class="p">()</span>
+           <span class="n">character</span><span class="o">.</span><span class="nf">turnLeft</span><span class="p">()</span>
+           <span class="n">character</span><span class="o">.</span><span class="nf">moveForward</span><span class="p">()</span>
+       <span class="p">}</span>
+   <span class="p">}</span>
 </code></pre></div></div>
 <p>(패러미터를 이용한 funtion의 이용을 공부하며 작성해본 예제입니다. 더 적은 라인의 코드로 문제를 해결할 수 있을 것 같은데 아직은 자꾸만 코드가 길어집니다.)</p>
 
+<h3 id="type과-instances">type과 instances</h3>
+
+<p>하나의 type을 이용해 여러개의 instance를 만들 수 있습니다. type은 설계도, 청사진에 자주 비유됩니다. 같은 설계도를 사용해서 만든 instance이므로 같은 메서드를 사용해 같은 속성들에 접근, 이용할 수 있습니다.</p>
+
+<h2 id="world-building">World Building</h2>
+
+<div class="language-swift highlighter-rouge"><div class="highlight"><pre class="highlight"><code>  <span class="k">let</span> <span class="nv">block1</span> <span class="o">=</span> <span class="kt">Block</span><span class="p">()</span>
+  <span class="k">let</span> <span class="nv">block2</span> <span class="o">=</span> <span class="kt">Block</span><span class="p">()</span>
+  <span class="k">let</span> <span class="nv">block3</span> <span class="o">=</span> <span class="kt">Block</span><span class="p">()</span>
+  <span class="k">let</span> <span class="nv">block4</span> <span class="o">=</span> <span class="kt">Block</span><span class="p">()</span>
+  <span class="k">let</span> <span class="nv">block5</span> <span class="o">=</span> <span class="kt">Block</span><span class="p">()</span>
+
+  <span class="k">var</span> <span class="nv">gemCounter</span> <span class="o">=</span> <span class="mi">0</span>
+
+  <span class="kd">func</span> <span class="nf">stackBlocks</span><span class="p">(</span><span class="nv">block</span><span class="p">:</span> <span class="kt">Block</span><span class="p">,</span> <span class="nv">col</span><span class="p">:</span> <span class="kt">Int</span><span class="p">,</span> <span class="nv">row</span><span class="p">:</span> <span class="kt">Int</span><span class="p">)</span> <span class="p">{</span>
+          <span class="n">world</span><span class="o">.</span><span class="nf">place</span><span class="p">(</span><span class="n">block</span><span class="p">,</span> <span class="nv">atColumn</span><span class="p">:</span> <span class="n">col</span><span class="p">,</span> <span class="nv">row</span><span class="p">:</span> <span class="n">row</span><span class="p">)</span>
+  <span class="p">}</span>
+  <span class="kd">func</span> <span class="nf">turnAround</span><span class="p">()</span> <span class="p">{</span>
+      <span class="nf">turnLeft</span><span class="p">()</span>
+      <span class="nf">turnLeft</span><span class="p">()</span>
+  <span class="p">}</span>
+  <span class="kd">func</span> <span class="nf">moveAndCollect</span><span class="p">(</span><span class="nv">times</span><span class="p">:</span> <span class="kt">Int</span><span class="p">)</span> <span class="p">{</span>
+      <span class="k">for</span> <span class="n">i</span> <span class="k">in</span> <span class="mi">1</span><span class="o">...</span><span class="n">times</span> <span class="p">{</span>
+          <span class="nf">moveForward</span><span class="p">()</span>
+          <span class="k">if</span> <span class="n">isOnGem</span> <span class="p">{</span>
+              <span class="nf">collectGem</span><span class="p">()</span>
+              <span class="nf">turnAround</span><span class="p">()</span>
+          <span class="p">}</span>
+      <span class="p">}</span>
+  <span class="p">}</span>
+
+
+  <span class="c1">// stack blocks to get gems</span>
+
+  <span class="nf">stackBlocks</span><span class="p">(</span><span class="nv">block</span><span class="p">:</span> <span class="n">block1</span><span class="p">,</span> <span class="nv">col</span><span class="p">:</span> <span class="mi">2</span><span class="p">,</span> <span class="nv">row</span><span class="p">:</span> <span class="mi">2</span><span class="p">)</span>
+  <span class="nf">stackBlocks</span><span class="p">(</span><span class="nv">block</span><span class="p">:</span> <span class="n">block2</span><span class="p">,</span> <span class="nv">col</span><span class="p">:</span> <span class="mi">2</span><span class="p">,</span> <span class="nv">row</span><span class="p">:</span> <span class="mi">2</span><span class="p">)</span>
+  <span class="nf">stackBlocks</span><span class="p">(</span><span class="nv">block</span><span class="p">:</span> <span class="n">block3</span><span class="p">,</span> <span class="nv">col</span><span class="p">:</span> <span class="mi">4</span><span class="p">,</span> <span class="nv">row</span><span class="p">:</span> <span class="mi">2</span><span class="p">)</span>
+  <span class="nf">stackBlocks</span><span class="p">(</span><span class="nv">block</span><span class="p">:</span> <span class="n">block4</span><span class="p">,</span> <span class="nv">col</span><span class="p">:</span> <span class="mi">6</span><span class="p">,</span> <span class="nv">row</span><span class="p">:</span> <span class="mi">2</span><span class="p">)</span>
+  <span class="nf">stackBlocks</span><span class="p">(</span><span class="nv">block</span><span class="p">:</span> <span class="n">block5</span><span class="p">,</span> <span class="nv">col</span><span class="p">:</span> <span class="mi">6</span><span class="p">,</span> <span class="nv">row</span><span class="p">:</span> <span class="mi">2</span><span class="p">)</span>
+
+  <span class="k">while</span> <span class="n">gemCounter</span> <span class="o">&lt;</span> <span class="mi">3</span> <span class="p">{</span>
+      <span class="nf">moveForward</span><span class="p">()</span>
+      <span class="k">if</span> <span class="n">isOnClosedSwitch</span> <span class="p">{</span>
+          <span class="nf">toggleSwitch</span><span class="p">()</span>
+          <span class="nf">turnRight</span><span class="p">()</span>
+      <span class="p">}</span> <span class="k">else</span> <span class="k">if</span> <span class="n">isBlocked</span> <span class="o">&amp;&amp;</span> <span class="n">isOnGem</span> <span class="p">{</span>
+          <span class="nf">collectGem</span><span class="p">()</span>
+          <span class="n">gemCounter</span> <span class="o">+=</span> <span class="mi">1</span>
+          <span class="nf">turnAround</span><span class="p">()</span>
+      <span class="p">}</span> <span class="k">else</span> <span class="k">if</span> <span class="n">isOnOpenSwitch</span> <span class="o">&amp;&amp;</span> <span class="n">gemCounter</span> <span class="o">&gt;=</span> <span class="mi">1</span><span class="p">{</span>
+          <span class="nf">turnRight</span><span class="p">()</span>
+      <span class="p">}</span>
+
+  <span class="p">}</span>
+</code></pre></div></div>
+<p>(여러개의 instance 사용 / factor codes into a function을 공부하며 작성한 예제. 처음 작성했을때는 else if가 세개 더 있었는데 문제를 해결하며 코드를 줄일 수 있었다.)</p>
+
+<h2 id="array">Array</h2>
+
+<ul>
+  <li>[] = square brakets</li>
+  <li>, = a comma</li>
+</ul>
+
+<p>위 두가지를 이용하여 배열(Array)를 만듭니다.</p>
+
+<div class="language-swift highlighter-rouge"><div class="highlight"><pre class="highlight"><code>  <span class="k">var</span> <span class="nv">ingredients</span> <span class="o">=</span> <span class="p">[</span><span class="n">icecream</span><span class="p">,</span> <span class="n">bananas</span><span class="p">,</span> <span class="n">chocolate</span><span class="p">,</span> <span class="n">cherries</span><span class="p">]</span>
+</code></pre></div></div>
+
+<p>배열은 아이템을 순서대로 나열한 목록입니다. 순서는 Index로 표현합니다. Index를 이용하여 각 item을 변경할 수 있습니다.</p>
+
+<div class="language-swift highlighter-rouge"><div class="highlight"><pre class="highlight"><code>  <span class="p">[</span><span class="n">icecream</span><span class="p">,</span> <span class="n">bananas</span><span class="p">,</span> <span class="n">chocolate</span><span class="p">,</span> <span class="n">cherries</span><span class="p">]</span>
+      <span class="mi">0</span>         <span class="mi">1</span>         <span class="mi">2</span>          <span class="mi">3</span>
+
+  <span class="n">ingredients</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span> <span class="o">=</span> <span class="n">strawberries</span>
+  <span class="n">ingredients</span><span class="p">[</span><span class="mi">3</span><span class="p">]</span> <span class="o">=</span> <span class="n">sprinkles</span>
+
+  <span class="p">[</span><span class="n">icecream</span><span class="p">,</span> <span class="n">strawberries</span><span class="p">,</span> <span class="n">chocolate</span><span class="p">,</span> <span class="n">sprinkles</span><span class="p">]</span>
+      <span class="mi">0</span>           <span class="mi">1</span>            <span class="mi">2</span>          <span class="mi">3</span>
+</code></pre></div></div>
 :ET
