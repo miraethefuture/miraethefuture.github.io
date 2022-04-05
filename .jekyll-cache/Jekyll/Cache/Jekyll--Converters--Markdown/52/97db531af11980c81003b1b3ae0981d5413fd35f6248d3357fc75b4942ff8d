@@ -1,0 +1,101 @@
+I"]#<p><a href="https://developer.apple.com/tutorials/sample-apps/aboutme">Sample Apps Tutorials: About Me(Navigating Apps)</a><br />
+아래 모든 정보의 출처는 위 apple developer 공식 페이지임을 밝힙니다. 오로지 저의 학습 기록 용도로만 사용되었습니다.</p>
+
+<h1 id="navigating-apps-about-me">Navigating Apps: About Me</h1>
+
+<h2 id="section-1-tabbed-interface">Section 1: Tabbed Interface</h2>
+
+<p>탭 형태의 interface를 만드는 방법에 대해 알아봅니다.</p>
+
+<h3 id="contentview-view">ContentView view</h3>
+
+<p>ContentView view는 처음 앱이 열리면 보게 될 화면을 나타냅니다. User interface(UI)는 body부분에 생성됩니다.</p>
+
+<h3 id="tabview">TabView</h3>
+
+<div class="language-swift highlighter-rouge"><div class="highlight"><pre class="highlight"><code>  <span class="kd">struct</span> <span class="kt">ContentView</span><span class="p">:</span> <span class="kt">View</span> <span class="p">{</span>
+    <span class="k">var</span> <span class="nv">body</span><span class="p">:</span> <span class="kd">some</span> <span class="kt">View</span> <span class="p">{</span>
+      <span class="kt">TabView</span> <span class="p">{</span>
+        <span class="c1">// place tab views here!</span>
+        <span class="kt">HomeView</span><span class="p">()</span>
+            <span class="o">.</span><span class="n">tabItem</span> <span class="p">{</span>
+              <span class="kt">Label</span><span class="p">(</span><span class="s">"Home"</span><span class="p">,</span> <span class="nv">systemImage</span><span class="p">:</span> <span class="s">"person"</span><span class="p">)</span>
+            <span class="p">}</span>
+      <span class="p">}</span>
+    <span class="p">}</span>
+  <span class="p">}</span>
+</code></pre></div></div>
+
+<p><strong>TabView</strong>를 사용해서 tab UI를 생성할 수 있습니다. Tab view 안에 원하는 tab item 목록을 작성해줍니다.</p>
+
+<p>tab을 만들기 위해서…</p>
+<ol>
+  <li>tab을 눌렀을 때 보여지길 원하는 view의 instance를 생성합니다. 첫번째 tab이 앱을 열었을 때 가장 먼저 보이는 view가 됩니다.</li>
+  <li>HomeView view 아래에 dot notation을 이용하여 .tabItem modifier를 추가해줍니다. tabItem이 없다면 tab은 텅 비어있는 상태로 나타납니다.</li>
+  <li>Label view의 Title, Icon 패러미터를 이용하여 tab에 이름을 붙여주고 아이콘을 생성해줍니다. tabItem modifier는 오직 Label, Text, Image views만 허용합니다. Button과 같은 다른 view들은 비어있는 탭을 만듭니다.</li>
+</ol>
+
+<center><img src="/assets/images/aboutMe1.png" alt="tabs" width="300" /></center>
+
+<h2 id="section-2-your-data">Section 2: Your Data</h2>
+
+<p>app의 데이터를 수정하기</p>
+
+<h3 id="dataswift">Data.swift</h3>
+
+<p>샘플 프로젝트에 app의 모든 Data만 따로 담은 파일이 있습니다. SwiftUI에서는 앱의 데이터를 앱의 visual components와 따로 분리하는 것이 가장 좋은 방법입니다. SwiftUI에 대해서 배우는동안 ‘“source of truth”를 가진다’라는 개념을 자주 접하게 될 것입니다. 이것은 한 value를 오직 한 장소에서만 정의한다는 의미입니다. 데이터를 변경해보며 이것에 대해 더 알아볼 것입니다.</p>
+
+<h3 id="데이터의-설계도">데이터의 설계도</h3>
+
+<div class="language-swift highlighter-rouge"><div class="highlight"><pre class="highlight"><code>  <span class="kd">import</span> <span class="kt">Foundation</span>
+  <span class="kd">import</span> <span class="kt">SwiftUI</span>
+
+  <span class="kd">struct</span> <span class="kt">Info</span> <span class="p">{</span>
+      <span class="k">let</span> <span class="nv">image</span><span class="p">:</span> <span class="kt">String</span>
+      <span class="k">let</span> <span class="nv">name</span><span class="p">:</span> <span class="kt">String</span>
+      <span class="k">let</span> <span class="nv">story</span><span class="p">:</span> <span class="n">string</span>
+      <span class="k">let</span> <span class="nv">hobbies</span><span class="p">:</span> <span class="p">[</span><span class="kt">String</span><span class="p">]</span>
+      <span class="k">let</span> <span class="nv">foods</span><span class="p">:</span> <span class="p">[</span><span class="kt">String</span><span class="p">]</span>
+      <span class="k">let</span> <span class="nv">colors</span><span class="p">:</span> <span class="p">[</span><span class="kt">Color</span><span class="p">]</span>
+      <span class="k">let</span> <span class="nv">funFacts</span><span class="p">:</span> <span class="p">[</span><span class="kt">String</span><span class="p">]</span>
+  <span class="p">}</span>
+
+  <span class="k">let</span> <span class="nv">information</span> <span class="o">=</span> <span class="kt">Info</span><span class="p">(</span>
+
+    <span class="p">)</span>
+</code></pre></div></div>
+
+<p><strong>struct Info { }</strong>는 앱 데이터의 설계도(또는 청사진, blueprint)를 제공합니다. 이것은 앱이 가지고 있는 데이터의 type과 이름을 정의하는 속성들(properties)을 가지고 있습니다. 위에 코드에서 알 수 있듯이 이 앱의 데이터는 String type의 story property와 Color 값들의 배열인 colors property를 가지고 있습니다. 이</p>
+
+<h3 id="data-value">Data value</h3>
+
+<div class="language-swift highlighter-rouge"><div class="highlight"><pre class="highlight"><code>  <span class="kd">import</span> <span class="kt">Foundation</span>
+  <span class="kd">import</span> <span class="kt">SwiftUI</span>
+
+  <span class="kd">struct</span> <span class="kt">Info</span> <span class="p">{</span>
+      <span class="k">let</span> <span class="nv">image</span><span class="p">:</span> <span class="kt">String</span>
+      <span class="k">let</span> <span class="nv">name</span><span class="p">:</span> <span class="kt">String</span>
+      <span class="k">let</span> <span class="nv">story</span><span class="p">:</span> <span class="n">string</span>
+      <span class="k">let</span> <span class="nv">hobbies</span><span class="p">:</span> <span class="p">[</span><span class="kt">String</span><span class="p">]</span>
+      <span class="k">let</span> <span class="nv">foods</span><span class="p">:</span> <span class="p">[</span><span class="kt">String</span><span class="p">]</span>
+      <span class="k">let</span> <span class="nv">colors</span><span class="p">:</span> <span class="p">[</span><span class="kt">Color</span><span class="p">]</span>
+      <span class="k">let</span> <span class="nv">funFacts</span><span class="p">:</span> <span class="p">[</span><span class="kt">String</span><span class="p">]</span>
+  <span class="p">}</span>
+
+  <span class="k">let</span> <span class="nv">information</span> <span class="o">=</span> <span class="kt">Info</span><span class="p">(</span>
+      <span class="nv">image</span><span class="p">:</span> <span class="s">"Placeholder"</span><span class="p">,</span>
+      <span class="nv">name</span><span class="p">:</span> <span class="s">"My Name"</span><span class="p">,</span>
+      <span class="nv">story</span><span class="p">:</span> <span class="s">"A story can be about anything you can dream up. There are no right answers, there is no one else.</span><span class="se">\n\n</span><span class="s">Need some inspiration?</span><span class="se">\n</span><span class="s">• 🐶🐱🛶️🎭🎤🎧🎸</span><span class="se">\n</span><span class="s">•
+      🏄‍♀️🚵‍♀️🚴‍♀️⛵️🥾🏂⛷📚 "</span><span class="p">,</span>
+      <span class="nv">hobbies</span><span class="p">:</span> <span class="p">[</span><span class="s">"bicycle"</span><span class="p">,</span> <span class="s">"ticket.fill"</span><span class="p">,</span> <span class="s">"book.fill"</span><span class="p">],</span>
+      <span class="nv">foods</span><span class="p">:</span> <span class="p">[</span><span class="s">"🥐"</span><span class="p">,</span> <span class="s">"🌮"</span><span class="p">,</span> <span class="s">"🍣"</span><span class="p">],</span>
+      <span class="nv">colors</span><span class="p">:</span> <span class="p">[</span><span class="kt">Color</span><span class="o">.</span><span class="n">blue</span><span class="p">,</span> <span class="kt">Color</span><span class="o">.</span><span class="n">purple</span><span class="p">,</span> <span class="kt">Color</span><span class="o">.</span><span class="n">pink</span><span class="p">],</span>
+      <span class="nv">funFacts</span><span class="p">:</span> <span class="p">[</span>
+          <span class="s">"The femur is the longest and largest bone in the human body."</span><span class="p">,</span>
+          <span class="s">"White sand beaches are made of parrotfish poop."</span><span class="p">,</span>
+      <span class="p">]</span>
+  <span class="p">)</span>
+</code></pre></div></div>
+
+<p>위의 information value는 데이터를 담기 위해 Info structure을</p>
+:ET

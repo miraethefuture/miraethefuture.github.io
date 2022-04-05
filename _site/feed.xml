@@ -1,4 +1,112 @@
-<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="4.2.1">Jekyll</generator><link href="http://localhost:4000/feed.xml" rel="self" type="application/atom+xml" /><link href="http://localhost:4000/" rel="alternate" type="text/html" /><updated>2022-04-04T23:00:37+09:00</updated><id>http://localhost:4000/feed.xml</id><title type="html">Mirae the Future</title><subtitle>An amazing website.</subtitle><author><name>Mirae</name></author><entry><title type="html">Playgrounds</title><link href="http://localhost:4000/til/playgrounds/" rel="alternate" type="text/html" title="Playgrounds" /><published>2022-03-29T00:00:00+09:00</published><updated>2022-03-29T00:00:00+09:00</updated><id>http://localhost:4000/til/playgrounds</id><content type="html" xml:base="http://localhost:4000/til/playgrounds/">&lt;h1 id=&quot;playgrounds-learn-to-code-1&quot;&gt;Playgrounds: Learn to Code 1&lt;/h1&gt;
+<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="4.2.1">Jekyll</generator><link href="http://localhost:4000/feed.xml" rel="self" type="application/atom+xml" /><link href="http://localhost:4000/" rel="alternate" type="text/html" /><updated>2022-04-06T03:22:42+09:00</updated><id>http://localhost:4000/feed.xml</id><title type="html">Mirae the Future</title><subtitle>An amazing website.</subtitle><author><name>Mirae</name></author><entry><title type="html">Navigating Apps: About Me</title><link href="http://localhost:4000/til/aboutMe/" rel="alternate" type="text/html" title="Navigating Apps: About Me" /><published>2022-04-06T00:00:00+09:00</published><updated>2022-04-06T00:00:00+09:00</updated><id>http://localhost:4000/til/aboutMe</id><content type="html" xml:base="http://localhost:4000/til/aboutMe/">&lt;p&gt;&lt;a href=&quot;https://developer.apple.com/tutorials/sample-apps/aboutme&quot;&gt;Sample Apps Tutorials: About Me(Navigating Apps)&lt;/a&gt;&lt;br /&gt;
+아래 모든 정보의 출처는 위 apple developer 공식 페이지임을 밝힙니다. 오로지 저의 학습 기록 용도로만 사용되었습니다.&lt;/p&gt;
+
+&lt;h1 id=&quot;navigating-apps-about-me&quot;&gt;Navigating Apps: About Me&lt;/h1&gt;
+
+&lt;h2 id=&quot;section-1-tabbed-interface&quot;&gt;Section 1: Tabbed Interface&lt;/h2&gt;
+
+&lt;p&gt;탭 형태의 interface를 만드는 방법에 대해 알아봅니다.&lt;/p&gt;
+
+&lt;h3 id=&quot;contentview-view&quot;&gt;ContentView view&lt;/h3&gt;
+
+&lt;p&gt;ContentView view는 처음 앱이 열리면 보게 될 화면을 나타냅니다. User interface(UI)는 body부분에 생성됩니다.&lt;/p&gt;
+
+&lt;h3 id=&quot;tabview&quot;&gt;TabView&lt;/h3&gt;
+
+&lt;div class=&quot;language-swift highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;  &lt;span class=&quot;kd&quot;&gt;struct&lt;/span&gt; &lt;span class=&quot;kt&quot;&gt;ContentView&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;kt&quot;&gt;View&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
+    &lt;span class=&quot;k&quot;&gt;var&lt;/span&gt; &lt;span class=&quot;nv&quot;&gt;body&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;kd&quot;&gt;some&lt;/span&gt; &lt;span class=&quot;kt&quot;&gt;View&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
+      &lt;span class=&quot;kt&quot;&gt;TabView&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
+        &lt;span class=&quot;c1&quot;&gt;// place tab views here!&lt;/span&gt;
+        &lt;span class=&quot;kt&quot;&gt;HomeView&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;()&lt;/span&gt;
+            &lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;tabItem&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
+              &lt;span class=&quot;kt&quot;&gt;Label&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;Home&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;nv&quot;&gt;systemImage&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;&quot;person&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
+            &lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
+      &lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
+    &lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
+  &lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;p&gt;&lt;strong&gt;TabView&lt;/strong&gt;를 사용해서 tab UI를 생성할 수 있습니다. Tab view 안에 원하는 tab item 목록을 작성해줍니다.&lt;/p&gt;
+
+&lt;p&gt;tab을 만들기 위해서…&lt;/p&gt;
+&lt;ol&gt;
+  &lt;li&gt;tab을 눌렀을 때 보여지길 원하는 view의 instance를 생성합니다. 첫번째 tab이 앱을 열었을 때 가장 먼저 보이는 view가 됩니다.&lt;/li&gt;
+  &lt;li&gt;HomeView view 아래에 dot notation을 이용하여 .tabItem modifier를 추가해줍니다. tabItem이 없다면 tab은 텅 비어있는 상태로 나타납니다.&lt;/li&gt;
+  &lt;li&gt;Label view의 Title, Icon 패러미터를 이용하여 tab에 이름을 붙여주고 아이콘을 생성해줍니다. tabItem modifier는 오직 Label, Text, Image views만 허용합니다. Button과 같은 다른 view들은 비어있는 탭을 만듭니다.&lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;center&gt;&lt;img src=&quot;/assets/images/aboutMe1.png&quot; alt=&quot;tabs&quot; width=&quot;300&quot; /&gt;&lt;/center&gt;
+
+&lt;h2 id=&quot;section-2-your-data&quot;&gt;Section 2: Your Data&lt;/h2&gt;
+
+&lt;p&gt;app의 데이터를 수정하기&lt;/p&gt;
+
+&lt;h3 id=&quot;dataswift&quot;&gt;Data.swift&lt;/h3&gt;
+
+&lt;p&gt;샘플 프로젝트에 app의 모든 Data만 따로 담은 파일이 있습니다. SwiftUI에서는 앱의 데이터를 앱의 visual components와 따로 분리하는 것이 가장 좋은 방법입니다. SwiftUI에 대해서 배우는동안 ‘“source of truth”를 가진다’라는 개념을 자주 접하게 될 것입니다. 이것은 한 value를 오직 한 장소에서만 정의한다는 의미입니다. 데이터를 변경해보며 이것에 대해 더 알아볼 것입니다.&lt;/p&gt;
+
+&lt;h3 id=&quot;데이터의-설계도&quot;&gt;데이터의 설계도&lt;/h3&gt;
+
+&lt;div class=&quot;language-swift highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;  &lt;span class=&quot;kd&quot;&gt;import&lt;/span&gt; &lt;span class=&quot;kt&quot;&gt;Foundation&lt;/span&gt;
+  &lt;span class=&quot;kd&quot;&gt;import&lt;/span&gt; &lt;span class=&quot;kt&quot;&gt;SwiftUI&lt;/span&gt;
+
+  &lt;span class=&quot;kd&quot;&gt;struct&lt;/span&gt; &lt;span class=&quot;kt&quot;&gt;Info&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
+      &lt;span class=&quot;k&quot;&gt;let&lt;/span&gt; &lt;span class=&quot;nv&quot;&gt;image&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;kt&quot;&gt;String&lt;/span&gt;
+      &lt;span class=&quot;k&quot;&gt;let&lt;/span&gt; &lt;span class=&quot;nv&quot;&gt;name&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;kt&quot;&gt;String&lt;/span&gt;
+      &lt;span class=&quot;k&quot;&gt;let&lt;/span&gt; &lt;span class=&quot;nv&quot;&gt;story&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;string&lt;/span&gt;
+      &lt;span class=&quot;k&quot;&gt;let&lt;/span&gt; &lt;span class=&quot;nv&quot;&gt;hobbies&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;kt&quot;&gt;String&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;]&lt;/span&gt;
+      &lt;span class=&quot;k&quot;&gt;let&lt;/span&gt; &lt;span class=&quot;nv&quot;&gt;foods&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;kt&quot;&gt;String&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;]&lt;/span&gt;
+      &lt;span class=&quot;k&quot;&gt;let&lt;/span&gt; &lt;span class=&quot;nv&quot;&gt;colors&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;kt&quot;&gt;Color&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;]&lt;/span&gt;
+      &lt;span class=&quot;k&quot;&gt;let&lt;/span&gt; &lt;span class=&quot;nv&quot;&gt;funFacts&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;kt&quot;&gt;String&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;]&lt;/span&gt;
+  &lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
+
+  &lt;span class=&quot;k&quot;&gt;let&lt;/span&gt; &lt;span class=&quot;nv&quot;&gt;information&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;kt&quot;&gt;Info&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;
+
+    &lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;p&gt;&lt;strong&gt;struct Info { }&lt;/strong&gt;는 앱 데이터의 설계도(또는 청사진, blueprint)를 제공합니다. 이것은 앱이 가지고 있는 데이터의 type과 이름을 정의하는 속성들(properties)을 가지고 있습니다. 위에 코드에서 알 수 있듯이 이 앱의 데이터는 String type의 story property와 Color 값들의 배열인 colors property를 가지고 있습니다. 이&lt;/p&gt;
+
+&lt;h3 id=&quot;data-value와-전역변수&quot;&gt;Data value와 전역변수&lt;/h3&gt;
+
+&lt;div class=&quot;language-swift highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;  &lt;span class=&quot;kd&quot;&gt;import&lt;/span&gt; &lt;span class=&quot;kt&quot;&gt;Foundation&lt;/span&gt;
+  &lt;span class=&quot;kd&quot;&gt;import&lt;/span&gt; &lt;span class=&quot;kt&quot;&gt;SwiftUI&lt;/span&gt;
+
+  &lt;span class=&quot;kd&quot;&gt;struct&lt;/span&gt; &lt;span class=&quot;kt&quot;&gt;Info&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
+      &lt;span class=&quot;k&quot;&gt;let&lt;/span&gt; &lt;span class=&quot;nv&quot;&gt;image&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;kt&quot;&gt;String&lt;/span&gt;
+      &lt;span class=&quot;k&quot;&gt;let&lt;/span&gt; &lt;span class=&quot;nv&quot;&gt;name&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;kt&quot;&gt;String&lt;/span&gt;
+      &lt;span class=&quot;k&quot;&gt;let&lt;/span&gt; &lt;span class=&quot;nv&quot;&gt;story&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;string&lt;/span&gt;
+      &lt;span class=&quot;k&quot;&gt;let&lt;/span&gt; &lt;span class=&quot;nv&quot;&gt;hobbies&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;kt&quot;&gt;String&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;]&lt;/span&gt;
+      &lt;span class=&quot;k&quot;&gt;let&lt;/span&gt; &lt;span class=&quot;nv&quot;&gt;foods&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;kt&quot;&gt;String&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;]&lt;/span&gt;
+      &lt;span class=&quot;k&quot;&gt;let&lt;/span&gt; &lt;span class=&quot;nv&quot;&gt;colors&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;kt&quot;&gt;Color&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;]&lt;/span&gt;
+      &lt;span class=&quot;k&quot;&gt;let&lt;/span&gt; &lt;span class=&quot;nv&quot;&gt;funFacts&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;kt&quot;&gt;String&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;]&lt;/span&gt;
+  &lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
+
+  &lt;span class=&quot;k&quot;&gt;let&lt;/span&gt; &lt;span class=&quot;nv&quot;&gt;information&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;kt&quot;&gt;Info&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;
+      &lt;span class=&quot;nv&quot;&gt;image&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;&quot;Placeholder&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;
+      &lt;span class=&quot;nv&quot;&gt;name&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;&quot;Future&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;
+      &lt;span class=&quot;nv&quot;&gt;story&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;kt&quot;&gt;I&lt;/span&gt;&lt;span class=&quot;err&quot;&gt;&apos;&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;ll&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;be&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;an&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;awesome&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;developer&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;\&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;n&lt;/span&gt;&lt;span class=&quot;err&quot;&gt;•&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;🐶🐱🛶&lt;/span&gt;&lt;span class=&quot;err&quot;&gt;️&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;🎤🎧&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;\&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;n&lt;/span&gt;&lt;span class=&quot;err&quot;&gt;•&lt;/span&gt;
+      &lt;span class=&quot;n&quot;&gt;🏄&lt;/span&gt;&lt;span class=&quot;err&quot;&gt;‍♀️♀️&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;🥾🏂&lt;/span&gt;&lt;span class=&quot;err&quot;&gt;⛷&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;📚&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;&quot;,
+      hobbies: [&quot;&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;bicycle&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;, &quot;&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;ticket&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;fill&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;, &quot;&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;book&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;fill&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;],
+      foods: [&quot;&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;🥐&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;, &quot;&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;🌮&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;],
+      colors: [Color.blue, Color.purple, Color.pink],
+      funFacts: [
+          &quot;&lt;/span&gt;&lt;span class=&quot;kt&quot;&gt;The&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;femur&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;is&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;the&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;longest&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;and&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;largest&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;bone&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;in&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;the&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;human&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;body&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;,
+          &quot;&lt;/span&gt;&lt;span class=&quot;kt&quot;&gt;White&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;sand&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;beaches&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;are&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;made&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;of&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;parrotfish&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;poop&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;,
+      ]
+  )
+&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;p&gt;위의 information value는 데이터를 담기 위해 Info structure을 사용합니다. 이것은 전역 변수(global variable)로 프로젝트안 어떤 폴더에서든 변수의 이름을 사용하여 이용할 수 있습니다.&lt;/p&gt;
+
+&lt;h3 id=&quot;the-source-of-truth&quot;&gt;The source of truth&lt;/h3&gt;
+
+&lt;p&gt;위에서 information의 name에 값을 주었다. name의 값은 딱 한 번 만 생성되고 이것은 source of truth를 만든다. 언제든, 어떤 component, 어떤 view에서든 name을 사용하고 싶다면&lt;/p&gt;
+&lt;div class=&quot;language-swift highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;  &lt;span class=&quot;n&quot;&gt;information&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;name&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+&lt;p&gt;이라는 이름을 이용하여 조회할 수 있다.&lt;/p&gt;
+
+&lt;!-- ## Section 3: Home Tab --&gt;</content><author><name>Mirae</name></author><category term="TIL" /><category term="learning" /><category term="공부 기록" /><category term="Swift" /><category term="Sample Apps Tutorials" /><summary type="html">Sample Apps Tutorials: About Me(Navigating Apps) 아래 모든 정보의 출처는 위 apple developer 공식 페이지임을 밝힙니다. 오로지 저의 학습 기록 용도로만 사용되었습니다.</summary></entry><entry><title type="html">Playgrounds</title><link href="http://localhost:4000/til/playgrounds/" rel="alternate" type="text/html" title="Playgrounds" /><published>2022-03-29T00:00:00+09:00</published><updated>2022-03-29T00:00:00+09:00</updated><id>http://localhost:4000/til/playgrounds</id><content type="html" xml:base="http://localhost:4000/til/playgrounds/">&lt;h1 id=&quot;playgrounds-learn-to-code-1&quot;&gt;Playgrounds: Learn to Code 1&lt;/h1&gt;
 &lt;p&gt;아래 모든 내용들은 Playgrounds에서 학습하며 정리한 내용입니다.&lt;br /&gt;
   모든 내용의 출처는 Playgrounds임을 밝힙니다.&lt;/p&gt;
 
@@ -434,7 +542,7 @@
 &lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
 &lt;p&gt;(패러미터를 이용한 funtion의 이용을 공부하며 작성해본 예제입니다. 더 적은 라인의 코드로 문제를 해결할 수 있을 것 같은데 아직은 자꾸만 코드가 길어집니다.)&lt;/p&gt;
 
-&lt;h3 id=&quot;type과-instances&quot;&gt;type과 instances&lt;/h3&gt;
+&lt;h3 id=&quot;type과-instances&quot;&gt;Type과 Instances&lt;/h3&gt;
 
 &lt;p&gt;하나의 type을 이용해 여러개의 instance를 만들 수 있습니다. type은 설계도, 청사진에 자주 비유됩니다. 같은 설계도를 사용해서 만든 instance이므로 같은 메서드를 사용해 같은 속성들에 접근, 이용할 수 있습니다.&lt;/p&gt;
 
@@ -538,7 +646,36 @@
 
   &lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;icecream&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;strawberries&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;bananas&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;cherries&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;sprinkles&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;]&lt;/span&gt;
       &lt;span class=&quot;mi&quot;&gt;0&lt;/span&gt;            &lt;span class=&quot;mi&quot;&gt;1&lt;/span&gt;         &lt;span class=&quot;mi&quot;&gt;2&lt;/span&gt;         &lt;span class=&quot;mi&quot;&gt;3&lt;/span&gt;          &lt;span class=&quot;mi&quot;&gt;4&lt;/span&gt;
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;</content><author><name>Mirae</name></author><category term="TIL" /><category term="learning" /><category term="공부 기록" /><category term="Swift" /><summary type="html">Playgrounds: Learn to Code 1 아래 모든 내용들은 Playgrounds에서 학습하며 정리한 내용입니다. 모든 내용의 출처는 Playgrounds임을 밝힙니다.</summary></entry><entry><title type="html">JavaScript: 팝업창 가운데에 띄우기</title><link href="http://localhost:4000/til/popup-center/" rel="alternate" type="text/html" title="JavaScript: 팝업창 가운데에 띄우기" /><published>2022-03-24T00:00:00+09:00</published><updated>2022-03-24T00:00:00+09:00</updated><id>http://localhost:4000/til/popup-center</id><content type="html" xml:base="http://localhost:4000/til/popup-center/">&lt;p&gt;아무런 설정을 하지 않고 window.open() 메서드를 사용해서 팝업창을 띄웠더니 화면 맨 왼쪽 위에 팝업창이 나타납니다. 이 팝업창을 가운데로 옮겨보았습니다.&lt;/p&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+&lt;p&gt;item이 추가, 삭제됨에 따라 index 번호가 자동으로 바뀝니다.&lt;/p&gt;
+
+&lt;h3 id=&quot;iteration&quot;&gt;Iteration&lt;/h3&gt;
+
+&lt;p&gt;배열에 담긴 각 아이템마다 같은 동작을 반복할 수 있습니다. 이런 과정을 &lt;strong&gt;iteration&lt;/strong&gt; 이라고 합니다.&lt;/p&gt;
+
+&lt;div class=&quot;language-swift highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;  &lt;span class=&quot;k&quot;&gt;for&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;item&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;in&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;ingredients&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
+    &lt;span class=&quot;nf&quot;&gt;place&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;item&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;nv&quot;&gt;in&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;bowl&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
+  &lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;p&gt;위 코드는 각 item 마다 place(item, in: bowl) 이라는 코드를 반복하며 수행합니다.&lt;/p&gt;
+
+&lt;!-- ### 📖 틈새 영어 단어: iterate
+  &lt;div class=&quot;notice&quot;&gt;
+     &lt;h4&gt;if a computer iterates, it goes through a set of instructions before going through them for a second time.&lt;/h4&gt;
+     &lt;p&gt;컴퓨터가 iterate 한다는 것은 반복해서 여러개의 코드를 통과하는 것입니다.&lt;/p&gt;
+  &lt;/div&gt; --&gt;
+
+&lt;h3 id=&quot;code-comments&quot;&gt;Code comments&lt;/h3&gt;
+
+&lt;p&gt;&lt;strong&gt;//&lt;/strong&gt; 를 이용하면 주석(code comments)를 작성할 수 있습니다. 주석은 코드의 대한 정보를 제공합니다. 앱을 이 코드를 실행하지 않습니다.&lt;/p&gt;
+
+&lt;h3 id=&quot;item의-자료형&quot;&gt;Item의 자료형&lt;/h3&gt;
+
+&lt;p&gt;한 array안의 자료들은 모두 같은 자료형을 가지고 있어야 합니다.
+  만약 처음 integer 자료형의 배열을 만들었다면 String 아이템은 추가할 수 없습니다.&lt;/p&gt;
+
+&lt;h3 id=&quot;for-in-loop&quot;&gt;For-in loop&lt;/h3&gt;</content><author><name>Mirae</name></author><category term="TIL" /><category term="learning" /><category term="공부 기록" /><category term="Swift" /><summary type="html">Playgrounds: Learn to Code 1 아래 모든 내용들은 Playgrounds에서 학습하며 정리한 내용입니다. 모든 내용의 출처는 Playgrounds임을 밝힙니다.</summary></entry><entry><title type="html">JavaScript: 팝업창 가운데에 띄우기</title><link href="http://localhost:4000/til/popup-center/" rel="alternate" type="text/html" title="JavaScript: 팝업창 가운데에 띄우기" /><published>2022-03-24T00:00:00+09:00</published><updated>2022-03-24T00:00:00+09:00</updated><id>http://localhost:4000/til/popup-center</id><content type="html" xml:base="http://localhost:4000/til/popup-center/">&lt;p&gt;아무런 설정을 하지 않고 window.open() 메서드를 사용해서 팝업창을 띄웠더니 화면 맨 왼쪽 위에 팝업창이 나타납니다. 이 팝업창을 가운데로 옮겨보았습니다.&lt;/p&gt;
 
 &lt;p&gt;&lt;a href=&quot;https://www.geeksforgeeks.org/how-to-center-a-popup-window-on-screen/&quot;&gt;도움을 받은 글: How to center a popup window on screen?&lt;/a&gt;&lt;/p&gt;
 
@@ -580,98 +717,7 @@
 
 &lt;h2 id=&quot;3-가운데-정렬된-모습&quot;&gt;3. 가운데 정렬된 모습&lt;/h2&gt;
 
-&lt;p&gt;&lt;img src=&quot;/assets/images/main_octopi.png&quot; alt=&quot;main&quot; /&gt;&lt;/p&gt;</content><author><name>Mirae</name></author><category term="TIL" /><category term="learning" /><category term="공부 기록" /><category term="HTML" /><category term="CSS" /><category term="JavaScript" /><summary type="html">아무런 설정을 하지 않고 window.open() 메서드를 사용해서 팝업창을 띄웠더니 화면 맨 왼쪽 위에 팝업창이 나타납니다. 이 팝업창을 가운데로 옮겨보았습니다.</summary></entry><entry><title type="html">SwiftUI Essentials: Building Lists and Navigation</title><link href="http://localhost:4000/til/list-and-navi/" rel="alternate" type="text/html" title="SwiftUI Essentials: Building Lists and Navigation" /><published>2022-03-22T00:00:00+09:00</published><updated>2022-03-22T00:00:00+09:00</updated><id>http://localhost:4000/til/list-and-navi</id><content type="html" xml:base="http://localhost:4000/til/list-and-navi/">&lt;p&gt;튜토리얼의 출처는 &lt;a href=&quot;https://developer.apple.com/tutorials/swiftui/building-lists-and-navigation&quot;&gt;SwiftUI Essentials:
-Building Lists and Navigation&lt;/a&gt; 입니다.&lt;/p&gt;
-
-&lt;!-- &lt;center&gt;&lt;video src=&quot;https://user-images.githubusercontent.com/85061148/159120793-a9d5166b-fad5-41f0-899a-fcfe0bee25da.mov&quot; controls=&quot;controls&quot; style=&quot;max-width: 300px&quot;&gt;
-&lt;/video&gt;&lt;/center&gt; --&gt;
-
-&lt;h2 id=&quot;️-what-i-learned-from-this-tutorial&quot;&gt;&lt;strong&gt;☑️ What I Learned From This Tutorial:&lt;/strong&gt;&lt;/h2&gt;
-
-&lt;ul&gt;
-  &lt;li&gt;데이터를 이용하기&lt;/li&gt;
-  &lt;li&gt;Foundation framework의 사용&lt;/li&gt;
-  &lt;li&gt;Codable / Hashable conformance&lt;/li&gt;
-  &lt;li&gt;Guard
-&lt;!-- - Binding ($) --&gt;&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;!-- &lt;br&gt;
-
-&lt;center&gt;&lt;img src=&quot;/assets/images/directoryTree.png&quot; alt=&quot;tree&quot; width= &quot;300&quot;&gt;
-&lt;/center&gt;
-&lt;br&gt; --&gt;
-
-&lt;h2 id=&quot;section-1-landmark-model-생성하기&quot;&gt;Section 1: Landmark model 생성하기&lt;/h2&gt;
-
-&lt;h2 id=&quot;샘플-데이터-파일-추가하기&quot;&gt;샘플 데이터 파일 추가하기&lt;/h2&gt;
-
-&lt;p&gt;다운받은 프로젝트 파일에 압축을 풀면 Resources 폴더에 landmarkData.json 파일이 있습니다. 튜토리얼 Creating and Combining Views에서 만들었던 프로젝트를 그대로 사용합니다. 왼쪽에 위치한 프로젝트의 navigation pane 부분에 landmarkData.json 파일을 드래그해서 넣어줍니다. 다이얼로그 창이 나타나면 ‘Copy items if needed’을 선택하고 Add to targets: 에 Landmarks를 선택하고 Finish 버튼을 눌러줍니다. 앞으로의 튜토리얼을 진행하며 게속해서 이 샘플 데이터를 사용할 것입니다.&lt;/p&gt;
-
-&lt;center&gt;&lt;img src=&quot;/assets/images/navi1.png&quot; alt=&quot;json&quot; /&gt;
-  &lt;/center&gt;
-&lt;center&gt;&lt;sup&gt;(샘플 데이터인 landmarkData.json 파일을 추가해 준 모습)&lt;/sup&gt;&lt;/center&gt;
-&lt;p&gt;&lt;br /&gt;&lt;/p&gt;
-
-&lt;h2 id=&quot;새로-만든-landmarkswift-파일에-structure-생성&quot;&gt;새로 만든 Landmark.swift 파일에 structure 생성&lt;/h2&gt;
-
-&lt;div class=&quot;language-swift highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;  &lt;span class=&quot;c1&quot;&gt;//  Landmark.swift&lt;/span&gt;
-
-  &lt;span class=&quot;kd&quot;&gt;import&lt;/span&gt; &lt;span class=&quot;kt&quot;&gt;Foundation&lt;/span&gt;
-
-  &lt;span class=&quot;kd&quot;&gt;struct&lt;/span&gt; &lt;span class=&quot;kt&quot;&gt;Landmark&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;kt&quot;&gt;Hashable&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;kt&quot;&gt;Codable&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
-      &lt;span class=&quot;k&quot;&gt;var&lt;/span&gt; &lt;span class=&quot;nv&quot;&gt;id&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;kt&quot;&gt;Int&lt;/span&gt;
-      &lt;span class=&quot;k&quot;&gt;var&lt;/span&gt; &lt;span class=&quot;nv&quot;&gt;name&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;kt&quot;&gt;String&lt;/span&gt;
-      &lt;span class=&quot;k&quot;&gt;var&lt;/span&gt; &lt;span class=&quot;nv&quot;&gt;park&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;kt&quot;&gt;String&lt;/span&gt;
-      &lt;span class=&quot;k&quot;&gt;var&lt;/span&gt; &lt;span class=&quot;nv&quot;&gt;state&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;kt&quot;&gt;String&lt;/span&gt;
-      &lt;span class=&quot;k&quot;&gt;var&lt;/span&gt; &lt;span class=&quot;nv&quot;&gt;description&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;kt&quot;&gt;String&lt;/span&gt;
-  &lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
-&lt;p&gt;Landmark.swift라는 이름의 스위프트 파일을 만들어 줍니다. Landmark structure를 정의하고 landmarkData.json 파일에 있는 키와 이름이 같은 property 몇개를 만들어줍니다.&lt;/p&gt;
-
-&lt;h3 id=&quot;-작성하는-중&quot;&gt;👷 작성하는 중..&lt;/h3&gt;
-
-&lt;h2 id=&quot;foundation-framework&quot;&gt;Foundation framework&lt;/h2&gt;
-
-&lt;p&gt;Foundation framework는 가장 기본적인 data types과 collections 그리고 운영체제 서비스에 접근하도록 합니다. 데이터를 저장 또는 유지하기, 텍스트의 처리, 날짜와 시간의 계산, 정렬 및 필터링, 그리고 네트워킹과 같은 가장 기본적인 기능을 하는 layer를 정의합니다. Foundation으로부터 정의된 클래스, 프로토콜, 데이터 자료형들은 macOS, iOS, watchOS, tvOS SDKs의 모든 범위에서 사용됩니다.&lt;/p&gt;
-
-&lt;p&gt;&lt;!-- Framework들은 큰 가지처럼 느껴집니다. Classes, protocols, data types를 크게 구분해 놓은 바구니 처럼 느껴집니다.  --&gt;&lt;/p&gt;
-
-&lt;h3 id=&quot;codable-conformance&quot;&gt;Codable conformance&lt;/h3&gt;
-
-&lt;p&gt;Codable은 데이터 파일과 structure사이에서 데이터를 이동시키는 것을 더 쉽게 만들어줍니다.&lt;/p&gt;
-
-&lt;h3 id=&quot;json-data를-가져오는-메서드-생성하기&quot;&gt;JSON data를 가져오는 메서드 생성하기&lt;/h3&gt;
-
-&lt;div class=&quot;language-swift highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;  &lt;span class=&quot;c1&quot;&gt;//  ModelData.swift&lt;/span&gt;
-
-  &lt;span class=&quot;kd&quot;&gt;import&lt;/span&gt; &lt;span class=&quot;kt&quot;&gt;Foundation&lt;/span&gt;
-
-  &lt;span class=&quot;kd&quot;&gt;func&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;load&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;&amp;lt;&lt;/span&gt;&lt;span class=&quot;kt&quot;&gt;T&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;kt&quot;&gt;Decodable&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;&amp;gt;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;_&lt;/span&gt; &lt;span class=&quot;nv&quot;&gt;filename&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;kt&quot;&gt;String&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;-&amp;gt;&lt;/span&gt; &lt;span class=&quot;kt&quot;&gt;T&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
-      &lt;span class=&quot;k&quot;&gt;let&lt;/span&gt; &lt;span class=&quot;nv&quot;&gt;data&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;kt&quot;&gt;Data&lt;/span&gt; &lt;span class=&quot;c1&quot;&gt;// Data protocal? Data..structure type? 뭔데?&lt;/span&gt;
-
-      &lt;span class=&quot;k&quot;&gt;guard&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;let&lt;/span&gt; &lt;span class=&quot;nv&quot;&gt;file&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;kt&quot;&gt;Bundle&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;main&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nf&quot;&gt;url&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nv&quot;&gt;forResource&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;filename&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;nv&quot;&gt;withExtension&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;kc&quot;&gt;nil&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
-      &lt;span class=&quot;k&quot;&gt;else&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
-          &lt;span class=&quot;nf&quot;&gt;fatalError&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;Couldn&apos;t find &lt;/span&gt;&lt;span class=&quot;se&quot;&gt;\(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;filename&lt;/span&gt;&lt;span class=&quot;se&quot;&gt;)&lt;/span&gt;&lt;span class=&quot;s&quot;&gt; in main bundle.&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
-      &lt;span class=&quot;p&quot;&gt;}&lt;/span&gt; &lt;span class=&quot;c1&quot;&gt;// else문&lt;/span&gt;
-
-      &lt;span class=&quot;k&quot;&gt;do&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
-          &lt;span class=&quot;n&quot;&gt;data&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;try&lt;/span&gt; &lt;span class=&quot;kt&quot;&gt;Data&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nv&quot;&gt;contentsOf&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;file&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
-      &lt;span class=&quot;p&quot;&gt;}&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;catch&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
-          &lt;span class=&quot;nf&quot;&gt;fatalError&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;Couldn&apos;t load &lt;/span&gt;&lt;span class=&quot;se&quot;&gt;\(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;filename&lt;/span&gt;&lt;span class=&quot;se&quot;&gt;)&lt;/span&gt;&lt;span class=&quot;s&quot;&gt; from main bundle.&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;c1&quot;&gt;// main bundle이 뭐야?&lt;/span&gt;
-      &lt;span class=&quot;p&quot;&gt;}&lt;/span&gt; &lt;span class=&quot;c1&quot;&gt;// catch문&lt;/span&gt;
-
-      &lt;span class=&quot;k&quot;&gt;do&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
-          &lt;span class=&quot;k&quot;&gt;let&lt;/span&gt; &lt;span class=&quot;nv&quot;&gt;decoder&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;kt&quot;&gt;JSONDecoder&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;()&lt;/span&gt;
-          &lt;span class=&quot;k&quot;&gt;return&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;try&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;decoder&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nf&quot;&gt;decode&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;kt&quot;&gt;T&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;k&quot;&gt;self&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;nv&quot;&gt;from&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;data&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
-      &lt;span class=&quot;p&quot;&gt;}&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;catch&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
-          &lt;span class=&quot;nf&quot;&gt;fatalError&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;Couldn&apos;t parse &lt;/span&gt;&lt;span class=&quot;se&quot;&gt;\(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;filename&lt;/span&gt;&lt;span class=&quot;se&quot;&gt;)&lt;/span&gt;&lt;span class=&quot;s&quot;&gt; as &lt;/span&gt;&lt;span class=&quot;se&quot;&gt;\(&lt;/span&gt;&lt;span class=&quot;kt&quot;&gt;T&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;k&quot;&gt;self&lt;/span&gt;&lt;span class=&quot;se&quot;&gt;)&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;:&lt;/span&gt;&lt;span class=&quot;se&quot;&gt;\n\(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;error&lt;/span&gt;&lt;span class=&quot;se&quot;&gt;)&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
-      &lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
-  &lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
-&lt;h3 id=&quot;bundle&quot;&gt;Bundle&lt;/h3&gt;
-
-&lt;p&gt;Bundles는 macOS와 iOS에서 사용되는 코드와 resource를 캡슐화하기 위해 사용되는 기술입니다. 개발자가 필요로하는 resource의 위치를 제공함으로써 개발을 단순화 해줍니다. Bundles는 디렉토리와 파일을 사용합니다. Binary files 보다 더 쉽고 개발 과정이나 배포후에도 쉽게 수정할 수 있습니다.&lt;/p&gt;</content><author><name>Mirae</name></author><category term="TIL" /><category term="learning" /><category term="공부 기록" /><category term="Swift" /><summary type="html">튜토리얼의 출처는 SwiftUI Essentials: Building Lists and Navigation 입니다.</summary></entry><entry><title type="html">웹 페이지를 만들며 HTML과 CSS에 대해 알아보기</title><link href="http://localhost:4000/til/myOctopi/" rel="alternate" type="text/html" title="웹 페이지를 만들며 HTML과 CSS에 대해 알아보기" /><published>2022-03-16T00:00:00+09:00</published><updated>2022-03-16T00:00:00+09:00</updated><id>http://localhost:4000/til/myOctopi</id><content type="html" xml:base="http://localhost:4000/til/myOctopi/">&lt;p&gt;&lt;sup&gt;&lt;a href=&quot;https://www.youtube.com/watch?v=-2LtZRi6Q0s&quot;&gt;튜토리얼 출처: Easy Tutorials: How To Make A Website Using HTML And CSS&lt;/a&gt;&lt;/sup&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;/assets/images/main_octopi.png&quot; alt=&quot;main&quot; /&gt;&lt;/p&gt;</content><author><name>Mirae</name></author><category term="TIL" /><category term="learning" /><category term="공부 기록" /><category term="HTML" /><category term="CSS" /><category term="JavaScript" /><summary type="html">아무런 설정을 하지 않고 window.open() 메서드를 사용해서 팝업창을 띄웠더니 화면 맨 왼쪽 위에 팝업창이 나타납니다. 이 팝업창을 가운데로 옮겨보았습니다.</summary></entry><entry><title type="html">웹 페이지를 만들며 HTML과 CSS에 대해 알아보기</title><link href="http://localhost:4000/til/myOctopi/" rel="alternate" type="text/html" title="웹 페이지를 만들며 HTML과 CSS에 대해 알아보기" /><published>2022-03-16T00:00:00+09:00</published><updated>2022-03-16T00:00:00+09:00</updated><id>http://localhost:4000/til/myOctopi</id><content type="html" xml:base="http://localhost:4000/til/myOctopi/">&lt;p&gt;&lt;sup&gt;&lt;a href=&quot;https://www.youtube.com/watch?v=-2LtZRi6Q0s&quot;&gt;튜토리얼 출처: Easy Tutorials: How To Make A Website Using HTML And CSS&lt;/a&gt;&lt;/sup&gt;&lt;/p&gt;
 
 &lt;p&gt;&lt;img src=&quot;/assets/images/octo.png&quot; alt=&quot;octopus&quot; /&gt;&lt;/p&gt;
 

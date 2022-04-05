@@ -434,7 +434,7 @@ toc_icon: "kiwi-bird"
    ```
   (패러미터를 이용한 funtion의 이용을 공부하며 작성해본 예제입니다. 더 적은 라인의 코드로 문제를 해결할 수 있을 것 같은데 아직은 자꾸만 코드가 길어집니다.)
 
-### type과 instances  
+### Type과 Instances  
 
   하나의 type을 이용해 여러개의 instance를 만들 수 있습니다. type은 설계도, 청사진에 자주 비유됩니다. 같은 설계도를 사용해서 만든 instance이므로 같은 메서드를 사용해 같은 속성들에 접근, 이용할 수 있습니다.
 
@@ -545,4 +545,29 @@ toc_icon: "kiwi-bird"
 
 ### Iteration  
 
-  
+  배열에 담긴 각 아이템마다 같은 동작을 반복할 수 있습니다. 이런 과정을 **iteration** 이라고 합니다.
+
+  ```swift
+  for item in ingredients {
+    place(item, in: bowl)
+  }
+  ```
+
+  위 코드는 각 item 마다 place(item, in: bowl) 이라는 코드를 반복하며 수행합니다.
+
+<!-- ### 📖 틈새 영어 단어: iterate
+  <div class="notice">
+     <h4>if a computer iterates, it goes through a set of instructions before going through them for a second time.</h4>
+     <p>컴퓨터가 iterate 한다는 것은 반복해서 여러개의 코드를 통과하는 것입니다.</p>
+  </div> -->
+
+### Code comments  
+
+  **//** 를 이용하면 주석(code comments)를 작성할 수 있습니다. 주석은 코드의 대한 정보를 제공합니다. 앱을 이 코드를 실행하지 않습니다.
+
+### Item의 자료형  
+
+  한 array안의 자료들은 모두 같은 자료형을 가지고 있어야 합니다.
+  만약 처음 integer 자료형의 배열을 만들었다면 String 아이템은 추가할 수 없습니다.
+
+### For-in loop

@@ -1,0 +1,40 @@
+I"�
+<p><a href="https://developer.apple.com/tutorials/sample-apps/aboutme">Sample Apps Tutorials: About Me(Navigating Apps)</a><br />
+아래 모든 정보의 출처는 위 apple developer 공식 페이지임을 밝힙니다. 오로지 저의 학습 기록 용도로만 사용되었습니다.</p>
+
+<h1 id="navigating-apps-about-me">Navigating Apps: About Me</h1>
+
+<h2 id="section-1-tabbed-interface">Section 1: Tabbed Interface</h2>
+
+<p>탭 형태의 interface를 만드는 방법에 대해 알아봅니다.</p>
+
+<h3 id="contentview-view">ContentView view</h3>
+
+<p>ContentView view는 처음 앱이 열리면 보게 될 화면을 나타냅니다. User interface(UI)는 body부분에 생성됩니다.</p>
+
+<h3 id="tabview">TabView</h3>
+
+<div class="language-swift highlighter-rouge"><div class="highlight"><pre class="highlight"><code>  <span class="kd">struct</span> <span class="kt">ContentView</span><span class="p">:</span> <span class="kt">View</span> <span class="p">{</span>
+    <span class="k">var</span> <span class="nv">body</span><span class="p">:</span> <span class="kd">some</span> <span class="kt">View</span> <span class="p">{</span>
+      <span class="kt">TabView</span> <span class="p">{</span>
+        <span class="c1">// place tab views here!</span>
+        <span class="kt">HomeView</span><span class="p">()</span>
+            <span class="o">.</span><span class="n">tabItem</span> <span class="p">{</span>
+              <span class="kt">Label</span><span class="p">(</span><span class="s">"Home"</span><span class="p">,</span> <span class="nv">systemImage</span><span class="p">:</span> <span class="s">"person"</span><span class="p">)</span>
+            <span class="p">}</span>
+      <span class="p">}</span>
+    <span class="p">}</span>
+  <span class="p">}</span>
+</code></pre></div></div>
+
+<p><strong>TabView</strong>를 사용해서 tab UI를 생성할 수 있습니다. Tab view 안에 원하는 tab item 목록을 작성해줍니다.</p>
+
+<p>tab을 만들기 위해서…</p>
+<ol>
+  <li>tab을 눌렀을 때 보여지길 원하는 view의 instance를 생성합니다. 첫번째 tab이 앱을 열었을 때 가장 먼저 보이는 view가 됩니다.</li>
+  <li>HomeView view 아래에 dot notation을 이용하여 .tabItem modifier를 추가해줍니다. tabItem이 없다면 tab은 텅 비어있는 상태로 나타납니다.</li>
+  <li>Label view의 Title, Icon 패러미터를 이용하여 tab에 이름을 붙여주고 아이콘을 생성해줍니다. tabItem modifier는 오직 Label, Text, Image views만 허용합니다. Button과 같은 다른 view들은 비어있는 탭을 만듭니다.</li>
+</ol>
+
+<center><img src="/assets/images/aboutMe1.png" alt="tabs" width="300" /></center>
+:ET
