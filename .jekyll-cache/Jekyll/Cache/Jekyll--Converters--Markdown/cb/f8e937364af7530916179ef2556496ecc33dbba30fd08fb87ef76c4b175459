@@ -1,4 +1,4 @@
-I"�<h1 id="playgrounds-learn-to-code-1">Playgrounds: Learn to Code 1</h1>
+I"��<h1 id="playgrounds-learn-to-code-1">Playgrounds: Learn to Code 1</h1>
 <p>아래 모든 내용들은 Playgrounds에서 학습하며 정리한 내용입니다.<br />
   모든 내용의 출처는 Playgrounds임을 밝힙니다.</p>
 
@@ -568,4 +568,61 @@
   만약 처음 integer 자료형의 배열을 만들었다면 String 아이템은 추가할 수 없습니다.</p>
 
 <h3 id="for-in-loop">For-in loop</h3>
+
+<div class="language-swift highlighter-rouge"><div class="highlight"><pre class="highlight"><code>  <span class="k">let</span> <span class="nv">columns</span> <span class="o">=</span> <span class="p">[</span><span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">4</span><span class="p">]</span>
+
+  <span class="k">for</span> <span class="n">i</span> <span class="k">in</span> <span class="n">columns</span> <span class="p">{</span>
+    <span class="n">world</span><span class="o">.</span><span class="nf">place</span><span class="p">(</span><span class="kt">Gem</span><span class="p">(</span><span class="mi">0</span><span class="p">),</span> <span class="nv">atCol</span><span class="p">:</span> <span class="n">i</span><span class="p">,</span> <span class="nv">row</span><span class="p">:</span> <span class="mi">1</span><span class="p">)</span>
+  <span class="p">}</span>
+</code></pre></div></div>
+<p>For-in 반복문은 배열의 각 value마다 { } 안의 코드를 반복해서 실행합니다. 위 코드에서 i는 columns 배열의 각 값을 담는 변수입니다. 배열 columns의 값인 0, 1, 2, 3, 4가 i에 할당되고 각 값은 { } 안에 작성된 코드인 place 메서드의 atCol 패러미터의 인자로 통과됩니다. for-in 반복문이 돌때마다 (Gem(), 0, 1), (Gem(), 1, 1), (Gem(), 2, 1) … 식으로 코드가 실행됩니다. 더이상 할당될 값이 없으면 루프는 끝이납니다.</p>
+
+<h3 id="an-array-of-type-coordinate">An array of type Coordinate</h3>
+
+<p>Coordinate의 인스턴스는 column과 row arguments를 이용하여 장소를 나타냅니다.</p>
+
+<div class="language-swift highlighter-rouge"><div class="highlight"><pre class="highlight"><code>  <span class="c1">// Coordinate 인스턴스의 예.</span>
+  <span class="k">let</span> <span class="nv">corner</span> <span class="o">=</span> <span class="kt">Coordinate</span><span class="p">(</span><span class="nv">column</span><span class="p">:</span> <span class="mi">3</span><span class="p">,</span> <span class="nv">row</span><span class="p">:</span> <span class="mi">3</span><span class="p">)</span>
+
+  <span class="c1">// blockLocations라는 Coordinate type의 배열 만들기</span>
+  <span class="k">var</span> <span class="nv">blockLocations</span> <span class="o">=</span> <span class="p">[</span>
+      <span class="kt">Coordinate</span><span class="p">(</span><span class="nv">column</span><span class="p">:</span> <span class="mi">0</span><span class="p">,</span> <span class="nv">row</span><span class="p">:</span> <span class="mi">0</span><span class="p">),</span>
+      <span class="kt">Coordinate</span><span class="p">(</span><span class="nv">column</span><span class="p">:</span> <span class="mi">3</span><span class="p">,</span> <span class="nv">row</span><span class="p">:</span> <span class="mi">3</span><span class="p">),</span>
+      <span class="kt">Coordinate</span><span class="p">(</span><span class="nv">column</span><span class="p">:</span> <span class="mi">0</span><span class="p">,</span> <span class="nv">row</span><span class="p">:</span> <span class="mi">3</span><span class="p">),</span>
+      <span class="kt">Coordinate</span><span class="p">(</span><span class="nv">column</span><span class="p">:</span> <span class="mi">3</span><span class="p">,</span> <span class="nv">row</span><span class="p">:</span> <span class="mi">0</span><span class="p">)</span>
+  <span class="p">]</span>
+</code></pre></div></div>
+
+<h3 id="array-method">Array method</h3>
+
+<div class="language-swift highlighter-rouge"><div class="highlight"><pre class="highlight"><code>  <span class="n">characters</span> <span class="o">=</span> <span class="p">[</span>
+      <span class="kt">Character</span><span class="p">(</span><span class="nv">name</span><span class="p">:</span> <span class="o">.</span><span class="n">blu</span><span class="p">),</span>
+      <span class="kt">Portal</span><span class="p">(</span><span class="nv">color</span><span class="p">:</span> <span class="n">pink</span><span class="p">),</span>
+      <span class="kt">Character</span><span class="p">(</span><span class="nv">name</span><span class="p">:</span> <span class="o">.</span><span class="n">hopper</span><span class="p">),</span>
+      <span class="kt">Gem</span><span class="p">()</span>
+      <span class="p">]</span>
+
+  <span class="c1">// Remove the portal.</span>
+  <span class="n">characters</span><span class="o">.</span><span class="nf">remove</span><span class="p">(</span><span class="nv">at</span><span class="p">:</span> <span class="mi">1</span><span class="p">)</span>
+
+  <span class="c1">// Remove the gem.</span>
+  <span class="n">characters</span><span class="o">.</span><span class="nf">remove</span><span class="p">(</span><span class="nv">at</span><span class="p">:</span> <span class="mi">2</span><span class="p">)</span>
+
+  <span class="c1">// Insert the expert.</span>
+  <span class="n">characters</span><span class="o">.</span><span class="nf">insert</span><span class="p">(</span><span class="kt">Expert</span><span class="p">(),</span> <span class="nv">at</span><span class="p">:</span> <span class="mi">1</span><span class="p">)</span>
+</code></pre></div></div>
+
+<p>.remove() / .insert() / .append()<br />
+  .removeFirst() / .removeLast / .removeAll</p>
+
+<p>등이 있습니다.</p>
+
+<h3 id="creating-an-empty-array">Creating an empty array</h3>
+
+<p>값이 주어지지 않은 빈 배열을 만들 때에는 type을 정해주어야 합니다.</p>
+
+<div class="language-swift highlighter-rouge"><div class="highlight"><pre class="highlight"><code>  <span class="k">var</span> <span class="nv">newLocations</span><span class="p">:</span> <span class="p">[</span><span class="kt">Coordinate</span><span class="p">]</span> <span class="o">=</span> <span class="p">[]</span>
+  <span class="c1">// 배열의 이름: [배열의 type] = []</span>
+</code></pre></div></div>
+
 :ET

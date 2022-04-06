@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="4.2.1">Jekyll</generator><link href="http://localhost:4000/feed.xml" rel="self" type="application/atom+xml" /><link href="http://localhost:4000/" rel="alternate" type="text/html" /><updated>2022-04-06T03:28:18+09:00</updated><id>http://localhost:4000/feed.xml</id><title type="html">Mirae the Future</title><subtitle>An amazing website.</subtitle><author><name>Mirae</name></author><entry><title type="html">Navigating Apps: About Me</title><link href="http://localhost:4000/til/aboutMe/" rel="alternate" type="text/html" title="Navigating Apps: About Me" /><published>2022-04-06T00:00:00+09:00</published><updated>2022-04-06T00:00:00+09:00</updated><id>http://localhost:4000/til/aboutMe</id><content type="html" xml:base="http://localhost:4000/til/aboutMe/">&lt;p&gt;&lt;a href=&quot;https://developer.apple.com/tutorials/sample-apps/aboutme&quot;&gt;Sample Apps Tutorials: About Me(Navigating Apps)&lt;/a&gt;&lt;br /&gt;
+<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="4.2.1">Jekyll</generator><link href="http://localhost:4000/feed.xml" rel="self" type="application/atom+xml" /><link href="http://localhost:4000/" rel="alternate" type="text/html" /><updated>2022-04-06T23:50:51+09:00</updated><id>http://localhost:4000/feed.xml</id><title type="html">Mirae the Future</title><subtitle>An amazing website.</subtitle><author><name>Mirae</name></author><entry><title type="html">Navigating Apps: About Me</title><link href="http://localhost:4000/til/aboutMe/" rel="alternate" type="text/html" title="Navigating Apps: About Me" /><published>2022-04-06T00:00:00+09:00</published><updated>2022-04-06T00:00:00+09:00</updated><id>http://localhost:4000/til/aboutMe</id><content type="html" xml:base="http://localhost:4000/til/aboutMe/">&lt;p&gt;&lt;a href=&quot;https://developer.apple.com/tutorials/sample-apps/aboutme&quot;&gt;Sample Apps Tutorials: About Me(Navigating Apps)&lt;/a&gt;&lt;br /&gt;
 아래 모든 정보의 출처는 위 apple developer 공식 페이지임을 밝힙니다. 오로지 저의 학습 기록 용도로만 사용되었습니다.&lt;/p&gt;
 
 &lt;h1 id=&quot;navigating-apps-about-me&quot;&gt;Navigating Apps: About Me&lt;/h1&gt;
@@ -106,7 +106,105 @@
 &lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
 &lt;p&gt;이라는 이름을 이용하여 조회할 수 있다.&lt;/p&gt;
 
-&lt;!-- ## Section 3: Home Tab --&gt;</content><author><name>Mirae</name></author><category term="TIL" /><category term="learning" /><category term="공부 기록" /><category term="Swift" /><category term="Sample Apps Tutorials" /><summary type="html">Sample Apps Tutorials: About Me(Navigating Apps) 아래 모든 정보의 출처는 위 apple developer 공식 페이지임을 밝힙니다. 오로지 저의 학습 기록 용도로만 사용되었습니다.</summary></entry><entry><title type="html">Playgrounds</title><link href="http://localhost:4000/til/playgrounds/" rel="alternate" type="text/html" title="Playgrounds" /><published>2022-03-29T00:00:00+09:00</published><updated>2022-03-29T00:00:00+09:00</updated><id>http://localhost:4000/til/playgrounds</id><content type="html" xml:base="http://localhost:4000/til/playgrounds/">&lt;h1 id=&quot;playgrounds-learn-to-code-1&quot;&gt;Playgrounds: Learn to Code 1&lt;/h1&gt;
+&lt;h2 id=&quot;section-3-home-tab&quot;&gt;Section 3: Home Tab&lt;/h2&gt;
+
+&lt;p&gt;기본적인 SwiftUI 코드에 대해 알아봅니다.&lt;/p&gt;
+
+&lt;h3 id=&quot;homeviewswift&quot;&gt;HomeView.swift&lt;/h3&gt;
+
+&lt;p&gt;이 프로젝트에서 HomeView는 첫번째 탭에 해당됩니다. 첫번째 탭은 앱을 처음 열었을 때 보게 되는 화면입니다. HomeView view의 body부분에는 화면에 그려지는 컨텐츠들이 작성됩니다.&lt;/p&gt;
+
+&lt;div class=&quot;language-swift highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;  &lt;span class=&quot;k&quot;&gt;var&lt;/span&gt; &lt;span class=&quot;nv&quot;&gt;body&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;kd&quot;&gt;some&lt;/span&gt; &lt;span class=&quot;kt&quot;&gt;View&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
+        &lt;span class=&quot;kt&quot;&gt;VStack&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
+            &lt;span class=&quot;kt&quot;&gt;Text&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;All About&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
+                &lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nf&quot;&gt;font&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;largeTitle&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
+                &lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nf&quot;&gt;fontWeight&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;bold&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
+                &lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nf&quot;&gt;padding&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;()&lt;/span&gt;
+
+            &lt;span class=&quot;kt&quot;&gt;Image&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;information&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;image&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
+                &lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nf&quot;&gt;resizable&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;()&lt;/span&gt;
+                &lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nf&quot;&gt;aspectRatio&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nv&quot;&gt;contentMode&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;fit&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
+                &lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nf&quot;&gt;cornerRadius&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;10&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
+                &lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nf&quot;&gt;padding&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;40&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
+
+            &lt;span class=&quot;kt&quot;&gt;Text&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;information&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;name&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
+                &lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nf&quot;&gt;font&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;title&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
+        &lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
+    &lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;h3 id=&quot;views와-modifiers&quot;&gt;Views와 Modifiers&lt;/h3&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;&lt;strong&gt;VStack&lt;/strong&gt;: VStack은 컨텐츠를 화면의 위에서 아래로, 수직 방향으로 배치합니다.&lt;/li&gt;
+  &lt;li&gt;&lt;strong&gt;Text(“string”)&lt;/strong&gt;: quotation marks 안에 있는 문자열을 화면에 보여줍니다. Text의 스타일을 바꾸기 위해 modifiers를 사용했습니다. (.font()/.fontWeight())&lt;/li&gt;
+  &lt;li&gt;&lt;strong&gt;.padding()&lt;/strong&gt;: 서로 다른 view들 사이에 각 view를 둘러싼 공간을 추가합니다. 괄호안에 값을 적지 않으면 SwiftUI의 기본 패딩이 적용됩니다. 값을 넣어 커스텀할 수 있습니다.&lt;/li&gt;
+  &lt;li&gt;&lt;strong&gt;Image()&lt;/strong&gt;: 여기서 Image view는 Data file에서 바꿔주었더너 이미지를 보여줍니다. information.image 라는 이름을 사용하나 것이 보입니다.&lt;/li&gt;
+  &lt;li&gt;&lt;strong&gt;.resizable&lt;/strong&gt;: resizable modifier는 화면에 사용 가능한 공간에 이미지를 적용시킵니다. 만약 resizable modifier를 사용하지 않으면 이미지의 full size로 나타나게 됩니다.&lt;/li&gt;
+  &lt;li&gt;&lt;strong&gt;.aspectRatio&lt;/strong&gt;: image가 원래의 비율로 유지되도록 합니다. .fit으르 사용하면 SwiftUI가 사용가능한 공간에 맞는 사이즈로 이미지 사이즈를 변경합니다. (.fill은 화면을 채우는 방식)&lt;/li&gt;
+  &lt;li&gt;&lt;strong&gt;.cornerRadius&lt;/strong&gt;: 어떠 view든 모서리를 둥그렇게 만들 수 있습니다.&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h2 id=&quot;section-4-story-tab&quot;&gt;Section 4: Story Tab&lt;/h2&gt;
+
+&lt;p&gt;스크롤 뷰를 이용하는 방법에 대해 알아봅니다.&lt;/p&gt;
+
+&lt;h3 id=&quot;scrollview&quot;&gt;ScrollView&lt;/h3&gt;
+
+&lt;p&gt;Text의 문자열이 너무 길어져서 한 화면에 담지 못하게 되면 ScrollView를 사용하여 스크롤 할 수 있습니다.&lt;/p&gt;
+&lt;div class=&quot;language-swift highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;  &lt;span class=&quot;kt&quot;&gt;ScrollView&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
+     &lt;span class=&quot;kt&quot;&gt;Text&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;information&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;story&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
+         &lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nf&quot;&gt;font&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;body&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
+         &lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nf&quot;&gt;padding&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;()&lt;/span&gt;
+       &lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+&lt;p&gt;information.story는 Data file에서 입력했던 story를 담고 있습니다.&lt;/p&gt;
+
+&lt;h2 id=&quot;section-5-favorite-tab&quot;&gt;Section 5: Favorite Tab&lt;/h2&gt;
+
+&lt;p&gt;여러개의 다른 stacks와 loops를 사용해서 UI 만들기&lt;/p&gt;
+
+&lt;h3 id=&quot;foreach_&quot;&gt;ForEach(_:)&lt;/h3&gt;
+&lt;!-- 이 부분 다시 보기 --&gt;
+&lt;div class=&quot;language-swift highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;  &lt;span class=&quot;kt&quot;&gt;HStack&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
+      &lt;span class=&quot;kt&quot;&gt;ForEach&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;information&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;hobbies&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;nv&quot;&gt;id&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;\&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;k&quot;&gt;self&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;hobby&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;in&lt;/span&gt;
+          &lt;span class=&quot;kt&quot;&gt;Image&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nv&quot;&gt;systemName&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;hobby&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
+              &lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nf&quot;&gt;resizable&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;()&lt;/span&gt;
+              &lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nf&quot;&gt;frame&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nv&quot;&gt;maxWidth&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;80&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;nv&quot;&gt;maxHeight&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;60&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
+
+      &lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
+      &lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nf&quot;&gt;padding&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;()&lt;/span&gt;
+  &lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
+  &lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nf&quot;&gt;padding&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;()&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+&lt;p&gt;여기서 ForEach문은 Data file의 information.hobbies 배열의 각 item들을 id: \.self로 구분하여 접근합니다.&lt;/p&gt;
+
+&lt;p&gt;##13 Section 6: Fun Facts Tab&lt;/p&gt;
+
+&lt;p&gt;랜덤으로 정보를 화면에 띄우는 버튼을 추가해서 interactive한 앱을 만들어 봅니다.&lt;/p&gt;
+
+&lt;h3 id=&quot;button-view&quot;&gt;Button view&lt;/h3&gt;
+
+&lt;p&gt;이 챕터에서는 Button을 누를때마다 다른 문자열 정보를 화면에 출력하는 방법에 대해 알아봅니다.&lt;/p&gt;
+
+&lt;div class=&quot;language-swift highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;  &lt;span class=&quot;kd&quot;&gt;@State&lt;/span&gt; &lt;span class=&quot;kd&quot;&gt;private&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;var&lt;/span&gt; &lt;span class=&quot;nv&quot;&gt;funFact&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;&quot;&quot;&lt;/span&gt;
+
+  &lt;span class=&quot;k&quot;&gt;var&lt;/span&gt; &lt;span class=&quot;nv&quot;&gt;body&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;kd&quot;&gt;some&lt;/span&gt; &lt;span class=&quot;kt&quot;&gt;View&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
+    &lt;span class=&quot;kt&quot;&gt;VStack&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
+      &lt;span class=&quot;c1&quot;&gt;// 다른 컨텐츠들 생략&lt;/span&gt;
+
+      &lt;span class=&quot;kt&quot;&gt;Text&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;funFact&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
+          &lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nf&quot;&gt;padding&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;()&lt;/span&gt;
+
+      &lt;span class=&quot;kt&quot;&gt;Button&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;Show Random Fact&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
+        &lt;span class=&quot;n&quot;&gt;funFact&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;information&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;funFacts&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nf&quot;&gt;randomElement&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;()&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;!&lt;/span&gt;
+      &lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
+    &lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
+    &lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nf&quot;&gt;padding&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;()&lt;/span&gt;
+  &lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+&lt;p&gt;funFact 변수가 @State를 사용하고 있기 때문에 fucFact를 사용하고 있는 Text view는 funFact의 변수에 값이 변경될 때마다 자동으로 업데이트 됩니다.&lt;br /&gt;
+ Button을 탭할 때마다 funFact에 랜덤 값을 할당합니다. funFact변수에 값이 바뀌므로 Text view의 값도 변하게 됩니다.&lt;/p&gt;</content><author><name>Mirae</name></author><category term="TIL" /><category term="learning" /><category term="공부 기록" /><category term="Swift" /><category term="Sample Apps Tutorials" /><summary type="html">Sample Apps Tutorials: About Me(Navigating Apps) 아래 모든 정보의 출처는 위 apple developer 공식 페이지임을 밝힙니다. 오로지 저의 학습 기록 용도로만 사용되었습니다.</summary></entry><entry><title type="html">Playgrounds</title><link href="http://localhost:4000/til/playgrounds/" rel="alternate" type="text/html" title="Playgrounds" /><published>2022-03-29T00:00:00+09:00</published><updated>2022-03-29T00:00:00+09:00</updated><id>http://localhost:4000/til/playgrounds</id><content type="html" xml:base="http://localhost:4000/til/playgrounds/">&lt;h1 id=&quot;playgrounds-learn-to-code-1&quot;&gt;Playgrounds: Learn to Code 1&lt;/h1&gt;
 &lt;p&gt;아래 모든 내용들은 Playgrounds에서 학습하며 정리한 내용입니다.&lt;br /&gt;
   모든 내용의 출처는 Playgrounds임을 밝힙니다.&lt;/p&gt;
 
@@ -675,7 +773,63 @@
 &lt;p&gt;한 array안의 자료들은 모두 같은 자료형을 가지고 있어야 합니다.
   만약 처음 integer 자료형의 배열을 만들었다면 String 아이템은 추가할 수 없습니다.&lt;/p&gt;
 
-&lt;h3 id=&quot;for-in-loop&quot;&gt;For-in loop&lt;/h3&gt;</content><author><name>Mirae</name></author><category term="TIL" /><category term="learning" /><category term="공부 기록" /><category term="Swift" /><summary type="html">Playgrounds: Learn to Code 1 아래 모든 내용들은 Playgrounds에서 학습하며 정리한 내용입니다. 모든 내용의 출처는 Playgrounds임을 밝힙니다.</summary></entry><entry><title type="html">JavaScript: 팝업창 가운데에 띄우기</title><link href="http://localhost:4000/til/popup-center/" rel="alternate" type="text/html" title="JavaScript: 팝업창 가운데에 띄우기" /><published>2022-03-24T00:00:00+09:00</published><updated>2022-03-24T00:00:00+09:00</updated><id>http://localhost:4000/til/popup-center</id><content type="html" xml:base="http://localhost:4000/til/popup-center/">&lt;p&gt;아무런 설정을 하지 않고 window.open() 메서드를 사용해서 팝업창을 띄웠더니 화면 맨 왼쪽 위에 팝업창이 나타납니다. 이 팝업창을 가운데로 옮겨보았습니다.&lt;/p&gt;
+&lt;h3 id=&quot;for-in-loop&quot;&gt;For-in loop&lt;/h3&gt;
+
+&lt;div class=&quot;language-swift highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;  &lt;span class=&quot;k&quot;&gt;let&lt;/span&gt; &lt;span class=&quot;nv&quot;&gt;columns&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;0&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;1&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;2&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;3&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;4&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;]&lt;/span&gt;
+
+  &lt;span class=&quot;k&quot;&gt;for&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;i&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;in&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;columns&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
+    &lt;span class=&quot;n&quot;&gt;world&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nf&quot;&gt;place&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;kt&quot;&gt;Gem&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;0&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;),&lt;/span&gt; &lt;span class=&quot;nv&quot;&gt;atCol&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;i&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;nv&quot;&gt;row&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;1&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
+  &lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+&lt;p&gt;For-in 반복문은 배열의 각 value마다 { } 안의 코드를 반복해서 실행합니다. 위 코드에서 i는 columns 배열의 각 값을 담는 변수입니다. 배열 columns의 값인 0, 1, 2, 3, 4가 i에 할당되고 각 값은 { } 안에 작성된 코드인 place 메서드의 atCol 패러미터의 인자로 통과됩니다. for-in 반복문이 돌때마다 (Gem(), 0, 1), (Gem(), 1, 1), (Gem(), 2, 1) … 식으로 코드가 실행됩니다. 더이상 할당될 값이 없으면 루프는 끝이납니다.&lt;/p&gt;
+
+&lt;h3 id=&quot;an-array-of-type-coordinate&quot;&gt;An array of type Coordinate&lt;/h3&gt;
+
+&lt;p&gt;Coordinate의 인스턴스는 column과 row arguments를 이용하여 장소를 나타냅니다.&lt;/p&gt;
+
+&lt;div class=&quot;language-swift highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;  &lt;span class=&quot;c1&quot;&gt;// Coordinate 인스턴스의 예.&lt;/span&gt;
+  &lt;span class=&quot;k&quot;&gt;let&lt;/span&gt; &lt;span class=&quot;nv&quot;&gt;corner&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;kt&quot;&gt;Coordinate&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nv&quot;&gt;column&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;3&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;nv&quot;&gt;row&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;3&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
+
+  &lt;span class=&quot;c1&quot;&gt;// blockLocations라는 Coordinate type의 배열 만들기&lt;/span&gt;
+  &lt;span class=&quot;k&quot;&gt;var&lt;/span&gt; &lt;span class=&quot;nv&quot;&gt;blockLocations&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;
+      &lt;span class=&quot;kt&quot;&gt;Coordinate&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nv&quot;&gt;column&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;0&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;nv&quot;&gt;row&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;0&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;),&lt;/span&gt;
+      &lt;span class=&quot;kt&quot;&gt;Coordinate&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nv&quot;&gt;column&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;3&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;nv&quot;&gt;row&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;3&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;),&lt;/span&gt;
+      &lt;span class=&quot;kt&quot;&gt;Coordinate&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nv&quot;&gt;column&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;0&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;nv&quot;&gt;row&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;3&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;),&lt;/span&gt;
+      &lt;span class=&quot;kt&quot;&gt;Coordinate&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nv&quot;&gt;column&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;3&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;nv&quot;&gt;row&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;0&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
+  &lt;span class=&quot;p&quot;&gt;]&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;h3 id=&quot;array-method&quot;&gt;Array method&lt;/h3&gt;
+
+&lt;div class=&quot;language-swift highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;  &lt;span class=&quot;n&quot;&gt;characters&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;
+      &lt;span class=&quot;kt&quot;&gt;Character&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nv&quot;&gt;name&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;blu&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;),&lt;/span&gt;
+      &lt;span class=&quot;kt&quot;&gt;Portal&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nv&quot;&gt;color&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;pink&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;),&lt;/span&gt;
+      &lt;span class=&quot;kt&quot;&gt;Character&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nv&quot;&gt;name&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;hopper&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;),&lt;/span&gt;
+      &lt;span class=&quot;kt&quot;&gt;Gem&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;()&lt;/span&gt;
+      &lt;span class=&quot;p&quot;&gt;]&lt;/span&gt;
+
+  &lt;span class=&quot;c1&quot;&gt;// Remove the portal.&lt;/span&gt;
+  &lt;span class=&quot;n&quot;&gt;characters&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nf&quot;&gt;remove&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nv&quot;&gt;at&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;1&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
+
+  &lt;span class=&quot;c1&quot;&gt;// Remove the gem.&lt;/span&gt;
+  &lt;span class=&quot;n&quot;&gt;characters&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nf&quot;&gt;remove&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nv&quot;&gt;at&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;2&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
+
+  &lt;span class=&quot;c1&quot;&gt;// Insert the expert.&lt;/span&gt;
+  &lt;span class=&quot;n&quot;&gt;characters&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nf&quot;&gt;insert&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;kt&quot;&gt;Expert&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(),&lt;/span&gt; &lt;span class=&quot;nv&quot;&gt;at&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;1&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;p&gt;.remove() / .insert() / .append()&lt;br /&gt;
+  .removeFirst() / .removeLast / .removeAll&lt;/p&gt;
+
+&lt;p&gt;등이 있습니다.&lt;/p&gt;
+
+&lt;h3 id=&quot;creating-an-empty-array&quot;&gt;Creating an empty array&lt;/h3&gt;
+
+&lt;p&gt;값이 주어지지 않은 빈 배열을 만들 때에는 type을 정해주어야 합니다.&lt;/p&gt;
+
+&lt;div class=&quot;language-swift highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;  &lt;span class=&quot;k&quot;&gt;var&lt;/span&gt; &lt;span class=&quot;nv&quot;&gt;newLocations&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;kt&quot;&gt;Coordinate&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;]&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;[]&lt;/span&gt;
+  &lt;span class=&quot;c1&quot;&gt;// 배열의 이름: [배열의 type] = []&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;</content><author><name>Mirae</name></author><category term="TIL" /><category term="learning" /><category term="공부 기록" /><category term="Swift" /><summary type="html">Playgrounds: Learn to Code 1 아래 모든 내용들은 Playgrounds에서 학습하며 정리한 내용입니다. 모든 내용의 출처는 Playgrounds임을 밝힙니다.</summary></entry><entry><title type="html">JavaScript: 팝업창 가운데에 띄우기</title><link href="http://localhost:4000/til/popup-center/" rel="alternate" type="text/html" title="JavaScript: 팝업창 가운데에 띄우기" /><published>2022-03-24T00:00:00+09:00</published><updated>2022-03-24T00:00:00+09:00</updated><id>http://localhost:4000/til/popup-center</id><content type="html" xml:base="http://localhost:4000/til/popup-center/">&lt;p&gt;아무런 설정을 하지 않고 window.open() 메서드를 사용해서 팝업창을 띄웠더니 화면 맨 왼쪽 위에 팝업창이 나타납니다. 이 팝업창을 가운데로 옮겨보았습니다.&lt;/p&gt;
 
 &lt;p&gt;&lt;a href=&quot;https://www.geeksforgeeks.org/how-to-center-a-popup-window-on-screen/&quot;&gt;도움을 받은 글: How to center a popup window on screen?&lt;/a&gt;&lt;/p&gt;
 

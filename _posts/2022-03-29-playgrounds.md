@@ -571,3 +571,65 @@ toc_icon: "kiwi-bird"
   만약 처음 integer 자료형의 배열을 만들었다면 String 아이템은 추가할 수 없습니다.
 
 ### For-in loop
+
+  ```swift
+  let columns = [0, 1, 2, 3, 4]
+
+  for i in columns {
+    world.place(Gem(0), atCol: i, row: 1)
+  }
+  ```
+  For-in 반복문은 배열의 각 value마다 { } 안의 코드를 반복해서 실행합니다. 위 코드에서 i는 columns 배열의 각 값을 담는 변수입니다. 배열 columns의 값인 0, 1, 2, 3, 4가 i에 할당되고 각 값은 { } 안에 작성된 코드인 place 메서드의 atCol 패러미터의 인자로 통과됩니다. for-in 반복문이 돌때마다 (Gem(), 0, 1), (Gem(), 1, 1), (Gem(), 2, 1) ... 식으로 코드가 실행됩니다. 더이상 할당될 값이 없으면 루프는 끝이납니다.
+
+### An array of type Coordinate  
+
+  Coordinate의 인스턴스는 column과 row arguments를 이용하여 장소를 나타냅니다.
+
+  ```swift
+  // Coordinate 인스턴스의 예.
+  let corner = Coordinate(column: 3, row: 3)
+
+  // blockLocations라는 Coordinate type의 배열 만들기
+  var blockLocations = [
+      Coordinate(column: 0, row: 0),
+      Coordinate(column: 3, row: 3),
+      Coordinate(column: 0, row: 3),
+      Coordinate(column: 3, row: 0)
+  ]
+  ```
+
+### Array method  
+
+  ```swift
+  characters = [
+      Character(name: .blu),
+      Portal(color: pink),
+      Character(name: .hopper),
+      Gem()
+      ]
+
+  // Remove the portal.
+  characters.remove(at: 1)
+
+  // Remove the gem.
+  characters.remove(at: 2)
+
+  // Insert the expert.
+  characters.insert(Expert(), at: 1)
+  ```
+
+  .remove() / .insert() / .append()  
+  .removeFirst() / .removeLast / .removeAll
+
+  등이 있습니다.
+
+### Creating an empty array  
+
+  값이 주어지지 않은 빈 배열을 만들 때에는 type을 정해주어야 합니다.
+
+  ```swift
+  var newLocations: [Coordinate] = []
+  // 배열의 이름: [배열의 type] = []
+  ```
+
+  
