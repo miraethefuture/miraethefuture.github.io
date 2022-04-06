@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="4.2.1">Jekyll</generator><link href="http://localhost:4000/feed.xml" rel="self" type="application/atom+xml" /><link href="http://localhost:4000/" rel="alternate" type="text/html" /><updated>2022-04-06T03:22:42+09:00</updated><id>http://localhost:4000/feed.xml</id><title type="html">Mirae the Future</title><subtitle>An amazing website.</subtitle><author><name>Mirae</name></author><entry><title type="html">Navigating Apps: About Me</title><link href="http://localhost:4000/til/aboutMe/" rel="alternate" type="text/html" title="Navigating Apps: About Me" /><published>2022-04-06T00:00:00+09:00</published><updated>2022-04-06T00:00:00+09:00</updated><id>http://localhost:4000/til/aboutMe</id><content type="html" xml:base="http://localhost:4000/til/aboutMe/">&lt;p&gt;&lt;a href=&quot;https://developer.apple.com/tutorials/sample-apps/aboutme&quot;&gt;Sample Apps Tutorials: About Me(Navigating Apps)&lt;/a&gt;&lt;br /&gt;
+<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="4.2.1">Jekyll</generator><link href="http://localhost:4000/feed.xml" rel="self" type="application/atom+xml" /><link href="http://localhost:4000/" rel="alternate" type="text/html" /><updated>2022-04-06T03:28:18+09:00</updated><id>http://localhost:4000/feed.xml</id><title type="html">Mirae the Future</title><subtitle>An amazing website.</subtitle><author><name>Mirae</name></author><entry><title type="html">Navigating Apps: About Me</title><link href="http://localhost:4000/til/aboutMe/" rel="alternate" type="text/html" title="Navigating Apps: About Me" /><published>2022-04-06T00:00:00+09:00</published><updated>2022-04-06T00:00:00+09:00</updated><id>http://localhost:4000/til/aboutMe</id><content type="html" xml:base="http://localhost:4000/til/aboutMe/">&lt;p&gt;&lt;a href=&quot;https://developer.apple.com/tutorials/sample-apps/aboutme&quot;&gt;Sample Apps Tutorials: About Me(Navigating Apps)&lt;/a&gt;&lt;br /&gt;
 아래 모든 정보의 출처는 위 apple developer 공식 페이지임을 밝힙니다. 오로지 저의 학습 기록 용도로만 사용되었습니다.&lt;/p&gt;
 
 &lt;h1 id=&quot;navigating-apps-about-me&quot;&gt;Navigating Apps: About Me&lt;/h1&gt;
@@ -717,47 +717,7 @@
 
 &lt;h2 id=&quot;3-가운데-정렬된-모습&quot;&gt;3. 가운데 정렬된 모습&lt;/h2&gt;
 
-&lt;p&gt;&lt;img src=&quot;/assets/images/main_octopi.png&quot; alt=&quot;main&quot; /&gt;&lt;/p&gt;</content><author><name>Mirae</name></author><category term="TIL" /><category term="learning" /><category term="공부 기록" /><category term="HTML" /><category term="CSS" /><category term="JavaScript" /><summary type="html">아무런 설정을 하지 않고 window.open() 메서드를 사용해서 팝업창을 띄웠더니 화면 맨 왼쪽 위에 팝업창이 나타납니다. 이 팝업창을 가운데로 옮겨보았습니다.</summary></entry><entry><title type="html">웹 페이지를 만들며 HTML과 CSS에 대해 알아보기</title><link href="http://localhost:4000/til/myOctopi/" rel="alternate" type="text/html" title="웹 페이지를 만들며 HTML과 CSS에 대해 알아보기" /><published>2022-03-16T00:00:00+09:00</published><updated>2022-03-16T00:00:00+09:00</updated><id>http://localhost:4000/til/myOctopi</id><content type="html" xml:base="http://localhost:4000/til/myOctopi/">&lt;p&gt;&lt;sup&gt;&lt;a href=&quot;https://www.youtube.com/watch?v=-2LtZRi6Q0s&quot;&gt;튜토리얼 출처: Easy Tutorials: How To Make A Website Using HTML And CSS&lt;/a&gt;&lt;/sup&gt;&lt;/p&gt;
-
-&lt;p&gt;&lt;img src=&quot;/assets/images/octo.png&quot; alt=&quot;octopus&quot; /&gt;&lt;/p&gt;
-
-&lt;h2 id=&quot;what-i-learned-from-this-project&quot;&gt;What I Learned From This Project:&lt;/h2&gt;
-
-&lt;ul&gt;
-  &lt;li&gt;HTML link element&lt;/li&gt;
-  &lt;li&gt;linear-flex를 이용해서 목록을 옆으로 나열하기&lt;/li&gt;
-  &lt;li&gt;!important&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;p&gt;&lt;br /&gt;&lt;/p&gt;
-&lt;div class=&quot;notice&quot;&gt;
-  &lt;h4&gt;Octopi Project&lt;/h4&gt;
-  &lt;p&gt;HTML과 CSS(+JS 한스푼)을 공부하며 웹 페이지를 만들어 봅니다. 기획 보다는 HTML과 CSS를 공부하는 느낌으로 만들 것이기 때문에 웹 페이지의 주제는 고민하지 않고 머릿속에 떠오른 단축키를 모아놓은 웹 사이트로 가보겠습니다.&lt;br /&gt;&lt;/p&gt;
-&lt;/div&gt;
-
-&lt;h2 id=&quot;link-html-element&quot;&gt;link HTML element&lt;/h2&gt;
-
-&lt;div class=&quot;language-html highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;nt&quot;&gt;&amp;lt;link&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;rel=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;stylesheet&quot;&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;href=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;style.css&quot;&lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;&amp;gt;&lt;/span&gt;
-&lt;span class=&quot;c&quot;&gt;&amp;lt;!-- &amp;lt;link&amp;gt;는 &amp;lt;head&amp;gt; 부분에 작성되어야 합니다. --&amp;gt;&lt;/span&gt;
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
-&lt;p&gt;&amp;lt;link&amp;gt; element는 외부 리소스와 현재 작업 중인 document의 관계를 지정해 줍니다. 주로 stylesheets와 연결할 때 많이 사용됩니다. 또한 아이콘을 설정해 줄 때도 사용됩니다. 저도 블로그 타이틀에 파비콘을 추가했을 때 &amp;lt;link&amp;gt;를 사용했던 기억이 나네요.
-&lt;br /&gt;
-&lt;br /&gt;&lt;/p&gt;
-&lt;center&gt;&lt;img src=&quot;/assets/images/myFavicon.png&quot; alt=&quot;my_favicon&quot; width=&quot;400&quot; /&gt;&lt;/center&gt;
-&lt;center&gt;&lt;sub&gt;(내 블로그 파비콘과 노션 파비콘)&lt;/sub&gt;&lt;/center&gt;
-&lt;p&gt;&lt;br /&gt;&lt;/p&gt;
-
-&lt;p&gt;위 코드에서는 외부에 작성된 stylesheet와 현재 html파일의 관계를 &amp;lt;link&amp;gt; 로 연결해줍니다.
-이제 stylesheet에서 CSS를 이용해 현 document에 있는 태그들의 속성을 수정할 수 있게 되었습니다.&lt;/p&gt;
-
-&lt;div class=&quot;language-html highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;nt&quot;&gt;&amp;lt;p&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;style=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;color: blue&quot;&lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;&amp;gt;&lt;/span&gt;
-  The style attribute can override it, though.&lt;span class=&quot;nt&quot;&gt;&amp;lt;/p&amp;gt;&lt;/span&gt;
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
-&lt;p&gt;style.css 파일을 연결하여 작업하는 중 위 예제 코드처럼 html 파일에서 바로 속성을 사용할 수도 있습니다. 이 경우 html의 속성이 CSS style sheet에서 적용된 속성보다 우선 순위에 있습니다.&lt;/p&gt;
-
-&lt;p&gt;&lt;code&gt;rel&lt;/code&gt;은 relationship을 의미합니다. &amp;lt;link&amp;gt; element의 가장 중요한 기능 중 하나입니다.
-&lt;code&gt;rel&lt;/code&gt;에 지정된 값은 연결된 외부 리소스와 현 document가 어떤 관계를 가지고 있는지 나타내줍니다. 이것들을 Link types라고 합니다.
-stylesheet, icon, tag 등 여러가지 관계들이 있습니다. link types는 두 문서들간의 관계를 나타냅니다.&lt;/p&gt;</content><author><name>Mirae</name></author><category term="TIL" /><category term="learning" /><category term="공부 기록" /><category term="HTML" /><category term="CSS" /><category term="JavaScript" /><summary type="html">튜토리얼 출처: Easy Tutorials: How To Make A Website Using HTML And CSS</summary></entry><entry><title type="html">Codility_Developer Training: 배열 챕터의 문제 CyclicRotation</title><link href="http://localhost:4000/til/cyclicRotation/" rel="alternate" type="text/html" title="Codility_Developer Training: 배열 챕터의 문제 CyclicRotation" /><published>2022-03-16T00:00:00+09:00</published><updated>2022-03-16T00:00:00+09:00</updated><id>http://localhost:4000/til/cyclicRotation</id><content type="html" xml:base="http://localhost:4000/til/cyclicRotation/">&lt;p&gt;&lt;a href=&quot;https://app.codility.com/programmers/lessons/2-arrays/cyclic_rotation/&quot;&gt;CyclicRotation 문제 읽기&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;/assets/images/main_octopi.png&quot; alt=&quot;main&quot; /&gt;&lt;/p&gt;</content><author><name>Mirae</name></author><category term="TIL" /><category term="learning" /><category term="공부 기록" /><category term="HTML" /><category term="CSS" /><category term="JavaScript" /><summary type="html">아무런 설정을 하지 않고 window.open() 메서드를 사용해서 팝업창을 띄웠더니 화면 맨 왼쪽 위에 팝업창이 나타납니다. 이 팝업창을 가운데로 옮겨보았습니다.</summary></entry><entry><title type="html">Codility_Developer Training: 배열 챕터의 문제 CyclicRotation</title><link href="http://localhost:4000/til/cyclicRotation/" rel="alternate" type="text/html" title="Codility_Developer Training: 배열 챕터의 문제 CyclicRotation" /><published>2022-03-16T00:00:00+09:00</published><updated>2022-03-16T00:00:00+09:00</updated><id>http://localhost:4000/til/cyclicRotation</id><content type="html" xml:base="http://localhost:4000/til/cyclicRotation/">&lt;p&gt;&lt;a href=&quot;https://app.codility.com/programmers/lessons/2-arrays/cyclic_rotation/&quot;&gt;CyclicRotation 문제 읽기&lt;/a&gt;&lt;/p&gt;
 
 &lt;h3 id=&quot;1-문제를-파악해보자&quot;&gt;1. 문제를 파악해보자&lt;/h3&gt;
 
