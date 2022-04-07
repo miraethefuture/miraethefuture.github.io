@@ -1,0 +1,37 @@
+I"P<p><a href="https://developer.apple.com/tutorials/sample-apps/aboutme">Sample Apps Tutorials: Choose Your Own Story(Navigating Apps)</a><br />
+아래 모든 정보의 출처는 apple developer 공식 페이지이며 개인의 학습 용도로만 사용되었음을 밝힙니다.</p>
+
+<p>All information below comes from the official apple developer page and is for personal learning purposes only.</p>
+
+<h1 id="choose-your-own-story">Choose Your Own Story</h1>
+
+<p>Views 사이에서 동적으로 변화하는 navigation에 대해 알아봅니다.
+  사용자의 선택에 따라 다른 페이지로 이동하는 이야기를 만들어봅니다.</p>
+
+<center><img src="/assets/images/choose1.png" alt="The project navigator" /></center>
+
+<h2 id="section-1-create-your-own-story">Section 1: Create Your Own Story</h2>
+
+<p>당신만의 이야기 속 사건들을 구축하기 위해서 앱은 Story라는 instance가 필요합니다. 이 프로젝트에서 instance Story는</p>
+
+<div class="language-swift highlighter-rouge"><div class="highlight"><pre class="highlight"><code>  <span class="k">let</span> <span class="nv">story</span> <span class="o">=</span> <span class="kt">Story</span><span class="p">(</span><span class="nv">pages</span><span class="p">:</span> <span class="p">[</span>
+    <span class="kt">StoryPage</span><span class="p">(</span>
+      <span class="s">""" 이야기 부분 """</span>
+
+      <span class="nv">choices</span><span class="p">:</span> <span class="p">[</span>
+          <span class="kt">Choice</span><span class="p">(</span><span class="nv">text</span><span class="p">:</span> <span class="s">"Front row!"</span><span class="p">,</span> <span class="nv">destination</span><span class="p">:</span> <span class="mi">1</span><span class="p">),</span>
+          <span class="kt">Choice</span><span class="p">(</span><span class="nv">text</span><span class="p">:</span> <span class="s">"Find somewhere in the middle"</span><span class="p">,</span> <span class="nv">destination</span><span class="p">:</span> <span class="mi">1</span><span class="p">)</span>
+          <span class="kt">Choice</span><span class="p">(</span><span class="nv">text</span><span class="p">:</span> <span class="s">"Back of the room"</span><span class="p">,</span> <span class="nv">destination</span><span class="p">:</span> <span class="mi">2</span><span class="p">),</span>
+
+          <span class="p">]</span>
+        <span class="p">),</span>
+      <span class="p">]</span>
+    <span class="p">)</span>
+    <span class="c1">// 위의 방식으로 StoryPage가 page20까지 Story의 배열 타입 패러미터로 작성되어 있습니다.</span>
+</code></pre></div></div>
+<p>각 StoryPage는 이야기 부분과 선택지 부분으로 이루어져 있습니다. 이야기 부분을 읽고 -&gt; 선택 -&gt; 페이지로 이동됩니다. 이동된 페이지에서도 마찬가지로 이야기 부분을 읽고 -&gt; 선택 -&gt; 해당 페이지로 이동합니다.</p>
+
+<h3 id="세개의-quotation-marks">세개의 quotation marks</h3>
+
+<p>””” “”” : String 값을 생성하는 특별한 방법입니다. 이 방법을 이용하면 여러 줄의 글을 쓸 수 있고 quotation marks도 사용할 수 있기 때문에 이야기와 같은 긴 글을 쓸 때 유용하게 사용할 수 있습니다. Choice의 destination property는 story navigation 앱의 키입니다. destination</p>
+:ET

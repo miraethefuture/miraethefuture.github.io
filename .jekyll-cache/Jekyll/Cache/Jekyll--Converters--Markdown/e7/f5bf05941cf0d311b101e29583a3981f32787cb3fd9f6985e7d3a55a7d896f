@@ -1,0 +1,166 @@
+I"�6<p><a href="https://developer.apple.com/tutorials/sample-apps/aboutme">Sample Apps Tutorials: Choose Your Own Story(Navigating Apps)</a><br />
+아래 모든 정보의 출처는 apple developer 공식 페이지이며 개인의 학습 용도로만 사용되었음을 밝힙니다.</p>
+
+<p>All information below comes from the official apple developer page and is for personal learning purposes only.</p>
+
+<h1 id="choose-your-own-story">Choose Your Own Story</h1>
+
+<p>Views 사이에서 동적으로 변화하는 navigation에 대해 알아봅니다.
+  사용자의 선택에 따라 다른 페이지로 이동하는 이야기를 만들어봅니다.</p>
+
+<center><img src="/assets/images/choose1.png" alt="The project navigator" /></center>
+
+<h2 id="section-1-create-your-own-story">Section 1: Create Your Own Story</h2>
+
+<p>당신만의 이야기 속 사건들을 구축하기 위해서 앱은 Story라는 instance가 필요합니다. 이 프로젝트에서 instance Story는</p>
+
+<div class="language-swift highlighter-rouge"><div class="highlight"><pre class="highlight"><code>  <span class="c1">// MyStory.swift</span>
+
+  <span class="k">let</span> <span class="nv">story</span> <span class="o">=</span> <span class="kt">Story</span><span class="p">(</span><span class="nv">pages</span><span class="p">:</span> <span class="p">[</span>
+    <span class="kt">StoryPage</span><span class="p">(</span>
+      <span class="s">""" 이야기 부분 """</span>
+
+      <span class="nv">choices</span><span class="p">:</span> <span class="p">[</span>
+          <span class="kt">Choice</span><span class="p">(</span><span class="nv">text</span><span class="p">:</span> <span class="s">"Front row!"</span><span class="p">,</span> <span class="nv">destination</span><span class="p">:</span> <span class="mi">1</span><span class="p">),</span>
+          <span class="kt">Choice</span><span class="p">(</span><span class="nv">text</span><span class="p">:</span> <span class="s">"Find somewhere in the middle"</span><span class="p">,</span> <span class="nv">destination</span><span class="p">:</span> <span class="mi">1</span><span class="p">)</span>
+          <span class="kt">Choice</span><span class="p">(</span><span class="nv">text</span><span class="p">:</span> <span class="s">"Back of the room"</span><span class="p">,</span> <span class="nv">destination</span><span class="p">:</span> <span class="mi">2</span><span class="p">),</span>
+
+          <span class="p">]</span>
+        <span class="p">),</span>
+      <span class="p">]</span>
+    <span class="p">)</span>
+    <span class="c1">// 위의 방식으로 StoryPage가 page20까지 Story의 배열 타입 패러미터로 작성되어 있습니다.</span>
+</code></pre></div></div>
+<p>각 StoryPage는 이야기 부분과 선택지 부분으로 이루어져 있습니다. 이야기 부분을 읽고 -&gt; 선택 -&gt; 페이지로 이동됩니다. 이동된 페이지에서도 마찬가지로 이야기 부분을 읽고 -&gt; 선택 -&gt; 해당 페이지로 이동합니다.</p>
+
+<h3 id="세개의-quotation-marks">세개의 quotation marks</h3>
+
+<p>””” “”” : String 값을 생성하는 특별한 방법입니다. 이 방법을 이용하면 여러 줄의 글을 쓸 수 있고 quotation marks도 사용할 수 있기 때문에 이야기와 같은 긴 글을 쓸 때 유용하게 사용할 수 있습니다.</p>
+
+<h3 id="the-destination-property">The destination property</h3>
+
+<p>Choice의 destination property는 story navigation 앱의 키요소 입니다. destination의 숫자값은 페이지의 index번호입니다. 인덱스는 0부터 세기 때문에 1페이지는 0, 2페이지는 1의 식으로 숫자가 적용됩니다.</p>
+
+<h2 id="section-2-story-data-model">Section 2: Story Data Model</h2>
+
+<p>위에서 작성한 Story data를 구조화하는 방법에 대해 알아봅니다.</p>
+
+<h3 id="storymodelsswift">StoryModels.swift</h3>
+
+<p>이 앱에서는 Story라는 custom type을 이용합니다. Story의 instance를 생성해 스토리 페이지를 화면에 출력합니다. 각 페이지는 이야기 부분과 몇개의 선택지로 이루어져 있습니다.</p>
+
+<div class="language-swift highlighter-rouge"><div class="highlight"><pre class="highlight"><code>  <span class="c1">// StoryModels.swift</span>
+
+  <span class="kd">import</span> <span class="kt">Foundation</span>
+
+  <span class="kd">struct</span> <span class="kt">Story</span> <span class="p">{</span>
+
+    <span class="k">let</span> <span class="nv">pages</span><span class="p">:</span> <span class="p">[</span><span class="kt">StoryPage</span><span class="p">]</span>
+
+    <span class="nf">subscript</span><span class="p">(</span><span class="n">_</span> <span class="nv">pageIndex</span><span class="p">:</span> <span class="n">int</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kt">StoryPage</span> <span class="p">{</span>
+      <span class="k">return</span> <span class="n">pages</span><span class="p">[</span><span class="kt">PageIndex</span><span class="p">]</span>
+    <span class="p">}</span>
+  <span class="p">}</span>
+
+  <span class="kd">struct</span> <span class="kt">StoryPage</span> <span class="p">{</span>
+    <span class="k">let</span> <span class="nv">text</span><span class="p">:</span> <span class="kt">String</span>
+
+    <span class="k">let</span> <span class="nv">choices</span><span class="p">:</span> <span class="p">[</span><span class="kt">Choice</span><span class="p">]</span>
+
+    <span class="nf">init</span><span class="p">(</span><span class="n">_</span> <span class="nv">text</span><span class="p">:</span> <span class="kt">String</span><span class="p">,</span> <span class="nv">choices</span><span class="p">:</span> <span class="p">[</span><span class="kt">Choice</span><span class="p">])</span> <span class="p">{</span>
+      <span class="k">self</span><span class="o">.</span><span class="n">text</span> <span class="o">=</span> <span class="kt">Text</span>
+      <span class="k">self</span><span class="o">.</span><span class="n">choices</span> <span class="o">=</span> <span class="n">choices</span>
+    <span class="p">}</span>
+  <span class="p">}</span>
+
+  <span class="kd">struct</span> <span class="kt">Choice</span> <span class="p">{</span>
+    <span class="k">let</span> <span class="nv">text</span><span class="p">:</span> <span class="kt">String</span>
+    <span class="k">let</span> <span class="nv">destination</span><span class="p">:</span> <span class="kt">Int</span>
+  <span class="p">}</span>
+</code></pre></div></div>
+
+<h3 id="️-what-i-learned-from-this-part">☑️ What I Learned From This Part:</h3>
+<div class="notice--success">
+    1. Custom Type 생성 과정<br />
+    <br />
+    2. Custom type을 만드는 file에는 Foundation만 import하면 됨.<br />
+    <br />
+    3. init()의 이름을 사용하지 않는 패러미터<br />
+      init(_ text: String) -&gt; text는 패러미터의 이름일 뿐 생성자가 사용될 때 사용하는 이름은 아님. 이 경우에는 생성자 사용시 이름없이 바로 “”” “”” 으로 문자열을 입력해주었음.
+  </div>
+
+<h3 id="storypage-type">StoryPage type</h3>
+
+<p>또 다른 custom type인 StoryPage는 이야기 부분인 text 상수 속성과 선택지 부분인 choices 배열 속성 부분으로 이루어져 있습니다. choices 배열은 사용자를 각 선택마다 다른 페이지로 이동시켜줍니다.</p>
+
+<h3 id="choice-type">Choice type</h3>
+
+<p>Choice type도 custom type입니다. 선택지 버튼에 나타나는 문자열 부분과 페이지 인덱스 부분인  Int type의 destination 속성으로 이루어져 있습니다.</p>
+
+<h2 id="section-3-creating-a-navigation-view">Section 3: Creating a Navigation view</h2>
+
+<h3 id="storyviewswift">StoryView.swift</h3>
+
+<div class="language-swift highlighter-rouge"><div class="highlight"><pre class="highlight"><code>  <span class="c1">// StoryView.swift</span>
+
+  <span class="kd">import</span> <span class="kt">SwiftUI</span>
+
+  <span class="kd">struct</span> <span class="kt">StoryView</span><span class="p">:</span> <span class="kt">View</span> <span class="p">{</span>
+
+    <span class="k">var</span> <span class="nv">body</span><span class="p">:</span> <span class="kd">some</span> <span class="kt">View</span> <span class="p">{</span>
+      <span class="kt">NavigationView</span> <span class="p">{</span>
+        <span class="kt">StoryPageView</span><span class="p">(</span><span class="nv">story</span><span class="p">:</span> <span class="n">story</span><span class="p">,</span> <span class="nv">pageIndex</span><span class="p">:</span> <span class="mi">0</span><span class="p">)</span>
+      <span class="p">}</span>
+      <span class="o">.</span><span class="nf">navigationViewStyle</span><span class="p">(</span><span class="o">.</span><span class="n">stack</span><span class="p">)</span>
+    <span class="p">}</span>
+  <span class="p">}</span>
+
+  <span class="n">sturct</span> <span class="kt">ContentView_Previews</span><span class="p">:</span> <span class="n">previewProvider</span> <span class="p">{</span>
+    <span class="kd">static</span> <span class="k">var</span> <span class="nv">previews</span><span class="p">:</span> <span class="kd">some</span> <span class="kt">View</span> <span class="p">{</span>
+      <span class="kt">StoryView</span><span class="p">()</span>
+    <span class="p">}</span>
+  <span class="p">}</span>
+</code></pre></div></div>
+
+<h3 id="navigationview">NavigationView</h3>
+
+<p>StoryView는 이 앱의 top-level view입니다. 맨 처음 앱이 실행되면 보이는 view이죠.
+  각각의 story page를 화면에 보여주고 페이지 사이를 이동하기 위해서 NavigationView를 이용합니다. NavigationView view는 각 스토리 페이지를 담는 컨테이너와 같습니다. 한장의 스토리 페이지를 보여주고 Navigation Link가 탭 될 때마다 다른 페이지로 변경됩니다.</p>
+
+<p>NavigationView는 StoryPageView라는 컨텐츠를 가지고 있고 그것을 화면에 보여줍니다.
+  여기서 이용된 story는 MyStory Data file에서 전역변수로 만들어주었습니다. story 안의 StoryPage 중 pageIndex: 0을 사용하여 첫번째 페이지를 보여줍니다.</p>
+
+<h2 id="section-4-displaying-a-story-page">Section 4: Displaying a Story Page</h2>
+
+<h3 id="storypageviewswift">StoryPageView.swift</h3>
+
+<div class="language-swift highlighter-rouge"><div class="highlight"><pre class="highlight"><code>  <span class="c1">// StoryPageView.swift</span>
+
+  <span class="kd">import</span> <span class="kt">SwiftUI</span>
+
+  <span class="kd">struct</span> <span class="kt">StoryPageView</span><span class="p">:</span> <span class="kt">View</span> <span class="p">{</span>
+
+    <span class="k">let</span> <span class="nv">story</span><span class="p">:</span> <span class="kt">Story</span>
+    <span class="k">let</span> <span class="nv">pageIndex</span><span class="p">:</span> <span class="kt">Int</span>
+
+    <span class="k">var</span> <span class="nv">body</span><span class="p">:</span> <span class="kd">some</span> <span class="kt">View</span> <span class="p">{</span>
+      <span class="kt">VStack</span> <span class="p">{</span>
+          <span class="kt">ScrollView</span><span class="p">{</span>
+            <span class="kt">Text</span><span class="p">(</span><span class="n">story</span><span class="p">[</span><span class="n">pageindex</span><span class="p">]</span><span class="o">.</span><span class="n">text</span><span class="p">)</span>
+          <span class="p">}</span>
+
+          <span class="kt">ForEach</span><span class="p">(</span><span class="n">story</span><span class="p">[</span><span class="n">pageIndex</span><span class="p">]</span><span class="o">.</span><span class="n">choices</span><span class="p">,</span> <span class="nv">id</span><span class="p">:</span> <span class="p">\</span><span class="kt">Choice</span><span class="o">.</span><span class="n">text</span><span class="p">)</span> <span class="p">{</span> <span class="n">choice</span> <span class="k">in</span>
+              <span class="kt">NavigationLink</span><span class="p">(</span><span class="nv">destination</span><span class="p">:</span> <span class="kt">StoryPageView</span><span class="p">(</span><span class="nv">story</span><span class="p">:</span> <span class="n">story</span><span class="p">,</span> <span class="nv">pageIndex</span><span class="p">:</span> <span class="n">choice</span><span class="o">.</span><span class="n">destination</span><span class="p">))</span> <span class="p">{</span>
+                <span class="kt">Text</span><span class="p">(</span><span class="n">choice</span><span class="o">.</span><span class="n">text</span><span class="p">)</span>
+                    <span class="o">.</span><span class="nf">multilineTextAlignment</span><span class="p">(</span><span class="o">.</span><span class="n">leading</span><span class="p">)</span>
+                    <span class="o">.</span><span class="nf">frame</span><span class="p">(</span><span class="nv">maxWidth</span><span class="p">:</span> <span class="o">.</span><span class="n">infinity</span><span class="p">,</span> <span class="nv">alignment</span><span class="p">:</span> <span class="o">.</span><span class="n">leading</span><span class="p">)</span>
+                    <span class="o">.</span><span class="nf">padding</span><span class="p">()</span>
+                    <span class="o">.</span><span class="nf">background</span><span class="p">(</span><span class="kt">Color</span><span class="o">.</span><span class="n">gray</span><span class="o">.</span><span class="nf">opacity</span><span class="p">(</span><span class="mf">0.25</span><span class="p">))</span>
+                    <span class="o">.</span><span class="nf">cornerRadius</span><span class="p">(</span><span class="mi">8</span><span class="p">)</span>
+                <span class="p">}}</span>
+      <span class="p">}</span>
+    <span class="p">}</span>
+  <span class="p">}</span>
+</code></pre></div></div>
+
+:ET

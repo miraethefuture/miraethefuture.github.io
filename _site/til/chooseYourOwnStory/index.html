@@ -1,0 +1,796 @@
+<!doctype html>
+<!--
+  Minimal Mistakes Jekyll Theme 4.24.0 by Michael Rose
+  Copyright 2013-2020 Michael Rose - mademistakes.com | @mmistakes
+  Free for personal and commercial use under the MIT license
+  https://github.com/mmistakes/minimal-mistakes/blob/master/LICENSE
+-->
+<html lang="en" class="no-js">
+  <head>
+    <meta charset="utf-8">
+
+<!-- begin _includes/seo.html --><title>Navigating Apps: Choose Your Own Story | Mirae the Future</title>
+<meta name="description" content="Sample Apps Tutorials: Choose Your Own Story(Navigating Apps) 아래 모든 정보의 출처는 apple developer 공식 페이지이며 개인의 학습 용도로만 사용되었음을 밝힙니다.">
+
+
+  <meta name="author" content="Mirae">
+  
+  <meta property="article:author" content="Mirae">
+  
+
+
+<meta property="og:type" content="article">
+<meta property="og:locale" content="en_US">
+<meta property="og:site_name" content="Mirae the Future">
+<meta property="og:title" content="Navigating Apps: Choose Your Own Story">
+<meta property="og:url" content="http://localhost:4000/til/chooseYourOwnStory/">
+
+
+  <meta property="og:description" content="Sample Apps Tutorials: Choose Your Own Story(Navigating Apps) 아래 모든 정보의 출처는 apple developer 공식 페이지이며 개인의 학습 용도로만 사용되었음을 밝힙니다.">
+
+
+
+  <meta property="og:image" content="http://localhost:4000/assets/images/choose2.png">
+
+
+
+
+
+  <meta property="article:published_time" content="2022-04-07T00:00:00+09:00">
+
+
+
+
+
+  
+
+  
+
+
+<link rel="canonical" href="http://localhost:4000/til/chooseYourOwnStory/">
+
+
+
+
+<script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    
+      "@type": "Person",
+      "name": "Mirae the Future",
+      "url": "http://localhost:4000/"
+    
+  }
+</script>
+
+
+
+
+
+
+
+<!-- end _includes/seo.html -->
+
+
+
+  <link href="/feed.xml" type="application/atom+xml" rel="alternate" title="Mirae the Future Feed">
+
+
+<!-- https://t.co/dKP3o1e -->
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<script>
+  document.documentElement.className = document.documentElement.className.replace(/\bno-js\b/g, '') + ' js ';
+</script>
+
+<!-- For all browsers -->
+<link rel="stylesheet" href="/assets/css/main.css">
+<link rel="preload" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@5/css/all.min.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
+<noscript><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@5/css/all.min.css"></noscript>
+
+
+
+    <!-- start custom head snippets -->
+
+<!-- insert favicons. use https://realfavicongenerator.net/ -->
+<link rel="apple-touch-icon" sizes="152x152" href="/assets/images/apple-touch-icon.png">
+<link rel="icon" type="image/png" sizes="32x32" href="/assets/images/favicon-32x32.png">
+<link rel="icon" type="image/png" sizes="16x16" href="/assets/images/favicon-16x16.png">
+<link rel="manifest" href="/assets/images/site.webmanifest">
+<link rel="mask-icon" href="/assets/images/safari-pinned-tab.svg" color="#5bbad5">
+<meta name="msapplication-TileColor" content="#da532c">
+<meta name="theme-color" content="#ffffff">
+
+<!-- end custom head snippets -->
+
+  </head>
+
+  <body class="layout--single">
+    <nav class="skip-links">
+  <ul>
+    <li><a href="#site-nav" class="screen-reader-shortcut">Skip to primary navigation</a></li>
+    <li><a href="#main" class="screen-reader-shortcut">Skip to content</a></li>
+    <li><a href="#footer" class="screen-reader-shortcut">Skip to footer</a></li>
+  </ul>
+</nav>
+
+    <!--[if lt IE 9]>
+<div class="notice--danger align-center" style="margin: 0;">You are using an <strong>outdated</strong> browser. Please <a href="https://browsehappy.com/">upgrade your browser</a> to improve your experience.</div>
+<![endif]-->
+
+    
+
+<div class="masthead">
+  <div class="masthead__inner-wrap">
+    <div class="masthead__menu">
+      <nav id="site-nav" class="greedy-nav">
+        
+        <a class="site-title" href="/">
+          Mirae the Future
+          
+        </a>
+        <ul class="visible-links"><li class="masthead__menu-item">
+              <a href="/categories/">Categories</a>
+            </li><li class="masthead__menu-item">
+              <a href="/tags/">Tags</a>
+            </li></ul>
+        
+        <button class="search__toggle" type="button">
+          <span class="visually-hidden">Toggle search</span>
+          <i class="fas fa-search"></i>
+        </button>
+        
+        <button class="greedy-nav__toggle hidden" type="button">
+          <span class="visually-hidden">Toggle menu</span>
+          <div class="navicon"></div>
+        </button>
+        <ul class="hidden-links hidden"></ul>
+      </nav>
+    </div>
+  </div>
+</div>
+
+
+    <div class="initial-content">
+      
+
+
+  
+    
+
+
+
+<nav class="breadcrumbs">
+  <ol itemscope itemtype="https://schema.org/BreadcrumbList">
+    
+    
+    
+      
+        <li itemprop="itemListElement" itemscope itemtype="https://schema.org/ListItem">
+          <a href="/" itemprop="item"><span itemprop="name">Home</span></a>
+
+          <meta itemprop="position" content="1" />
+        </li>
+        <span class="sep">/</span>
+      
+      
+        
+        <li itemprop="itemListElement" itemscope itemtype="https://schema.org/ListItem">
+          <a href="/categories/#til" itemprop="item"><span itemprop="name">Til</span></a>
+          <meta itemprop="position" content="2" />
+        </li>
+        <span class="sep">/</span>
+      
+    
+      
+      
+        <li class="current">Navigating Apps: Choose Your Own Story</li>
+      
+    
+  </ol>
+</nav>
+
+  
+
+
+<div id="main" role="main">
+  
+
+
+  <article class="page h-entry" itemscope itemtype="https://schema.org/CreativeWork">
+    <meta itemprop="headline" content="Navigating Apps: Choose Your Own Story">
+    <meta itemprop="description" content="Sample Apps Tutorials: Choose Your Own Story(Navigating Apps)아래 모든 정보의 출처는 apple developer 공식 페이지이며 개인의 학습 용도로만 사용되었음을 밝힙니다.">
+    <meta itemprop="datePublished" content="2022-04-07T00:00:00+09:00">
+    
+
+    <div class="page__inner-wrap">
+      
+        <header>
+          <h1 id="page-title" class="page__title p-name" itemprop="headline">
+            <a href="http://localhost:4000/til/chooseYourOwnStory/" class="u-url" itemprop="url">Navigating Apps: Choose Your Own Story
+</a>
+          </h1>
+          
+
+  <p class="page__meta">
+    
+      
+      <span class="page__meta-date">
+        <i class="far fa-calendar-alt" aria-hidden="true"></i>
+        
+        <time datetime="2022-04-07T00:00:00+09:00">April 7, 2022</time>
+      </span>
+    
+
+    
+
+    
+  </p>
+
+
+        </header>
+      
+
+      <section class="page__content e-content" itemprop="text">
+        
+          <aside class="sidebar__right sticky">
+            <nav class="toc">
+              <header><h4 class="nav__title"><i class="fas fa-kiwi-bird"></i> 📂</h4></header>
+              <ul class="toc__menu"><li><a href="#choose-your-own-story">Choose Your Own Story</a><ul><li><a href="#section-1-create-your-own-story">Section 1: Create Your Own Story</a><ul><li><a href="#세개의-quotation-marks">세개의 quotation marks</a></li><li><a href="#the-destination-property">The destination property</a></li></ul></li><li><a href="#section-2-story-data-model">Section 2: Story Data Model</a><ul><li><a href="#storymodelsswift">StoryModels.swift</a></li><li><a href="#️-what-i-learned-from-this-part">☑️ What I Learned From This Part:</a></li><li><a href="#storypage-type">StoryPage type</a></li><li><a href="#choice-type">Choice type</a></li></ul></li><li><a href="#section-3-creating-a-navigation-view">Section 3: Creating a Navigation view</a><ul><li><a href="#storyviewswift">StoryView.swift</a></li><li><a href="#navigationview">NavigationView</a></li></ul></li><li><a href="#section-4-displaying-a-story-page">Section 4: Displaying a Story Page</a><ul><li><a href="#storypageviewswift">StoryPageView.swift</a></li><li><a href="#foreach-structure">ForEach structure</a></li><li><a href="#id-argument">id argument</a></li><li><a href="#navigationlink">NavigationLink</a></li><li><a href="#aligning-text">Aligning Text</a></li><li><a href="#navigation-bar">Navigation Bar</a></li></ul></li></ul></li></ul>
+
+            </nav>
+          </aside>
+        
+        <p><a href="https://developer.apple.com/tutorials/sample-apps/aboutme">Sample Apps Tutorials: Choose Your Own Story(Navigating Apps)</a><br />
+아래 모든 정보의 출처는 apple developer 공식 페이지이며 개인의 학습 용도로만 사용되었음을 밝힙니다.</p>
+
+<p>All information below comes from the official apple developer page and is for personal learning purposes only.</p>
+
+<h1 id="choose-your-own-story">Choose Your Own Story</h1>
+
+<p>Views 사이에서 동적으로 변화하는 navigation에 대해 알아봅니다.
+  사용자의 선택에 따라 다른 페이지로 이동하는 이야기를 만들어봅니다.</p>
+
+<center><img src="/assets/images/choose1.png" alt="The project navigator" /></center>
+
+<h2 id="section-1-create-your-own-story">Section 1: Create Your Own Story</h2>
+
+<p>당신만의 이야기 속 사건들을 구축하기 위해서 앱은 Story라는 instance가 필요합니다. 이 프로젝트에서 instance Story는 각 StoryPage는 이야기 부분과 선택지 부분으로 이루어져 있습니다.</p>
+
+<div class="language-swift highlighter-rouge"><div class="highlight"><pre class="highlight"><code>  <span class="c1">// MyStory.swift</span>
+
+  <span class="k">let</span> <span class="nv">story</span> <span class="o">=</span> <span class="kt">Story</span><span class="p">(</span><span class="nv">pages</span><span class="p">:</span> <span class="p">[</span>
+    <span class="kt">StoryPage</span><span class="p">(</span>
+      <span class="s">""" 이야기 부분 """</span>
+
+      <span class="nv">choices</span><span class="p">:</span> <span class="p">[</span>
+          <span class="kt">Choice</span><span class="p">(</span><span class="nv">text</span><span class="p">:</span> <span class="s">"Front row!"</span><span class="p">,</span> <span class="nv">destination</span><span class="p">:</span> <span class="mi">1</span><span class="p">),</span>
+          <span class="kt">Choice</span><span class="p">(</span><span class="nv">text</span><span class="p">:</span> <span class="s">"Find somewhere in the middle"</span><span class="p">,</span> <span class="nv">destination</span><span class="p">:</span> <span class="mi">1</span><span class="p">)</span>
+          <span class="kt">Choice</span><span class="p">(</span><span class="nv">text</span><span class="p">:</span> <span class="s">"Back of the room"</span><span class="p">,</span> <span class="nv">destination</span><span class="p">:</span> <span class="mi">2</span><span class="p">),</span>
+
+          <span class="p">]</span>
+        <span class="p">),</span>
+      <span class="p">]</span>
+    <span class="p">)</span>
+    <span class="c1">// 위의 방식으로 StoryPage가 page20까지 Story의 배열 타입 패러미터로 작성되어 있습니다.</span>
+</code></pre></div></div>
+<p>이야기 부분을 읽고 -&gt; 선택 -&gt; 페이지로 이동됩니다. 이동된 페이지에서도 마찬가지로 이야기 부분을 읽고 -&gt; 선택 -&gt; 해당 페이지로 이동합니다.</p>
+
+<h3 id="세개의-quotation-marks">세개의 quotation marks</h3>
+
+<p>””” “”” : String 값을 생성하는 특별한 방법입니다. 이 방법을 이용하면 여러 줄의 글을 쓸 수 있고 quotation marks도 사용할 수 있기 때문에 이야기와 같은 긴 글을 쓸 때 유용하게 사용할 수 있습니다.</p>
+
+<h3 id="the-destination-property">The destination property</h3>
+
+<p>Choice의 destination property는 story navigation 앱의 키 요소입니다. destination의 숫자 값은 페이지의 index 번호입니다. 인덱스는 0부터 세기 때문에 1페이지는 0, 2페이지는 1의 식으로 숫자가 적용됩니다.</p>
+
+<h2 id="section-2-story-data-model">Section 2: Story Data Model</h2>
+
+<p>위에서 작성한 Story data를 구조화하는 방법에 대해 알아봅니다.</p>
+
+<h3 id="storymodelsswift">StoryModels.swift</h3>
+
+<p>이 앱에서는 Story라는 custom type을 이용합니다. Story의 instance를 생성해 스토리 페이지를 화면에 출력합니다. 각 페이지는 이야기 부분과 몇 개의 선택지로 이루어져 있습니다.</p>
+
+<div class="language-swift highlighter-rouge"><div class="highlight"><pre class="highlight"><code>  <span class="c1">// StoryModels.swift</span>
+
+  <span class="kd">import</span> <span class="kt">Foundation</span>
+
+  <span class="kd">struct</span> <span class="kt">Story</span> <span class="p">{</span>
+
+    <span class="k">let</span> <span class="nv">pages</span><span class="p">:</span> <span class="p">[</span><span class="kt">StoryPage</span><span class="p">]</span>
+
+    <span class="nf">subscript</span><span class="p">(</span><span class="n">_</span> <span class="nv">pageIndex</span><span class="p">:</span> <span class="n">int</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kt">StoryPage</span> <span class="p">{</span>
+      <span class="k">return</span> <span class="n">pages</span><span class="p">[</span><span class="kt">PageIndex</span><span class="p">]</span>
+    <span class="p">}</span>
+  <span class="p">}</span>
+
+  <span class="kd">struct</span> <span class="kt">StoryPage</span> <span class="p">{</span>
+    <span class="k">let</span> <span class="nv">text</span><span class="p">:</span> <span class="kt">String</span>
+
+    <span class="k">let</span> <span class="nv">choices</span><span class="p">:</span> <span class="p">[</span><span class="kt">Choice</span><span class="p">]</span>
+
+    <span class="nf">init</span><span class="p">(</span><span class="n">_</span> <span class="nv">text</span><span class="p">:</span> <span class="kt">String</span><span class="p">,</span> <span class="nv">choices</span><span class="p">:</span> <span class="p">[</span><span class="kt">Choice</span><span class="p">])</span> <span class="p">{</span>
+      <span class="k">self</span><span class="o">.</span><span class="n">text</span> <span class="o">=</span> <span class="kt">Text</span>
+      <span class="k">self</span><span class="o">.</span><span class="n">choices</span> <span class="o">=</span> <span class="n">choices</span>
+    <span class="p">}</span>
+  <span class="p">}</span>
+
+  <span class="kd">struct</span> <span class="kt">Choice</span> <span class="p">{</span>
+    <span class="k">let</span> <span class="nv">text</span><span class="p">:</span> <span class="kt">String</span>
+    <span class="k">let</span> <span class="nv">destination</span><span class="p">:</span> <span class="kt">Int</span>
+  <span class="p">}</span>
+</code></pre></div></div>
+
+<h3 id="️-what-i-learned-from-this-part">☑️ What I Learned From This Part:</h3>
+<div class="notice--success">
+    1. Custom Type 생성 과정<br />
+    <br />
+    2. Custom type을 만드는 file에는 Foundation만 import하면 됨.<br />
+    <br />
+    3. init()의 이름을 사용하지 않는 패러미터<br />
+      init(_ text: String) -&gt; text는 패러미터의 이름일 뿐 생성자가 사용될 때 사용하는 이름은 아님. 이 경우에는 생성자 사용시 이름없이 바로 “”” “”” 으로 문자열을 입력해주었음.
+  </div>
+
+<h3 id="storypage-type">StoryPage type</h3>
+
+<p>또 다른 custom type인 StoryPage는 이야기 부분인 text 상수 속성과 선택지 부분인 choices 배열 속성 부분으로 이루어져 있습니다. choices 배열은 사용자를 각 선택마다 다른 페이지로 이동시켜줍니다.</p>
+
+<h3 id="choice-type">Choice type</h3>
+
+<p>Choice type도 custom type입니다. 선택지 버튼에 나타나는 문자열 부분과 페이지 인덱스 부분인  Int type의 destination 속성으로 이루어져 있습니다.</p>
+
+<h2 id="section-3-creating-a-navigation-view">Section 3: Creating a Navigation view</h2>
+
+<h3 id="storyviewswift">StoryView.swift</h3>
+
+<div class="language-swift highlighter-rouge"><div class="highlight"><pre class="highlight"><code>  <span class="c1">// StoryView.swift</span>
+
+  <span class="kd">import</span> <span class="kt">SwiftUI</span>
+
+  <span class="kd">struct</span> <span class="kt">StoryView</span><span class="p">:</span> <span class="kt">View</span> <span class="p">{</span>
+
+    <span class="k">var</span> <span class="nv">body</span><span class="p">:</span> <span class="kd">some</span> <span class="kt">View</span> <span class="p">{</span>
+      <span class="kt">NavigationView</span> <span class="p">{</span>
+        <span class="kt">StoryPageView</span><span class="p">(</span><span class="nv">story</span><span class="p">:</span> <span class="n">story</span><span class="p">,</span> <span class="nv">pageIndex</span><span class="p">:</span> <span class="mi">0</span><span class="p">)</span>
+      <span class="p">}</span>
+      <span class="o">.</span><span class="nf">navigationViewStyle</span><span class="p">(</span><span class="o">.</span><span class="n">stack</span><span class="p">)</span>
+    <span class="p">}</span>
+  <span class="p">}</span>
+
+  <span class="n">sturct</span> <span class="kt">ContentView_Previews</span><span class="p">:</span> <span class="n">previewProvider</span> <span class="p">{</span>
+    <span class="kd">static</span> <span class="k">var</span> <span class="nv">previews</span><span class="p">:</span> <span class="kd">some</span> <span class="kt">View</span> <span class="p">{</span>
+      <span class="kt">StoryView</span><span class="p">()</span>
+    <span class="p">}</span>
+  <span class="p">}</span>
+</code></pre></div></div>
+
+<h3 id="navigationview">NavigationView</h3>
+
+<p>StoryView는 이 앱의 top-level view입니다. 맨 처음 앱이 실행되면 보이는 view이죠.
+각각의 story page를 화면에 보여주고 페이지 사이를 이동하기 위해서 NavigationView를 이용합니다. NavigationView view는 각 스토리 페이지를 담는 컨테이너와 같습니다. 한 장의 스토리 페이지를 보여주고 Navigation Link가 탭 될 때마다 다른 페이지로 변경됩니다.</p>
+
+<p>NavigationView는 StoryPageView라는 콘텐츠를 가지고 있고 그것을 화면에 보여줍니다.
+여기서 이용된 story는 MyStory Data file에서 전역변수로 만들어주었습니다. story 안의 StoryPage 중 pageIndex: 0을 사용하여 첫 번째 페이지를 보여줍니다.</p>
+
+<h2 id="section-4-displaying-a-story-page">Section 4: Displaying a Story Page</h2>
+
+<h3 id="storypageviewswift">StoryPageView.swift</h3>
+
+<div class="language-swift highlighter-rouge"><div class="highlight"><pre class="highlight"><code>  <span class="c1">// StoryPageView.swift</span>
+
+  <span class="kd">import</span> <span class="kt">SwiftUI</span>
+
+  <span class="kd">struct</span> <span class="kt">StoryPageView</span><span class="p">:</span> <span class="kt">View</span> <span class="p">{</span>
+
+    <span class="k">let</span> <span class="nv">story</span><span class="p">:</span> <span class="kt">Story</span>
+    <span class="k">let</span> <span class="nv">pageIndex</span><span class="p">:</span> <span class="kt">Int</span>
+
+    <span class="k">var</span> <span class="nv">body</span><span class="p">:</span> <span class="kd">some</span> <span class="kt">View</span> <span class="p">{</span>
+      <span class="kt">VStack</span> <span class="p">{</span>
+          <span class="kt">ScrollView</span><span class="p">{</span>
+            <span class="kt">Text</span><span class="p">(</span><span class="n">story</span><span class="p">[</span><span class="n">pageindex</span><span class="p">]</span><span class="o">.</span><span class="n">text</span><span class="p">)</span>
+          <span class="p">}</span>
+
+          <span class="kt">ForEach</span><span class="p">(</span><span class="n">story</span><span class="p">[</span><span class="n">pageIndex</span><span class="p">]</span><span class="o">.</span><span class="n">choices</span><span class="p">,</span> <span class="nv">id</span><span class="p">:</span> <span class="p">\</span><span class="kt">Choice</span><span class="o">.</span><span class="n">text</span><span class="p">)</span> <span class="p">{</span> <span class="n">choice</span> <span class="k">in</span>
+              <span class="kt">NavigationLink</span><span class="p">(</span><span class="nv">destination</span><span class="p">:</span> <span class="kt">StoryPageView</span><span class="p">(</span><span class="nv">story</span><span class="p">:</span> <span class="n">story</span><span class="p">,</span> <span class="nv">pageIndex</span><span class="p">:</span> <span class="n">choice</span><span class="o">.</span><span class="n">destination</span><span class="p">))</span> <span class="p">{</span>
+                <span class="kt">Text</span><span class="p">(</span><span class="n">choice</span><span class="o">.</span><span class="n">text</span><span class="p">)</span>
+                    <span class="o">.</span><span class="nf">multilineTextAlignment</span><span class="p">(</span><span class="o">.</span><span class="n">leading</span><span class="p">)</span>
+                    <span class="o">.</span><span class="nf">frame</span><span class="p">(</span><span class="nv">maxWidth</span><span class="p">:</span> <span class="o">.</span><span class="n">infinity</span><span class="p">,</span> <span class="nv">alignment</span><span class="p">:</span> <span class="o">.</span><span class="n">leading</span><span class="p">)</span>
+                    <span class="o">.</span><span class="nf">padding</span><span class="p">()</span>
+                    <span class="o">.</span><span class="nf">background</span><span class="p">(</span><span class="kt">Color</span><span class="o">.</span><span class="n">gray</span><span class="o">.</span><span class="nf">opacity</span><span class="p">(</span><span class="mf">0.25</span><span class="p">))</span>
+                    <span class="o">.</span><span class="nf">cornerRadius</span><span class="p">(</span><span class="mi">8</span><span class="p">)</span>
+                <span class="p">}}</span>
+      <span class="p">}</span>
+      <span class="o">.</span><span class="nf">padding</span><span class="p">()</span>
+      <span class="o">.</span><span class="nf">navigationTitle</span><span class="p">(</span><span class="s">"Page </span><span class="se">\(</span><span class="n">pageIndex</span> <span class="o">+</span> <span class="mi">1</span><span class="se">)</span><span class="s">"</span><span class="p">)</span>
+      <span class="o">.</span><span class="nf">navigationBarTitleDisplayMode</span><span class="p">(</span><span class="o">.</span><span class="n">inline</span><span class="p">)</span>
+    <span class="p">}</span>
+  <span class="p">}</span>
+</code></pre></div></div>
+
+<p>앱의 스토리를 화면에 출력하기 위해서 Story type을 사용합니다. Story type은 이야기에 대한 모든 정보들을 담고 있습니다. 이야기에 대한 데이터를 변경하려면 MyStory Data file로 이동해 story 전역변수에 담긴 내용을 수정해 줍니다.
+  VStack을 이용해서 text / choices를 수직으로 배치합니다. 이야기 부분에는 ScrollView를 사용함으로써 많은 내용을 담더라도 스크롤을 이용해 화면에 모두 보일 수 있도록 합니다. pageIndex는 현재 페이지의 index 번호를 나타냄으로 Text(story[pageIndex].text)는 현재 페이지의 text 부분을 가져와 화면에 보여줍니다.</p>
+
+<h3 id="foreach-structure">ForEach structure</h3>
+
+<p>ForEach view는 여러 개의 view를 생성할 때 사용됩니다. 여기서는 현재 페이지의 choices 배열을 화면에 보여줍니다. 배열은 각각 선택지를 담고 있습니다. 선택지가 3개라면 3개의 버튼을, 4개라면 4개의 NavigationLink를 만듭니다. { } 안의 코드를 배열의 각 item마다 반복하기 때문에 같은 형태의 NavigationLink를 만듭니다.</p>
+
+<h3 id="id-argument">id argument</h3>
+
+<p>SwiftUI는 배열의 각 item을 분리, 구별하기 위해서 id argument를 사용합니다. 여기서는 각 choice가 다른 text를 가지고 있기 때문에 text를 id로 사용합니다.</p>
+
+<h3 id="navigationlink">NavigationLink</h3>
+
+<p>NavigationLink는 두가지가 필요합니다.</p>
+<ol>
+  <li>destination(여기서는 스토리 페이지)</li>
+  <li>화면에 출력할 content(여기서는 선택지 Text)</li>
+</ol>
+
+<p>이 앱에서 NavigationLink의 destination은 각 선택지가 연결되어 있는 페이지 입니다.</p>
+
+<div class="language-swift highlighter-rouge"><div class="highlight"><pre class="highlight"><code>  <span class="kt">NavigationLink</span><span class="p">(</span><span class="nv">destination</span><span class="p">:</span> <span class="kt">StoryPageView</span><span class="p">())</span> <span class="p">{</span>
+
+      <span class="c1">// 이곳에 화면에 출력될 content code를 작성합니다.</span>
+
+  <span class="p">}</span>
+</code></pre></div></div>
+
+<p>Navigation links는 NavigationView 아래서만 작동합니다.</p>
+
+<h3 id="aligning-text">Aligning Text</h3>
+
+<div class="language-swift highlighter-rouge"><div class="highlight"><pre class="highlight"><code>  <span class="kt">Text</span><span class="p">(</span><span class="n">choice</span><span class="o">.</span><span class="n">text</span><span class="p">)</span>
+      <span class="o">.</span><span class="nf">multilineTextAlignment</span><span class="p">(</span><span class="o">.</span><span class="n">leading</span><span class="p">)</span>
+      <span class="o">.</span><span class="nf">frame</span><span class="p">(</span><span class="nv">maxWidth</span><span class="p">:</span> <span class="o">.</span><span class="n">infinity</span><span class="p">,</span> <span class="nv">alignment</span><span class="p">:</span> <span class="o">.</span><span class="n">leading</span><span class="p">)</span>
+      <span class="o">.</span><span class="nf">padding</span><span class="p">()</span>
+      <span class="o">.</span><span class="nf">background</span><span class="p">(</span><span class="kt">Color</span><span class="o">.</span><span class="n">gray</span><span class="o">.</span><span class="nf">opacity</span><span class="p">(</span><span class="mf">0.25</span><span class="p">))</span>
+      <span class="o">.</span><span class="nf">cornerRadius</span><span class="p">(</span><span class="mi">8</span><span class="p">)</span>
+</code></pre></div></div>
+<ul>
+  <li><strong>multilineTextAlignment(.leading)</strong>는 여러줄의 text를 정렬하는 modifier입니다. leading은 왼쪽 정렬입니다.</li>
+  <li><strong>frame</strong>은 보이지 않은 frame에 text를 담습니다. maxWidth값에 .infinity로 주면 frame은 가능한 가장 넓은  width값을 가지게 됩니다.</li>
+  <li><strong>alignment: .leading</strong>은 frame 안에 있는 text를 왼쪽 정렬합니다.</li>
+</ul>
+
+<h3 id="navigation-bar">Navigation Bar</h3>
+
+<div class="language-swift highlighter-rouge"><div class="highlight"><pre class="highlight"><code>  <span class="p">}</span> <span class="c1">// VStack 끝나는 부분</span>
+  <span class="o">.</span><span class="nf">padding</span><span class="p">()</span>
+  <span class="o">.</span><span class="nf">navigationTitle</span><span class="p">(</span><span class="s">"Page </span><span class="se">\(</span><span class="n">pageIndex</span> <span class="o">+</span> <span class="mi">1</span><span class="se">)</span><span class="s">"</span><span class="p">)</span>
+  <span class="o">.</span><span class="nf">navigationBarTitleDisplayMode</span><span class="p">(</span><span class="o">.</span><span class="n">inline</span><span class="p">)</span>
+</code></pre></div></div>
+
+<ul>
+  <li>VStack 아래에 다른 콘텐츠나 스택이 없는 상황에서. .padding()을 주면 화면 안에서 VStack 주변에 적절한 양의 padding을 줍니다. 패딩을 주지 않으면 콘텐츠들이 화면에 딱 붙어서 보입니다.</li>
+</ul>
+
+<p>아래쪽 modifier 두 개는 view가 NavigationView 아래에 사용되었을 때 적용됩니다. Navigation view는 navigation bar를 제공합니다. Navigation Bar에는 title과 뒤로 가기 버튼이 기본적으로 주어집니다. Extra button이나 text와 같은 커스텀 가능한 다른 아이템들도 있습니다.</p>
+
+<ul>
+  <li>.navigationTitle modifier를 이용해서 현재 페이지의 번호를 화면에 출력할 수 있습니다.</li>
+  <li>
+    <p>.navigationBarTitleDisplayMode로는 타이틀의 크기와 나타나는 스타일을 바꿀 수 있습니다. inline은 더 작은 글씨로 나타나게 합니다. automatic과 large도 선택할 수 있습니다. (적용해 보니 automatic과 large 둘이 똑같이 나옵니다. 더 큰 사이즈에 글자로 왼쪽 정렬해서 텍스트 안의 head부분처럼 보이네요.)</p>
+
+    <center><img src="/assets/images/choose2.png" alt="My Own MyStory" width="300" /></center>
+  </li>
+</ul>
+
+        
+      </section>
+
+      <footer class="page__meta">
+        
+        
+  
+
+
+  
+
+  <p class="page__taxonomy">
+    <strong><i class="fas fa-fw fa-tags" aria-hidden="true"></i> Tags: </strong>
+    <span itemprop="keywords">
+    
+      <a href="/tags/#learning" class="page__taxonomy-item p-category" rel="tag">learning</a><span class="sep">, </span>
+    
+      <a href="/tags/#sample-apps-tutorials" class="page__taxonomy-item p-category" rel="tag">Sample Apps Tutorials</a><span class="sep">, </span>
+    
+      <a href="/tags/#swift" class="page__taxonomy-item p-category" rel="tag">Swift</a><span class="sep">, </span>
+    
+      <a href="/tags/#%EA%B3%B5%EB%B6%80-%EA%B8%B0%EB%A1%9D" class="page__taxonomy-item p-category" rel="tag">공부 기록</a>
+    
+    </span>
+  </p>
+
+
+
+
+  
+
+
+  
+
+  <p class="page__taxonomy">
+    <strong><i class="fas fa-fw fa-folder-open" aria-hidden="true"></i> Categories: </strong>
+    <span itemprop="keywords">
+    
+      <a href="/categories/#til" class="page__taxonomy-item p-category" rel="tag">TIL</a>
+    
+    </span>
+  </p>
+
+
+        
+
+  <p class="page__date"><strong><i class="fas fa-fw fa-calendar-alt" aria-hidden="true"></i> Updated:</strong> <time class="dt-published" datetime="2022-04-07T00:00:00+09:00">April 7, 2022</time></p>
+
+      </footer>
+
+      
+
+      
+  <nav class="pagination">
+    
+      <a href="/til/aboutMe/" class="pagination--pager" title="Navigating Apps: About Me
+">Previous</a>
+    
+    
+      <a href="#" class="pagination--pager disabled">Next</a>
+    
+  </nav>
+
+    </div>
+
+    
+  </article>
+
+  
+  
+    <div class="page__related">
+      <h2 class="page__related-title">You may also enjoy</h2>
+      <div class="grid__wrapper">
+        
+          
+
+
+
+<div class="grid__item">
+  <article class="archive__item" itemscope itemtype="https://schema.org/CreativeWork">
+    
+      <div class="archive__item-teaser">
+        <img src="/assets/images/teaser.jpg" alt="">
+      </div>
+    
+    <h2 class="archive__item-title no_toc" itemprop="headline">
+      
+        <a href="/til/aboutMe/" rel="permalink">Navigating Apps: About Me
+</a>
+      
+    </h2>
+    
+
+  <p class="page__meta">
+    
+      
+      <span class="page__meta-date">
+        <i class="far fa-calendar-alt" aria-hidden="true"></i>
+        
+        <time datetime="2022-04-06T00:00:00+09:00">April 6, 2022</time>
+      </span>
+    
+
+    
+
+    
+  </p>
+
+
+    <p class="archive__item-excerpt" itemprop="description">Sample Apps Tutorials: About Me(Navigating Apps)
+아래 모든 정보의 출처는 apple developer 공식 페이지이며 개인의 학습 용도로만 사용되었음을 밝힙니다.
+</p>
+  </article>
+</div>
+
+        
+          
+
+
+
+<div class="grid__item">
+  <article class="archive__item" itemscope itemtype="https://schema.org/CreativeWork">
+    
+      <div class="archive__item-teaser">
+        <img src="/assets/images/teaser.jpg" alt="">
+      </div>
+    
+    <h2 class="archive__item-title no_toc" itemprop="headline">
+      
+        <a href="/til/playgrounds/" rel="permalink">Playgrounds
+</a>
+      
+    </h2>
+    
+
+  <p class="page__meta">
+    
+      
+      <span class="page__meta-date">
+        <i class="far fa-calendar-alt" aria-hidden="true"></i>
+        
+        <time datetime="2022-03-29T00:00:00+09:00">March 29, 2022</time>
+      </span>
+    
+
+    
+
+    
+  </p>
+
+
+    <p class="archive__item-excerpt" itemprop="description">Playgrounds: Learn to Code 1
+아래 모든 내용들은 Playgrounds에서 학습하며 정리한 내용입니다.
+  모든 내용의 출처는 Playgrounds임을 밝힙니다.
+</p>
+  </article>
+</div>
+
+        
+          
+
+
+
+<div class="grid__item">
+  <article class="archive__item" itemscope itemtype="https://schema.org/CreativeWork">
+    
+      <div class="archive__item-teaser">
+        <img src="/assets/images/main_octopi.png" alt="">
+      </div>
+    
+    <h2 class="archive__item-title no_toc" itemprop="headline">
+      
+        <a href="/til/popup-center/" rel="permalink">JavaScript: 팝업창 가운데에 띄우기
+</a>
+      
+    </h2>
+    
+
+  <p class="page__meta">
+    
+      
+      <span class="page__meta-date">
+        <i class="far fa-calendar-alt" aria-hidden="true"></i>
+        
+        <time datetime="2022-03-24T00:00:00+09:00">March 24, 2022</time>
+      </span>
+    
+
+    
+
+    
+  </p>
+
+
+    <p class="archive__item-excerpt" itemprop="description">아무런 설정을 하지 않고 window.open() 메서드를 사용해서 팝업창을 띄웠더니 화면 맨 왼쪽 위에 팝업창이 나타납니다. 이 팝업창을 가운데로 옮겨보았습니다.
+</p>
+  </article>
+</div>
+
+        
+          
+
+
+
+<div class="grid__item">
+  <article class="archive__item" itemscope itemtype="https://schema.org/CreativeWork">
+    
+      <div class="archive__item-teaser">
+        <img src="/assets/images/teaser.jpg" alt="">
+      </div>
+    
+    <h2 class="archive__item-title no_toc" itemprop="headline">
+      
+        <a href="/til/cyclicRotation/" rel="permalink">Codility_Developer Training: 배열 챕터의 문제 CyclicRotation
+</a>
+      
+    </h2>
+    
+
+  <p class="page__meta">
+    
+      
+      <span class="page__meta-date">
+        <i class="far fa-calendar-alt" aria-hidden="true"></i>
+        
+        <time datetime="2022-03-16T00:00:00+09:00">March 16, 2022</time>
+      </span>
+    
+
+    
+
+    
+  </p>
+
+
+    <p class="archive__item-excerpt" itemprop="description">CyclicRotation 문제 읽기
+</p>
+  </article>
+</div>
+
+        
+      </div>
+    </div>
+  
+  
+</div>
+    </div>
+
+    
+      <div class="search-content">
+        <div class="search-content__inner-wrap"><form class="search-content__form" onkeydown="return event.key != 'Enter';" role="search">
+    <label class="sr-only" for="search">
+      Enter your search term...
+    </label>
+    <input type="search" id="search" class="search-input" tabindex="-1" placeholder="Enter your search term..." />
+  </form>
+  <div id="results" class="results"></div></div>
+
+      </div>
+    
+
+    <div id="footer" class="page__footer">
+      <footer>
+        <!-- start custom footer snippets -->
+
+<!-- end custom footer snippets -->
+        <div class="page__footer-follow">
+  <ul class="social-icons">
+    
+      <li><strong>Follow:</strong></li>
+    
+
+    
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+
+    
+      <li><a href="/feed.xml"><i class="fas fa-fw fa-rss-square" aria-hidden="true"></i> Feed</a></li>
+    
+  </ul>
+</div>
+
+<div class="page__footer-copyright">&copy; 2022 Mirae the Future. Powered by <a href="https://jekyllrb.com" rel="nofollow">Jekyll</a> &amp; <a href="https://mademistakes.com/work/minimal-mistakes-jekyll-theme/" rel="nofollow">Minimal Mistakes</a>.</div>
+
+      </footer>
+    </div>
+
+    
+  <script src="/assets/js/main.min.js"></script>
+
+
+
+
+<script src="/assets/js/lunr/lunr.min.js"></script>
+<script src="/assets/js/lunr/lunr-store.js"></script>
+<script src="/assets/js/lunr/lunr-en.js"></script>
+
+
+
+
+
+
+
+  </body>
+</html>
