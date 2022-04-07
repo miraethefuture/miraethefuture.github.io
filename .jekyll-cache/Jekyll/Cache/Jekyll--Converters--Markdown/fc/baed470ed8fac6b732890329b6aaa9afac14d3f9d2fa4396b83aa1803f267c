@@ -1,0 +1,189 @@
+I"mB<p><a href="https://developer.apple.com/tutorials/sample-apps/aboutme">Sample Apps Tutorials: About Me(Navigating Apps)</a><br />
+<sub>아래 모든 정보의 출처는 apple developer 공식 페이지이며 개인의 학습 용도로만 사용되었음을 밝힙니다.</sub></p>
+
+<h1 id="section-1-app-configuration">Section 1: App Configuration</h1>
+
+<p>앱이 views들 사이에서 데이터를 공유하는 방법</p>
+
+<ul>
+  <li>하나의 데이터 object를 만든다.</li>
+  <li>전체 view hierachy에서 object를 사용한다.</li>
+</ul>
+
+<h2 id="dateplannerappswift">DatePlannerApp.swift</h2>
+
+<div class="language-swift highlighter-rouge"><div class="highlight"><pre class="highlight"><code>  <span class="c1">// DatePlannerApp.swift</span>
+
+  <span class="kd">import</span> <span class="kt">SwiftUI</span>
+
+  <span class="kd">@main</span>
+  <span class="kd">struct</span> <span class="kt">DatePlannerApp</span><span class="p">:</span> <span class="kt">App</span> <span class="p">{</span>
+      <span class="kd">@StateObject</span> <span class="kd">private</span> <span class="k">var</span> <span class="nv">eventData</span> <span class="o">=</span> <span class="kt">EventData</span><span class="p">()</span>
+
+    <span class="k">var</span> <span class="nv">body</span><span class="p">:</span> <span class="kd">some</span> <span class="kt">Scene</span> <span class="p">{</span>
+      <span class="kt">WindowGroup</span> <span class="p">{</span>
+        <span class="kt">NavigationView</span> <span class="p">{</span>
+            <span class="kt">EventList</span><span class="p">()</span>
+            <span class="kt">Text</span><span class="p">(</span><span class="s">"Select an Event"</span><span class="p">)</span>
+                <span class="o">.</span><span class="nf">foregroundStyle</span><span class="p">(</span><span class="o">.</span><span class="n">secondary</span><span class="p">)</span>
+        <span class="p">}</span>
+        <span class="o">.</span><span class="nf">environmentObject</span><span class="p">(</span><span class="n">eventData</span><span class="p">)</span>
+      <span class="p">}</span>
+    <span class="p">}</span>
+  <span class="p">}</span>
+</code></pre></div></div>
+<h3 id="navigationview">NavigationView</h3>
+
+<ul>
+  <li>서로 다른 views를 이동하기 위해 NavigationView를 사용합니다.</li>
+  <li>NavigationView 아래에는 앱의 home view가 작성됩니다.</li>
+  <li>이 앱의 첫화면이자 home view는 EventList() 입니다.</li>
+  <li>iPad의 가로 화면과 같은 더 넓은 앱화면 구성에서, SwiftUI는 NavigationView를 이용할 때 여러개의 컨텐츠를 하나의 스택이 아닌 나란한 행들로 화면에 나타냅니다. 이 앱에서 EventList는 하나의 sidebar column에 나타납니다. 각 컨텐츠는 primary pane에 나타납니다.</li>
+</ul>
+
+<p><!-- Select an Event 나타나는 곳이 어딜까? --></p>
+
+<h3 id="var-eventdata">var eventData</h3>
+
+<div class="language-swift highlighter-rouge"><div class="highlight"><pre class="highlight"><code>  <span class="kd">@StateObject</span> <span class="kd">private</span> <span class="k">var</span> <span class="nv">eventData</span> <span class="o">=</span> <span class="kt">EventData</span><span class="p">()</span>
+</code></pre></div></div>
+
+<p>이 앱은 eventData라는 이름의 변수에 데이터를 저장합니다. eventData 변수는 @StateObject wrapper와 함께 observable object인 EventData의 instance를 만듭니다. SwiftUI는 observable object에 일어나는 변화를 추적합니다. 만약 변화가 생기면 SwiftUI가 자동으로 이 object를 사용하는 view를 업데이트 합니다.</p>
+
+<div class="language-swift highlighter-rouge"><div class="highlight"><pre class="highlight"><code>  <span class="p">}</span> <span class="c1">// NavigationView 끝</span>
+  <span class="o">.</span><span class="nf">environmentObject</span><span class="p">(</span><span class="n">eventData</span><span class="p">)</span>
+</code></pre></div></div>
+
+<p>eventData를 전체 view 계층에서 사용하기 위해서 .environmentObject와 eventData instance를 사용합니다. 이것을 사용하므로써 앱의 모든 navigation view의 child views들 그리고 child view의 child view까지 이 데이터를 사용할 수 있게 됩니다.</p>
+
+<h1 id="section-2-event-model">Section 2: Event Model</h1>
+
+<p>아래에서 Event model은 이벤트를 구성하고 시각화하기 위해 필요한 모든 데이터를 가지고 있습니다.<br />
+  Event 모델을 구성하는 방법에 대해 알아봅니다.</p>
+
+<h2 id="eventswift">Event.swift</h2>
+
+<div class="language-swift highlighter-rouge"><div class="highlight"><pre class="highlight"><code>  <span class="c1">// Event.swift</span>
+
+  <span class="kd">import</span> <span class="kt">SwiftUI</span>
+
+  <span class="kd">struct</span> <span class="kt">Event</span><span class="p">:</span> <span class="kt">Identifiable</span><span class="p">,</span> <span class="kt">Hashable</span> <span class="p">{</span>
+    <span class="k">var</span> <span class="nv">id</span> <span class="o">=</span> <span class="kt">UUID</span><span class="p">()</span>
+    <span class="k">var</span> <span class="nv">symbol</span><span class="p">:</span> <span class="kt">String</span> <span class="o">=</span> <span class="kt">EventSymbols</span><span class="o">.</span><span class="nf">randomName</span><span class="p">()</span>
+    <span class="k">var</span> <span class="nv">color</span><span class="p">:</span> <span class="kt">Color</span> <span class="o">=</span> <span class="kt">ColorOptions</span><span class="o">.</span><span class="nf">random</span><span class="p">()</span>
+    <span class="k">var</span> <span class="nv">title</span> <span class="o">=</span> <span class="s">""</span>
+    <span class="k">var</span> <span class="nv">tasks</span> <span class="o">=</span> <span class="p">[</span><span class="kt">EventTask</span><span class="p">(</span><span class="nv">text</span><span class="p">:</span> <span class="s">""</span><span class="p">)]</span>
+    <span class="k">var</span> <span class="nv">date</span> <span class="o">=</span> <span class="kt">Date</span><span class="p">()</span>
+
+    <span class="k">var</span> <span class="nv">remainingTaskCount</span><span class="p">:</span> <span class="kt">Int</span> <span class="p">{</span>
+        <span class="n">tasks</span><span class="o">.</span><span class="n">filter</span> <span class="p">{</span> <span class="o">!</span><span class="nv">$0</span><span class="o">.</span><span class="n">isCompleted</span> <span class="p">}</span><span class="o">.</span><span class="n">count</span>
+    <span class="p">}</span>
+
+    <span class="k">var</span> <span class="nv">isComplete</span><span class="p">:</span> <span class="kt">Bool</span> <span class="p">{</span>
+        <span class="n">tasks</span><span class="o">.</span><span class="n">allSatisfy</span> <span class="p">{</span> <span class="nv">$0</span><span class="o">.</span><span class="n">isCompleted</span> <span class="p">}</span>
+    <span class="p">}</span>
+
+    <span class="k">var</span> <span class="nv">isPast</span><span class="p">:</span> <span class="kt">Bool</span> <span class="p">{</span>
+        <span class="n">date</span> <span class="o">&lt;</span> <span class="kt">Date</span><span class="o">.</span><span class="n">now</span>
+    <span class="p">}</span>
+
+    <span class="k">var</span> <span class="nv">isWithinSevenDays</span><span class="p">:</span> <span class="kt">Bool</span> <span class="p">{</span>
+        <span class="o">!</span><span class="n">isPast</span> <span class="o">&amp;&amp;</span> <span class="n">date</span> <span class="o">&lt;</span> <span class="kt">Date</span><span class="o">.</span><span class="n">now</span><span class="o">.</span><span class="n">sevenDaysOut</span>
+    <span class="p">}</span>
+
+    <span class="k">var</span> <span class="nv">isWithinSevenToThirtyDays</span><span class="p">:</span> <span class="kt">Bool</span> <span class="p">{</span>
+        <span class="o">!</span><span class="n">isPast</span> <span class="o">&amp;&amp;</span> <span class="o">!</span><span class="n">isWithinSevenDays</span> <span class="o">&amp;&amp;</span> <span class="n">date</span> <span class="o">&lt;</span> <span class="kt">Date</span><span class="o">.</span><span class="n">now</span><span class="o">.</span><span class="n">thirtyDaysOut</span>
+    <span class="p">}</span>
+
+    <span class="k">var</span> <span class="nv">isDistant</span><span class="p">:</span> <span class="kt">Bool</span> <span class="p">{</span>
+        <span class="n">date</span> <span class="o">&gt;=</span> <span class="kt">Date</span><span class="p">()</span><span class="o">.</span><span class="n">thirtyDaysOut</span>
+    <span class="p">}</span>
+
+  <span class="p">}</span>
+
+</code></pre></div></div>
+
+<p>Event planner는 데이터를 분류, 구성하기 위해서 여러개의 Event object의 모음(collection)을 사용합니다. 각각의 Event object는 캠핑, 여행, 생일파티와 같은 특정 이벤트를 나타냅니다.</p>
+
+<ul>
+  <li><strong>Identifiable protocol</strong>은 이벤트의 리스트를 생성할 때 SwiftUI가 이벤트의 값을 다른 것들과 확실히 구별하고 그것을 업데이트 해줍니다.</li>
+</ul>
+
+<h3 id="-틈새-영어-단어-populate">📖 틈새 영어 단어: populate</h3>
+<div class="notice">
+     <h4>The Event type contains all of the information you need to populate an event.</h4>
+     <p>컴퓨터에서 데이터 베이스나 테이블에 정보를 입력하는 것을 말합니다.</p>
+  </div>
+
+<h3 id="event-type">Event Type</h3>
+<div class="language-swift highlighter-rouge"><div class="highlight"><pre class="highlight"><code>  <span class="kd">struct</span> <span class="kt">Event</span><span class="p">:</span> <span class="kt">Identifiable</span><span class="p">,</span> <span class="kt">Hashable</span> <span class="p">{</span>
+    <span class="k">var</span> <span class="nv">id</span> <span class="o">=</span> <span class="kt">UUID</span><span class="p">()</span>
+    <span class="k">var</span> <span class="nv">symbol</span><span class="p">:</span> <span class="kt">String</span> <span class="o">=</span> <span class="kt">EventSymbols</span><span class="o">.</span><span class="nf">randomName</span><span class="p">()</span>
+    <span class="k">var</span> <span class="nv">color</span><span class="p">:</span> <span class="kt">Color</span> <span class="o">=</span> <span class="kt">ColorOptions</span><span class="o">.</span><span class="nf">random</span><span class="p">()</span>
+    <span class="k">var</span> <span class="nv">title</span> <span class="o">=</span> <span class="s">""</span>
+    <span class="k">var</span> <span class="nv">tasks</span> <span class="o">=</span> <span class="p">[</span><span class="kt">EventTast</span><span class="p">(</span><span class="nv">text</span><span class="p">:</span> <span class="s">""</span><span class="p">)]</span>
+    <span class="k">var</span> <span class="nv">date</span> <span class="o">=</span> <span class="kt">Date</span><span class="p">()</span>
+  <span class="p">}</span>
+</code></pre></div></div>
+<p>Event type은 하나의 이벤트를 만들기 위한 모든 정보를 가지고 있습니다. 심볼과 색, 이벤트의 이름, 이벤트 안에서 수행해야 할 tasks와 날짜입니다. task는 이벤트를 누르면 to-do 형식으로 나타납니다.</p>
+
+<h3 id="computed-properties">Computed properties</h3>
+
+<p>Stored properties 아래에는 computed properties가 있습니다. Computed properties는 날짜나 수행한 task 수를 기반으로 이벤트를 정렬할 수 있도록 합니다.</p>
+
+<div class="language-swift highlighter-rouge"><div class="highlight"><pre class="highlight"><code>  <span class="k">var</span> <span class="nv">isPast</span><span class="p">:</span> <span class="kt">Bool</span> <span class="p">{</span>
+    <span class="n">date</span> <span class="o">&lt;</span> <span class="kt">Date</span><span class="o">.</span><span class="n">now</span>
+  <span class="p">}</span>
+</code></pre></div></div>
+<p>에를 들어 위의 isPast property는 현재 날짜, 시간보다 이벤트의 날짜 시간이 적으면 true를 반환합니다. 이것을 이용해 사용자들은 과거 이벤트를 위한 카테고리에 지난 이벤트들을 모아둘 수 있습니다.</p>
+
+<h1 id="section-3-event-task">Section 3: Event Task</h1>
+
+<p>하나의 EventTask는 하나의 to-do 아이템을 나타냅니다. 이 챕터에서는 어떤 방식으로 task 부분을 구성하는지 알아봅니다.</p>
+
+<h2 id="eventtaskswift">EventTask.swift</h2>
+
+<div class="language-swift highlighter-rouge"><div class="highlight"><pre class="highlight"><code>  <span class="c1">// EventTask.swift  </span>
+
+  <span class="kd">import</span> <span class="kt">SwiftUI</span>
+
+  <span class="kd">struct</span> <span class="kt">EventTask</span><span class="p">:</span> <span class="kt">Identifiable</span><span class="p">,</span> <span class="kt">Hashable</span> <span class="p">{</span>
+    <span class="k">var</span> <span class="nv">id</span> <span class="o">=</span> <span class="kt">UUID</span><span class="p">()</span>
+    <span class="k">var</span> <span class="nv">text</span><span class="p">:</span> <span class="kt">String</span>
+    <span class="k">var</span> <span class="nv">isCompleted</span> <span class="o">=</span> <span class="kc">false</span>
+    <span class="k">var</span> <span class="nv">isNew</span> <span class="o">=</span> <span class="kc">false</span>
+  <span class="p">}</span>
+</code></pre></div></div>
+
+<p>Event type과 마찬가지로 EventTask type 역시 Identifiable protocol을 따릅니다. 이것은 SwiftUI이 리스트 속 to-do 아이템의 모양을 관리하고 업데이트 할 수 있도록 합니다. EventTask type은 id, text, isComplete, isNew와 같은 to-do 아이템의 속성들을 가지고 있습니다.</p>
+
+<h1 id="section-4-event-data">Section 4: Event Data</h1>
+
+<p>앱의 event list에 정보를 입력하기 위해 observable object인 EventData를 사용합니다. 그리고 어떻게 데이터의 구조를 구성하고 업데이트하는지 알아봅니다.</p>
+
+<h2 id="eventdata-type">EventData type</h2>
+
+<div class="language-swift highlighter-rouge"><div class="highlight"><pre class="highlight"><code>  <span class="c1">// EventData.swift</span>
+  <span class="kd">import</span> <span class="kt">SwiftUI</span>
+
+  <span class="kd">class</span> <span class="kt">EventData</span><span class="p">:</span> <span class="kt">ObservableObject</span> <span class="p">{</span>
+      <span class="kd">@Published</span> <span class="k">var</span> <span class="nv">events</span><span class="p">:</span> <span class="p">[</span><span class="kt">Event</span><span class="p">]</span> <span class="o">=</span> <span class="p">[</span>
+          <span class="kt">Event</span><span class="p">(</span><span class="nv">symbol</span><span class="p">:</span> <span class="s">"gift.fill"</span><span class="p">,</span>
+                <span class="nv">color</span><span class="p">:</span> <span class="o">.</span><span class="n">red</span><span class="p">,</span>
+                <span class="nv">title</span><span class="p">:</span> <span class="s">"Future's Birthday"</span><span class="p">,</span>
+                <span class="nv">tasks</span><span class="p">:</span> <span class="p">[</span><span class="kt">EventTask</span><span class="p">(</span><span class="nv">text</span><span class="p">:</span> <span class="s">"Wine"</span><span class="p">),</span>
+                        <span class="kt">EventTask</span><span class="p">(</span><span class="nv">text</span><span class="p">:</span> <span class="s">"Cheese plate"</span><span class="p">),</span>
+                        <span class="kt">EventTask</span><span class="p">(</span><span class="nv">text</span><span class="p">:</span> <span class="s">"Something too sweet"</span><span class="p">),</span>
+                        <span class="p">],</span>
+                <span class="nv">date</span><span class="p">:</span> <span class="kt">Date</span><span class="o">.</span><span class="nf">roundedHoursFromNow</span><span class="p">(</span><span class="mi">60</span> <span class="o">*</span> <span class="mi">60</span> <span class="o">*</span> <span class="mi">24</span> <span class="mi">8</span> <span class="mi">30</span><span class="p">)),</span>
+          <span class="kt">Event</span><span class="p">(</span><span class="nv">symbol</span><span class="p">:</span> <span class="s">"theatermasks.fill"</span><span class="p">,</span>
+                <span class="c1">//위와 같은 내용)</span>
+      <span class="p">]</span>
+  <span class="p">}</span>
+</code></pre></div></div>
+<h3 id="️-what-i-learned-from-this-part">☑️ What I Learned From This Part:</h3>
+
+<div class="notice--success">
+Swift는 배열의 마지막 아이템 뒤에도 ','를 적는다. 
+</div>
+:ET
