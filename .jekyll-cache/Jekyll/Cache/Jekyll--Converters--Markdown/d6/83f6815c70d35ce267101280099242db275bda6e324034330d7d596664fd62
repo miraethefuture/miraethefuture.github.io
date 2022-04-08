@@ -1,0 +1,10 @@
+I"{<p><a href="https://docs.swift.org/swift-book/GuidedTour/GuidedTour.html">A Swift Tour</a>
+<sub>아래 모든 정보의 출처는 Swift 공식 문서이며 개인의 학습 용도로만 사용되었음을 밝힙니다.<br />
+All information below comes from the Swift documentation and is for personal learning purposes only.</sub></p>
+
+<h2 id="문자열과-변수의-값">문자열과 변수의 값</h2>
+
+<div class="language-swift highlighter-rouge"><div class="highlight"><pre class="highlight"><code>  <span class="o">&lt;</span><span class="n">sub</span><span class="o">&gt;</span><span class="n">아래</span> <span class="n">모든</span> <span class="n">정보의</span> <span class="n">출처는</span> <span class="n">apple</span> <span class="n">developer</span> <span class="n">공식</span> <span class="n">페이지이며</span> <span class="n">개인의</span> <span class="n">학습</span> <span class="n">용도로만</span> <span class="n">사용되었음을</span> <span class="n">밝힙니다</span><span class="o">.</span>  
+  <span class="kt">All</span> <span class="n">information</span> <span class="n">below</span> <span class="n">comes</span> <span class="n">from</span> <span class="n">the</span> <span class="n">official</span> <span class="n">apple</span> <span class="n">developer</span> <span class="n">page</span> <span class="n">and</span> <span class="k">is</span> <span class="k">for</span> <span class="n">personal</span> <span class="n">learning</span> <span class="n">purposes</span> <span class="n">only</span><span class="o">.&lt;/</span><span class="n">sub</span><span class="o">&gt;</span> 
+</code></pre></div></div>
+:ET

@@ -1,4 +1,12 @@
-<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="4.2.1">Jekyll</generator><link href="http://localhost:4000/feed.xml" rel="self" type="application/atom+xml" /><link href="http://localhost:4000/" rel="alternate" type="text/html" /><updated>2022-04-08T22:28:11+09:00</updated><id>http://localhost:4000/feed.xml</id><title type="html">Mirae the Future</title><subtitle>An amazing website.</subtitle><author><name>Mirae</name></author><entry><title type="html">Swift: Playgrounds</title><link href="http://localhost:4000/til/playgrounds2/" rel="alternate" type="text/html" title="Swift: Playgrounds" /><published>2022-04-08T00:00:00+09:00</published><updated>2022-04-08T00:00:00+09:00</updated><id>http://localhost:4000/til/playgrounds2</id><content type="html" xml:base="http://localhost:4000/til/playgrounds2/">&lt;h1 id=&quot;learn-to-code-2&quot;&gt;Learn to code 2&lt;/h1&gt;
+<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="4.2.1">Jekyll</generator><link href="http://localhost:4000/feed.xml" rel="self" type="application/atom+xml" /><link href="http://localhost:4000/" rel="alternate" type="text/html" /><updated>2022-04-08T23:56:28+09:00</updated><id>http://localhost:4000/feed.xml</id><title type="html">Mirae the Future</title><subtitle>An amazing website.</subtitle><author><name>Mirae</name></author><entry><title type="html">Guided Swift Tour: 스위프트 기초 문법</title><link href="http://localhost:4000/til/guidedTour/" rel="alternate" type="text/html" title="Guided Swift Tour: 스위프트 기초 문법" /><published>2022-04-08T00:00:00+09:00</published><updated>2022-04-08T00:00:00+09:00</updated><id>http://localhost:4000/til/guidedTour</id><content type="html" xml:base="http://localhost:4000/til/guidedTour/">&lt;p&gt;&lt;a href=&quot;https://docs.swift.org/swift-book/GuidedTour/GuidedTour.html&quot;&gt;A Swift Tour&lt;/a&gt;
+&lt;sub&gt;아래 모든 정보의 출처는 Swift 공식 문서이며 개인의 학습 용도로만 사용되었음을 밝힙니다.&lt;br /&gt;
+All information below comes from the Swift documentation and is for personal learning purposes only.&lt;/sub&gt;&lt;/p&gt;
+
+&lt;h2 id=&quot;문자열과-변수의-값&quot;&gt;문자열과 변수의 값&lt;/h2&gt;
+
+&lt;div class=&quot;language-swift highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;  &lt;span class=&quot;o&quot;&gt;&amp;lt;&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;sub&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;&amp;gt;&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;아래&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;모든&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;정보의&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;출처는&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;apple&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;developer&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;공식&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;페이지이며&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;개인의&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;학습&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;용도로만&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;사용되었음을&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;밝힙니다&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;  
+  &lt;span class=&quot;kt&quot;&gt;All&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;information&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;below&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;comes&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;from&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;the&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;official&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;apple&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;developer&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;page&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;and&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;is&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;for&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;personal&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;learning&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;purposes&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;only&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&amp;lt;/&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;sub&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;&amp;gt;&lt;/span&gt; 
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;</content><author><name>Mirae</name></author><category term="TIL" /><category term="learning" /><category term="공부 기록" /><category term="Swift" /><category term="Sample Apps Tutorials" /><summary type="html">A Swift Tour 아래 모든 정보의 출처는 Swift 공식 문서이며 개인의 학습 용도로만 사용되었음을 밝힙니다. All information below comes from the Swift documentation and is for personal learning purposes only.</summary></entry><entry><title type="html">Swift: Playgrounds</title><link href="http://localhost:4000/til/playgrounds2/" rel="alternate" type="text/html" title="Swift: Playgrounds" /><published>2022-04-08T00:00:00+09:00</published><updated>2022-04-08T00:00:00+09:00</updated><id>http://localhost:4000/til/playgrounds2</id><content type="html" xml:base="http://localhost:4000/til/playgrounds2/">&lt;h1 id=&quot;learn-to-code-2&quot;&gt;Learn to code 2&lt;/h1&gt;
 &lt;p&gt;&lt;sub&gt;아래 모든 내용들은 Playgrounds에서 학습하며 정리한 내용입니다.&lt;br /&gt;
   모든 내용의 출처는 Playgrounds임을 밝힙니다.&lt;/sub&gt;&lt;/p&gt;
 
@@ -670,6 +678,13 @@
 &lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
 &lt;p&gt;에를 들어 위의 isPast property는 현재 날짜, 시간보다 이벤트의 날짜 시간이 적으면 true를 반환합니다. 이것을 이용해 사용자들은 과거 이벤트를 위한 카테고리에 지난 이벤트들을 모아둘 수 있습니다.&lt;/p&gt;
 
+&lt;h4 id=&quot;uuid&quot;&gt;UUID()&lt;/h4&gt;
+
+&lt;p&gt;&lt;sub&gt;&lt;a href=&quot;https://www.hackingwithswift.com/books/ios-swiftui/working-with-identifiable-items-in-swiftui&quot;&gt;참고한 페이지&lt;/a&gt;&lt;/sub&gt;&lt;/p&gt;
+
+&lt;p&gt;a Universally Unique Identifier의 약자입니다.
+  정적인 view를 만들때는 SwiftUI가 어떤 뷰를 우리가 이용하고 있는지 알고, 여러가지 작업을 할 수 있습니다. 하지만 우리가 동적인 view를 만들기 위해서 List나 ForEch문을 사용하면 SwiftUI는 각 아이템들을 구별할 방법이 필요해집니다. 이때 사용할 수 있는 것이 UUID()입니다.&lt;/p&gt;
+
 &lt;h1 id=&quot;section-3-event-task&quot;&gt;Section 3: Event Task&lt;/h1&gt;
 
 &lt;p&gt;하나의 EventTask는 하나의 to-do 아이템을 나타냅니다. 이 챕터에서는 어떤 방식으로 task 부분을 구성하는지 알아봅니다.&lt;/p&gt;
@@ -732,12 +747,15 @@
 &lt;div class=&quot;language-swift highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;    &lt;span class=&quot;p&quot;&gt;]&lt;/span&gt; &lt;span class=&quot;c1&quot;&gt;// events 속성의 배열 끝부분&lt;/span&gt;
 
     &lt;span class=&quot;kd&quot;&gt;func&lt;/span&gt; &lt;span class=&quot;nf&quot;&gt;delete&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;_&lt;/span&gt; &lt;span class=&quot;nv&quot;&gt;event&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;kt&quot;&gt;Event&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
-      &lt;span class=&quot;n&quot;&gt;events&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;removeAll&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt; &lt;span class=&quot;nv&quot;&gt;$0&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;id&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;==&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;events&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;id&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;}&lt;/span&gt; 
-
+      &lt;span class=&quot;n&quot;&gt;events&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;removeAll&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt; &lt;span class=&quot;nv&quot;&gt;$0&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;id&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;==&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;events&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;id&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
     &lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
 
   &lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
 &lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;h4 id=&quot;removeallwhere&quot;&gt;removeAll(where:)&lt;/h4&gt;
+
+&lt;p&gt;removeAll(where:) 메서드는 기준에 부합하는 집합의 모든 요소들을 삭제하는 메서드입니다.&lt;/p&gt;
 
 &lt;!-- ### 궁금한 것
 
@@ -2086,124 +2104,4 @@ self.updateTimer function은 저장할 필요가 없는 값을 반환하기 때�
 ### 8. 이제부터는 화면을 꾸며보자.  
 
 시계의 배경 부분을 사진을 넣어 사용할 수 있었으면 좋겠다는 생각이 들었다.  
-검색 중 Unsplash API를 발견했고 적용해보고자 한다. --&gt;</content><author><name>Mirae</name></author><category term="TIL" /><category term="learning" /><category term="공부 기록" /><category term="Swift" /><summary type="html">💭 .. Swift는 어떤 언어일까? 디지털시계 앱을 만들며 Swift의 기초적인 것들을 알아봅니다.</summary></entry><entry><title type="html">Swift를 배워보자!</title><link href="http://localhost:4000/til/basicSwift/" rel="alternate" type="text/html" title="Swift를 배워보자!" /><published>2022-03-07T00:00:00+09:00</published><updated>2022-03-07T00:00:00+09:00</updated><id>http://localhost:4000/til/basicSwift</id><content type="html" xml:base="http://localhost:4000/til/basicSwift/">&lt;h3 id=&quot;-&quot;&gt;💭 ..&lt;/h3&gt;
-&lt;div class=&quot;notice&quot;&gt;
-  &lt;h4&gt;Swift를 배워보자.&lt;/h4&gt;
-  &lt;p&gt;유투브 튜토리얼, 애플 개발자 페이지의 튜토리얼, 구글링을 통해 Swift를 공부해보려고 합니다.&lt;br /&gt;    
-  그 과정에서 기록이 필요한 것들을 정리해봅니다.&lt;/p&gt;
-&lt;/div&gt;
-
-&lt;h3 id=&quot;1-hello-world&quot;&gt;1. Hello, world!&lt;/h3&gt;
-&lt;p&gt;&lt;a href=&quot;https://docs.swift.org/swift-book/GuidedTour/GuidedTour.html&quot;&gt;A Swift Tour&lt;/a&gt; 공식 가이드를 읽으며 공부합니다.&lt;/p&gt;
-
-&lt;div class=&quot;language-swift highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;nf&quot;&gt;print&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;Hello, world!&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
-
-&lt;p&gt;스위프트에서 이 한줄의 코드는 완벽하게 한 프로그램입니다. input/output 또는 문자열을 다루기 위해 따로 라이브러리를 추가하지 않아도 됩니다. main() function 또한 필요하지 않습니다. 또한 Swift는 각각의 statement의 끝에 세미콜론(;)을 작성하지 않습니다.&lt;/p&gt;
-
-&lt;h3 id=&quot;2-간단한-값들simple-values&quot;&gt;2. 간단한 값들(Simple Values)&lt;/h3&gt;
-
-&lt;p&gt;상수는 let, 변수는 var를 사용해서 만듭니다. var(변수)에는 다른 값을 다시 할당할 수 있고, let(상수)는 한번 값이 정해지면 다른 값을 할당할 수 없습니다.&lt;/p&gt;
-
-&lt;div class=&quot;language-swift highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;k&quot;&gt;var&lt;/span&gt; &lt;span class=&quot;nv&quot;&gt;myVariable&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;42&lt;/span&gt;
-&lt;span class=&quot;n&quot;&gt;myVariable&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;50&lt;/span&gt;
-&lt;span class=&quot;k&quot;&gt;let&lt;/span&gt; &lt;span class=&quot;nv&quot;&gt;myConstant&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;42&lt;/span&gt;
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
-&lt;p&gt;var, let의 이름 뒤에 : 을 이용해서 데이터 타입을 지정할 수 있습니다. 컴파일러가 할당된 값이 어떤 데이터 자료형을 가지고 있는지 추측할 수 있는 경우에는 자료형을 명시하지 않아도 됩니다.&lt;/p&gt;
-
-&lt;div class=&quot;language-swift highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;k&quot;&gt;let&lt;/span&gt; &lt;span class=&quot;nv&quot;&gt;implicitInteger&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;70&lt;/span&gt;
-&lt;span class=&quot;k&quot;&gt;let&lt;/span&gt; &lt;span class=&quot;nv&quot;&gt;implicitDouble&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;mf&quot;&gt;70.0&lt;/span&gt;
-&lt;span class=&quot;k&quot;&gt;let&lt;/span&gt; &lt;span class=&quot;nv&quot;&gt;explicitDouble&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;kt&quot;&gt;Double&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;70&lt;/span&gt;
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
-
-&lt;h3 id=&quot;3-view에-대해-조사해보자&quot;&gt;3. View에 대해 조사해보자.&lt;/h3&gt;
-&lt;p&gt;애플 공식 문서 중 &lt;a href=&quot;https://developer.apple.com/documentation/swiftui/declaring-a-custom-view&quot;&gt;Declaring a Custom View&lt;/a&gt;를 보며 View에 대해 알아봅니다.&lt;/p&gt;
-
-&lt;div class=&quot;notice&quot;&gt;
-  &lt;h4&gt;컴퓨터 프로그래밍 분야에서 &apos;Declare&apos;는 어떤 의미로 사용될까요?&lt;/h4&gt;
-  &lt;p&gt;a declaration은 변수와 같은 요소들의 이름과 데이터 타입을 결정하여 컴파일러에게 알려주는 것을 의미합니다.&lt;/p&gt;
-&lt;/div&gt;
-
-&lt;p&gt;&lt;strong&gt;Declaring a Custom View&lt;/strong&gt;&lt;br /&gt;
-Custom View의 이름과 데이터 타입을 정하고 컴파일러에게 알려주기.&lt;br /&gt;
-view를 선언(declaring)하는 방법으로 간단하게 user interface를 묘사할 수 있습니다.&lt;br /&gt;
-a hierarchy에 Text, Image, Button과 같은 뷰들을 선언하므로서 간단하게 user interface를 묘사할 수 있습니다. hierarchy는 계층인데요. VStack 아래에 views들이 있고 view들에는 적용된 modifier들이 있죠 그것들을 하나의 hierarchy라고 하는 것 같습니다.
-이제 SwiftUI가 사용자로부터 받은 input이나 데이터의 변화등에 응답할 view들을 화면에 그리고 업데이트합니다.&lt;/p&gt;
-
-&lt;p&gt;SwiftUI가 제공하는 built-in view와 다른 view들을 함께 혼합해서 사용할 수 있습니다. modifier를 이용해서 뷰를 배치하고 data 모델에 연결할 수 있습니다. 그리고 custom view들을 화면에 보여지는 앱 뷰에 놓으면 됩니다.&lt;/p&gt;
-
-&lt;div class=&quot;language-swift highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;kd&quot;&gt;struct&lt;/span&gt; &lt;span class=&quot;kt&quot;&gt;MyView&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;kt&quot;&gt;View&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt; &lt;span class=&quot;c1&quot;&gt;// &amp;lt;- View Protocol 입니다.&lt;/span&gt;
-&lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
-&lt;p&gt;View Protocol을 따르는 structure를 정의 했습니다.&lt;br /&gt;
-View protocol은 기능의 청사진을 제공합니다. 이 경우에는 SwiftUI가 화면에 그릴 각 요소들의 작동하는 방식을 제공합니다.&lt;/p&gt;
-
-&lt;p&gt;custom view를 view hierarchy에 포함되게 하려면 View protocol이 요구하는 몇가지 사항들을 충족시켜야 합니다.&lt;/p&gt;
-
-&lt;p&gt;View protocol의 주요구사항은 body computed property를 꼭 정의해주어야 한다는 것입니다.&lt;/p&gt;
-
-&lt;h3 id=&quot;4-인스턴스instances&quot;&gt;4. 인스턴스(Instances)&lt;/h3&gt;
-
-&lt;h3 id=&quot;5-properties는-뭘까요&quot;&gt;5. Properties는 뭘까요?&lt;/h3&gt;
-
-&lt;p&gt;Properties는 값(values)와 특정 class, structure, enumeration을 연결시킵니다.&lt;/p&gt;
-
-&lt;ul&gt;
-  &lt;li&gt;Stored properties&lt;/li&gt;
-  &lt;li&gt;Computed properties&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;p&gt;Stored properties는 instance의 한 부분을 하는 변수와 상수를 담는 역할을 합니다. 그에 반해, computed properties는 값을 담기 보다는 계산합니다.&lt;br /&gt;
-Computed properties는 class, structure, enumeration으로 부터 제공, 사용되고 stored properties는 class와 structure로 부터 제공, 사용됩니다.&lt;/p&gt;
-
-&lt;p&gt;…계속됩니다.😎&lt;/p&gt;
-
-&lt;!-- Protocol인 View와 Text, Image, Button 같은 SwiftUI built-in View, SwiftUI built-in view가 아닌 다른 framework의 view.  
-
-
-아래는 두번째 의미의 View중 하나인 Text를 나타내는 코드입니다. foregroundColor라는 modifier에 파라미터로 .red를 주어 글씨색이 빨간색으로 보이게 해주었습니다.
-```swift
-Text(&quot;Hello, World!&quot;)
-    .foregroundColor(.red) //Hello, World의 글자색이 빨간색으로 보여지게 하는 modifier 메서드
-
-### Text element 와 padding modifier
-&lt;!-- [2021 SwiftUI Tutorial for Beginners (3.5 hour Masterclass)](https://www.youtube.com/watch?v=F2ojC6TNwws&amp;t=1s)   
-좋은 강의를 유투브에서 볼 수 있다는 것에 감사하며 들어봅니다.
-
-  
-&lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-swift&quot; data-lang=&quot;swift&quot;&gt;&lt;table class=&quot;rouge-table&quot;&gt;&lt;tbody&gt;&lt;tr&gt;&lt;td class=&quot;gutter gl&quot;&gt;&lt;pre class=&quot;lineno&quot;&gt;1
-2
-3
-4
-5
-6
-7
-8
-9
-10
-&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;    &lt;span class=&quot;kd&quot;&gt;import&lt;/span&gt; &lt;span class=&quot;kt&quot;&gt;SwiftUI&lt;/span&gt;
-
-      &lt;span class=&quot;kd&quot;&gt;struct&lt;/span&gt; &lt;span class=&quot;kt&quot;&gt;ContentView&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;kt&quot;&gt;View&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
-        &lt;span class=&quot;k&quot;&gt;var&lt;/span&gt; &lt;span class=&quot;nv&quot;&gt;body&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;kd&quot;&gt;some&lt;/span&gt; &lt;span class=&quot;kt&quot;&gt;View&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
-
-          &lt;span class=&quot;kt&quot;&gt;Text&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;Hello!&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nf&quot;&gt;padding&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;()&lt;/span&gt;
-          &lt;span class=&quot;c1&quot;&gt;//Text는 element padding은 modifier&lt;/span&gt;
-        &lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
-      &lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
-  
-&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/tbody&gt;&lt;/table&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
-   --&gt;
-
-&lt;!-- ### A Source of Truth  
-
-  SwiftUI data flow(데이터의 흐름)은 데이터가 a single source of truth를 가지고 있다는 개념에 기초한다.
-
-  (전역변수와 비슷하게 느껴짐)
-
-  코드의 모든 부분에서 같은 데이터를 사용할 수 있게 해줌.
-
-  SwiftUI앱(SwiftUI 프레임워크를 사용하는 앱???)에서 변화할 수 있는 모든 데이터와 객체들은 a single source of truth를 필요로 한다.
-
-  뷰가 변경하거나 관찰할 수 있도록하는 방식을 필요로 한다.
-
-  poperty wrappers는 변경되기 쉬운 데이터들과 각각의 뷰들이 어떻게 상호작용을 하는지와 관련이 있다. --&gt;</content><author><name>Mirae</name></author><category term="TIL" /><category term="learning" /><category term="공부 기록" /><category term="Swift" /><summary type="html">💭 .. Swift를 배워보자. 유투브 튜토리얼, 애플 개발자 페이지의 튜토리얼, 구글링을 통해 Swift를 공부해보려고 합니다. 그 과정에서 기록이 필요한 것들을 정리해봅니다.</summary></entry></feed>
+검색 중 Unsplash API를 발견했고 적용해보고자 한다. --&gt;</content><author><name>Mirae</name></author><category term="TIL" /><category term="learning" /><category term="공부 기록" /><category term="Swift" /><summary type="html">💭 .. Swift는 어떤 언어일까? 디지털시계 앱을 만들며 Swift의 기초적인 것들을 알아봅니다.</summary></entry></feed>

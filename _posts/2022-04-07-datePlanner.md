@@ -154,6 +154,13 @@ toc_icon: "kiwi-bird"
   ```
   에를 들어 위의 isPast property는 현재 날짜, 시간보다 이벤트의 날짜 시간이 적으면 true를 반환합니다. 이것을 이용해 사용자들은 과거 이벤트를 위한 카테고리에 지난 이벤트들을 모아둘 수 있습니다.
 
+#### UUID()  
+
+  <sub>[참고한 페이지](https://www.hackingwithswift.com/books/ios-swiftui/working-with-identifiable-items-in-swiftui)</sub>
+
+  a Universally Unique Identifier의 약자입니다.
+  정적인 view를 만들때는 SwiftUI가 어떤 뷰를 우리가 이용하고 있는지 알고, 여러가지 작업을 할 수 있습니다. 하지만 우리가 동적인 view를 만들기 위해서 List나 ForEch문을 사용하면 SwiftUI는 각 아이템들을 구별할 방법이 필요해집니다. 이때 사용할 수 있는 것이 UUID()입니다.
+
 # Section 3: Event Task  
 
   하나의 EventTask는 하나의 to-do 아이템을 나타냅니다. 이 챕터에서는 어떤 방식으로 task 부분을 구성하는지 알아봅니다.
@@ -215,12 +222,15 @@ toc_icon: "kiwi-bird"
     ] // events 속성의 배열 끝부분
 
     func delete(_ event: Event) {
-      events.removeAll { $0.id == events.id } 
-
+      events.removeAll { $0.id == events.id }
     }
 
   }
   ```
+
+#### removeAll(where:)  
+
+  removeAll(where:) 메서드는 기준에 부합하는 집합의 모든 요소들을 삭제하는 메서드입니다.
 
 <!-- ### 궁금한 것
 
