@@ -1,5 +1,5 @@
 ---
-title: "Playgrounds: Learn to Code 2"
+title: "Swift: Playgrounds"
 categories:
   - TIL
 tags:
@@ -14,7 +14,11 @@ toc_label: "👷"
 toc_icon: "kiwi-bird"
 ---
 
-# Variables
+# Learn to code 2
+<sub>아래 모든 내용들은 Playgrounds에서 학습하며 정리한 내용입니다.  
+  모든 내용의 출처는 Playgrounds임을 밝힙니다.</sub>
+
+## Variables
 
   머리로 기억할 수 있는 것보다 더 많은 연락처를 저장한 스마트폰의 연락처 목록을 떠올려 봅시다. Coder는 변수(Variables)라는 컨테이너에 이름을 붙이고
   정보를 담습니다. 우리가 수정하기 전까지는 연락처의 정보가 바뀌지 않듯 Variables의 정보는 우리가 변경하기 전까지 스스로 바뀌지 않습니다.
@@ -44,7 +48,7 @@ toc_icon: "kiwi-bird"
   age = "twenty-nine" // 자료형이 다름으로 불가능
   ```
 
-## incrementing a value
+### incrementing a value
 
   incrementing a value는 현재 값과 비교하여 값을 증가시키는 코딩 패턴입니다.
   ```swift
@@ -53,12 +57,12 @@ toc_icon: "kiwi-bird"
   ```
   variable을에 할당된 수와 비교 연산자를 이용해서 while문의 Boolean 조건을 만들 수 있습니다. incrementing values 하며 반복 횟수 등을 기록할 수 있습니다.
 
-## 변수 이름 정하기
+### 변수 이름 정하기
 
   1. camelCase: 첫번째 단어는 소문자로 시작 뒤로 이어지는 새 단어들은 대문자로 시작하도록 쓰는 방법입니다.
   2. 변수에 담길 값이 무엇인지 알려주는 이름으로 정합니다.
 
-## Constant
+### Constant
 
   Constant(상수)는 variable(변수)와 같이 값을 담는 이름 붙인 컨테이너입니다. 하지만 프로그램이 실행되는 동안에는 값을 변경할 수 없다는 차이점이 있습니다.
 
@@ -71,7 +75,7 @@ toc_icon: "kiwi-bird"
 
   변수의 값과 상수의 값을 비교하는 식의 코드가 자주 사용됩니다.
 
-## Compound assignment operator
+### Compound assignment operator
 
   ```swift
   gemCounter = gemCounter + 1
@@ -79,7 +83,7 @@ toc_icon: "kiwi-bird"
   ```
 
 
-## 자료형(Types)
+### 자료형(Types)
 
   집을 지을 때는 blue print를 사용합니다. Blue print는 거실, 화장실, 침실과 같은 집의 기능들을 보여줍니다. 여러개의 집들을 지을 때 한 blue print를 이용한다면 그 집들은 모두 비슷한 모양으로 지어질 것입니다.
   프로그래밍에서 **type**은 blue print와 같습니다. 그리고 **instance**는 blue print를 통해 지어진 집과 같습니다.
@@ -116,7 +120,7 @@ toc_icon: "kiwi-bird"
   ```
   bluePortal이라는 인스턴스의 isActive()라는 메서드가 bluePortal을 켠다고 가정했을 때 '= false'는 bluePortal을 끕니다.
 
-## Using dot notation syntax
+### Using dot notation syntax
 
   컴퓨터가 이해할 수 있는 코드를 작성하는 규칙을 syntax라고 합니다. Dot notation systax는 아래와 같이 생겼습니다.
   ```swift
@@ -131,13 +135,13 @@ toc_icon: "kiwi-bird"
 
   더 효율적인 문제 해결법을 찾는 것은 프로그램이 더 빠르게 작동한다는 것이고 그것은 사용자들이 앱을 사용할 때 행복해진다는 것입니다. 그리고 배터리가 얼만큼 오래 보존되는지와도 관련이 있습니다.
 
-## Factoring
+### Factoring
 
   코드를 효율적으로 작성하는 방법에 대해 생각해보는 것은 중요합니다. 작동하는 방식을 작은 단위로 나누어 재사용 가능한 function을 작성한다면 전체적으로는 더 적은 라인의 수로 코드를 작성할 수 있습니다. 이런 것을 factoring 코드라고 합니다. factoring the code는 재사용성을 높여줄 뿐 아니라 코드의 가독성을 높여주어 작성자 뿐 아니라 다른 누구든 코드가 어떻게 작성된건지 알아보기 쉽게 해줍니다.
 
   //👷‍♂️ Learn to Code 2: Random Gems Everywhere 다시 풀기
 
-## Initialization
+### Initialization
 
   Initialization을 통해 instance를 만들 수 있습니다.
 
@@ -152,13 +156,13 @@ toc_icon: "kiwi-bird"
   ```
   expert라는 instance의 메서드 turnLockUp()을 호출하는 방식입니다. dot notation을 사용합니다. 메서드를 사용하기 위해서는 먼저 Initialize 해주어야 한다는 것을 기억합시다.
 
-## 여러개의 instances
+### 여러개의 instances
 
   코드를 작성할 때는 큰 문제를 해결하기 위해 보통 여러개의 instance와 element를 함께 사용하게 됩니다. 만약 사진 편집 앱을 만든다면 이미지를 촬영하기 위해 카메라 앱을, 효과를 적용하기 위해 필터 라이브러리를 사용할 것입니다.
 
   하나 이상의 instance를 사용할 때는 instance의 이름을 사용하여 각 instance의 메서드를 호출합니다.
 
-## Parameters
+### Parameters
 
   집을 여러가지 색으로 페인트 칠한다고 상상해 봅니다. 그렇다면 색마다 각기 다른 메서드를 만들 수 있겠죠.
   ~~~swift
@@ -261,7 +265,7 @@ toc_icon: "kiwi-bird"
    ```
   (패러미터를 이용한 funtion의 이용을 공부하며 작성해본 예제입니다. 더 적은 라인의 코드로 문제를 해결할 수 있을 것 같은데 아직은 자꾸만 코드가 길어집니다.)
 
-## Type과 Instances
+### Type과 Instances
 
   하나의 type을 이용해 여러개의 instance를 만들 수 있습니다. type은 설계도, 청사진에 자주 비유됩니다. 같은 설계도를 사용해서 만든 instance이므로 같은 메서드를 사용해 같은 속성들에 접근, 이용할 수 있습니다.
 
@@ -316,7 +320,7 @@ toc_icon: "kiwi-bird"
   ```
   (여러개의 instance 사용 / factor codes into a function을 공부하며 작성한 예제. 처음 작성했을때는 else if가 세개 더 있었는데 문제를 해결하며 코드를 줄일 수 있었다.)
 
-# Array
+## Array
 
   - [] = square brakets
   - , = a comma
@@ -342,7 +346,7 @@ toc_icon: "kiwi-bird"
 
   컴퓨터는 0부터 수를 세기 때문에 index 역시 0부터 시작합니다.
 
-## Array Methods
+### Array Methods
 
   Swift에는 아이템을 삭제, 추가하는 등 간단한 동작을 수행하기 위해 array와 함께 사용되는 메서드가 있습니다.
 
@@ -370,7 +374,7 @@ toc_icon: "kiwi-bird"
   ```
   item이 추가, 삭제됨에 따라 index 번호가 자동으로 바뀝니다.
 
-## Iteration
+### Iteration
 
   배열에 담긴 각 아이템마다 같은 동작을 반복할 수 있습니다. 이런 과정을 **iteration** 이라고 합니다.
 
@@ -382,22 +386,22 @@ toc_icon: "kiwi-bird"
 
   위 코드는 각 item 마다 place(item, in: bowl) 이라는 코드를 반복하며 수행합니다.
 
-<!-- ### 📖 틈새 영어 단어: iterate
+<!-- #### 📖 틈새 영어 단어: iterate
   <div class="notice">
      <h4>if a computer iterates, it goes through a set of instructions before going through them for a second time.</h4>
      <p>컴퓨터가 iterate 한다는 것은 반복해서 여러개의 코드를 통과하는 것입니다.</p>
   </div> -->
 
-## Code comments
+### Code comments
 
   **//** 를 이용하면 주석(code comments)를 작성할 수 있습니다. 주석은 코드의 대한 정보를 제공합니다. 앱을 이 코드를 실행하지 않습니다.
 
-## Item의 자료형
+### Item의 자료형
 
   한 array안의 자료들은 모두 같은 자료형을 가지고 있어야 합니다.
   만약 처음 integer 자료형의 배열을 만들었다면 String 아이템은 추가할 수 없습니다.
 
-## For-in loop
+### For-in loop
 
   ```swift
   let columns = [0, 1, 2, 3, 4]
@@ -408,7 +412,7 @@ toc_icon: "kiwi-bird"
   ```
   For-in 반복문은 배열의 각 value마다 { } 안의 코드를 반복해서 실행합니다. 위 코드에서 i는 columns 배열의 각 값을 담는 변수입니다. 배열 columns의 값인 0, 1, 2, 3, 4가 i에 할당되고 각 값은 { } 안에 작성된 코드인 place 메서드의 atCol 패러미터의 인자로 통과됩니다. for-in 반복문이 돌때마다 (Gem(), 0, 1), (Gem(), 1, 1), (Gem(), 2, 1) ... 식으로 코드가 실행됩니다. 더이상 할당될 값이 없으면 루프는 끝이납니다.
 
-## An array of type Coordinate
+### An array of type Coordinate
 
   Coordinate의 인스턴스는 column과 row arguments를 이용하여 장소를 나타냅니다.
 
@@ -425,7 +429,7 @@ toc_icon: "kiwi-bird"
   ]
   ```
 
-## Array method
+### Array method
 
   ```swift
   characters = [
@@ -450,7 +454,7 @@ toc_icon: "kiwi-bird"
 
   등이 있습니다.
 
-## Creating an empty array
+### Creating an empty array
 
   값이 주어지지 않은 빈 배열을 만들 때에는 type을 정해주어야 합니다.
 
@@ -458,3 +462,115 @@ toc_icon: "kiwi-bird"
   var newLocations: [Coordinate] = []
   // 배열의 이름: [배열의 type] = []
   ```
+
+### Assign a removed item
+
+  때때로 한 배열에서 삭제한 아이템을 사용하고 싶을 때가 있을 겁니다. 다행히도 삭제된 item은 짧은 시간동안 저장됩니다. 그러므로 삭제된 값을 다른 변수에 할당하거나 다른 배열에 append 할 수 있습니다.  
+
+  ```swift  
+  // Example
+
+  var rightColumn = world.column(7)
+  newArray.append(rightColumn.remove(at: 1))
+  ```
+
+  위 예시 코드에서 newArray에 append된 좌표는 rightColumn에서 삭제된 좌표입니다.
+  위 코드에서 rightColumn은 메서드로 초기화되었습니다. world 인스턴스는 한 행, 또는 열에 모든 좌표를 가지고 있는 배열을 빠르게 생성할 수 있는 몇가지 메서드를 가지고 있습니다.
+
+  ```swift  
+  // Calling a method to create an array
+
+  var row1 = world.row(1)
+  var column5 = world.column(5)
+
+  var topRows = world.coordinates(inRows: [5, 6, 7])
+  var allCoords = world.allPossibleCoordinates
+  ```
+
+### Fixing Index Out of Range Errors  
+
+  Index out of range 에러를 찾고 해결해 봅니다.  
+
+  Index를 사용해서 배열의 각 아이템에 접근할 수 있습니다. 배열의 아이템에 접근한다는 것은 그 아이템을 변수처럼 사용할 수 있게 된다는 것입니다.
+
+  ```swift  
+  // Using an index to access an item  
+
+  let characters = [
+    Character(name: .byte),
+    Character(name: .blu),
+    Character(name: .hopper)
+  ]
+
+  // Byte toggles a switch
+  character[0].toggleSwitch
+
+  // Hopper jumps
+  character[2].jump()
+
+  // Index out of range error
+  character[3].collectGem()
+  ```
+  위의 마지막 예제 코드처럼 존재하지 않은 index값에 접근하려고 하면 index out of range 오류가 발생합니다. 이것은 앱의 실행을 막는 bug이기 때문에 조심해야 합니다.  
+
+  버그를 찾고 해결하는 것은 코더로써 중요한 일입니다. Index out of range 에러는 앱의 실행을 중단시키는 가장 흔한 에러 중 하나입니다.
+
+### Generate a Landscape  
+
+  Int 타입의 배열을 이용하여 landscape을 생성해 봅니다.  
+
+  ```swift  
+  // 각 인덱스에 할당되어 있는 값에 접근하기
+  var heights = [7, 3, 2, 4]
+  for i in 1...heights[0]
+  ```
+  heights 배열의 0번째 인덱스에 할당된 값이 7이므로 위의 for loop은 7번 반복합니다.   
+
+  ```swift
+  // Example
+
+  var index = 0
+  for coordinate in allCoordinates {
+    for i in 1...height[index] {
+      world.place(Block(), at: coordinate)
+    }
+    index += 1
+  }
+  ```
+
+  위 코드에서는 index 변수에 게속해서 누적으로 1을 더해주기 때문에 index out of range 에러가 발생한다. 이것을 막기 위해서 heights.count를 사용할 수 있다.  
+
+  ```swift  
+  var index = 0
+  for coordinate in allCoordinates {
+    if index == heights.count {
+      index = 0 // Array out of bounds error를 막는 코드
+    }
+    for i in 0...heights[index] {
+      world.place(Block(), at: coordinate)
+    }
+    index += 1
+  }
+  ```
+
+  heights.count는 배열의 아이템 수입니다. 아이템의 수가 10개라면 인덱스는 9까지 존재합니다. (0부터 시작하기 때문에) index == heights.count 라는 것은 인덱스가 10이 되었다는 것을 의미함으로 index out of range가 됩니다. 이것을 방지하기 위해 index가 heights 배열 아이템의 수와 같아졌을 때 0을 할당해주는 것입니다.  
+
+### Randomized Lands  
+
+  유니크한 월드를 만들어 보기 위해 randomization을 사용해 봅니다.  
+
+  ```swift  
+  for i in 1...20 {
+    let localNumber = randomInt(from: 0, to: 12)
+    heights.append(localNumber)
+  }
+  ```
+  랜덤 값을 이용하면 코드가 실행될때마다 조금씩 다른 결과를 만들 수 있습니다. 랜던 Boolean 타입을 사용할수도 있습니다.
+
+#### Local variables  
+
+  function이나 loop와 같은 code structure 안에서 정의된 변수를 local variable이라고 합니다. 위의 예시 코드에서는 localNumber가 이에 해당됩니다. local variable은 오로지 만들어진 code structure안에서만 사용할 수 있습니다. 그밖의 다른 곳에서는 사용할 수 없습니다.
+
+### Read and Tweak  
+
+  이미 작성된 코드를 읽고, 수정하는 것은 코더에게 중요한 능력입니다. 다른 사람이 작성한 코드를 읽고 이해해야하는 일이 많을 것입니다. code comment를 이용하여 다른 사람들이 나의 코드를 좀 더 쉽게 이해할 수 있도록 하는 것도 좋은 방법입니다.

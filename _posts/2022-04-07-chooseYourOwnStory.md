@@ -17,9 +17,8 @@ header:
 ---
 
 [Sample Apps Tutorials: Choose Your Own Story(Navigating Apps)](https://developer.apple.com/tutorials/sample-apps/aboutme)  
-아래 모든 정보의 출처는 apple developer 공식 페이지이며 개인의 학습 용도로만 사용되었음을 밝힙니다.   
-
-All information below comes from the official apple developer page and is for personal learning purposes only.  
+<sub>아래 모든 정보의 출처는 apple developer 공식 페이지이며 개인의 학습 용도로만 사용되었음을 밝힙니다.  
+All information below comes from the official apple developer page and is for personal learning purposes only.</sub>  
 
 # Choose Your Own Story  
 

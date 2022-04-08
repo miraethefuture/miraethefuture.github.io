@@ -200,10 +200,30 @@ toc_icon: "kiwi-bird"
       ]
   }
   ```
-### 궁금한 것
+
+  - EventData type은 어플에 나타나는 모든 이벤트를 저장하고 수정합니다.
+  - ObservableObject protocol을 따릅니다. -> EventData에 있는 published values 중 어떤 것에든 변화가 일어나면 SwiftUI가 그 values를 사용하고 있는 view들을 찾고 업데이트 해줍니다.
+
+### events property
+
+  - EventData는 events라는 property를 가지고 있습니다. events는 Event라는 배열을 가지고 있습니다. (배열들은 미리 여러개의 이벤트 값이 입력되어 있습니다.)
+  - @Published property wrapper는 events 배열에 변화가 일어날때마다 SwiftUI가 변화를 인지하고 그 배열을 사용하는 view들을 업데이트 하게 합니다. 이것은 배열로부터 이벤트를 추가하거나 삭제하면 바로 UI에 보여지도록 합니다.
+
+### EventData의 메서드  
+
+  ```swift
+    ] // events 속성의 배열 끝부분
+
+    func delete(_ event: Event) {
+      events.removeAll { $0.id == events.id } 
+
+    }
+
+  }
+  ```
+
+<!-- ### 궁금한 것
 
 <div class="notice--warning">
 배열의 마지막 요소 뒤에 왜 , 가 있을까?
-</div>
-
-  
+</div> -->

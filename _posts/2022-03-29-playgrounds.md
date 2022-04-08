@@ -15,8 +15,8 @@ toc_icon: "kiwi-bird"
 ---
 
 # Playgrounds: Learn to Code 1
-  아래 모든 내용들은 Playgrounds에서 학습하며 정리한 내용입니다.  
-  모든 내용의 출처는 Playgrounds임을 밝힙니다.
+  <sub>아래 모든 내용들은 Playgrounds에서 학습하며 정리한 내용입니다.  
+  모든 내용의 출처는 Playgrounds임을 밝힙니다.</sub>
 
 ## Function: Grouping Tasks
 
