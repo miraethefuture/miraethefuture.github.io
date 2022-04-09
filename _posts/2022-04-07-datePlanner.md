@@ -227,11 +227,13 @@ toc_icon: "kiwi-bird"
 
   }
   ```
+  위의 메서드는 선택된 이벤트의 모든 정보를 삭제해줍니다.
+   
 
-#### removeAll(where:)  
+<!-- #### removeAll(where:)  
 
   removeAll(where:) 메서드는 기준에 부합하는 집합의 모든 요소들을 삭제하는 메서드입니다.
-
+ -->
 <!-- ### 궁금한 것
 
 <div class="notice--warning">
