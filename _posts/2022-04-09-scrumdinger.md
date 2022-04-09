@@ -87,4 +87,36 @@ All information below comes from the official apple developer page and is for pe
   } // systemImage를 사용했던 HStack 끝부분
   .accessibilityElement(children: .ignore)
   ```
-  위의 코드를 작성하여 HStack의 child view의 사용될거라 예상된 accessibility를 무시해줍니다. 이런 과정은 사용자가 더 좋은 accessibility 경험을 할 수 있도록 할 것입니다. 
+  위의 코드를 작성하여 HStack의 child view의 사용될거라 예상된 accessibility를 무시해줍니다. 이런 과정은 사용자가 더 좋은 accessibility 경험을 할 수 있도록 할 것입니다.
+
+  ```swift  
+  } // systemImage를 사용했던 HStack 끝부분
+  .accessibilityElement(children: .ignore)
+  .accessibilityLabel("Time remaining")
+  ```
+  의미가 일치하는 이름을 사용하여 accessibility label을 HStack에 추가해줍니다.
+  사용자가 해당 요소의 목적을 이해할 수 있도록 이름 지어 줍니다. 이 부분에서는 system name 보다는 VoiceOver 사용자가 이해하기 쉬운 가장 중요한 정보를 표현하는 문자를 추가해주었습니다.
+
+  ```swift  
+  } // systemImage를 사용했던 HStack 끝부분
+  .accessibilityElement(children: .ignore)
+  .accessibilityLabel("Time remaining")
+  .accessibilityValue("10 minutes")
+  ```
+  Child view의 값을 의도적으로 무시해주었기 때문에 값을 추가해주어야 합니다.
+
+## Create a Color Theme
+
+  - main color: view의 배경색
+  - accent color: view의 글씨색
+
+  을 이용하여 Color Theme을 생성해봅니다.
+
+### New Group 만들기
+
+  Xcode 맨 왼쪽 아래에 + 버튼을 누르면 프로젝트 네비게이터에 New Group을 생성할 수 있습니다.
+  <center><img src="/assets/images/scrum4.png" alt="New Group" width="500"></center
+
+### Color properties
+
+  view를 만들 것은 아니지만 Color properties를 이용하기 위해서 SwiftUI 프레임워크를 임포트 해줍니다. SwiftUI는 z

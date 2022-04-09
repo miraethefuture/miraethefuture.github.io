@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="4.2.1">Jekyll</generator><link href="http://localhost:4000/feed.xml" rel="self" type="application/atom+xml" /><link href="http://localhost:4000/" rel="alternate" type="text/html" /><updated>2022-04-10T00:01:05+09:00</updated><id>http://localhost:4000/feed.xml</id><title type="html">Mirae the Future</title><subtitle>An amazing website.</subtitle><author><name>Mirae</name></author><entry><title type="html">iOS App Dev Tutorials: Scrumdinger</title><link href="http://localhost:4000/til/scrumdinger/" rel="alternate" type="text/html" title="iOS App Dev Tutorials: Scrumdinger" /><published>2022-04-09T00:00:00+09:00</published><updated>2022-04-09T00:00:00+09:00</updated><id>http://localhost:4000/til/scrumdinger</id><content type="html" xml:base="http://localhost:4000/til/scrumdinger/">&lt;p&gt;&lt;a href=&quot;https://developer.apple.com/tutorials/app-dev-training/getting-started-with-scrumdinger&quot;&gt;Getting Started with Scrumdinger&lt;/a&gt;&lt;br /&gt;
+<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="4.2.1">Jekyll</generator><link href="http://localhost:4000/feed.xml" rel="self" type="application/atom+xml" /><link href="http://localhost:4000/" rel="alternate" type="text/html" /><updated>2022-04-10T03:15:17+09:00</updated><id>http://localhost:4000/feed.xml</id><title type="html">Mirae the Future</title><subtitle>An amazing website.</subtitle><author><name>Mirae</name></author><entry><title type="html">iOS App Dev Tutorials: Scrumdinger</title><link href="http://localhost:4000/til/scrumdinger/" rel="alternate" type="text/html" title="iOS App Dev Tutorials: Scrumdinger" /><published>2022-04-09T00:00:00+09:00</published><updated>2022-04-09T00:00:00+09:00</updated><id>http://localhost:4000/til/scrumdinger</id><content type="html" xml:base="http://localhost:4000/til/scrumdinger/">&lt;p&gt;&lt;a href=&quot;https://developer.apple.com/tutorials/app-dev-training/getting-started-with-scrumdinger&quot;&gt;Getting Started with Scrumdinger&lt;/a&gt;&lt;br /&gt;
 &lt;sub&gt;아래 모든 정보의 출처는 apple developer 공식 페이지이며 개인의 학습 용도로만 사용되었음을 밝힙니다.&lt;br /&gt;
 All information below comes from the official apple developer page and is for personal learning purposes only.&lt;/sub&gt;&lt;/p&gt;
 
@@ -70,7 +70,40 @@ All information below comes from the official apple developer page and is for pe
 &lt;div class=&quot;language-swift highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;  &lt;span class=&quot;p&quot;&gt;}&lt;/span&gt; &lt;span class=&quot;c1&quot;&gt;// systemImage를 사용했던 HStack 끝부분&lt;/span&gt;
   &lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nf&quot;&gt;accessibilityElement&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nv&quot;&gt;children&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;ignore&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
 &lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
-&lt;p&gt;위의 코드를 작성하여 HStack의 child view의 사용될거라 예상된 accessibility를 무시해줍니다. 이런 과정은 사용자가 더 좋은 accessibility 경험을 할 수 있도록 할 것입니다.&lt;/p&gt;</content><author><name>Mirae</name></author><category term="TIL" /><category term="learning" /><category term="공부 기록" /><category term="Swift" /><summary type="html">Getting Started with Scrumdinger 아래 모든 정보의 출처는 apple developer 공식 페이지이며 개인의 학습 용도로만 사용되었음을 밝힙니다. All information below comes from the official apple developer page and is for personal learning purposes only.</summary></entry><entry><title type="html">Playgrounds: Learn to Code 2</title><link href="http://localhost:4000/til/playgrounds2/" rel="alternate" type="text/html" title="Playgrounds: Learn to Code 2" /><published>2022-04-08T00:00:00+09:00</published><updated>2022-04-08T00:00:00+09:00</updated><id>http://localhost:4000/til/playgrounds2</id><content type="html" xml:base="http://localhost:4000/til/playgrounds2/">&lt;h1 id=&quot;learn-to-code-2&quot;&gt;Learn to code 2&lt;/h1&gt;
+&lt;p&gt;위의 코드를 작성하여 HStack의 child view의 사용될거라 예상된 accessibility를 무시해줍니다. 이런 과정은 사용자가 더 좋은 accessibility 경험을 할 수 있도록 할 것입니다.&lt;/p&gt;
+
+&lt;div class=&quot;language-swift highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;  &lt;span class=&quot;p&quot;&gt;}&lt;/span&gt; &lt;span class=&quot;c1&quot;&gt;// systemImage를 사용했던 HStack 끝부분&lt;/span&gt;
+  &lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nf&quot;&gt;accessibilityElement&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nv&quot;&gt;children&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;ignore&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
+  &lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nf&quot;&gt;accessibilityLabel&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;Time remaining&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+&lt;p&gt;의미가 일치하는 이름을 사용하여 accessibility label을 HStack에 추가해줍니다.
+  사용자가 해당 요소의 목적을 이해할 수 있도록 이름 지어 줍니다. 이 부분에서는 system name 보다는 VoiceOver 사용자가 이해하기 쉬운 가장 중요한 정보를 표현하는 문자를 추가해주었습니다.&lt;/p&gt;
+
+&lt;div class=&quot;language-swift highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;  &lt;span class=&quot;p&quot;&gt;}&lt;/span&gt; &lt;span class=&quot;c1&quot;&gt;// systemImage를 사용했던 HStack 끝부분&lt;/span&gt;
+  &lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nf&quot;&gt;accessibilityElement&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nv&quot;&gt;children&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;ignore&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
+  &lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nf&quot;&gt;accessibilityLabel&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;Time remaining&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
+  &lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nf&quot;&gt;accessibilityValue&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;10 minutes&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+&lt;p&gt;Child view의 값을 의도적으로 무시해주었기 때문에 값을 추가해주어야 합니다.&lt;/p&gt;
+
+&lt;h2 id=&quot;create-a-color-theme&quot;&gt;Create a Color Theme&lt;/h2&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;main color: view의 배경색&lt;/li&gt;
+  &lt;li&gt;accent color: view의 글씨색&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;을 이용하여 Color Theme을 생성해봅니다.&lt;/p&gt;
+
+&lt;h3 id=&quot;new-group-만들기&quot;&gt;New Group 만들기&lt;/h3&gt;
+
+&lt;p&gt;Xcode 맨 왼쪽 아래에 + 버튼을 누르면 프로젝트 네비게이터에 New Group을 생성할 수 있습니다.&lt;/p&gt;
+&lt;center&gt;&lt;img src=&quot;/assets/images/scrum4.png&quot; alt=&quot;New Group&quot; width=&quot;500&quot; /&gt;&amp;lt;/center
+
+### Color properties
+
+  view를 만들 것은 아니지만 Color properties를 이용하기 위해서 SwiftUI 프레임워크를 임포트 해줍니다. SwiftUI는 z
+&lt;/center&gt;</content><author><name>Mirae</name></author><category term="TIL" /><category term="learning" /><category term="공부 기록" /><category term="Swift" /><summary type="html">Getting Started with Scrumdinger 아래 모든 정보의 출처는 apple developer 공식 페이지이며 개인의 학습 용도로만 사용되었음을 밝힙니다. All information below comes from the official apple developer page and is for personal learning purposes only.</summary></entry><entry><title type="html">Playgrounds: Learn to Code 2</title><link href="http://localhost:4000/til/playgrounds2/" rel="alternate" type="text/html" title="Playgrounds: Learn to Code 2" /><published>2022-04-08T00:00:00+09:00</published><updated>2022-04-08T00:00:00+09:00</updated><id>http://localhost:4000/til/playgrounds2</id><content type="html" xml:base="http://localhost:4000/til/playgrounds2/">&lt;h1 id=&quot;learn-to-code-2&quot;&gt;Learn to code 2&lt;/h1&gt;
 &lt;p&gt;&lt;sub&gt;아래 모든 내용들은 Playgrounds에서 학습하며 정리한 내용입니다.&lt;br /&gt;
   모든 내용의 출처는 Playgrounds임을 밝힙니다.&lt;/sub&gt;&lt;/p&gt;
 
@@ -725,7 +758,73 @@ All information below comes from the Swift documentation and is for personal lea
   &lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
   &lt;span class=&quot;nf&quot;&gt;print&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;largest&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
   &lt;span class=&quot;c1&quot;&gt;// Prints &quot;25&quot;&lt;/span&gt;
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;</content><author><name>Mirae</name></author><category term="TIL" /><category term="learning" /><category term="공부 기록" /><category term="Swift" /><summary type="html">A Swift Tour 아래 모든 정보의 출처는 Swift 공식 문서이며 개인의 학습 용도로만 사용되었음을 밝힙니다. All information below comes from the Swift documentation and is for personal learning purposes only.</summary></entry><entry><title type="html">Navigating Apps: Date Planner</title><link href="http://localhost:4000/til/datePlanner/" rel="alternate" type="text/html" title="Navigating Apps: Date Planner" /><published>2022-04-07T00:00:00+09:00</published><updated>2022-04-07T00:00:00+09:00</updated><id>http://localhost:4000/til/datePlanner</id><content type="html" xml:base="http://localhost:4000/til/datePlanner/">&lt;p&gt;&lt;a href=&quot;https://developer.apple.com/tutorials/sample-apps/aboutme&quot;&gt;Sample Apps Tutorials: About Me(Navigating Apps)&lt;/a&gt;&lt;br /&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;p&gt;Dictionary는 순서가 없는 collection이기 때문에 for-in문을 사용하여 반복 수행하게 되면 임의의 순서로 작동하게 됩니다.&lt;br /&gt;
+  가장 바깥쪽 for-in loop의 (_, numbers) 중 앞쪽은 딕셔너리의 키를 numbers는
+  배열인 값을 의미합니다. 그러면 안쪽의 for-in loop는 값인 배열을 돌며 number의 각 요소를 할당합니다. 만약 number에 할당된 배열의 요소가 largest 보다 크다면 largest에 그 값을 할당합니다. 이렇게 각 키와 값을 돌며 가장 큰 수인 25를 출력합니다.&lt;/p&gt;
+
+&lt;h2 id=&quot;tuples&quot;&gt;Tuples&lt;/h2&gt;
+
+&lt;p&gt;Tuple은 여러개의 값을 하나의 합쳐진 그룹으로 만듭니다. 튜플 안의 값은 어떤 자료형이든 될 수 있고, 한 튜플안의 값은 같은 서로 다른 자료형을 가질 수 있습니다.&lt;/p&gt;
+
+&lt;h3 id=&quot;http-status-code와-튜플&quot;&gt;HTTP status code와 튜플&lt;/h3&gt;
+
+&lt;p&gt;예를 들어 (404, “Not Found”)는 HTTP status code를 나타내는 튜플입니다. HTTP status code는 웹 페이지를 요청할 때 웹 서버로부터 리턴되는 특정한 값입니다. 404 Not Found 코드는 요청한 웹 페이지가 존재하지 않을 때 리턴되는 코드입니다.&lt;/p&gt;
+
+&lt;div class=&quot;language-swift highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;  &lt;span class=&quot;k&quot;&gt;let&lt;/span&gt; &lt;span class=&quot;nv&quot;&gt;http404Error&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;404&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;&quot;Not Found&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
+  &lt;span class=&quot;c1&quot;&gt;// http404Error is of type (Int, String), and equals (404, &quot;Not Found&quot;)&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+&lt;p&gt;(404, “Not Found”)튜플은 HTTP status code에게 숫자와 사람이 읽을 수 있는 설명이라는 두개의 값을 주기 위해서 Int타입과 String타입을 하나의 그룹으로 만들었습니다. 이것은 “a tuple of type(Int, String)”이라고 할 수 있습니다.&lt;/p&gt;
+
+&lt;h3 id=&quot;제한이-없는-튜플&quot;&gt;제한이 없는 튜플&lt;/h3&gt;
+
+&lt;p&gt;(Int, Int, Int) 또는 (String, Bool) 등의 튜플을 만들 수 있습니다. 값의 개수나 자료형의 제한이 없습니다.&lt;/p&gt;
+
+&lt;h3 id=&quot;decompose-a-tuple&quot;&gt;Decompose a Tuple&lt;/h3&gt;
+
+&lt;p&gt;튜플의 컨텐츠를 각각의 상수나 변수로 나눌 수 있습니다.&lt;/p&gt;
+
+&lt;div class=&quot;language-swift highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;  &lt;span class=&quot;k&quot;&gt;let&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nv&quot;&gt;statusCode&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;nv&quot;&gt;statusMessage&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;http404Error&lt;/span&gt;
+
+  &lt;span class=&quot;nf&quot;&gt;print&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;The status code is &lt;/span&gt;&lt;span class=&quot;se&quot;&gt;\(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;statusCode&lt;/span&gt;&lt;span class=&quot;se&quot;&gt;)&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
+  &lt;span class=&quot;c1&quot;&gt;// Prints &quot;The status code is 404&quot;&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;p&gt;만약 튜플의 값 중 몇몇의 값만 필요하다면  _(underscore)를 사용하여 필요 없는 값은 무시할 수 있습니다.&lt;/p&gt;
+
+&lt;div class=&quot;language-swift highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;  &lt;span class=&quot;k&quot;&gt;let&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nv&quot;&gt;justTheStatusCode&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;nv&quot;&gt;_&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;http404Error&lt;/span&gt;
+  &lt;span class=&quot;nf&quot;&gt;print&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;The status code is &lt;/span&gt;&lt;span class=&quot;se&quot;&gt;\(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;justTheStatusCode&lt;/span&gt;&lt;span class=&quot;se&quot;&gt;)&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
+  &lt;span class=&quot;c1&quot;&gt;// Prints &quot;The status code is 404&quot;&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;h3 id=&quot;index를-이용하여-값에-접근하기&quot;&gt;Index를 이용하여 값에 접근하기&lt;/h3&gt;
+
+&lt;div class=&quot;language-swift highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;  &lt;span class=&quot;nf&quot;&gt;print&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;The Status code is &lt;/span&gt;&lt;span class=&quot;se&quot;&gt;\(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;http404Error&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;0&lt;/span&gt;&lt;span class=&quot;se&quot;&gt;)&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
+  &lt;span class=&quot;c1&quot;&gt;// Prints &quot;The status code is 404&quot;&lt;/span&gt;
+
+  &lt;span class=&quot;nf&quot;&gt;print&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;The Status message is &lt;/span&gt;&lt;span class=&quot;se&quot;&gt;\(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;http404Error&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;1&lt;/span&gt;&lt;span class=&quot;se&quot;&gt;)&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
+  &lt;span class=&quot;c1&quot;&gt;// Prints &quot;The status message is Not Found&quot;&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+&lt;p&gt;인덱스 번호를 이용해 각 값에 접근할 수 있습니다.&lt;/p&gt;
+
+&lt;h3 id=&quot;정의와-동시에-값에-이름짓기&quot;&gt;정의와 동시에 값에 이름짓기&lt;/h3&gt;
+
+&lt;div class=&quot;language-swift highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;  &lt;span class=&quot;k&quot;&gt;let&lt;/span&gt; &lt;span class=&quot;nv&quot;&gt;http200Status&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nv&quot;&gt;statusCode&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;200&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;nv&quot;&gt;description&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;&quot;OK&quot;&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+&lt;p&gt;위의 과정을 하나로 합쳐 튜플을 정의함과 동시에 각 값에 이름을 줄 수 있습니다. 값에 이름을 붙여주면 그 이름을 이용하여 값에 접근할 수 있습니다.&lt;/p&gt;
+
+&lt;div class=&quot;language-swift highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;  &lt;span class=&quot;nf&quot;&gt;print&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;The statusCode is &lt;/span&gt;&lt;span class=&quot;se&quot;&gt;\(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;http200Status&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;statusCode&lt;/span&gt;&lt;span class=&quot;se&quot;&gt;)&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
+  &lt;span class=&quot;c1&quot;&gt;// Prints &quot;The statusCode is 200&quot;&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;h3 id=&quot;functions와-튜플&quot;&gt;Functions와 튜플&lt;/h3&gt;
+
+&lt;p&gt;튜플은 function의 리턴 값으로 사용될 때 특히 유용합니다. 웹 페이지를 가져오는 function은 페이지 가져오기가 성공했는지 실패했는지를 알려주기 위해 (Int, String) 튜플을 반환할 수 있습니다. 서로 다른 타입인 값을 가진 튜플을 리턴하는 function은 하나의 자료형인 하나의 값을 리턴하는 funtion보다 더 유용하게 사용될 수 있습니다.&lt;/p&gt;
+
+&lt;h3 id=&quot;note&quot;&gt;NOTE&lt;/h3&gt;
+
+&lt;p&gt;튜플은 관계가 있는 값들의 단순한 그룹들을 만드는데 유용합니다. 만약 데이터의 구조가 복잡하다면 class나 structure를 이용해 모델링하는 것이 더 좋은 방법이 될 것입니다.&lt;/p&gt;</content><author><name>Mirae</name></author><category term="TIL" /><category term="learning" /><category term="공부 기록" /><category term="Swift" /><summary type="html">A Swift Tour 아래 모든 정보의 출처는 Swift 공식 문서이며 개인의 학습 용도로만 사용되었음을 밝힙니다. All information below comes from the Swift documentation and is for personal learning purposes only.</summary></entry><entry><title type="html">Navigating Apps: Date Planner</title><link href="http://localhost:4000/til/datePlanner/" rel="alternate" type="text/html" title="Navigating Apps: Date Planner" /><published>2022-04-07T00:00:00+09:00</published><updated>2022-04-07T00:00:00+09:00</updated><id>http://localhost:4000/til/datePlanner</id><content type="html" xml:base="http://localhost:4000/til/datePlanner/">&lt;p&gt;&lt;a href=&quot;https://developer.apple.com/tutorials/sample-apps/aboutme&quot;&gt;Sample Apps Tutorials: About Me(Navigating Apps)&lt;/a&gt;&lt;br /&gt;
 &lt;sub&gt;아래 모든 정보의 출처는 apple developer 공식 페이지이며 개인의 학습 용도로만 사용되었음을 밝힙니다.&lt;/sub&gt;&lt;/p&gt;
 
 &lt;h1 id=&quot;section-1-app-configuration&quot;&gt;Section 1: App Configuration&lt;/h1&gt;

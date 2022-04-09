@@ -234,7 +234,7 @@
           <aside class="sidebar__right sticky">
             <nav class="toc">
               <header><h4 class="nav__title"><i class="fas fa-kiwi-bird"></i> 📂</h4></header>
-              <ul class="toc__menu"><li><a href="#tour-of-the-app">Tour of the App</a></li><li><a href="#build-groups-of-views">Build Groups of Views</a><ul><li><a href="#contentviewswift">ContentView.swift</a><ul><li><a href="#refactor-contentviewswift">Refactor ContentView.swift</a></li></ul></li><li><a href="#progressview">ProgressView</a></li><li><a href="#command-click-embed-in-vstack">Command-click “Embed in VStack”</a></li><li><a href="#label">Label</a></li><li><a href="#alignment">Alignment</a></li><li><a href="#fontcaption-modifier">.font(.caption) modifier</a></li><li><a href="#circle">Circle()</a></li></ul></li><li><a href="#supplement-accessibility-data">Supplement Accessibility data</a><ul><li><a href="#voiceover">VoiceOver</a></li></ul></li></ul>
+              <ul class="toc__menu"><li><a href="#tour-of-the-app">Tour of the App</a></li><li><a href="#build-groups-of-views">Build Groups of Views</a><ul><li><a href="#contentviewswift">ContentView.swift</a><ul><li><a href="#refactor-contentviewswift">Refactor ContentView.swift</a></li></ul></li><li><a href="#progressview">ProgressView</a></li><li><a href="#command-click-embed-in-vstack">Command-click “Embed in VStack”</a></li><li><a href="#label">Label</a></li><li><a href="#alignment">Alignment</a></li><li><a href="#fontcaption-modifier">.font(.caption) modifier</a></li><li><a href="#circle">Circle()</a></li></ul></li><li><a href="#supplement-accessibility-data">Supplement Accessibility data</a><ul><li><a href="#voiceover">VoiceOver</a></li></ul></li><li><a href="#create-a-color-theme">Create a Color Theme</a><ul><li><a href="#new-group-만들기">New Group 만들기</a></li></ul></li></ul>
 
             </nav>
           </aside>
@@ -312,6 +312,39 @@ All information below comes from the official apple developer page and is for pe
   <span class="o">.</span><span class="nf">accessibilityElement</span><span class="p">(</span><span class="nv">children</span><span class="p">:</span> <span class="o">.</span><span class="n">ignore</span><span class="p">)</span>
 </code></pre></div></div>
 <p>위의 코드를 작성하여 HStack의 child view의 사용될거라 예상된 accessibility를 무시해줍니다. 이런 과정은 사용자가 더 좋은 accessibility 경험을 할 수 있도록 할 것입니다.</p>
+
+<div class="language-swift highlighter-rouge"><div class="highlight"><pre class="highlight"><code>  <span class="p">}</span> <span class="c1">// systemImage를 사용했던 HStack 끝부분</span>
+  <span class="o">.</span><span class="nf">accessibilityElement</span><span class="p">(</span><span class="nv">children</span><span class="p">:</span> <span class="o">.</span><span class="n">ignore</span><span class="p">)</span>
+  <span class="o">.</span><span class="nf">accessibilityLabel</span><span class="p">(</span><span class="s">"Time remaining"</span><span class="p">)</span>
+</code></pre></div></div>
+<p>의미가 일치하는 이름을 사용하여 accessibility label을 HStack에 추가해줍니다.
+  사용자가 해당 요소의 목적을 이해할 수 있도록 이름 지어 줍니다. 이 부분에서는 system name 보다는 VoiceOver 사용자가 이해하기 쉬운 가장 중요한 정보를 표현하는 문자를 추가해주었습니다.</p>
+
+<div class="language-swift highlighter-rouge"><div class="highlight"><pre class="highlight"><code>  <span class="p">}</span> <span class="c1">// systemImage를 사용했던 HStack 끝부분</span>
+  <span class="o">.</span><span class="nf">accessibilityElement</span><span class="p">(</span><span class="nv">children</span><span class="p">:</span> <span class="o">.</span><span class="n">ignore</span><span class="p">)</span>
+  <span class="o">.</span><span class="nf">accessibilityLabel</span><span class="p">(</span><span class="s">"Time remaining"</span><span class="p">)</span>
+  <span class="o">.</span><span class="nf">accessibilityValue</span><span class="p">(</span><span class="s">"10 minutes"</span><span class="p">)</span>
+</code></pre></div></div>
+<p>Child view의 값을 의도적으로 무시해주었기 때문에 값을 추가해주어야 합니다.</p>
+
+<h2 id="create-a-color-theme">Create a Color Theme</h2>
+
+<ul>
+  <li>main color: view의 배경색</li>
+  <li>accent color: view의 글씨색</li>
+</ul>
+
+<p>을 이용하여 Color Theme을 생성해봅니다.</p>
+
+<h3 id="new-group-만들기">New Group 만들기</h3>
+
+<p>Xcode 맨 왼쪽 아래에 + 버튼을 누르면 프로젝트 네비게이터에 New Group을 생성할 수 있습니다.</p>
+<center><img src="/assets/images/scrum4.png" alt="New Group" width="500" />&lt;/center
+
+### Color properties
+
+  view를 만들 것은 아니지만 Color properties를 이용하기 위해서 SwiftUI 프레임워크를 임포트 해줍니다. SwiftUI는 z
+</center>
 
         
       </section>
