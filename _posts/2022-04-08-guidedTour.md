@@ -62,12 +62,48 @@ All information below comes from the Swift documentation and is for personal lea
 
 ## Optionals
 
-### If문과 Optionals  
+  값이 없을 수도 있는 상황에서 optionals를 사용합니다. Optional은 두가지 가능성을 나타냅니다.
+
+  1. 값이 있어서 optional을 unwrap하여 그 값에 접근할 수 있다.
+  2. 값이 없다.
+
+### Optinals가 사용되는 방법  
+
+#### Int()  
+
+  Int type은 문자열을 Int로 변환할 수 있는 initializer를 가지고 있습니다.
+  ```swift  
+  let possibleNumber = "123"
+  let convertedNumber = Int(possibleNumber)
+
+  print(convertedNumber)
+  // Prints "Optinal(123)"
+  ```
+  위의 방식으로 문자열을 Int 타입으로 변환할 수 있지만 모든 문자열을 Int 타입으로 변환할 수 있는 것은 아닙니다. "hello, world"와 같은 문자열은 명확한 숫자 값을 가지고 있지 않기 때문에 변환되지 않습니다. 이렇게 initializer가 변환을 실패할 수 있는 경우가 있기 때문에 Int가 아닌 optional Int 값을 변환합니다. Optional Int는 **Int?** 라고 표기합니다. '?'는 Int값이 있거나 어떠한 값도 가지고 있지 않다는 것을 나타냅니다. (Bool, String과 같은 값은 가지지 않음)
+
+#### nil  
+
+  nil값을 할당함으로써 optional 변수에 값이 없는 상태를 설정할 수 있습니다.
+
+  ```swift  
+  let serverResponseCode: Int? = nil
+  ```
+
+  optional이 아닌 constants나 variables과는 nil을 사용할 수 없습니다. 만약 값이 없는 변수 또는 상수가 필요하다면 항상 optionl +  해당 타입을 사용해야 합니다.  
+
+  만약 값을 할당하지 않고 optinal variable을 정의하면 자동으로 nil값이 할당됩니다.
+
+  ```swift  
+  var surveyAnswer: String?
+  // surveyAnswer is automatically set to nil
+  ```
+
+#### If문과 Optionals  
 
  ```swift
  var optionalString: String? = "Hello"
  print(optionalString == nil)
- // fasle 를 출력함
+ // false 를 출력함
 
  var optinalName: String? = "Future Kim"
  var greeting = "Hello!"
@@ -99,6 +135,10 @@ All information below comes from the Swift documentation and is for personal lea
  ```
 
  ?? operator를 사용하여 optinal에 default 값을 줄 수 있습니다. 만약 optional이 nil을 가지고 있다면 기본값을 사용합니다.
+
+#### Forced unwrapping  
+
+  만약 어떤 optional이 확실히 값을 가지고 있다는 것을 안다면 optional의 이름 뒤에 !를 붙여줌으로써 그 optional의 값에 접근할 수 있습니다. !는 '나는 이 optional이 값을 가지고 있는 것을 명확히 알고 있으니 그것을 사용하라'라는 메세지를 효과적으로 전달합니다. 이것을 optional값이 forced unwrapping이라고 합니다.
 
 ## Switch  
 
@@ -214,4 +254,4 @@ All information below comes from the Swift documentation and is for personal lea
 
 ### NOTE  
 
-  튜플은 관계가 있는 값들의 단순한 그룹들을 만드는데 유용합니다. 만약 데이터의 구조가 복잡하다면 class나 structure를 이용해 모델링하는 것이 더 좋은 방법이 될 것입니다. 
+  튜플은 관계가 있는 값들의 단순한 그룹들을 만드는데 유용합니다. 만약 데이터의 구조가 복잡하다면 class나 structure를 이용해 모델링하는 것이 더 좋은 방법이 될 것입니다.

@@ -234,7 +234,7 @@
           <aside class="sidebar__right sticky">
             <nav class="toc">
               <header><h4 class="nav__title"><i class="fas fa-kiwi-bird"></i> 📂</h4></header>
-              <ul class="toc__menu"><li><a href="#tour-of-the-app">Tour of the App</a></li><li><a href="#build-groups-of-views">Build Groups of Views</a><ul><li><a href="#contentviewswift">ContentView.swift</a><ul><li><a href="#refactor-contentviewswift">Refactor ContentView.swift</a></li></ul></li><li><a href="#progressview">ProgressView</a></li><li><a href="#command-click-embed-in-vstack">Command-click “Embed in VStack”</a></li><li><a href="#label">Label</a></li><li><a href="#alignment">Alignment</a></li><li><a href="#fontcaption-modifier">.font(.caption) modifier</a></li><li><a href="#circle">Circle()</a></li></ul></li><li><a href="#supplement-accessibility-data">Supplement Accessibility data</a><ul><li><a href="#voiceover">VoiceOver</a></li></ul></li><li><a href="#create-a-color-theme">Create a Color Theme</a><ul><li><a href="#new-group-만들기">New Group 만들기</a></li></ul></li></ul>
+              <ul class="toc__menu"><li><a href="#tour-of-the-app">Tour of the App</a></li><li><a href="#build-groups-of-views">Build Groups of Views</a><ul><li><a href="#contentviewswift">ContentView.swift</a><ul><li><a href="#refactor-contentviewswift">Refactor ContentView.swift</a></li></ul></li><li><a href="#progressview">ProgressView</a></li><li><a href="#command-click-embed-in-vstack">Command-click “Embed in VStack”</a></li><li><a href="#label">Label</a></li><li><a href="#alignment">Alignment</a></li><li><a href="#fontcaption-modifier">.font(.caption) modifier</a></li><li><a href="#circle">Circle()</a></li></ul></li><li><a href="#supplement-accessibility-data">Supplement Accessibility data</a><ul><li><a href="#voiceover">VoiceOver</a></li></ul></li><li><a href="#create-a-color-theme">Create a Color Theme</a><ul><li><a href="#new-group-만들기">New Group 만들기</a></li><li><a href="#color-properties">Color properties</a></li></ul></li></ul>
 
             </nav>
           </aside>
@@ -339,12 +339,49 @@ All information below comes from the official apple developer page and is for pe
 <h3 id="new-group-만들기">New Group 만들기</h3>
 
 <p>Xcode 맨 왼쪽 아래에 + 버튼을 누르면 프로젝트 네비게이터에 New Group을 생성할 수 있습니다.</p>
-<center><img src="/assets/images/scrum4.png" alt="New Group" width="500" />&lt;/center
+<center><img src="/assets/images/scrum4.png" alt="New Group" width="500" /></center>
 
-### Color properties
+<h3 id="color-properties">Color properties</h3>
 
-  view를 만들 것은 아니지만 Color properties를 이용하기 위해서 SwiftUI 프레임워크를 임포트 해줍니다. SwiftUI는 z
-</center>
+<p>view를 만들 것은 아니지만 Color properties를 이용하기 위해서 SwiftUI 프레임워크를 임포트 해줍니다.</p>
+
+<div class="language-swift highlighter-rouge"><div class="highlight"><pre class="highlight"><code>  <span class="c1">// Theme.swift</span>
+
+  <span class="kd">import</span> <span class="kt">Foundation</span>
+  <span class="kd">import</span> <span class="kt">SwiftUI</span>
+
+  <span class="kd">enum</span> <span class="kt">Theme</span><span class="p">:</span> <span class="kt">String</span> <span class="p">{</span>
+      <span class="k">case</span> <span class="n">bubblegum</span>
+      <span class="k">case</span> <span class="n">buttercup</span>
+      <span class="k">case</span> <span class="n">indigo</span>
+      <span class="k">case</span> <span class="n">lavender</span>
+      <span class="k">case</span> <span class="n">magenta</span>
+      <span class="k">case</span> <span class="n">navy</span>
+      <span class="k">case</span> <span class="n">orange</span>
+      <span class="k">case</span> <span class="n">oxblood</span>
+      <span class="k">case</span> <span class="n">periwinkle</span>
+      <span class="k">case</span> <span class="n">poppy</span>
+      <span class="k">case</span> <span class="n">purple</span>
+      <span class="k">case</span> <span class="n">seafoam</span>
+      <span class="k">case</span> <span class="n">sky</span>
+      <span class="k">case</span> <span class="n">tan</span>
+      <span class="k">case</span> <span class="n">teal</span>
+      <span class="k">case</span> <span class="n">yellow</span>
+
+      <span class="c1">// 각 main 컬러에 대응되는 accentColor를 설정해주는 property입니다.</span>
+      <span class="k">var</span> <span class="nv">accentColor</span><span class="p">:</span> <span class="kt">Color</span> <span class="p">{</span>
+          <span class="k">switch</span> <span class="k">self</span> <span class="p">{</span>
+              <span class="k">case</span> <span class="o">.</span><span class="n">bubblegum</span><span class="p">,</span> <span class="o">.</span><span class="n">buttercup</span><span class="p">,</span> <span class="o">.</span><span class="n">lavender</span><span class="p">,</span> <span class="o">.</span><span class="n">orange</span><span class="p">,</span> <span class="o">.</span><span class="n">periwinkle</span><span class="p">,</span> <span class="o">.</span><span class="n">poppy</span><span class="p">,</span> <span class="o">.</span><span class="n">seafoam</span><span class="p">,</span> <span class="o">.</span><span class="n">sky</span><span class="p">,</span> <span class="o">.</span><span class="n">tan</span><span class="p">,</span> <span class="o">.</span><span class="n">teal</span><span class="p">,</span> <span class="o">.</span><span class="nv">yellow</span><span class="p">:</span> <span class="k">return</span> <span class="o">.</span><span class="n">black</span>
+              <span class="k">case</span> <span class="o">.</span><span class="n">indigo</span><span class="p">,</span> <span class="o">.</span><span class="n">magenta</span><span class="p">,</span> <span class="o">.</span><span class="n">navy</span><span class="p">,</span> <span class="o">.</span><span class="n">oxblood</span><span class="p">,</span> <span class="o">.</span><span class="nv">purple</span><span class="p">:</span> <span class="k">return</span> <span class="o">.</span><span class="n">white</span>
+          <span class="p">}</span>
+      <span class="p">}</span>
+      <span class="c1">// 이 enumeration의 rawValue를 사용하여 색을 생성하는 속성</span>
+      <span class="k">var</span> <span class="nv">mainColor</span><span class="p">:</span> <span class="kt">Color</span> <span class="p">{</span>
+        <span class="kt">Color</span><span class="p">(</span><span class="n">rawValue</span><span class="p">)</span>
+      <span class="p">}</span>
+  <span class="p">}</span>
+
+</code></pre></div></div>
 
         
       </section>

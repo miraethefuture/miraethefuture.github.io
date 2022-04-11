@@ -115,8 +115,47 @@ All information below comes from the official apple developer page and is for pe
 ### New Group 만들기
 
   Xcode 맨 왼쪽 아래에 + 버튼을 누르면 프로젝트 네비게이터에 New Group을 생성할 수 있습니다.
-  <center><img src="/assets/images/scrum4.png" alt="New Group" width="500"></center
+  <center><img src="/assets/images/scrum4.png" alt="New Group" width="500"></center>
 
 ### Color properties
 
-  view를 만들 것은 아니지만 Color properties를 이용하기 위해서 SwiftUI 프레임워크를 임포트 해줍니다. SwiftUI는 z
+  view를 만들 것은 아니지만 Color properties를 이용하기 위해서 SwiftUI 프레임워크를 임포트 해줍니다.
+
+  ```swift
+  // Theme.swift
+
+  import Foundation
+  import SwiftUI
+
+  enum Theme: String {
+      case bubblegum
+      case buttercup
+      case indigo
+      case lavender
+      case magenta
+      case navy
+      case orange
+      case oxblood
+      case periwinkle
+      case poppy
+      case purple
+      case seafoam
+      case sky
+      case tan
+      case teal
+      case yellow
+
+      // 각 main 컬러에 대응되는 accentColor를 설정해주는 property입니다.
+      var accentColor: Color {
+          switch self {
+              case .bubblegum, .buttercup, .lavender, .orange, .periwinkle, .poppy, .seafoam, .sky, .tan, .teal, .yellow: return .black
+              case .indigo, .magenta, .navy, .oxblood, .purple: return .white
+          }
+      }
+      // 이 enumeration의 rawValue를 사용하여 색을 생성하는 속성
+      var mainColor: Color {
+        Color(rawValue)
+      }
+  }
+
+  ```
