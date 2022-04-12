@@ -9,7 +9,7 @@
   <head>
     <meta charset="utf-8">
 
-<!-- begin _includes/seo.html --><title>iOS App Dev Tutorials: Scrumdinger | Mirae the Future</title>
+<!-- begin _includes/seo.html --><title>iOS App Dev Tutorials: Scrumdinger | Mirae 2 the Future</title>
 <meta name="description" content="Getting Started with Scrumdinger 아래 모든 정보의 출처는 apple developer 공식 페이지이며 개인의 학습 용도로만 사용되었음을 밝힙니다. All information below comes from the official apple developer page and is for personal learning purposes only.">
 
 
@@ -21,7 +21,7 @@
 
 <meta property="og:type" content="article">
 <meta property="og:locale" content="en_US">
-<meta property="og:site_name" content="Mirae the Future">
+<meta property="og:site_name" content="Mirae 2 the Future">
 <meta property="og:title" content="iOS App Dev Tutorials: Scrumdinger">
 <meta property="og:url" content="http://localhost:4000/til/scrumdinger/">
 
@@ -55,7 +55,7 @@
     "@context": "https://schema.org",
     
       "@type": "Person",
-      "name": "Mirae the Future",
+      "name": "Mirae 2 the Future",
       "url": "http://localhost:4000/"
     
   }
@@ -71,7 +71,7 @@
 
 
 
-  <link href="/feed.xml" type="application/atom+xml" rel="alternate" title="Mirae the Future Feed">
+  <link href="/feed.xml" type="application/atom+xml" rel="alternate" title="Mirae 2 the Future Feed">
 
 
 <!-- https://t.co/dKP3o1e -->
@@ -124,7 +124,7 @@
       <nav id="site-nav" class="greedy-nav">
         
         <a class="site-title" href="/">
-          Mirae the Future
+          Mirae 2 the Future
           
         </a>
         <ul class="visible-links"><li class="masthead__menu-item">
@@ -234,7 +234,7 @@
           <aside class="sidebar__right sticky">
             <nav class="toc">
               <header><h4 class="nav__title"><i class="fas fa-kiwi-bird"></i> 📂</h4></header>
-              <ul class="toc__menu"><li><a href="#tour-of-the-app">Tour of the App</a></li><li><a href="#build-groups-of-views">Build Groups of Views</a><ul><li><a href="#contentviewswift">ContentView.swift</a><ul><li><a href="#refactor-contentviewswift">Refactor ContentView.swift</a></li></ul></li><li><a href="#progressview">ProgressView</a></li><li><a href="#command-click-embed-in-vstack">Command-click “Embed in VStack”</a></li><li><a href="#label">Label</a></li><li><a href="#alignment">Alignment</a></li><li><a href="#fontcaption-modifier">.font(.caption) modifier</a></li><li><a href="#circle">Circle()</a></li></ul></li><li><a href="#supplement-accessibility-data">Supplement Accessibility data</a><ul><li><a href="#voiceover">VoiceOver</a></li></ul></li><li><a href="#create-a-color-theme">Create a Color Theme</a><ul><li><a href="#new-group-만들기">New Group 만들기</a></li><li><a href="#color-properties">Color properties</a></li></ul></li><li><a href="#create-a-daily-scrum-model">Create a Daily Scrum Model</a></li><li><a href="#create-the-card-view">Create the Card View</a></li><li><a href="#customize-the-label-style">Customize the Label Style</a></li></ul>
+              <ul class="toc__menu"><li><a href="#tour-of-the-app">Tour of the App</a></li><li><a href="#build-groups-of-views">Build Groups of Views</a><ul><li><a href="#contentviewswift">ContentView.swift</a><ul><li><a href="#refactor-contentviewswift">Refactor ContentView.swift</a></li></ul></li><li><a href="#progressview">ProgressView</a></li><li><a href="#command-click-embed-in-vstack">Command-click “Embed in VStack”</a></li><li><a href="#label">Label</a></li><li><a href="#alignment">Alignment</a></li><li><a href="#fontcaption-modifier">.font(.caption) modifier</a></li><li><a href="#circle">Circle()</a></li></ul></li><li><a href="#supplement-accessibility-data">Supplement Accessibility data</a><ul><li><a href="#voiceover">VoiceOver</a></li></ul></li><li><a href="#create-a-card-view">Create a Card View</a><ul><li><a href="#create-a-color-theme">Create a Color Theme</a><ul><li><a href="#new-group-만들기">New Group 만들기</a></li></ul></li><li><a href="#color-properties">Color properties</a></li><li><a href="#create-a-daily-scrum-model">Create a Daily Scrum Model</a></li><li><a href="#create-the-card-view">Create the Card View</a></li><li><a href="#customize-the-label-style">Customize the Label Style</a></li></ul></li><li><a href="#displaying-data-in-a-list">Displaying Data in a List</a><ul><li><a href="#display-a-list-of-daily-scrums">Display a List of Daily Scrums</a></li><li><a href="#make-scrums-identifiable">Make Scrums Identifiable</a><ul><li><a href="#user-generated-content">User-generated content</a></li></ul></li><li><a href="#app-protocol">App protocol</a><ul><li><a href="#windowgroup">WindowGroup</a></li></ul></li></ul></li></ul>
 
             </nav>
           </aside>
@@ -327,7 +327,9 @@ All information below comes from the official apple developer page and is for pe
 </code></pre></div></div>
 <p>Child view의 값을 의도적으로 무시해주었기 때문에 값을 추가해주어야 합니다.</p>
 
-<h2 id="create-a-color-theme">Create a Color Theme</h2>
+<h2 id="create-a-card-view">Create a Card View</h2>
+
+<h3 id="create-a-color-theme">Create a Color Theme</h3>
 
 <ul>
   <li>main color: view의 배경색</li>
@@ -336,7 +338,7 @@ All information below comes from the official apple developer page and is for pe
 
 <p>을 이용하여 Color Theme을 생성해봅니다.</p>
 
-<h3 id="new-group-만들기">New Group 만들기</h3>
+<h4 id="new-group-만들기">New Group 만들기</h4>
 
 <p>Xcode 맨 왼쪽 아래에 + 버튼을 누르면 프로젝트 네비게이터에 New Group을 생성할 수 있습니다.</p>
 <center><img src="/assets/images/scrum4.png" alt="New Group" width="500" /></center>
@@ -383,7 +385,7 @@ All information below comes from the official apple developer page and is for pe
 
 </code></pre></div></div>
 
-<h2 id="create-a-daily-scrum-model">Create a Daily Scrum Model</h2>
+<h3 id="create-a-daily-scrum-model">Create a Daily Scrum Model</h3>
 
 <p>DailyScrum의 주목적은 value data를 보여주는 것이기 때문에 struct를 만들어 value type으로 만들 것입니다.<br />
   (Models Group에 DailyScrum이라는 파일 새로 만들기 후 struct 생성)</p>
@@ -408,13 +410,13 @@ All information below comes from the official apple developer page and is for pe
   <span class="p">}</span>
 </code></pre></div></div>
 
-<h2 id="create-the-card-view">Create the Card View</h2>
+<h3 id="create-the-card-view">Create the Card View</h3>
 
 <p>CardView는 DailyScrum 모델 데이터를 요약하고 제목, 참가 인원수, 시간을 보여줄 것입니다. 더 작은 views를 조립하여 CardView를 만들 것입니다. 각각의 views는 DailyScrum structure의 데이터 조각을 화면에 보여줄 것입니다.</p>
 
 <p><!-- 자세한 내용 글로 정리 할 것 --></p>
 
-<h2 id="customize-the-label-style">Customize the Label Style</h2>
+<h3 id="customize-the-label-style">Customize the Label Style</h3>
 
 <p>Scrum length와 clock 아이콘을 수평으로 쌓기 위해 label style을 만들어 봅니다. LabelStyle 프로토콜을 사용하여 여러개의 views에 같은 label style을 재사용하여 앱의 전반적인 디자인을 통일 시킬 수 있습니다.</p>
 
@@ -446,11 +448,123 @@ All information below comes from the official apple developer page and is for pe
 
   <span class="kd">struct</span> <span class="kt">TrailingIconLabelStyle</span><span class="p">:</span> <span class="kt">LabelStyle</span> <span class="p">{</span>
     <span class="kd">func</span> <span class="nf">makeBody</span><span class="p">(</span><span class="nv">configuration</span><span class="p">:</span> <span class="kt">Configuration</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kd">some</span> <span class="kt">View</span> <span class="p">{</span>
-
-
+      <span class="kt">HStack</span> <span class="p">{</span>
+        <span class="n">configuration</span><span class="o">.</span><span class="n">title</span>
+        <span class="n">configuration</span><span class="o">.</span><span class="n">icon</span>
+      <span class="p">}</span>
     <span class="p">}</span>
   <span class="p">}</span>
 </code></pre></div></div>
+<div class="language-swift highlighter-rouge"><div class="highlight"><pre class="highlight"><code>  <span class="c1">// TrailingIconLabel.swift</span>
+
+
+  <span class="kd">import</span> <span class="kt">SwiftUI</span>
+
+  <span class="kd">struct</span> <span class="kt">TrailingIconLabelStyle</span><span class="p">:</span> <span class="kt">LabelStyle</span> <span class="p">{</span>
+      <span class="kd">func</span> <span class="nf">makeBody</span><span class="p">(</span><span class="nv">configuration</span><span class="p">:</span> <span class="kt">Configuration</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kd">some</span> <span class="kt">View</span> <span class="p">{</span>
+          <span class="kt">HStack</span> <span class="p">{</span>
+              <span class="n">configuration</span><span class="o">.</span><span class="n">title</span>
+              <span class="n">configuration</span><span class="o">.</span><span class="n">icon</span>
+              <span class="c1">// 이 메서드의 사용으로 CardView의 오른쪽 Label의 title, icon 순서가 바뀜</span>
+          <span class="p">}</span>
+      <span class="p">}</span>
+  <span class="p">}</span>
+
+  <span class="kd">extension</span> <span class="kt">LabelStyle</span> <span class="k">where</span> <span class="k">Self</span> <span class="o">==</span> <span class="kt">TrailingIconLabelStyle</span> <span class="p">{</span>
+      <span class="kd">static</span> <span class="k">var</span> <span class="nv">trailingIcon</span><span class="p">:</span> <span class="k">Self</span> <span class="p">{</span> <span class="kt">Self</span><span class="p">()</span> <span class="p">}</span>
+      <span class="c1">// trailingIcon에 TrailingIconLabelStyle 나 자신을 담아서 다른 곳에서 쉽게 사용할 수 있게 함.</span>
+      <span class="c1">// static 변수이기 때문에 어디서든 leading-dot syntax를 이용하여 사용할 수 있음.</span>
+      <span class="c1">// 위의 이유로 코드가 readable해짐.</span>
+
+  <span class="p">}</span>
+</code></pre></div></div>
+
+<h2 id="displaying-data-in-a-list">Displaying Data in a List</h2>
+
+<p>SwiftUI ForEach view structure를 사용하여 DailyScrum object의 배열로부터 동적으로 행들을 만들 것입니다.</p>
+
+<h3 id="display-a-list-of-daily-scrums">Display a List of Daily Scrums</h3>
+
+<p>ForEach를 이용하여 List view의 정보를 채워줍니다. (미리 작성해둔 sampleData 배열을 이용합니다.)</p>
+
+<center><img src="/assets/images/scrum5.png" alt="list" width="500" /></center>
+<p><br /></p>
+
+<div class="language-swift highlighter-rouge"><div class="highlight"><pre class="highlight"><code>  <span class="c1">//  ScrumsView.swift</span>
+
+  <span class="kd">import</span> <span class="kt">SwiftUI</span>
+
+  <span class="kd">struct</span> <span class="kt">ScrumsView</span><span class="p">:</span> <span class="kt">View</span> <span class="p">{</span>
+      <span class="k">let</span> <span class="nv">scrums</span><span class="p">:</span> <span class="p">[</span><span class="kt">DailyScrum</span><span class="p">]</span>
+
+      <span class="k">var</span> <span class="nv">body</span><span class="p">:</span> <span class="kd">some</span> <span class="kt">View</span> <span class="p">{</span>
+          <span class="kt">List</span> <span class="p">{</span>
+              <span class="c1">// ForEach closure 안에 CardView initialize 해주기</span>
+              <span class="c1">// 이 closure는 scrums Array에 있는 요소마다 CardView를 리턴함</span>
+              <span class="kt">ForEach</span><span class="p">(</span><span class="n">scrums</span><span class="p">,</span> <span class="nv">id</span><span class="p">:</span> <span class="p">\</span><span class="o">.</span><span class="n">title</span><span class="p">)</span> <span class="p">{</span> <span class="n">scrum</span> <span class="k">in</span>
+                  <span class="c1">// 첫번째 scrum은 CardView의 속성으로 DailyScrum 타입임.</span>
+                  <span class="c1">// 두번째 scrum은 ForEach문에서 DailyScrum의 각 요소가 할당되는 곳</span>
+                  <span class="kt">CardView</span><span class="p">(</span><span class="nv">scrum</span><span class="p">:</span> <span class="n">scrum</span><span class="p">)</span>
+                      <span class="o">.</span><span class="nf">listRowBackground</span><span class="p">(</span><span class="n">scrum</span><span class="o">.</span><span class="n">theme</span><span class="o">.</span><span class="n">mainColor</span><span class="p">)</span>
+                  <span class="c1">// 각 scrum 요소의 theme main을 이용</span>
+
+              <span class="p">}</span>
+          <span class="p">}</span>
+      <span class="p">}</span>
+  <span class="p">}</span>
+
+  <span class="kd">struct</span> <span class="kt">ScrumsView_Previews</span><span class="p">:</span> <span class="kt">PreviewProvider</span> <span class="p">{</span>
+      <span class="kd">static</span> <span class="k">var</span> <span class="nv">previews</span><span class="p">:</span> <span class="kd">some</span> <span class="kt">View</span> <span class="p">{</span>
+          <span class="kt">ScrumsView</span><span class="p">(</span><span class="nv">scrums</span><span class="p">:</span> <span class="kt">DailyScrum</span><span class="o">.</span><span class="n">sampleData</span><span class="p">)</span>
+      <span class="p">}</span>
+  <span class="p">}</span>
+</code></pre></div></div>
+
+<h3 id="make-scrums-identifiable">Make Scrums Identifiable</h3>
+
+<p>ForEach structure는 식별 가능한(Identifiable) 정보를 반복하여 실행하며 동적인 뷰를 만듭니다. 위에서 List 안에 사용한 ForEach에서는 요소를 식별하기 위한 key path로 title을 사용했습니다. (sample data의 title이 모두 달랐기 때문에 가능했습니다.) 하지만 만약 실제 사용자가 이미 존재하는 title과 같은 title로 새 scrum을 만든다면 문제가 발생할 수 있습니다.</p>
+
+<h4 id="user-generated-content">User-generated content</h4>
+
+<p>사용자가 생성하는 컨텐츠를 사용하는 앱을 작동시키기 위해서 DailyScrum이 Identifiable 프로토콜을 따르도록 할 것입니다. 이것은 위에서 이용했던 방법처럼 title을 key path로 사용하는 것보다 더 안전하게 문제가 쉽게 일어나지 않은 방법이 될 것입니다. Identifiable 프로토콜의 요구사항은 id 속성을 갖는 것입니다.</p>
+
+<div class="language-swift highlighter-rouge"><div class="highlight"><pre class="highlight"><code>    <span class="kd">struct</span> <span class="kt">DailyScrum</span><span class="p">:</span> <span class="kt">Identifiable</span> <span class="p">{</span>
+      <span class="k">let</span> <span class="nv">id</span><span class="p">:</span> <span class="kt">UUID</span>          <span class="c1">// UUID 타입의 id 속성 생성</span>
+      <span class="k">var</span> <span class="nv">title</span><span class="p">:</span> <span class="kt">String</span>
+      <span class="k">var</span> <span class="nv">attendees</span><span class="p">:</span> <span class="p">[</span><span class="kt">String</span><span class="p">]</span>
+      <span class="k">var</span> <span class="nv">lengthInMinutes</span><span class="p">:</span> <span class="kt">Int</span>
+      <span class="k">var</span> <span class="nv">theme</span><span class="p">:</span> <span class="kt">Theme</span>
+
+      <span class="c1">// init 생성자 생성</span>
+      <span class="nf">init</span><span class="p">(</span><span class="nv">id</span><span class="p">:</span> <span class="kt">UUID</span> <span class="o">=</span> <span class="kt">UUID</span><span class="p">(),</span> <span class="nv">title</span><span class="p">:</span> <span class="kt">String</span><span class="p">,</span> <span class="nv">attendees</span><span class="p">:</span> <span class="p">[</span><span class="kt">String</span><span class="p">],</span> <span class="nv">lengthInMinutes</span><span class="p">:</span> <span class="kt">Int</span><span class="p">,</span> <span class="nv">theme</span><span class="p">:</span> <span class="kt">Theme</span><span class="p">)</span> <span class="p">{</span>
+          <span class="k">self</span><span class="o">.</span><span class="n">id</span> <span class="o">=</span> <span class="n">id</span>
+          <span class="k">self</span><span class="o">.</span><span class="n">title</span> <span class="o">=</span> <span class="n">title</span>
+          <span class="k">self</span><span class="o">.</span><span class="n">attendees</span> <span class="o">=</span> <span class="n">attendees</span>
+          <span class="k">self</span><span class="o">.</span><span class="n">lengthInMinutes</span> <span class="o">=</span> <span class="n">lengthInMinutes</span>
+          <span class="k">self</span><span class="o">.</span><span class="n">theme</span> <span class="o">=</span> <span class="n">theme</span>
+      <span class="p">}</span>
+  <span class="p">}</span>
+</code></pre></div></div>
+
+<h3 id="app-protocol">App protocol</h3>
+
+<p>이제 ScrumsView를 앱의 루트 뷰로 만들어 줍니다. SwiftUI 앱은 App 프로토콜을 따르는 structure를 정의함으로써 생성할 수 있습니다. 앱의 바디 속성은 사용자가 주로 사용할 첫번째 화면을 보여주는 view hierarchy를 담은 Scene을 리턴합니다.</p>
+
+<div class="language-swift highlighter-rouge"><div class="highlight"><pre class="highlight"><code>  <span class="kd">import</span> <span class="kt">SwiftUI</span>
+
+  <span class="kd">@main</span>
+  <span class="kd">struct</span> <span class="kt">ScrumdingerApp</span><span class="p">:</span> <span class="kt">App</span> <span class="p">{</span>
+      <span class="k">var</span> <span class="nv">body</span><span class="p">:</span> <span class="kd">some</span> <span class="kt">Scene</span> <span class="p">{</span>
+          <span class="kt">WindowGroup</span> <span class="p">{</span>
+              <span class="kt">ScrumsView</span><span class="p">(</span><span class="nv">scrums</span><span class="p">:</span> <span class="kt">DailyScrum</span><span class="o">.</span><span class="n">sampleData</span><span class="p">)</span>
+          <span class="p">}</span>
+      <span class="p">}</span>
+  <span class="p">}</span>
+</code></pre></div></div>
+
+<h4 id="windowgroup">WindowGroup</h4>
+
+<p>WindowGroup은 SwiftUI가 제공하는 scenes 중 하나입니다. iOS에서는, WindowGroup scene builder에 추가된 view가 기기의 전체 화면을 채우는 윈도우에 나타나게 됩니다.</p>
 
         
       </section>
@@ -746,7 +860,7 @@ All information below comes fro...</p>
   </ul>
 </div>
 
-<div class="page__footer-copyright">&copy; 2022 Mirae the Future. Powered by <a href="https://jekyllrb.com" rel="nofollow">Jekyll</a> &amp; <a href="https://mademistakes.com/work/minimal-mistakes-jekyll-theme/" rel="nofollow">Minimal Mistakes</a>.</div>
+<div class="page__footer-copyright">&copy; 2022 Mirae 2 the Future. Powered by <a href="https://jekyllrb.com" rel="nofollow">Jekyll</a> &amp; <a href="https://mademistakes.com/work/minimal-mistakes-jekyll-theme/" rel="nofollow">Minimal Mistakes</a>.</div>
 
       </footer>
     </div>

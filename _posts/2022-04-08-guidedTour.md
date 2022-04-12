@@ -200,9 +200,28 @@ All information below comes from the Swift documentation and is for personal lea
 
 #### Implicitly Unwrapped Optionals  
 
+  위에 묘사된 것처럼, optinals는 constants나 variables가 값이 없는 상태를 가질 수 있다는 것을 나타냅니다. if문을 이용하여 optionals에 값이 있는지 없는지 확인할 수 있습니다. 조건에 따라 optional binding을 이용하여 optionals를 unwrap하여 optional에 값이 있다면 그 값에 접근할 수 있게 됩니다.  
+
+  가끔은, 어떤 optional에 값이 처음으로 설정된 후에 프로그램의 구조로부터 그 optional이 항상 값을 가지고 있을 거라는 것이 명확할 때가 있습니다. 이런 경우에는, 그 optional이 언제나 값을 가질 것이라는 것을 안정적으로 추측할 수 있기 때문에 그 optional에 접근할때마 값을 확인하고 unwrap할 필요를 제거하는 것이 도움이 됩니다.
+
+  이런 종류의 optionals는 implicitly unwrapped optionals라고 합니다.  
+  optional로 만들고 싶은 type 뒤에 !를 붙여줌으로써 implicitly unwrapped optionals를 정의할 수 있습니다.  
+
+  어떤 optinal이 정의된 후 바로 그 optional의 값이 있을 것이라는게 확인되고, 그 optional이 그 후로 계속해서 사용될 것이라는게 명확할 때 implicitly unwrapped optionals를 유용하게 사용할 수 있습니다.
+
+  <!-- 🚧 -->
+
   ```swift  
-  let possibleString
+  let possibleString: String? = "An optional string."
+  let forcedString: String = possibleString!
+
+  let assumedString: String! = "An implicitly unwrapped optional string."
+  let implicitString: String = assumedString // ! 작성하지 않아도 됨
   ```
+
+  
+
+
 
 
 

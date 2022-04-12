@@ -9,7 +9,7 @@
   <head>
     <meta charset="utf-8">
 
-<!-- begin _includes/seo.html --><title>Guided Swift Tour: 스위프트 기초 문법 | Mirae the Future</title>
+<!-- begin _includes/seo.html --><title>Guided Swift Tour: 스위프트 기초 문법 | Mirae 2 the Future</title>
 <meta name="description" content="A Swift Tour 아래 모든 정보의 출처는 Swift 공식 문서이며 개인의 학습 용도로만 사용되었음을 밝힙니다. All information below comes from the Swift documentation and is for personal learning purposes only.">
 
 
@@ -21,7 +21,7 @@
 
 <meta property="og:type" content="article">
 <meta property="og:locale" content="en_US">
-<meta property="og:site_name" content="Mirae the Future">
+<meta property="og:site_name" content="Mirae 2 the Future">
 <meta property="og:title" content="Guided Swift Tour: 스위프트 기초 문법">
 <meta property="og:url" content="http://localhost:4000/til/guidedTour/">
 
@@ -55,7 +55,7 @@
     "@context": "https://schema.org",
     
       "@type": "Person",
-      "name": "Mirae the Future",
+      "name": "Mirae 2 the Future",
       "url": "http://localhost:4000/"
     
   }
@@ -71,7 +71,7 @@
 
 
 
-  <link href="/feed.xml" type="application/atom+xml" rel="alternate" title="Mirae the Future Feed">
+  <link href="/feed.xml" type="application/atom+xml" rel="alternate" title="Mirae 2 the Future Feed">
 
 
 <!-- https://t.co/dKP3o1e -->
@@ -124,7 +124,7 @@
       <nav id="site-nav" class="greedy-nav">
         
         <a class="site-title" href="/">
-          Mirae the Future
+          Mirae 2 the Future
           
         </a>
         <ul class="visible-links"><li class="masthead__menu-item">
@@ -414,7 +414,22 @@ All information below comes from the Swift documentation and is for personal lea
 
 <h4 id="implicitly-unwrapped-optionals">Implicitly Unwrapped Optionals</h4>
 
-<div class="language-swift highlighter-rouge"><div class="highlight"><pre class="highlight"><code>  <span class="k">let</span> <span class="nv">possibleString</span>
+<p>위에 묘사된 것처럼, optinals는 constants나 variables가 값이 없는 상태를 가질 수 있다는 것을 나타냅니다. if문을 이용하여 optionals에 값이 있는지 없는지 확인할 수 있습니다. 조건에 따라 optional binding을 이용하여 optionals를 unwrap하여 optional에 값이 있다면 그 값에 접근할 수 있게 됩니다.</p>
+
+<p>가끔은, 어떤 optional에 값이 처음으로 설정된 후에 프로그램의 구조로부터 그 optional이 항상 값을 가지고 있을 거라는 것이 명확할 때가 있습니다. 이런 경우에는, 그 optional이 언제나 값을 가질 것이라는 것을 안정적으로 추측할 수 있기 때문에 그 optional에 접근할때마 값을 확인하고 unwrap할 필요를 제거하는 것이 도움이 됩니다.</p>
+
+<p>이런 종류의 optionals는 implicitly unwrapped optionals라고 합니다.<br />
+  optional로 만들고 싶은 type 뒤에 !를 붙여줌으로써 implicitly unwrapped optionals를 정의할 수 있습니다.</p>
+
+<p>어떤 optinal이 정의된 후 바로 그 optional의 값이 있을 것이라는게 확인되고, 그 optional이 그 후로 계속해서 사용될 것이라는게 명확할 때 implicitly unwrapped optionals를 유용하게 사용할 수 있습니다.</p>
+
+<p><!-- 🚧 --></p>
+
+<div class="language-swift highlighter-rouge"><div class="highlight"><pre class="highlight"><code>  <span class="k">let</span> <span class="nv">possibleString</span><span class="p">:</span> <span class="kt">String</span><span class="p">?</span> <span class="o">=</span> <span class="s">"An optional string."</span>
+  <span class="k">let</span> <span class="nv">forcedString</span><span class="p">:</span> <span class="kt">String</span> <span class="o">=</span> <span class="n">possibleString</span><span class="o">!</span>
+
+  <span class="k">let</span> <span class="nv">assumedString</span><span class="p">:</span> <span class="kt">String</span><span class="o">!</span> <span class="o">=</span> <span class="s">"An implicitly unwrapped optional string."</span>
+  <span class="k">let</span> <span class="nv">implicitString</span><span class="p">:</span> <span class="kt">String</span> <span class="o">=</span> <span class="n">assumedString</span> <span class="c1">// ! 작성하지 않아도 됨</span>
 </code></pre></div></div>
 
 <h2 id="switch">Switch</h2>
@@ -823,7 +838,7 @@ All information below comes fro...</p>
   </ul>
 </div>
 
-<div class="page__footer-copyright">&copy; 2022 Mirae the Future. Powered by <a href="https://jekyllrb.com" rel="nofollow">Jekyll</a> &amp; <a href="https://mademistakes.com/work/minimal-mistakes-jekyll-theme/" rel="nofollow">Minimal Mistakes</a>.</div>
+<div class="page__footer-copyright">&copy; 2022 Mirae 2 the Future. Powered by <a href="https://jekyllrb.com" rel="nofollow">Jekyll</a> &amp; <a href="https://mademistakes.com/work/minimal-mistakes-jekyll-theme/" rel="nofollow">Minimal Mistakes</a>.</div>
 
       </footer>
     </div>

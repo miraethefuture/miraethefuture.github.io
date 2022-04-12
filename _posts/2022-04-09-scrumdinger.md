@@ -105,14 +105,16 @@ All information below comes from the official apple developer page and is for pe
   ```
   Child view의 값을 의도적으로 무시해주었기 때문에 값을 추가해주어야 합니다.
 
-## Create a Color Theme
+## Create a Card View
+
+### Create a Color Theme
 
   - main color: view의 배경색
   - accent color: view의 글씨색
 
   을 이용하여 Color Theme을 생성해봅니다.
 
-### New Group 만들기
+#### New Group 만들기
 
   Xcode 맨 왼쪽 아래에 + 버튼을 누르면 프로젝트 네비게이터에 New Group을 생성할 수 있습니다.
   <center><img src="/assets/images/scrum4.png" alt="New Group" width="500"></center>
@@ -160,7 +162,7 @@ All information below comes from the official apple developer page and is for pe
 
   ```
 
-## Create a Daily Scrum Model  
+### Create a Daily Scrum Model  
 
   DailyScrum의 주목적은 value data를 보여주는 것이기 때문에 struct를 만들어 value type으로 만들 것입니다.  
   (Models Group에 DailyScrum이라는 파일 새로 만들기 후 struct 생성)
@@ -187,13 +189,13 @@ All information below comes from the official apple developer page and is for pe
   }
   ```
 
-## Create the Card View  
+### Create the Card View  
 
   CardView는 DailyScrum 모델 데이터를 요약하고 제목, 참가 인원수, 시간을 보여줄 것입니다. 더 작은 views를 조립하여 CardView를 만들 것입니다. 각각의 views는 DailyScrum structure의 데이터 조각을 화면에 보여줄 것입니다.
 
   <!-- 자세한 내용 글로 정리 할 것 -->
 
-## Customize the Label Style  
+### Customize the Label Style  
 
   Scrum length와 clock 아이콘을 수평으로 쌓기 위해 label style을 만들어 봅니다. LabelStyle 프로토콜을 사용하여 여러개의 views에 같은 label style을 재사용하여 앱의 전반적인 디자인을 통일 시킬 수 있습니다.  
 
@@ -225,8 +227,124 @@ All information below comes from the official apple developer page and is for pe
 
   struct TrailingIconLabelStyle: LabelStyle {
     func makeBody(configuration: Configuration) -> some View {
-
-
+      HStack {
+        configuration.title
+        configuration.icon
+      }
     }
   }
   ```
+  ```swift
+  // TrailingIconLabel.swift
+
+
+  import SwiftUI
+
+  struct TrailingIconLabelStyle: LabelStyle {
+      func makeBody(configuration: Configuration) -> some View {
+          HStack {
+              configuration.title
+              configuration.icon
+              // 이 메서드의 사용으로 CardView의 오른쪽 Label의 title, icon 순서가 바뀜
+          }
+      }
+  }
+
+  extension LabelStyle where Self == TrailingIconLabelStyle {
+      static var trailingIcon: Self { Self() }
+      // trailingIcon에 TrailingIconLabelStyle 나 자신을 담아서 다른 곳에서 쉽게 사용할 수 있게 함.
+      // static 변수이기 때문에 어디서든 leading-dot syntax를 이용하여 사용할 수 있음.
+      // 위의 이유로 코드가 readable해짐.
+
+  }
+  ```
+
+## Displaying Data in a List
+
+  SwiftUI ForEach view structure를 사용하여 DailyScrum object의 배열로부터 동적으로 행들을 만들 것입니다.  
+
+### Display a List of Daily Scrums
+
+  ForEach를 이용하여 List view의 정보를 채워줍니다. (미리 작성해둔 sampleData 배열을 이용합니다.)
+
+  <center><img src="/assets/images/scrum5.png" alt="list" width="500"></center><br>  
+
+
+  ```swift
+  //  ScrumsView.swift
+
+  import SwiftUI
+
+  struct ScrumsView: View {
+      let scrums: [DailyScrum]
+
+      var body: some View {
+          List {
+              // ForEach closure 안에 CardView initialize 해주기
+              // 이 closure는 scrums Array에 있는 요소마다 CardView를 리턴함
+              ForEach(scrums, id: \.title) { scrum in
+                  // 첫번째 scrum은 CardView의 속성으로 DailyScrum 타입임.
+                  // 두번째 scrum은 ForEach문에서 DailyScrum의 각 요소가 할당되는 곳
+                  CardView(scrum: scrum)
+                      .listRowBackground(scrum.theme.mainColor)
+                  // 각 scrum 요소의 theme main을 이용
+
+              }
+          }
+      }
+  }
+
+  struct ScrumsView_Previews: PreviewProvider {
+      static var previews: some View {
+          ScrumsView(scrums: DailyScrum.sampleData)
+      }
+  }
+  ```
+
+### Make Scrums Identifiable  
+
+  ForEach structure는 식별 가능한(Identifiable) 정보를 반복하여 실행하며 동적인 뷰를 만듭니다. 위에서 List 안에 사용한 ForEach에서는 요소를 식별하기 위한 key path로 title을 사용했습니다. (sample data의 title이 모두 달랐기 때문에 가능했습니다.) 하지만 만약 실제 사용자가 이미 존재하는 title과 같은 title로 새 scrum을 만든다면 문제가 발생할 수 있습니다.  
+
+#### User-generated content  
+
+  사용자가 생성하는 컨텐츠를 사용하는 앱을 작동시키기 위해서 DailyScrum이 Identifiable 프로토콜을 따르도록 할 것입니다. 이것은 위에서 이용했던 방법처럼 title을 key path로 사용하는 것보다 더 안전하게 문제가 쉽게 일어나지 않은 방법이 될 것입니다. Identifiable 프로토콜의 요구사항은 id 속성을 갖는 것입니다.  
+
+  ```swift  
+    struct DailyScrum: Identifiable {
+      let id: UUID          // UUID 타입의 id 속성 생성
+      var title: String
+      var attendees: [String]
+      var lengthInMinutes: Int
+      var theme: Theme
+
+      // init 생성자 생성
+      init(id: UUID = UUID(), title: String, attendees: [String], lengthInMinutes: Int, theme: Theme) {
+          self.id = id
+          self.title = title
+          self.attendees = attendees
+          self.lengthInMinutes = lengthInMinutes
+          self.theme = theme
+      }
+  }
+  ```
+
+### App protocol  
+
+  이제 ScrumsView를 앱의 루트 뷰로 만들어 줍니다. SwiftUI 앱은 App 프로토콜을 따르는 structure를 정의함으로써 생성할 수 있습니다. 앱의 바디 속성은 사용자가 주로 사용할 첫번째 화면을 보여주는 view hierarchy를 담은 Scene을 리턴합니다.
+
+  ```swift
+  import SwiftUI
+
+  @main
+  struct ScrumdingerApp: App {
+      var body: some Scene {
+          WindowGroup {
+              ScrumsView(scrums: DailyScrum.sampleData)
+          }
+      }
+  }
+  ```  
+
+#### WindowGroup  
+
+  WindowGroup은 SwiftUI가 제공하는 scenes 중 하나입니다. iOS에서는, WindowGroup scene builder에 추가된 view가 기기의 전체 화면을 채우는 윈도우에 나타나게 됩니다. 
