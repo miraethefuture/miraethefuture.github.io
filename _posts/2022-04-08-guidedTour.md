@@ -67,7 +67,7 @@ All information below comes from the Swift documentation and is for personal lea
   1. 값이 있어서 optional을 unwrap하여 그 값에 접근할 수 있다.
   2. 값이 없다.
 
-### Optinals가 사용되는 방법  
+### optionals가 사용되는 방법  
 
 #### Int()  
 
@@ -77,7 +77,7 @@ All information below comes from the Swift documentation and is for personal lea
   let convertedNumber = Int(possibleNumber)
 
   print(convertedNumber)
-  // Prints "Optinal(123)"
+  // Prints "optional(123)"
   ```
   위의 방식으로 문자열을 Int 타입으로 변환할 수 있지만 모든 문자열을 Int 타입으로 변환할 수 있는 것은 아닙니다. "hello, world"와 같은 문자열은 명확한 숫자 값을 가지고 있지 않기 때문에 변환되지 않습니다. 이렇게 initializer가 변환을 실패할 수 있는 경우가 있기 때문에 Int가 아닌 optional Int 값을 변환합니다. Optional Int는 **Int?** 라고 표기합니다. '?'는 Int값이 있거나 어떠한 값도 가지고 있지 않다는 것을 나타냅니다. (Bool, String과 같은 값은 가지지 않음)
 
@@ -89,9 +89,9 @@ All information below comes from the Swift documentation and is for personal lea
   let serverResponseCode: Int? = nil
   ```
 
-  optional이 아닌 constants나 variables과는 nil을 사용할 수 없습니다. 만약 값이 없는 변수 또는 상수가 필요하다면 항상 optionl +  해당 타입을 사용해야 합니다.  
+  optional이 아닌 constants나 variables과는 nil을 사용할 수 없습니다. 만약 값이 없는 변수 또는 상수가 필요하다면 항상 optional +  해당 타입을 사용해야 합니다.  
 
-  만약 값을 할당하지 않고 optinal variable을 정의하면 자동으로 nil값이 할당됩니다.
+  만약 값을 할당하지 않고 optional variable을 정의하면 자동으로 nil값이 할당됩니다.
 
   ```swift  
   var surveyAnswer: String?
@@ -105,7 +105,7 @@ All information below comes from the Swift documentation and is for personal lea
  print(optionalString == nil)
  // false 를 출력함
 
- var optinalName: String? = "Future Kim"
+ var optionalName: String? = "Future Kim"
  var greeting = "Hello!"
  if let name = optionalName {
    greeting = "Hello, \(name)"
@@ -134,11 +134,77 @@ All information below comes from the Swift documentation and is for personal lea
  let informalGreetring = "Hi \(nickname ?? fullName)"
  ```
 
- ?? operator를 사용하여 optinal에 default 값을 줄 수 있습니다. 만약 optional이 nil을 가지고 있다면 기본값을 사용합니다.
+ ?? operator를 사용하여 optional에 default 값을 줄 수 있습니다. 만약 optional이 nil을 가지고 있다면 기본값을 사용합니다.
 
 #### Forced unwrapping  
 
   만약 어떤 optional이 확실히 값을 가지고 있다는 것을 안다면 optional의 이름 뒤에 !를 붙여줌으로써 그 optional의 값에 접근할 수 있습니다. !는 '나는 이 optional이 값을 가지고 있는 것을 명확히 알고 있으니 그것을 사용하라'라는 메세지를 효과적으로 전달합니다. 이것을 optional값이 forced unwrapping이라고 합니다.
+
+  ```swift  
+  if convertedNumber != nil {
+      print("convertedNumber has an integer value of \(convertedNumber!).")
+  }
+  ```
+
+#### Optional Binding  
+
+  Optional binding은 optional이 값을 가지고 있는지, 가지고 있지 않은지 알아내기 위해 사용됩니다. 그리고 만약 값이 있다면 그 값을 일시적으로 constant나 variable로 사용 가능하도록 합니다. Optional binding은 optional안의 값을 확인하기 위해 그리고 그 값을 constant나 variable로 추출하기 위해 if문이나 while문과 함께 사용될 수 있습니다.  
+
+
+  ```swift  
+  if let constantName = someOptinal {
+    satements
+  }
+  ```
+
+  ```swift  
+  if let actualNumber = Int(possibleNumber) {
+    print("The string \"\(possibleNumber)\" has an integer value of \(actualNumber)")
+  } else {
+    print("The String \"\(possibleNumber)\" couldn't be converted to an integer")
+  }
+  // Prints "The string "123" has an integer value of 123"
+  ```
+  위의 코드는...
+  '만약 Int(possibleNumber)로부터 반환된 optional Int가 값을 가지고 있다면 그 옵셔널에 담겨 있는 값을 새로운 constant인 actualNumber에 할당하라'라고 읽을 수 있습니다.  
+
+  만약 위의 변환 과정이 성공적으로 이루어졌다면, 새 constant인 actualNumber는 첫번째 branch(if 조건이 true일 때 실행되는 브랜치)에서 사용 가능하게 됩니다. 이미 초기화 되어있기 때문에 ! 를 사용하지 않아도 됩니다.  
+
+  constants와 variables 둘다 Optional binding에서 사용될 수 있습니다. actualNumber의 값을 조작하고 싶다면 아래와 같이 코드를 작성했을 것입니다.
+  ```swift
+  if var actualNumber = Int(possibleNumber) {
+
+  }
+  ```
+
+  if문에는 필요한 만큼의 optional bindings와 Boolean 조건을 사용할 수 있습니다. 만약 optional bindings 안의 어떤 값이라도 nil이거나, Boolean중 하나라도 false이면 전체 if문은 false값을 가지게 됩니다.
+
+  ```swift
+  if let firstNumber = Int("4"), let secondNumber = Int("42"), firstNumber < secondNumber && secondNumber < 100 {
+    print("\(firstNumber) < \(secondNumber) < 100")
+  }
+  // Prints "4 < 42 < 100"
+
+  if let firstNumber = Int("4") {
+    if let secondNumber = Int("42") {
+      if firstNumber < secondNumber && secondNumber < 100 {
+        print("\(firstNumber) < \(secondNumber) < 100")
+      }
+    }
+  }
+  // Prints "4 < 42 < 100"
+  ```
+
+  if문 안의 Optional binding의 과정에서 생성된 constant나 variable는 if문의 body부분에서만 사용할 수 있습니다.
+
+
+#### Implicitly Unwrapped Optionals  
+
+  ```swift  
+  let possibleString
+  ```
+
+
 
 ## Switch  
 
@@ -255,3 +321,7 @@ All information below comes from the Swift documentation and is for personal lea
 ### NOTE  
 
   튜플은 관계가 있는 값들의 단순한 그룹들을 만드는데 유용합니다. 만약 데이터의 구조가 복잡하다면 class나 structure를 이용해 모델링하는 것이 더 좋은 방법이 될 것입니다.
+
+<!-- ## Extension  
+
+  Extension은 이미 존재하는 class, structure, enumeration, protocol타입에 새로운 기능을 추가합니다. -->

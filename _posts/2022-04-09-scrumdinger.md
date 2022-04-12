@@ -159,3 +159,74 @@ All information below comes from the official apple developer page and is for pe
   }
 
   ```
+
+## Create a Daily Scrum Model  
+
+  DailyScrum의 주목적은 value data를 보여주는 것이기 때문에 struct를 만들어 value type으로 만들 것입니다.  
+  (Models Group에 DailyScrum이라는 파일 새로 만들기 후 struct 생성)
+
+  ```swift
+  struct DailyScrum {
+    var title: String
+    var attendees: [String]
+    var lengthInMinutes: Int
+    var theme: Theme
+  }
+  ```
+
+  샘플 데이터를 제공하는 extension을 추가합니다.
+
+  ```swift
+  extension DailyScrum {
+    static let sampleData: [DailyScrum] =
+    [
+        DailyScrum(title: "Design", attendees: ["Future", "Anna", "Happ", "OShel"], lengthInMinutes: 10, theme: .yellow),
+        DailyScrum(title: "App Dev", attendees: ["Katie", "Gray", "Euna", "Luis", "Darla"], lengthInMinutes: 5, theme: .orange),
+        DailyScrum(title: "Web Dev", attendees: ["Chella", "Chris", "Christina", "Eden", "Karla", "Lindsey", "Aga", "Chad", "Jenn", "Sarah"], lengthInMinutes: 5, theme: .poppy)
+    ]
+  }
+  ```
+
+## Create the Card View  
+
+  CardView는 DailyScrum 모델 데이터를 요약하고 제목, 참가 인원수, 시간을 보여줄 것입니다. 더 작은 views를 조립하여 CardView를 만들 것입니다. 각각의 views는 DailyScrum structure의 데이터 조각을 화면에 보여줄 것입니다.
+
+  <!-- 자세한 내용 글로 정리 할 것 -->
+
+## Customize the Label Style  
+
+  Scrum length와 clock 아이콘을 수평으로 쌓기 위해 label style을 만들어 봅니다. LabelStyle 프로토콜을 사용하여 여러개의 views에 같은 label style을 재사용하여 앱의 전반적인 디자인을 통일 시킬 수 있습니다.  
+
+  (만약 커스텀 라벨 스타일을 만들고 싶지 않다면 built-in label styles를 사용할 수 있습니다.)  
+
+  ```swift
+  // TrailingIconLabel.swift
+
+  import SwiftUI
+
+  struct TrailingIconLabelStyle: LabelStyle {
+    func makeBody(configuration: Configuration) -> some View {
+
+
+    }
+  }
+  ```
+
+  1. TrailingIconLabel라는 이름의 새 스위프트 파일을 생성합니다.
+  2. LabelStyle 프로토콜을 따르는 TrailingIconLabelStyle라는 이름의 structure를 생성합니다. (아직 LabelStyle 프로토콜의 요구사항을 충족하지 않기때문에 컴파일러가 error를 throw합니다.)
+  3. 비어있는 makeBody function을 생성합니다. (이제 에러가 사라집니다.)
+
+  이 스타일이 현재의 라벨 스타일인 뷰 hierarchy 안의 각각의 Label 인스턴스마다 시스템은 이 메서드를 호출합니다.
+
+  ```swift
+  // TrailingIconLabel.swift
+
+  import SwiftUI
+
+  struct TrailingIconLabelStyle: LabelStyle {
+    func makeBody(configuration: Configuration) -> some View {
+
+
+    }
+  }
+  ```
