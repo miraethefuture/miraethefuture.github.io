@@ -219,11 +219,6 @@ All information below comes from the Swift documentation and is for personal lea
   let implicitString: String = assumedString // ! 작성하지 않아도 됨
   ```
 
-  
-
-
-
-
 
 ## Switch  
 
@@ -344,3 +339,63 @@ All information below comes from the Swift documentation and is for personal lea
 <!-- ## Extension  
 
   Extension은 이미 존재하는 class, structure, enumeration, protocol타입에 새로운 기능을 추가합니다. -->
+
+## Early Exit  
+
+  guard statement는 if statement처럼 Boolean 값에 따라 코드를 실행합니다.
+  guard statement뒤에 오는 코드를 실행시키기 위해, 조건이 true여야만 하는 상황을 요구할 때 guard statement를 사용합니다. if문과 다르게 항상 else절이 함께 사용됩니다.  
+
+  ```swift  
+  func greet(person: [String: String]) {
+    guard let name = person["name"] else {
+      return
+    }
+
+    print("Hello \(name)!")
+
+    guard let location = person["location"] else {
+      print("I hope the weather is nice near you.")
+      return
+    }
+
+    print("I hope the weather is nice in \(location).")
+  }
+
+  greet(person: ["name": "John"])
+  // Prints "Hello John!"
+  // Prints "I hope the weather is nice near you."
+
+  greet(person: ["name": "Jane", "location": "Cupertino"])
+  // Prints "Hello Jane!"
+  // Prints "I hope the weather is nice in Cupertino."
+  ```
+
+  만약 조건이 false라면 else 브랜치의 코드가 실행됩니다. 이런 경우에는 return, break, continue, throw등의 control transfer statement를 사용하여 코드 블락을 꼭 벗어나 주어야 합니다.
+
+## Functions  
+
+  Functions는 특정 기능을 수행하는 완전한 코드 덩어리입니다. Functions는 이름을 가집니다. 보통은 어떤 일을 하는지 알 수 있는 이름을 지어줍니다. 그리고 필요할 때 그 이름을 사용해서 function을 호출하여 특정 기능을 수행할 수 있도록 합니다.
+
+  패러미터는 function의 호출을 단순화하기 위해서 기본값을 제공할 수 있습니다. 그리고 in-out 패러미터로써 인자를 통과시킬 수 있습니다.  
+
+  스위프트의 모든 function은 type을 가지고 있습니다. function의 패러미터의 types와 리턴 type으로 이루어져 있습니다.
+
+  ```swift
+  func greet(person: String) -> String {
+    let greeting = "Hello" + person + "!"
+    return greeting
+  }
+  ```
+  - -(a hyphen)
+  - \>(a right angle bracket)  
+
+  을 이용해서 -> 리턴 타입을 나타냅니다.
+
+  ```swift
+  func greetAgain(person: String) -> String {
+    return "Hello again," + person + "!"
+  }
+  ```
+  return 뒤에 바로 문자열을 주면 코드를 더 짧게 작성할 수 있습니다.  
+
+  

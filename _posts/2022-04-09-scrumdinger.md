@@ -347,4 +347,216 @@ All information below comes from the official apple developer page and is for pe
 
 #### WindowGroup  
 
-  WindowGroup은 SwiftUI가 제공하는 scenes 중 하나입니다. iOS에서는, WindowGroup scene builder에 추가된 view가 기기의 전체 화면을 채우는 윈도우에 나타나게 됩니다. 
+  WindowGroup은 SwiftUI가 제공하는 scenes 중 하나입니다. iOS에서는, WindowGroup scene builder에 추가된 view가 기기의 전체 화면을 채우는 윈도우에 나타나게 됩니다.
+
+
+## Creating a Navigation Hierarchy
+
+  지금까지 views를 만들어 보았고 이제부터는 그 views 사이를 이동하는 방법에 대해 알아보겠습니다.  
+
+### NavigationView와 Link
+
+  ```swift
+  //  ScrumsView.swift
+
+  import SwiftUI
+
+  struct ScrumsView: View {
+      let scrums: [DailyScrum]
+
+      var body: some View {
+          List {
+              // ForEach closure 안에 CardView initialize 해주기
+              // 이 closure는 scrums Array에 있는 요소마다 CardView를 리턴함
+              ForEach(scrums) { scrum in
+                  // 첫번째 scrum은 CardView의 속성으로 DailyScrum 타입임.
+                  // 두번째 scrum은 ForEach문에서 DailyScrum의 각 요소가 할당되는 곳
+                  NavigationLink(destination: Text(scrum.title)) {
+                      CardView(scrum: scrum)
+                  }
+                  .listRowBackground(scrum.theme.mainColor)
+                  // 각 scrum 요소의 theme main을 이용
+
+              }
+          }
+          .navigationTitle("Daily Scrums")   // -> title은 부모 navigation stack 안쪽에
+          .toolbar {
+              Button(action: {}) {
+                  Image(systemName: "plus")
+              }
+              .accessibilityLabel("New Scrum")
+          }
+      }
+  }
+
+  struct ScrumsView_Previews: PreviewProvider {
+      static var previews: some View {
+          // Navigation title을 위한 padding을 화면에 보여줌
+          NavigationView {
+              ScrumsView(scrums: DailyScrum.sampleData)
+          }
+      }
+  }
+
+  ```
+
+  ScrumsView.swift 파일에 NavigationView와 NavigationLink를 추가하여 코드를 수정해줍니다.
+
+  <center><video src="https://user-images.githubusercontent.com/85061148/163188935-455f0ea8-13b2-4d8d-9208-cdbaeb78c528.mov" controls="controls" style="max-width: 400px">
+  </video></center><br>  
+
+  영상에서 볼 수 있듯이 SwiftUI는 자동으로 디테일 뷰에서 Back 버튼을 추가하고 전 화면의 타이틀을 표시합니다.
+
+### Create the Detail View  
+
+  계층 구조를 가지고 있는 앱(hierarchical apps)에서는, 더 높은 계층의 view에서 detailed view로 이동합니다. 그러므로써 더 특정된 데이터를 조작할 수 있습니다. 이 섹션에는 각 scrum의 디테일 뷰를 만들어 볼 것입니다.
+
+  1. DetailView.swift를 생성합니다.
+  2. DetailView.swift에 DailyScrum 타입의 scrum constant를 생성합니다.
+  3. ScrumsView.swift에 NavigationLink의 destination을 수정합니다.
+
+  ```swift
+  ForEach(scrums) { scrum in
+      NavigationLink(destination: DetailView(scrum: scrum)) {
+          CardView(scrum: scrum)
+      }
+      .listRowBackground(scrum.theme.mainColor)
+      // 각 scrum 요소의 theme main을 이용
+
+  }
+  ```
+  destination을 DetailView로 수정해주었습니다. (scrum: )은 DetailView의 constant이고 그 뒤에 오는 scrum은 ForEach문에 사용된 변수입니다.
+
+### DetailView with Visual Components  
+
+#### List  
+
+  List view를 이용하여 scrum의 이름, 미팅 시간, 카드의 색, 참석자들의 목록을 디테일 뷰에 보여줍니다.
+
+  ```swift
+  // DetailView.swift
+
+  struct DetailView: View {
+    let scrum: DailyScrum
+
+    var body: some View {
+        List {
+            Section(header: Text("Meeting Info")) {
+                Label("Start Meeting", systemImage: "timer")
+                Spacer()
+                HStack {
+                    Label("Length", systemImage: "clock")
+                    Spacer()
+                    Text("\(scrum.lengthInMinutes) minutes")
+                }
+                .accessibilityElement(children: .combine)
+
+              }
+          }
+      }
+  }
+  ```
+  Sections List안의 목록의 그룹을 만들어서 눈에 보이는 구분점을 만들어줍니다.  
+
+  .accessibilityElement(children: .combine)  
+  위의 modifier를 이용하여 Label view와 Text view를 하나로 합쳐줍니다. (accessibility user를 위해)  
+
+### Iterate Through Attendees  
+
+  ```swift  
+  //DailyScrum.swift
+
+  struct DailyScrum: Identifiable {
+      let id: UUID
+      var title: String
+      var attendees: [Attendee]
+      var lengthInMinutes: Int
+      var theme: Theme
+
+      init(id: UUID = UUID(), title: String, attendees: [String], lengthInMinutes: Int, theme: Theme) {
+          self.id = id
+          self.title = title
+          self.attendees = attendees.map { Attendee(name: $0) }
+          self.lengthInMinutes = lengthInMinutes
+          self.theme = theme
+      }
+  }
+
+  extension DailyScrum {
+      struct Attendee: Identifiable {
+          let id: UUID            // id 속성은 let
+          var name: String
+
+          // id 속성에 defalut 값을 주는 생성자
+          init(id:UUID = UUID(), name: String) {
+              self.id = id
+              self.name = name
+          }
+      }
+  }
+
+  ```
+  DailyScrum에 extension을 추가하여 안에 Attendee라는 structure를 만들어 줍니다. ForEach를 이용해 sample data의 참석자들을 DetailView에 보여줄 것 이므로 Attendee의 id, name 속성을 정의합니다. id 값에 디폴트 값을 주기 위해서 생성자를 만듭니다. 처음에 만들어 두었던 DailyScrum 모델에서 attendees의 타입을 [Attendee] (Attendee 타입의 배열)로 수정해줍니다.
+
+#### map(_:)  
+
+  map(_:)은 이미 존재하는 collection의 각 요소에 반복해서 변화를 적용하며 새로운 collection을 생성합니다.
+
+  ```swift  
+  // init 생성자 안
+  self.attendees = attendees.map { Attendee(name: $0) }
+  ```
+  패러미터를 통해 들어온 attendees를 map을 이용해 반복해 돌면서 Attendee 타입으로 바꿔준다.(?)
+
+#### ForEach
+
+  ```swift
+  Section(header: Text("Attendees")) {
+                ForEach(scrum.attendees) { attendee in
+                    Label(attendee.name, systemImage: "person")
+                }
+            }
+  ```
+  Attendee가 identifiable 해졌으므로 ForEach를 사용하여 sample data를 통해 동적으로 참석자들의 리스트를 만들 수 있게 되었습니다.
+  <center><img src="/assets/images/scrum6.png" alt="section" width="400"></center><br>  
+
+### Navigate Between Screens
+
+  DetailView에서 이동하는 view를 만들며 hierarchy 설정을 마무리해봅니다.
+
+  ```swift  
+  NavigationLink(destination: MeetingView()) {
+                    Label("Start Meeting", systemImage: "timer")
+                        .font(.headline)
+                        .foregroundColor(.accentColor)
+                }
+  ```
+  NavigationLink를 추가하는 것은 label을 gesture recognizer 형태로 감싸줍니다. 이로 인해 사용자들을 이 행을 탭하여 meeting timer screen을 볼 수 있게 됩니다.
+
+  이렇게 navigation stack을 완성했습니다.
+
+## Managing Data Flow Between Views
+
+  사용자에게 정보를 보여주고 사용자와 상호작용하며 데이터를 수정해 보여주는 것은 대부분의 앱들에 기본이 되는 기능입니다. 앱의 UI가 현재 데이터의 상태를 잘 반영하도록 하기 위해 @State와 @Binding을 사용하는 방법에 대해 알아봅니다.
+
+### Source of Truth  
+
+  한 정보의 여러가지 복사본을 유지하는 것은 앱을 버르고 이끄는 불일치를 초래할 수 있습니다. 데이터 불일치 버그를 피하기 위해 앱의 각 데이터들을 위해 a single source of truth를 사용합니다. 한 장소에 요소를 저장하세요. (the source of truth에) 그리고 몇개의 view든 그 데이터에 접근할 수 있습니다. Source of truth는 코드 전체 어디에든 작성할 수 있습니다.  
+  Scrumdinger 앱에서는 모든 뷰들이 접근을 공유할 ScrumdingerApp에 source of truth를 생성할 것입니다.
+
+### Swift Property Wrappers
+
+#### State  
+
+  @State를 이용해 속성을 정의하면, 해당 view안에 a source of truth를 생성할 수 있습니다. 시스템은 @State property를 사용하는 뷰의 모든 요소들을 식별합니다. 사용자의 사용자와의 상호작용은 @State 속성의 값을 변화시킬 수 있고, 시스템은 @State를 사용하는 속성을 업데이트 함으로써 새로운 버전의 UI를 렌더링합니다.
+
+  @State의 값이 변하면 시스템은 업데이된 값을 사용하는 뷰를 다시 그립니다. 예를 들어 Scrumdinger 앱의 사용자가 하나의 scrum을 수정하면 ScrumsView는 업데이트 된 값을 화면에 보여주기 위해서 list를 다시 그립니다.  
+
+  State property는 잠시 머무르는 상태를 관리하는 것을 돕기 때문에 private으로 정의하고 지속되야하는 저장에는 사용하는 것을 피해야 합니다.
+
+#### Binding  
+
+  @Binding을 사용하여 감싼 property는 읽기 그리고 쓰기에 대한 접근을 존재하는 source of truth와 공유합니다. (@State property 처럼...)  
+  @Binding은 데이터를 직접적으로 담지 않습니다. 대신, 그 데이터를 업데이트하고 화면에 보여주는 source of truth와 view 사이의 양방향 연결을 생성합니다. 이 연결은 여러개의 뷰와 연결된 하나의 데이터가 항상 업데이트 된 상태로 유지되게 합니다.
+
+  <!-- 남은 부분 스킵함. 시간나면 더 채우도록. -->
