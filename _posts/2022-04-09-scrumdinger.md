@@ -17,6 +17,8 @@ toc_icon: "kiwi-bird"
 <sub>아래 모든 정보의 출처는 apple developer 공식 페이지이며 개인의 학습 용도로만 사용되었음을 밝힙니다.  
 All information below comes from the official apple developer page and is for personal learning purposes only.</sub>
 
+<sub>영어로 작성된 튜토리얼을 읽으며 정리하는 것이기 때문에 한국어로 읽었을 때 자연스럽게 읽히도록 관사 'a'가 생략된 단수형 단어들이 많이 등장합니다.<br><s>작성자가 너무 신경쓰이는 것ㅎㅎㅠ</s></sub>
+
 # 🤘
 
   SwiftUI를 이용한 완벽히 기능을 하는 앱을 만들어보며 iOS 앱 개발의 가장 중요한 부분들에 대해 알아봅니다.  
@@ -560,3 +562,279 @@ All information below comes from the official apple developer page and is for pe
   @Binding은 데이터를 직접적으로 담지 않습니다. 대신, 그 데이터를 업데이트하고 화면에 보여주는 source of truth와 view 사이의 양방향 연결을 생성합니다. 이 연결은 여러개의 뷰와 연결된 하나의 데이터가 항상 업데이트 된 상태로 유지되게 합니다.
 
   <!-- 남은 부분 스킵함. 시간나면 더 채우도록. -->
+
+## Creating the Edit View  
+
+### Update the Data Model
+
+  Edit view를 만들기 전에, DailyScrum.swift안에 새로운 타입인 Data를 생성합니다. Data는 DailyScrum에 편집이 가능한 모든 속성들을 담을 것입니다. 이 속성들을 edit view에 생성할 controls와 일치할 것입니다.  
+
+  ```swift
+  struct Data {
+      var title: String
+      var attendees: [Attendee]
+      var lengthInMinutes: Double
+      var theme: Theme
+  }
+  ```
+  DailyScrum의 extensnion안에 Data structure를 정의합니다. 사용자가 Slider view를 이용해 미팅 시간을 조정하게 됩니다. Sliders는 Double 값을 이용하므로 lengthInMinutes의 자료형을 Double로 줍니다.  
+
+  Foundation 프레임워크에 Data structure가 있기 때문에 DailyScrum의 extension에 Data structure를 정의해서 nested type으로 만들면서 (-> DailyScrum.Data) 두개를 분리할 수 있게 됩니다.
+
+  ```swift  
+  struct Data {
+      var title: String = ""
+      var attendees: [Attendee] = []
+      var lengthInMinutes: Double = 5
+      var theme: Theme = .seafoam
+  }
+
+  var data: Data {
+      Data(title: title, attendees: attendees, lengthInMinutes: Double(lengthInMinutes), theme: theme)
+  }
+  ```
+  그리고 각 속성에 기본값을 줍니다. 모든 속성이 기본 값을 가지고 있다면 컴파일러는 인자가 필요없는 생성자를 만듭니다. 이렇게 만들어진 생성자는 Data()로 호출되어 인스턴스를 생성할 수 있습니다.  
+
+  DailyScrum 속성 값을 가지는 Data를 리턴하는 computed property도 생성해 줍니다.
+
+### Add an Edit View for Scrum Details  
+
+  - Edit View를 생성하고, scrum의 제목과 소요 시간을 수정하기 위해 이용되는 controls를 생성합니다.  
+  - Scrum 데이터의 변화를 Data 속성 형식으로 저장합니다.
+  - @State property wrapper를 사용합니다.
+
+  ```swift  
+  @State private var data = DailyScrum.Data()
+  ```
+  DetailEditView.swift 파일을 만들고 위의 코드를 추가하여 source of truth를 정의합니다.  
+  Data 타입의 모든 속성에 기본값을 주었으므로 자동으로 생성된 생성자 DailyScrum.Data()를 @State property wrapper로 감싸줍니다. 오직 이 속성을 정의한 이 view에서만 접근 가능하도록 private 속성으로 정의합니다.
+
+  ```swift  
+  struct DetailEditView: View {
+      @State private var data = DailyScrum.Data()
+      var body: some View {
+          Form {
+              Section(header: Text("Meeting Info")) {
+                  TextField("Title", text: $data.title)
+              }
+          }
+      }
+  }
+  ```
+  Form은 다른 플랫폼들에서 controls의 모양이 자동으로 적응된 모습으로 렌더링 되도록 합니다.  
+
+  제목을 입력할 TextField를 생성합니다. TextField는 binding을 String으로 받아들입니다. $ syntax를 사용하여 data.title에 binding을 생성합니다. 현재의 뷰는 data 속성의 상태를 조작할 수 있게 됩니다.
+
+  ```swift  
+  HStack {
+      TextField("New Attendee", text: $newAttendeeName)
+      Button(action: {
+          withAnimation {
+              let attendee = DailyScrum.Attendee(name: newAttendeeName)
+              data.attendees.append(attendee)
+              newAttendeeName = ""      // text field를 비워줌
+          }
+      }) {
+          Image(systemName: "plus.circle.fill")
+      } // 버튼 끝
+      .disabled(newAttendeeName.isEmpty)
+  }
+  ```
+
+  Text field가 newAttendeeName의 binding을 가지고 있기 때문에 없는 값을 설정해주므로써 text fields의 컨텐츠를 비울 수 있습니다.
+
+  newAttendeeName이 비어있을 때는 버튼을 비활성화 시킵니다. 이것은 유저가 이름 없는 참석자를 추가하는 것을 방지해줍니다. 유저가 이름을 입력하면 버튼은 활성화됩니다.
+
+### Present the Edit View
+
+  DetailView에서 버튼을 누르면 Modal view의 형식으로 DetailEditView를 보여줄 것입니다.
+  ```swift
+  @State private var isPresentingEditView = false
+  ```
+  ```swift
+  } // DetailView.swift - List view 끝부분
+  .navigationTitle(scrum.title)
+  .toolbar {
+      Button("Edit") {
+          isPresentingEditView = true
+      }
+  }
+  .sheet(isPresented: $isPresentingEditView) {
+      DetailEditView()
+  }
+  ```
+  - sheet modifier는 현재 화면의 content를 부분적으로 가리는 modal sheet를 생성합니다.
+  - Button을 누르면 위의 정의했던 isPresentingEditView가 true로 바뀌고 sheet가 가지고 있는 isPresentingEditView 바인딩이 true값을 가지게 되면서 DetailEditView가 modal sheet로 보여지게 됩니다.
+
+  ```swift
+  .sheet(isPresented: $isPresentingEditView) {
+      NavigationView {
+          DetailEditView()
+              .navigationTitle(scrum.title)
+              .toolbar {
+                  ToolbarItem(placement: .cancellationAction) {
+                      Button("Cancel") {
+                          isPresentingEditView = false
+                      }
+                  }
+                  ToolbarItem(placement: .confirmationAction) {
+                            Button("Done") {
+                                isPresentingEditView = false
+                            }
+                        }
+              }
+      }
+  }
+  ```
+  ToolbarItem으로 modal view에 Cancel / Done 버튼을 생성합니다. Cancel버튼을 누르면 변경 사항이 저장되지 않고 취소되고 모달 뷰가 사라집니다. Done 버튼은 변경 사항이 저장되고 모달 뷰가 사라집니다. (아직 데이터를 진짜 저장할 수는 없습니다.)
+
+
+## Passing Data with Bindings  
+
+### Add a Theme View  
+
+  사용자가 각 scrum을 구별하기 쉽게 하기 위해 Color theme을 선택할 수 있도록 할 것입니다. 먼저 theme 의 components를 보여줄 theme view를 생성합니다.
+
+  ```Swift
+  //  ThemeView.swift
+
+  import SwiftUI
+
+  struct ThemeView: View {
+      let theme: Theme
+
+      var body: some View {
+          ZStack {
+              RoundedRectangle(cornerRadius: 4)
+                  .fill(theme.mainColor)
+              Label(theme.name, systemImage: "paintpalette")
+                  .padding(4)
+          }
+          .foregroundColor(theme.accentColor)
+          .fixedSize(horizontal: false, vertical: true)
+      }
+  }
+
+  struct ThemeView_Previews: PreviewProvider {
+      static var previews: some View {
+          ThemeView(theme: .buttercup)
+      }
+  }
+  ```
+
+  fixedSize modifier를 사용하여 라벨의 원래 사이즈에 크기를 맞춰줍니다. Label에 패딩을 추가해주어서 더 보기 편하게 만들어 줍니다. 여기서 만든 view는 전체 컬러를 보여주는 list의 한 cell로 이용할 것입니다.
+
+### Add a Theme Picker
+
+  사용자가 meeting view의 theme 색을 선택할 수 있도록하는 custom interactive view를 생성합니다.
+
+  ```swift
+  // ThemePicker.swift
+
+  import SwiftUI
+
+  struct ThemePicker: View {
+      @Binding var selection: Theme    
+
+      var body: some View {
+          Picker("Theme", selection: $selection) {
+              ForEach(Theme.allCases) { theme in
+                  ThemeView(theme: theme)
+                      .tag(theme)
+              }
+          }
+      }
+  }
+
+  struct ThemePicker_Previews: PreviewProvider {
+      static var previews: some View {
+          ThemePicker(selection: .constant(.periwinkle))
+      }
+  }
+  ```
+  ThemePicker.swift 파일을 새로 생성해줍니다. DetailEditView에 들어갈 Picker view를 생성합니다. ForEach를 사용해 각 case로의 접근을 용이하게 합니다.
+  Theme.swift의 enum Theme에 CaseIterable, Identifiable 프로토콜을 추가해줍니다. id 속성은 case의 이름으로 추가해줍니다.
+
+  ```swift
+  // DetailEditView.swift - body - Form
+  } Slider 있는 HStack 끝부분
+  ThemePicker(selection: $data.theme)
+  ```
+  위의 ThemePicker 생성자는 theme selection에 일어난 변화를 data.theme으로 다시 돌려보냅니다.
+
+#### constant(_:) type method
+
+  변경되지 않는 값을 가지는 binding을 생성합니다. PreviewProvider를 사용할 때, 다른 값들을 어떻게 보여주는지 알아보기 위해서 사용할 수 있습니다.
+
+### Pass the Edit View a Binding to Data
+
+  사용자가 scrum의 정보를 수정하면, 앱에 있는 여러개의 screen이 그 변경된 정보를 반영해야 합니다. 이 섹션에서는, 사용자가 Done 버튼을 눌렀을 때 edit view에 detail view의 scrum을 업데이트하는 binding을 추가합니다.
+
+  디테일 화면은 edit화면에서 만들어진 변경 사항을 업데이트 해야 합니다. 그래서 디테일 화면은 source of truth를 edit 화면과 공유합니다.
+
+### Edit 화면에 기존 scrum 정보 가져오기
+
+  Edit 버튼을 누르면 scrum에 입력되어 있던 기존 정보를 edit modal sheet에 보여주도록 설정해 봅니다.
+
+  ```swift
+  .toolbar {
+      Button("Edit") {
+          isPresentingEditView = true
+          data = scrum.data
+      }
+  }
+  ```
+  ```swift
+  data = scrum.data
+
+  // = 왼쪽에 있는 data
+  @State private var data = DailyScrum.Data()
+
+  // = 오른쪽 scrum. 뒤의 data
+  var data: Data {
+      Data(title: title, attendees: attendees, lengthInMinutes: Double(lengthInMinutes), theme: theme)
+  }
+  ```
+  비어있는 생성자는 기본 값을 가진 인스턴스를 생성합니다. 이 값들을 선택한 scrum의 값으로 설정해줍니다.
+
+  <!-- 👷 데이터의 흐름 다시 정리 -->
+
+### 튜토리얼 중 빠진 부분(?)
+
+  ```swift
+  // DetailView.swift
+
+  ToolbarItem(placement: .confirmationAction) {
+      Button("Done") {
+          isPresentingEditView = false
+          scrum.update(from: data) // <- 계속해서 에러가 나던 부분
+      }
+  }
+  ```
+  컴파일러가 위의 표시한 곳에서 자꾸 에러를 발생시켰다. 코드를 다르게 타이핑 한걸까해서 열심히 찾아보았지만 다른 부분은 없었다. Complete 버전의 프로젝트 파일을 받아서 확인해보던 중 DailyScrum.swift에서 튜토리얼에는 없던 function을 발견했다.
+
+  ```swift
+  mutating func update(from data: Data) {
+      title = data.title
+      attendees = data.attendees
+      lengthInMinutes = Int(data.lengthInMinutes)
+      theme = data.theme
+  }
+  ```
+  위의 코드를 DailyScrum의 extension에 추가해주면 정상적으로 작동한다.
+
+### 이 튜토리얼에서는 ❕
+
+  - @State property wrapper를 이용해서 value type의 source of truth를 생성해 보았습니다.
+  - @Binding을 사용하여 다른 views의 state에 쓰기 권한을 공유해 보았습니다. (사용자로부터 입력받은 정보로 @State로 감싼 변수를 사용하는 views에 데이터를 업데이트한 것을 말하는 것 같습니다.)
+
+
+## Making Classes Observable  
+
+  위에서는 @State와 @Binding을 이용하여 value type를 source of truth로 정의하는 것에 대해 알아보았습니다. 여기서는 앱의 UI를 위해 reference type을 source of truth로 정의하는 방법에 대해 알아봅니다.  
+
+  @State property wrapper는 value types에만 적용할 수 있습니다. structures나 enumerations 같은 것이죠. SwiftUI는 reference type을 source of truth로 정의하는 property wrappers를 제공합니다.
+
+  - @ObservableObject
+  - @StateObject
+  - @EnvironmentObject
