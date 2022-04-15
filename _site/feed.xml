@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="4.2.1">Jekyll</generator><link href="http://localhost:4000/feed.xml" rel="self" type="application/atom+xml" /><link href="http://localhost:4000/" rel="alternate" type="text/html" /><updated>2022-04-15T02:52:37+09:00</updated><id>http://localhost:4000/feed.xml</id><title type="html">Mirae 2 the Future</title><subtitle>An amazing website.</subtitle><author><name>Mirae</name></author><entry><title type="html">iOS App Dev Tutorials: Scrumdinger</title><link href="http://localhost:4000/til/scrumdinger/" rel="alternate" type="text/html" title="iOS App Dev Tutorials: Scrumdinger" /><published>2022-04-09T00:00:00+09:00</published><updated>2022-04-09T00:00:00+09:00</updated><id>http://localhost:4000/til/scrumdinger</id><content type="html" xml:base="http://localhost:4000/til/scrumdinger/">&lt;p&gt;&lt;a href=&quot;https://developer.apple.com/tutorials/app-dev-training/getting-started-with-scrumdinger&quot;&gt;Getting Started with Scrumdinger&lt;/a&gt;&lt;br /&gt;
+<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="4.2.1">Jekyll</generator><link href="http://localhost:4000/feed.xml" rel="self" type="application/atom+xml" /><link href="http://localhost:4000/" rel="alternate" type="text/html" /><updated>2022-04-16T03:32:35+09:00</updated><id>http://localhost:4000/feed.xml</id><title type="html">Mirae 2 the Future</title><subtitle>An amazing website.</subtitle><author><name>Mirae</name></author><entry><title type="html">iOS App Dev Tutorials: Scrumdinger</title><link href="http://localhost:4000/til/scrumdinger/" rel="alternate" type="text/html" title="iOS App Dev Tutorials: Scrumdinger" /><published>2022-04-09T00:00:00+09:00</published><updated>2022-04-09T00:00:00+09:00</updated><id>http://localhost:4000/til/scrumdinger</id><content type="html" xml:base="http://localhost:4000/til/scrumdinger/">&lt;p&gt;&lt;a href=&quot;https://developer.apple.com/tutorials/app-dev-training/getting-started-with-scrumdinger&quot;&gt;Getting Started with Scrumdinger&lt;/a&gt;&lt;br /&gt;
 &lt;sub&gt;아래 모든 정보의 출처는 apple developer 공식 페이지이며 개인의 학습 용도로만 사용되었음을 밝힙니다.&lt;br /&gt;
 All information below comes from the official apple developer page and is for personal learning purposes only.&lt;/sub&gt;&lt;/p&gt;
 
@@ -662,31 +662,31 @@ All information below comes from the official apple developer page and is for pe
 
 &lt;p&gt;사용자가 각 scrum을 구별하기 쉽게 하기 위해 Color theme을 선택할 수 있도록 할 것입니다. 먼저 theme 의 components를 보여줄 theme view를 생성합니다.&lt;/p&gt;
 
-&lt;pre&gt;&lt;code class=&quot;language-Swift&quot;&gt;  //  ThemeView.swift
+&lt;div class=&quot;language-swift highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;  &lt;span class=&quot;c1&quot;&gt;//  ThemeView.swift&lt;/span&gt;
 
-  import SwiftUI
+  &lt;span class=&quot;kd&quot;&gt;import&lt;/span&gt; &lt;span class=&quot;kt&quot;&gt;SwiftUI&lt;/span&gt;
 
-  struct ThemeView: View {
-      let theme: Theme
+  &lt;span class=&quot;kd&quot;&gt;struct&lt;/span&gt; &lt;span class=&quot;kt&quot;&gt;ThemeView&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;kt&quot;&gt;View&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
+      &lt;span class=&quot;k&quot;&gt;let&lt;/span&gt; &lt;span class=&quot;nv&quot;&gt;theme&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;kt&quot;&gt;Theme&lt;/span&gt;
 
-      var body: some View {
-          ZStack {
-              RoundedRectangle(cornerRadius: 4)
-                  .fill(theme.mainColor)
-              Label(theme.name, systemImage: &quot;paintpalette&quot;)
-                  .padding(4)
-          }
-          .foregroundColor(theme.accentColor)
-          .fixedSize(horizontal: false, vertical: true)
-      }
-  }
+      &lt;span class=&quot;k&quot;&gt;var&lt;/span&gt; &lt;span class=&quot;nv&quot;&gt;body&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;kd&quot;&gt;some&lt;/span&gt; &lt;span class=&quot;kt&quot;&gt;View&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
+          &lt;span class=&quot;kt&quot;&gt;ZStack&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
+              &lt;span class=&quot;kt&quot;&gt;RoundedRectangle&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nv&quot;&gt;cornerRadius&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;4&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
+                  &lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nf&quot;&gt;fill&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;theme&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;mainColor&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
+              &lt;span class=&quot;kt&quot;&gt;Label&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;theme&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;name&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;nv&quot;&gt;systemImage&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;&quot;paintpalette&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
+                  &lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nf&quot;&gt;padding&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;4&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
+          &lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
+          &lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nf&quot;&gt;foregroundColor&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;theme&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;accentColor&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
+          &lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nf&quot;&gt;fixedSize&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nv&quot;&gt;horizontal&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;kc&quot;&gt;false&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;nv&quot;&gt;vertical&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;kc&quot;&gt;true&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
+      &lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
+  &lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
 
-  struct ThemeView_Previews: PreviewProvider {
-      static var previews: some View {
-          ThemeView(theme: .buttercup)
-      }
-  }
-&lt;/code&gt;&lt;/pre&gt;
+  &lt;span class=&quot;kd&quot;&gt;struct&lt;/span&gt; &lt;span class=&quot;kt&quot;&gt;ThemeView_Previews&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;kt&quot;&gt;PreviewProvider&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
+      &lt;span class=&quot;kd&quot;&gt;static&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;var&lt;/span&gt; &lt;span class=&quot;nv&quot;&gt;previews&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;kd&quot;&gt;some&lt;/span&gt; &lt;span class=&quot;kt&quot;&gt;View&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
+          &lt;span class=&quot;kt&quot;&gt;ThemeView&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nv&quot;&gt;theme&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;buttercup&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
+      &lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
+  &lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
 
 &lt;p&gt;fixedSize modifier를 사용하여 라벨의 원래 사이즈에 크기를 맞춰줍니다. Label에 패딩을 추가해주어서 더 보기 편하게 만들어 줍니다. 여기서 만든 view는 전체 컬러를 보여주는 list의 한 cell로 이용할 것입니다.&lt;/p&gt;
 
@@ -800,7 +800,141 @@ All information below comes from the official apple developer page and is for pe
   &lt;li&gt;@ObservableObject&lt;/li&gt;
   &lt;li&gt;@StateObject&lt;/li&gt;
   &lt;li&gt;@EnvironmentObject&lt;/li&gt;
-&lt;/ul&gt;</content><author><name>Mirae</name></author><category term="TIL" /><category term="learning" /><category term="공부 기록" /><category term="Swift" /><summary type="html">Getting Started with Scrumdinger 아래 모든 정보의 출처는 apple developer 공식 페이지이며 개인의 학습 용도로만 사용되었음을 밝힙니다. All information below comes from the official apple developer page and is for personal learning purposes only.</summary></entry><entry><title type="html">Playgrounds: Learn to Code 2</title><link href="http://localhost:4000/til/playgrounds2/" rel="alternate" type="text/html" title="Playgrounds: Learn to Code 2" /><published>2022-04-08T00:00:00+09:00</published><updated>2022-04-08T00:00:00+09:00</updated><id>http://localhost:4000/til/playgrounds2</id><content type="html" xml:base="http://localhost:4000/til/playgrounds2/">&lt;h1 id=&quot;learn-to-code-2&quot;&gt;Learn to code 2&lt;/h1&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;reference type인 class와 함께 property wrappers를 사용하기 위해서는 class를 observable하게 만들어야 합니다.&lt;/p&gt;
+
+&lt;h3 id=&quot;making-a-class-observable&quot;&gt;Making a Class Observable&lt;/h3&gt;
+
+&lt;p&gt;ObservableObject protocol를 따름으로써 class를 observable하게 만들 수 있습니다.&lt;br /&gt;
+  클래스 안의 properties 중 정보가 변경되었을 때 UI에 변화를 일으키는 properties를 선택하고 그 properties에 각각 @Published attribute를 추가해줍니다.&lt;/p&gt;
+
+&lt;div class=&quot;language-swift highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;  &lt;span class=&quot;kd&quot;&gt;class&lt;/span&gt; &lt;span class=&quot;kt&quot;&gt;ScrumTimer&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;kt&quot;&gt;ObservableObject&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
+      &lt;span class=&quot;kd&quot;&gt;@Published&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;var&lt;/span&gt; &lt;span class=&quot;nv&quot;&gt;activeSpeaker&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;&quot;&quot;&lt;/span&gt;
+      &lt;span class=&quot;kd&quot;&gt;@Published&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;var&lt;/span&gt; &lt;span class=&quot;nv&quot;&gt;secondsElapsed&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;0&lt;/span&gt;
+      &lt;span class=&quot;kd&quot;&gt;@Published&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;var&lt;/span&gt; &lt;span class=&quot;nv&quot;&gt;seconds&lt;/span&gt; &lt;span class=&quot;kt&quot;&gt;Remaining&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;0&lt;/span&gt;
+      &lt;span class=&quot;c1&quot;&gt;// ...&lt;/span&gt;
+  &lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+&lt;p&gt;위 클래스의 속성은 한번의 scrum 세션에서 빈번하게 업데이트 될 것입니다. ScrumTimer는 published properties의 값에 변경 사항이 있을 때마다 observers에게 그것을 알려줍니다.&lt;/p&gt;
+
+&lt;!-- ### Monitoring an Object for Changes  
+
+  Property를 정의할 때 아래 attributes 중 하나를 추가함으로써 SwiftUI에게 observable object를 모니터링 하도록 할 수 있습니다.
+
+  - ObservableObject
+  - StateObject
+  - EnvironmentObject --&gt;
+
+&lt;p&gt;&lt;!-- 이 property wrappers 중 하나로 정의된 view property는 새로운 source of truth를 생성합니다. --&gt;&lt;/p&gt;
+
+&lt;!-- 👷 #### @StateObject  
+
+  @StateObject wrapper는 view안에 관찰 가능한 object를 생성합니다.
+
+  ```swift
+  struct MeetingView: View {
+      @StateObject var scrumTimer = ScrumTimer()
+      // ...
+  }
+  ```
+  @ObservedObject
+
+  ```swift
+  struct ChildView: View {
+      @ObservedObject var timer: scrumTimer
+      // ...
+  }
+  ```
+  그리고 나서 observable object의 인스턴스를 view의 initializer에 통과시킵니다.
+
+  ```swift
+  struct MeetingView: View {
+      @StateObject var scrumTimer = ScrumTimer()
+      var body: some View {
+          VStack {
+            ChildView(timer: scrumTimer)
+          }
+      }
+      // ...
+  }
+  ```
+  ```swift
+  struct ParentView: View {
+      @StateObject var scrumTimer = ScrumTimer()
+      var body: some View {
+          VStack {
+            ChildView()
+                .environmentObject(scrumTimer)
+          }
+      }
+  }
+  ``` --&gt;
+
+&lt;h2 id=&quot;responding-to-events&quot;&gt;Responding to Events&lt;/h2&gt;
+
+&lt;h3 id=&quot;scene-architecture&quot;&gt;Scene Architecture&lt;/h3&gt;
+
+&lt;p&gt;App state에 대해 알아보기 전에, SwiftUI가 scenes를 구성하는 방법에 대해 복습해 봅니다.&lt;br /&gt;
+  Scene은 시스템이 관리하는, 라이프 사이클을 가지고 있는 앱의 사용자 인터페이스의 부분입니다.&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;
+    &lt;p&gt;앱을 만들기 위해서, App protocol을 따르는 structure를 정의합니다. @main attribute를 앞에 표시해줌으로써 시스템에게 이 structure가 앱의 entry point라는 것을 알려줍니다.&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;ScrumdingerApp.swift의 structrue속 body 부분에 Scene 프로토콜을 따르는 scenes를 추가했습니다. Scenes는 앱이 보여주는 뷰 계층을 담는 컨테이너 입니다.&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;SwiftUI는 WindowGroup과 같은 scenes를 제공합니다. 시스템은 scenes의 라이프 사이클을 관리하고 플랫폼에 맞는, 환경에 맞는 뷰 계층을 화면에 보여줍니다. 예를들어 iPadOS의 멀티테스킹은 같은 앱의 여러개의 더 작은 인스턴스들을 동시에 보여줄 수 있습니다.&lt;/p&gt;
+  &lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h3 id=&quot;scene-phases-and-transitions&quot;&gt;Scene Phases and Transitions&lt;/h3&gt;
+
+&lt;p&gt;앱의 실행 중, scene은 3단계의 변화가 있을 수 있습니다.&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;active : scene이 foreground에 있고, 사용자가 scene과 상호작용할 수 있습니다.&lt;/li&gt;
+  &lt;li&gt;inactive : scene을 볼 수 있지만 시스템이 scene과의 상호작용을 중지시킵니다. 예를 들어 멀티 테스킹 모드에서 앱의 패널 볼 수 있지만 패널이 활성화되어 있지는 않습니다.&lt;/li&gt;
+  &lt;li&gt;background : 앱은 작동되고 있지만 scene을 볼 수 없습니다. 앱의 종료 전에 scene은 이 단계에 들어갑니다.&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h2 id=&quot;managing-state-and-life-cycle&quot;&gt;Managing State and Life Cycle&lt;/h2&gt;
+
+&lt;p&gt;Scrumdinger는 scrum이 바뀔 때마다 바뀌었다는 것을 사용자에게 알려줍니다. 이 key feature을 만들기 위해 scrum을 관리하는 모델을 제어하는 life cycle methods를 사용할 것입니다.&lt;/p&gt;
+
+&lt;p&gt;이 튜토리얼에서는 reference type models와 SwiftUI view를 이용하는 방법에 대해 알아봅니다.&lt;/p&gt;
+
+&lt;h3 id=&quot;create-an-overlay-view&quot;&gt;Create an Overlay View&lt;/h3&gt;
+
+&lt;p&gt;MeetingView.swift의 header 부분을 따로 분리합니다. MeetingHeaderView.swift라는 새 SwiftUI 파일을 생성하고 ProgressView와 HStack 부분을 MeetingHeaderView.swift로 옮겨 줍니다. 그리고 지금까지 static 데이터를 dynamic 데이터로 교체하기 위해 속성을 추가할 것입니다.&lt;/p&gt;
+
+&lt;div class=&quot;language-swift highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;  &lt;span class=&quot;kd&quot;&gt;private&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;var&lt;/span&gt; &lt;span class=&quot;nv&quot;&gt;totalSeconds&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;kt&quot;&gt;Int&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
+      &lt;span class=&quot;n&quot;&gt;secondsElapsed&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;+&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;secondsRemaining&lt;/span&gt;
+  &lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
+  &lt;span class=&quot;kd&quot;&gt;private&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;var&lt;/span&gt; &lt;span class=&quot;nv&quot;&gt;progress&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;kt&quot;&gt;Double&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
+      &lt;span class=&quot;k&quot;&gt;guard&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;totalSeconds&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;&amp;gt;&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;0&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;else&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;return&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;1&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
+      &lt;span class=&quot;k&quot;&gt;return&lt;/span&gt; &lt;span class=&quot;kt&quot;&gt;Double&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;secondsElapsed&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;/&lt;/span&gt; &lt;span class=&quot;kt&quot;&gt;Double&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;totalSeconds&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
+  &lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+&lt;p&gt;ProgressView에서 progress를 나타내는 computed property입니다. totalSeconds가 0보다 크면 지난 시간을 전체 시간으로 나누어서 진행된 시간을 나타내줍니다.&lt;/p&gt;
+
+&lt;h3 id=&quot;add-a-state-object-for-a-source-of-truth&quot;&gt;Add a State Object for a Source of Truth&lt;/h3&gt;
+
+&lt;p&gt;Value type models의 source of truth를 생성하기 위해서 &lt;strong&gt;@State&lt;/strong&gt; 를 사용했습니다. ObservableObject 프로토콜을 따르는 reference type models의 source of truth를 생성하기 위해서는 &lt;strong&gt;@StateObject&lt;/strong&gt; 를 사용합니다.&lt;/p&gt;
+
+&lt;div class=&quot;language-swift highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;  &lt;span class=&quot;kd&quot;&gt;struct&lt;/span&gt; &lt;span class=&quot;kt&quot;&gt;MeetingView&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;kt&quot;&gt;View&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
+    &lt;span class=&quot;kd&quot;&gt;@Binding&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;var&lt;/span&gt; &lt;span class=&quot;nv&quot;&gt;scrum&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;kt&quot;&gt;DailyScrum&lt;/span&gt;
+    &lt;span class=&quot;kd&quot;&gt;@StateObject&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;var&lt;/span&gt; &lt;span class=&quot;nv&quot;&gt;scrumTimer&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;kt&quot;&gt;ScrumTimer&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;()&lt;/span&gt;
+    &lt;span class=&quot;c1&quot;&gt;// ...&lt;/span&gt;
+  &lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+&lt;p&gt;@StateObject로 속성을 wrapping 한다는 것은 속한 해당 view가 그 object의 source of truth를 소유한다는 것을 의미합니다. @StateObject는 ScrumTimer를 MeetingView life cycle에 속박시킵니다.&lt;/p&gt;
+
+&lt;!-- ### Add Life Cycle Events  
+
+  SwiftUI는 view가 나타나고 사라질 때 이벤트를 일으키는 life cycle methods를 제공합니다. --&gt;</content><author><name>Mirae</name></author><category term="TIL" /><category term="learning" /><category term="공부 기록" /><category term="Swift" /><summary type="html">Getting Started with Scrumdinger 아래 모든 정보의 출처는 apple developer 공식 페이지이며 개인의 학습 용도로만 사용되었음을 밝힙니다. All information below comes from the official apple developer page and is for personal learning purposes only.</summary></entry><entry><title type="html">Playgrounds: Learn to Code 2</title><link href="http://localhost:4000/til/playgrounds2/" rel="alternate" type="text/html" title="Playgrounds: Learn to Code 2" /><published>2022-04-08T00:00:00+09:00</published><updated>2022-04-08T00:00:00+09:00</updated><id>http://localhost:4000/til/playgrounds2</id><content type="html" xml:base="http://localhost:4000/til/playgrounds2/">&lt;h1 id=&quot;learn-to-code-2&quot;&gt;Learn to code 2&lt;/h1&gt;
 &lt;p&gt;&lt;sub&gt;아래 모든 내용들은 Playgrounds에서 학습하며 정리한 내용입니다.&lt;br /&gt;
   모든 내용의 출처는 Playgrounds임을 밝힙니다.&lt;/sub&gt;&lt;/p&gt;
 

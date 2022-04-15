@@ -695,7 +695,7 @@ All information below comes from the official apple developer page and is for pe
 
   사용자가 각 scrum을 구별하기 쉽게 하기 위해 Color theme을 선택할 수 있도록 할 것입니다. 먼저 theme 의 components를 보여줄 theme view를 생성합니다.
 
-  ```Swift
+  ```swift
   //  ThemeView.swift
 
   import SwiftUI
@@ -838,3 +838,132 @@ All information below comes from the official apple developer page and is for pe
   - @ObservableObject
   - @StateObject
   - @EnvironmentObject
+
+  reference type인 class와 함께 property wrappers를 사용하기 위해서는 class를 observable하게 만들어야 합니다.  
+
+### Making a Class Observable  
+
+  ObservableObject protocol를 따름으로써 class를 observable하게 만들 수 있습니다.  
+  클래스 안의 properties 중 정보가 변경되었을 때 UI에 변화를 일으키는 properties를 선택하고 그 properties에 각각 @Published attribute를 추가해줍니다.
+
+  ```swift
+  class ScrumTimer: ObservableObject {
+      @Published var activeSpeaker = ""
+      @Published var secondsElapsed = 0
+      @Published var seconds Remaining = 0
+      // ...
+  }
+  ```
+  위 클래스의 속성은 한번의 scrum 세션에서 빈번하게 업데이트 될 것입니다. ScrumTimer는 published properties의 값에 변경 사항이 있을 때마다 observers에게 그것을 알려줍니다.
+
+<!-- ### Monitoring an Object for Changes  
+
+  Property를 정의할 때 아래 attributes 중 하나를 추가함으로써 SwiftUI에게 observable object를 모니터링 하도록 할 수 있습니다.
+
+  - ObservableObject
+  - StateObject
+  - EnvironmentObject -->
+
+  <!-- 이 property wrappers 중 하나로 정의된 view property는 새로운 source of truth를 생성합니다. -->
+
+<!-- 👷 #### @StateObject  
+
+  @StateObject wrapper는 view안에 관찰 가능한 object를 생성합니다.
+
+  ```swift
+  struct MeetingView: View {
+      @StateObject var scrumTimer = ScrumTimer()
+      // ...
+  }
+  ```
+  @ObservedObject
+
+  ```swift
+  struct ChildView: View {
+      @ObservedObject var timer: scrumTimer
+      // ...
+  }
+  ```
+  그리고 나서 observable object의 인스턴스를 view의 initializer에 통과시킵니다.
+
+  ```swift
+  struct MeetingView: View {
+      @StateObject var scrumTimer = ScrumTimer()
+      var body: some View {
+          VStack {
+            ChildView(timer: scrumTimer)
+          }
+      }
+      // ...
+  }
+  ```
+  ```swift
+  struct ParentView: View {
+      @StateObject var scrumTimer = ScrumTimer()
+      var body: some View {
+          VStack {
+            ChildView()
+                .environmentObject(scrumTimer)
+          }
+      }
+  }
+  ``` -->
+
+## Responding to Events  
+
+### Scene Architecture  
+
+  App state에 대해 알아보기 전에, SwiftUI가 scenes를 구성하는 방법에 대해 복습해 봅니다.  
+  Scene은 시스템이 관리하는, 라이프 사이클을 가지고 있는 앱의 사용자 인터페이스의 부분입니다.
+
+  - 앱을 만들기 위해서, App protocol을 따르는 structure를 정의합니다. @main attribute를 앞에 표시해줌으로써 시스템에게 이 structure가 앱의 entry point라는 것을 알려줍니다.
+
+  - ScrumdingerApp.swift의 structrue속 body 부분에 Scene 프로토콜을 따르는 scenes를 추가했습니다. Scenes는 앱이 보여주는 뷰 계층을 담는 컨테이너 입니다.
+
+  - SwiftUI는 WindowGroup과 같은 scenes를 제공합니다. 시스템은 scenes의 라이프 사이클을 관리하고 플랫폼에 맞는, 환경에 맞는 뷰 계층을 화면에 보여줍니다. 예를들어 iPadOS의 멀티테스킹은 같은 앱의 여러개의 더 작은 인스턴스들을 동시에 보여줄 수 있습니다.
+
+### Scene Phases and Transitions  
+
+  앱의 실행 중, scene은 3단계의 변화가 있을 수 있습니다.
+
+  - active : scene이 foreground에 있고, 사용자가 scene과 상호작용할 수 있습니다.
+  - inactive : scene을 볼 수 있지만 시스템이 scene과의 상호작용을 중지시킵니다. 예를 들어 멀티 테스킹 모드에서 앱의 패널 볼 수 있지만 패널이 활성화되어 있지는 않습니다.
+  - background : 앱은 작동되고 있지만 scene을 볼 수 없습니다. 앱의 종료 전에 scene은 이 단계에 들어갑니다.
+
+## Managing State and Life Cycle  
+
+  Scrumdinger는 scrum이 바뀔 때마다 바뀌었다는 것을 사용자에게 알려줍니다. 이 key feature을 만들기 위해 scrum을 관리하는 모델을 제어하는 life cycle methods를 사용할 것입니다.  
+
+  이 튜토리얼에서는 reference type models와 SwiftUI view를 이용하는 방법에 대해 알아봅니다.
+
+### Create an Overlay View  
+
+  MeetingView.swift의 header 부분을 따로 분리합니다. MeetingHeaderView.swift라는 새 SwiftUI 파일을 생성하고 ProgressView와 HStack 부분을 MeetingHeaderView.swift로 옮겨 줍니다. 그리고 지금까지 static 데이터를 dynamic 데이터로 교체하기 위해 속성을 추가할 것입니다.
+
+  ```swift
+  private var totalSeconds: Int {
+      secondsElapsed + secondsRemaining
+  }
+  private var progress: Double {
+      guard totalSeconds > 0 else { return 1 }
+      return Double(secondsElapsed) / Double(totalSeconds)
+  }
+  ```
+  ProgressView에서 progress를 나타내는 computed property입니다. totalSeconds가 0보다 크면 지난 시간을 전체 시간으로 나누어서 진행된 시간을 나타내줍니다.
+
+### Add a State Object for a Source of Truth  
+
+  Value type models의 source of truth를 생성하기 위해서 **@State** 를 사용했습니다. ObservableObject 프로토콜을 따르는 reference type models의 source of truth를 생성하기 위해서는 **@StateObject** 를 사용합니다.
+
+  ```swift
+  struct MeetingView: View {
+    @Binding var scrum: DailyScrum
+    @StateObject var scrumTimer = ScrumTimer()
+    // ...
+  }
+  ```
+  @StateObject로 속성을 wrapping 한다는 것은 속한 해당 view가 그 object의 source of truth를 소유한다는 것을 의미합니다. @StateObject는 ScrumTimer를 MeetingView life cycle에 속박시킵니다.
+
+<!-- ### Add Life Cycle Events  
+
+  SwiftUI는 view가 나타나고 사라질 때 이벤트를 일으키는 life cycle methods를 제공합니다. -->
