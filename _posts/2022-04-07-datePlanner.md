@@ -17,12 +17,12 @@ toc_icon: "kiwi-bird"
 [Sample Apps Tutorials: About Me(Navigating Apps)](https://developer.apple.com/tutorials/sample-apps/aboutme)  
 <sub>아래 모든 정보의 출처는 apple developer 공식 페이지이며 개인의 학습 용도로만 사용되었음을 밝힙니다.</sub>
 
+🐤 Date Planner 앱은 날짜별로 이벤트를 계획하고 정리하는 앱입니다.  
+이 튜토리얼에서는 list, 그리고 이벤트를 보여줄 동적 리스트를 생성하기 위해 observable data model에 대해 배웁니다.
+
 # Section 1: App Configuration
 
-  앱이 views들 사이에서 데이터를 공유하는 방법
-
-  - 하나의 데이터 object를 만든다.
-  - 전체 view hierachy에서 object를 사용한다.
+  앱이 하나의 데이터 객체를 생성하고 그것을 전체 뷰 계층에서 사용 가능하도록 함으로써 views들 사이에서 데이터를 공유하는 방식에 대해 알아봅니다.
 
 ## DatePlannerApp.swift  
 
@@ -39,6 +39,9 @@ toc_icon: "kiwi-bird"
       WindowGroup {
         NavigationView {
             EventList()
+            // 더 넓은 화면을 사용할 때 (iPad의 가로 전체 화면 등) 필요한 요소          
+            // 화면이 나뉘어졌을 때 빈 화면에 placeholder로 Text view의 내용이 나타남
+            // 리스트의 아이템을 선택하면 해당 이벤트 뷰로 바뀌게 됨
             Text("Select an Event")
                 .foregroundStyle(.secondary)
         }
@@ -49,7 +52,7 @@ toc_icon: "kiwi-bird"
   ```
 ### NavigationView
 
-  - 서로 다른 views를 이동하기 위해 NavigationView를 사용합니다.
+  - views를 이동하기 위해 앱의 top-level view에 NavigationView를 작성합니다.
   - NavigationView 아래에는 앱의 home view가 작성됩니다.
   - 이 앱의 첫화면이자 home view는 EventList() 입니다.
   - iPad의 가로 화면과 같은 더 넓은 앱화면 구성에서, SwiftUI는 NavigationView를 이용할 때 여러개의 컨텐츠를 하나의 스택이 아닌 나란한 행들로 화면에 나타냅니다. 이 앱에서 EventList는 하나의 sidebar column에 나타납니다. 각 컨텐츠는 primary pane에 나타납니다.
@@ -122,7 +125,7 @@ toc_icon: "kiwi-bird"
 
   Event planner는 데이터를 분류, 구성하기 위해서 여러개의 Event object의 모음(collection)을 사용합니다. 각각의 Event object는 캠핑, 여행, 생일파티와 같은 특정 이벤트를 나타냅니다.
 
-  - **Identifiable protocol**은 이벤트의 리스트를 생성할 때 SwiftUI가 이벤트의 값을 다른 것들과 확실히 구별하고 그것을 업데이트 해줍니다.
+  - **Identifiable protocol**은 이벤트의 리스트를 생성할 때 SwiftUI가 이벤트의 값을 다른 것들과 확실히 구별하고 그것을 업데이트 할 수 있도록 합니다.
 
 ### 📖 틈새 영어 단어: populate
   <div class="notice">
@@ -154,6 +157,10 @@ toc_icon: "kiwi-bird"
   ```
   에를 들어 위의 isPast property는 현재 날짜, 시간보다 이벤트의 날짜 시간이 적으면 true를 반환합니다. 이것을 이용해 사용자들은 과거 이벤트를 위한 카테고리에 지난 이벤트들을 모아둘 수 있습니다.
 
+<!-- 👷 #### filter(_:)   -->
+
+
+
 #### UUID()  
 
   <sub>[참고한 페이지](https://www.hackingwithswift.com/books/ios-swiftui/working-with-identifiable-items-in-swiftui)</sub>
@@ -180,7 +187,8 @@ toc_icon: "kiwi-bird"
   }
   ```
 
-  Event type과 마찬가지로 EventTask type 역시 Identifiable protocol을 따릅니다. 이것은 SwiftUI이 리스트 속 to-do 아이템의 모양을 관리하고 업데이트 할 수 있도록 합니다. EventTask type은 id, text, isComplete, isNew와 같은 to-do 아이템의 속성들을 가지고 있습니다.
+  Event type과 마찬가지로 EventTask type 역시 Identifiable protocol을 따릅니다. 이것은 SwiftUI이 리스트 속 to-do 아이템의 상태를 관리하고 업데이트 할 수 있도록 합니다. EventTask type은 id, text, isCompleted, isNew와 같은 to-do 아이템의 속성들을 가지고 있습니다.
+  사용자가 한 task를 완료했다고 표시하면, isCompleted를 true로 설정할 것입니다. 이렇게 함으로써 앱이 남아있는 task를 추적할 수 있게 합니다.
 
 # Section 4: Event Data
 
@@ -228,7 +236,11 @@ toc_icon: "kiwi-bird"
   }
   ```
   위의 메서드는 선택된 이벤트의 모든 정보를 삭제해줍니다.
-   
+
+<!-- #### class EventData
+
+  class는 인스턴스의 값이 변경되면 메모리에 생성된 클래스 자체의 값도 함께 바뀌기 때문에 class를 사용하는걸까? -->
+
 
 <!-- #### removeAll(where:)  
 

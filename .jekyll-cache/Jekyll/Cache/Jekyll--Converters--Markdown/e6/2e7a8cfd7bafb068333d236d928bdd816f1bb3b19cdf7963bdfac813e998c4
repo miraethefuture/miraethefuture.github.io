@@ -1,0 +1,4 @@
+I"�<p>Closures는 기능을 담고 있는 완전한 블락으로 코드 안에서 사용될 수 있습니다.<br />
+Constants와 Variables의 references를 찾아내고 담을 수 있습니다.
+이것을 <em>closing over</em></p>
+:ET
