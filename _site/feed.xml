@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="4.2.1">Jekyll</generator><link href="http://localhost:4000/feed.xml" rel="self" type="application/atom+xml" /><link href="http://localhost:4000/" rel="alternate" type="text/html" /><updated>2022-04-19T21:56:43+09:00</updated><id>http://localhost:4000/feed.xml</id><title type="html">Mirae 2 the Future</title><subtitle>An amazing website.</subtitle><author><name>Mirae</name></author><entry><title type="html">Functions</title><link href="http://localhost:4000/til/functions/" rel="alternate" type="text/html" title="Functions" /><published>2022-04-19T00:00:00+09:00</published><updated>2022-04-19T00:00:00+09:00</updated><id>http://localhost:4000/til/functions</id><content type="html" xml:base="http://localhost:4000/til/functions/">&lt;h1&gt;🚧&lt;/h1&gt;
+<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="4.2.1">Jekyll</generator><link href="http://localhost:4000/feed.xml" rel="self" type="application/atom+xml" /><link href="http://localhost:4000/" rel="alternate" type="text/html" /><updated>2022-04-20T03:49:17+09:00</updated><id>http://localhost:4000/feed.xml</id><title type="html">Mirae 2 the Future</title><subtitle>An amazing website.</subtitle><author><name>Mirae</name></author><entry><title type="html">Functions</title><link href="http://localhost:4000/til/functions/" rel="alternate" type="text/html" title="Functions" /><published>2022-04-19T00:00:00+09:00</published><updated>2022-04-19T00:00:00+09:00</updated><id>http://localhost:4000/til/functions</id><content type="html" xml:base="http://localhost:4000/til/functions/">&lt;h1&gt;🚧&lt;/h1&gt;
 
 &lt;p&gt;Functions는 특정 기능을 수행하는 완전한 코드 덩어리입니다. Functions는 이름을 가집니다. 보통은 어떤 일을 하는지 알 수 있는 이름을 지어줍니다. 그리고 필요할 때 그 이름을 사용해서 function을 호출하여 특정 기능을 수행할 수 있도록 합니다.&lt;/p&gt;
 
@@ -56,7 +56,66 @@
   &lt;span class=&quot;c1&quot;&gt;// Prints &quot;min is -6 and max is 109&quot;&lt;/span&gt;
 &lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
 
-&lt;p&gt;튜플 멤버의 이름은 튜플이 function으로부터 리턴될 때 이름 지어질 필요가 없습니다. 멤버의 이름은 function의 리턴 타입의 한 부분으로 이미 정의되었기 때문입니다.&lt;/p&gt;</content><author><name>Mirae</name></author><category term="TIL" /><category term="learning" /><category term="공부 기록" /><category term="Swift" /><category term="Functions" /><summary type="html">🚧</summary></entry><entry><title type="html">Subscripts</title><link href="http://localhost:4000/til/subscripts/" rel="alternate" type="text/html" title="Subscripts" /><published>2022-04-18T00:00:00+09:00</published><updated>2022-04-18T00:00:00+09:00</updated><id>http://localhost:4000/til/subscripts</id><content type="html" xml:base="http://localhost:4000/til/subscripts/">&lt;p&gt;Classes, structures, 그리고 enumerations는 subscripts를 정의할 수 있습니다. Subscripts는 collection이나 list 또는 sequence의 멤버 요소에 접근하는 쉬운 방법들입니다.&lt;/p&gt;</content><author><name>Mirae</name></author><category term="TIL" /><category term="learning" /><category term="공부 기록" /><category term="Swift" /><category term="Subscripts" /><summary type="html">Classes, structures, 그리고 enumerations는 subscripts를 정의할 수 있습니다. Subscripts는 collection이나 list 또는 sequence의 멤버 요소에 접근하는 쉬운 방법들입니다.</summary></entry><entry><title type="html">Closures</title><link href="http://localhost:4000/til/closures/" rel="alternate" type="text/html" title="Closures" /><published>2022-04-17T00:00:00+09:00</published><updated>2022-04-17T00:00:00+09:00</updated><id>http://localhost:4000/til/closures</id><content type="html" xml:base="http://localhost:4000/til/closures/">&lt;h1&gt;🚧&lt;/h1&gt;
+&lt;p&gt;튜플 멤버의 이름은 튜플이 function으로부터 리턴될 때 이름 지어질 필요가 없습니다. 멤버의 이름은 function의 리턴 타입의 한 부분으로 이미 정의되었기 때문입니다.&lt;/p&gt;</content><author><name>Mirae</name></author><category term="TIL" /><category term="learning" /><category term="공부 기록" /><category term="Swift" /><category term="Functions" /><summary type="html">🚧</summary></entry><entry><title type="html">Subscripts</title><link href="http://localhost:4000/til/subscripts/" rel="alternate" type="text/html" title="Subscripts" /><published>2022-04-18T00:00:00+09:00</published><updated>2022-04-18T00:00:00+09:00</updated><id>http://localhost:4000/til/subscripts</id><content type="html" xml:base="http://localhost:4000/til/subscripts/">&lt;h1 id=&quot;-&quot;&gt;👩‍🌾 ..&lt;/h1&gt;
+
+&lt;p&gt;Classes, structures, 그리고 enumerations는 subscripts를 정의할 수 있습니다. Subscripts는 collection이나 list 또는 sequence의 멤버 요소에 접근하는 쉬운 방법들입니다. 값을 설정하고 가져오기 위한 메서드 없이 subscripts를 사용하여 인덱스로 값을 설정하거나, 값을 가져옵니다. 예를 들어, someArray[index]로 Array instance의 요소에 접근할 수 있습니다. Dictionary instance의 요소에 접근하기 위해서는 someDictionary[key]를 이용합니다.&lt;/p&gt;
+
+&lt;p&gt;하나의 타입에 여러개의 subscripts를 정의할 수 있습니다. Subscript에 통과된 인덱스 값의 타입을 기준으로 그 중 적합한 subscript가 선택됩니다. Subscript는 1차원에 제약되지 않습니다. 커스텀 타입이 필요로 하는 여러개의 input 패러미터를 이용하여 subscript를 정의할 수 있습니다.&lt;/p&gt;
+
+&lt;h2 id=&quot;subscript-syntax&quot;&gt;Subscript Syntax&lt;/h2&gt;
+
+&lt;p&gt;Subscript는 하나 또는 여러개의 값을 instance의 이름 뒤 [] 안에 작성함으로써 인스턴스에 대한 정보를 가져오는 것을 가능하게 합니다. Subscript syntax는 instance method syntax 그리고 commputed property syntax와 비슷합니다. subscript keyword를 사용하고 하나 또는 여러개의 인풋 패러미터와 리턴 타입을 특정 지어 줍니다. (instance method와 같은 방법으로)&lt;br /&gt;
+  Instance method와는 다르게, subscript는 read-write 또는 read-only가 될 수 있습니다. Computed property에서와 마찬가지로 getter 그리고 setter에 의해 실행됩니다.&lt;/p&gt;
+
+&lt;div class=&quot;language-swift highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;  &lt;span class=&quot;nf&quot;&gt;subscript&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nv&quot;&gt;index&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;kt&quot;&gt;Int&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;-&amp;gt;&lt;/span&gt; &lt;span class=&quot;kt&quot;&gt;Int&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
+    &lt;span class=&quot;k&quot;&gt;get&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
+        &lt;span class=&quot;c1&quot;&gt;// 적합한 subscript 값을 리턴&lt;/span&gt;
+    &lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
+    &lt;span class=&quot;nf&quot;&gt;set&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;newValue&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
+        &lt;span class=&quot;c1&quot;&gt;// 적합한 setting action 수행&lt;/span&gt;
+    &lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
+  &lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;p&gt;newValue의 타입은 subscript의 리턴타입과 같습니다. Computed property에서처럼, setter의 (newValue)패러미터를 특정짓지 않을 수 있습니다. 만약 이렇게 특정짓지 않는다면 newValue라는 이름의 디폴트 패러미터가 제공됩니다.&lt;/p&gt;
+
+&lt;p&gt;read-only computed property처럼, get 키워드와 { } 를 제거하여 read-only subscript를 단순한 형태로 정의할 수 있습니다.&lt;/p&gt;
+
+&lt;div class=&quot;language-swift highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;  &lt;span class=&quot;nf&quot;&gt;subscript&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nv&quot;&gt;index&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;kt&quot;&gt;Int&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;-&amp;gt;&lt;/span&gt; &lt;span class=&quot;kt&quot;&gt;Int&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
+        &lt;span class=&quot;c1&quot;&gt;// 적합한 subscript 값을 리턴&lt;/span&gt;
+  &lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;p&gt;아래는 read-only subscript의 구현 예시입니다. TimesTable stucture는 한 정수의 n-times-table을 나타냅니다.&lt;/p&gt;
+
+&lt;div class=&quot;language-swift highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;  &lt;span class=&quot;kd&quot;&gt;struct&lt;/span&gt; &lt;span class=&quot;kt&quot;&gt;TimesTable&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
+      &lt;span class=&quot;k&quot;&gt;let&lt;/span&gt; &lt;span class=&quot;nv&quot;&gt;multiplier&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;kt&quot;&gt;Int&lt;/span&gt;
+      &lt;span class=&quot;nf&quot;&gt;subscript&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nv&quot;&gt;index&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;kt&quot;&gt;Int&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;-&amp;gt;&lt;/span&gt; &lt;span class=&quot;kt&quot;&gt;Int&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
+          &lt;span class=&quot;k&quot;&gt;return&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;multiplier&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;*&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;index&lt;/span&gt;
+      &lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
+  &lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
+  &lt;span class=&quot;k&quot;&gt;let&lt;/span&gt; &lt;span class=&quot;nv&quot;&gt;threeTimesTable&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;kt&quot;&gt;TimesTable&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nv&quot;&gt;multiplier&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;3&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
+  &lt;span class=&quot;nf&quot;&gt;print&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;six times three is &lt;/span&gt;&lt;span class=&quot;se&quot;&gt;\(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;threeTimesTable&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;6&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;]&lt;/span&gt;&lt;span class=&quot;se&quot;&gt;)&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
+  &lt;span class=&quot;c1&quot;&gt;// Prints &quot;six times three is 18&quot;&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;p&gt;위의 예에서, TimesTable의 새 instance는 three-times-table을 나타내기 위해 생성되었습니다. 이것은 TimesTable structure의 생성자 multiplier패러미터에 값 3을 통과시킴으로써 이루어집니다.&lt;/p&gt;
+
+&lt;p&gt;threeTimesTable의 subscript를 호출함으로써 정보를 가져올 수 있습니다. (threeTimesTable[6])&lt;/p&gt;
+
+&lt;h2 id=&quot;subscript-usage&quot;&gt;Subscript Usage&lt;/h2&gt;
+
+&lt;p&gt;“subscript”의 정확한 의미는 이것이 사용된 곳의 전후 관계에 달려있습니다. Subscripts는 보통 collection, list 또는 sequence의 요소에 접근하는 지름길(쉬운 방법)으로 사용됩니다.&lt;/p&gt;
+
+&lt;p&gt;예를 들어, Swift의 Dictionary type은 어떤 Dictionary instance에 저장된 값을 가져오거나, 값을 설정하기 위해 subscript를 사용합니다. 딕셔너리의 키 타입에 맞는 키를 subscript brackets안에 제공하고 딕셔너리의 값 자료형과 일치하는 값을 할당해줌으로써 키와 값을 설정할 수 있습니다.&lt;/p&gt;
+
+&lt;div class=&quot;language-swift highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;  &lt;span class=&quot;k&quot;&gt;var&lt;/span&gt; &lt;span class=&quot;nv&quot;&gt;numberOfLegs&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;Spider&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;8&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;&quot;ant&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;6&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;&quot;cat&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;4&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;]&lt;/span&gt;
+  &lt;span class=&quot;n&quot;&gt;numberOfLegs&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;bird&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;]&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;2&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;!-- ## Subscript Options  
+
+  Subscripts는  --&gt;</content><author><name>Mirae</name></author><category term="TIL" /><category term="learning" /><category term="공부 기록" /><category term="Swift" /><category term="Subscripts" /><summary type="html">👩‍🌾 ..</summary></entry><entry><title type="html">Closures</title><link href="http://localhost:4000/til/closures/" rel="alternate" type="text/html" title="Closures" /><published>2022-04-17T00:00:00+09:00</published><updated>2022-04-17T00:00:00+09:00</updated><id>http://localhost:4000/til/closures</id><content type="html" xml:base="http://localhost:4000/til/closures/">&lt;h1&gt;🚧&lt;/h1&gt;
 &lt;p&gt;Closures는 기능을 담고 있는 완전한 블락으로 코드 안에서 사용될 수 있습니다.&lt;br /&gt;
   Constants와 Variables의 references를 찾아내고 담을 수 있습니다.
   이것을 &lt;em&gt;closing over&lt;/em&gt; constants and variables한다고 합니다.&lt;/p&gt;
@@ -2369,7 +2428,7 @@ All information below comes from the official apple developer page and is for pe
 
 &lt;h2 id=&quot;section-1-create-your-own-story&quot;&gt;Section 1: Create Your Own Story&lt;/h2&gt;
 
-&lt;p&gt;당신만의 이야기 속 사건들을 구축하기 위해서 앱은 Story라는 instance가 필요합니다. 이 프로젝트에서 instance Story는 각 StoryPage는 이야기 부분과 선택지 부분으로 이루어져 있습니다.&lt;/p&gt;
+&lt;p&gt;이야기를 구성하기 위해서 앱은 커스텀 타입인 Story의 instance가 필요합니다. Story는 또 다른 커스텀 타입인 StoryPage의 인스턴스로 이루어진 배열을 속성으로 가집니다. 각 StoryPage는 text 속성 부분과 choices 속성 부분으로 이루어져 있습니다.&lt;/p&gt;
 
 &lt;div class=&quot;language-swift highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;  &lt;span class=&quot;c1&quot;&gt;// MyStory.swift&lt;/span&gt;
 
@@ -2440,11 +2499,28 @@ All information below comes from the official apple developer page and is for pe
 &lt;div class=&quot;notice--success&quot;&gt;
     1. Custom Type 생성 과정&lt;br /&gt;
     &lt;br /&gt;
-    2. Custom type을 만드는 file에는 Foundation만 import하면 됨.&lt;br /&gt;
+    2. Custom type을 만드는 file에는 Foundation만 import 하면 될 때도 있음. (다른 framework를 추가해야 할 때도 많이 있음.)&lt;br /&gt;
     &lt;br /&gt;
     3. init()의 이름을 사용하지 않는 패러미터&lt;br /&gt;
-      init(_ text: String) -&amp;gt; text는 패러미터의 이름일 뿐 생성자가 사용될 때 사용하는 이름은 아님. 이 경우에는 생성자 사용시 이름없이 바로 “”” “”” 으로 문자열을 입력해주었음.
+      init(_ text: String) -&amp;gt; text는 패러미터의 이름일 뿐 생성자가 사용될 때 사용하는 이름은 아님. 이 경우에는 생성자 사용시 이름없이 바로 “”” “”” 으로 문자열을 입력해주었음.&lt;br /&gt;
+    &lt;br /&gt;
+    4. subscript의 이용
+
   &lt;/div&gt;
+
+&lt;h4 id=&quot;subscript&quot;&gt;subscript&lt;/h4&gt;
+
+&lt;div class=&quot;language-swift highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;  &lt;span class=&quot;kd&quot;&gt;struct&lt;/span&gt; &lt;span class=&quot;kt&quot;&gt;Story&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
+
+      &lt;span class=&quot;k&quot;&gt;let&lt;/span&gt; &lt;span class=&quot;nv&quot;&gt;pages&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;kt&quot;&gt;StoryPage&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;]&lt;/span&gt;
+
+      &lt;span class=&quot;c1&quot;&gt;// subscript를 이용하여 StoryPage 타입의 배열 pages의 멤버 요소에 접근&lt;/span&gt;
+      &lt;span class=&quot;c1&quot;&gt;// 인덱스 값을 이용해서 pages의 한 요소를 가져옴&lt;/span&gt;
+      &lt;span class=&quot;nf&quot;&gt;subscript&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;_&lt;/span&gt; &lt;span class=&quot;nv&quot;&gt;pageIndex&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;kt&quot;&gt;Int&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;-&amp;gt;&lt;/span&gt; &lt;span class=&quot;kt&quot;&gt;StoryPage&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
+          &lt;span class=&quot;k&quot;&gt;return&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;pages&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;pageIndex&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;]&lt;/span&gt;
+      &lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
+  &lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
 
 &lt;h3 id=&quot;storypage-type&quot;&gt;StoryPage type&lt;/h3&gt;
 

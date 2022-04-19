@@ -1,0 +1,51 @@
+I"<h1 id="-">👩‍🌾 ..</h1>
+
+<p>Classes, structures, 그리고 enumerations는 subscripts를 정의할 수 있습니다. Subscripts는 collection이나 list 또는 sequence의 멤버 요소에 접근하는 쉬운 방법들입니다. 값을 설정하고 가져오기 위한 메서드 없이 subscripts를 사용하여 인덱스로 값을 설정하거나, 값을 가져옵니다. 예를 들어, someArray[index]로 Array instance의 요소에 접근할 수 있습니다. Dictionary instance의 요소에 접근하기 위해서는 someDictionary[key]를 이용합니다.</p>
+
+<p>하나의 타입에 여러개의 subscripts를 정의할 수 있습니다. Subscript에 통과된 인덱스 값의 타입을 기준으로 그 중 적합한 subscript가 선택됩니다. Subscript는 1차원에 제약되지 않습니다. 커스텀 타입이 필요로 하는 여러개의 input 패러미터를 이용하여 subscript를 정의할 수 있습니다.</p>
+
+<h2 id="subscript-syntax">Subscript Syntax</h2>
+
+<p>Subscript는 하나 또는 여러개의 값을 instance의 이름 뒤 [] 안에 작성함으로써 인스턴스에 대한 정보를 가져오는 것을 가능하게 합니다. Subscript syntax는 instance method syntax 그리고 commputed property syntax와 비슷합니다. subscript keyword를 사용하고 하나 또는 여러개의 인풋 패러미터와 리턴 타입을 특정 지어 줍니다. (instance method와 같은 방법으로)<br />
+  Instance method와는 다르게, subscript는 read-write 또는 read-only가 될 수 있습니다. Computed property에서와 마찬가지로 getter 그리고 setter에 의해 실행됩니다.</p>
+
+<div class="language-swift highlighter-rouge"><div class="highlight"><pre class="highlight"><code>  <span class="nf">subscript</span><span class="p">(</span><span class="nv">index</span><span class="p">:</span> <span class="kt">Int</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kt">Int</span> <span class="p">{</span>
+    <span class="k">get</span> <span class="p">{</span>
+        <span class="c1">// 적합한 subscript 값을 리턴</span>
+    <span class="p">}</span>
+    <span class="nf">set</span><span class="p">(</span><span class="n">newValue</span><span class="p">)</span> <span class="p">{</span>
+        <span class="c1">// 적합한 setting action 수행</span>
+    <span class="p">}</span>
+  <span class="p">}</span>
+</code></pre></div></div>
+
+<p>newValue의 타입은 subscript의 리턴타입과 같습니다. Computed property에서처럼, setter의 (newValue)패러미터를 특정짓지 않을 수 있습니다. 만약 이렇게 특정짓지 않는다면 newValue라는 이름의 디폴트 패러미터가 제공됩니다.</p>
+
+<p>read-only computed property처럼, get 키워드와 { } 를 제거하여 read-only subscript를 단순한 형태로 정의할 수 있습니다.</p>
+
+<div class="language-swift highlighter-rouge"><div class="highlight"><pre class="highlight"><code>  <span class="nf">subscript</span><span class="p">(</span><span class="nv">index</span><span class="p">:</span> <span class="kt">Int</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kt">Int</span> <span class="p">{</span>
+        <span class="c1">// 적합한 subscript 값을 리턴</span>
+  <span class="p">}</span>
+</code></pre></div></div>
+
+<p>아래는 read-only subscript의 구현 예시입니다. TimesTable stucture는 한 정수의 n-times-table을 나타냅니다.</p>
+
+<div class="language-swift highlighter-rouge"><div class="highlight"><pre class="highlight"><code>  <span class="kd">struct</span> <span class="kt">TimesTable</span> <span class="p">{</span>
+      <span class="k">let</span> <span class="nv">multiplier</span><span class="p">:</span> <span class="kt">Int</span>
+      <span class="nf">subscript</span><span class="p">(</span><span class="nv">index</span><span class="p">:</span> <span class="kt">Int</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kt">Int</span> <span class="p">{</span>
+          <span class="k">return</span> <span class="n">multiplier</span> <span class="o">*</span> <span class="n">index</span>
+      <span class="p">}</span>
+  <span class="p">}</span>
+  <span class="k">let</span> <span class="nv">threeTimesTable</span> <span class="o">=</span> <span class="kt">TimesTable</span><span class="p">(</span><span class="nv">multiplier</span><span class="p">:</span> <span class="mi">3</span><span class="p">)</span>
+  <span class="nf">print</span><span class="p">(</span><span class="s">"six times three is </span><span class="se">\(</span><span class="n">threeTimesTable</span><span class="p">[</span><span class="mi">6</span><span class="p">]</span><span class="se">)</span><span class="s">"</span><span class="p">)</span>
+  <span class="c1">// Prints "six times three is 18"</span>
+</code></pre></div></div>
+
+<p>위의 예에서, TimesTable의 새 instance는 three-times-table을 나타내기 위해 생성되었습니다. 이것은 TimesTable structure의 생성자 multiplier패러미터에 값 3을 통과시킴으로써 이루어집니다.</p>
+
+<p>threeTimesTable의 subscript를 호출함으로써 정보를 가져올 수 있습니다. (threeTimesTable[6])</p>
+
+<h2 id="subscript-usage">Subscript Usage</h2>
+
+<p>“subscript”의 정확한 의미는 이것이 사용된 곳의 전후 관계에 달려있습니다.</p>
+:ET

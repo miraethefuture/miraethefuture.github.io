@@ -10,7 +10,7 @@ tags:
 show_date: true
 toc: true
 toc_sticky: true
-toc_label: "📂"
+toc_label: " "
 toc_icon: "kiwi-bird"
 header:
   teaser: /assets/images/choose2.png
@@ -29,7 +29,7 @@ All information below comes from the official apple developer page and is for pe
 
 ## Section 1: Create Your Own Story  
 
-  당신만의 이야기 속 사건들을 구축하기 위해서 앱은 Story라는 instance가 필요합니다. 이 프로젝트에서 instance Story는 각 StoryPage는 이야기 부분과 선택지 부분으로 이루어져 있습니다.
+  이야기를 구성하기 위해서 앱은 커스텀 타입인 Story의 instance가 필요합니다. Story는 또 다른 커스텀 타입인 StoryPage의 인스턴스로 이루어진 배열을 속성으로 가집니다. 각 StoryPage는 text 속성 부분과 choices 속성 부분으로 이루어져 있습니다.
 
   ```swift
   // MyStory.swift
@@ -104,11 +104,29 @@ Choice의 destination property는 story navigation 앱의 키 요소입니다. d
   <div class="notice--success">
     1. Custom Type 생성 과정<br>
     <br>
-    2. Custom type을 만드는 file에는 Foundation만 import하면 됨.<br>
+    2. Custom type을 만드는 file에는 Foundation만 import 하면 될 때도 있음. (다른 framework를 추가해야 할 때도 많이 있음.)<br>
     <br>
     3. init()의 이름을 사용하지 않는 패러미터<br>
-      init(_ text: String) -> text는 패러미터의 이름일 뿐 생성자가 사용될 때 사용하는 이름은 아님. 이 경우에는 생성자 사용시 이름없이 바로 “”” “”” 으로 문자열을 입력해주었음.
+      init(_ text: String) -> text는 패러미터의 이름일 뿐 생성자가 사용될 때 사용하는 이름은 아님. 이 경우에는 생성자 사용시 이름없이 바로 “”” “”” 으로 문자열을 입력해주었음.<br>
+    <br>
+    4. subscript의 이용
+
   </div>
+
+#### subscript
+
+  ```swift
+  struct Story {
+
+      let pages: [StoryPage]
+
+      // subscript를 이용하여 StoryPage 타입의 배열 pages의 멤버 요소에 접근
+      // 인덱스 값을 이용해서 pages의 한 요소를 가져옴
+      subscript(_ pageIndex: Int) -> StoryPage {
+          return pages[pageIndex]
+      }
+  }
+  ```
 
 
 ### StoryPage type  
