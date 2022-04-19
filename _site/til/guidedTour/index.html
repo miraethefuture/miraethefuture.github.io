@@ -234,7 +234,7 @@
           <aside class="sidebar__right sticky">
             <nav class="toc">
               <header><h4 class="nav__title"><i class="fas fa-kiwi-bird"></i> 📂</h4></header>
-              <ul class="toc__menu"><li><a href="#문자열과-변수의-값">문자열과 변수의 값</a></li><li><a href="#array-and-dictionary">Array and Dictionary</a><ul><li><a href="#빈-배열-빈-딕셔너리-생성하기">빈 배열, 빈 딕셔너리 생성하기</a></li></ul></li><li><a href="#optionals">Optionals</a><ul><li><a href="#optionals가-사용되는-방법">optionals가 사용되는 방법</a><ul><li><a href="#int">Int()</a></li><li><a href="#nil">nil</a></li><li><a href="#if문과-optionals">If문과 Optionals</a></li><li><a href="#forced-unwrapping">Forced unwrapping</a></li><li><a href="#optional-binding">Optional Binding</a></li><li><a href="#implicitly-unwrapped-optionals">Implicitly Unwrapped Optionals</a></li></ul></li></ul></li><li><a href="#switch">Switch</a><ul><li><a href="#hassuffix_">hasSuffix(_:)</a></li></ul></li><li><a href="#for-in과-dictionary">for-in과 Dictionary</a></li><li><a href="#tuples">Tuples</a><ul><li><a href="#http-status-code와-튜플">HTTP status code와 튜플</a></li><li><a href="#제한이-없는-튜플">제한이 없는 튜플</a></li><li><a href="#decompose-a-tuple">Decompose a Tuple</a></li><li><a href="#index를-이용하여-값에-접근하기">Index를 이용하여 값에 접근하기</a></li><li><a href="#정의와-동시에-값에-이름짓기">정의와 동시에 값에 이름짓기</a></li><li><a href="#functions와-튜플">Functions와 튜플</a></li><li><a href="#note">NOTE</a></li></ul></li><li><a href="#early-exit">Early Exit</a></li><li><a href="#functions">Functions</a></li></ul>
+              <ul class="toc__menu"><li><a href="#문자열과-변수의-값">문자열과 변수의 값</a></li><li><a href="#array-and-dictionary">Array and Dictionary</a><ul><li><a href="#빈-배열-빈-딕셔너리-생성하기">빈 배열, 빈 딕셔너리 생성하기</a></li></ul></li><li><a href="#optionals">Optionals</a><ul><li><a href="#optionals가-사용되는-방법">optionals가 사용되는 방법</a><ul><li><a href="#int">Int()</a></li><li><a href="#nil">nil</a></li><li><a href="#nil-coalescing-operator">Nil-Coalescing Operator</a></li><li><a href="#if문과-optionals">If문과 Optionals</a></li><li><a href="#forced-unwrapping">Forced unwrapping</a></li><li><a href="#optional-binding">Optional Binding</a></li><li><a href="#implicitly-unwrapped-optionals">Implicitly Unwrapped Optionals</a></li></ul></li></ul></li><li><a href="#switch">Switch</a><ul><li><a href="#hassuffix_">hasSuffix(_:)</a></li></ul></li><li><a href="#for-in과-dictionary">for-in과 Dictionary</a></li><li><a href="#tuples">Tuples</a><ul><li><a href="#http-status-code와-튜플">HTTP status code와 튜플</a></li><li><a href="#제한이-없는-튜플">제한이 없는 튜플</a></li><li><a href="#decompose-a-tuple">Decompose a Tuple</a></li><li><a href="#index를-이용하여-값에-접근하기">Index를 이용하여 값에 접근하기</a></li><li><a href="#정의와-동시에-값에-이름짓기">정의와 동시에 값에 이름짓기</a></li><li><a href="#functions와-튜플">Functions와 튜플</a></li><li><a href="#note">NOTE</a></li></ul></li><li><a href="#early-exit">Early Exit</a></li></ul>
 
             </nav>
           </aside>
@@ -321,6 +321,10 @@ All information below comes from the Swift documentation and is for personal lea
 <div class="language-swift highlighter-rouge"><div class="highlight"><pre class="highlight"><code>  <span class="k">var</span> <span class="nv">surveyAnswer</span><span class="p">:</span> <span class="kt">String</span><span class="p">?</span>
   <span class="c1">// surveyAnswer is automatically set to nil</span>
 </code></pre></div></div>
+
+<h4 id="nil-coalescing-operator">Nil-Coalescing Operator</h4>
+
+<p>Nil-Coalescing Operator (a ?? b)는 만약 옵셔널 a가 값을 가지고 있다면 optional a를 unwrap 합니다. a가 nil이라면 default 값인 b를 리턴합니다.</p>
 
 <h4 id="if문과-optionals">If문과 Optionals</h4>
 
@@ -574,33 +578,6 @@ All information below comes from the Swift documentation and is for personal lea
 
 <p>만약 조건이 false라면 else 브랜치의 코드가 실행됩니다. 이런 경우에는 return, break, continue, throw등의 control transfer statement를 사용하여 코드 블락을 꼭 벗어나 주어야 합니다.</p>
 
-<h2 id="functions">Functions</h2>
-
-<p>Functions는 특정 기능을 수행하는 완전한 코드 덩어리입니다. Functions는 이름을 가집니다. 보통은 어떤 일을 하는지 알 수 있는 이름을 지어줍니다. 그리고 필요할 때 그 이름을 사용해서 function을 호출하여 특정 기능을 수행할 수 있도록 합니다.</p>
-
-<p>패러미터는 function의 호출을 단순화하기 위해서 기본값을 제공할 수 있습니다. 그리고 in-out 패러미터로써 인자를 통과시킬 수 있습니다.</p>
-
-<p>스위프트의 모든 function은 type을 가지고 있습니다. function의 패러미터의 types와 리턴 type으로 이루어져 있습니다.</p>
-
-<div class="language-swift highlighter-rouge"><div class="highlight"><pre class="highlight"><code>  <span class="kd">func</span> <span class="nf">greet</span><span class="p">(</span><span class="nv">person</span><span class="p">:</span> <span class="kt">String</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kt">String</span> <span class="p">{</span>
-    <span class="k">let</span> <span class="nv">greeting</span> <span class="o">=</span> <span class="s">"Hello"</span> <span class="o">+</span> <span class="n">person</span> <span class="o">+</span> <span class="s">"!"</span>
-    <span class="k">return</span> <span class="n">greeting</span>
-  <span class="p">}</span>
-</code></pre></div></div>
-<ul>
-  <li>-(a hyphen)</li>
-  <li>&gt;(a right angle bracket)</li>
-</ul>
-
-<p>을 이용해서 -&gt; 리턴 타입을 나타냅니다.</p>
-
-<div class="language-swift highlighter-rouge"><div class="highlight"><pre class="highlight"><code>  <span class="kd">func</span> <span class="nf">greetAgain</span><span class="p">(</span><span class="nv">person</span><span class="p">:</span> <span class="kt">String</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kt">String</span> <span class="p">{</span>
-    <span class="k">return</span> <span class="s">"Hello again,"</span> <span class="o">+</span> <span class="n">person</span> <span class="o">+</span> <span class="s">"!"</span>
-  <span class="p">}</span>
-</code></pre></div></div>
-<p>return 뒤에 바로 문자열을 주면 코드를 더 짧게 작성할 수 있습니다.</p>
-
-
         
       </section>
 
@@ -687,6 +664,88 @@ All information below comes from the Swift documentation and is for personal lea
     
     <h2 class="archive__item-title no_toc" itemprop="headline">
       
+        <a href="/til/functions/" rel="permalink">Functions
+</a>
+      
+    </h2>
+    
+
+  <p class="page__meta">
+    
+      
+      <span class="page__meta-date">
+        <i class="far fa-calendar-alt" aria-hidden="true"></i>
+        
+        <time datetime="2022-04-19T00:00:00+09:00">April 19, 2022</time>
+      </span>
+    
+
+    
+
+    
+  </p>
+
+
+    <p class="archive__item-excerpt" itemprop="description">🚧
+</p>
+  </article>
+</div>
+
+        
+          
+
+
+
+<div class="grid__item">
+  <article class="archive__item" itemscope itemtype="https://schema.org/CreativeWork">
+    
+      <div class="archive__item-teaser">
+        <img src="/assets/images/teaser.jpg" alt="">
+      </div>
+    
+    <h2 class="archive__item-title no_toc" itemprop="headline">
+      
+        <a href="/til/subscripts/" rel="permalink">Subscripts
+</a>
+      
+    </h2>
+    
+
+  <p class="page__meta">
+    
+      
+      <span class="page__meta-date">
+        <i class="far fa-calendar-alt" aria-hidden="true"></i>
+        
+        <time datetime="2022-04-18T00:00:00+09:00">April 18, 2022</time>
+      </span>
+    
+
+    
+
+    
+  </p>
+
+
+    <p class="archive__item-excerpt" itemprop="description">Classes, structures, 그리고 enumerations는 subscripts를 정의할 수 있습니다. Subscripts는 collection이나 list 또는 sequence의 멤버 요소에 접근하는 쉬운 방법들입니다.
+</p>
+  </article>
+</div>
+
+        
+          
+
+
+
+<div class="grid__item">
+  <article class="archive__item" itemscope itemtype="https://schema.org/CreativeWork">
+    
+      <div class="archive__item-teaser">
+        <img src="/assets/images/teaser.jpg" alt="">
+      </div>
+    
+    <h2 class="archive__item-title no_toc" itemprop="headline">
+      
         <a href="/til/closures/" rel="permalink">Closures
 </a>
       
@@ -756,91 +815,6 @@ Closures는 기능을 담고 있는 완전한 블락으로 코드 안에서 사�
     <p class="archive__item-excerpt" itemprop="description">Getting Started with Scrumdinger
 아래 모든 정보의 출처는 apple developer 공식 페이지이며 개인의 학습 용도로만 사용되었음을 밝힙니다.
 All information below comes from the official apple develope...</p>
-  </article>
-</div>
-
-        
-          
-
-
-
-<div class="grid__item">
-  <article class="archive__item" itemscope itemtype="https://schema.org/CreativeWork">
-    
-      <div class="archive__item-teaser">
-        <img src="/assets/images/teaser.jpg" alt="">
-      </div>
-    
-    <h2 class="archive__item-title no_toc" itemprop="headline">
-      
-        <a href="/til/playgrounds2/" rel="permalink">Playgrounds: Learn to Code 2
-</a>
-      
-    </h2>
-    
-
-  <p class="page__meta">
-    
-      
-      <span class="page__meta-date">
-        <i class="far fa-calendar-alt" aria-hidden="true"></i>
-        
-        <time datetime="2022-04-08T00:00:00+09:00">April 8, 2022</time>
-      </span>
-    
-
-    
-
-    
-  </p>
-
-
-    <p class="archive__item-excerpt" itemprop="description">Learn to code 2
-아래 모든 내용들은 Playgrounds에서 학습하며 정리한 내용입니다.
-  모든 내용의 출처는 Playgrounds임을 밝힙니다.
-</p>
-  </article>
-</div>
-
-        
-          
-
-
-
-<div class="grid__item">
-  <article class="archive__item" itemscope itemtype="https://schema.org/CreativeWork">
-    
-      <div class="archive__item-teaser">
-        <img src="/assets/images/teaser.jpg" alt="">
-      </div>
-    
-    <h2 class="archive__item-title no_toc" itemprop="headline">
-      
-        <a href="/til/datePlanner/" rel="permalink">Navigating Apps: Date Planner
-</a>
-      
-    </h2>
-    
-
-  <p class="page__meta">
-    
-      
-      <span class="page__meta-date">
-        <i class="far fa-calendar-alt" aria-hidden="true"></i>
-        
-        <time datetime="2022-04-07T00:00:00+09:00">April 7, 2022</time>
-      </span>
-    
-
-    
-
-    
-  </p>
-
-
-    <p class="archive__item-excerpt" itemprop="description">Sample Apps Tutorials: About Me(Navigating Apps)
-아래 모든 정보의 출처는 apple developer 공식 페이지이며 개인의 학습 용도로만 사용되었음을 밝힙니다.
-</p>
   </article>
 </div>
 

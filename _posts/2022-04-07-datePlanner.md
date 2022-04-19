@@ -57,8 +57,6 @@ toc_icon: "kiwi-bird"
   - 이 앱의 첫화면이자 home view는 EventList() 입니다.
   - iPad의 가로 화면과 같은 더 넓은 앱화면 구성에서, SwiftUI는 NavigationView를 이용할 때 여러개의 컨텐츠를 하나의 스택이 아닌 나란한 행들로 화면에 나타냅니다. 이 앱에서 EventList는 하나의 sidebar column에 나타납니다. 각 컨텐츠는 primary pane에 나타납니다.
 
-  <!-- Select an Event 나타나는 곳이 어딜까? -->
-
 ### var eventData  
 
   ```swift
@@ -192,12 +190,13 @@ toc_icon: "kiwi-bird"
 
 # Section 4: Event Data
 
-  앱의 event list에 정보를 입력하기 위해 observable object인 EventData를 사용합니다. 그리고 어떻게 데이터의 구조를 구성하고 업데이트하는지 알아봅니다.  
+  앱의 이벤트 목록에 정보를 채우기 위해 observable object인 EventData를 사용합니다. 이 섹션에서는 어떻게 데이터를 구성하고 업데이트하는지 알아봅니다.  
 
 ## EventData type  
 
   ```swift
   // EventData.swift
+
   import SwiftUI
 
   class EventData: ObservableObject {
@@ -216,12 +215,12 @@ toc_icon: "kiwi-bird"
   }
   ```
 
-  - EventData type은 어플에 나타나는 모든 이벤트를 저장하고 수정합니다.
-  - ObservableObject protocol을 따릅니다. -> EventData에 있는 published values 중 어떤 것에든 변화가 일어나면 SwiftUI가 그 values를 사용하고 있는 view들을 찾고 업데이트 해줍니다.
+  - EventData type은 어플에 나타나는 모든 이벤트에 대한 정보를 저장하고 수정합니다.
+  - ObservableObject protocol을 따릅니다. 이것은 EventData에 있는 published values 중 어떤 것에든 변화가 일어나면 SwiftUI가 그 values를 사용하고 있는 view들(observers)을 찾고 자동으로 업데이트 해줍니다.
 
 ### events property
 
-  - EventData는 events라는 property를 가지고 있습니다. events는 Event라는 배열을 가지고 있습니다. (배열들은 미리 여러개의 이벤트 값이 입력되어 있습니다.)
+  - EventData는 events라는 property를 가지고 있습니다. 위의 예시에서 이 property는 Event타입의 값을 가진 배열로 값이 미리 채워져 있습니다.
   - @Published property wrapper는 events 배열에 변화가 일어날때마다 SwiftUI가 변화를 인지하고 그 배열을 사용하는 view들을 업데이트 하게 합니다. 이것은 배열로부터 이벤트를 추가하거나 삭제하면 바로 UI에 보여지도록 합니다.
 
 ### EventData의 메서드  

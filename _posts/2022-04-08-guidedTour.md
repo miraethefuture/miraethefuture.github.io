@@ -98,6 +98,10 @@ All information below comes from the Swift documentation and is for personal lea
   // surveyAnswer is automatically set to nil
   ```
 
+#### Nil-Coalescing Operator  
+
+  Nil-Coalescing Operator (a ?? b)는 만약 옵셔널 a가 값을 가지고 있다면 optional a를 unwrap 합니다. a가 nil이라면 default 값인 b를 리턴합니다.
+
 #### If문과 Optionals  
 
  ```swift
@@ -371,31 +375,3 @@ All information below comes from the Swift documentation and is for personal lea
   ```
 
   만약 조건이 false라면 else 브랜치의 코드가 실행됩니다. 이런 경우에는 return, break, continue, throw등의 control transfer statement를 사용하여 코드 블락을 꼭 벗어나 주어야 합니다.
-
-## Functions  
-
-  Functions는 특정 기능을 수행하는 완전한 코드 덩어리입니다. Functions는 이름을 가집니다. 보통은 어떤 일을 하는지 알 수 있는 이름을 지어줍니다. 그리고 필요할 때 그 이름을 사용해서 function을 호출하여 특정 기능을 수행할 수 있도록 합니다.
-
-  패러미터는 function의 호출을 단순화하기 위해서 기본값을 제공할 수 있습니다. 그리고 in-out 패러미터로써 인자를 통과시킬 수 있습니다.  
-
-  스위프트의 모든 function은 type을 가지고 있습니다. function의 패러미터의 types와 리턴 type으로 이루어져 있습니다.
-
-  ```swift
-  func greet(person: String) -> String {
-    let greeting = "Hello" + person + "!"
-    return greeting
-  }
-  ```
-  - -(a hyphen)
-  - \>(a right angle bracket)  
-
-  을 이용해서 -> 리턴 타입을 나타냅니다.
-
-  ```swift
-  func greetAgain(person: String) -> String {
-    return "Hello again," + person + "!"
-  }
-  ```
-  return 뒤에 바로 문자열을 주면 코드를 더 짧게 작성할 수 있습니다.  
-
-  
