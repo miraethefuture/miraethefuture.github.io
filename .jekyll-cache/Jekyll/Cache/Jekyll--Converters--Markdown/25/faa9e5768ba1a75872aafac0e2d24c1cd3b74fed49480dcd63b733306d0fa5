@@ -1,8 +1,0 @@
-I"�<h1 id="-">👩‍🌾 ..</h1>
-<p>Classes, structures, 그리고 enumerations는 subscripts를 정의할 수 있습니다. Subscripts는 collection이나 list 또는 sequence의 멤버 요소에 접근하는 쉬운 방법들입니다. 값을 설정하거나 가져오기 위해서 subscripts를 사용합니다.</p>
-
-<h2 id="subscript-syntax">Subscript Syntax</h2>
-
-<div class="language-swift highlighter-rouge"><div class="highlight"><pre class="highlight"><code>  
-</code></pre></div></div>
-:ET
