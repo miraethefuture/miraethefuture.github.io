@@ -10,7 +10,7 @@
     <meta charset="utf-8">
 
 <!-- begin _includes/seo.html --><title>Functions | Mirae 2 the Future</title>
-<meta name="description" content="🚧">
+<meta name="description" content="⚙️ Functions는 특정 기능을 수행하는 완전한 코드 덩어리입니다. Functions는 이름을 가집니다. 보통은 어떤 일을 하는지 알 수 있는 이름을 지어줍니다. 그리고 필요할 때 그 이름을 사용해서 function을 호출하여 특정 기능을 수행할 수 있도록 합니다.">
 
 
   <meta name="author" content="Mirae">
@@ -26,7 +26,7 @@
 <meta property="og:url" content="http://localhost:4000/til/functions/">
 
 
-  <meta property="og:description" content="🚧">
+  <meta property="og:description" content="⚙️ Functions는 특정 기능을 수행하는 완전한 코드 덩어리입니다. Functions는 이름을 가집니다. 보통은 어떤 일을 하는지 알 수 있는 이름을 지어줍니다. 그리고 필요할 때 그 이름을 사용해서 function을 호출하여 특정 기능을 수행할 수 있도록 합니다.">
 
 
 
@@ -197,7 +197,7 @@
 
   <article class="page h-entry" itemscope itemtype="https://schema.org/CreativeWork">
     <meta itemprop="headline" content="Functions">
-    <meta itemprop="description" content="🚧">
+    <meta itemprop="description" content="⚙️Functions는 특정 기능을 수행하는 완전한 코드 덩어리입니다. Functions는 이름을 가집니다. 보통은 어떤 일을 하는지 알 수 있는 이름을 지어줍니다. 그리고 필요할 때 그 이름을 사용해서 function을 호출하여 특정 기능을 수행할 수 있도록 합니다.">
     <meta itemprop="datePublished" content="2022-04-19T00:00:00+09:00">
     
 
@@ -233,14 +233,13 @@
         
           <aside class="sidebar__right sticky">
             <nav class="toc">
-              <header><h4 class="nav__title"><i class="fas fa-kiwi-bird"></i> 📂</h4></header>
-              <ul class="toc__menu"><li><a href="#function-with-multiple-return-values">Function with Multiple Return Values</a></li></ul>
+              <header><h4 class="nav__title"><i class="fas fa-kiwi-bird"></i>  </h4></header>
+              <ul class="toc__menu"><li><a href="#️">⚙️</a><ul><li><a href="#function-with-multiple-return-values">Function with Multiple Return Values</a></li><li><a href="#funtion-argument-labels-and-parameter-names">Funtion Argument Labels and Parameter Names</a></li><li><a href="#specifying-argument-labels">Specifying Argument Labels</a></li><li><a href="#omitting-argument-lables">Omitting Argument Lables</a></li><li><a href="#default-parameter-values">Default Parameter Values</a></li></ul></li></ul>
 
             </nav>
           </aside>
         
-        <h1>🚧</h1>
-
+        <h1 id="️">⚙️</h1>
 <p>Functions는 특정 기능을 수행하는 완전한 코드 덩어리입니다. Functions는 이름을 가집니다. 보통은 어떤 일을 하는지 알 수 있는 이름을 지어줍니다. 그리고 필요할 때 그 이름을 사용해서 function을 호출하여 특정 기능을 수행할 수 있도록 합니다.</p>
 
 <p>패러미터는 function의 호출을 단순화하기 위해서 기본값을 제공할 수 있습니다. 그리고 in-out 패러미터로써 인자를 통과시킬 수 있습니다.</p>
@@ -291,14 +290,66 @@
 
 <p>튜플의 멤버 값이 이름을 가지고 있기 때문에 dot syntax를 사용하여 값에 접근하고 가장 작은 수와 큰 수를 가져올 수 있습니다.</p>
 
-<div class="language-swift highlighter-rouge"><div class="highlight"><pre class="highlight"><code>  <span class="k">let</span> <span class="nv">bounds</span> <span class="o">=</span> <span class="nf">minmax</span><span class="p">(</span><span class="nv">array</span><span class="p">:</span> <span class="p">[</span><span class="mi">8</span><span class="p">,</span> <span class="o">-</span><span class="mi">6</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">109</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">71</span><span class="p">])</span>
+<div class="language-swift highlighter-rouge"><div class="highlight"><pre class="highlight"><code>  <span class="k">let</span> <span class="nv">bounds</span> <span class="o">=</span> <span class="nf">minMax</span><span class="p">(</span><span class="nv">array</span><span class="p">:</span> <span class="p">[</span><span class="mi">8</span><span class="p">,</span> <span class="o">-</span><span class="mi">6</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">109</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">71</span><span class="p">])</span>
   <span class="nf">print</span><span class="p">(</span><span class="s">"min is </span><span class="se">\(</span><span class="n">bounds</span><span class="o">.</span><span class="n">min</span><span class="se">)</span><span class="s"> and max is </span><span class="se">\(</span><span class="n">bounds</span><span class="o">.</span><span class="n">max</span><span class="se">)</span><span class="s">"</span><span class="p">)</span>
 
   <span class="c1">// Prints "min is -6 and max is 109"</span>
 </code></pre></div></div>
 
-<p>튜플 멤버의 이름은 튜플이 function으로부터 리턴될 때 이름 지어질 필요가 없습니다. 멤버의 이름은 function의 리턴 타입의 한 부분으로 이미 정의되었기 때문입니다.</p>
+<p>리턴되는 튜플 멤버의 이름은 function의 정의 과정에서 리턴 타입의 이름으로 이미 주었기 때문에 튜플이 function으로부터 리턴될 때는 이름을 줄 필요가 없습니다.</p>
 
+<h2 id="funtion-argument-labels-and-parameter-names">Funtion Argument Labels and Parameter Names</h2>
+
+<p>각각의 function 패러미터는 argument label과 parameter name을 가집니다. Argument label은 function을 호출할 때 사용됩니다. 각각의 argument는 function call의 코드 속에 argument label 뒤에 작성됩니다. 패러미터의 이름은 function을 구현할 때 사용됩니다. 기본적으로, 패러미터는 parameter name을 argument name으로 사용합니다.</p>
+
+<div class="language-swift highlighter-rouge"><div class="highlight"><pre class="highlight"><code>  <span class="kd">func</span> <span class="nf">someFunction</span><span class="p">(</span><span class="nv">firstParameterName</span><span class="p">:</span> <span class="kt">Int</span><span class="p">,</span> <span class="nv">secondParameterName</span><span class="p">:</span> <span class="kt">Int</span><span class="p">)</span> <span class="p">{</span>
+    <span class="c1">// function의 바디부분에서 firstParameterName과 secondParameterName은 argument의 값을 나타냅니다.</span>
+  <span class="p">}</span>
+  <span class="nf">someFunction</span><span class="p">(</span><span class="nv">firstParameterName</span><span class="p">:</span> <span class="mi">1</span><span class="p">,</span> <span class="nv">secondParameterName</span><span class="p">:</span> <span class="mi">2</span><span class="p">)</span>
+</code></pre></div></div>
+
+<h2 id="specifying-argument-labels">Specifying Argument Labels</h2>
+
+<p>Argument name은 patameter name 앞에 작성합니다. (space로 띄어서 구분해 줍니다.)</p>
+
+<div class="language-swift highlighter-rouge"><div class="highlight"><pre class="highlight"><code>  <span class="kd">func</span> <span class="nf">someFunction</span><span class="p">(</span><span class="n">argumentLabel</span> <span class="n">parameter</span> <span class="nv">name</span><span class="p">:</span> <span class="kt">Int</span><span class="p">)</span> <span class="p">{</span>
+    <span class="c1">// function의 바디부분에서 parameterName은 해당 패러미터에 통과되는 argument 값을 참조합니다.</span>
+  <span class="p">}</span>
+</code></pre></div></div>
+
+<p>아래의 예시는 greet(person:) function의 변형된 버전입니다. 사람의 이름과 고향을 패러미터로 통과시키고 인사말을 리턴합니다.</p>
+
+<div class="language-swift highlighter-rouge"><div class="highlight"><pre class="highlight"><code>  <span class="kd">func</span> <span class="nf">greet</span><span class="p">(</span><span class="nv">person</span><span class="p">:</span> <span class="kt">String</span><span class="p">,</span> <span class="n">from</span> <span class="nv">hometown</span><span class="p">:</span> <span class="kt">String</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kt">String</span> <span class="p">{</span>
+    <span class="k">return</span> <span class="s">"Hello </span><span class="se">\(</span><span class="n">person</span><span class="se">)</span><span class="s">! Glad you visit from </span><span class="se">\(</span><span class="n">hometown</span><span class="se">)</span><span class="s">."</span>
+  <span class="p">}</span>
+  <span class="nf">print</span><span class="p">(</span><span class="nf">greet</span><span class="p">(</span><span class="nv">person</span><span class="p">:</span> <span class="s">"Bill"</span><span class="p">,</span> <span class="nv">from</span><span class="p">:</span> <span class="s">"Cupertino"</span><span class="p">))</span>
+  <span class="c1">// Prints "Hello Bill! Glad you visit from Cupertino."</span>
+</code></pre></div></div>
+
+<h2 id="omitting-argument-lables">Omitting Argument Lables</h2>
+
+<p>만약, 패러미터에 argument label을 사용하고 싶지 않다면, underscore(_)를 argument name 대신 작성해줍니다.</p>
+
+<div class="language-swift highlighter-rouge"><div class="highlight"><pre class="highlight"><code>  <span class="kd">func</span> <span class="nf">someFunction</span><span class="p">(</span><span class="n">_</span> <span class="nv">firstParameterName</span><span class="p">:</span> <span class="kt">Int</span><span class="p">,</span> <span class="nv">secondParameterName</span><span class="p">:</span> <span class="kt">Int</span><span class="p">)</span> <span class="p">{</span>
+
+  <span class="p">}</span>
+  <span class="nf">someFunction</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="nv">secondParameterName</span><span class="p">:</span> <span class="mi">2</span><span class="p">)</span>
+</code></pre></div></div>
+
+<h2 id="default-parameter-values">Default Parameter Values</h2>
+
+<p>Function의 패러미터 타입 뒤에 값을 할당해줌으로써 패러미터의 기본값을  줄수 있습니다. 기본값이 주어진 패러미터는 function을 호출할 때 생략할 수 있습니다.</p>
+
+<div class="language-swift highlighter-rouge"><div class="highlight"><pre class="highlight"><code>  <span class="kd">func</span> <span class="nf">someFunction</span><span class="p">(</span><span class="nv">parameterWithoutDefault</span><span class="p">:</span> <span class="kt">Int</span><span class="p">,</span> <span class="nv">parameterWithDefault</span><span class="p">:</span> <span class="kt">Int</span> <span class="o">=</span> <span class="mi">12</span><span class="p">)</span> <span class="p">{</span>
+    <span class="c1">// 이 function을 호출할 때 두번째 argument를 생략하면, 기본값인 12가 function의 바디에서 사용됩니다.</span>
+  <span class="p">}</span>
+  <span class="nf">someFunction</span><span class="p">(</span><span class="nv">parameterWithoutDefault</span><span class="p">:</span> <span class="mi">3</span><span class="p">,</span> <span class="nv">parameterWithDefault</span><span class="p">:</span> <span class="mi">6</span><span class="p">)</span>
+  <span class="c1">// 위에서 parameterWithDefault 는 6</span>
+  <span class="nf">someFunction</span><span class="p">(</span><span class="nv">parameterWithoutDefault</span><span class="p">:</span> <span class="mi">4</span><span class="p">)</span>
+  <span class="c1">// 위에서 parameterWithDefault 는 12</span>
+</code></pre></div></div>
+
+<p>기본값을 가지지 않은 패러미터를 가장 먼저 써줍니다. 주로 기본값이 없는 패러미터가 function의 의미에 더 중요한 역할을 하기 때문입니다. 기본값을 가지지 않은 패러미터를 먼저 첫번째로 둠으로써 같은 function이 호출되었을 때 생략된 패러미와 관계없이 function을 구별하기 쉽게 만들어 줍니다.</p>
 
         
       </section>
@@ -450,11 +501,9 @@
   </p>
 
 
-    <p class="archive__item-excerpt" itemprop="description">🚧
-Closures는 기능을 담고 있는 완전한 블락으로 코드 안에서 사용될 수 있습니다.
-  Constants와 Variables의 references를 찾아내고 담을 수 있습니다.
-  이것을 closing over constants and variables한다고 합니다.
-</p>
+    <p class="archive__item-excerpt" itemprop="description">Closures
+아래 모든 정보의 출처는 Swift 공식 문서이며 개인의 학습 용도로만 사용되었음을 밝힙니다.
+All information below comes from the Swift documentation and is for personal learning purposes ...</p>
   </article>
 </div>
 

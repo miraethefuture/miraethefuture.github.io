@@ -10,7 +10,7 @@
     <meta charset="utf-8">
 
 <!-- begin _includes/seo.html --><title>Closures | Mirae 2 the Future</title>
-<meta name="description" content="🚧 Closures는 기능을 담고 있는 완전한 블락으로 코드 안에서 사용될 수 있습니다.   Constants와 Variables의 references를 찾아내고 담을 수 있습니다.   이것을 closing over constants and variables한다고 합니다.">
+<meta name="description" content="Closures 아래 모든 정보의 출처는 Swift 공식 문서이며 개인의 학습 용도로만 사용되었음을 밝힙니다. All information below comes from the Swift documentation and is for personal learning purposes only.">
 
 
   <meta name="author" content="Mirae">
@@ -26,7 +26,7 @@
 <meta property="og:url" content="http://localhost:4000/til/closures/">
 
 
-  <meta property="og:description" content="🚧 Closures는 기능을 담고 있는 완전한 블락으로 코드 안에서 사용될 수 있습니다.   Constants와 Variables의 references를 찾아내고 담을 수 있습니다.   이것을 closing over constants and variables한다고 합니다.">
+  <meta property="og:description" content="Closures 아래 모든 정보의 출처는 Swift 공식 문서이며 개인의 학습 용도로만 사용되었음을 밝힙니다. All information below comes from the Swift documentation and is for personal learning purposes only.">
 
 
 
@@ -197,7 +197,7 @@
 
   <article class="page h-entry" itemscope itemtype="https://schema.org/CreativeWork">
     <meta itemprop="headline" content="Closures">
-    <meta itemprop="description" content="🚧Closures는 기능을 담고 있는 완전한 블락으로 코드 안에서 사용될 수 있습니다.  Constants와 Variables의 references를 찾아내고 담을 수 있습니다.  이것을 closing over constants and variables한다고 합니다.">
+    <meta itemprop="description" content="Closures아래 모든 정보의 출처는 Swift 공식 문서이며 개인의 학습 용도로만 사용되었음을 밝힙니다.All information below comes from the Swift documentation and is for personal learning purposes only.">
     <meta itemprop="datePublished" content="2022-04-17T00:00:00+09:00">
     
 
@@ -234,12 +234,16 @@
           <aside class="sidebar__right sticky">
             <nav class="toc">
               <header><h4 class="nav__title"><i class="fas fa-kiwi-bird"></i> 📂</h4></header>
-              <ul class="toc__menu"><li><a href="#functions-and-closures">Functions and Closures</a></li><li><a href="#closure-expressions">Closure Expressions</a><ul><li><a href="#the-sorted-method">The Sorted Method</a><ul><li><a href="#the-sorting-closure-방식1">The sorting closure: 방식1</a></li><li><a href="#the-sorting-closure-방식2">The sorting closure: 방식2</a></li><li><a href="#inferring-type-from-context">Inferring Type From Context</a></li><li><a href="#implicit-returns-from-single-expression-closures">Implicit Returns from Single-Expression closures</a></li><li><a href="#shorthand-argument-names">Shorthand Argument Names</a></li><li><a href="#operator-methods">Operator Methods</a></li><li><a href="#trailing-closures">Trailing closures</a></li></ul></li></ul></li><li><a href="#capturing-values">Capturing Values</a></li><li><a href="#closures-are-reference-types">Closures Are Reference Types</a></li></ul>
+              <ul class="toc__menu"><li><a href="#-">{ }</a><ul><li><a href="#functions-and-closures">Functions and Closures</a></li><li><a href="#closure-expressions">Closure Expressions</a><ul><li><a href="#the-sorted-method">The Sorted Method</a><ul><li><a href="#the-sorting-closure-방식1">The sorting closure: 방식1</a></li><li><a href="#the-sorting-closure-방식2">The sorting closure: 방식2</a></li><li><a href="#inferring-type-from-context">Inferring Type From Context</a></li><li><a href="#implicit-returns-from-single-expression-closures">Implicit Returns from Single-Expression closures</a></li><li><a href="#shorthand-argument-names">Shorthand Argument Names</a></li><li><a href="#operator-methods">Operator Methods</a></li><li><a href="#trailing-closures">Trailing closures</a></li></ul></li></ul></li><li><a href="#capturing-values">Capturing Values</a></li><li><a href="#closures-are-reference-types">Closures Are Reference Types</a></li></ul></li></ul>
 
             </nav>
           </aside>
         
-        <h1>🚧</h1>
+        <p><a href="https://docs.swift.org/swift-book/LanguageGuide/Closures.html">Closures</a>
+<sub>아래 모든 정보의 출처는 Swift 공식 문서이며 개인의 학습 용도로만 사용되었음을 밝힙니다.<br />
+All information below comes from the Swift documentation and is for personal learning purposes only.</sub></p>
+
+<h1 id="-">{ }</h1>
 <p>Closures는 기능을 담고 있는 완전한 블락으로 코드 안에서 사용될 수 있습니다.<br />
   Constants와 Variables의 references를 찾아내고 담을 수 있습니다.
   이것을 <em>closing over</em> constants and variables한다고 합니다.</p>
@@ -505,7 +509,6 @@
 
 <p>위의 예시는 alsoIncrementByTen를 호출하는 것은 incrementByTen을 호출하는 것과 같다는 것을 보여줍니다. 두 개가 같은 클로저를 참조하고 있기 때문에 둘 다 같은 runningTotal을 증가시키고 리턴합니다.</p>
 
-
         
       </section>
 
@@ -616,7 +619,8 @@
   </p>
 
 
-    <p class="archive__item-excerpt" itemprop="description">🚧
+    <p class="archive__item-excerpt" itemprop="description">⚙️
+Functions는 특정 기능을 수행하는 완전한 코드 덩어리입니다. Functions는 이름을 가집니다. 보통은 어떤 일을 하는지 알 수 있는 이름을 지어줍니다. 그리고 필요할 때 그 이름을 사용해서 function을 호출하여 특정 기능을 수행할 수 있도록 합니다.
 </p>
   </article>
 </div>
