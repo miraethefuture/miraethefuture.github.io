@@ -134,4 +134,11 @@ toc_icon: "kiwi-bird"
   // 위에서 parameterWithDefault 는 12
   ```  
 
-  기본값을 가지지 않은 패러미터를 가장 먼저 써줍니다. 주로 기본값이 없는 패러미터가 function의 의미에 더 중요한 역할을 하기 때문입니다. 기본값을 가지지 않은 패러미터를 먼저 첫번째로 둠으로써 같은 function이 호출되었을 때 생략된 패러미와 관계없이 function을 구별하기 쉽게 만들어 줍니다. 
+  기본값을 가지지 않은 패러미터를 가장 먼저 써줍니다. 주로 기본값이 없는 패러미터가 function의 의미에 더 중요한 역할을 하기 때문입니다. 기본값을 가지지 않은 패러미터를 먼저 첫번째로 둠으로써 같은 function이 호출되었을 때 생략된 패러미와 관계없이 function을 구별하기 쉽게 만들어 줍니다.
+
+
+## Variadic Parameters
+
+  Variadic parameter는 특정 타입의 0개 또는 더 많은 수의 값을 받습니다. Function이 호출될 때해당 패러미터를 가진 인풋값의 a varying number을 통과시킬 수 있다는 것을 정확히 하기 위해서 variadic parameter를 사용합니다. 패러미터의 타입 이름 뒤에 ...(세개의 .)을 추가해줍니다.
+
+  

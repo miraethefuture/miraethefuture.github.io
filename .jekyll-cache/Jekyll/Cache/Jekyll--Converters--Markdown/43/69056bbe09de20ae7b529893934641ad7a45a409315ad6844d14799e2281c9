@@ -1,4 +1,4 @@
-I"�-<h1 id="️">⚙️</h1>
+I"�7<h1 id="️">⚙️</h1>
 <p>Functions는 특정 기능을 수행하는 완전한 코드 덩어리입니다. Functions는 이름을 가집니다. 보통은 어떤 일을 하는지 알 수 있는 이름을 지어줍니다. 그리고 필요할 때 그 이름을 사용해서 function을 호출하여 특정 기능을 수행할 수 있도록 합니다.</p>
 
 <p>패러미터는 function의 호출을 단순화하기 위해서 기본값을 제공할 수 있습니다. 그리고 in-out 패러미터로써 인자를 통과시킬 수 있습니다.</p>
@@ -87,9 +87,31 @@
 
 <h2 id="omitting-argument-lables">Omitting Argument Lables</h2>
 
+<p>만약, 패러미터에 argument label을 사용하고 싶지 않다면, underscore(_)를 argument name 대신 작성해줍니다.</p>
+
 <div class="language-swift highlighter-rouge"><div class="highlight"><pre class="highlight"><code>  <span class="kd">func</span> <span class="nf">someFunction</span><span class="p">(</span><span class="n">_</span> <span class="nv">firstParameterName</span><span class="p">:</span> <span class="kt">Int</span><span class="p">,</span> <span class="nv">secondParameterName</span><span class="p">:</span> <span class="kt">Int</span><span class="p">)</span> <span class="p">{</span>
 
   <span class="p">}</span>
   <span class="nf">someFunction</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="nv">secondParameterName</span><span class="p">:</span> <span class="mi">2</span><span class="p">)</span>
 </code></pre></div></div>
+
+<h2 id="default-parameter-values">Default Parameter Values</h2>
+
+<p>Function의 패러미터 타입 뒤에 값을 할당해줌으로써 패러미터의 기본값을  줄수 있습니다. 기본값이 주어진 패러미터는 function을 호출할 때 생략할 수 있습니다.</p>
+
+<div class="language-swift highlighter-rouge"><div class="highlight"><pre class="highlight"><code>  <span class="kd">func</span> <span class="nf">someFunction</span><span class="p">(</span><span class="nv">parameterWithoutDefault</span><span class="p">:</span> <span class="kt">Int</span><span class="p">,</span> <span class="nv">parameterWithDefault</span><span class="p">:</span> <span class="kt">Int</span> <span class="o">=</span> <span class="mi">12</span><span class="p">)</span> <span class="p">{</span>
+    <span class="c1">// 이 function을 호출할 때 두번째 argument를 생략하면, 기본값인 12가 function의 바디에서 사용됩니다.</span>
+  <span class="p">}</span>
+  <span class="nf">someFunction</span><span class="p">(</span><span class="nv">parameterWithoutDefault</span><span class="p">:</span> <span class="mi">3</span><span class="p">,</span> <span class="nv">parameterWithDefault</span><span class="p">:</span> <span class="mi">6</span><span class="p">)</span>
+  <span class="c1">// 위에서 parameterWithDefault 는 6</span>
+  <span class="nf">someFunction</span><span class="p">(</span><span class="nv">parameterWithoutDefault</span><span class="p">:</span> <span class="mi">4</span><span class="p">)</span>
+  <span class="c1">// 위에서 parameterWithDefault 는 12</span>
+</code></pre></div></div>
+
+<p>기본값을 가지지 않은 패러미터를 가장 먼저 써줍니다. 주로 기본값이 없는 패러미터가 function의 의미에 더 중요한 역할을 하기 때문입니다. 기본값을 가지지 않은 패러미터를 먼저 첫번째로 둠으로써 같은 function이 호출되었을 때 생략된 패러미와 관계없이 function을 구별하기 쉽게 만들어 줍니다.</p>
+
+<h2 id="variadic-parameters">Variadic Parameters</h2>
+
+<p>Variadic parameter는 특정 타입의 0개 또는 더 많은 수의 값을 받습니다. Function이 호출될 때해당 패러미터를 가진 인풋값의 a varying number을 통과시킬 수 있다는 것을 정확히 하기 위해서 variadic parameter를 사용합니다. 패러미터의 타입 이름 뒤에 …(세개의 .)을 추가해줍니다.</p>
+
 :ET

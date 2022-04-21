@@ -1,4 +1,100 @@
-<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="4.2.1">Jekyll</generator><link href="http://localhost:4000/feed.xml" rel="self" type="application/atom+xml" /><link href="http://localhost:4000/" rel="alternate" type="text/html" /><updated>2022-04-21T22:00:22+09:00</updated><id>http://localhost:4000/feed.xml</id><title type="html">Mirae 2 the Future</title><subtitle>An amazing website.</subtitle><author><name>Mirae</name></author><entry><title type="html">Functions</title><link href="http://localhost:4000/til/functions/" rel="alternate" type="text/html" title="Functions" /><published>2022-04-19T00:00:00+09:00</published><updated>2022-04-19T00:00:00+09:00</updated><id>http://localhost:4000/til/functions</id><content type="html" xml:base="http://localhost:4000/til/functions/">&lt;h1 id=&quot;️&quot;&gt;⚙️&lt;/h1&gt;
+<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="4.2.1">Jekyll</generator><link href="http://localhost:4000/feed.xml" rel="self" type="application/atom+xml" /><link href="http://localhost:4000/" rel="alternate" type="text/html" /><updated>2022-04-22T08:38:02+09:00</updated><id>http://localhost:4000/feed.xml</id><title type="html">Mirae 2 the Future</title><subtitle>An amazing website.</subtitle><author><name>Mirae</name></author><entry><title type="html">Enumerations</title><link href="http://localhost:4000/til/enumerations/" rel="alternate" type="text/html" title="Enumerations" /><published>2022-04-22T00:00:00+09:00</published><updated>2022-04-22T00:00:00+09:00</updated><id>http://localhost:4000/til/enumerations</id><content type="html" xml:base="http://localhost:4000/til/enumerations/">&lt;h1&gt;🗂&lt;/h1&gt;
+
+&lt;p&gt;Enumeration은 연관된 값의 그룹을 위한 일반적인 type을 정의합니다. 그리고 그 값들을 코드안에서 type-safe한 방식으로 이용할 수 있도록 합니다.&lt;/p&gt;
+
+&lt;h2 id=&quot;enumeration-syntax&quot;&gt;Enumeration Syntax&lt;/h2&gt;
+
+&lt;p&gt;enum 키워드로 enumeration의 작성을 시작합니다. 그리고 전체 definition을 { } 안에 작성합니다.&lt;/p&gt;
+
+&lt;div class=&quot;language-swift highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;  &lt;span class=&quot;kd&quot;&gt;enum&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;someEnumeration&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
+    &lt;span class=&quot;c1&quot;&gt;// enumeration의 definition&lt;/span&gt;
+  &lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;p&gt;아래는 나침반의 네개의 점을 표현한 enumeration의 예입니다.&lt;/p&gt;
+
+&lt;div class=&quot;language-swift highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;  &lt;span class=&quot;kd&quot;&gt;enum&lt;/span&gt; &lt;span class=&quot;kt&quot;&gt;CompassPoint&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
+      &lt;span class=&quot;k&quot;&gt;case&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;north&lt;/span&gt;
+      &lt;span class=&quot;k&quot;&gt;case&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;south&lt;/span&gt;
+      &lt;span class=&quot;k&quot;&gt;case&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;east&lt;/span&gt;
+      &lt;span class=&quot;k&quot;&gt;case&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;west&lt;/span&gt;
+  &lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;p&gt;north, south, east, west와 같이 enumeration 안에 정의된 값들을 enumeration cases 라고 합니다. 새 enumeration cases를 작성할 때는 case 키워드로 시작합니다.&lt;/p&gt;
+
+&lt;p&gt;여러개의 cases는 한줄에 ,라고 분리해 작성할 수 있습니다.&lt;/p&gt;
+
+&lt;div class=&quot;language-swift highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;  &lt;span class=&quot;kd&quot;&gt;enum&lt;/span&gt; &lt;span class=&quot;kt&quot;&gt;Planet&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
+    &lt;span class=&quot;k&quot;&gt;case&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;mercury&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;venus&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;earth&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;mars&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;jupiter&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;saturn&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;uranus&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;neptune&lt;/span&gt;
+  &lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;p&gt;각각의 enumeration definition은 새로운 type을 정의합니다. Swift의 다른 type들처럼, 이름(CompassPoint, Planet과 같이)은 대문자로 시작합니다. 복수형보다는 단수형의 이름을 지어주어 명확히 읽히도록 합니다.&lt;/p&gt;
+
+&lt;div class=&quot;language-swift highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;  &lt;span class=&quot;k&quot;&gt;var&lt;/span&gt; &lt;span class=&quot;nv&quot;&gt;directionToHead&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;kt&quot;&gt;CompassPoint&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;west&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;p&gt;directionToHead의 타입은 CompassPoint의 값 중 하나와 함께 초기화될 때 추론됩니다. 일단 한번 directionToHead가 CompassPoint로써 선언되면 더 짧은 dot syntax로 다른 값을 설정할 수 있습니다. 이것은 코드를 더욱 더 잘 읽히도록 합니다.&lt;/p&gt;
+
+&lt;div class=&quot;language-swift highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;  &lt;span class=&quot;n&quot;&gt;directionToHead&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;east&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;h2 id=&quot;matching-enumeration-values-with-a-switch-statement&quot;&gt;Matching Enumeration Values with a Switch statement&lt;/h2&gt;
+
+&lt;div class=&quot;language-swift highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;  &lt;span class=&quot;n&quot;&gt;directionToHead&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;south&lt;/span&gt;
+  &lt;span class=&quot;k&quot;&gt;switch&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;directionToHead&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
+  &lt;span class=&quot;k&quot;&gt;case&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nv&quot;&gt;north&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt;
+      &lt;span class=&quot;nf&quot;&gt;print&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;Lots of planets have a north&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
+  &lt;span class=&quot;k&quot;&gt;case&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nv&quot;&gt;south&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt;
+      &lt;span class=&quot;nf&quot;&gt;print&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;Watch out for penguins&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
+  &lt;span class=&quot;k&quot;&gt;case&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nv&quot;&gt;east&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt;
+      &lt;span class=&quot;nf&quot;&gt;print&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;Where the sun rises&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
+  &lt;span class=&quot;k&quot;&gt;case&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nv&quot;&gt;west&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt;
+      &lt;span class=&quot;nf&quot;&gt;print&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;Where the skies are blue&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
+  &lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
+  &lt;span class=&quot;c1&quot;&gt;// Prints &quot;Watch out for penguins&quot;&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;p&gt;위의 코드는 directionToHead의 값이 .north와 같을 경우, “Lots of planets have a north”를 출력, .south와 같을 경우 “Watch out for penguins”를..(나머지도 같 ) 출력하라는 것을 나타냅니다.&lt;/p&gt;
+
+&lt;p&gt;Switch statement가 enumeration의 cases를 다룰때는 빠지는 case가 없도록 해야 합니다. 만약 .west case가 생략되면 이 코드는 컴파일 되지 않을 것입니다.&lt;/p&gt;
+
+&lt;p&gt;모든 enumeration cases에 대해 case를 제공하는 것이 적합하지 않을 때는 명시되지 않은 cases를 커버하기 위해 default case를 사용할 수 있습니다.&lt;/p&gt;
+
+&lt;div class=&quot;language-swift highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;  &lt;span class=&quot;k&quot;&gt;let&lt;/span&gt; &lt;span class=&quot;nv&quot;&gt;somePlanet&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;kt&quot;&gt;Planet&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;earth&lt;/span&gt;
+  &lt;span class=&quot;k&quot;&gt;switch&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;somePlanet&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
+  &lt;span class=&quot;k&quot;&gt;case&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nv&quot;&gt;earth&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt;
+      &lt;span class=&quot;nf&quot;&gt;print&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;Mostly harmless&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
+  &lt;span class=&quot;k&quot;&gt;default&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt;
+      &lt;span class=&quot;nf&quot;&gt;print&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;Not a safe place for humans&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
+  &lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
+  &lt;span class=&quot;c1&quot;&gt;// &quot;Mostly harmless&quot;를 출력합니다.&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;h2 id=&quot;iterating-over-enumeration-cases&quot;&gt;Iterating over Enumeration Cases&lt;/h2&gt;
+
+&lt;p&gt;어떤 enumerations를 위해서는, 모든 cases의 collention을 가지는 것이 유용하게 사용됩니다. Enumeration의 이름 뒤에 : CaseIterable를 작성함으로써 이것이 가능해집니다. Swift는 enumeration type의 allCases property를 이용하여 모든 cases의 collention을 보여줍니다.&lt;/p&gt;
+
+&lt;div class=&quot;language-swift highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;  &lt;span class=&quot;kd&quot;&gt;enum&lt;/span&gt; &lt;span class=&quot;kt&quot;&gt;Beverage&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;kt&quot;&gt;CaseIterable&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
+      &lt;span class=&quot;k&quot;&gt;case&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;coffee&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;tea&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;juice&lt;/span&gt;
+  &lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
+  &lt;span class=&quot;k&quot;&gt;let&lt;/span&gt; &lt;span class=&quot;nv&quot;&gt;numberOfChoices&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;kt&quot;&gt;Beverage&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;allCases&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;count&lt;/span&gt;
+  &lt;span class=&quot;nf&quot;&gt;print&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;&lt;/span&gt;&lt;span class=&quot;se&quot;&gt;\(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;numberOfChoices&lt;/span&gt;&lt;span class=&quot;se&quot;&gt;)&lt;/span&gt;&lt;span class=&quot;s&quot;&gt; beverages available&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
+  &lt;span class=&quot;c1&quot;&gt;// &quot;3 beverages available&quot;을 출력&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;p&gt;위의 예시에서는, Beverage enumeration의 모든 cases를 담고있는 collection에 접근하기 위해 Beverage.allCases라고 작성하였습니다. 다른 종류의 collection처럼 allCases를 사용할 수 있습니다. 이때 collection의 요소는 enumeration type의 인스턴스입니다. 이 경우에는 Beverage values이죠. 위의 예시에서는 몇개의 cases가 있는지 수를 세고, 아래의 예시에는 모든 cases에 대해 for-in loop를 반복적으로 실행합니다.&lt;/p&gt;
+
+&lt;div class=&quot;language-swift highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;  &lt;span class=&quot;k&quot;&gt;for&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;beverage&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;in&lt;/span&gt; &lt;span class=&quot;kt&quot;&gt;Beverage&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;allCases&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
+      &lt;span class=&quot;nf&quot;&gt;print&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;beverage&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
+  &lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
+  &lt;span class=&quot;c1&quot;&gt;// coffee&lt;/span&gt;
+  &lt;span class=&quot;c1&quot;&gt;// tea&lt;/span&gt;
+  &lt;span class=&quot;c1&quot;&gt;// juice&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;p&gt;위의 예시에서 사용된 syntax는 모두 enumeration이 CaseIterable protocol을 따르고 있는지 확인합니다.&lt;/p&gt;</content><author><name>Mirae</name></author><category term="TIL" /><category term="learning" /><category term="공부 기록" /><category term="Swift" /><category term="Enumerations" /><summary type="html">🗂</summary></entry><entry><title type="html">Functions</title><link href="http://localhost:4000/til/functions/" rel="alternate" type="text/html" title="Functions" /><published>2022-04-19T00:00:00+09:00</published><updated>2022-04-19T00:00:00+09:00</updated><id>http://localhost:4000/til/functions</id><content type="html" xml:base="http://localhost:4000/til/functions/">&lt;h1 id=&quot;️&quot;&gt;⚙️&lt;/h1&gt;
 &lt;p&gt;Functions는 특정 기능을 수행하는 완전한 코드 덩어리입니다. Functions는 이름을 가집니다. 보통은 어떤 일을 하는지 알 수 있는 이름을 지어줍니다. 그리고 필요할 때 그 이름을 사용해서 function을 호출하여 특정 기능을 수행할 수 있도록 합니다.&lt;/p&gt;
 
 &lt;p&gt;패러미터는 function의 호출을 단순화하기 위해서 기본값을 제공할 수 있습니다. 그리고 in-out 패러미터로써 인자를 통과시킬 수 있습니다.&lt;/p&gt;
@@ -108,7 +204,11 @@
   &lt;span class=&quot;c1&quot;&gt;// 위에서 parameterWithDefault 는 12&lt;/span&gt;
 &lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
 
-&lt;p&gt;기본값을 가지지 않은 패러미터를 가장 먼저 써줍니다. 주로 기본값이 없는 패러미터가 function의 의미에 더 중요한 역할을 하기 때문입니다. 기본값을 가지지 않은 패러미터를 먼저 첫번째로 둠으로써 같은 function이 호출되었을 때 생략된 패러미와 관계없이 function을 구별하기 쉽게 만들어 줍니다.&lt;/p&gt;</content><author><name>Mirae</name></author><category term="TIL" /><category term="learning" /><category term="공부 기록" /><category term="Swift" /><category term="Functions" /><summary type="html">⚙️ Functions는 특정 기능을 수행하는 완전한 코드 덩어리입니다. Functions는 이름을 가집니다. 보통은 어떤 일을 하는지 알 수 있는 이름을 지어줍니다. 그리고 필요할 때 그 이름을 사용해서 function을 호출하여 특정 기능을 수행할 수 있도록 합니다.</summary></entry><entry><title type="html">Subscripts</title><link href="http://localhost:4000/til/subscripts/" rel="alternate" type="text/html" title="Subscripts" /><published>2022-04-18T00:00:00+09:00</published><updated>2022-04-18T00:00:00+09:00</updated><id>http://localhost:4000/til/subscripts</id><content type="html" xml:base="http://localhost:4000/til/subscripts/">&lt;h1 id=&quot;-&quot;&gt;👩‍🌾 ..&lt;/h1&gt;
+&lt;p&gt;기본값을 가지지 않은 패러미터를 가장 먼저 써줍니다. 주로 기본값이 없는 패러미터가 function의 의미에 더 중요한 역할을 하기 때문입니다. 기본값을 가지지 않은 패러미터를 먼저 첫번째로 둠으로써 같은 function이 호출되었을 때 생략된 패러미와 관계없이 function을 구별하기 쉽게 만들어 줍니다.&lt;/p&gt;
+
+&lt;h2 id=&quot;variadic-parameters&quot;&gt;Variadic Parameters&lt;/h2&gt;
+
+&lt;p&gt;Variadic parameter는 특정 타입의 0개 또는 더 많은 수의 값을 받습니다. Function이 호출될 때해당 패러미터를 가진 인풋값의 a varying number을 통과시킬 수 있다는 것을 정확히 하기 위해서 variadic parameter를 사용합니다. 패러미터의 타입 이름 뒤에 …(세개의 .)을 추가해줍니다.&lt;/p&gt;</content><author><name>Mirae</name></author><category term="TIL" /><category term="learning" /><category term="공부 기록" /><category term="Swift" /><category term="Functions" /><summary type="html">⚙️ Functions는 특정 기능을 수행하는 완전한 코드 덩어리입니다. Functions는 이름을 가집니다. 보통은 어떤 일을 하는지 알 수 있는 이름을 지어줍니다. 그리고 필요할 때 그 이름을 사용해서 function을 호출하여 특정 기능을 수행할 수 있도록 합니다.</summary></entry><entry><title type="html">Subscripts</title><link href="http://localhost:4000/til/subscripts/" rel="alternate" type="text/html" title="Subscripts" /><published>2022-04-18T00:00:00+09:00</published><updated>2022-04-18T00:00:00+09:00</updated><id>http://localhost:4000/til/subscripts</id><content type="html" xml:base="http://localhost:4000/til/subscripts/">&lt;h1 id=&quot;-&quot;&gt;👩‍🌾 ..&lt;/h1&gt;
 
 &lt;p&gt;Classes, structures, 그리고 enumerations는 subscripts를 정의할 수 있습니다. Subscripts는 collection이나 list 또는 sequence의 멤버 요소에 접근하는 쉬운 방법들입니다. 값을 설정하고 가져오기 위한 메서드 없이 subscripts를 사용하여 인덱스로 값을 설정하거나, 값을 가져옵니다. 예를 들어, someArray[index]로 Array instance의 요소에 접근할 수 있습니다. Dictionary instance의 요소에 접근하기 위해서는 someDictionary[key]를 이용합니다.&lt;/p&gt;
 
@@ -2929,201 +3029,4 @@ All information below comes from the official apple developer page and is for pe
   &lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
 &lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
 &lt;p&gt;funFact 변수가 @State를 사용하고 있기 때문에 fucFact를 사용하고 있는 Text view는 funFact의 변수에 값이 변경될 때마다 자동으로 업데이트 됩니다.&lt;br /&gt;
- Button을 탭할 때마다 funFact에 랜덤 값을 할당합니다. funFact변수에 값이 바뀌므로 Text view의 값도 변하게 됩니다.&lt;/p&gt;</content><author><name>Mirae</name></author><category term="TIL" /><category term="learning" /><category term="공부 기록" /><category term="Swift" /><category term="Sample Apps Tutorials" /><summary type="html">Sample Apps Tutorials: About Me(Navigating Apps) 아래 모든 정보의 출처는 apple developer 공식 페이지이며 개인의 학습 용도로만 사용되었음을 밝힙니다.</summary></entry><entry><title type="html">Playgrounds: Learn to Code 1</title><link href="http://localhost:4000/til/playgrounds/" rel="alternate" type="text/html" title="Playgrounds: Learn to Code 1" /><published>2022-03-29T00:00:00+09:00</published><updated>2022-03-29T00:00:00+09:00</updated><id>http://localhost:4000/til/playgrounds</id><content type="html" xml:base="http://localhost:4000/til/playgrounds/">&lt;h1 id=&quot;playgrounds-learn-to-code-1&quot;&gt;Playgrounds: Learn to Code 1&lt;/h1&gt;
-&lt;p&gt;&lt;sub&gt;아래 모든 내용들은 Playgrounds에서 학습하며 정리한 내용입니다.&lt;br /&gt;
-  모든 내용의 출처는 Playgrounds임을 밝힙니다.&lt;/sub&gt;&lt;/p&gt;
-
-&lt;h2 id=&quot;function-grouping-tasks&quot;&gt;Function: Grouping Tasks&lt;/h2&gt;
-
-&lt;p&gt;Function은 여러개의 commands를 하나로 묶어 이름을 붙인 것입니다.&lt;br /&gt;
-  그리고 아무때나 원할 때 호출하여(call) 사용할 수 있습니다.&lt;/p&gt;
-
-&lt;div class=&quot;language-swift highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;  &lt;span class=&quot;kd&quot;&gt;func&lt;/span&gt; &lt;span class=&quot;nf&quot;&gt;tieMyShoe&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;()&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
-    &lt;span class=&quot;nf&quot;&gt;loop&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;()&lt;/span&gt;
-    &lt;span class=&quot;nf&quot;&gt;swoop&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;()&lt;/span&gt;
-    &lt;span class=&quot;nf&quot;&gt;pull&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;()&lt;/span&gt;
-  &lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
-
-&lt;ol&gt;
-  &lt;li&gt;func 키워드 사용&lt;/li&gt;
-  &lt;li&gt;function에 이름을 지어줍니다.&lt;/li&gt;
-  &lt;li&gt;function은 언제나 이름 뒤에 ()를 붙여줍니다.&lt;/li&gt;
-  &lt;li&gt;curly braces(중괄호 { }) 안에 commands를 추가해줌으로써 function이 어떤 기능들을 수행할지 정합니다.&lt;/li&gt;
-  &lt;li&gt;필요할 때 언제든 tieMyShoe() 라는 이름을 사용하여 호출, 사용할 수 있습니다.&lt;/li&gt;
-&lt;/ol&gt;
-
-&lt;h3 id=&quot;composition&quot;&gt;Composition&lt;/h3&gt;
-
-&lt;p&gt;가끔씩 coding problem을 해결하려면 새로운 behavior을 수행하기 위해서 기존의 가지고 있던 commands를 혼합하여 함께 사용해야 할 떄가 있습니다. 이 과정을 compositon이라고 합니다. 원하는 행동을 수행할 command는 없지만 기존의 code를 합침으로써 원하는 행동을 할 수 있게 됩니다. 만약 여러번 같은 compositon을 수행해야 한다면 어떨까요? 그렇다면 여러개의 혼합된 코드를 여러번 사용하게 됩니다. 이럴때는 이 composition을 하나로 묶어 function으로 만들 수 있습니다.
-  function을 사용하므로써 코드를 간단하게 만들고 복잡한 일도 더 간단하게 처리할 수 있습니다.&lt;/p&gt;
-
-&lt;ol&gt;
-  &lt;li&gt;반복되는 패턴을 파악합니다.&lt;/li&gt;
-  &lt;li&gt;그 패턴을 function으로 만듭니다.&lt;/li&gt;
-&lt;/ol&gt;
-
-&lt;h3 id=&quot;decomposition&quot;&gt;Decomposition&lt;/h3&gt;
-
-&lt;p&gt;function 안에 다른 function을 호출할 수 있습니다. 더 큰 문제를 더 작은 조각으로 나누는 과정을 Decomposition이라고 합니다. 작은 일을 처리하는 function을 만들고 다른 funtion안에 그 functions을 사용하므로서 더 큰 문제를 해결하는 것 - 더 큰 문제를 작은 function으로 나누는 것을 Decomposition 이라 합니다.&lt;/p&gt;
-
-&lt;h3 id=&quot;decompose-a-solution-across-multiple-function&quot;&gt;Decompose a solution across multiple Function&lt;/h3&gt;
-
-&lt;p&gt;작은 tasks를 해결하는 functions을 이용하는 것은 도움이 됩니다. 이 작은 일을 처리하는 function을 다른 function안에서 호출하므로써 더 큰 task를 해결 할 수 있게 됩니다. 더 작은 function으로 나누는 것은 코드의 가독성도 높여줍니다. 보통 function의 이름은 각 기능을 나타내도록 짓기 때문이죠.
-  또, 코드를 작성하는 과정을 단순화 시켜줍니다. 더 큰 task를 해결하기 위한 function을 작성한 뒤에는 작은 일을 처리하는 각각의 commands들은 신경쓰지 않을 수 있죠.&lt;/p&gt;
-
-&lt;ol&gt;
-  &lt;li&gt;작은 명령 패턴을 찾는다.&lt;/li&gt;
-  &lt;li&gt;명령들을 호출하는 function을 만든다.&lt;/li&gt;
-  &lt;li&gt;만들어진 function으로 문제를 해결한다.&lt;/li&gt;
-&lt;/ol&gt;
-
-&lt;p&gt;앱을 만든다는 것은 엄청나게 많은 작은 문제들의 해결방법을 찾는 것입니다. 작은 문제들의 해결책을 찾은 뒤에 코더들은 그 해결책을 모아 더 큰 문제를 해결합니다.&lt;/p&gt;
-
-&lt;h3 id=&quot;-틈새-영어-단어-tweak&quot;&gt;📖 틈새 영어 단어: Tweak&lt;/h3&gt;
-&lt;div class=&quot;notice&quot;&gt;
-   &lt;h4&gt;Tweak the code inside solveRow():&lt;/h4&gt;
-   &lt;p&gt;tweak은 작은 변화를 만든다는 뜻입니다.&lt;/p&gt;
-&lt;/div&gt;
-
-&lt;h2 id=&quot;for-loops&quot;&gt;For loops&lt;/h2&gt;
-
-&lt;ol&gt;
-  &lt;li&gt;‘for’ 키워드를 사용합니다.&lt;/li&gt;
-  &lt;li&gt;loop가 실행 될 횟수를 적어줍니다.&lt;/li&gt;
-  &lt;li&gt;curly braces 안에 반복할 commands를 적어줍니다.&lt;/li&gt;
-&lt;/ol&gt;
-
-&lt;div class=&quot;language-swift highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;  &lt;span class=&quot;k&quot;&gt;for&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;eachSeed&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;in&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;1&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;...&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;4&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
-    &lt;span class=&quot;nf&quot;&gt;makeHole&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;()&lt;/span&gt;
-    &lt;span class=&quot;nf&quot;&gt;placeSeed&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;()&lt;/span&gt;
-    &lt;span class=&quot;nf&quot;&gt;moveFiveInchesForward&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;()&lt;/span&gt;
-  &lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
-
-&lt;p&gt;앞서 coding tasks를 분할하기 위해 문제를 해결하며 반복되는 패턴을 function으로 만들어 보았습니다. 이제 loop를 이용하며 한 function을 여러 번 반복해서 호출할 수 있습니다. 어떤 코드를 순서대로 실행하는 것을 반복하는 것입니다. loops를 이용하면 반복해서 해야 할 일을 단순화 시킬 수 있습니다.&lt;/p&gt;
-
-&lt;ol&gt;
-  &lt;li&gt;먼저 가장 가까이 있는 작은 문제를 해결할 패턴을 찾습니다.&lt;/li&gt;
-  &lt;li&gt;다음 문제에서도 이 패턴이 적용되는지 알아봅니다.&lt;/li&gt;
-  &lt;li&gt;적용이 된다면 반복합니다.&lt;/li&gt;
-&lt;/ol&gt;
-
-&lt;p&gt;해결할 수 있는 작은 문제에 대한 해결책을 찾고 여러 개의 해결책을 모아 큰 문제를 해결하는 것은 좋은 문제 해결 방법 접근입니다.&lt;/p&gt;
-
-&lt;h2 id=&quot;conditional-code&quot;&gt;Conditional Code&lt;/h2&gt;
-
-&lt;p&gt;예상할 수 없는 것에 대해 어떻게 계획을 짤까요?&lt;br /&gt;
-  코드 안에서는 if문을 이용하여 각기 다른 조건들에 대한 계획을 짭니다.&lt;/p&gt;
-
-&lt;div class=&quot;language-swift highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;  &lt;span class=&quot;k&quot;&gt;if&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;lightIsGreen&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
-    &lt;span class=&quot;nf&quot;&gt;moveForward&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;()&lt;/span&gt;
-  &lt;span class=&quot;p&quot;&gt;}&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;else&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
-    &lt;span class=&quot;nf&quot;&gt;wait&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;()&lt;/span&gt;
-  &lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
-&lt;ol&gt;
-  &lt;li&gt;‘if’ 키워드를 사용합니다.&lt;/li&gt;
-  &lt;li&gt;참 / 거짓으로 답할 수 있는 조건을 적어줍니다.&lt;/li&gt;
-  &lt;li&gt;조건이 참(true)일 때 실행 할 commands를 if block 안에 적어줍니다.&lt;/li&gt;
-  &lt;li&gt;조건이 false 일 때 실행될 코드는 else를 이용해서 적어줍니다.&lt;/li&gt;
-&lt;/ol&gt;
-
-&lt;p&gt;메세지가 오’면’ 메세지가 왔다는 알림 소리가 울리고, 사파리는 웬 사이트를 열기 전에 인터넷이 연결되어 있는지 확인합니다. 연결되어 있다’면’ 웹사이트로 이동하죠.&lt;/p&gt;
-
-&lt;h3 id=&quot;boolean-condition&quot;&gt;Boolean condition&lt;/h3&gt;
-
-&lt;p&gt;if - else문에서 if의 Boolean 조건이 true이면 if {} 안의 코드가 실행되고
-  false이면 else {} 안의 조건이 실행됩니다.&lt;/p&gt;
-
-&lt;div class=&quot;language-swift highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;  &lt;span class=&quot;kd&quot;&gt;func&lt;/span&gt; &lt;span class=&quot;nf&quot;&gt;solveRightSide&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;()&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
-    &lt;span class=&quot;k&quot;&gt;if&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;isOnGem&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
-      &lt;span class=&quot;nf&quot;&gt;turnLeft&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;()&lt;/span&gt;
-      &lt;span class=&quot;nf&quot;&gt;collectGem&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;()&lt;/span&gt;
-    &lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
-  &lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
-
-  &lt;span class=&quot;k&quot;&gt;for&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;i&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;in&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;1&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;...&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;2&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
-    &lt;span class=&quot;nf&quot;&gt;solveRightSide&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;()&lt;/span&gt;
-    &lt;span class=&quot;nf&quot;&gt;moveForward&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;()&lt;/span&gt;
-  &lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
-
-&lt;p&gt;위와 같은 방식으로도 사용할 수 있습니다. function안에 if문을 작성하고 for문을 이용해서 fuction을 호출하는 방식입니다. 이렇게 하므로써 코드를 재사용할 수 있습니다.&lt;/p&gt;
-
-&lt;h2 id=&quot;️-여기까지-정리&quot;&gt;👷‍♂️ 여기까지 정리&lt;/h2&gt;
-&lt;h3 id=&quot;logical-operators&quot;&gt;Logical Operators&lt;/h3&gt;
-
-&lt;p&gt;code에서 operator는 action을 보여주는 심볼입니다. 논리연산자는 조건문을 더 명확하게 특정지어줍니다.&lt;/p&gt;
-&lt;ul&gt;
-  &lt;li&gt;&amp;amp;&amp;amp; (AND)&lt;/li&gt;
-  &lt;li&gt;
-    &lt;table&gt;
-      &lt;tbody&gt;
-        &lt;tr&gt;
-          &lt;td&gt; &lt;/td&gt;
-          &lt;td&gt;(OR)&lt;/td&gt;
-        &lt;/tr&gt;
-      &lt;/tbody&gt;
-    &lt;/table&gt;
-  &lt;/li&gt;
-  &lt;li&gt;! (NOT)
-  위의 각 연산자들은 각자의 방법으로 조건문을 변화시킵니다.&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;ol&gt;
-  &lt;li&gt;AND(&amp;amp;&amp;amp;) 논리 연산자는 모든 조건들이 true일 때만 코드가 실행됩니다.&lt;/li&gt;
-  &lt;li&gt;
-    &lt;table&gt;
-      &lt;tbody&gt;
-        &lt;tr&gt;
-          &lt;td&gt;OR(&lt;/td&gt;
-          &lt;td&gt; &lt;/td&gt;
-          &lt;td&gt;) 논리 연산자는 조건 중 적어도 하나가 true일 때 코드가 실행됩니다.&lt;/td&gt;
-        &lt;/tr&gt;
-      &lt;/tbody&gt;
-    &lt;/table&gt;
-  &lt;/li&gt;
-  &lt;li&gt;NOT(!) 논리 연산자는 조건을 반대로 만듭니다.&lt;/li&gt;
-&lt;/ol&gt;
-
-&lt;h2 id=&quot;while-loops&quot;&gt;While Loops&lt;/h2&gt;
-
-&lt;p&gt;While loop는 반복할 횟수가 명확히 정해져있지 않을 때 어떤 조건이 true인 동안 { } 안에 작성된 코드를 반복해서 실행합니다. 조건문과 함께 while 반복문을 사용하면 좀 더 다양한 상황에 문제를 해결할 수 있습니다.&lt;br /&gt;
-  때때로 coding problem을 어떻게 해결하는지는 어떤 옵션이 더 낫게 느껴지는지에 따라 정해집니다. coder들은 더 빠른 결과를 내는 해결책, 또는 재사용성이 높은 것이 어떤 것인지 자신의 의견에 기초에 결정하게 됩니다.&lt;/p&gt;
-
-&lt;p&gt;코딩에서는 문제와 여러개의 해결책들 중 어떤 것을 선택하는지에 대해 배우는 것이 중요합니다. 때때로 한 문제에 대한 어떤 접근은 다른 것과 비슷하게 문제를 해결하고 어떤 것은 다른 해결책보다 더 효율적이고, 재사용이 가능하고, 많은 상황에 적용 가능하기도 합니다. 적절한 도구(approprite tools)를 결정하는 힘이 길러집니다.&lt;/p&gt;
-
-&lt;h3 id=&quot;land-of-bounty-다시-해보기&quot;&gt;Land of bounty 다시 해보기&lt;/h3&gt;
-&lt;p&gt;더 효율적인 방법 찾아보기&lt;/p&gt;
-
-&lt;h3 id=&quot;nesting-loops&quot;&gt;Nesting loops&lt;/h3&gt;
-
-&lt;p&gt;&lt;strong&gt;nest&lt;/strong&gt; one loop inside another은 루프안에서 다른 루프를 사용하는 것을 의미합니다. 루프 안에서 사용된 루프를 &lt;strong&gt;nested loops&lt;/strong&gt;라고 합니다. 이때 바깥쪽의 루프를 Outer loop 안쪽의 루프는 inner loop라고 합니다. 다양한 상황에서 nested loops를 사용할 수 있습니다.&lt;/p&gt;
-
-&lt;p&gt;while loop와 Boolean 타입의 조건을 함께 사용할 때는 조건이 언제가는 false가 되야합니다. 만약 계속해서 true가 되면 무한 반복하는 infinite loop이 되고 이것은 컴퓨터를 멈추게 만들 수도 있습니다.&lt;/p&gt;
-
-&lt;p&gt;&lt;!-- adoptable 다양한 상황에서 같게 적용할 수 있는 코드? --&gt;&lt;/p&gt;
-
-&lt;h2 id=&quot;algorithms&quot;&gt;Algorithms&lt;/h2&gt;
-
-&lt;p&gt;알고리즘은 규칙의 집합 그리고 그것을 기반으로 한 지시입니다. 예를 들어 네비게이션은 목적지로 가는 가장 빠른 길을 찾는 알고리즘을 이용합니다. 이때 알고리즘은 거리와 평균 속도를 비교하고, 현재의 교통량을 이용하여 가장 짧은 루트를 찾습니다. 알고리즘은 다양한 상황에서 적용 가능합니다.&lt;/p&gt;
-
-&lt;p&gt;알고리즘을 코드로 적용하기 전에 pseudocode를 이용하여 먼저 생각해볼 수 있습니다. pseodocode는 코드와 비슷한 형태이지만 진짜 코드는 아닌, 사람이 이해할 수 있는 언어로 만든 코드와 비슷한 구조를 가지고 있는 형태입니다.&lt;/p&gt;
-
-&lt;div class=&quot;language-swift highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;  &lt;span class=&quot;n&quot;&gt;navigate&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;around&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;wall&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
-    &lt;span class=&quot;k&quot;&gt;if&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;a&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;block&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;is&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;on&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;right&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;side&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
-      &lt;span class=&quot;n&quot;&gt;go&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;forward&lt;/span&gt;
-    &lt;span class=&quot;p&quot;&gt;}&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;else&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;if&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;blocks&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;are&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;in&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;the&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;front&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;and&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;on&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;the&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;right&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
-      &lt;span class=&quot;n&quot;&gt;turn&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;left&lt;/span&gt;
-      &lt;span class=&quot;n&quot;&gt;go&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;forward&lt;/span&gt;
-    &lt;span class=&quot;p&quot;&gt;}&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;else&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
-      &lt;span class=&quot;n&quot;&gt;turn&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;right&lt;/span&gt;
-      &lt;span class=&quot;n&quot;&gt;go&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;forward&lt;/span&gt;
-    &lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
-  &lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
-
-&lt;p&gt;pseudocode의 예시입니다. 진짜 작동하는 코드아니고 알고리즘을 만들기 위해 생각을 코드의 구조로 나타낸 것입니다.&lt;/p&gt;
-
-&lt;p&gt;다른 상황에서 동일하게 적용되는 알고리즘을 만드는 것이 코딩의 힘입니다. 다양한 상황에서 문제를 해결하는 프로그램을 만드는 것이죠. 에를 들어 search engine의 algorithms은 우리가 검색한 단어가 무엇이든 원하는 정보를 주기 위해 엄청나게 많은 웹사이트의 정보를 동일한 방식으로 처리합니다.&lt;/p&gt;</content><author><name>Mirae</name></author><category term="TIL" /><category term="learning" /><category term="공부 기록" /><category term="Swift" /><category term="Playgrounds" /><summary type="html">Playgrounds: Learn to Code 1 아래 모든 내용들은 Playgrounds에서 학습하며 정리한 내용입니다. 모든 내용의 출처는 Playgrounds임을 밝힙니다.</summary></entry></feed>
+ Button을 탭할 때마다 funFact에 랜덤 값을 할당합니다. funFact변수에 값이 바뀌므로 Text view의 값도 변하게 됩니다.&lt;/p&gt;</content><author><name>Mirae</name></author><category term="TIL" /><category term="learning" /><category term="공부 기록" /><category term="Swift" /><category term="Sample Apps Tutorials" /><summary type="html">Sample Apps Tutorials: About Me(Navigating Apps) 아래 모든 정보의 출처는 apple developer 공식 페이지이며 개인의 학습 용도로만 사용되었음을 밝힙니다.</summary></entry></feed>
