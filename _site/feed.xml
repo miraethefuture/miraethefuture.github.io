@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="4.2.1">Jekyll</generator><link href="http://localhost:4000/feed.xml" rel="self" type="application/atom+xml" /><link href="http://localhost:4000/" rel="alternate" type="text/html" /><updated>2022-04-22T10:04:32+09:00</updated><id>http://localhost:4000/feed.xml</id><title type="html">Mirae 2 the Future</title><subtitle>An amazing website.</subtitle><author><name>Mirae</name></author><entry><title type="html">Enumerations</title><link href="http://localhost:4000/til/enumerations/" rel="alternate" type="text/html" title="Enumerations" /><published>2022-04-22T00:00:00+09:00</published><updated>2022-04-22T00:00:00+09:00</updated><id>http://localhost:4000/til/enumerations</id><content type="html" xml:base="http://localhost:4000/til/enumerations/">&lt;h1 id=&quot;enum&quot;&gt;enum&lt;/h1&gt;
+<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="4.2.1">Jekyll</generator><link href="http://localhost:4000/feed.xml" rel="self" type="application/atom+xml" /><link href="http://localhost:4000/" rel="alternate" type="text/html" /><updated>2022-04-22T21:13:53+09:00</updated><id>http://localhost:4000/feed.xml</id><title type="html">Mirae 2 the Future</title><subtitle>An amazing website.</subtitle><author><name>Mirae</name></author><entry><title type="html">Enumerations</title><link href="http://localhost:4000/til/enumerations/" rel="alternate" type="text/html" title="Enumerations" /><published>2022-04-22T00:00:00+09:00</published><updated>2022-04-22T00:00:00+09:00</updated><id>http://localhost:4000/til/enumerations</id><content type="html" xml:base="http://localhost:4000/til/enumerations/">&lt;h1 id=&quot;enum&quot;&gt;enum&lt;/h1&gt;
 &lt;p&gt;Enumeration은 연관된 값의 그룹을 위한 일반적인 type을 정의합니다. 그리고 그 값들을 코드안에서 type-safe한 방식으로 이용할 수 있도록 합니다.&lt;/p&gt;
 
 &lt;h2 id=&quot;enumeration-syntax&quot;&gt;Enumeration Syntax&lt;/h2&gt;
@@ -268,7 +268,128 @@
 
 &lt;h2 id=&quot;variadic-parameters&quot;&gt;Variadic Parameters&lt;/h2&gt;
 
-&lt;p&gt;Variadic parameter는 특정 타입의 0개 또는 더 많은 수의 값을 받습니다. Function이 호출될 때해당 패러미터를 가진 인풋값의 a varying number을 통과시킬 수 있다는 것을 정확히 하기 위해서 variadic parameter를 사용합니다. 패러미터의 타입 이름 뒤에 …(세개의 .)을 추가해줍니다.&lt;/p&gt;</content><author><name>Mirae</name></author><category term="TIL" /><category term="learning" /><category term="공부 기록" /><category term="Swift" /><category term="Functions" /><summary type="html">⚙️ Functions는 특정 기능을 수행하는 완전한 코드 덩어리입니다. Functions는 이름을 가집니다. 보통은 어떤 일을 하는지 알 수 있는 이름을 지어줍니다. 그리고 필요할 때 그 이름을 사용해서 function을 호출하여 특정 기능을 수행할 수 있도록 합니다.</summary></entry><entry><title type="html">Subscripts</title><link href="http://localhost:4000/til/subscripts/" rel="alternate" type="text/html" title="Subscripts" /><published>2022-04-18T00:00:00+09:00</published><updated>2022-04-18T00:00:00+09:00</updated><id>http://localhost:4000/til/subscripts</id><content type="html" xml:base="http://localhost:4000/til/subscripts/">&lt;h1 id=&quot;-&quot;&gt;👩‍🌾 ..&lt;/h1&gt;
+&lt;p&gt;Variadic parameter는 특정 타입의 0개 또는 더 많은 수의 값을 받습니다. Function이 호출될 때해당 패러미터를 가진 인풋값의 a varying number을 통과시킬 수 있다는 것을 나타내기 위해서 variadic parameter를 사용합니다. 패러미터의 타입 이름 뒤에 …(세개의 .)을 추가해줍니다.&lt;/p&gt;
+
+&lt;p&gt;Variadic parameter를 통해 들어온 값들은 function의 바디부분에서 배열로 사용가능합니다.&lt;br /&gt;
+  예를 들어, 아래 코드의 numbers라는 Double… 타입의 패러미터는 function의 바디부분에서 numbers라는 이름을 가진 [Double] 타입의 constant 배열로 사용되었습니다.&lt;/p&gt;
+
+&lt;p&gt;아래의 function arithmeticMean은 수의 평균을 구합니다. (수의 길이 상관 없음)&lt;/p&gt;
+
+&lt;div class=&quot;language-swift highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;  &lt;span class=&quot;kd&quot;&gt;func&lt;/span&gt; &lt;span class=&quot;nf&quot;&gt;arithmeticMean&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;_&lt;/span&gt; &lt;span class=&quot;nv&quot;&gt;numbers&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;kt&quot;&gt;Double&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;...&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;-&amp;gt;&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
+      &lt;span class=&quot;k&quot;&gt;var&lt;/span&gt; &lt;span class=&quot;nv&quot;&gt;total&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;kt&quot;&gt;Double&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;0&lt;/span&gt;
+      &lt;span class=&quot;k&quot;&gt;for&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;number&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;in&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;numbers&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
+        &lt;span class=&quot;n&quot;&gt;total&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;+=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;number&lt;/span&gt;
+      &lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
+      &lt;span class=&quot;k&quot;&gt;return&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;total&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;/&lt;/span&gt; &lt;span class=&quot;kt&quot;&gt;Double&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;numbers&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;count&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
+  &lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
+  &lt;span class=&quot;nf&quot;&gt;arithmeticMean&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;1&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;2&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;3&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;4&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;5&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
+  &lt;span class=&quot;c1&quot;&gt;// 3.0을 리턴합니다.&lt;/span&gt;
+  &lt;span class=&quot;nf&quot;&gt;arithmeticMean&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;3&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;mf&quot;&gt;8.25&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;mf&quot;&gt;18.75&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
+  &lt;span class=&quot;c1&quot;&gt;// 10.0을 리턴합니다.&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;p&gt;하나의 function은 여러개의 variadic parameters를 가질 수 있습니다. Variadic parameter 다음에 처음으로 오는 패러미터는 필수적으로 argument lable을 가져야합니다. Argument Lable은 어떤 arguments가 variadic 패러미터에 통과되었는지, 어떤 arguments가 variadic 패러미터 다음에 오는 패러미터에 통과되었는지를 명확히 구별할 수 있게 돕습니다.&lt;/p&gt;
+
+&lt;h2 id=&quot;in-out-parameters&quot;&gt;In-Out Parameters&lt;/h2&gt;
+
+&lt;p&gt;Function parameters는 기본적으로 constants입니다. Function 패러미터의 값을 function의 바디부분에서 변경하려고 시도하는 것은 컴파일 에러를 발생시킵니다. 이것은 패러미터의 값을 실수로 변경할 수 없다는 것을 의미합니다. 만약 function이 패러미터의 값을 수정하길 원한다면, 그리고 function의 호출이 끝난 이후에도 그 변경사항이 계속해서 유지되길 원한다면 해당 패러미터를 in-out 패러미터로 정의해야 합니다.&lt;/p&gt;
+
+&lt;p&gt;패러미터의 타입 앞에 inout 키워드를 추가해줌으로써 in-out 패러미터를 작성할 수 있습니다. In-out 패러미터는 function으로 통과되어 들어오고(passed in to the function), function으로부터 수정되고, 원래의 값을 교체하기 위해 밖으로 통과되어 나가는(back out of the function) 값을 가집니다.&lt;/p&gt;
+
+&lt;p&gt;In-out 패러미터의 argument로는 오직 variable만 통과시킬 수 있습니다. constants나 literal 값은 수정될 수 없기 때문에 argument로 통과시킬 수 없습니다. &amp;amp;(ampersand)를 variable의 이름 앞에 적음으로써 in-out 패러미의 argument로 통과시킨다는 것을 알려줍니다.&lt;/p&gt;
+
+&lt;div class=&quot;notice&quot;&gt;
+     &lt;h4&gt;N O T E&lt;/h4&gt;
+     &lt;p&gt;In-out 패러미터는 기본값을 가질 수 없습니다. 그리고 variadic 패러미터는 inout 키워드를 사용할 수 없습니다.
+     &lt;/p&gt;
+  &lt;/div&gt;
+
+&lt;p&gt;아래의 function swapTwoInts는 a와 b라는 in-out integer 패러미터를 가지고 있습니다.&lt;/p&gt;
+
+&lt;div class=&quot;language-swift highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;  &lt;span class=&quot;kd&quot;&gt;func&lt;/span&gt; &lt;span class=&quot;nf&quot;&gt;swapTwoInts&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;_&lt;/span&gt; &lt;span class=&quot;nv&quot;&gt;a&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;inout&lt;/span&gt; &lt;span class=&quot;kt&quot;&gt;Int&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;_&lt;/span&gt; &lt;span class=&quot;nv&quot;&gt;b&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;inout&lt;/span&gt; &lt;span class=&quot;kt&quot;&gt;Int&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
+      &lt;span class=&quot;k&quot;&gt;let&lt;/span&gt; &lt;span class=&quot;nv&quot;&gt;temporaryA&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;a&lt;/span&gt;
+      &lt;span class=&quot;n&quot;&gt;a&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;b&lt;/span&gt;
+      &lt;span class=&quot;n&quot;&gt;b&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;temporaryA&lt;/span&gt;
+  &lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;p&gt;swapTwoInts function은 단순히 b의 값을 a로 바꾸고, a의 값을 b로 바꿉니다. 이 function은 두 수의 교체를 temporaryA라는 temporary constant를 이용해서 수행합니다. a의 값을 temporaryA에 먼저 할당하고 - a에 b를 할당 - b에 a를 할당합니다.&lt;/p&gt;
+
+&lt;p&gt;두개의 Int 타입 variables의 값을 바꾸기 위해 swapTwoInts function을 호출할 수 있습니다. &amp;amp;을 someInt와 anotherInt 앞에 붙여주었습니다.&lt;/p&gt;
+
+&lt;div class=&quot;language-swift highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;  &lt;span class=&quot;k&quot;&gt;var&lt;/span&gt; &lt;span class=&quot;nv&quot;&gt;someInt&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;3&lt;/span&gt;
+  &lt;span class=&quot;k&quot;&gt;var&lt;/span&gt; &lt;span class=&quot;nv&quot;&gt;anotherInt&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;107&lt;/span&gt;
+  &lt;span class=&quot;nf&quot;&gt;swapTwoInts&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;&amp;amp;&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;someInt&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;&amp;amp;&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;anotherInt&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
+  &lt;span class=&quot;nf&quot;&gt;print&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;someInt is now &lt;/span&gt;&lt;span class=&quot;se&quot;&gt;\(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;someInt&lt;/span&gt;&lt;span class=&quot;se&quot;&gt;)&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;, and anotherInt is now &lt;/span&gt;&lt;span class=&quot;se&quot;&gt;\(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;anotherInt&lt;/span&gt;&lt;span class=&quot;se&quot;&gt;)&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
+  &lt;span class=&quot;c1&quot;&gt;// &quot;someInt is now 107, and anotherInt is 3&quot;을 출력합니다.&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;p&gt;위의 예시에서 두 variables someInt와 anotherInt는 function swapTwoInts의 바깥에서 정의되었음에도 function을 통해 원래의 값이 서로 교체되었습니다.&lt;/p&gt;
+
+&lt;div class=&quot;notice&quot;&gt;
+     &lt;h4&gt;N O T E&lt;/h4&gt;
+     &lt;p&gt;In-out 패러미터는 function으로 부터 값을 리턴하는 것과는 다릅니다. 위의 swapTwoInts예시는 리턴 타입을 정의하지 않았고, 값을 리턴하지 않습니다. 하지만 여전히 someInt와 anotherInt의 값을 변경시킵니다. In-out 패러미터는 function의 바디 부분의 범위를 넘어서서 영향을 미칠 수 있는 또 다른 방법입니다.
+     &lt;/p&gt;
+  &lt;/div&gt;
+
+&lt;h2 id=&quot;function-types&quot;&gt;Function Types&lt;/h2&gt;
+
+&lt;p&gt;모든 function은 패러미터의 타입 + 리턴 타입으로 이루어진 특정한 function type을 가지고 있습니다.&lt;/p&gt;
+
+&lt;p&gt;예를 들면:&lt;/p&gt;
+&lt;div class=&quot;language-swift highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;  &lt;span class=&quot;kd&quot;&gt;func&lt;/span&gt; &lt;span class=&quot;nf&quot;&gt;addTwoInts&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;_&lt;/span&gt; &lt;span class=&quot;nv&quot;&gt;a&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;kt&quot;&gt;Int&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;_&lt;/span&gt; &lt;span class=&quot;nv&quot;&gt;b&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;kt&quot;&gt;Int&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;-&amp;gt;&lt;/span&gt; &lt;span class=&quot;kt&quot;&gt;Int&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
+      &lt;span class=&quot;k&quot;&gt;return&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;a&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;+&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;b&lt;/span&gt;
+  &lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
+  &lt;span class=&quot;kd&quot;&gt;func&lt;/span&gt; &lt;span class=&quot;nf&quot;&gt;multiplyTwoInts&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;_&lt;/span&gt; &lt;span class=&quot;nv&quot;&gt;a&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;kt&quot;&gt;Int&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;_&lt;/span&gt; &lt;span class=&quot;nv&quot;&gt;b&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;kt&quot;&gt;Int&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;-&amp;gt;&lt;/span&gt; &lt;span class=&quot;kt&quot;&gt;Int&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
+      &lt;span class=&quot;k&quot;&gt;return&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;a&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;*&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;b&lt;/span&gt;
+  &lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;p&gt;위의 예는 두개의 단순한 계산을 수행하는 addTwoInts와 multiplyTwoInts라는 functions를 정의합니다. 이 functions는 각각 두개의 Int 값을 이용하여 계산 후 하나의 Int 값을 리턴합니다.&lt;/p&gt;
+
+&lt;p&gt;위 두 functions의 타입은 &lt;strong&gt;(Int, Int) -&amp;gt; Int&lt;/strong&gt; 입니다.&lt;/p&gt;
+
+&lt;div class=&quot;language-swift highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;  &lt;span class=&quot;kd&quot;&gt;func&lt;/span&gt; &lt;span class=&quot;nf&quot;&gt;printHelloWorld&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;()&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
+      &lt;span class=&quot;nf&quot;&gt;print&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;hello, world&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
+  &lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;p&gt;위 function은 타입은 () -&amp;gt; Void이고, “패러미터를 가지고 있지 않고 Void를 리턴하는 function”이라고 합니다.&lt;/p&gt;
+
+&lt;h2 id=&quot;using-function-types&quot;&gt;Using Function Types&lt;/h2&gt;
+
+&lt;p&gt;Swift의 다른 타입처럼 function 타입을 사용합니다. 예를 들어, constant나 variable을 정의하고 function 타입을 지정한 뒤 적절한 function을 할당할 수 있습니다.&lt;/p&gt;
+
+&lt;div class=&quot;language-swift highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;  &lt;span class=&quot;k&quot;&gt;var&lt;/span&gt; &lt;span class=&quot;nv&quot;&gt;mathFunction&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;kt&quot;&gt;Int&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;kt&quot;&gt;Int&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;-&amp;gt;&lt;/span&gt; &lt;span class=&quot;kt&quot;&gt;Int&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;addTwoInts&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;p&gt;addTwoInts function이 mathFunction과 같은 타입을 가지고 있기 때문에 Swift의 type-checker가 이 assignment를 수락합니다.&lt;/p&gt;
+
+&lt;div class=&quot;language-swift highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;  &lt;span class=&quot;nf&quot;&gt;print&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;Result: &lt;/span&gt;&lt;span class=&quot;se&quot;&gt;\(&lt;/span&gt;&lt;span class=&quot;nf&quot;&gt;mathFunction&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;2&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;3&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;&lt;span class=&quot;se&quot;&gt;)&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
+  &lt;span class=&quot;c1&quot;&gt;// &quot;Result: 5&quot; 를 출력합니다.&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;p&gt;다른 타입들처럼, function을 constant나 variable에 할당할 때, Swift가 function type을 추측하도록 할 수 있습니다.&lt;/p&gt;
+
+&lt;div class=&quot;language-swift highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;  &lt;span class=&quot;k&quot;&gt;let&lt;/span&gt; &lt;span class=&quot;nv&quot;&gt;anotherMathFunction&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;addTwonInts&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;h2 id=&quot;function-types-as-parameter-types&quot;&gt;Function Types as Parameter Types&lt;/h2&gt;
+
+&lt;p&gt;(Int, Int) -&amp;gt; Int와 같은 function type을 다른 function의 패러미터 타입으로 사용할 수 있습니다.&lt;/p&gt;
+
+&lt;p&gt;위에서 생성한 math functions의 결과를 출력하기 위한 예제입니다.&lt;/p&gt;
+
+&lt;div class=&quot;language-swift highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;  &lt;span class=&quot;kd&quot;&gt;func&lt;/span&gt; &lt;span class=&quot;nf&quot;&gt;printMathResult&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;_&lt;/span&gt; &lt;span class=&quot;nv&quot;&gt;mathFunction&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;kt&quot;&gt;Int&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;kt&quot;&gt;Int&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;-&amp;gt;&lt;/span&gt; &lt;span class=&quot;kt&quot;&gt;Int&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;_&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;a&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt; &lt;span class=&quot;kt&quot;&gt;Int&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;_&lt;/span&gt; &lt;span class=&quot;nv&quot;&gt;b&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;kt&quot;&gt;Int&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
+       &lt;span class=&quot;nf&quot;&gt;print&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;Result: &lt;/span&gt;&lt;span class=&quot;se&quot;&gt;\(&lt;/span&gt;&lt;span class=&quot;nf&quot;&gt;mathFunction&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;a&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;b&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;&lt;span class=&quot;se&quot;&gt;)&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
+    &lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
+  &lt;span class=&quot;nf&quot;&gt;printMathResult&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;addTwoInts&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;3&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;5&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
+  &lt;span class=&quot;c1&quot;&gt;// &quot;Result: 8&quot;을 출력합니다.&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;p&gt;위의 예시는 printMathResult(_:_:_:)를 정의합니다. 세개의 패러미터를 가지고 있습니다. 첫번째 패러미터의 이름은 mathFunction이고 타입은 (Int, Int) -&amp;gt; Int 입니다. 두번째 그리고 세번째 패러미터는 a와 b이고 Int 타입입니다. 이 둘은 주어진 math function의 input 값으로 사용됩니다.&lt;/p&gt;
+
+&lt;h2 id=&quot;function-types-as-return-types&quot;&gt;Function Types as Return Types&lt;/h2&gt;</content><author><name>Mirae</name></author><category term="TIL" /><category term="learning" /><category term="공부 기록" /><category term="Swift" /><category term="Functions" /><summary type="html">⚙️ Functions는 특정 기능을 수행하는 완전한 코드 덩어리입니다. Functions는 이름을 가집니다. 보통은 어떤 일을 하는지 알 수 있는 이름을 지어줍니다. 그리고 필요할 때 그 이름을 사용해서 function을 호출하여 특정 기능을 수행할 수 있도록 합니다.</summary></entry><entry><title type="html">Subscripts</title><link href="http://localhost:4000/til/subscripts/" rel="alternate" type="text/html" title="Subscripts" /><published>2022-04-18T00:00:00+09:00</published><updated>2022-04-18T00:00:00+09:00</updated><id>http://localhost:4000/til/subscripts</id><content type="html" xml:base="http://localhost:4000/til/subscripts/">&lt;h1 id=&quot;-&quot;&gt;👩‍🌾 ..&lt;/h1&gt;
 
 &lt;p&gt;Classes, structures, 그리고 enumerations는 subscripts를 정의할 수 있습니다. Subscripts는 collection이나 list 또는 sequence의 멤버 요소에 접근하는 쉬운 방법들입니다. 값을 설정하고 가져오기 위한 메서드 없이 subscripts를 사용하여 인덱스로 값을 설정하거나, 값을 가져옵니다. 예를 들어, someArray[index]로 Array instance의 요소에 접근할 수 있습니다. Dictionary instance의 요소에 접근하기 위해서는 someDictionary[key]를 이용합니다.&lt;/p&gt;
 
@@ -401,12 +522,14 @@ All information below comes from the Swift documentation and is for personal lea
 
 &lt;p&gt;&lt;strong&gt;Closure Expression Syntax&lt;/strong&gt;를 이용해서 inline 방식으로 sorting closure를 작성하는 것이 더 나은 방식이 될 것입니다.&lt;/p&gt;
 
+&lt;p&gt;Closure Expression Syntax의 일반적인 형태:&lt;/p&gt;
+
 &lt;div class=&quot;language-swift highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;  &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;(&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;parameters&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;-&amp;gt;&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;return&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;type&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;in&lt;/span&gt;
       &lt;span class=&quot;n&quot;&gt;statements&lt;/span&gt;
   &lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
 &lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
 
-&lt;p&gt;Closure expression syntax의 패러미터는 in-out 패러미터 둘다 될 수 있습니다. 하지만 default 값은 가질 수 없습니다. 아래의 예시는 closure expression 버전의 backward function입니다.&lt;/p&gt;
+&lt;p&gt;Closure expression syntax의 패러미터는 in-out 패러미터 둘 다 될 수 있습니다. 하지만 default 값은 가질 수 없습니다. 아래의 예시는 closure expression 버전의 backward function입니다.&lt;/p&gt;
 
 &lt;div class=&quot;language-swift highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;  &lt;span class=&quot;n&quot;&gt;reversedNames&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;names&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nf&quot;&gt;sorted&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nv&quot;&gt;by&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nv&quot;&gt;s1&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;kt&quot;&gt;String&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;nv&quot;&gt;s2&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;kt&quot;&gt;String&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;-&amp;gt;&lt;/span&gt; &lt;span class=&quot;kt&quot;&gt;Bool&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;in&lt;/span&gt;
         &lt;span class=&quot;k&quot;&gt;return&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;s1&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;&amp;gt;&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;s2&lt;/span&gt;
@@ -579,7 +702,7 @@ All information below comes from the Swift documentation and is for personal lea
 
 &lt;h2 id=&quot;closures-are-reference-types&quot;&gt;Closures Are Reference Types&lt;/h2&gt;
 
-&lt;p&gt;위의 예시에서, incrementByTen과 incrementBySeven은 constants입니다. 하지만 이 constants가 나타내는 클로저는 여전히 capture한 runningTotal 변수를 증가 시킬 수 있습니다. 이것이 functions와 closures가 reference type인 이유입니다.&lt;/p&gt;
+&lt;p&gt;위의 예시에서, incrementByTen과 incrementBySeven은 constants입니다. 하지만 이 constants가 나타내는 클로저는 여전히 캡쳐한 runningTotal 변수를 증가 시킬 수 있습니다. 이것이 functions와 closures가 reference type인 이유입니다.&lt;/p&gt;
 
 &lt;p&gt;function이나 closure를 constant나 variable에 할당할 때마다 실제로는 해당 constant와 variable을 function이나 closure의 reference가 되도록 설정하는 것입니다.&lt;/p&gt;
 
@@ -595,7 +718,17 @@ All information below comes from the Swift documentation and is for personal lea
   &lt;span class=&quot;c1&quot;&gt;// 60을 리턴&lt;/span&gt;
 &lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
 
-&lt;p&gt;위의 예시는 alsoIncrementByTen를 호출하는 것은 incrementByTen을 호출하는 것과 같다는 것을 보여줍니다. 두 개가 같은 클로저를 참조하고 있기 때문에 둘 다 같은 runningTotal을 증가시키고 리턴합니다.&lt;/p&gt;</content><author><name>Mirae</name></author><category term="TIL" /><category term="learning" /><category term="공부 기록" /><category term="Swift" /><category term="Closures" /><summary type="html">Closures 아래 모든 정보의 출처는 Swift 공식 문서이며 개인의 학습 용도로만 사용되었음을 밝힙니다. All information below comes from the Swift documentation and is for personal learning purposes only.</summary></entry><entry><title type="html">iOS App Dev Tutorials: Scrumdinger</title><link href="http://localhost:4000/til/scrumdinger/" rel="alternate" type="text/html" title="iOS App Dev Tutorials: Scrumdinger" /><published>2022-04-09T00:00:00+09:00</published><updated>2022-04-09T00:00:00+09:00</updated><id>http://localhost:4000/til/scrumdinger</id><content type="html" xml:base="http://localhost:4000/til/scrumdinger/">&lt;p&gt;&lt;a href=&quot;https://developer.apple.com/tutorials/app-dev-training/getting-started-with-scrumdinger&quot;&gt;Getting Started with Scrumdinger&lt;/a&gt;&lt;br /&gt;
+&lt;p&gt;위의 예시는 alsoIncrementByTen를 호출하는 것은 incrementByTen을 호출하는 것과 같다는 것을 보여줍니다. 두 개가 같은 클로저를 참조하고 있기 때문에 둘 다 같은 runningTotal을 증가시키고 리턴합니다.&lt;/p&gt;
+
+&lt;h2 id=&quot;escaping-closures&quot;&gt;Escaping Closures&lt;/h2&gt;
+
+&lt;div class=&quot;language-swift highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;  &lt;span class=&quot;k&quot;&gt;var&lt;/span&gt; &lt;span class=&quot;nv&quot;&gt;completionHandlers&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;[()&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;-&amp;gt;&lt;/span&gt; &lt;span class=&quot;kt&quot;&gt;Void&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;]&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;[]&lt;/span&gt;
+  &lt;span class=&quot;kd&quot;&gt;func&lt;/span&gt; &lt;span class=&quot;nf&quot;&gt;someFunctionWithEscapingClosure&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nv&quot;&gt;completionHandler&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;kd&quot;&gt;@escaping&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;()&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;-&amp;gt;&lt;/span&gt; &lt;span class=&quot;kt&quot;&gt;Void&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
+    &lt;span class=&quot;n&quot;&gt;completionHandlers&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nf&quot;&gt;append&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;completionHandler&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
+  &lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;p&gt;someFunctionWithEscapingClosure(_:) function은 argument로 closure를 가집니다.&lt;/p&gt;</content><author><name>Mirae</name></author><category term="TIL" /><category term="learning" /><category term="공부 기록" /><category term="Swift" /><category term="Closures" /><summary type="html">Closures 아래 모든 정보의 출처는 Swift 공식 문서이며 개인의 학습 용도로만 사용되었음을 밝힙니다. All information below comes from the Swift documentation and is for personal learning purposes only.</summary></entry><entry><title type="html">iOS App Dev Tutorials: Scrumdinger</title><link href="http://localhost:4000/til/scrumdinger/" rel="alternate" type="text/html" title="iOS App Dev Tutorials: Scrumdinger" /><published>2022-04-09T00:00:00+09:00</published><updated>2022-04-09T00:00:00+09:00</updated><id>http://localhost:4000/til/scrumdinger</id><content type="html" xml:base="http://localhost:4000/til/scrumdinger/">&lt;p&gt;&lt;a href=&quot;https://developer.apple.com/tutorials/app-dev-training/getting-started-with-scrumdinger&quot;&gt;Getting Started with Scrumdinger&lt;/a&gt;&lt;br /&gt;
 &lt;sub&gt;아래 모든 정보의 출처는 apple developer 공식 페이지이며 개인의 학습 용도로만 사용되었음을 밝힙니다.&lt;br /&gt;
 All information below comes from the official apple developer page and is for personal learning purposes only.&lt;/sub&gt;&lt;/p&gt;
 
@@ -2631,7 +2764,31 @@ All information below comes from the Swift documentation and is for personal lea
 
 &lt;div class=&quot;notice--warning&quot;&gt;
 배열의 마지막 요소 뒤에 왜 , 가 있을까?
-&lt;/div&gt; --&gt;</content><author><name>Mirae</name></author><category term="TIL" /><category term="learning" /><category term="공부 기록" /><category term="Swift" /><category term="Sample Apps Tutorials" /><summary type="html">Sample Apps Tutorials: About Me(Navigating Apps) 아래 모든 정보의 출처는 apple developer 공식 페이지이며 개인의 학습 용도로만 사용되었음을 밝힙니다.</summary></entry><entry><title type="html">Navigating Apps: Choose Your Own Story</title><link href="http://localhost:4000/til/chooseYourOwnStory/" rel="alternate" type="text/html" title="Navigating Apps: Choose Your Own Story" /><published>2022-04-07T00:00:00+09:00</published><updated>2022-04-07T00:00:00+09:00</updated><id>http://localhost:4000/til/chooseYourOwnStory</id><content type="html" xml:base="http://localhost:4000/til/chooseYourOwnStory/">&lt;p&gt;&lt;a href=&quot;https://developer.apple.com/tutorials/sample-apps/aboutme&quot;&gt;Sample Apps Tutorials: Choose Your Own Story(Navigating Apps)&lt;/a&gt;&lt;br /&gt;
+&lt;/div&gt; --&gt;
+
+&lt;h1 id=&quot;section-5-event-list&quot;&gt;Section 5: Event List&lt;/h1&gt;
+
+&lt;p&gt;List view를 사용하여 앱의 주요 UI인 event list를 그리는 방법에 대해 알아봅니다.&lt;/p&gt;
+
+&lt;h2 id=&quot;environmentobject&quot;&gt;@EnvironmentObject&lt;/h2&gt;
+
+&lt;p&gt;DatePlannerApp.swift에서 가장 높은 레벨의 네비게이션 뷰는 EventData의 인스턴스를 통과시키기 위해 .environmentObject modifier를 사용합니다. 이것으로 모든 child views는 인스턴스에 쉽게 접근할 수 있게 됩니다.&lt;/p&gt;
+
+&lt;div class=&quot;language-swift highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;  &lt;span class=&quot;c1&quot;&gt;// EventList.swift&lt;/span&gt;
+
+  &lt;span class=&quot;kd&quot;&gt;import&lt;/span&gt; &lt;span class=&quot;kt&quot;&gt;SwiftUI&lt;/span&gt;
+
+  &lt;span class=&quot;kd&quot;&gt;struct&lt;/span&gt; &lt;span class=&quot;kt&quot;&gt;EventList&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;kt&quot;&gt;View&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
+      &lt;span class=&quot;kd&quot;&gt;@EnvironmentObject&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;var&lt;/span&gt; &lt;span class=&quot;nv&quot;&gt;eventData&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;kt&quot;&gt;EventData&lt;/span&gt;
+      &lt;span class=&quot;c1&quot;&gt;//...&lt;/span&gt;
+  &lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;p&gt;Child view인 EventList에서 @EnvironmentObject property wrapper를 사용, EventData type을 주어 변수를 정의함으로써 EventData 인스턴스의 data에 접근할 수 있게 됩니다.&lt;/p&gt;
+
+&lt;h2 id=&quot;list-view&quot;&gt;List view&lt;/h2&gt;
+
+&lt;p&gt;목록을 생성하기 위해 List view를 사용하고 ForEach loop를 사용해서 앞에서 설정한 모든 시간대를 기준으로 반복합니다. (nextSevenDays, nextThirtyDays, future, past)&lt;/p&gt;</content><author><name>Mirae</name></author><category term="TIL" /><category term="learning" /><category term="공부 기록" /><category term="Swift" /><category term="Sample Apps Tutorials" /><summary type="html">Sample Apps Tutorials: About Me(Navigating Apps) 아래 모든 정보의 출처는 apple developer 공식 페이지이며 개인의 학습 용도로만 사용되었음을 밝힙니다.</summary></entry><entry><title type="html">Navigating Apps: Choose Your Own Story</title><link href="http://localhost:4000/til/chooseYourOwnStory/" rel="alternate" type="text/html" title="Navigating Apps: Choose Your Own Story" /><published>2022-04-07T00:00:00+09:00</published><updated>2022-04-07T00:00:00+09:00</updated><id>http://localhost:4000/til/chooseYourOwnStory</id><content type="html" xml:base="http://localhost:4000/til/chooseYourOwnStory/">&lt;p&gt;&lt;a href=&quot;https://developer.apple.com/tutorials/sample-apps/aboutme&quot;&gt;Sample Apps Tutorials: Choose Your Own Story(Navigating Apps)&lt;/a&gt;&lt;br /&gt;
 &lt;sub&gt;아래 모든 정보의 출처는 apple developer 공식 페이지이며 개인의 학습 용도로만 사용되었음을 밝힙니다.&lt;br /&gt;
 All information below comes from the official apple developer page and is for personal learning purposes only.&lt;/sub&gt;&lt;/p&gt;
 

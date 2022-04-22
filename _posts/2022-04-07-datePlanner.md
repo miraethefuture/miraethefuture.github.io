@@ -250,3 +250,28 @@ toc_icon: "kiwi-bird"
 <div class="notice--warning">
 배열의 마지막 요소 뒤에 왜 , 가 있을까?
 </div> -->
+
+# Section 5: Event List  
+
+  List view를 사용하여 앱의 주요 UI인 event list를 그리는 방법에 대해 알아봅니다.
+
+## @EnvironmentObject  
+
+  DatePlannerApp.swift에서 가장 높은 레벨의 네비게이션 뷰는 EventData의 인스턴스를 통과시키기 위해 .environmentObject modifier를 사용합니다. 이것으로 모든 child views는 인스턴스에 쉽게 접근할 수 있게 됩니다.  
+
+  ```swift
+  // EventList.swift
+
+  import SwiftUI
+
+  struct EventList: View {
+      @EnvironmentObject var eventData: EventData
+      //...
+  }
+  ```
+
+  Child view인 EventList에서 @EnvironmentObject property wrapper를 사용, EventData type을 주어 변수를 정의함으로써 EventData 인스턴스의 data에 접근할 수 있게 됩니다.  
+
+## List view  
+
+  목록을 생성하기 위해 List view를 사용하고 ForEach loop를 사용해서 앞에서 설정한 모든 시간대를 기준으로 반복합니다. (nextSevenDays, nextThirtyDays, future, past)
