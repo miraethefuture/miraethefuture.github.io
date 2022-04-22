@@ -1,4 +1,4 @@
-I"[<h1>🗂</h1>
+I"3&<h1>..🗂</h1>
 
 <p>Enumeration은 연관된 값의 그룹을 위한 일반적인 type을 정의합니다. 그리고 그 값들을 코드안에서 type-safe한 방식으로 이용할 수 있도록 합니다.</p>
 
@@ -74,7 +74,7 @@
 
 <h2 id="iterating-over-enumeration-cases">Iterating over Enumeration Cases</h2>
 
-<p>어떤 enumerations는</p>
+<p>어떤 enumerations를 위해서는, 모든 cases의 collention을 가지는 것이 유용하게 사용됩니다. Enumeration의 이름 뒤에 : CaseIterable를 작성함으로써 이것이 가능해집니다. Swift는 enumeration type의 allCases property를 이용하여 모든 cases의 collention을 보여줍니다.</p>
 
 <div class="language-swift highlighter-rouge"><div class="highlight"><pre class="highlight"><code>  <span class="kd">enum</span> <span class="kt">Beverage</span><span class="p">:</span> <span class="kt">CaseIterable</span> <span class="p">{</span>
       <span class="k">case</span> <span class="n">coffee</span><span class="p">,</span> <span class="n">tea</span><span class="p">,</span> <span class="n">juice</span>
@@ -83,4 +83,24 @@
   <span class="nf">print</span><span class="p">(</span><span class="s">"</span><span class="se">\(</span><span class="n">numberOfChoices</span><span class="se">)</span><span class="s"> beverages available"</span><span class="p">)</span>
   <span class="c1">// "3 beverages available"을 출력</span>
 </code></pre></div></div>
+
+<p>위의 예시에서는, Beverage enumeration의 모든 cases를 담고있는 collection에 접근하기 위해 Beverage.allCases라고 작성하였습니다. 다른 종류의 collection처럼 allCases를 사용할 수 있습니다. 이때 collection의 요소는 enumeration type의 인스턴스입니다. 이 경우에는 Beverage values이죠. 위의 예시에서는 몇개의 cases가 있는지 수를 세고, 아래의 예시에는 모든 cases에 대해 for-in loop를 반복적으로 실행합니다.</p>
+
+<div class="language-swift highlighter-rouge"><div class="highlight"><pre class="highlight"><code>  <span class="k">for</span> <span class="n">beverage</span> <span class="k">in</span> <span class="kt">Beverage</span><span class="o">.</span><span class="n">allCases</span> <span class="p">{</span>
+      <span class="nf">print</span><span class="p">(</span><span class="n">beverage</span><span class="p">)</span>
+  <span class="p">}</span>
+  <span class="c1">// coffee</span>
+  <span class="c1">// tea</span>
+  <span class="c1">// juice</span>
+</code></pre></div></div>
+
+<p>위의 예시에서 사용된 syntax는 모두 enumeration이 CaseIterable protocol을 따르고 있는지 확인합니다.</p>
+
+<h2 id="associated-values">Associated Values</h2>
+
+<p>위의 예시들은 enumeration의 cases가 어떻게 스스로의 권리를 가지고 있는 정의된 값인지를 보여주었습니다. Planet.earth에 constant나 variable을 설정할 수 있고, 이 값을 나중에 확인할 수 있습니다. 가끔씩 다른 타입의 값을 이 cases 값의 옆에 담을 수 있는 것이 유용할 수 있습니다. 이 추가적인 정보를 associated value라고 합니다. 이것은 case를 사용할 때마다 달라집니다.</p>
+
+<p>주어진 타입의 associated values를 담기 위해 Swift의 enumeration을 정의할 수 있습니다. 필요하다면 각각의 case마다 다른 타입의 값을 줄 수 있습니다.</p>
+
+<p>ㅇ</p>
 :ET

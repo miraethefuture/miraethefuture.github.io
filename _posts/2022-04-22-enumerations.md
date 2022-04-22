@@ -16,8 +16,7 @@ toc_icon: "kiwi-bird"
 #  teaser: /assets/images/choose2.png
 ---
 
-# 🗂  
-
+# enum
   Enumeration은 연관된 값의 그룹을 위한 일반적인 type을 정의합니다. 그리고 그 값들을 코드안에서 type-safe한 방식으로 이용할 수 있도록 합니다.
 
 ## Enumeration Syntax
@@ -123,4 +122,69 @@ toc_icon: "kiwi-bird"
 
   위의 예시에서 사용된 syntax는 모두 enumeration이 CaseIterable protocol을 따르고 있는지 확인합니다.  
 
-  
+## Associated Values  
+
+  위의 예시들은 enumeration의 cases가 어떻게 스스로의 권리를 가지고 있는 정의된 값인지를 보여주었습니다. Planet.earth에 constant나 variable을 설정할 수 있고, 이 값을 나중에 확인할 수 있습니다. 가끔씩 다른 타입의 값을 이 cases 값의 옆에 담을 수 있는 것이 유용할 수 있습니다. 이 추가적인 정보를 associated value라고 합니다. 이것은 case를 사용할 때마다 달라집니다.  
+
+  주어진 타입의 associated values를 담기 위해 Swift의 enumeration을 정의할 수 있습니다. 필요하다면 각각의 case마다 다른 타입의 값을 줄 수 있습니다.  
+
+  예를 들어, 재고 관리 시스템이 두 종류의 바코드를 이용해서 상품을 기록한다고 상상해 봅시다. 어떤 상품들에는 0부터 9까지의 수를 이용하는 UPC 포맷의 1D 바코드가 붙어있습니다. 다른 상품들에는 ISO 8859-1문자를 사용하고 길이가 2,953만큼 긴 문자를 암호화 할 수 있는 OR 코드 포맷의 2D 바코드가 붙어있습니다.  
+
+  UPC 바코드를 사용하는 재고 관리 시스템은 4개의 정수를 가지고 있는 tuple을 사용하는 것이 편리하고, QR 코드 바코드는 모든 길이의 문자열이 편리할 것 입니다.  
+
+  Swift에서 위의 바코드를 표현한 enumeration은 아래처럼 작성될 것입니다.  
+
+  ```swift
+  enum Barcode {
+      case upc(Int, Int, Int, Int)
+      case qrCode(String)
+  }
+  ```
+
+  위의 definition은 어떤 Int나 String값도 실제로 제공하지 않습니다. 단지 Barcode constant 또는 variable이 담을 수 있는 associated values의 타입을 제공할 뿐입니다.
+
+  ```swift
+  var productBarcode = Barcode.upc(8, 85909, 51226, 3)
+  ```
+
+  둘 중 하나의 type을 이용해서 새 바코드를 생성할 수 있습니다. 위의 예시에서는 productBarcode라는 새 variable이 생성 후 Barcode.upc의 값을 (8, 85909, 51226, 3)이라는 associated tuple value와 함께 할당했습니다.  
+
+  ```swift
+  productBarcode = .qrCode("ABCDEFGHIJKLMNOP")
+  ```
+  같은 상품에 다른 타입의 바코드를 할당할 수 있습니다. 이때, 원래의 Barcode.upc 와 integer 값은 새로운 Barcode.qrCode와 string 값으로 교체됩니다.
+
+  ```swift
+  switch productBarcode {
+  case .upc(let numberSystem, let manufacturer, let product, let check):
+      print("UPC: \(numberSystem), \(manufacturer), \(product), \(check).")
+  case .qrCode(let productCode):
+      print("QR code: \(productCode).")
+  }
+  // "QR code: ABCDEFGHIJKLMNOP"를 출력
+  ```
+
+  만약 모든 associated values가 constant 또는 variables로 똑같이 받아지는 경우에는 하나의 var 또는 let annotation을 case 이름 전에 작성할 수 있습니다.
+
+  ```swift
+  switch productBarcode {
+  case let .upc(numberSystem, manufacturer, product, check):
+  //...
+  }
+  ```
+
+## Raw Values  
+
+  Associated values의 대안으로, raw values라는 default 값으로 enumeration의 cases를 미리 채울 수 있습니다. (모두 같은 타입)
+
+  raw ASCII 값을 가지고 있는 enumeration cases:
+  ```swift
+  enum ASCIIControlCharacter: Character {
+      case tab = "\t"
+      case lineFeed = "\n"
+      case carriageReturn = "\r"
+  }
+  ```
+  위의 ASCIIControlCharacter enumeration의 raw values의 타입은 Character로 정의 되었습니다.  
+
+  Raw values는 strings, characters, 또는 integer, floating-point number 타입을 가질 수 있습니다. 각 raw value는 유일한 값을 가져야 합니다.
