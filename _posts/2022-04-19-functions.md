@@ -272,4 +272,4 @@ toc_icon: "kiwi-bird"
 
   위의 예시는 printMathResult(_:\_:\_:)를 정의합니다. 세개의 패러미터를 가지고 있습니다. 첫번째 패러미터의 이름은 mathFunction이고 타입은 (Int, Int) -> Int 입니다. 두번째 그리고 세번째 패러미터는 a와 b이고 Int 타입입니다. 이 둘은 주어진 math function의 input 값으로 사용됩니다.
 
-## Function Types as Return Types
+<!-- ## Function Types as Return Types -->
