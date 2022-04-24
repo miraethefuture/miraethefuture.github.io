@@ -1,9 +1,0 @@
-I"G<p><a href="https://docs.swift.org/swift-book/LanguageGuide/Generics.html">📂 Language Guide / Generics</a>
-<br /><sub>아래 모든 정보의 출처는 apple developer 공식 페이지이며 개인의 학습 용도로만 사용되었음을 밝힙니다.</sub></p>
-
-<h1 id="️">☑️</h1>
-
-<p><em>Generic code</em>는 다루기 쉽고 재사용 가능한 functions와 types를 작성할 수 있도록 합니다. 명확하고 추상화된 방식으로 의도를 분명히하는 코드를 작성할 수 있습니다.</p>
-
-<p>Generics는 Swift의 가장 강력한 기능 중 하나입니다. 많은 Swift의 기본 라이브러리들이 generic code로 만들어졌습니다. Swift의 Array와 Dictionary types는 둘 다 generic collections입니다. Int 값을 담고 있는 배열을 생성할 수 있고, 또는 String 값을 담고 있는 배열을 생성할 수 있습니다. 또는 Swift에서 생성될 수 있는 모든 type으로 배열을 생성할 수 있습니다. Dictionary도 마찬가지입니다. 어떤 타입이 사용될 수 있을지에 대한 제한이 없습니다.</p>
-:ET
