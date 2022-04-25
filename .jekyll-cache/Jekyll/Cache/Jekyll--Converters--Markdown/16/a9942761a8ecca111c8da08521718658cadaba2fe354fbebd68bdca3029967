@@ -1,4 +1,4 @@
-I"N<p><a href="https://developer.apple.com/tutorials/app-dev-training#uikit-essentials">iOS App Dev Tutorials: UIKit</a><br />
+I"k<p><a href="https://developer.apple.com/tutorials/app-dev-training#uikit-essentials">iOS App Dev Tutorials: UIKit</a><br />
 <sub>아래 모든 정보의 출처는 apple developer 공식 페이지이며 개인의 학습 용도로만 사용되었음을 밝힙니다.</sub></p>
 
 <!-- # Creating a List View  
@@ -15,7 +15,7 @@
 <h1 id="adopting-collection-views">Adopting Collection Views</h1>
 
 <p><strong>Collection Views 사용 시작하기.</strong>
-  Collection views는 순서가 있는 데이터 항목의 집합을 관리합니다. 그리고 그것을 보여주기 위해 커스텀 가능한 레이아웃을 사용합니다.</p>
+  Collection views는 순서가 있는 데이터 항목의 집합을 관리합니다. 그리고 그것을 보여주기 위해 커스텀 가능한 레이아웃을 사용합니다. (사진앱의 그리드 등)</p>
 
 <p>Collection views를 사용하면 데이터, 레이아웃, 그리고 프레젠테이션의 관련된 문제들을 분리하여 더 강력하고 확장 가능한 앱을 만들 수 있습니다.</p>
 

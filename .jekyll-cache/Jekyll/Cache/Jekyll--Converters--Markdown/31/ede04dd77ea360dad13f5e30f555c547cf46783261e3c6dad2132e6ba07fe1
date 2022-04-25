@@ -1,23 +1,5 @@
----
-title: "iOS App Dev Tutorials: UIKit"
-categories:
-  - TIL
-tags:
-  - learning
-  - 공부 기록
-  - Swift
-  - iOS App Dev Tutorials
-  - UIKit
-show_date: true
-toc: true
-toc_sticky: true
-toc_label: " "
-toc_icon: "kiwi-bird"
----
-
-[iOS App Dev Tutorials: UIKit](https://developer.apple.com/tutorials/app-dev-training#uikit-essentials)  
-<sub>아래 모든 정보의 출처는 apple developer 공식 페이지이며 개인의 학습 용도로만 사용되었음을 밝힙니다.</sub>  
-
+I"{<p><a href="https://developer.apple.com/tutorials/app-dev-training#uikit-essentials">iOS App Dev Tutorials: UIKit</a><br />
+<sub>아래 모든 정보의 출처는 apple developer 공식 페이지이며 개인의 학습 용도로만 사용되었음을 밝힙니다.</sub></p>
 
 <!-- # Creating a List View  
 
@@ -70,38 +52,13 @@ toc_icon: "kiwi-bird"
   }
   ``` -->
 
-# Displaying Cell info  
+<h1 id="displaying-cell-info">Displaying Cell info</h1>
 
-  앱 'Today'는 연속된 셀의 형태로 리마인더의 목록을 화면에 보여주기 위해 콜렉션 뷰를 사용합니다.  
+<p>앱 ‘Today’는 연속된 셀의 형태로 리마인더의 목록을 화면에 보여주기 위해 콜렉션 뷰를 사용합니다.</p>
 
-  이 튜토리얼에서는, 각각의 리마인더에 대한 정보를 화면에 보여줄 셀들을 위한 템플릿으로 제공될 하나의 collection cell을 디자인할 것입니다. 시스템은 언제 어떻게 셀을 화면에 보여줄 것인지 결정합니다.
+<p>이 튜토리얼에서는, 각각의 리마인더에 대한 정보를 화면에 보여줄 셀들을 위한 템플릿으로 제공될 하나의 collection cell을 디자인할 것입니다. 시스템은 언제 어떻게 셀을 화면에 보여줄 것인지 결정합니다.</p>
 
-## Section 1: Format the Date and Time  
+<h2 id="section-1-format-the-date-and-time">Section 1: Format the Date and Time</h2>
 
-  리마인더의 날짜와 시간은 사용자에게 보여질 중요한 속성들입니다. 날짜와 시간의 표기법은 문화, 지역, 언어에 따라 다릅니다.  
-
-  이 섹션에서는, Foundation 프레임워크의 date-formatting APIs를 사용하여 모든 사용자의 장소에 대한 정확한 날짜와 시간을 보여줄 것입니다.
-
-### Date+Today.swift  
-
-  ```swift
-  import Foundation
-
-  extension Date {
-      // a coumputed string property
-      var dayAndTimeText: String {
-          // have to return a string value for dayAndTimeText
-          let timeText = formatted(date: .omitted, time: .shortened)
-          // self는 timeText를 가리키는 것일까?
-          if Locale.current.calendar.isDateInToday(self) {
-      }
-  }
-  ```
-
-  **formatted(date:time:)** 메서드를 사용해서 시간을 문자열 형태로 보이게 할 것입니다. 그리고 그 결과를 timeText constant에 할당합니다.  
-
-  시스템은 기본 스타일을 사용하여 현재 위치에 해당하는 시간과 날짜를 문자열 형태로 보여줍니다. **.omitted** 을 패러미터로 통과시켜줌으로써 시간만 나타나도록 합니다.  
-
-  Today 앱은 현재 달력의 날짜에 해당하는 리마인더의 시간을 "Today at 3:00 PM"의 형식으로 보여줌으로써 빨리 급한 일이라는 것을 알려줄 것입니다. 만약 리마인더가 현재 달력의 날짜에 해당하는 것이 아니라면 "Oct 22 at 3:00 PM"과 같은 방식으로 날짜를 보여줄 것입니다.  
-
-  "Today at" 부분을 전세계의 사용자들을 위하여 localize할 것입니다. 앱에 번역 테이블을 포함시킵니다. 
+<p>리마인더의 날짜와 시간은 사용자에게 보여질 중요한 속성들입니다.</p>
+:ET
