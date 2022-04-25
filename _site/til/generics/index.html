@@ -234,7 +234,7 @@
           <aside class="sidebar__right sticky">
             <nav class="toc">
               <header><h4 class="nav__title"><i class="fas fa-kiwi-bird"></i>  </h4></header>
-              <ul class="toc__menu"><li><a href="#️">☑️</a><ul><li><a href="#the-problem-that-generics-solve">The Problem That Generics Solve</a></li><li><a href="#generic-functions">Generic Functions</a></li><li><a href="#type-parameters">Type Parameters</a></li><li><a href="#naming-type-parameters">Naming Type Parameters</a></li><li><a href="#generic-types">Generic Types</a></li><li><a href="#extending-a-generic-type">Extending a Generic Type</a></li><li><a href="#type-constraints">Type Constraints</a><ul><li><a href="#type-constraint-syntax">Type Constraint Syntax</a></li></ul></li></ul></li></ul>
+              <ul class="toc__menu"><li><a href="#️">☑️</a><ul><li><a href="#the-problem-that-generics-solve">The Problem That Generics Solve</a></li><li><a href="#generic-functions">Generic Functions</a></li><li><a href="#type-parameters">Type Parameters</a></li><li><a href="#naming-type-parameters">Naming Type Parameters</a></li><li><a href="#generic-types">Generic Types</a></li><li><a href="#extending-a-generic-type">Extending a Generic Type</a></li><li><a href="#type-constraints">Type Constraints</a><ul><li><a href="#type-constraint-syntax">Type Constraint Syntax</a></li><li><a href="#type-constraint-in-action">Type Constraint in Action</a></li></ul></li></ul></li></ul>
 
             </nav>
           </aside>
@@ -438,6 +438,49 @@
       <span class="c1">// 바디 부분</span>
   <span class="p">}</span>
 </code></pre></div></div>
+
+<p>위의 작성한 가상의 function은 두개의 type parameters를 가지고 있습니다. 첫번째 type parameter인 T는 SomeClass의 subclass가 되어야하는 type constraint를 가지고 있습니다. 두번째 type parameter U는 SomeProtocol을 따라야 한다는 type constraint를 가집니다.</p>
+
+<h3 id="type-constraint-in-action">Type Constraint in Action</h3>
+
+<p>아래는 nongeneric function인 findIndex(ofString:in:)입니다. String 값과 String 값을 가지고 있는 배열이 주어집니다. findIndex(ofString:in:) function은 배열안에서 처음으로 일치하는 값의 index가 될 옵셔널 Int 값을 리턴합니다. 만약 일치하는 값이 없다면 nil을 리턴합니다.</p>
+
+<div class="language-swift highlighter-rouge"><div class="highlight"><pre class="highlight"><code>  <span class="kd">func</span> <span class="nf">findIndex</span><span class="p">(</span><span class="n">ofString</span> <span class="nv">valueToFind</span><span class="p">:</span> <span class="kt">String</span><span class="p">,</span> <span class="k">in</span> <span class="nv">array</span><span class="p">:</span> <span class="p">[</span><span class="kt">String</span><span class="p">])</span> <span class="o">-&gt;</span> <span class="kt">Int</span><span class="p">?</span> <span class="p">{</span>
+      <span class="k">for</span> <span class="p">(</span><span class="n">index</span><span class="p">,</span> <span class="n">value</span><span class="p">)</span> <span class="k">in</span> <span class="n">array</span><span class="o">.</span><span class="nf">enumerated</span><span class="p">()</span> <span class="p">{</span>
+        <span class="k">if</span> <span class="n">value</span> <span class="o">==</span> <span class="n">valueToFind</span> <span class="p">{</span>
+            <span class="k">return</span> <span class="n">index</span>
+        <span class="p">}</span>
+      <span class="p">}</span>
+      <span class="k">return</span> <span class="kc">nil</span>
+  <span class="p">}</span>
+</code></pre></div></div>
+<p>findIndex(ofString:in:)는 String 타입의 배열에서 어떤 string 값을 찾을 때 사용될 수 있습니다.</p>
+
+<div class="language-swift highlighter-rouge"><div class="highlight"><pre class="highlight"><code>  <span class="k">let</span> <span class="nv">strings</span> <span class="o">=</span> <span class="p">[</span><span class="s">"cat"</span><span class="p">,</span> <span class="s">"dog"</span><span class="p">,</span> <span class="s">"llama"</span><span class="p">,</span> <span class="s">"parakeet"</span><span class="p">,</span> <span class="s">"terrapin"</span><span class="p">]</span>
+  <span class="k">if</span> <span class="k">let</span> <span class="nv">foundIndex</span> <span class="o">=</span> <span class="nf">findIndex</span><span class="p">(</span><span class="nv">ofString</span><span class="p">:</span> <span class="s">"llama"</span><span class="p">,</span> <span class="nv">in</span><span class="p">:</span> <span class="n">strings</span><span class="p">)</span> <span class="p">{</span>
+      <span class="nf">print</span><span class="p">(</span><span class="s">"The index of llama is </span><span class="se">\(</span><span class="n">foundIndex</span><span class="se">)</span><span class="s">"</span><span class="p">)</span>
+  <span class="p">}</span>
+  <span class="c1">// "The index of llama is 2"를 출력합니다.</span>
+</code></pre></div></div>
+
+<p>위에서 index값을 찾기 위해 사용된 원리는 String 타입외의 다른 타입들의 값의 index를 찾을 때도 유용하게 쓰일 수 있습니다. String 타입이 언급된 모든 부분을 T로 바꾸어 generic function을 작성할 수 있습니다.</p>
+
+<p>아래는 예상되는 generic 버전의 findIndex(of:in:) function입니다. 하지만 아래의 function은 compile되지 않습니다.</p>
+
+<div class="language-swift highlighter-rouge"><div class="highlight"><pre class="highlight"><code>  <span class="kd">func</span> <span class="n">findIndex</span><span class="o">&lt;</span><span class="kt">T</span><span class="o">&gt;</span><span class="p">(</span><span class="n">of</span> <span class="nv">valueToFind</span><span class="p">:</span> <span class="kt">T</span><span class="p">,</span> <span class="k">in</span> <span class="nv">array</span><span class="p">:</span> <span class="p">[</span><span class="kt">T</span><span class="p">])</span> <span class="o">-&gt;</span> <span class="kt">Int</span><span class="p">?</span> <span class="p">{</span>
+      <span class="k">for</span> <span class="p">(</span><span class="n">index</span><span class="p">,</span> <span class="n">value</span><span class="p">)</span> <span class="k">in</span> <span class="n">array</span><span class="o">.</span><span class="nf">enumerated</span><span class="p">()</span> <span class="p">{</span>
+        <span class="k">if</span> <span class="n">value</span> <span class="o">==</span> <span class="n">valueToFind</span> <span class="p">{</span>
+            <span class="k">return</span> <span class="n">index</span>
+        <span class="p">}</span>
+      <span class="p">}</span>
+      <span class="k">return</span> <span class="kc">nil</span>
+  <span class="p">}</span>
+</code></pre></div></div>
+
+<p>위의 function이 컴파일되지 않는 이유는 “if value == valueToFind” 부분에 있습니다. 모든 Type의 값이 == 를 이용하여 비교될 수 없기 때문입니다. 만약 우리가 복잡한 데이터 모델을 위해 커스텀 class, structure을 생성했을 경우 Swift는 해당 class나 structure가 == 를 사용했을 때 결과를 추측하지 못하게 됩니다.</p>
+
+<p>Swift의 standard library는 Equatable이라는 프로토콜을 가지고 있습니다. Equatable을 따르는 type은 ==(equal to operator)와 !=(not equal to)을 사용하여 해당 type의 두 값을 비교할 수 있게 됩니다. 모든 Swift standard type은 Equatable를 따릅니다.</p>
+
 
         
       </section>

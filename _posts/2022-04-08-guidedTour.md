@@ -223,7 +223,6 @@ All information below comes from the Swift documentation and is for personal lea
   let implicitString: String = assumedString // ! 작성하지 않아도 됨
   ```
 
-
 ## Switch  
 
   ```swift  
@@ -245,7 +244,6 @@ All information below comes from the Swift documentation and is for personal lea
 ### hasSuffix(_:)  
 
   특정 suffix(끝에 붙어서 어떤 한 다른 단어를 만드는 단어)로 끝나는 문자열인지 아닌지를 Boolean value를 리턴합니다. 위의 예시에서는 red pepper라는 문자열이 pepper로 끝나기 때문에 true를 반환합니다.
-
 
 ## for-in과 Dictionary  
 
