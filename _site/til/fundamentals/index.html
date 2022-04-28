@@ -234,7 +234,7 @@
           <aside class="sidebar__right sticky">
             <nav class="toc">
               <header><h4 class="nav__title"><i class="fas fa-kiwi-bird"></i>  </h4></header>
-              <ul class="toc__menu"><li><a href="#initializers">Initializers</a></li><li><a href="#instance-methods">Instance Methods</a></li></ul>
+              <ul class="toc__menu"><li><a href="#initializers">Initializers</a><ul><li><a href="#default-values">Default Values</a></li><li><a href="#memberwise-initializer">Memberwise Initializer</a></li><li><a href="#custom-initializers">Custom Initializers</a></li></ul></li><li><a href="#instance-methods">Instance Methods</a></li></ul>
 
             </nav>
           </aside>
@@ -243,6 +243,98 @@
 <br /><sub>아래 모든 정보의 출처는 Develop in Swift Fundamentals이며 개인의 학습 용도로만 사용되었음을 밝힙니다.</sub></p>
 
 <h1 id="initializers">Initializers</h1>
+
+<p>모든 structures는 적어도 하나의 initializer를 포함하고 있습니다. Initializer는 어떤 한 type의 새 인스턴스를 리턴하는 function과 유사합니다. 자주 사용되는 많은 types이 argument가 없는 initializer를 가지고 있습니다. 바로 init()입니다.</p>
+
+<p>init() initializer로 생성된 인스턴스들은 기본값을 가집니다.</p>
+
+<div class="language-swift highlighter-rouge"><div class="highlight"><pre class="highlight"><code>  <span class="k">var</span> <span class="nv">string</span> <span class="o">=</span> <span class="kt">String</span><span class="o">.</span><span class="nf">init</span><span class="p">()</span>  <span class="c1">// 기본값 -&gt; ""</span>
+  <span class="k">var</span> <span class="nv">int</span> <span class="o">=</span> <span class="kt">Int</span><span class="o">.</span><span class="nf">init</span><span class="p">()</span>        <span class="c1">// 기본값 -&gt; 0</span>
+  <span class="k">var</span> <span class="nv">bool</span> <span class="o">=</span> <span class="kt">Bool</span><span class="o">.</span><span class="nf">init</span><span class="p">()</span>      <span class="c1">// 기본값 -&gt; false</span>
+</code></pre></div></div>
+
+<p>위의 initializer를 아래와 같은 방법으로 더 간단히 작성할 수 있습니다.</p>
+
+<div class="language-swift highlighter-rouge"><div class="highlight"><pre class="highlight"><code>  <span class="k">var</span> <span class="nv">string</span> <span class="o">=</span> <span class="kt">String</span><span class="p">()</span>  <span class="c1">// 기본값 -&gt; ""</span>
+  <span class="k">var</span> <span class="nv">int</span> <span class="o">=</span> <span class="kt">Int</span><span class="p">()</span>        <span class="c1">// 기본값 -&gt; 0</span>
+  <span class="k">var</span> <span class="nv">bool</span> <span class="o">=</span> <span class="kt">Bool</span><span class="p">()</span>      <span class="c1">// 기본값 -&gt; false</span>
+</code></pre></div></div>
+
+<h2 id="default-values">Default Values</h2>
+
+<p>새로운 인스턴스를 생성할 때, Swift는 해당 type의 모든 properties의 값을 요구합니다.</p>
+
+<p>첫번째 방법으로는, Type을 정의할 때 기본값을 줄 수 있습니다. 인스턴스들이 생성될 때 이 값을 이용하게 됩니다. 이 방법은 일정한 기본 값을 가지는 object를 정의할 때 유용하게 사용됩니다.</p>
+
+<p>모든 instance properties에 기본값을 설정해주면, Swift 컴파일러가 자동으로 기본 생성자를 생성합니다.</p>
+
+<p>property의 기본값을 이용해서 커스텀 type의 모든 인스턴스에 공통된 기본적인 상태를 설정할 수 있습니다.</p>
+
+<div class="language-swift highlighter-rouge"><div class="highlight"><pre class="highlight"><code>  <span class="kd">struct</span> <span class="kt">Odometer</span> <span class="p">{</span>
+    <span class="k">var</span> <span class="nv">count</span><span class="p">:</span> <span class="kt">Int</span> <span class="o">=</span> <span class="mi">0</span>
+  <span class="p">}</span>
+
+  <span class="k">let</span> <span class="nv">odometer</span> <span class="o">=</span> <span class="kt">Odometer</span><span class="p">()</span>
+  <span class="nf">print</span><span class="p">(</span><span class="n">odometer</span><span class="o">.</span><span class="n">count</span><span class="p">)</span>
+  <span class="c1">// 기본값으로 주어진 0을 출력합니다.</span>
+  <span class="c1">// 기본 생성자로 생성한 Odometer type의 모든 인스턴스의 count는 기본값 0 가집니다.</span>
+</code></pre></div></div>
+
+<h2 id="memberwise-initializer">Memberwise Initializer</h2>
+
+<p>만약 새로운 structure를 정의할 때 initializer를 선언하지 않으면, Swift는 memberwise initializer라는 특별한 initializer를 생성합니다. 이것을 이용하여 생성되는 인스턴스를 위해 property에 값을 설정할 수 있습니다.</p>
+
+<div class="language-swift highlighter-rouge"><div class="highlight"><pre class="highlight"><code>  <span class="k">let</span> <span class="nv">odometer</span> <span class="o">=</span> <span class="kt">Odometer</span><span class="p">(</span><span class="nv">count</span><span class="p">:</span> <span class="mi">27000</span><span class="p">)</span>
+  <span class="nf">print</span><span class="p">(</span><span class="n">odometer</span><span class="o">.</span><span class="n">count</span><span class="p">)</span>
+  <span class="c1">// 27000 을 출력합니다.</span>
+</code></pre></div></div>
+
+<p>생성되는 각 인스턴스에 기대하는 기본적인 상태가 없을 때 사용하기 좋은 방법입니다.</p>
+
+<div class="language-swift highlighter-rouge"><div class="highlight"><pre class="highlight"><code>  <span class="kd">struct</span> <span class="kt">Person</span> <span class="p">{</span>
+    <span class="k">var</span> <span class="nv">name</span><span class="p">:</span> <span class="kt">String</span>
+  <span class="p">}</span>
+</code></pre></div></div>
+
+<p>위의 예시처럼 name이라는 속성을 가지고 있는 structure Person이 있다면, 특정 이름으로 기본값을 설정할 수 없겠지요.</p>
+
+<div class="language-swift highlighter-rouge"><div class="highlight"><pre class="highlight"><code>  <span class="kd">struct</span> <span class="kt">BankAccount</span> <span class="p">{</span>
+    <span class="k">var</span> <span class="nv">accountNumner</span><span class="p">:</span> <span class="kt">Int</span>
+    <span class="k">var</span> <span class="nv">balance</span><span class="p">:</span> <span class="kt">Double</span> <span class="o">=</span> <span class="mi">0</span>
+  <span class="p">}</span>
+
+  <span class="k">let</span> <span class="nv">newAccount</span> <span class="o">=</span> <span class="kt">BankAccount</span><span class="p">(</span><span class="nv">accountNumner</span><span class="p">:</span> <span class="mi">123</span><span class="p">)</span>
+  <span class="k">var</span> <span class="nv">tranfferredAccount</span> <span class="o">=</span> <span class="kt">BankAccount</span><span class="p">(</span><span class="nv">accountNumner</span><span class="p">:</span> <span class="mi">456</span><span class="p">,</span> <span class="nv">balance</span><span class="p">:</span> <span class="mi">1200</span><span class="p">)</span>
+</code></pre></div></div>
+
+<p>위의 예시에서는, 어떤 속성은 기본값을 가지고 또 다른 어떤 속성은 기본값을 가지지 않습니다. 새 인스턴스를 생성시, 기본값이 없는 속성만 패러미터로 작성해줍니다.</p>
+
+<h2 id="custom-initializers">Custom Initializers</h2>
+
+<div class="language-swift highlighter-rouge"><div class="highlight"><pre class="highlight"><code>  <span class="kd">struct</span> <span class="kt">Temperature</span> <span class="p">{</span>
+    <span class="k">var</span> <span class="nv">celsius</span><span class="p">:</span> <span class="kt">Double</span>
+
+    <span class="c1">// memberwise initializer</span>
+    <span class="nf">init</span><span class="p">(</span><span class="nv">celsius</span><span class="p">:</span> <span class="kt">Double</span><span class="p">)</span> <span class="p">{</span>
+      <span class="k">self</span><span class="o">.</span><span class="n">celsius</span> <span class="o">=</span> <span class="n">celsius</span>
+    <span class="p">}</span>
+
+    <span class="c1">// custom initializer</span>
+    <span class="nf">init</span><span class="p">(</span><span class="nv">fahrenheit</span><span class="p">:</span> <span class="kt">Double</span><span class="p">)</span> <span class="p">{</span>
+      <span class="k">self</span><span class="o">.</span><span class="n">celsius</span> <span class="o">=</span> <span class="p">(</span><span class="n">fahrenheit</span> <span class="o">-</span> <span class="mi">32</span><span class="p">)</span> <span class="o">/</span> <span class="mf">1.8</span>
+    <span class="p">}</span>
+  <span class="p">}</span>
+
+  <span class="k">let</span> <span class="nv">currentTemperature</span> <span class="o">=</span> <span class="kt">Temperature</span><span class="p">(</span><span class="nv">celsius</span><span class="p">:</span> <span class="mf">18.5</span><span class="p">)</span>
+  <span class="k">let</span> <span class="nv">boiling</span> <span class="o">=</span> <span class="kt">Temperature</span><span class="p">(</span><span class="nv">fahrenheit</span><span class="p">:</span> <span class="mf">212.0</span><span class="p">)</span>
+
+  <span class="nf">print</span><span class="p">(</span><span class="n">currentTemperature</span><span class="o">.</span><span class="n">celsius</span><span class="p">)</span> <span class="c1">// 18.5 출력</span>
+  <span class="nf">print</span><span class="p">(</span><span class="n">boiling</span><span class="o">.</span><span class="n">celsius</span><span class="p">)</span>            <span class="c1">// 100.0 출력</span>
+</code></pre></div></div>
+
+<p>위의 예시에서 custom initializer인 init(fahrenheit: Double)는 패러미터로 전달 받은 값으로 계산을 수행하고 결과값을 celsius property에 할당합니다.</p>
+
+<p>Custom initializer를 생성시 Swift가 기본 생성자와 memberwise initializer를 자동으로 생성해주지 않기 때문에 위의 예시처럼 직접 작성해 주어야 합니다.</p>
 
 <h1 id="instance-methods">Instance Methods</h1>
 
@@ -267,16 +359,6 @@
 
 <p>someSize 인스턴스의 타입은 Size이고, width와 height는 속성(properties)입니다.<br />
   area()는 Size의 모든 인스턴스에서 호출될 수 있는 instance method입니다.</p>
-
-<p>&lt;!– # Introduction to UIKit</p>
-
-<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>UIKit은 사용자 인터페이스를 생성하고 관리하기 위해 사용되는 기본적인 프레임워크입니다.
-</code></pre></div></div>
-
-<p>## Common System Views</p>
-
-<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>UIView(또는 view)는 모든 시각적인 요소를 정의하는 가장 기본적인 UIKit의 클래스입니다. 하나의 view는 직사각형 형태를 정의합니다. 이것을 커스터 마이즈하여 화면에 어떤 것이든 나타낼 수 있습니다.  --&gt;
-</code></pre></div></div>
 
         
       </section>
