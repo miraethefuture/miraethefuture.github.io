@@ -107,9 +107,15 @@ var store = [{
         "url": "/til/generics/",
         "teaser": "/assets/images/teaser.jpg"
       },{
-        "title": "[Develop in Swift Explorations]Unit 2: Algorithms",
-        "excerpt":"Intro   Get Started With Algorithms   Algorithms은 한 과제를 해결하기 위한 지시, 명령의 집합입니다.   운동화 끈을 묶기 위해 거쳐야하는 과정을 묘사해 봅시다.      운동화에 한쪽 발을 넣는다. (어느쪽이든 상관 없음)   운동화를 신은 쪽 발의 끈 두개를 손으로 집는다.   묶는다.   다른쪽 발에 같은 과정을 반복한다.   Pseudocode   Pseudocode는 영어와 코드를 혼합해서 적은 것을 말합니다. 실제 코드를 적고 디버깅하는 복잡한 과정전에 알고리즘의 단계를 좀 더 쉬운 방식으로 적어볼 수 있습니다.   Three essential building blocks           sequencing: 지시(instructions)를 순서대로 배열하는 것. 알고리즘을 만들기 위한 기본적인 기술 중 하나. 다르게 말하면, 알고리즘은 지시(instructions)의 list(a sequence)를 가지고 있습니다. 그리고 컴퓨터는 그 순서에 따라 지시를 수행합니다.            selection: 알고리즘의 진행 과정 중 true / false로 답이 나눠지는 선택지를 추가할 수 있습니다. true냐 false냐에 따라 다른 과정으로 흘러가게 됩니다.            iteration       Functions   Swift에서는 functions를 사용하여 지시사항(instructions)를 모아 그룹화하고 이름을 붙여 줍니다. 문제를 작은 부분들로 나누고 나누어진 각각의 문제들을 해결하기 위해 functions를 작성한 뒤, 모든 functions가 잘 작동하는지 확인하고 그것들을 결합함으로써 더 큰 문제를 해결할 수 있습니다. 또한, 디테일한 지시사항들은 숨김으로써 전체적으로 더 명확하게 과정을 보여줄 수 있습니다.   Procedural abstraction   지시사항들을 유닛단위로 그룹화하고 그 그룹에 이름을 지어주는 것. 대부분의 프로그램은 여러단계의 추상화를 사용합니다. 어떤 function을 더 높을 레벨의 추상화 과정에서 문제를  ","categories": ["TIL"],
-        "tags": ["learning","공부 기록","Swift"],
-        "url": "/til/algorithms/",
+        "title": "Develop in Swift Fundamentals",
+        "excerpt":"📂 Develop in Swift Fundamentals  아래 모든 정보의 출처는 Develop in Swift Fundamentals이며 개인의 학습 용도로만 사용되었음을 밝힙니다.   Initializers   Instance Methods   Instance Methods는 특정 타입의 인스턴스에 호출될 수 있는 functions입니다. Instance Methods는 structure의 속성에 접근하고 수정할 방법을 제공합니다. 그리고 해당 인스턴스의 목적과 관련된 기능을 추가합니다.   Type을 정의할 때 function을 추가해줌으로써 instance methods를 추가할 수 있습니다. 그 후 해당 타입의 인스턴스에 추가해주었던 function을 호출할 수 있습니다.     struct Size {     var width: Double     var height: Double      func area() -&gt; Double {       width * height     }   }    let someSize = Size(width: 10.0, height: 5.5) // 인스턴스 생성   let area = someSize.area() // 55.0 이라는 값이 area에 할당됨.   ‘Size’ structure를 정의할 때 function ‘area’를 작성해주고, Size의 인스턴스인 ‘someSize’를 생성 후 instance method인 area()를 호출해주었습니다.   someSize 인스턴스의 타입은 Size이고, width와 height는 속성(properties)입니다.    area()는 Size의 모든 인스턴스에서 호출될 수 있는 instance method입니다.   &lt;!– # Introduction to UIKit   UIKit은 사용자 인터페이스를 생성하고 관리하기 위해 사용되는 기본적인 프레임워크입니다.   ## Common System Views   UIView(또는 view)는 모든 시각적인 요소를 정의하는 가장 기본적인 UIKit의 클래스입니다. 하나의 view는 직사각형 형태를 정의합니다. 이것을 커스터 마이즈하여 화면에 어떤 것이든 나타낼 수 있습니다.  --&gt;  ","categories": ["TIL"],
+        "tags": ["learning","공부 기록","Swift","UIKit"],
+        "url": "/til/fundamentals/",
+        "teaser": "/assets/images/teaser.jpg"
+      },{
+        "title": "LeetCode: Swift",
+        "excerpt":"🗂 ..  LeetCode 문제를 풀어보며 사용되는 메서드나 풀이 방식을 정리합니다.   Instance Method   hasPrefix(_:)     let arr = [\"playground\", \"plum\", \"plow\"]    var prefix = arr[0]    for element in arr {       while !element.hasPrefix(prefix) {           prefix = String(prefix.dropLast())       }   }    print(prefix)   // \"pl\"을 출력함.  패러미터로 전달된 String 값이 포함되어 있다면 true를 반환, 포함되어 있지 않다면 false를 반환합니다.     element가 “plum”일때 길이가 더 긴 문자열 “playground”를 prefix로 통과시켜도 문제가 없음을 확인.   띄어쓰기 되어있지 않은 문자열에도 사용 가능.  ","categories": ["TIL"],
+        "tags": ["learning","공부 기록","Swift","LeetCode"],
+        "url": "/til/leetcode/",
         "teaser": "/assets/images/teaser.jpg"
       }]
