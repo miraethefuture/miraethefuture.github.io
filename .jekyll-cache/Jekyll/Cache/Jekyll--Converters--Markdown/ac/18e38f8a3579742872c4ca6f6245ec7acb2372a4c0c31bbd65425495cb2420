@@ -1,4 +1,4 @@
-I"y$<p><a href="https://books.apple.com/us/book/develop-in-swift-fundamentals/id1581182804">📂 Develop in Swift Fundamentals</a>
+I"	G<p><a href="https://books.apple.com/us/book/develop-in-swift-fundamentals/id1581182804">📂 Develop in Swift Fundamentals</a>
 <br /><sub>아래 모든 정보의 출처는 Develop in Swift Fundamentals이며 개인의 학습 용도로만 사용되었음을 밝힙니다.</sub></p>
 
 <h1 id="initializers">Initializers</h1>
@@ -68,6 +68,35 @@
 
 <p>위의 예시에서는, 어떤 속성은 기본값을 가지고 또 다른 어떤 속성은 기본값을 가지지 않습니다. 새 인스턴스를 생성시, 기본값이 없는 속성만 패러미터로 작성해줍니다.</p>
 
+<h2 id="custom-initializers">Custom Initializers</h2>
+
+<div class="language-swift highlighter-rouge"><div class="highlight"><pre class="highlight"><code>  <span class="kd">struct</span> <span class="kt">Temperature</span> <span class="p">{</span>
+    <span class="k">var</span> <span class="nv">celsius</span><span class="p">:</span> <span class="kt">Double</span>
+
+    <span class="c1">// memberwise initializer</span>
+    <span class="nf">init</span><span class="p">(</span><span class="nv">celsius</span><span class="p">:</span> <span class="kt">Double</span><span class="p">)</span> <span class="p">{</span>
+      <span class="k">self</span><span class="o">.</span><span class="n">celsius</span> <span class="o">=</span> <span class="n">celsius</span>
+    <span class="p">}</span>
+
+    <span class="c1">// custom initializer</span>
+    <span class="nf">init</span><span class="p">(</span><span class="nv">fahrenheit</span><span class="p">:</span> <span class="kt">Double</span><span class="p">)</span> <span class="p">{</span>
+      <span class="k">self</span><span class="o">.</span><span class="n">celsius</span> <span class="o">=</span> <span class="p">(</span><span class="n">fahrenheit</span> <span class="o">-</span> <span class="mi">32</span><span class="p">)</span> <span class="o">/</span> <span class="mf">1.8</span>
+    <span class="p">}</span>
+  <span class="p">}</span>
+
+  <span class="k">let</span> <span class="nv">currentTemperature</span> <span class="o">=</span> <span class="kt">Temperature</span><span class="p">(</span><span class="nv">celsius</span><span class="p">:</span> <span class="mf">18.5</span><span class="p">)</span>
+  <span class="k">let</span> <span class="nv">boiling</span> <span class="o">=</span> <span class="kt">Temperature</span><span class="p">(</span><span class="nv">fahrenheit</span><span class="p">:</span> <span class="mf">212.0</span><span class="p">)</span>
+
+  <span class="nf">print</span><span class="p">(</span><span class="n">currentTemperature</span><span class="o">.</span><span class="n">celsius</span><span class="p">)</span> <span class="c1">// 18.5 출력</span>
+  <span class="nf">print</span><span class="p">(</span><span class="n">boiling</span><span class="o">.</span><span class="n">celsius</span><span class="p">)</span>            <span class="c1">// 100.0 출력</span>
+</code></pre></div></div>
+
+<p>위의 예시에서 custom initializer인 init(fahrenheit: Double)는 패러미터로 전달 받은 값으로 계산을 수행하고 결과값을 celsius property에 할당합니다.</p>
+
+<p>Custom initializer를 생성시 Swift가 기본 생성자와 memberwise initializer를 자동으로 생성해주지 않기 때문에 위의 예시처럼 직접 작성해 주어야 합니다.</p>
+
+<p>원한다면, 여러개의 Custom initializer를 작성할 수 있습니다.</p>
+
 <h1 id="instance-methods">Instance Methods</h1>
 
 <p>Instance Methods는 특정 타입의 인스턴스에 호출될 수 있는 functions입니다. Instance Methods는 structure의 속성에 접근하고 수정할 방법을 제공합니다. 그리고 해당 인스턴스의 목적과 관련된 기능을 추가합니다.</p>
@@ -91,4 +120,81 @@
 
 <p>someSize 인스턴스의 타입은 Size이고, width와 height는 속성(properties)입니다.<br />
   area()는 Size의 모든 인스턴스에서 호출될 수 있는 instance method입니다.</p>
+
+<h1 id="mutating-methods">Mutating methods</h1>
+
+<p>때때로, 속성의 값을 변경하는 function을 작성해야할 수 있습니다. 이때는 mutating 키워드를 사용합니다.</p>
+
+<div class="language-swift highlighter-rouge"><div class="highlight"><pre class="highlight"><code>  <span class="kd">struct</span> <span class="kt">Odometer</span> <span class="p">{</span>
+    <span class="k">var</span> <span class="nv">count</span><span class="p">:[</span><span class="kt">Int</span><span class="p">]</span> <span class="o">=</span> <span class="mi">0</span>  
+
+    <span class="k">mutating</span> <span class="kd">func</span> <span class="nf">increment</span><span class="p">()</span> <span class="p">{</span>
+      <span class="n">count</span> <span class="o">+=</span> <span class="mi">1</span>
+    <span class="p">}</span>
+
+    <span class="k">mutating</span> <span class="kd">func</span> <span class="nf">increment</span><span class="p">(</span><span class="n">by</span> <span class="nv">amount</span><span class="p">:</span> <span class="kt">Int</span><span class="p">)</span> <span class="p">{</span>
+      <span class="n">count</span> <span class="o">+=</span> <span class="n">amount</span>
+    <span class="p">}</span>
+
+    <span class="k">mutating</span> <span class="kd">func</span> <span class="nf">reset</span><span class="p">()</span> <span class="p">{</span>
+      <span class="n">count</span> <span class="o">=</span> <span class="mi">0</span>
+    <span class="p">}</span>
+  <span class="p">}</span>
+
+  <span class="k">var</span> <span class="nv">odometer</span> <span class="o">=</span> <span class="kt">Odometer</span><span class="p">()</span> <span class="c1">// count가 기본값 0</span>
+  <span class="n">odometer</span><span class="o">.</span><span class="nf">increment</span><span class="p">()</span>
+  <span class="n">odometer</span><span class="o">.</span><span class="nf">increment</span><span class="p">(</span><span class="nv">by</span><span class="p">:</span> <span class="mi">15</span><span class="p">)</span>
+  <span class="n">odometer</span><span class="o">.</span><span class="nf">reset</span><span class="p">()</span>
+</code></pre></div></div>
+
+<h1 id="self">Self</h1>
+
+<p><code>self</code> 는 타입의 현재 인스턴스를 나타냅니다. 인스턴스 메서드나 computed property 안에서 사용됩니다.</p>
+
+<div class="language-swift highlighter-rouge"><div class="highlight"><pre class="highlight"><code>  <span class="kd">struct</span> <span class="kt">Car</span> <span class="p">{</span>
+    <span class="k">var</span> <span class="nv">color</span><span class="p">:</span> <span class="kt">Color</span>
+
+    <span class="k">var</span> <span class="nv">description</span><span class="p">:</span> <span class="kt">String</span> <span class="p">{</span>
+      <span class="k">return</span> <span class="s">"This is a </span><span class="se">\(</span><span class="k">self</span><span class="o">.</span><span class="n">color</span><span class="se">)</span><span class="s"> car."</span>
+    <span class="p">}</span>
+  <span class="p">}</span>
+</code></pre></div></div>
+
+<p>생성자가 속성의 이름과 같은 이름의 패러미터를 가지고 있을 때 self를 사용합니다.</p>
+
+<div class="language-swift highlighter-rouge"><div class="highlight"><pre class="highlight"><code>  <span class="kd">struct</span> <span class="kt">Temperature</span> <span class="p">{</span>
+    <span class="k">var</span> <span class="nv">celsius</span><span class="p">:</span> <span class="kt">Double</span>
+
+    <span class="nf">init</span><span class="p">(</span><span class="nv">celsius</span><span class="p">:</span> <span class="kt">Double</span><span class="p">)</span> <span class="p">{</span>
+      <span class="k">self</span><span class="o">.</span><span class="n">celsius</span> <span class="o">=</span> <span class="n">celsius</span>
+    <span class="p">}</span>
+  <span class="p">}</span>
+</code></pre></div></div>
+
+<h1 id="inheritance">Inheritance</h1>
+
+<p>Structures와 Classes의 가장 큰 차이점은 classes가 계층적인 관계를 가질 수 있다는 것입니다. 모든 클래스는 parent 그리고 child 클래스를 가질 수 있습니다. Parent 클래스는 superclass, child 클래스는 subclass라고 합니다.</p>
+
+<p>가족 관계에서처럼, subclasses는 superclasses로부터 속성(properties)과 메서드를 상속받습니다.</p>
+
+<h2 id="defining-a-base-class">Defining a Base Class</h2>
+
+<p>Base classes는 parent 클래스를 가지지 않는 클래스입니다.</p>
+
+<div class="language-swift highlighter-rouge"><div class="highlight"><pre class="highlight"><code>  <span class="kd">class</span> <span class="kt">Vehicle</span> <span class="p">{</span>
+      <span class="k">var</span> <span class="nv">currentSpeed</span> <span class="o">=</span> <span class="mf">0.0</span>
+
+      <span class="k">var</span> <span class="nv">description</span><span class="p">:</span> <span class="kt">String</span> <span class="p">{</span>
+          <span class="s">"traveling at </span><span class="se">\(</span><span class="n">currentSpeed</span><span class="se">)</span><span class="s"> miles per hour"</span>
+      <span class="p">}</span>
+
+      <span class="kd">func</span> <span class="nf">makeNoise</span><span class="p">()</span> <span class="p">{</span>
+          <span class="c1">// do nothing</span>
+      <span class="p">}</span>
+  <span class="p">}</span>
+
+  <span class="k">let</span> <span class="nv">someVehicle</span> <span class="o">=</span> <span class="kt">Vehicle</span><span class="p">()</span>
+  <span class="nf">print</span><span class="p">(</span><span class="s">"Vehicle: </span><span class="se">\(</span><span class="n">someVehicle</span><span class="o">.</span><span class="n">description</span><span class="se">)</span><span class="s">"</span><span class="p">)</span>
+  <span class="c1">// Vehicle: traveling at \(currentSpeed) miles per hour 을 출력</span>
+</code></pre></div></div>
 :ET

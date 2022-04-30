@@ -1,9 +1,7 @@
-I"�<h1 id="-">🗂 ..</h1>
+I"�<h1 id="-">🗂 ..</h1>
 <p>LeetCode 문제를 풀어보며 사용되는 메서드나 풀이 방식을 정리합니다.</p>
 
-<h2 id="instance-method">Instance Method</h2>
-
-<h3 id="hasprefix_">hasPrefix(_:)</h3>
+<h2 id="hasprefix_">hasPrefix(_:)</h2>
 
 <div class="language-swift highlighter-rouge"><div class="highlight"><pre class="highlight"><code>  <span class="k">let</span> <span class="nv">arr</span> <span class="o">=</span> <span class="p">[</span><span class="s">"playground"</span><span class="p">,</span> <span class="s">"plum"</span><span class="p">,</span> <span class="s">"plow"</span><span class="p">]</span>
 
@@ -23,4 +21,26 @@
   <li>element가 “plum”일때 길이가 더 긴 문자열 “playground”를 prefix로 통과시켜도 문제가 없음을 확인.</li>
   <li>띄어쓰기 되어있지 않은 문자열에도 사용 가능.</li>
 </ul>
+
+<h2 id="removelast">removeLast()</h2>
+
+<div class="language-swift highlighter-rouge"><div class="highlight"><pre class="highlight"><code>  <span class="k">var</span> <span class="nv">arr</span> <span class="o">=</span> <span class="p">[</span><span class="s">"a"</span><span class="p">,</span> <span class="s">"b"</span><span class="p">]</span>
+
+  <span class="k">let</span> <span class="nv">resultValue</span> <span class="o">=</span> <span class="n">arr</span><span class="o">.</span><span class="nf">removeLast</span><span class="p">()</span>
+
+  <span class="nf">print</span><span class="p">(</span><span class="n">resultValue</span><span class="p">)</span>
+  <span class="c1">// 마지막 요소인 b를 출력함</span>
+</code></pre></div></div>
+
+<p>removeLast() 메서드는 제거한 마지막 값을 리턴합니다.</p>
+
+<div class="language-swift highlighter-rouge"><div class="highlight"><pre class="highlight"><code>  <span class="k">var</span> <span class="nv">s</span> <span class="o">=</span> <span class="s">"abcde"</span>
+
+  <span class="k">if</span> <span class="n">s</span><span class="o">.</span><span class="nf">removeLast</span><span class="p">()</span> <span class="o">==</span> <span class="s">"e"</span> <span class="p">{</span>
+      <span class="nf">print</span><span class="p">(</span><span class="n">s</span><span class="p">)</span>
+      <span class="c1">// "abcd"를 출력</span>
+  <span class="p">}</span>
+</code></pre></div></div>
+
+<p>위의 예시처럼 removeLast() 메서드가 조건문에서 사용되었기 때문에 조건문 밖에 있는 원래의 문자열에는 영향을 미치지 않을거라고 생각했는데, if statement의 조건 부분에서  removeLast()를 사용하면 원래의 문자열의 마지막 요소는 사라짐.</p>
 :ET

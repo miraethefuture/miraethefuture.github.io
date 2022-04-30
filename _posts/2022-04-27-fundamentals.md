@@ -172,3 +172,94 @@ toc_icon: "kiwi-bird"
   odometer.increment(by: 15)
   odometer.reset()
   ```
+
+# Self  
+
+  <code>self</code> 는 타입의 현재 인스턴스를 나타냅니다. 인스턴스 메서드나 computed property 안에서 사용됩니다.  
+
+  ```swift
+  struct Car {
+    var color: Color
+
+    var description: String {
+      return "This is a \(self.color) car."
+    }
+  }
+  ```
+
+  생성자가 속성의 이름과 같은 이름의 패러미터를 가지고 있을 때 self를 사용합니다.
+
+  ```swift
+  struct Temperature {
+    var celsius: Double
+
+    init(celsius: Double) {
+      self.celsius = celsius
+    }
+  }
+  ```
+
+# Inheritance  
+
+  Structures와 Classes의 가장 큰 차이점은 classes가 계층적인 관계를 가질 수 있다는 것입니다. 모든 클래스는 parent 그리고 child 클래스를 가질 수 있습니다. Parent 클래스는 superclass, child 클래스는 subclass라고 합니다.  
+
+  가족 관계에서처럼, subclasses는 superclasses로부터 속성(properties)과 메서드를 상속받습니다.  
+
+## Defining a Base Class  
+
+  Base classes는 parent 클래스를 가지지 않는 클래스입니다.
+
+  ```swift  
+  class Vehicle {
+      var currentSpeed = 0.0
+
+      var description: String {
+          "traveling at \(currentSpeed) miles per hour"
+      }
+
+      func makeNoise() {
+          // do nothing
+      }
+  }
+
+  let someVehicle = Vehicle()
+  print("Vehicle: \(someVehicle.description)")
+  // Vehicle: traveling at \(currentSpeed) miles per hour 을 출력
+  ```
+
+  위의 Vehicle 클래스는 기본값 0.0을 가진 currentSpeed라는 속성과 description 이라는 computed variable, 그리고 makeNoise()라는 메서드를 가지고 있습니다. 이 메서드는 Vehicle 인스턴스에서는 아무것도 수행하지 않지만 subclass에서 커스터 마이징 후 사용될 것입니다.  
+
+  Vehicle 클래스는 속성과 메서드와 같은 아주 일반적인 특성들을 가지고 있습니다. 이 클래스 자체로는 그다지 유용하게 쓰이지 못할 수 있지만 다른 더 특정한 type을 생성하는 것을 더 쉽게 만들어 줄 것입니다.  
+
+## Create a SubClass  
+
+  Subclassing은 기존의 존재하는 클래스를 기초로 새로운 클래스를 생성하는 것을 말합니다. Subclasses는 superclass로부터 속성과 메서드를 상속받고 그것들을 개선하거나 더 구체적으로 만들 수 있습니다. 새 속성과 메서드를 subclass에 추가하는 것도 가능합니다.  
+
+  아래는 SomeSuperclass로부터 상속받는 새 type인 subclass SomeSubclass를 정의하는 방법입니다.
+
+  ```swift  
+  class SomeSubclass: SomeSuperclass {
+      // subclass 정의
+  }
+  ```
+
+  아래는 superclass인 Vehicle을 기초로 생성된 subclass Bicycle 입니다.
+
+  ```swift
+  class Bicycle: Vehicle {
+      var hasBasket = false
+  }
+  ```  
+
+  Bicycle 클래스는 Vehicle 클래스의 속성 currentSpeed와 description, makeNoise() 메서드를 상속 받습니다.  
+
+  상속 받은 속성과 메서드 뿐 아니라 새로운 boolean property인 hasBasket을 정의합니다.
+
+  Bicycle의 인스턴스에 currentSpeed를 업데이트 할 수 있습니다.
+
+  ```swift
+  let bicycle = Bicycle()
+  bicycle.currentSpeed = 15.0
+  print("Bicycle: \(bicycle.description)")
+  // Bicycle: traveling at 15.0 miles per hour를 출력
+  ```
