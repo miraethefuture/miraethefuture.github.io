@@ -263,3 +263,27 @@ toc_icon: "kiwi-bird"
   print("Bicycle: \(bicycle.description)")
   // Bicycle: traveling at 15.0 miles per hour를 출력
   ```
+
+  Subclass도 subclass를 가질 수 있습니다. 아래의 예시는 두명이 탑승할 수 있는 TandemBike를 표현하고 있습니다.
+
+  ```swift
+  class Tandem: Bicycle {
+      var currentNumberOfPassenger = 0
+  }
+  ```
+
+  <code>Tandem</code>은 <code>Bicycle</code>의 모든 속성과 메서드를 상속 받습니다. <code>Tandem</code> 서브 클래스는 또한 기본값 0을 가진 currentNumberOfPassenger라는 새로운 속성을 추가합니다.  
+
+  Tandem의 인스턴스는 상속 받은 모든 속성과 메서드에 대한 접근 권한을 가집니다.
+
+  ```swift
+  let tandem = Tandem()
+
+  tandem.hasBasket = true
+  tandem.currentSpeed = 22.0
+  tandem.currentNumberOfPassenger = 2
+
+  print("Tandem: \(tandem.description)")
+  // "Tandem: traveling at 22.0 miles per hour" 을 출력합니다.
+  ```
+  

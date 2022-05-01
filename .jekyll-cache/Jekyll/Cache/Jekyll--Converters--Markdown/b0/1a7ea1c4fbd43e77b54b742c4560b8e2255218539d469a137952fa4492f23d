@@ -1,4 +1,4 @@
-I"jO<p><a href="https://books.apple.com/us/book/develop-in-swift-fundamentals/id1581182804">📂 Develop in Swift Fundamentals</a>
+I"[<p><a href="https://books.apple.com/us/book/develop-in-swift-fundamentals/id1581182804">📂 Develop in Swift Fundamentals</a>
 <br /><sub>아래 모든 정보의 출처는 Develop in Swift Fundamentals이며 개인의 학습 용도로만 사용되었음을 밝힙니다.</sub></p>
 
 <h1 id="initializers">Initializers</h1>
@@ -221,4 +221,35 @@
 </code></pre></div></div>
 
 <p>Bicycle 클래스는 Vehicle 클래스의 속성 currentSpeed와 description, makeNoise() 메서드를 상속 받습니다.</p>
+
+<p>상속 받은 속성과 메서드 뿐 아니라 새로운 boolean property인 hasBasket을 정의합니다.</p>
+
+<p>Bicycle의 인스턴스에 currentSpeed를 업데이트 할 수 있습니다.</p>
+
+<div class="language-swift highlighter-rouge"><div class="highlight"><pre class="highlight"><code>  <span class="k">let</span> <span class="nv">bicycle</span> <span class="o">=</span> <span class="kt">Bicycle</span><span class="p">()</span>
+  <span class="n">bicycle</span><span class="o">.</span><span class="n">currentSpeed</span> <span class="o">=</span> <span class="mf">15.0</span>
+  <span class="nf">print</span><span class="p">(</span><span class="s">"Bicycle: </span><span class="se">\(</span><span class="n">bicycle</span><span class="o">.</span><span class="n">description</span><span class="se">)</span><span class="s">"</span><span class="p">)</span>
+  <span class="c1">// Bicycle: traveling at 15.0 miles per hour를 출력</span>
+</code></pre></div></div>
+
+<p>Subclass도 subclass를 가질 수 있습니다. 아래의 예시는 두명이 탑승할 수 있는 TandemBike를 표현하고 있습니다.</p>
+
+<div class="language-swift highlighter-rouge"><div class="highlight"><pre class="highlight"><code>  <span class="kd">class</span> <span class="kt">Tandem</span><span class="p">:</span> <span class="kt">Bicycle</span> <span class="p">{</span>
+      <span class="k">var</span> <span class="nv">currentNumberOfPassenger</span> <span class="o">=</span> <span class="mi">0</span>
+  <span class="p">}</span>
+</code></pre></div></div>
+
+<p><code>Tandem</code>은 <code>Bicycle</code>의 모든 속성과 메서드를 상속 받습니다. <code>Tandem</code> 서브 클래스는 또한 기본값 0을 가진 currentNumberOfPassenger라는 새로운 속성을 추가합니다.</p>
+
+<p>Tandem의 인스턴스는 상속 받은 모든 속성과 메서드에 대한 접근 권한을 가집니다.</p>
+
+<div class="language-swift highlighter-rouge"><div class="highlight"><pre class="highlight"><code>  <span class="k">let</span> <span class="nv">tandem</span> <span class="o">=</span> <span class="kt">Tandem</span><span class="p">()</span>
+
+  <span class="n">tandem</span><span class="o">.</span><span class="n">hasBasket</span> <span class="o">=</span> <span class="kc">true</span>
+  <span class="n">tandem</span><span class="o">.</span><span class="n">currentSpeed</span> <span class="o">=</span> <span class="mf">22.0</span>
+  <span class="n">tandem</span><span class="o">.</span><span class="n">currentNumberOfPassenger</span> <span class="o">=</span> <span class="mi">2</span>
+
+  <span class="nf">print</span><span class="p">(</span><span class="s">"Tandem: </span><span class="se">\(</span><span class="n">tandem</span><span class="o">.</span><span class="n">description</span><span class="se">)</span><span class="s">"</span><span class="p">)</span>
+  <span class="c1">// "Tandem: traveling at 22.0 miles per hour" 을 출력합니다.</span>
+</code></pre></div></div>
 :ET
