@@ -286,4 +286,3 @@ toc_icon: "kiwi-bird"
   print("Tandem: \(tandem.description)")
   // "Tandem: traveling at 22.0 miles per hour" 을 출력합니다.
   ```
-  

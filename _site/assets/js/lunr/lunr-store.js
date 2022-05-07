@@ -118,4 +118,10 @@ var store = [{
         "tags": ["learning","공부 기록","Swift","LeetCode"],
         "url": "/til/leetcode/",
         "teaser": "/assets/images/teaser.jpg"
+      },{
+        "title": "앱 출시 프로젝트 로그",
+        "excerpt":" ","categories": ["TIL"],
+        "tags": ["learning","공부 기록","Swift","프로젝트 기록"],
+        "url": "/til/teamProject/",
+        "teaser": "/assets/images/teaser.jpg"
       }]
