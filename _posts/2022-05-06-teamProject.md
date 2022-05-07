@@ -28,8 +28,87 @@ toc_icon: "kiwi-bird"
   1. Main 스토리보드에 View Controller Scene 삭제
     - List를 화면에 보여줄 수 있는 view controller로 교체
   2. 라이브러리에서 Collection View Controller를 드래그하여 생성
+
+# 데이터 모델
+
   3. 데이터 모델 생성
     - 각 식재료 아이템이 가질 데이터의 샘플 작성
+    - 날짜 관련 데이터 다루기가 어려워 일단 list 형태를 먼저 만들어 보기로 함
+
+# Configure the Collection as a list  
+
+  Compositional layout을 이용하여 콜렉션 뷰의 나타나는 모습을 설계  
+  Compositional layout은 세가지의 컴포넌트를 이용함  
+    - Section
+    - Group
+    - Item
+
+## Search text field 코드  
+
+  ```swift
+  //
+  //  ViewController.swift
+  //  cingcing
+  //
+  //  Created on 2022/05/06.
+  //
+
+  import UIKit
+
+  class ViewController: UIViewController, UITextFieldDelegate {
+
+
+      @IBOutlet weak var searchTextField: UITextField!
+
+
+      override func viewDidLoad() {
+          super.viewDidLoad()
+
+          // self = 현재 class
+          searchTextField.delegate = self
+      }
+
+      @IBAction func searchPressed(_ sender: UIButton) {
+          // return 후 키보드 사라지게 하기
+          searchTextField.endEditing(true)
+          print(searchTextField.text!)
+      }
+
+      func textFieldShouldReturn(_ textField: UITextField) -> Bool {
+          searchTextField.endEditing(true)
+          print(searchTextField.text!)
+          return true
+      }
+
+      func textFieldShouldEndEditing(_ textField: UITextField) -> Bool {
+          if textField.text != "" {
+              return true
+          } else {
+              textField.placeholder = "검색어를 입력하세요."
+              return false
+          }
+      }
+
+      func textFieldDidEndEditing(_ textField: UITextField) {
+          searchTextField.text = ""
+      }
+
+      // 여기까지 search text field 와 검색 버튼
+  }
+  ```
+
+## UICollectionViewController
+
+  - View Controller의 이름을 변경
+  - Superclass를 UICollectionViewController로 변경
+  - listLayout() function 작성
+  - 콜렉션 뷰 > 콜렉션 레이아웃 > 리스트 레이아웃
+
+# Configure the Data Source  
+
+  Computational layout 이용해서 콜렉션 뷰 안에 리스트 섹션 생성 완료.  
+  Collection view에 셀을 등록하고 content configuration을 사용하여 셀의  appearance를 정의 후 데이타 소스를 셀의 연결하기 
+
 
 
 
