@@ -18,6 +18,7 @@ toc_icon: "kiwi-bird"
 
   - 시간 데이터도 필요할까?
   - 다크 모드에서 searchTextField안의 placeholder와 text가 안보이는 문제
+  - search UITextField 옆에 cancel이나 x 버튼 
 
 # Add a Collection View Controller  
 
@@ -189,7 +190,20 @@ toc_icon: "kiwi-bird"
   Constraints 조정 완료  
   버튼, text field 기능 동작 확인
 
-## 리스트 추가 버튼 생성
+# Organize View Controller  
+
+  UIKit 앱에서 view controller는 여러개의 역할을 함. Item list view controller의 역할을 정리해봅니다. 연관된 동작과 관련된 데이터 소스를 분리된 파일로 추출.  
+
+  Collection view 데이터 소스는 콜렉션 뷰의 데이터를 관리.  
+  또, 콜렉션뷰가 리스트의 아이템을 화면에 보여주기 위해 사용하는 셀을 생성하고 배치.
+
+  View controller behavior와 data source behavior를 다른 파일로 나누어 줌.  
+
+  View controller는 UIKit 앱에서 많은 역할을 하기 때문에 파일이 커질 수 있음.  
+  분리된 파일과 extextions를 이용하여 재정리하는 것을 에러를 빨리 찾을 수 있도록 하고 새로운 기능을 추가하기 쉽도록 함.
+
+
+
 
 
 
