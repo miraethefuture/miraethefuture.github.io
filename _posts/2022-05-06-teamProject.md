@@ -14,6 +14,10 @@ toc_label: " "
 toc_icon: "kiwi-bird"
 ---
 
+# ?  
+
+  - 시간 데이터도 필요할까?
+  - 다크 모드에서 searchTextField안의 placeholder와 text가 안보이는 문제
 
 # Add a Collection View Controller  
 
@@ -107,7 +111,90 @@ toc_icon: "kiwi-bird"
 # Configure the Data Source  
 
   Computational layout 이용해서 콜렉션 뷰 안에 리스트 섹션 생성 완료.  
-  Collection view에 셀을 등록하고 content configuration을 사용하여 셀의  appearance를 정의 후 데이타 소스를 셀의 연결하기 
+
+  Collection view에 셀을 등록하고 content configuration을 사용하여 셀의  appearance를 정의 후 데이타 소스를 셀의 연결하기
+
+  UICollectionViewDiffableDataSource<Int, String> 타입을 이용하여 dataSource 생성
+
+# Apply a snapshot  
+
+   스냅샷을 이용하여 데이터의 변경 사항을 관리  
+
+   1. 스냅샷을 생성
+   2. 원하는 상태의 데이터를 스냅샷에 작성되도록 함
+   3. UI에 스냅샷을 적용
+
+# Displaying Cell Info  
+
+  유통기한 날짜를 입력 받고, 그것을 이용해 D-day 카운트 다운 표시를 일(day) 수로 표시하는 방법을 찾아야 함.  
+
+  ```swift
+  if Locale.current.calendar.isDateInToday(self) {
+        } else {
+        }
+  ```
+  해당 date 값이 오늘 날짜라면 휴지통 아이콘 나타나게 할 때 사용할 수 있을 것 같음
+
+  ```swift
+  import Foundation
+
+  extension Date {
+      // computed property
+      var dayAndTimeText: String {
+          // formatted(date:time:) -> date 값을 문자 형태로
+          let timeText = formatted(date: .omitted, time: .shortened)
+          if Locale.current.calendar.isDateInToday(self) {
+              // localize / comment -> translator
+              let timeFormat = NSLocalizedString("Today at %@", comment: "Today at time format string")
+              return String(format: timeFormat, timeText)
+          } else {
+              let dateText = formatted(.dateTime.month(.abbreviated).day())
+                          let dateAndTimeFormat = NSLocalizedString("%@ at %@", comment: "Date and time format string")
+                          return String(format: dateAndTimeFormat, dateText, timeText)
+                      }
+                  }
+      var dayText: String {
+          if Locale.current.calendar.isDateInToday(self) {
+              return NSLocalizedString("Today", comment: "Today due date description")
+
+          } else {
+              return formatted(.dateTime.month().day().weekday(.wide))
+          }
+      }
+  }
+  ```
+
+  날짜 formatting 파트 (필요 없을 것 같음)
+
+# HeaderView  
+
+  - title(header)
+  - 설정 icon
+  - searchbar and button
+
+  (검색 버튼 누르지 않고 입력하면 아래 아이템이 바뀌는 기능으로 구현하면 좋을 것 같음)
+
+## UICollectionReusableView  
+
+  UICollectionReusableView를 사용하여 supplementary views를 생성합니다.  
+  Supplementary views는 각 collection view cells와 분리되기 때문에 header나 footer를 생성하는데 사용되기 좋습니다.  
+
+## HeaderView - Subviews - Constraints  
+
+  Subviews  
+  - 설정 버튼
+  - 타이틀
+  - 검색 textfield
+
+  Constraints 조정 완료  
+  버튼, text field 기능 동작 확인
+
+## 리스트 추가 버튼 생성
+
+
+
+
+
 
 
 
