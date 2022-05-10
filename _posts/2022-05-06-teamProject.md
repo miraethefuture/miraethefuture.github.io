@@ -18,7 +18,7 @@ toc_icon: "kiwi-bird"
 
   - 시간 데이터도 필요할까?
   - 다크 모드에서 searchTextField안의 placeholder와 text가 안보이는 문제
-  - search UITextField 옆에 cancel이나 x 버튼 
+  - search UITextField 옆에 cancel이나 x 버튼
 
 # Add a Collection View Controller  
 
@@ -201,6 +201,36 @@ toc_icon: "kiwi-bird"
 
   View controller는 UIKit 앱에서 많은 역할을 하기 때문에 파일이 커질 수 있음.  
   분리된 파일과 extextions를 이용하여 재정리하는 것을 에러를 빨리 찾을 수 있도록 하고 새로운 기능을 추가하기 쉽도록 함.
+
+# 중간 정리  
+
+## UI  
+
+<center><img src="/assets/images/teamProject1.png" alt="teamProject1" width="300"></center>
+
+## Header  
+
+  UICollectionView - Supplementary View
+  UICollectionReusableView 상속
+
+  subviews (설정 버튼 / 페이지 타이틀 / 검색창)를 담을 수 있는 header view 구현을 목적
+  Resuable view를 사용하면 스크롤을 내릴 시에도 사라지지 않고 고정됨
+  UIButton과 UITextField는 동작하나 기능이 연결되어 있지는 않음
+  Storyboard 이용하지 않고 코드만 작성하여 UI를 그리니 storyboard에 미리보기가 나타나지 않는 문제있음
+
+## List Layout  
+
+  UICollectionViewCompositionalLayout
+
+  현재 기본 타입 리스트라 커스텀에 제약이 있음 (커스텀 가능하게 변경 가능)
+  유통기한의 남은 기간을 UICellAccessory 로 표현
+  각 아이템의 title / notes 는 데이터 모델의 sample data에서 가져오도록 함
+
+## 느낀점  
+
+  Storyboard가 아니라 코딩만으로 UI를 짜는 새로운 경험을 해볼 수 있어서 좋았다.  
+  지금은 구현이 먼저라 기능이 UI나 기능이 구현이 되면 넘어가고 있지만 시간이나면 정리를 하면서 코드가 어떤 과정을 거치는지 다시 한번 생각해 보면 좋을 것 같다.
+
 
 
 
