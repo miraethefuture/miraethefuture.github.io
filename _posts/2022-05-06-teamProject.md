@@ -125,6 +125,9 @@ toc_icon: "kiwi-bird"
    2. 원하는 상태의 데이터를 스냅샷에 작성되도록 함
    3. UI에 스냅샷을 적용
 
+   Diffable data source 이용 -> snapshot을 apply -> 변경된 데이터로 UI 업데이트
+
+
 # Displaying Cell Info  
 
   유통기한 날짜를 입력 받고, 그것을 이용해 D-day 카운트 다운 표시를 일(day) 수로 표시하는 방법을 찾아야 함.  
@@ -230,6 +233,13 @@ toc_icon: "kiwi-bird"
 
   Storyboard가 아니라 코딩만으로 UI를 짜는 새로운 경험을 해볼 수 있어서 좋았다.  
   지금은 구현이 먼저라 기능이 UI나 기능이 구현이 되면 넘어가고 있지만 시간이나면 정리를 하면서 코드가 어떤 과정을 거치는지 다시 한번 생각해 보면 좋을 것 같다.
+
+# Create a Reminder View (디테일 뷰)  
+
+<center><img src="/assets/images/teamProject2.png" alt="teamProject2" width="700"></center>
+
+
+
 
 
 

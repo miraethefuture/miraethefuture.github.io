@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="4.2.1">Jekyll</generator><link href="http://localhost:4000/feed.xml" rel="self" type="application/atom+xml" /><link href="http://localhost:4000/" rel="alternate" type="text/html" /><updated>2022-05-10T22:06:43+09:00</updated><id>http://localhost:4000/feed.xml</id><title type="html">Mirae 2 the Future</title><subtitle>An amazing website.</subtitle><author><name>Mirae</name></author><entry><title type="html">앱 출시 프로젝트 로그</title><link href="http://localhost:4000/til/teamProject/" rel="alternate" type="text/html" title="앱 출시 프로젝트 로그" /><published>2022-05-06T00:00:00+09:00</published><updated>2022-05-06T00:00:00+09:00</updated><id>http://localhost:4000/til/teamProject</id><content type="html" xml:base="http://localhost:4000/til/teamProject/">&lt;h1&gt;?&lt;/h1&gt;
+<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="4.2.1">Jekyll</generator><link href="http://localhost:4000/feed.xml" rel="self" type="application/atom+xml" /><link href="http://localhost:4000/" rel="alternate" type="text/html" /><updated>2022-05-11T13:37:51+09:00</updated><id>http://localhost:4000/feed.xml</id><title type="html">Mirae 2 the Future</title><subtitle>An amazing website.</subtitle><author><name>Mirae</name></author><entry><title type="html">앱 출시 프로젝트 로그</title><link href="http://localhost:4000/til/teamProject/" rel="alternate" type="text/html" title="앱 출시 프로젝트 로그" /><published>2022-05-06T00:00:00+09:00</published><updated>2022-05-06T00:00:00+09:00</updated><id>http://localhost:4000/til/teamProject</id><content type="html" xml:base="http://localhost:4000/til/teamProject/">&lt;h1&gt;?&lt;/h1&gt;
 
 &lt;ul&gt;
   &lt;li&gt;시간 데이터도 필요할까?&lt;/li&gt;
@@ -120,6 +120,8 @@
   &lt;li&gt;UI에 스냅샷을 적용&lt;/li&gt;
 &lt;/ol&gt;
 
+&lt;p&gt;Diffable data source 이용 -&amp;gt; snapshot을 apply -&amp;gt; 변경된 데이터로 UI 업데이트&lt;/p&gt;
+
 &lt;h1 id=&quot;displaying-cell-info&quot;&gt;Displaying Cell Info&lt;/h1&gt;
 
 &lt;p&gt;유통기한 날짜를 입력 받고, 그것을 이용해 D-day 카운트 다운 표시를 일(day) 수로 표시하는 방법을 찾아야 함.&lt;/p&gt;
@@ -227,6 +229,10 @@
 
 &lt;p&gt;Storyboard가 아니라 코딩만으로 UI를 짜는 새로운 경험을 해볼 수 있어서 좋았다.&lt;br /&gt;
   지금은 구현이 먼저라 기능이 UI나 기능이 구현이 되면 넘어가고 있지만 시간이나면 정리를 하면서 코드가 어떤 과정을 거치는지 다시 한번 생각해 보면 좋을 것 같다.&lt;/p&gt;
+
+&lt;h1 id=&quot;create-a-reminder-view-디테일-뷰&quot;&gt;Create a Reminder View (디테일 뷰)&lt;/h1&gt;
+
+&lt;center&gt;&lt;img src=&quot;/assets/images/teamProject2.png&quot; alt=&quot;teamProject2&quot; width=&quot;700&quot; /&gt;&lt;/center&gt;
 
 &lt;!-- # Delegate?   --&gt;
 
