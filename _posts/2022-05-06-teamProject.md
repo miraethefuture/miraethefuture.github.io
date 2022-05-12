@@ -234,9 +234,14 @@ toc_icon: "kiwi-bird"
   Storyboard가 아니라 코딩만으로 UI를 짜는 새로운 경험을 해볼 수 있어서 좋았다.  
   지금은 구현이 먼저라 기능이 UI나 기능이 구현이 되면 넘어가고 있지만 시간이나면 정리를 하면서 코드가 어떤 과정을 거치는지 다시 한번 생각해 보면 좋을 것 같다.
 
-# Create a Reminder View (디테일 뷰)  
+# Cell Info 추가
 
-<center><img src="/assets/images/teamProject2.png" alt="teamProject2" width="700"></center>
+View controller는 init(coder:) 생성자를 필요로 합니다.
+
+expDate를 리스트나 디테일 뷰에 나타나도록 해야할까?  
+-> 나타나게 함
+
+<center><img src="/assets/images/teamProject2.png" alt="teamProject2" width="300"></center>
 
 
 
