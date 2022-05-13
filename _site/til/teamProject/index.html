@@ -234,7 +234,7 @@
           <aside class="sidebar__right sticky">
             <nav class="toc">
               <header><h4 class="nav__title"><i class="fas fa-kiwi-bird"></i>  </h4></header>
-              <ul class="toc__menu"><li><a href="#add-a-collection-view-controller">Add a Collection View Controller</a></li><li><a href="#데이터-모델">데이터 모델</a></li><li><a href="#configure-the-collection-as-a-list">Configure the Collection as a list</a><ul><li><a href="#search-text-field-코드">Search text field 코드</a></li><li><a href="#uicollectionviewcontroller">UICollectionViewController</a></li></ul></li><li><a href="#configure-the-data-source">Configure the Data Source</a></li><li><a href="#apply-a-snapshot">Apply a snapshot</a></li><li><a href="#displaying-cell-info">Displaying Cell Info</a></li><li><a href="#headerview">HeaderView</a><ul><li><a href="#uicollectionreusableview">UICollectionReusableView</a></li><li><a href="#headerview---subviews---constraints">HeaderView - Subviews - Constraints</a></li></ul></li><li><a href="#organize-view-controller">Organize View Controller</a></li><li><a href="#중간-정리">중간 정리</a><ul><li><a href="#ui">UI</a></li><li><a href="#header">Header</a></li><li><a href="#list-layout">List Layout</a></li><li><a href="#느낀점">느낀점</a></li></ul></li><li><a href="#cell-info-추가">Cell Info 추가</a></li></ul>
+              <ul class="toc__menu"><li><a href="#add-a-collection-view-controller">Add a Collection View Controller</a></li><li><a href="#데이터-모델">데이터 모델</a></li><li><a href="#configure-the-collection-as-a-list">Configure the Collection as a list</a><ul><li><a href="#search-text-field-코드">Search text field 코드</a></li><li><a href="#uicollectionviewcontroller">UICollectionViewController</a></li></ul></li><li><a href="#configure-the-data-source">Configure the Data Source</a></li><li><a href="#apply-a-snapshot">Apply a snapshot</a></li><li><a href="#displaying-cell-info">Displaying Cell Info</a></li><li><a href="#headerview">HeaderView</a><ul><li><a href="#uicollectionreusableview">UICollectionReusableView</a></li><li><a href="#headerview---subviews---constraints">HeaderView - Subviews - Constraints</a></li></ul></li><li><a href="#organize-view-controller">Organize View Controller</a></li><li><a href="#중간-정리">중간 정리</a><ul><li><a href="#ui">UI</a></li><li><a href="#header">Header</a></li><li><a href="#list-layout">List Layout</a></li><li><a href="#느낀점">느낀점</a></li><li><a href="#cell-info-추가">Cell Info 추가</a></li></ul></li><li><a href="#wire-a-target-action-pair">Wire a Target Action Pair</a></li><li><a href="#navigation-controller">Navigation controller</a></li><li><a href="#indexpath-와-itemid">IndexPath 와 Item.ID</a></li><li><a href="#edit-view-만드는-중">Edit view 만드는 중</a></li></ul>
 
             </nav>
           </aside>
@@ -245,6 +245,7 @@
   <li>시간 데이터도 필요할까?</li>
   <li>다크 모드에서 searchTextField안의 placeholder와 text가 안보이는 문제</li>
   <li>search UITextField 옆에 cancel이나 x 버튼</li>
+  <li>Accessibility (VoiceOver 등,,) 사용할지</li>
 </ul>
 
 <h1 id="add-a-collection-view-controller">Add a Collection View Controller</h1>
@@ -471,7 +472,7 @@
 <p>Storyboard가 아니라 코딩만으로 UI를 짜는 새로운 경험을 해볼 수 있어서 좋았다.<br />
   지금은 구현이 먼저라 기능이 UI나 기능이 구현이 되면 넘어가고 있지만 시간이나면 정리를 하면서 코드가 어떤 과정을 거치는지 다시 한번 생각해 보면 좋을 것 같다.</p>
 
-<h1 id="cell-info-추가">Cell Info 추가</h1>
+<h2 id="cell-info-추가">Cell Info 추가</h2>
 
 <p>View controller는 init(coder:) 생성자를 필요로 합니다.</p>
 
@@ -479,6 +480,46 @@
 -&gt; 나타나게 함</p>
 
 <center><img src="/assets/images/teamProject2.png" alt="teamProject2" width="300" /></center>
+
+<h1 id="wire-a-target-action-pair">Wire a Target Action Pair</h1>
+
+<p>Target Action은 디자인 패턴.<br />
+  객체가 필요한 정보를 보관 -&gt; 이벤트 발생 시 다른 객체에 전송</p>
+
+<p>여기서는 사용자가 DoneButton을 탭할 때 touchUpInside 이벤트 발생.<br />
+  didPressDoneButton: sender 메세지를 View controller에게 보냄</p>
+
+<div class="language-swift highlighter-rouge"><div class="highlight"><pre class="highlight"><code>  <span class="c1">// Item 모델 이용 CustomViewConfiguration을 리턴</span>
+  <span class="kd">private</span> <span class="kd">func</span> <span class="nf">doneButtonConfiguration</span><span class="p">(</span><span class="k">for</span> <span class="nv">item</span><span class="p">:</span> <span class="kt">Item</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kt">UICellAccessory</span><span class="o">.</span><span class="kt">CustomViewConfiguration</span> <span class="p">{</span>
+      <span class="c1">// true면 칠해진 휴지통 아이콘, false면 빈 휴지통 아이콘이 나타나도록 조건</span>
+      <span class="k">let</span> <span class="nv">symbolName</span> <span class="o">=</span> <span class="n">item</span><span class="o">.</span><span class="n">isComplete</span> <span class="p">?</span> <span class="s">"xmark.bin.fill"</span> <span class="p">:</span> <span class="s">"xmark.bin"</span>
+      <span class="k">let</span> <span class="nv">symbolConfiguration</span> <span class="o">=</span> <span class="kt">UIImage</span><span class="o">.</span><span class="kt">SymbolConfiguration</span><span class="p">(</span><span class="nv">textStyle</span><span class="p">:</span> <span class="o">.</span><span class="n">title1</span><span class="p">)</span>
+      <span class="k">let</span> <span class="nv">image</span> <span class="o">=</span> <span class="kt">UIImage</span><span class="p">(</span><span class="nv">systemName</span><span class="p">:</span> <span class="n">symbolName</span><span class="p">,</span> <span class="nv">withConfiguration</span><span class="p">:</span> <span class="n">symbolConfiguration</span><span class="p">)</span>
+      <span class="c1">// 커스텀 버튼 (ItemDoneButton 클래스)</span>
+      <span class="k">let</span> <span class="nv">button</span> <span class="o">=</span> <span class="kt">ItemDoneButton</span><span class="p">()</span>
+      <span class="n">button</span><span class="o">.</span><span class="nf">addTarget</span><span class="p">(</span><span class="k">self</span><span class="p">,</span> <span class="nv">action</span><span class="p">:</span> <span class="kd">#selector(</span><span class="nf">didPressDoneButton(_:)</span><span class="kd">)</span><span class="p">,</span> <span class="nv">for</span><span class="p">:</span> <span class="o">.</span><span class="n">touchUpInside</span><span class="p">)</span>
+      <span class="n">button</span><span class="o">.</span><span class="n">id</span> <span class="o">=</span> <span class="n">item</span><span class="o">.</span><span class="n">id</span>
+      <span class="n">button</span><span class="o">.</span><span class="nf">setImage</span><span class="p">(</span><span class="n">image</span><span class="p">,</span> <span class="nv">for</span><span class="p">:</span> <span class="o">.</span><span class="n">normal</span><span class="p">)</span>
+      <span class="k">return</span> <span class="kt">UICellAccessory</span><span class="o">.</span><span class="kt">CustomViewConfiguration</span><span class="p">(</span><span class="nv">customView</span><span class="p">:</span> <span class="n">button</span><span class="p">,</span> <span class="nv">placement</span><span class="p">:</span> <span class="o">.</span><span class="nf">leading</span><span class="p">(</span><span class="nv">displayed</span><span class="p">:</span> <span class="o">.</span><span class="n">always</span><span class="p">))</span> <span class="c1">// 완료되면 휴지통으로 가도록 설정하기</span>
+  <span class="p">}</span>
+</code></pre></div></div>
+<div class="language-swift highlighter-rouge"><div class="highlight"><pre class="highlight"><code>  <span class="n">button</span><span class="o">.</span><span class="nf">addTarget</span><span class="p">(</span><span class="k">self</span><span class="p">,</span> <span class="nv">action</span><span class="p">:</span> <span class="kd">#selector(</span><span class="nf">didPressDoneButton(_:)</span><span class="kd">)</span><span class="p">,</span> <span class="nv">for</span><span class="p">:</span> <span class="o">.</span><span class="n">touchUpInside</span><span class="p">)</span>
+</code></pre></div></div>
+<p>addTarget를 호출하여 버튼의 touchUpInside 이벤트를 didPressDoneButton 액션 메서드에 연결해줌.</p>
+
+<h1 id="navigation-controller">Navigation controller</h1>
+
+<p>코드로 디테일 뷰를 메인 뷰위에 푸시해준 뒤 Main.Storyboard에 navigation controller를 추가해줌.<br />
+  현재 스토리보드에는 미리보기가 보이지 않는 상황이라 코드로 UI 작성하면 스토리보드는 상관이 없다고 생각했는데 스토리 보드에 추가해 준 navigation view가 스택처럼 작동한다고 함.</p>
+
+<h1 id="indexpath-와-itemid">IndexPath 와 Item.ID</h1>
+
+<p>공부하기</p>
+
+<h1 id="edit-view-만드는-중">Edit view 만드는 중</h1>
+
+<center><video src="https://user-images.githubusercontent.com/85061148/168280247-e598892c-24db-4b7d-873c-37f721d661bd.mov" controls="simulator" style="max-width: 300px">
+</video></center>
 
 <!-- # Delegate?   -->
 

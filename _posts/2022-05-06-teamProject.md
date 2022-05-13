@@ -19,6 +19,7 @@ toc_icon: "kiwi-bird"
   - 시간 데이터도 필요할까?
   - 다크 모드에서 searchTextField안의 placeholder와 text가 안보이는 문제
   - search UITextField 옆에 cancel이나 x 버튼
+  - Accessibility (VoiceOver 등,,) 사용할지
 
 # Add a Collection View Controller  
 
@@ -234,7 +235,7 @@ toc_icon: "kiwi-bird"
   Storyboard가 아니라 코딩만으로 UI를 짜는 새로운 경험을 해볼 수 있어서 좋았다.  
   지금은 구현이 먼저라 기능이 UI나 기능이 구현이 되면 넘어가고 있지만 시간이나면 정리를 하면서 코드가 어떤 과정을 거치는지 다시 한번 생각해 보면 좋을 것 같다.
 
-# Cell Info 추가
+## Cell Info 추가
 
 View controller는 init(coder:) 생성자를 필요로 합니다.
 
@@ -242,6 +243,53 @@ expDate를 리스트나 디테일 뷰에 나타나도록 해야할까?
 -> 나타나게 함
 
 <center><img src="/assets/images/teamProject2.png" alt="teamProject2" width="300"></center>
+
+
+# Wire a Target Action Pair  
+
+  Target Action은 디자인 패턴.  
+  객체가 필요한 정보를 보관 -> 이벤트 발생 시 다른 객체에 전송  
+
+  여기서는 사용자가 DoneButton을 탭할 때 touchUpInside 이벤트 발생.  
+  didPressDoneButton: sender 메세지를 View controller에게 보냄
+
+  ```swift
+  // Item 모델 이용 CustomViewConfiguration을 리턴
+  private func doneButtonConfiguration(for item: Item) -> UICellAccessory.CustomViewConfiguration {
+      // true면 칠해진 휴지통 아이콘, false면 빈 휴지통 아이콘이 나타나도록 조건
+      let symbolName = item.isComplete ? "xmark.bin.fill" : "xmark.bin"
+      let symbolConfiguration = UIImage.SymbolConfiguration(textStyle: .title1)
+      let image = UIImage(systemName: symbolName, withConfiguration: symbolConfiguration)
+      // 커스텀 버튼 (ItemDoneButton 클래스)
+      let button = ItemDoneButton()
+      button.addTarget(self, action: #selector(didPressDoneButton(_:)), for: .touchUpInside)
+      button.id = item.id
+      button.setImage(image, for: .normal)
+      return UICellAccessory.CustomViewConfiguration(customView: button, placement: .leading(displayed: .always)) // 완료되면 휴지통으로 가도록 설정하기
+  }
+  ```
+  ```swift
+  button.addTarget(self, action: #selector(didPressDoneButton(_:)), for: .touchUpInside)
+  ```  
+  addTarget를 호출하여 버튼의 touchUpInside 이벤트를 didPressDoneButton 액션 메서드에 연결해줌.
+
+# Navigation controller
+
+  코드로 디테일 뷰를 메인 뷰위에 푸시해준 뒤 Main.Storyboard에 navigation controller를 추가해줌.  
+  현재 스토리보드에는 미리보기가 보이지 않는 상황이라 코드로 UI 작성하면 스토리보드는 상관이 없다고 생각했는데 스토리 보드에 추가해 준 navigation view가 스택처럼 작동한다고 함.
+
+# IndexPath 와 Item.ID  
+
+   공부하기  
+
+# Edit view 만드는 중  
+
+<center><video src="https://user-images.githubusercontent.com/85061148/168280247-e598892c-24db-4b7d-873c-37f721d661bd.mov" controls="simulator" style="max-width: 300px">
+</video></center>
+
+
+
+
 
 
 
