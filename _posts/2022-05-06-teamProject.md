@@ -14,6 +14,9 @@ toc_label: " "
 toc_icon: "kiwi-bird"
 ---
 
+<sub>📲 앱 출시 스터디 진행 중.</sub>
+
+
 # ?  
 
   - 시간 데이터도 필요할까?
@@ -287,6 +290,24 @@ expDate를 리스트나 디테일 뷰에 나타나도록 해야할까?
 <center><video src="https://user-images.githubusercontent.com/85061148/168280247-e598892c-24db-4b7d-873c-37f721d661bd.mov" controls="simulator" style="max-width: 300px">
 </video></center>
 
+## willSet / didSet  
+
+   willSet은 property가 변경되기 바로 전에 코드를 실행  
+   didSet은 property가 변경된 직후에 코드를 실행
+
+   ```swift
+   var configuration: UIContentConfiguration {
+        //configuration property에 configure(configuration:)을 호출하는 cdidSet observer
+        didSet {
+            configure(configuration: configuration)
+        }
+    }
+
+    func configure(configuration: UIContentConfiguration) {
+        guard let configuration = configuration as? Configuration else { return }
+        textField.text = configuration.text
+    }
+   ```
 
 
 
