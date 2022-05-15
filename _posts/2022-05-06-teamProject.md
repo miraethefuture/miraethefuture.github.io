@@ -309,7 +309,34 @@ expDate를 리스트나 디테일 뷰에 나타나도록 해야할까?
     }
    ```
 
+# Downcasting  
 
+  어떤 클래스 타입의 변수나 상수는 서브클래스의 인스턴스를 참조할 수 있다.
+
+  as? 또는 as! 라는 type cast operator를 사용하여 downcasting을 시도할 수 있다.   
+  Downcasting이 실패할 수 있기 때문에 type cast operator는 두가지의 형태로 나뉜다.  
+  Downcasting을 시도하고 있는 타입의 optional 값을 리턴하는 as?(conditional form)과 downcasting과 force-unwrapping을 함께 시도하는 as!(forced form)이다.  
+
+  Downcasting이 성공할지 확신할 수 없을 때 as? type cast operator를 사용한다.  
+  이 형태의 operator는 항상 optional type의 값을 리턴하고, downcasting이 불가능할때는 nil값을 리턴한다.  
+  Downcasting의 성공을 확신할 수 있을 때는 as! type cast operator를 사용한다.  
+  가능하지 않은 class type으로 downcasting을 시도하면 runtime 에러가 발생한다.  
+
+  ```swift  
+  for item in library {
+      if let movie = item as? Movie {
+          print("Movie: \(movie.name), dir. \(movie.director)")
+      } else if let song = item as? Song {
+          print("Song: \(song.name), by \(song.artist)")
+      }
+  }
+
+  // Movie: Casablanca, dir. Michael Curtiz
+  // Song: Blue Suede Shoes, by Elvis Presley
+  // Movie: Citizen Kane, dir. Orson Welles
+  // Song: The One And Only, by Chesney Hawkes
+  // Song: Never Gonna Give You Up, by Rick Astley
+  ```
 
 
 
