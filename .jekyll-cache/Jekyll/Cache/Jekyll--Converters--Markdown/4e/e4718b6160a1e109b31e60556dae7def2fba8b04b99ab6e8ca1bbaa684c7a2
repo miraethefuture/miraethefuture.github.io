@@ -1,4 +1,4 @@
-I"�^<p><sub>앱 출시 스터디를 진행하며 기록을 남깁니다.</sub></p>
+I"b�<p><sub>📲 앱 출시 스터디 진행 중.</sub></p>
 
 <h1>?</h1>
 
@@ -298,6 +298,103 @@
         <span class="k">guard</span> <span class="k">let</span> <span class="nv">configuration</span> <span class="o">=</span> <span class="n">configuration</span> <span class="k">as?</span> <span class="kt">Configuration</span> <span class="k">else</span> <span class="p">{</span> <span class="k">return</span> <span class="p">}</span>
         <span class="n">textField</span><span class="o">.</span><span class="n">text</span> <span class="o">=</span> <span class="n">configuration</span><span class="o">.</span><span class="n">text</span>
     <span class="p">}</span>
+</code></pre></div></div>
+
+<h1 id="downcasting">Downcasting</h1>
+
+<p>어떤 클래스 타입의 변수나 상수는 서브클래스의 인스턴스를 참조할 수 있다.</p>
+
+<p>as? 또는 as! 라는 type cast operator를 사용하여 downcasting을 시도할 수 있다. <br />
+  Downcasting이 실패할 수 있기 때문에 type cast operator는 두가지의 형태로 나뉜다.<br />
+  Downcasting을 시도하고 있는 타입의 optional 값을 리턴하는 as?(conditional form)과 downcasting과 force-unwrapping을 함께 시도하는 as!(forced form)이다.</p>
+
+<p>Downcasting이 성공할지 확신할 수 없을 때 as? type cast operator를 사용한다.<br />
+  이 형태의 operator는 항상 optional type의 값을 리턴하고, downcasting이 불가능할때는 nil값을 리턴한다.<br />
+  Downcasting의 성공을 확신할 수 있을 때는 as! type cast operator를 사용한다.<br />
+  가능하지 않은 class type으로 downcasting을 시도하면 runtime 에러가 발생한다.</p>
+
+<div class="language-swift highlighter-rouge"><div class="highlight"><pre class="highlight"><code>  <span class="k">for</span> <span class="n">item</span> <span class="k">in</span> <span class="n">library</span> <span class="p">{</span>
+      <span class="k">if</span> <span class="k">let</span> <span class="nv">movie</span> <span class="o">=</span> <span class="n">item</span> <span class="k">as?</span> <span class="kt">Movie</span> <span class="p">{</span>
+          <span class="nf">print</span><span class="p">(</span><span class="s">"Movie: </span><span class="se">\(</span><span class="n">movie</span><span class="o">.</span><span class="n">name</span><span class="se">)</span><span class="s">, dir. </span><span class="se">\(</span><span class="n">movie</span><span class="o">.</span><span class="n">director</span><span class="se">)</span><span class="s">"</span><span class="p">)</span>
+      <span class="p">}</span> <span class="k">else</span> <span class="k">if</span> <span class="k">let</span> <span class="nv">song</span> <span class="o">=</span> <span class="n">item</span> <span class="k">as?</span> <span class="kt">Song</span> <span class="p">{</span>
+          <span class="nf">print</span><span class="p">(</span><span class="s">"Song: </span><span class="se">\(</span><span class="n">song</span><span class="o">.</span><span class="n">name</span><span class="se">)</span><span class="s">, by </span><span class="se">\(</span><span class="n">song</span><span class="o">.</span><span class="n">artist</span><span class="se">)</span><span class="s">"</span><span class="p">)</span>
+      <span class="p">}</span>
+  <span class="p">}</span>
+
+  <span class="c1">// Movie: Casablanca, dir. Michael Curtiz</span>
+  <span class="c1">// Song: Blue Suede Shoes, by Elvis Presley</span>
+  <span class="c1">// Movie: Citizen Kane, dir. Orson Welles</span>
+  <span class="c1">// Song: The One And Only, by Chesney Hawkes</span>
+  <span class="c1">// Song: Never Gonna Give You Up, by Rick Astley</span>
+</code></pre></div></div>
+
+<p>위 예제는 current item을 Movie로 downcasting을 시도하며 시작된다.</p>
+
+<p>Optional binding인 if let movie = item as? Movie는 아래처럼 해석된다.</p>
+<div class="notice">
+  <p>"item에 Movie로 접근이 성공하면, movie 상수를 optional Movie 형태의 값으로 설정하라."</p>
+  </div>
+
+<div class="language-swift highlighter-rouge"><div class="highlight"><pre class="highlight"><code>  <span class="c1">//</span>
+  <span class="c1">//  TextViewContentView.swift</span>
+  <span class="c1">//  cingcing</span>
+  <span class="c1">//</span>
+  <span class="c1">//  Created by Mirae on 2022/05/15.</span>
+  <span class="c1">//</span>
+
+  <span class="kd">import</span> <span class="kt">UIKit</span>
+
+  <span class="c1">// UIView의 subview, UIContentView 프로토콜 따름</span>
+  <span class="c1">// 여러 줄의 텍스트를 보여줄 때 text view를 사용</span>
+  <span class="c1">// 왜 inner structure를 사용할까?</span>
+  <span class="kd">class</span> <span class="kt">TextViewContentView</span><span class="p">:</span> <span class="kt">UIView</span><span class="p">,</span> <span class="kt">UIContentView</span> <span class="p">{</span>
+      <span class="kd">struct</span> <span class="kt">Configutation</span><span class="p">:</span> <span class="kt">UIContentConfiguration</span> <span class="p">{</span>
+          <span class="k">var</span> <span class="nv">text</span><span class="p">:</span> <span class="kt">String</span> <span class="o">=</span> <span class="s">""</span>
+
+          <span class="kd">func</span> <span class="nf">makeContentView</span><span class="p">()</span> <span class="o">-&gt;</span> <span class="kt">UIView</span> <span class="o">&amp;</span> <span class="kt">UIContentView</span> <span class="p">{</span>
+              <span class="k">return</span> <span class="kt">TextViewContentView</span><span class="p">(</span><span class="k">self</span><span class="p">)</span>
+          <span class="p">}</span>
+      <span class="p">}</span>
+
+      <span class="c1">// 1. add text text view and configuration property</span>
+      <span class="c1">// didSet 코드 블럭 안에 configuration이 var configuration 속성이라면 왜 self를 사용하지 않을까?</span>
+      <span class="k">let</span> <span class="nv">textView</span> <span class="o">=</span> <span class="kt">UITextView</span><span class="p">()</span>
+      <span class="k">var</span> <span class="nv">configuration</span><span class="p">:</span> <span class="kt">UIContentConfiguration</span> <span class="p">{</span>
+          <span class="k">didSet</span> <span class="p">{</span>
+              <span class="nf">configure</span><span class="p">(</span><span class="nv">configuration</span><span class="p">:</span> <span class="n">configuration</span><span class="p">)</span>
+          <span class="p">}</span>
+      <span class="p">}</span>
+
+  <span class="c1">//    override var intrinsicContentSize: CGSize {</span>
+  <span class="c1">//        CGSize(width: 0, height: 44)</span>
+  <span class="c1">//</span>
+  <span class="c1">//    }</span>
+
+      <span class="c1">// 2. add an initializer that sets the configuration property</span>
+      <span class="nf">init</span><span class="p">(</span><span class="n">_</span> <span class="nv">configuration</span><span class="p">:</span> <span class="kt">UIContentConfiguration</span><span class="p">)</span> <span class="p">{</span>
+          <span class="k">self</span><span class="o">.</span><span class="n">configuration</span> <span class="o">=</span> <span class="n">configuration</span>
+          <span class="k">super</span><span class="o">.</span><span class="nf">init</span><span class="p">(</span><span class="nv">frame</span><span class="p">:</span> <span class="o">.</span><span class="n">zero</span><span class="p">)</span>
+  <span class="c1">//        addPinnedSubview(textView, insets: UIEdgeInsets(top: 0, left: 16, bottom: 0, right: 16))</span>
+          <span class="c1">// x 버튼은 textField에서만 사용 가능 하다고 함</span>
+      <span class="p">}</span>
+
+      <span class="kd">required</span> <span class="nf">init</span><span class="p">?(</span><span class="nv">coder</span><span class="p">:</span> <span class="kt">NSCoder</span><span class="p">)</span> <span class="p">{</span>
+          <span class="nf">fatalError</span><span class="p">(</span><span class="s">"init(coder:) has not been implemented"</span><span class="p">)</span>
+      <span class="p">}</span>
+
+      <span class="c1">// 3. function that sets the text view's text property</span>
+      <span class="c1">// textView에 원래 있는 속성 text에 configuration의 text를 설정</span>
+      <span class="kd">func</span> <span class="nf">configure</span><span class="p">(</span><span class="nv">configuration</span><span class="p">:</span> <span class="kt">UIContentConfiguration</span><span class="p">)</span> <span class="p">{</span>
+          <span class="k">guard</span> <span class="k">let</span> <span class="nv">configuration</span> <span class="o">=</span> <span class="n">configuration</span> <span class="k">as?</span> <span class="kt">Configutation</span> <span class="k">else</span> <span class="p">{</span> <span class="k">return</span> <span class="p">}</span>
+          <span class="n">textView</span><span class="o">.</span><span class="n">text</span> <span class="o">=</span> <span class="n">configuration</span><span class="o">.</span><span class="n">text</span>
+      <span class="p">}</span>
+  <span class="p">}</span>
+
+  <span class="kd">extension</span> <span class="kt">UICollectionViewListCell</span> <span class="p">{</span>
+      <span class="kd">func</span> <span class="nf">textViewConfiguration</span><span class="p">()</span> <span class="o">-&gt;</span> <span class="kt">TextViewContentView</span><span class="o">.</span><span class="kt">Configutation</span> <span class="p">{</span>
+          <span class="kt">TextViewContentView</span><span class="o">.</span><span class="kt">Configutation</span><span class="p">()</span>
+      <span class="p">}</span>
+  <span class="p">}</span>
 </code></pre></div></div>
 
 <!-- # Delegate?   -->

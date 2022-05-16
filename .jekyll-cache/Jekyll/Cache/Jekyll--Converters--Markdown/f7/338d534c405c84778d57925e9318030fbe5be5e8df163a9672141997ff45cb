@@ -1,4 +1,4 @@
-I"�^<p><sub>📲 앱 출시 스터디를 진행하며 기록을 남깁니다.</sub></p>
+I"|j<p><sub>📲 앱 출시 스터디 진행 중.</sub></p>
 
 <h1>?</h1>
 
@@ -299,6 +299,36 @@
         <span class="n">textField</span><span class="o">.</span><span class="n">text</span> <span class="o">=</span> <span class="n">configuration</span><span class="o">.</span><span class="n">text</span>
     <span class="p">}</span>
 </code></pre></div></div>
+
+<h1 id="downcasting">Downcasting</h1>
+
+<p>어떤 클래스 타입의 변수나 상수는 서브클래스의 인스턴스를 참조할 수 있다.</p>
+
+<p>as? 또는 as! 라는 type cast operator를 사용하여 downcasting을 시도할 수 있다. <br />
+  Downcasting이 실패할 수 있기 때문에 type cast operator는 두가지의 형태로 나뉜다.<br />
+  Downcasting을 시도하고 있는 타입의 optional 값을 리턴하는 as?(conditional form)과 downcasting과 force-unwrapping을 함께 시도하는 as!(forced form)이다.</p>
+
+<p>Downcasting이 성공할지 확신할 수 없을 때 as? type cast operator를 사용한다.<br />
+  이 형태의 operator는 항상 optional type의 값을 리턴하고, downcasting이 불가능할때는 nil값을 리턴한다.<br />
+  Downcasting의 성공을 확신할 수 있을 때는 as! type cast operator를 사용한다.<br />
+  가능하지 않은 class type으로 downcasting을 시도하면 runtime 에러가 발생한다.</p>
+
+<div class="language-swift highlighter-rouge"><div class="highlight"><pre class="highlight"><code>  <span class="k">for</span> <span class="n">item</span> <span class="k">in</span> <span class="n">library</span> <span class="p">{</span>
+      <span class="k">if</span> <span class="k">let</span> <span class="nv">movie</span> <span class="o">=</span> <span class="n">item</span> <span class="k">as?</span> <span class="kt">Movie</span> <span class="p">{</span>
+          <span class="nf">print</span><span class="p">(</span><span class="s">"Movie: </span><span class="se">\(</span><span class="n">movie</span><span class="o">.</span><span class="n">name</span><span class="se">)</span><span class="s">, dir. </span><span class="se">\(</span><span class="n">movie</span><span class="o">.</span><span class="n">director</span><span class="se">)</span><span class="s">"</span><span class="p">)</span>
+      <span class="p">}</span> <span class="k">else</span> <span class="k">if</span> <span class="k">let</span> <span class="nv">song</span> <span class="o">=</span> <span class="n">item</span> <span class="k">as?</span> <span class="kt">Song</span> <span class="p">{</span>
+          <span class="nf">print</span><span class="p">(</span><span class="s">"Song: </span><span class="se">\(</span><span class="n">song</span><span class="o">.</span><span class="n">name</span><span class="se">)</span><span class="s">, by </span><span class="se">\(</span><span class="n">song</span><span class="o">.</span><span class="n">artist</span><span class="se">)</span><span class="s">"</span><span class="p">)</span>
+      <span class="p">}</span>
+  <span class="p">}</span>
+
+  <span class="c1">// Movie: Casablanca, dir. Michael Curtiz</span>
+  <span class="c1">// Song: Blue Suede Shoes, by Elvis Presley</span>
+  <span class="c1">// Movie: Citizen Kane, dir. Orson Welles</span>
+  <span class="c1">// Song: The One And Only, by Chesney Hawkes</span>
+  <span class="c1">// Song: Never Gonna Give You Up, by Rick Astley</span>
+</code></pre></div></div>
+
+<p>위 예제는 item</p>
 
 <!-- # Delegate?   -->
 

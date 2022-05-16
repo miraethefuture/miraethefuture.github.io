@@ -309,6 +309,8 @@ expDate를 리스트나 디테일 뷰에 나타나도록 해야할까?
     }
    ```
 
+
+
 # Downcasting  
 
   어떤 클래스 타입의 변수나 상수는 서브클래스의 인스턴스를 참조할 수 있다.
@@ -336,6 +338,76 @@ expDate를 리스트나 디테일 뷰에 나타나도록 해야할까?
   // Movie: Citizen Kane, dir. Orson Welles
   // Song: The One And Only, by Chesney Hawkes
   // Song: Never Gonna Give You Up, by Rick Astley
+  ```  
+
+  위 예제는 current item을 Movie로 downcasting을 시도하며 시작된다.  
+
+  Optional binding인 if let movie = item as? Movie는 아래처럼 해석된다.  
+  <div class="notice">
+  <p>"item에 Movie로 접근이 성공하면, movie 상수를 optional Movie 형태의 값으로 설정하라."</p>
+  </div>  
+
+  ```swift
+  //
+  //  TextViewContentView.swift
+  //  cingcing
+  //
+  //  Created by Mirae on 2022/05/15.
+  //
+
+  import UIKit
+
+  // UIView의 subview, UIContentView 프로토콜 따름
+  // 여러 줄의 텍스트를 보여줄 때 text view를 사용
+  // 왜 inner structure를 사용할까?
+  class TextViewContentView: UIView, UIContentView {
+      struct Configutation: UIContentConfiguration {
+          var text: String = ""
+
+          func makeContentView() -> UIView & UIContentView {
+              return TextViewContentView(self)
+          }
+      }
+
+      // 1. add text text view and configuration property
+      // didSet 코드 블럭 안에 configuration이 var configuration 속성이라면 왜 self를 사용하지 않을까?
+      let textView = UITextView()
+      var configuration: UIContentConfiguration {
+          didSet {
+              configure(configuration: configuration)
+          }
+      }
+
+  //    override var intrinsicContentSize: CGSize {
+  //        CGSize(width: 0, height: 44)
+  //
+  //    }
+
+      // 2. add an initializer that sets the configuration property
+      init(_ configuration: UIContentConfiguration) {
+          self.configuration = configuration
+          super.init(frame: .zero)
+  //        addPinnedSubview(textView, insets: UIEdgeInsets(top: 0, left: 16, bottom: 0, right: 16))
+          // x 버튼은 textField에서만 사용 가능 하다고 함
+      }
+
+      required init?(coder: NSCoder) {
+          fatalError("init(coder:) has not been implemented")
+      }
+
+      // 3. function that sets the text view's text property
+      // textView에 원래 있는 속성 text에 configuration의 text를 설정
+      func configure(configuration: UIContentConfiguration) {
+          guard let configuration = configuration as? Configutation else { return }
+          textView.text = configuration.text
+      }
+  }
+
+  extension UICollectionViewListCell {
+      func textViewConfiguration() -> TextViewContentView.Configutation {
+          TextViewContentView.Configutation()
+      }
+  }
   ```
 
 
