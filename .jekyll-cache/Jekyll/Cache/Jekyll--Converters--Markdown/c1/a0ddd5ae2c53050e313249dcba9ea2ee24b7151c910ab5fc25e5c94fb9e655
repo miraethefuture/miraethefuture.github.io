@@ -1,4 +1,4 @@
-I"=<p><a href="https://docs.swift.org/swift-book/LanguageGuide/Closures.html">Closures</a>
+I"��<p><a href="https://docs.swift.org/swift-book/LanguageGuide/Closures.html">Closures</a>
 <sub>아래 모든 정보의 출처는 Swift 공식 문서이며 개인의 학습 용도로만 사용되었음을 밝힙니다.<br />
 All information below comes from the Swift documentation and is for personal learning purposes only.</sub></p>
 
@@ -58,7 +58,7 @@ All information below comes from the Swift documentation and is for personal lea
 
 <p>이 sorting closure를 제공하는 한 방식으로는, <strong>function을 작성</strong>하고 sorted(by:)메서드의 인자로 통과시키는 방법이 있습니다.</p>
 
-<div class="language-swift highlighter-rouge"><div class="highlight"><pre class="highlight"><code>  <span class="n">fucn</span> <span class="nf">backward</span><span class="p">(</span><span class="n">_</span> <span class="nv">s1</span><span class="p">:</span> <span class="kt">String</span><span class="p">,</span> <span class="n">_</span> <span class="nv">s2</span><span class="p">:</span> <span class="kt">String</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kt">Bool</span> <span class="p">{</span>
+<div class="language-swift highlighter-rouge"><div class="highlight"><pre class="highlight"><code>  <span class="kd">func</span> <span class="nf">backward</span><span class="p">(</span><span class="n">_</span> <span class="nv">s1</span><span class="p">:</span> <span class="kt">String</span><span class="p">,</span> <span class="n">_</span> <span class="nv">s2</span><span class="p">:</span> <span class="kt">String</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kt">Bool</span> <span class="p">{</span>
       <span class="k">return</span> <span class="n">s1</span> <span class="o">&gt;</span> <span class="n">s2</span>
   <span class="p">}</span>
   <span class="k">var</span> <span class="nv">reversedNames</span> <span class="o">=</span> <span class="n">names</span><span class="o">.</span><span class="nf">sorted</span><span class="p">(</span><span class="nv">by</span><span class="p">:</span> <span class="n">backward</span><span class="p">)</span>
@@ -187,6 +187,25 @@ All information below comes from the Swift documentation and is for personal lea
 <p>위의 closure expression은 호출될 때마다 ouput이라는 이름의 문자열을 만듭니다. 이것은 remainder operator (number % 10)을 사용하여 number의 마지막 수를 찾아내고 이렇게 찾아낸 숫자를 digitNames dictionary에서 키 값으로 가지는 값을 찾기 위해 사용합니다. 그리고 찾은 문자열 값을 현재 output 문자열과 합칩니다. 이 클로저는 0보다 큰 어떤 숫자를 문자 형식으로 나타내기 위해 사용될 수 있습니다. 클로저가 output 값으로 만들어진 새로운 배열이 map(_:) 메서드로부터 만들어집니다.</p>
 
 <p>위의 예시에서의 trailing closure의 사용은 클로저가 사용된 function 바로 뒤에 클로저의 기능을 바로 요약해서 나타내줍니다. map(_:)의 괄호로 감쌀 필요가 없습니다.</p>
+
+<p>만약 어떤 function이 여러개의 closures를 취한다면, 첫번째 trailing closure의 argument label은 생략하고 나머지 trailing closures의 argument label은 적어줍니다. 아래의 function은 photo gallery를 위해 사진을 가져옵니다.</p>
+
+<div class="language-swift highlighter-rouge"><div class="highlight"><pre class="highlight"><code>  <span class="kd">func</span> <span class="nf">loadPicture</span><span class="p">(</span><span class="n">from</span> <span class="nv">server</span><span class="p">:</span> <span class="kt">Server</span><span class="p">,</span> <span class="nv">completion</span><span class="p">:</span> <span class="p">(</span><span class="kt">Picture</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kt">Void</span><span class="p">,</span> <span class="nv">onFailure</span><span class="p">:</span> <span class="p">()</span> <span class="o">-&gt;</span> <span class="kt">Void</span><span class="p">)</span> <span class="p">{</span>
+      <span class="k">if</span> <span class="k">let</span> <span class="nv">picture</span> <span class="o">=</span> <span class="nf">download</span><span class="p">(</span><span class="s">"photo.jpg"</span><span class="p">,</span> <span class="nv">from</span><span class="p">:</span> <span class="n">server</span><span class="p">)</span> <span class="p">{</span>
+          <span class="nf">completion</span><span class="p">(</span><span class="n">picture</span><span class="p">)</span>
+      <span class="p">}</span> <span class="k">else</span> <span class="p">{</span>
+          <span class="nf">onFailure</span><span class="p">()</span>
+      <span class="p">}</span>
+  <span class="p">}</span>
+</code></pre></div></div>
+<p>사진을 가져오기 위해 위의 function을 호출하면, 두개의 closures를 사용할 수 있다. 첫번째 클로저는 completion handler다. 이 클로저는 성공적인 사진 다운로드 후에 사진을 보여준다. 두번째 클로저는 error handler이다. 이 클로저는 사용자에게 에러를 보여준다.</p>
+
+<div class="language-swift highlighter-rouge"><div class="highlight"><pre class="highlight"><code>  <span class="nf">loadPicture</span><span class="p">(</span><span class="nv">from</span><span class="p">:</span> <span class="n">someServer</span><span class="p">)</span> <span class="p">{</span> <span class="n">picture</span> <span class="k">in</span>
+      <span class="n">someView</span><span class="o">.</span><span class="n">currentPicture</span> <span class="o">=</span> <span class="n">picture</span>
+  <span class="p">}</span> <span class="nv">onFailure</span><span class="p">:</span> <span class="p">{</span>
+      <span class="nf">print</span><span class="p">(</span><span class="s">"Couldn't download the next picture."</span><span class="p">)</span>
+  <span class="p">}</span>      
+</code></pre></div></div>
 
 <h2 id="capturing-values">Capturing Values</h2>
 
