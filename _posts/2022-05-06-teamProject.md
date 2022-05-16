@@ -410,6 +410,14 @@ expDate를 리스트나 디테일 뷰에 나타나도록 해야할까?
   }
   ```
 
+  위 코드의 configure(configuration:) function에서 downcasting을 실행함.  
+  confiuguration property는 TextViewContentView 클래스의 속성임.  
+  configuration 속성이 inner structure인 Configuration의 text 속성을 이용하기 위해 downcasting을 시도하는 것 같음.
+
+# Text view  
+
+  편집창의 notes는 text view를 사용합니다. Text view는 스크롤 뷰이기 때문에 자동으로 스크롤링과 스크롤 인디케이터를 제공합니다. 
+
 
 
 

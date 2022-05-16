@@ -234,7 +234,7 @@
           <aside class="sidebar__right sticky">
             <nav class="toc">
               <header><h4 class="nav__title"><i class="fas fa-kiwi-bird"></i>  </h4></header>
-              <ul class="toc__menu"><li><a href="#add-a-collection-view-controller">Add a Collection View Controller</a></li><li><a href="#데이터-모델">데이터 모델</a></li><li><a href="#configure-the-collection-as-a-list">Configure the Collection as a list</a><ul><li><a href="#search-text-field-코드">Search text field 코드</a></li><li><a href="#uicollectionviewcontroller">UICollectionViewController</a></li></ul></li><li><a href="#configure-the-data-source">Configure the Data Source</a></li><li><a href="#apply-a-snapshot">Apply a snapshot</a></li><li><a href="#displaying-cell-info">Displaying Cell Info</a></li><li><a href="#headerview">HeaderView</a><ul><li><a href="#uicollectionreusableview">UICollectionReusableView</a></li><li><a href="#headerview---subviews---constraints">HeaderView - Subviews - Constraints</a></li></ul></li><li><a href="#organize-view-controller">Organize View Controller</a></li><li><a href="#중간-정리">중간 정리</a><ul><li><a href="#ui">UI</a></li><li><a href="#header">Header</a></li><li><a href="#list-layout">List Layout</a></li><li><a href="#느낀점">느낀점</a></li><li><a href="#cell-info-추가">Cell Info 추가</a></li></ul></li><li><a href="#wire-a-target-action-pair">Wire a Target Action Pair</a></li><li><a href="#navigation-controller">Navigation controller</a></li><li><a href="#indexpath-와-itemid">IndexPath 와 Item.ID</a></li><li><a href="#edit-view-만드는-중">Edit view 만드는 중</a><ul><li><a href="#willset--didset">willSet / didSet</a></li></ul></li><li><a href="#downcasting">Downcasting</a></li></ul>
+              <ul class="toc__menu"><li><a href="#add-a-collection-view-controller">Add a Collection View Controller</a></li><li><a href="#데이터-모델">데이터 모델</a></li><li><a href="#configure-the-collection-as-a-list">Configure the Collection as a list</a><ul><li><a href="#search-text-field-코드">Search text field 코드</a></li><li><a href="#uicollectionviewcontroller">UICollectionViewController</a></li></ul></li><li><a href="#configure-the-data-source">Configure the Data Source</a></li><li><a href="#apply-a-snapshot">Apply a snapshot</a></li><li><a href="#displaying-cell-info">Displaying Cell Info</a></li><li><a href="#headerview">HeaderView</a><ul><li><a href="#uicollectionreusableview">UICollectionReusableView</a></li><li><a href="#headerview---subviews---constraints">HeaderView - Subviews - Constraints</a></li></ul></li><li><a href="#organize-view-controller">Organize View Controller</a></li><li><a href="#중간-정리">중간 정리</a><ul><li><a href="#ui">UI</a></li><li><a href="#header">Header</a></li><li><a href="#list-layout">List Layout</a></li><li><a href="#느낀점">느낀점</a></li><li><a href="#cell-info-추가">Cell Info 추가</a></li></ul></li><li><a href="#wire-a-target-action-pair">Wire a Target Action Pair</a></li><li><a href="#navigation-controller">Navigation controller</a></li><li><a href="#indexpath-와-itemid">IndexPath 와 Item.ID</a></li><li><a href="#edit-view-만드는-중">Edit view 만드는 중</a><ul><li><a href="#willset--didset">willSet / didSet</a></li></ul></li><li><a href="#downcasting">Downcasting</a></li><li><a href="#text-view">Text view</a></li></ul>
 
             </nav>
           </aside>
@@ -637,6 +637,14 @@
       <span class="p">}</span>
   <span class="p">}</span>
 </code></pre></div></div>
+
+<p>위 코드의 configure(configuration:) function에서 downcasting을 실행함.<br />
+  confiuguration property는 TextViewContentView 클래스의 속성임.<br />
+  configuration 속성이 inner structure인 Configuration의 text 속성을 이용하기 위해 downcasting을 시도하는 것 같음.</p>
+
+<h1 id="text-view">Text view</h1>
+
+<p>편집창의 notes는 text view를 사용합니다. Text view는 스크롤 뷰이기 때문에 자동으로 스크롤링과 스크롤 인디케이터를 제공합니다.</p>
 
 <!-- # Delegate?   -->
 
