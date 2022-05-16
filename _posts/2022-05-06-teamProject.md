@@ -416,7 +416,17 @@ expDate를 리스트나 디테일 뷰에 나타나도록 해야할까?
 
 # Text view  
 
-  편집창의 notes는 text view를 사용합니다. Text view는 스크롤 뷰이기 때문에 자동으로 스크롤링과 스크롤 인디케이터를 제공합니다. 
+  편집창의 notes는 text view를 사용합니다. Text view는 스크롤 뷰이기 때문에 자동으로 스크롤링과 스크롤 인디케이터를 제공합니다.  
+
+# ARC  
+
+  **Automatic Reference Counting**  
+
+  Swift는 앱의 메모리 사용을 기록하고 관리하기 위해 _Automatic Reference Counting_(ARC)를 사용합니다. 대부분의 경우에는, Swift의 메모리 관리가 "그냥 동작"하고 우리는 메모리 관리에 신경 쓸 필요가 없습니다. ARC는 인스턴스가 더이상 필요하지 않을 때, 자동으로 사용되던 메모리를 해제 합니다.  
+
+  하지만 가끔 몇몇 케이스에서 메모리를 관리하기 위해 ARC가 우리가 작성한 코드들 사이의 관계에 대한 부차적인 정보를 요청합니다.
+
+  Reference counting은 오로지 클래스의 인스턴스에만 이용합니다. Structures나 enumerations는 reference 타입이 아니고 value 타입입니다. (and they aren't stored and passed by reference. <s>어떻게 해석하지?</s>)
 
 
 

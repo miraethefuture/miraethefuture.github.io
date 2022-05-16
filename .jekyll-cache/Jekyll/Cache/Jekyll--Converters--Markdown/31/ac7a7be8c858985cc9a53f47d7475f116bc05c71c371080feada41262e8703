@@ -1,4 +1,4 @@
-I"n�<p><sub>📲 앱 출시 스터디 진행 중.</sub></p>
+I"��<p><sub>📲 앱 출시 스터디 진행 중.</sub></p>
 
 <h1>?</h1>
 
@@ -404,6 +404,10 @@
 <h1 id="text-view">Text view</h1>
 
 <p>편집창의 notes는 text view를 사용합니다. Text view는 스크롤 뷰이기 때문에 자동으로 스크롤링과 스크롤 인디케이터를 제공합니다.</p>
+
+<h1 id="arc">ARC</h1>
+
+<p><strong>Automatic Reference Counting</strong></p>
 
 <!-- # Delegate?   -->
 

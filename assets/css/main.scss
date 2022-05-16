@@ -19,8 +19,8 @@ html {
     @include breakpoint($large) {
       font-size: 18px; // change to whatever
     }
-// 아래 font-size 변경 시 전체적인 화면의 비율이? 작아짐 
+// 아래 font-size 변경 시 전체적인 화면의 비율이? 작아짐
     @include breakpoint($x-large) {
-      font-size: 20px; // change to whatever
+      font-size: 19px; // change to whatever
     }
   }
