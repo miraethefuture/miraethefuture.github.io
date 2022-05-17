@@ -426,7 +426,48 @@ expDate를 리스트나 디테일 뷰에 나타나도록 해야할까?
 
   하지만 가끔 몇몇 케이스에서 메모리를 관리하기 위해 ARC가 우리가 작성한 코드들 사이의 관계에 대한 부차적인 정보를 요청합니다.
 
-  Reference counting은 오로지 클래스의 인스턴스에만 이용합니다. Structures나 enumerations는 reference 타입이 아니고 value 타입입니다. (and they aren't stored and passed by reference. <s>어떻게 해석하지?</s>)
+  Reference counting은 오로지 클래스의 인스턴스에만 이용합니다. Structures나 enumerations는 reference 타입이 아니고 value 타입입니다.
+  <!-- (and they aren't stored and passed by reference. <s>어떻게 해석?</s>)   -->
+
+## How ARC Works  
+
+  클래스의 새 인스턴스를 생성할 때마다, ARC는 해당 인스턴스의 정보를 저장할 메모리를 분배합니다.
+
+# [weak self]  
+
+  ```swift
+  @objc func didPressAddButton(_ sender: UIBarButtonItem) {
+      // 새 아이템 생성
+      let item = Item(title: "", expDate: Date.now)
+      let viewController = ItemViewController(item: item) {
+          [weak self] item in
+      }
+  }
+  ```
+  클로저의 캡쳐 리스트에 [weak self]를 추가해주어 ItemViewController가 strong reference를 담거나 캡쳐링하는 것을 방지해준다.
+
+# #selector  
+
+  Seletors는 dynamic Objective-C APIs와 상호작용하기 위해 사용된다.  
+  target-action과 같은 몇몇의 Objective-C APIs 메서드나 속성의 이름을 패러미터로 받는다. 그리고 그 이름을 이용하여 동적으로 호출하거나 메서드나 속성에 접근한다.
+
+  ```swift
+  @objc func didPressAddButton(_ sender: UIBarButtonItem) {
+      ...
+      viewController.navigationItem.leftBarButtonItem = UIBarButtonItem(barButtonSystemItem: .cancel, target: self, action: #selector(didCancelAdd(_:)))
+  }
+
+  @objc func didCancelAdd(_ sender: UIBarButtonItem) {
+      // view controller를 dismiss
+      dismiss(animated: true)
+  }
+  ```  
+  위의 코드에서는 didCancelAdd(_:) 메서드를 동적으로 호출하기 위해 #selector(didCancelAdd(\_:))를 사용한 것으로 보인다.
+
+# 궁금  
+
+  모델에 변경된 값을 저장한다고 하는데 저장된 값은 어디 있는거지? Xcode내에서 볼 수 있나?
+
 
 
 

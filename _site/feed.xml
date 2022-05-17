@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="4.2.1">Jekyll</generator><link href="http://localhost:4000/feed.xml" rel="self" type="application/atom+xml" /><link href="http://localhost:4000/" rel="alternate" type="text/html" /><updated>2022-05-16T22:58:36+09:00</updated><id>http://localhost:4000/feed.xml</id><title type="html">Mirae 2 the Future</title><subtitle>An amazing website.</subtitle><author><name>Mirae</name></author><entry><title type="html">앱 출시 프로젝트 로그</title><link href="http://localhost:4000/til/teamProject/" rel="alternate" type="text/html" title="앱 출시 프로젝트 로그" /><published>2022-05-06T00:00:00+09:00</published><updated>2022-05-06T00:00:00+09:00</updated><id>http://localhost:4000/til/teamProject</id><content type="html" xml:base="http://localhost:4000/til/teamProject/">&lt;p&gt;&lt;sub&gt;📲 앱 출시 스터디 진행 중.&lt;/sub&gt;&lt;/p&gt;
+<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="4.2.1">Jekyll</generator><link href="http://localhost:4000/feed.xml" rel="self" type="application/atom+xml" /><link href="http://localhost:4000/" rel="alternate" type="text/html" /><updated>2022-05-17T19:08:46+09:00</updated><id>http://localhost:4000/feed.xml</id><title type="html">Mirae 2 the Future</title><subtitle>An amazing website.</subtitle><author><name>Mirae</name></author><entry><title type="html">앱 출시 프로젝트 로그</title><link href="http://localhost:4000/til/teamProject/" rel="alternate" type="text/html" title="앱 출시 프로젝트 로그" /><published>2022-05-06T00:00:00+09:00</published><updated>2022-05-06T00:00:00+09:00</updated><id>http://localhost:4000/til/teamProject</id><content type="html" xml:base="http://localhost:4000/til/teamProject/">&lt;p&gt;&lt;sub&gt;📲 앱 출시 스터디 진행 중.&lt;/sub&gt;&lt;/p&gt;
 
 &lt;h1&gt;?&lt;/h1&gt;
 
@@ -413,7 +413,45 @@
 
 &lt;p&gt;하지만 가끔 몇몇 케이스에서 메모리를 관리하기 위해 ARC가 우리가 작성한 코드들 사이의 관계에 대한 부차적인 정보를 요청합니다.&lt;/p&gt;
 
-&lt;p&gt;Reference counting은 오로지 클래스의 인스턴스에만 이용합니다. Structures나 enumerations는 reference 타입이 아니고 value 타입입니다. (and they aren’t stored and passed by reference. &lt;s&gt;어떻게 해석하지?&lt;/s&gt;)&lt;/p&gt;
+&lt;p&gt;Reference counting은 오로지 클래스의 인스턴스에만 이용합니다. Structures나 enumerations는 reference 타입이 아니고 value 타입입니다.
+  &lt;!-- (and they aren&apos;t stored and passed by reference. &lt;s&gt;어떻게 해석?&lt;/s&gt;)   --&gt;&lt;/p&gt;
+
+&lt;h2 id=&quot;how-arc-works&quot;&gt;How ARC Works&lt;/h2&gt;
+
+&lt;p&gt;클래스의 새 인스턴스를 생성할 때마다, ARC는 해당 인스턴스의 정보를 저장할 메모리를 분배합니다.&lt;/p&gt;
+
+&lt;h1 id=&quot;weak-self&quot;&gt;[weak self]&lt;/h1&gt;
+
+&lt;div class=&quot;language-swift highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;  &lt;span class=&quot;kd&quot;&gt;@objc&lt;/span&gt; &lt;span class=&quot;kd&quot;&gt;func&lt;/span&gt; &lt;span class=&quot;nf&quot;&gt;didPressAddButton&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;_&lt;/span&gt; &lt;span class=&quot;nv&quot;&gt;sender&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;kt&quot;&gt;UIBarButtonItem&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
+      &lt;span class=&quot;c1&quot;&gt;// 새 아이템 생성&lt;/span&gt;
+      &lt;span class=&quot;k&quot;&gt;let&lt;/span&gt; &lt;span class=&quot;nv&quot;&gt;item&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;kt&quot;&gt;Item&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nv&quot;&gt;title&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;&quot;&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;nv&quot;&gt;expDate&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;kt&quot;&gt;Date&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;now&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
+      &lt;span class=&quot;k&quot;&gt;let&lt;/span&gt; &lt;span class=&quot;nv&quot;&gt;viewController&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;kt&quot;&gt;ItemViewController&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nv&quot;&gt;item&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;item&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
+          &lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;k&quot;&gt;weak&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;self&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;]&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;item&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;in&lt;/span&gt;
+      &lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
+  &lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+&lt;p&gt;클로저의 캡쳐 리스트에 [weak self]를 추가해주어 ItemViewController가 strong reference를 담거나 캡쳐링하는 것을 방지해준다.&lt;/p&gt;
+
+&lt;h1 id=&quot;selector&quot;&gt;#selector&lt;/h1&gt;
+
+&lt;p&gt;Seletors는 dynamic Objective-C APIs와 상호작용하기 위해 사용된다.&lt;br /&gt;
+  target-action과 같은 몇몇의 Objective-C APIs 메서드나 속성의 이름을 패러미터로 받는다. 그리고 그 이름을 이용하여 동적으로 호출하거나 메서드나 속성에 접근한다.&lt;/p&gt;
+
+&lt;div class=&quot;language-swift highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;  &lt;span class=&quot;kd&quot;&gt;@objc&lt;/span&gt; &lt;span class=&quot;kd&quot;&gt;func&lt;/span&gt; &lt;span class=&quot;nf&quot;&gt;didPressAddButton&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;_&lt;/span&gt; &lt;span class=&quot;nv&quot;&gt;sender&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;kt&quot;&gt;UIBarButtonItem&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
+      &lt;span class=&quot;o&quot;&gt;...&lt;/span&gt;
+      &lt;span class=&quot;n&quot;&gt;viewController&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;navigationItem&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;leftBarButtonItem&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;kt&quot;&gt;UIBarButtonItem&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nv&quot;&gt;barButtonSystemItem&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;cancel&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;nv&quot;&gt;target&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;self&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;nv&quot;&gt;action&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;kd&quot;&gt;#selector(&lt;/span&gt;&lt;span class=&quot;nf&quot;&gt;didCancelAdd(_:)&lt;/span&gt;&lt;span class=&quot;kd&quot;&gt;)&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
+  &lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
+
+  &lt;span class=&quot;kd&quot;&gt;@objc&lt;/span&gt; &lt;span class=&quot;kd&quot;&gt;func&lt;/span&gt; &lt;span class=&quot;nf&quot;&gt;didCancelAdd&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;_&lt;/span&gt; &lt;span class=&quot;nv&quot;&gt;sender&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;kt&quot;&gt;UIBarButtonItem&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
+      &lt;span class=&quot;c1&quot;&gt;// view controller를 dismiss&lt;/span&gt;
+      &lt;span class=&quot;nf&quot;&gt;dismiss&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nv&quot;&gt;animated&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;kc&quot;&gt;true&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
+  &lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+&lt;p&gt;위의 코드에서는 didCancelAdd(_:) 메서드를 동적으로 호출하기 위해 #selector(didCancelAdd(_:))를 사용한 것으로 보인다.&lt;/p&gt;
+
+&lt;h1 id=&quot;궁금&quot;&gt;궁금&lt;/h1&gt;
+
+&lt;p&gt;모델에 변경된 값을 저장한다고 하는데 저장된 값은 어디 있는거지? Xcode내에서 볼 수 있나?&lt;/p&gt;
 
 &lt;!-- # Delegate?   --&gt;
 

@@ -1,4 +1,4 @@
-I"�<p><sub>📲 앱 출시 스터디 진행 중.</sub></p>
+I"��<p><sub>📲 앱 출시 스터디 진행 중.</sub></p>
 
 <h1>?</h1>
 
@@ -413,7 +413,41 @@
 
 <p>하지만 가끔 몇몇 케이스에서 메모리를 관리하기 위해 ARC가 우리가 작성한 코드들 사이의 관계에 대한 부차적인 정보를 요청합니다.</p>
 
-<p>Reference counting은 오로지 클래스의 인스턴스에만 이용합니다. Structures나 enumerations는 reference 타입이 아니고 value 타입입니다. (and they aren’t stored and passed by reference. <s>어떻게 해석하지?</s>)</p>
+<p>Reference counting은 오로지 클래스의 인스턴스에만 이용합니다. Structures나 enumerations는 reference 타입이 아니고 value 타입입니다.
+  <!-- (and they aren't stored and passed by reference. <s>어떻게 해석?</s>)   --></p>
+
+<h2 id="how-arc-works">How ARC Works</h2>
+
+<p>클래스의 새 인스턴스를 생성할 때마다, ARC는 해당 인스턴스의 정보를 저장할 메모리를 분배합니다.</p>
+
+<h1 id="weak-self">[weak self]</h1>
+
+<div class="language-swift highlighter-rouge"><div class="highlight"><pre class="highlight"><code>  <span class="kd">@objc</span> <span class="kd">func</span> <span class="nf">didPressAddButton</span><span class="p">(</span><span class="n">_</span> <span class="nv">sender</span><span class="p">:</span> <span class="kt">UIBarButtonItem</span><span class="p">)</span> <span class="p">{</span>
+      <span class="c1">// 새 아이템 생성</span>
+      <span class="k">let</span> <span class="nv">item</span> <span class="o">=</span> <span class="kt">Item</span><span class="p">(</span><span class="nv">title</span><span class="p">:</span> <span class="s">""</span><span class="p">,</span> <span class="nv">expDate</span><span class="p">:</span> <span class="kt">Date</span><span class="o">.</span><span class="n">now</span><span class="p">)</span>
+      <span class="k">let</span> <span class="nv">viewController</span> <span class="o">=</span> <span class="kt">ItemViewController</span><span class="p">(</span><span class="nv">item</span><span class="p">:</span> <span class="n">item</span><span class="p">)</span> <span class="p">{</span>
+          <span class="p">[</span><span class="k">weak</span> <span class="k">self</span><span class="p">]</span> <span class="n">item</span> <span class="k">in</span>
+      <span class="p">}</span>
+  <span class="p">}</span>
+</code></pre></div></div>
+<p>클로저의 캡쳐 리스트에 [weak self]를 추가해주어 ItemViewController가 strong reference를 담거나 캡쳐링하는 것을 방지해준다.</p>
+
+<h1 id="selector">#selector</h1>
+
+<p>Seletors는 dynamic Objective-C APIs와 상호작용하기 위해 사용된다.<br />
+  target-action과 같은 몇몇의 Objective-C APIs 메서드나 속성의 이름을 패러미터로 받는다. 그리고 그 이름을 이용하여 동적으로 호출하거나 메서드나 속성에 접근한다.</p>
+
+<div class="language-swift highlighter-rouge"><div class="highlight"><pre class="highlight"><code>  <span class="kd">@objc</span> <span class="kd">func</span> <span class="nf">didPressAddButton</span><span class="p">(</span><span class="n">_</span> <span class="nv">sender</span><span class="p">:</span> <span class="kt">UIBarButtonItem</span><span class="p">)</span> <span class="p">{</span>
+      <span class="o">...</span>
+      <span class="n">viewController</span><span class="o">.</span><span class="n">navigationItem</span><span class="o">.</span><span class="n">leftBarButtonItem</span> <span class="o">=</span> <span class="kt">UIBarButtonItem</span><span class="p">(</span><span class="nv">barButtonSystemItem</span><span class="p">:</span> <span class="o">.</span><span class="n">cancel</span><span class="p">,</span> <span class="nv">target</span><span class="p">:</span> <span class="k">self</span><span class="p">,</span> <span class="nv">action</span><span class="p">:</span> <span class="kd">#selector(</span><span class="nf">didCancelAdd(_:)</span><span class="kd">)</span><span class="p">)</span>
+  <span class="p">}</span>
+
+  <span class="kd">@objc</span> <span class="kd">func</span> <span class="nf">didCancelAdd</span><span class="p">(</span><span class="n">_</span> <span class="nv">sender</span><span class="p">:</span> <span class="kt">UIBarButtonItem</span><span class="p">)</span> <span class="p">{</span>
+      <span class="c1">// view controller를 dismiss</span>
+      <span class="nf">dismiss</span><span class="p">(</span><span class="nv">animated</span><span class="p">:</span> <span class="kc">true</span><span class="p">)</span>
+  <span class="p">}</span>
+</code></pre></div></div>
+<p>위의 코드에서는 didCancelAdd(_:) 메서드를 동적으로 호출하기 위해 #selector(didCancelAdd(_:))를 사용한 것으로 보인다.</p>
 
 <!-- # Delegate?   -->
 
