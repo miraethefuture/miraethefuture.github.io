@@ -1,6 +1,6 @@
-I"+�<p><a href="https://docs.swift.org/swift-book/LanguageGuide/Closures.html">Closures</a>
-<sub>아래 모든 정보의 출처는 Swift 공식 문서이며 개인의 학습 용도로만 사용되었음을 밝힙니다.<br />
-All information below comes from the Swift documentation and is for personal learning purposes only.</sub></p>
+I"I�<p><a href="https://docs.swift.org/swift-book/LanguageGuide/Closures.html">Closures</a>
+<sub>아래 모든 정보의 출처는 The swift programming language guide이며 개인의 학습 용도로만 사용되었음을 밝힙니다.<br />
+All information below comes from The swift programming language guide and is for personal learning purposes only.</sub></p>
 
 <h1 id="-">{ }</h1>
 <p>Closures는 기능을 담고 있는 완전한 블락으로 코드 안에서 사용될 수 있습니다.<br />

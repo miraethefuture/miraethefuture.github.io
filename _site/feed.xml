@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="4.2.1">Jekyll</generator><link href="http://localhost:4000/feed.xml" rel="self" type="application/atom+xml" /><link href="http://localhost:4000/" rel="alternate" type="text/html" /><updated>2022-05-17T19:08:46+09:00</updated><id>http://localhost:4000/feed.xml</id><title type="html">Mirae 2 the Future</title><subtitle>An amazing website.</subtitle><author><name>Mirae</name></author><entry><title type="html">앱 출시 프로젝트 로그</title><link href="http://localhost:4000/til/teamProject/" rel="alternate" type="text/html" title="앱 출시 프로젝트 로그" /><published>2022-05-06T00:00:00+09:00</published><updated>2022-05-06T00:00:00+09:00</updated><id>http://localhost:4000/til/teamProject</id><content type="html" xml:base="http://localhost:4000/til/teamProject/">&lt;p&gt;&lt;sub&gt;📲 앱 출시 스터디 진행 중.&lt;/sub&gt;&lt;/p&gt;
+<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="4.2.1">Jekyll</generator><link href="http://localhost:4000/feed.xml" rel="self" type="application/atom+xml" /><link href="http://localhost:4000/" rel="alternate" type="text/html" /><updated>2022-05-19T21:42:36+09:00</updated><id>http://localhost:4000/feed.xml</id><title type="html">Mirae 2 the Future</title><subtitle>An amazing website.</subtitle><author><name>Mirae</name></author><entry><title type="html">앱 출시 프로젝트 로그</title><link href="http://localhost:4000/til/teamProject/" rel="alternate" type="text/html" title="앱 출시 프로젝트 로그" /><published>2022-05-06T00:00:00+09:00</published><updated>2022-05-06T00:00:00+09:00</updated><id>http://localhost:4000/til/teamProject</id><content type="html" xml:base="http://localhost:4000/til/teamProject/">&lt;p&gt;&lt;sub&gt;📲 앱 출시 스터디 진행 중.&lt;/sub&gt;&lt;/p&gt;
 
 &lt;h1&gt;?&lt;/h1&gt;
 
@@ -275,7 +275,7 @@
 
 &lt;h1 id=&quot;indexpath-와-itemid&quot;&gt;IndexPath 와 Item.ID&lt;/h1&gt;
 
-&lt;p&gt;공부하기&lt;/p&gt;
+&lt;p&gt;인덱스의 리스트로 특정 로케이션의 경로를 보여준다.&lt;/p&gt;
 
 &lt;h1 id=&quot;edit-view-만드는-중&quot;&gt;Edit view 만드는 중&lt;/h1&gt;
 
@@ -1470,9 +1470,9 @@
 
 &lt;!-- ## Subscript Options  
 
-  Subscripts는  --&gt;</content><author><name>Mirae</name></author><category term="TIL" /><category term="learning" /><category term="공부 기록" /><category term="Swift" /><category term="Subscripts" /><summary type="html">👩‍🌾 ..</summary></entry><entry><title type="html">Closures</title><link href="http://localhost:4000/til/closures/" rel="alternate" type="text/html" title="Closures" /><published>2022-04-17T00:00:00+09:00</published><updated>2022-04-17T00:00:00+09:00</updated><id>http://localhost:4000/til/closures</id><content type="html" xml:base="http://localhost:4000/til/closures/">&lt;p&gt;&lt;a href=&quot;https://docs.swift.org/swift-book/LanguageGuide/Closures.html&quot;&gt;Closures&lt;/a&gt;
-&lt;sub&gt;아래 모든 정보의 출처는 Swift 공식 문서이며 개인의 학습 용도로만 사용되었음을 밝힙니다.&lt;br /&gt;
-All information below comes from the Swift documentation and is for personal learning purposes only.&lt;/sub&gt;&lt;/p&gt;
+  Subscripts는  --&gt;</content><author><name>Mirae</name></author><category term="TIL" /><category term="learning" /><category term="공부 기록" /><category term="Swift" /><category term="Subscripts" /><summary type="html">👩‍🌾 ..</summary></entry><entry><title type="html">Closures</title><link href="http://localhost:4000/til/closures/" rel="alternate" type="text/html" title="Closures" /><published>2022-04-17T00:00:00+09:00</published><updated>2022-04-17T00:00:00+09:00</updated><id>http://localhost:4000/til/closures</id><content type="html" xml:base="http://localhost:4000/til/closures/">&lt;p&gt;&lt;a href=&quot;https://docs.swift.org/swift-book/LanguageGuide/Closures.html&quot;&gt;📑&lt;/a&gt;
+&lt;sub&gt;아래 모든 정보의 출처는 The swift programming language guide이며 개인의 학습 용도로만 사용되었음을 밝힙니다.&lt;br /&gt;
+All information below comes from The swift programming language guide and is for personal learning purposes only.&lt;/sub&gt;&lt;/p&gt;
 
 &lt;h1 id=&quot;-&quot;&gt;{ }&lt;/h1&gt;
 &lt;p&gt;Closures는 기능을 담고 있는 완전한 블락으로 코드 안에서 사용될 수 있습니다.&lt;br /&gt;
@@ -1769,8 +1769,11 @@ All information below comes from the Swift documentation and is for personal lea
     &lt;span class=&quot;n&quot;&gt;completionHandlers&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nf&quot;&gt;append&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;completionHandler&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
   &lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
 &lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+&lt;p&gt;함수가 리턴된 뒤에 해당 함수의 인자로써 통과된 클로저가 호출되는 것을 클로저가 escape한다고 합니다.&lt;/p&gt;
 
-&lt;p&gt;someFunctionWithEscapingClosure(_:) function은 argument로 closure를 가집니다.&lt;/p&gt;</content><author><name>Mirae</name></author><category term="TIL" /><category term="learning" /><category term="공부 기록" /><category term="Swift" /><category term="Closures" /><summary type="html">Closures 아래 모든 정보의 출처는 Swift 공식 문서이며 개인의 학습 용도로만 사용되었음을 밝힙니다. All information below comes from the Swift documentation and is for personal learning purposes only.</summary></entry><entry><title type="html">iOS App Dev Tutorials: Scrumdinger</title><link href="http://localhost:4000/til/scrumdinger/" rel="alternate" type="text/html" title="iOS App Dev Tutorials: Scrumdinger" /><published>2022-04-09T00:00:00+09:00</published><updated>2022-04-09T00:00:00+09:00</updated><id>http://localhost:4000/til/scrumdinger</id><content type="html" xml:base="http://localhost:4000/til/scrumdinger/">&lt;p&gt;&lt;a href=&quot;https://developer.apple.com/tutorials/app-dev-training/getting-started-with-scrumdinger&quot;&gt;Getting Started with Scrumdinger&lt;/a&gt;&lt;br /&gt;
+&lt;p&gt;클로저를 취하는 패러미터의 타입 앞에 @escaping이라고 적어주면 해당 클로저가 escape된다는 것을 나타낼 수 있습니다.&lt;/p&gt;
+
+&lt;p&gt;someFunctionWithEscapingClosure(_:) function은 argument로 closure를 가집니다.&lt;/p&gt;</content><author><name>Mirae</name></author><category term="TIL" /><category term="learning" /><category term="공부 기록" /><category term="Swift" /><category term="Closures" /><summary type="html">📑 아래 모든 정보의 출처는 The swift programming language guide이며 개인의 학습 용도로만 사용되었음을 밝힙니다. All information below comes from The swift programming language guide and is for personal learning purposes only.</summary></entry><entry><title type="html">iOS App Dev Tutorials: Scrumdinger</title><link href="http://localhost:4000/til/scrumdinger/" rel="alternate" type="text/html" title="iOS App Dev Tutorials: Scrumdinger" /><published>2022-04-09T00:00:00+09:00</published><updated>2022-04-09T00:00:00+09:00</updated><id>http://localhost:4000/til/scrumdinger</id><content type="html" xml:base="http://localhost:4000/til/scrumdinger/">&lt;p&gt;&lt;a href=&quot;https://developer.apple.com/tutorials/app-dev-training/getting-started-with-scrumdinger&quot;&gt;Getting Started with Scrumdinger&lt;/a&gt;&lt;br /&gt;
 &lt;sub&gt;아래 모든 정보의 출처는 apple developer 공식 페이지이며 개인의 학습 용도로만 사용되었음을 밝힙니다.&lt;br /&gt;
 All information below comes from the official apple developer page and is for personal learning purposes only.&lt;/sub&gt;&lt;/p&gt;
 
