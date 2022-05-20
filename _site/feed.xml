@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="4.2.1">Jekyll</generator><link href="http://localhost:4000/feed.xml" rel="self" type="application/atom+xml" /><link href="http://localhost:4000/" rel="alternate" type="text/html" /><updated>2022-05-19T21:42:36+09:00</updated><id>http://localhost:4000/feed.xml</id><title type="html">Mirae 2 the Future</title><subtitle>An amazing website.</subtitle><author><name>Mirae</name></author><entry><title type="html">앱 출시 프로젝트 로그</title><link href="http://localhost:4000/til/teamProject/" rel="alternate" type="text/html" title="앱 출시 프로젝트 로그" /><published>2022-05-06T00:00:00+09:00</published><updated>2022-05-06T00:00:00+09:00</updated><id>http://localhost:4000/til/teamProject</id><content type="html" xml:base="http://localhost:4000/til/teamProject/">&lt;p&gt;&lt;sub&gt;📲 앱 출시 스터디 진행 중.&lt;/sub&gt;&lt;/p&gt;
+<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="4.2.1">Jekyll</generator><link href="http://localhost:4000/feed.xml" rel="self" type="application/atom+xml" /><link href="http://localhost:4000/" rel="alternate" type="text/html" /><updated>2022-05-20T22:55:04+09:00</updated><id>http://localhost:4000/feed.xml</id><title type="html">Mirae 2 the Future</title><subtitle>An amazing website.</subtitle><author><name>Mirae</name></author><entry><title type="html">앱 출시 프로젝트 로그</title><link href="http://localhost:4000/til/teamProject/" rel="alternate" type="text/html" title="앱 출시 프로젝트 로그" /><published>2022-05-06T00:00:00+09:00</published><updated>2022-05-06T00:00:00+09:00</updated><id>http://localhost:4000/til/teamProject</id><content type="html" xml:base="http://localhost:4000/til/teamProject/">&lt;p&gt;&lt;sub&gt;📲 앱 출시 스터디 진행 중.&lt;/sub&gt;&lt;/p&gt;
 
 &lt;h1&gt;?&lt;/h1&gt;
 
@@ -452,6 +452,22 @@
 &lt;h1 id=&quot;궁금&quot;&gt;궁금&lt;/h1&gt;
 
 &lt;p&gt;모델에 변경된 값을 저장한다고 하는데 저장된 값은 어디 있는거지? Xcode내에서 볼 수 있나?&lt;/p&gt;
+
+&lt;h1 id=&quot;nslocalizedstring&quot;&gt;NSLocalizedString&lt;/h1&gt;
+
+&lt;p&gt;&lt;sub&gt;Returns a localized version of a string from the default table, which Xcode autogenerates when exporting localizations.&lt;/sub&gt;&lt;/p&gt;
+
+&lt;div class=&quot;notice--success&quot;&gt;
+  &lt;p&gt; 아래는 리스트를 스와이프해서 나타나는 삭제 버튼의 title을 설정하기 위해 정의한 상수 deleteActionTitle의 코드이다. 튜토리얼 내에서 어떤 문자열을 지정하기 위해서 계속해서 NSLocalizedString을 사용하기에 궁금해서 알아본다.
+  &lt;br /&gt;&lt;br /&gt;
+  &lt;code&gt;
+   let deleteActionTitle = NSLocalizedString(&quot;Delete&quot;, comment: &quot;Delete action title&quot;)
+  &lt;/code&gt;&lt;/p&gt;&lt;/div&gt;
+
+&lt;p&gt;NSLocalizedString은 localized 버전의 문자열을 리턴하는 매크로다.  Localizations를 익스포트할 때 Xcode가 자동으로 localized된 문자열을 생성한다. Localizations를 익스포트 한다는 것은 무슨 뜻일까?&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;Exporting Localizations&lt;/strong&gt;&lt;br /&gt;
+   &lt;sub&gt;Provide the localizable files from your project to localizers.&lt;/sub&gt;&lt;/p&gt;
 
 &lt;!-- # Delegate?   --&gt;
 
