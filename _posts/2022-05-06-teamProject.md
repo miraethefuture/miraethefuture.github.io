@@ -468,6 +468,27 @@ expDate를 리스트나 디테일 뷰에 나타나도록 해야할까?
 
   모델에 변경된 값을 저장한다고 하는데 저장된 값은 어디 있는거지? Xcode내에서 볼 수 있나?
 
+# NSLocalizedString
+
+  <sub>Returns a localized version of a string from the default table, which Xcode autogenerates when exporting localizations.</sub>
+
+  <div class="notice--success">
+  <p> 아래는 리스트를 스와이프해서 나타나는 삭제 버튼의 title을 설정하기 위해 정의한 상수 deleteActionTitle의 코드이다. 튜토리얼 내에서 어떤 문자열을 지정하기 위해서 계속해서 NSLocalizedString을 사용하기에 궁금해서 알아본다.
+  <br><br>
+  <code>
+   let deleteActionTitle = NSLocalizedString("Delete", comment: "Delete action title")
+  </code></p></div>
+
+  NSLocalizedString은 localized 버전의 문자열을 리턴하는 매크로다.  Localizations를 익스포트할 때 Xcode가 자동으로 localized된 문자열을 생성한다. Localizations를 익스포트 한다는 것은 무슨 뜻일까?
+
+  **Exporting Localizations**  
+   <sub>Provide the localizable files from your project to localizers.</sub>
+
+
+
+
+
+
 
 
 
