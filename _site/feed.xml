@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="4.2.1">Jekyll</generator><link href="http://localhost:4000/feed.xml" rel="self" type="application/atom+xml" /><link href="http://localhost:4000/" rel="alternate" type="text/html" /><updated>2022-05-20T22:55:04+09:00</updated><id>http://localhost:4000/feed.xml</id><title type="html">Mirae 2 the Future</title><subtitle>An amazing website.</subtitle><author><name>Mirae</name></author><entry><title type="html">앱 출시 프로젝트 로그</title><link href="http://localhost:4000/til/teamProject/" rel="alternate" type="text/html" title="앱 출시 프로젝트 로그" /><published>2022-05-06T00:00:00+09:00</published><updated>2022-05-06T00:00:00+09:00</updated><id>http://localhost:4000/til/teamProject</id><content type="html" xml:base="http://localhost:4000/til/teamProject/">&lt;p&gt;&lt;sub&gt;📲 앱 출시 스터디 진행 중.&lt;/sub&gt;&lt;/p&gt;
+<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="4.2.1">Jekyll</generator><link href="http://localhost:4000/feed.xml" rel="self" type="application/atom+xml" /><link href="http://localhost:4000/" rel="alternate" type="text/html" /><updated>2022-05-22T22:55:52+09:00</updated><id>http://localhost:4000/feed.xml</id><title type="html">Mirae 2 the Future</title><subtitle>An amazing website.</subtitle><author><name>Mirae</name></author><entry><title type="html">앱 출시 프로젝트 로그</title><link href="http://localhost:4000/til/teamProject/" rel="alternate" type="text/html" title="앱 출시 프로젝트 로그" /><published>2022-05-06T00:00:00+09:00</published><updated>2022-05-06T00:00:00+09:00</updated><id>http://localhost:4000/til/teamProject</id><content type="html" xml:base="http://localhost:4000/til/teamProject/">&lt;p&gt;&lt;sub&gt;📲 앱 출시 스터디 진행 중.&lt;/sub&gt;&lt;/p&gt;
 
 &lt;h1&gt;?&lt;/h1&gt;
 
@@ -232,6 +232,12 @@
 
 &lt;p&gt;Storyboard가 아니라 코딩만으로 UI를 짜는 새로운 경험을 해볼 수 있어서 좋았다.&lt;br /&gt;
   지금은 구현이 먼저라 기능이 UI나 기능이 구현이 되면 넘어가고 있지만 시간이나면 정리를 하면서 코드가 어떤 과정을 거치는지 다시 한번 생각해 보면 좋을 것 같다.&lt;/p&gt;
+
+&lt;h1 id=&quot;make-the-model-identifiable&quot;&gt;Make the Model Identifiable&lt;/h1&gt;
+
+&lt;p&gt;식별자(identifiers)를 이용하여 데이터 소스에게 어떤 아이템을 컬렉션 뷰에 포함할지 어떤 아이템을 리로드 할지 알려줍니다.&lt;/p&gt;
+
+&lt;p&gt;위의 튜토리얼에서는 title을 식별자로 사용하였지만, 두 개의 아이템이 같은 title을 가질 경우 문제가 발생하기 때문에 id값을 사용하는 것이 좋습니다.&lt;/p&gt;
 
 &lt;h2 id=&quot;cell-info-추가&quot;&gt;Cell Info 추가&lt;/h2&gt;
 
@@ -468,6 +474,44 @@
 
 &lt;p&gt;&lt;strong&gt;Exporting Localizations&lt;/strong&gt;&lt;br /&gt;
    &lt;sub&gt;Provide the localizable files from your project to localizers.&lt;/sub&gt;&lt;/p&gt;
+
+&lt;h1 id=&quot;swipe-actions&quot;&gt;Swipe actions&lt;/h1&gt;
+
+&lt;div class=&quot;language-swift highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;   &lt;span class=&quot;kd&quot;&gt;private&lt;/span&gt; &lt;span class=&quot;kd&quot;&gt;func&lt;/span&gt; &lt;span class=&quot;nf&quot;&gt;makeSwipeActions&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;k&quot;&gt;for&lt;/span&gt; &lt;span class=&quot;nv&quot;&gt;indexPath&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;kt&quot;&gt;IndexPath&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;?)&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;-&amp;gt;&lt;/span&gt; &lt;span class=&quot;kt&quot;&gt;UISwipeActionsConfiguration&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;?&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
+        &lt;span class=&quot;k&quot;&gt;guard&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;let&lt;/span&gt; &lt;span class=&quot;nv&quot;&gt;indexPath&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;indexPath&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;let&lt;/span&gt; &lt;span class=&quot;nv&quot;&gt;id&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;dataSource&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nf&quot;&gt;itemIdentifier&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nv&quot;&gt;for&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;indexPath&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;else&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;return&lt;/span&gt; &lt;span class=&quot;kc&quot;&gt;nil&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
+        &lt;span class=&quot;c1&quot;&gt;// title for the action&lt;/span&gt;
+        &lt;span class=&quot;k&quot;&gt;let&lt;/span&gt; &lt;span class=&quot;nv&quot;&gt;deleteActionTitle&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;kt&quot;&gt;NSLocalizedString&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;Delete&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;nv&quot;&gt;comment&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;&quot;Delete action title&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
+        &lt;span class=&quot;k&quot;&gt;let&lt;/span&gt; &lt;span class=&quot;nv&quot;&gt;deleteAction&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;kt&quot;&gt;UIContextualAction&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nv&quot;&gt;style&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;destructive&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;nv&quot;&gt;title&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;deleteActionTitle&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
+            &lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;k&quot;&gt;weak&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;self&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;]&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;_&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;_&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;completion&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;in&lt;/span&gt;
+            &lt;span class=&quot;c1&quot;&gt;// in the completion handler, id가 일치하는 아이템 삭제&lt;/span&gt;
+            &lt;span class=&quot;k&quot;&gt;self&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;?&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nf&quot;&gt;deleteItem&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nv&quot;&gt;with&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;id&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
+            &lt;span class=&quot;c1&quot;&gt;// update the snapshot&lt;/span&gt;
+            &lt;span class=&quot;k&quot;&gt;self&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;?&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nf&quot;&gt;updateSnapshot&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;()&lt;/span&gt;
+            &lt;span class=&quot;c1&quot;&gt;// call the completion handler 위에 있는 인자로 통과된 trailing closure?&lt;/span&gt;
+            &lt;span class=&quot;nf&quot;&gt;completion&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;kc&quot;&gt;false&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
+        &lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
+        &lt;span class=&quot;k&quot;&gt;return&lt;/span&gt; &lt;span class=&quot;kt&quot;&gt;UISwipeActionsConfiguration&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nv&quot;&gt;actions&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;deleteAction&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;])&lt;/span&gt;
+    &lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;p&gt;UISwipeActionsConfiguration 타입을 리턴하는 function을 생성한다.&lt;/p&gt;
+
+&lt;h2 id=&quot;uiswipeactionsconfiguration&quot;&gt;UISwipeActionsConfiguration&lt;/h2&gt;
+
+&lt;p&gt;&lt;sub&gt;The set of actions to perform when swiping on rows of a table.&lt;/sub&gt;&lt;/p&gt;
+
+&lt;p&gt;UISwipeActionsConfiguration 클래스는 테이블의 row를 스와이핑 했을 때 실행되는 동작들을 가지고 있습니다.&lt;/p&gt;
+
+&lt;h2 id=&quot;uicontextualaction&quot;&gt;UIContextualAction&lt;/h2&gt;
+
+&lt;p&gt;&lt;sub&gt;An action to display when the user swipes a table row.&lt;/sub&gt;&lt;/p&gt;
+
+&lt;p&gt;UIContextualAction 클래스를 이용하여 어떤 타입의 액션을 수행할 것인지 정의해줍니다.&lt;br /&gt;
+  그리고 정의한 UIContextualAction으로 정의한 액션을 이용하여 UISwipeActionsConfiguration의 객체를 생성합니다.&lt;/p&gt;
+
+&lt;p&gt;위의 코드에서는 UIContextualAction에 .destructive 스타일을 주어 delete 액션을 정의했고,&lt;br /&gt;
+  deleteAction 상수에 할당한 뒤 UISwipeActionsConfiguration의 actions: [deleteAction]으로 주어
+  생성된 객체를 리턴합니다. (set of actions라고 하는걸 보니 여러개의 액션을 담아서 [] 형식인 것 같습니다.)&lt;/p&gt;
 
 &lt;!-- # Delegate?   --&gt;
 

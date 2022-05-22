@@ -1,4 +1,4 @@
-I"��<p><sub>📲 앱 출시 스터디 진행 중.</sub></p>
+I";�<p><sub>📲 앱 출시 스터디 진행 중.</sub></p>
 
 <h1>?</h1>
 
@@ -233,6 +233,12 @@
 <p>Storyboard가 아니라 코딩만으로 UI를 짜는 새로운 경험을 해볼 수 있어서 좋았다.<br />
   지금은 구현이 먼저라 기능이 UI나 기능이 구현이 되면 넘어가고 있지만 시간이나면 정리를 하면서 코드가 어떤 과정을 거치는지 다시 한번 생각해 보면 좋을 것 같다.</p>
 
+<h1 id="make-the-model-identifiable">Make the Model Identifiable</h1>
+
+<p>식별자(identifiers)를 이용하여 데이터 소스에게 어떤 아이템을 컬렉션 뷰에 포함할지 어떤 아이템을 리로드 할지 알려줍니다.</p>
+
+<p>위의 튜토리얼에서는 title을 식별자로 사용하였지만, 두 개의 아이템이 같은 title을 가질 경우 문제가 발생하기 때문에 id값을 사용하는 것이 좋습니다.</p>
+
 <h2 id="cell-info-추가">Cell Info 추가</h2>
 
 <p>View controller는 init(coder:) 생성자를 필요로 합니다.</p>
@@ -453,17 +459,59 @@
 
 <p>모델에 변경된 값을 저장한다고 하는데 저장된 값은 어디 있는거지? Xcode내에서 볼 수 있나?</p>
 
-<h1 id="exporting-localizations">Exporting Localizations</h1>
+<h1 id="nslocalizedstring">NSLocalizedString</h1>
 
-<p><sub>Provide the localizable files from your project to localizers.</sub></p>
+<p><sub>Returns a localized version of a string from the default table, which Xcode autogenerates when exporting localizations.</sub></p>
 
-<div class="notice--primary">
-  <p></p>
-  </div>
-<div class="language-swift highlighter-rouge">
-  <code></code>
-  </div>
-<p><strong>localizable files란?</strong></p>
+<div class="notice--success">
+  <p> 아래는 리스트를 스와이프해서 나타나는 삭제 버튼의 title을 설정하기 위해 정의한 상수 deleteActionTitle의 코드이다. 튜토리얼 내에서 어떤 문자열을 지정하기 위해서 계속해서 NSLocalizedString을 사용하기에 궁금해서 알아본다.
+  <br /><br />
+  <code>
+   let deleteActionTitle = NSLocalizedString("Delete", comment: "Delete action title")
+  </code></p></div>
+
+<p>NSLocalizedString은 localized 버전의 문자열을 리턴하는 매크로다.  Localizations를 익스포트할 때 Xcode가 자동으로 localized된 문자열을 생성한다. Localizations를 익스포트 한다는 것은 무슨 뜻일까?</p>
+
+<p><strong>Exporting Localizations</strong><br />
+   <sub>Provide the localizable files from your project to localizers.</sub></p>
+
+<h1 id="swipe-actions">Swipe actions</h1>
+
+<div class="language-swift highlighter-rouge"><div class="highlight"><pre class="highlight"><code>   <span class="kd">private</span> <span class="kd">func</span> <span class="nf">makeSwipeActions</span><span class="p">(</span><span class="k">for</span> <span class="nv">indexPath</span><span class="p">:</span> <span class="kt">IndexPath</span><span class="p">?)</span> <span class="o">-&gt;</span> <span class="kt">UISwipeActionsConfiguration</span><span class="p">?</span> <span class="p">{</span>
+        <span class="k">guard</span> <span class="k">let</span> <span class="nv">indexPath</span> <span class="o">=</span> <span class="n">indexPath</span><span class="p">,</span> <span class="k">let</span> <span class="nv">id</span> <span class="o">=</span> <span class="n">dataSource</span><span class="o">.</span><span class="nf">itemIdentifier</span><span class="p">(</span><span class="nv">for</span><span class="p">:</span> <span class="n">indexPath</span><span class="p">)</span> <span class="k">else</span> <span class="p">{</span> <span class="k">return</span> <span class="kc">nil</span> <span class="p">}</span>
+        <span class="c1">// title for the action</span>
+        <span class="k">let</span> <span class="nv">deleteActionTitle</span> <span class="o">=</span> <span class="kt">NSLocalizedString</span><span class="p">(</span><span class="s">"Delete"</span><span class="p">,</span> <span class="nv">comment</span><span class="p">:</span> <span class="s">"Delete action title"</span><span class="p">)</span>
+        <span class="k">let</span> <span class="nv">deleteAction</span> <span class="o">=</span> <span class="kt">UIContextualAction</span><span class="p">(</span><span class="nv">style</span><span class="p">:</span> <span class="o">.</span><span class="n">destructive</span><span class="p">,</span> <span class="nv">title</span><span class="p">:</span> <span class="n">deleteActionTitle</span><span class="p">)</span> <span class="p">{</span>
+            <span class="p">[</span><span class="k">weak</span> <span class="k">self</span><span class="p">]</span> <span class="n">_</span><span class="p">,</span> <span class="n">_</span><span class="p">,</span> <span class="n">completion</span> <span class="k">in</span>
+            <span class="c1">// in the completion handler, id가 일치하는 아이템 삭제</span>
+            <span class="k">self</span><span class="p">?</span><span class="o">.</span><span class="nf">deleteItem</span><span class="p">(</span><span class="nv">with</span><span class="p">:</span> <span class="n">id</span><span class="p">)</span>
+            <span class="c1">// update the snapshot</span>
+            <span class="k">self</span><span class="p">?</span><span class="o">.</span><span class="nf">updateSnapshot</span><span class="p">()</span>
+            <span class="c1">// call the completion handler 위에 있는 인자로 통과된 trailing closure?</span>
+            <span class="nf">completion</span><span class="p">(</span><span class="kc">false</span><span class="p">)</span>
+        <span class="p">}</span>
+        <span class="k">return</span> <span class="kt">UISwipeActionsConfiguration</span><span class="p">(</span><span class="nv">actions</span><span class="p">:</span> <span class="p">[</span><span class="n">deleteAction</span><span class="p">])</span>
+    <span class="p">}</span>
+</code></pre></div></div>
+
+<p>UISwipeActionsConfiguration 타입을 리턴하는 function을 생성한다.</p>
+
+<h2 id="uiswipeactionsconfiguration">UISwipeActionsConfiguration</h2>
+
+<p><sub>The set of actions to perform when swiping on rows of a table.</sub></p>
+
+<p>UISwipeActionsConfiguration 클래스는 테이블의 row를 스와이핑 했을 때 실행되는 동작들을 가지고 있습니다.</p>
+
+<h2 id="uicontextualaction">UIContextualAction</h2>
+
+<p><sub>An action to display when the user swipes a table row.</sub></p>
+
+<p>UIContextualAction 클래스를 이용하여 어떤 타입의 액션을 수행할 것인지 정의해줍니다.<br />
+  그리고 정의한 UIContextualAction으로 정의한 액션을 이용하여 UISwipeActionsConfiguration의 객체를 생성합니다.</p>
+
+<p>위의 코드에서는 UIContextualAction에 .destructive 스타일을 주어 delete 액션을 정의했고,<br />
+  deleteAction 상수에 할당한 뒤 UISwipeActionsConfiguration의 actions: [deleteAction]으로 주어
+  생성된 객체를 리턴합니다. (set of actions라고 하는걸 보니 여러개의 액션을 담아서 [] 형식인 것 같습니다.)</p>
 
 <!-- # Delegate?   -->
 
