@@ -529,6 +529,32 @@ expDate를 리스트나 디테일 뷰에 나타나도록 해야할까?
   deleteAction 상수에 할당한 뒤 UISwipeActionsConfiguration의 actions: [deleteAction]으로 주어
   생성된 객체를 리턴합니다. (set of actions라고 하는걸 보니 여러개의 액션을 담아서 [] 형식인 것 같습니다.)
 
+## trailingSwipeActionsConfigurationProvider  
+
+  ```swift  
+  private func listLayout() -> UICollectionViewCompositionalLayout {
+      // UICollectionLayoutListConfiguration는 list의 한 섹션을 생성함
+      var listConfiguration = UICollectionLayoutListConfiguration(appearance: .grouped)
+      listConfiguration.headerMode = .supplementary
+      listConfiguration.showsSeparators = true
+      listConfiguration.trailingSwipeActionsConfigurationProvider = makeSwipeActions
+      listConfiguration.backgroundColor = .clear
+      return UICollectionViewCompositionalLayout.list(using: listConfiguration)
+  }
+  ```  
+
+  아래서 세번째 줄에 코드를 추가해주었습니다.
+
+  ```swift
+  var trailingSwipeActionsConfigurationProvider: UICollectionLayoutListConfiguration.SwipeActionsConfigurationProvider? { get set }
+  ```
+
+  위는 공식 문서에 Declaration입니다.  
+  위의 작성한 listLayout() 안에서 UICollectionLayoutListConfiguration의 객체를 listConfiguration 변수에
+  할당했고, SwipeActionsConfigurationProvider 클로저를 listConfiguration에 적용 후 이것을 makeSwipeActions에
+  설정해줍니다.  
+
+  <sub>이 부분이 이해가 잘 안가는데 SwipeActionsConfigurationProvider가 클로저도 makeSwipeActions는 function이고 function은 어쨌든 클로저의 한 종류이니까 이 결과를 provider에 주는 걸까?</sub>
 
 
 
