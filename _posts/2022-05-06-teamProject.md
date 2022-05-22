@@ -238,6 +238,12 @@ toc_icon: "kiwi-bird"
   Storyboard가 아니라 코딩만으로 UI를 짜는 새로운 경험을 해볼 수 있어서 좋았다.  
   지금은 구현이 먼저라 기능이 UI나 기능이 구현이 되면 넘어가고 있지만 시간이나면 정리를 하면서 코드가 어떤 과정을 거치는지 다시 한번 생각해 보면 좋을 것 같다.
 
+# Make the Model Identifiable  
+
+  식별자(identifiers)를 이용하여 데이터 소스에게 어떤 아이템을 컬렉션 뷰에 포함할지 어떤 아이템을 리로드 할지 알려줍니다.
+
+  위의 튜토리얼에서는 title을 식별자로 사용하였지만, 두 개의 아이템이 같은 title을 가질 경우 문제가 발생하기 때문에 id값을 사용하는 것이 좋습니다.  
+
 ## Cell Info 추가
 
 View controller는 init(coder:) 생성자를 필요로 합니다.
@@ -483,6 +489,52 @@ expDate를 리스트나 디테일 뷰에 나타나도록 해야할까?
 
   **Exporting Localizations**  
    <sub>Provide the localizable files from your project to localizers.</sub>
+
+# Swipe actions
+
+   ```swift
+   private func makeSwipeActions(for indexPath: IndexPath?) -> UISwipeActionsConfiguration? {
+        guard let indexPath = indexPath, let id = dataSource.itemIdentifier(for: indexPath) else { return nil }
+        // title for the action
+        let deleteActionTitle = NSLocalizedString("Delete", comment: "Delete action title")
+        let deleteAction = UIContextualAction(style: .destructive, title: deleteActionTitle) {
+            [weak self] _, _, completion in
+            // in the completion handler, id가 일치하는 아이템 삭제
+            self?.deleteItem(with: id)
+            // update the snapshot
+            self?.updateSnapshot()
+            // call the completion handler 위에 있는 인자로 통과된 trailing closure?
+            completion(false)
+        }
+        return UISwipeActionsConfiguration(actions: [deleteAction])
+    }
+   ```
+
+   UISwipeActionsConfiguration 타입을 리턴하는 function을 생성한다.  
+
+## UISwipeActionsConfiguration  
+
+  <sub>The set of actions to perform when swiping on rows of a table.</sub>  
+
+  UISwipeActionsConfiguration 클래스는 테이블의 row를 스와이핑 했을 때 실행되는 동작들을 가지고 있습니다.  
+
+## UIContextualAction  
+
+  <sub>An action to display when the user swipes a table row.</sub>  
+
+  UIContextualAction 클래스를 이용하여 어떤 타입의 액션을 수행할 것인지 정의해줍니다.  
+  그리고 정의한 UIContextualAction으로 정의한 액션을 이용하여 UISwipeActionsConfiguration의 객체를 생성합니다.  
+
+  위의 코드에서는 UIContextualAction에 .destructive 스타일을 주어 delete 액션을 정의했고,  
+  deleteAction 상수에 할당한 뒤 UISwipeActionsConfiguration의 actions: [deleteAction]으로 주어
+  생성된 객체를 리턴합니다. (set of actions라고 하는걸 보니 여러개의 액션을 담아서 [] 형식인 것 같습니다.)
+
+
+
+
+
+
+
 
 
 

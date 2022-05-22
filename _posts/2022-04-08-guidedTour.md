@@ -373,3 +373,15 @@ All information below comes from the Swift documentation and is for personal lea
   ```
 
   만약 조건이 false라면 else 브랜치의 코드가 실행됩니다. 이런 경우에는 return, break, continue, throw등의 control transfer statement를 사용하여 코드 블락을 꼭 벗어나 주어야 합니다.
+
+# Concurrency  
+
+## Parallel Code  
+
+  Swift는 구조화된 방식으로 비동기 및 병렬 코드를 작성할 수 있도록 돕는 내장 지원을 가지고 있습니다. (코드를 작성할 수 있는 방식 또는 키워드를 가지고 있는 거겠죠?)  
+
+  Asynchronous code(비동기 코드)는 중단되었다가 다시 시작될 수 있습니다.
+
+  Parallel code(병렬 코드)는 여러개의 코드가 동시에 동작하는 것을 의미합니다. 예를 들어 4 코어 프로세서를 가진 컴퓨터는 네개의 코드를 동시에 실행할 수 있습니다. 각각의 코어는 하나의 일을 수행합니다. 병렬(parallel) 그리고 비동기(asynchronous)코드는 한번에 여러개의 작업을 수행합니다.  
+  이것은 외부 시스템을 기다리고 있는 작업을 중지시킵니다.(?)  
+   그리고 memory-safe한 방식으로 코드를 작성하기 쉽도록 만들어 줍니다.

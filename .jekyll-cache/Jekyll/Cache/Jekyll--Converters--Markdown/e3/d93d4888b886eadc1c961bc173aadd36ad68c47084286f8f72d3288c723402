@@ -1,4 +1,4 @@
-I"��<p><sub>📲 앱 출시 스터디 진행 중.</sub></p>
+I"X�<p><sub>📲 앱 출시 스터디 진행 중.</sub></p>
 
 <h1>?</h1>
 
@@ -233,6 +233,12 @@
 <p>Storyboard가 아니라 코딩만으로 UI를 짜는 새로운 경험을 해볼 수 있어서 좋았다.<br />
   지금은 구현이 먼저라 기능이 UI나 기능이 구현이 되면 넘어가고 있지만 시간이나면 정리를 하면서 코드가 어떤 과정을 거치는지 다시 한번 생각해 보면 좋을 것 같다.</p>
 
+<h1 id="make-the-model-identifiable">Make the Model Identifiable</h1>
+
+<p>식별자(identifiers)를 이용하여 데이터 소스에게 어떤 아이템을 컬렉션 뷰에 포함할지 어떤 아이템을 리로드 할지 알려줍니다.</p>
+
+<p>위의 튜토리얼에서는 title을 식별자로 사용하였지만, 두 개의 아이템이 같은 title을 가질 경우 문제가 발생하기 때문에 id값을 사용하는 것이 좋습니다.</p>
+
 <h2 id="cell-info-추가">Cell Info 추가</h2>
 
 <p>View controller는 init(coder:) 생성자를 필요로 합니다.</p>
@@ -453,18 +459,21 @@
 
 <p>모델에 변경된 값을 저장한다고 하는데 저장된 값은 어디 있는거지? Xcode내에서 볼 수 있나?</p>
 
-<h1 id="exporting-localizations">Exporting Localizations</h1>
+<h1 id="nslocalizedstring">NSLocalizedString</h1>
 
-<p><sub>Provide the localizable files from your project to localizers.</sub></p>
+<p><sub>Returns a localized version of a string from the default table, which Xcode autogenerates when exporting localizations.</sub></p>
 
 <div class="notice--success">
-  <p>
+  <p> 아래는 리스트를 스와이프해서 나타나는 삭제 버튼의 title을 설정하기 위해 정의한 상수 deleteActionTitle의 코드이다. 튜토리얼 내에서 어떤 문자열을 지정하기 위해서 계속해서 NSLocalizedString을 사용하기에 궁금해서 알아본다.
+  <br /><br />
   <code>
    let deleteActionTitle = NSLocalizedString("Delete", comment: "Delete action title")
-  </code>
-  </p>
-  </div>
-<p><strong>localizable files란?</strong></p>
+  </code></p></div>
+
+<p>NSLocalizedString은 localized 버전의 문자열을 리턴하는 매크로다.  Localizations를 익스포트할 때 Xcode가 자동으로 localized된 문자열을 생성한다. Localizations를 익스포트 한다는 것은 무슨 뜻일까?</p>
+
+<p><strong>Exporting Localizations</strong><br />
+   <sub>Provide the localizable files from your project to localizers.</sub></p>
 
 <!-- # Delegate?   -->
 
