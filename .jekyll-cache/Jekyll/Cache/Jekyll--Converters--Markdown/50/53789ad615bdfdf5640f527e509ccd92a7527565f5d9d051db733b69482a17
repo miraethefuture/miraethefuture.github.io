@@ -1,4 +1,4 @@
-I"i�<p><sub>📲 앱 출시 스터디 진행 중.</sub></p>
+I"S�<p><sub>📲 앱 출시 스터디 진행 중.</sub></p>
 
 <h1>?</h1>
 
@@ -494,11 +494,128 @@
     <span class="p">}</span>
 </code></pre></div></div>
 
-<p>##</p>
-
-<p>The set of actions to perform when swiping on rows of a table.</p>
-
 <p>UISwipeActionsConfiguration 타입을 리턴하는 function을 생성한다.</p>
+
+<h2 id="uiswipeactionsconfiguration">UISwipeActionsConfiguration</h2>
+
+<p><sub>The set of actions to perform when swiping on rows of a table.</sub></p>
+
+<p>UISwipeActionsConfiguration 클래스는 테이블의 row를 스와이핑 했을 때 실행되는 동작들을 가지고 있습니다.</p>
+
+<h2 id="uicontextualaction">UIContextualAction</h2>
+
+<p><sub>An action to display when the user swipes a table row.</sub></p>
+
+<p>UIContextualAction 클래스를 이용하여 어떤 타입의 액션을 수행할 것인지 정의해줍니다.<br />
+  그리고 정의한 UIContextualAction으로 정의한 액션을 이용하여 UISwipeActionsConfiguration의 객체를 생성합니다.</p>
+
+<p>위의 코드에서는 UIContextualAction에 .destructive 스타일을 주어 delete 액션을 정의했고,<br />
+  deleteAction 상수에 할당한 뒤 UISwipeActionsConfiguration의 actions: [deleteAction]으로 주어
+  생성된 객체를 리턴합니다. (set of actions라고 하는걸 보니 여러개의 액션을 담아서 [] 형식인 것 같습니다.)</p>
+
+<h2 id="trailingswipeactionsconfigurationprovider">trailingSwipeActionsConfigurationProvider</h2>
+
+<div class="language-swift highlighter-rouge"><div class="highlight"><pre class="highlight"><code>  <span class="kd">private</span> <span class="kd">func</span> <span class="nf">listLayout</span><span class="p">()</span> <span class="o">-&gt;</span> <span class="kt">UICollectionViewCompositionalLayout</span> <span class="p">{</span>
+      <span class="c1">// UICollectionLayoutListConfiguration는 list의 한 섹션을 생성함</span>
+      <span class="k">var</span> <span class="nv">listConfiguration</span> <span class="o">=</span> <span class="kt">UICollectionLayoutListConfiguration</span><span class="p">(</span><span class="nv">appearance</span><span class="p">:</span> <span class="o">.</span><span class="n">grouped</span><span class="p">)</span>
+      <span class="n">listConfiguration</span><span class="o">.</span><span class="n">headerMode</span> <span class="o">=</span> <span class="o">.</span><span class="n">supplementary</span>
+      <span class="n">listConfiguration</span><span class="o">.</span><span class="n">showsSeparators</span> <span class="o">=</span> <span class="kc">true</span>
+      <span class="n">listConfiguration</span><span class="o">.</span><span class="n">trailingSwipeActionsConfigurationProvider</span> <span class="o">=</span> <span class="n">makeSwipeActions</span>
+      <span class="n">listConfiguration</span><span class="o">.</span><span class="n">backgroundColor</span> <span class="o">=</span> <span class="o">.</span><span class="n">clear</span>
+      <span class="k">return</span> <span class="kt">UICollectionViewCompositionalLayout</span><span class="o">.</span><span class="nf">list</span><span class="p">(</span><span class="nv">using</span><span class="p">:</span> <span class="n">listConfiguration</span><span class="p">)</span>
+  <span class="p">}</span>
+</code></pre></div></div>
+
+<p>아래서 세번째 줄에 코드를 추가해주었습니다.</p>
+
+<div class="language-swift highlighter-rouge"><div class="highlight"><pre class="highlight"><code>  <span class="k">var</span> <span class="nv">trailingSwipeActionsConfigurationProvider</span><span class="p">:</span> <span class="kt">UICollectionLayoutListConfiguration</span><span class="o">.</span><span class="kt">SwipeActionsConfigurationProvider</span><span class="p">?</span> <span class="p">{</span> <span class="k">get</span> <span class="k">set</span> <span class="p">}</span>
+</code></pre></div></div>
+
+<p>위는 공식 문서에 Declaration입니다.<br />
+  위의 작성한 listLayout() 안에서 UICollectionLayoutListConfiguration의 객체를 listConfiguration 변수에
+  할당했고, SwipeActionsConfigurationProvider 클로저를 listConfiguration에 적용 후 이것을 makeSwipeActions에
+  설정해줍니다.</p>
+
+<div class="notice--success">
+  <p>이 부분이 이해가 잘 안가는데 SwipeActionsConfigurationProvider가 클로저도 makeSwipeActions는 function이고 function은 어쨌든 클로저의 한 종류이니까 이 결과를 provider에 주는 걸까?</p>
+  </div>
+
+<h1 id="filtering-items">Filtering Items</h1>
+
+<p>Enumeration을 이용하여 아이템들을 세개의 카테고리로 나눠봅니다.</p>
+
+<p>higher-order function을 사용할 것입니다. 클로저를 통과시키는 패러미터를 사용합니다.<br />
+  map(_:)도 higher order function입니다.</p>
+
+<h3 id="문제-해결">문제 해결</h3>
+
+<div class="language-swift highlighter-rouge"><div class="highlight"><pre class="highlight"><code>  <span class="kd">struct</span> <span class="kt">Item</span><span class="p">:</span> <span class="kt">Identifiable</span><span class="p">,</span> <span class="kt">Equatable</span> <span class="p">{</span>
+      <span class="k">var</span> <span class="nv">id</span><span class="p">:</span> <span class="kt">String</span> <span class="o">=</span> <span class="kt">UUID</span><span class="p">()</span><span class="o">.</span><span class="n">uuidString</span>
+      <span class="k">var</span> <span class="nv">title</span><span class="p">:</span> <span class="kt">String</span>
+      <span class="k">var</span> <span class="nv">startDate</span><span class="p">:</span> <span class="kt">Date</span> <span class="o">=</span> <span class="kt">Date</span><span class="o">.</span><span class="n">now</span>              <span class="c1">// 등록 날짜 (기본값을 등록일로)</span>
+      <span class="k">var</span> <span class="nv">expDate</span><span class="p">:</span> <span class="kt">Date</span>                           <span class="c1">// 유통기한 날짜</span>
+      <span class="k">var</span> <span class="nv">storageType</span><span class="p">:</span> <span class="kt">Storage</span> <span class="o">=</span> <span class="kt">Storage</span><span class="o">.</span><span class="n">all</span>      <span class="c1">// 보관 방법 (자료형 확인하기)</span>
+      <span class="k">var</span> <span class="nv">dDay</span><span class="p">:</span> <span class="kt">Int</span> <span class="o">=</span> <span class="mi">0</span>
+      <span class="k">var</span> <span class="nv">notes</span><span class="p">:</span> <span class="kt">String</span><span class="p">?</span> <span class="o">=</span> <span class="kc">nil</span>                    <span class="c1">// 간단한 메모</span>
+      <span class="k">var</span> <span class="nv">quantity</span><span class="p">:</span> <span class="kt">Double</span> <span class="o">=</span> <span class="mi">1</span>
+      <span class="k">var</span> <span class="nv">isComplete</span><span class="p">:</span> <span class="kt">Bool</span> <span class="o">=</span> <span class="kc">false</span>
+  <span class="p">}</span>
+
+  <span class="kd">enum</span> <span class="kt">Storage</span><span class="p">{</span>
+      <span class="k">case</span> <span class="n">all</span>
+      <span class="k">case</span> <span class="n">냉장</span>
+      <span class="k">case</span> <span class="n">냉동</span>
+      <span class="k">case</span> <span class="n">실온</span>
+  <span class="p">}</span>
+</code></pre></div></div>
+
+<p>각 아이템에 사용하던 모델에 storageType이라는 속성이 있음.<br />
+  원래는 임시로 String 타입에 sample 데이터로 “냉장”, “냉동” 이런식으로 입력중이었음.<br />
+  Storage라는 Enumeration을 생성하여 새로운 타입을 생성.</p>
+
+<div class="language-swift highlighter-rouge"><div class="highlight"><pre class="highlight"><code>  <span class="c1">// supply data의 String</span>
+  <span class="kd">func</span> <span class="nf">text</span><span class="p">(</span><span class="k">for</span> <span class="nv">row</span><span class="p">:</span> <span class="kt">Row</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kt">String</span><span class="p">?</span> <span class="p">{</span>
+      <span class="k">switch</span> <span class="n">row</span> <span class="p">{</span>
+      <span class="k">case</span> <span class="o">.</span><span class="nv">viewExpDate</span><span class="p">:</span> <span class="k">return</span> <span class="n">item</span><span class="o">.</span><span class="n">expDate</span><span class="o">.</span><span class="n">dateText</span>
+      <span class="k">case</span> <span class="o">.</span><span class="nv">viewStartDate</span><span class="p">:</span> <span class="k">return</span> <span class="n">item</span><span class="o">.</span><span class="n">startDate</span><span class="o">.</span><span class="n">startText</span>
+      <span class="k">case</span> <span class="o">.</span><span class="nv">viewNotes</span><span class="p">:</span> <span class="k">return</span> <span class="n">item</span><span class="o">.</span><span class="n">notes</span>
+      <span class="k">case</span> <span class="o">.</span><span class="nv">viewQuantity</span><span class="p">:</span> <span class="k">return</span> <span class="n">item</span><span class="o">.</span><span class="n">quantity</span><span class="o">.</span><span class="n">quantityText</span>
+      <span class="k">case</span> <span class="o">.</span><span class="nv">viewStorageType</span><span class="p">:</span> <span class="k">return</span> <span class="n">item</span><span class="o">.</span><span class="n">storageType</span>
+      <span class="k">case</span> <span class="o">.</span><span class="nv">viewTitle</span><span class="p">:</span> <span class="k">return</span> <span class="n">item</span><span class="o">.</span><span class="n">title</span>
+      <span class="k">default</span><span class="p">:</span> <span class="k">return</span> <span class="kc">nil</span>
+      <span class="p">}</span>
+  <span class="p">}</span>
+</code></pre></div></div>
+
+<p>위의 function을 사용하여 디테일 뷰에서 정보들을 아래와 사진처럼 보이도록 포맷팅 해주고 있었는데,<br />
+  리턴되는 item.storageType이 더이상 String 타입이 아니게 되어 에러를 발생시켰다.</p>
+
+<center><img src="/assets/images/teamProject3.png" alt="teamProject3" width="400" /></center>
+
+<p>임시적으로 강제 캐스팅을 시도했으나 실패하였고 😅</p>
+
+<div class="language-swift highlighter-rouge"><div class="highlight"><pre class="highlight"><code>  <span class="k">var</span> <span class="nv">storageTypeText</span><span class="p">:</span> <span class="kt">String</span> <span class="p">{</span>
+      <span class="k">switch</span> <span class="k">self</span> <span class="p">{</span>
+      <span class="k">case</span> <span class="o">.</span><span class="nv">all</span><span class="p">:</span>
+          <span class="k">return</span> <span class="s">"all"</span>
+      <span class="k">case</span> <span class="o">.</span><span class="nv">냉장</span><span class="p">:</span>
+          <span class="k">return</span> <span class="s">"냉장"</span>
+      <span class="k">case</span> <span class="o">.</span><span class="nv">냉동</span><span class="p">:</span>
+          <span class="k">return</span> <span class="s">"냉동"</span>
+      <span class="k">case</span> <span class="o">.</span><span class="nv">실온</span><span class="p">:</span>
+          <span class="k">return</span> <span class="s">"실온"</span>
+      <span class="p">}</span>
+  <span class="p">}</span>
+</code></pre></div></div>
+
+<p>위와 같은 computed property를 Storage enumeration안에 추가해주었다. 그리고 아래와 같이 수정해줌으로써 문제를 해결했다.</p>
+
+<div class="language-swift highlighter-rouge"><div class="highlight"><pre class="highlight"><code>  <span class="k">case</span> <span class="o">.</span><span class="nv">viewStorageType</span><span class="p">:</span> <span class="k">return</span> <span class="n">item</span><span class="o">.</span><span class="n">storageType</span><span class="o">.</span><span class="n">storageTypeText</span>
+</code></pre></div></div>
+
+<h1 id="-1">.</h1>
+
+<p>filter()는 조건이 true인 요소로 새로운 배열을 만드는건가?</p>
 
 <!-- # Delegate?   -->
 
