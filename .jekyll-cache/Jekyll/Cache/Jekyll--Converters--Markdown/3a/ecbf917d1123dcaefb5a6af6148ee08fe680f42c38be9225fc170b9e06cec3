@@ -1,4 +1,4 @@
-I"ӯ<p><sub>📲 앱 출시 스터디 진행 중.</sub></p>
+I"t�<p><sub>📲 앱 출시 스터디 진행 중.</sub></p>
 
 <h1>?</h1>
 
@@ -511,7 +511,40 @@
 
 <p>위의 코드에서는 UIContextualAction에 .destructive 스타일을 주어 delete 액션을 정의했고,<br />
   deleteAction 상수에 할당한 뒤 UISwipeActionsConfiguration의 actions: [deleteAction]으로 주어
-  생성된 객체를 리턴합니다.</p>
+  생성된 객체를 리턴합니다. (set of actions라고 하는걸 보니 여러개의 액션을 담아서 [] 형식인 것 같습니다.)</p>
+
+<h2 id="trailingswipeactionsconfigurationprovider">trailingSwipeActionsConfigurationProvider</h2>
+
+<div class="language-swift highlighter-rouge"><div class="highlight"><pre class="highlight"><code>  <span class="kd">private</span> <span class="kd">func</span> <span class="nf">listLayout</span><span class="p">()</span> <span class="o">-&gt;</span> <span class="kt">UICollectionViewCompositionalLayout</span> <span class="p">{</span>
+      <span class="c1">// UICollectionLayoutListConfiguration는 list의 한 섹션을 생성함</span>
+      <span class="k">var</span> <span class="nv">listConfiguration</span> <span class="o">=</span> <span class="kt">UICollectionLayoutListConfiguration</span><span class="p">(</span><span class="nv">appearance</span><span class="p">:</span> <span class="o">.</span><span class="n">grouped</span><span class="p">)</span>
+      <span class="n">listConfiguration</span><span class="o">.</span><span class="n">headerMode</span> <span class="o">=</span> <span class="o">.</span><span class="n">supplementary</span>
+      <span class="n">listConfiguration</span><span class="o">.</span><span class="n">showsSeparators</span> <span class="o">=</span> <span class="kc">true</span>
+      <span class="n">listConfiguration</span><span class="o">.</span><span class="n">trailingSwipeActionsConfigurationProvider</span> <span class="o">=</span> <span class="n">makeSwipeActions</span>
+      <span class="n">listConfiguration</span><span class="o">.</span><span class="n">backgroundColor</span> <span class="o">=</span> <span class="o">.</span><span class="n">clear</span>
+      <span class="k">return</span> <span class="kt">UICollectionViewCompositionalLayout</span><span class="o">.</span><span class="nf">list</span><span class="p">(</span><span class="nv">using</span><span class="p">:</span> <span class="n">listConfiguration</span><span class="p">)</span>
+  <span class="p">}</span>
+</code></pre></div></div>
+
+<p>아래서 세번째 줄에 코드를 추가해주었습니다.</p>
+
+<div class="language-swift highlighter-rouge"><div class="highlight"><pre class="highlight"><code>  <span class="k">var</span> <span class="nv">trailingSwipeActionsConfigurationProvider</span><span class="p">:</span> <span class="kt">UICollectionLayoutListConfiguration</span><span class="o">.</span><span class="kt">SwipeActionsConfigurationProvider</span><span class="p">?</span> <span class="p">{</span> <span class="k">get</span> <span class="k">set</span> <span class="p">}</span>
+</code></pre></div></div>
+
+<p>위는 공식 문서에 Declaration입니다.<br />
+  위의 작성한 listLayout() 안에서 UICollectionLayoutListConfiguration의 객체를 listConfiguration 변수에
+  할당했고, SwipeActionsConfigurationProvider 클로저를 listConfiguration에 적용 후 이것을 makeSwipeActions에
+  설정해줍니다.</p>
+
+<div class="notice--success">
+  <p>이 부분이 이해가 잘 안가는데 SwipeActionsConfigurationProvider가 클로저도 makeSwipeActions는 function이고 function은 어쨌든 클로저의 한 종류이니까 이 결과를 provider에 주는 걸까?</p>
+  </div>
+
+<h1 id="filtering-items">Filtering Items</h1>
+
+<p>Enumeration을 이용하여 아이템들을 세개의 카테고리로 나눠봅니다.</p>
+
+<p>higher-order function을 사용할 것입니다. 클로저를 통과시키는 패러미터를 사용합니다.</p>
 
 <!-- # Delegate?   -->
 

@@ -554,7 +554,94 @@ expDate를 리스트나 디테일 뷰에 나타나도록 해야할까?
   할당했고, SwipeActionsConfigurationProvider 클로저를 listConfiguration에 적용 후 이것을 makeSwipeActions에
   설정해줍니다.  
 
-  <sub>이 부분이 이해가 잘 안가는데 SwipeActionsConfigurationProvider가 클로저도 makeSwipeActions는 function이고 function은 어쨌든 클로저의 한 종류이니까 이 결과를 provider에 주는 걸까?</sub>
+  <div class="notice--success">
+  <p>이 부분이 이해가 잘 안가는데 SwipeActionsConfigurationProvider가 클로저도 makeSwipeActions는 function이고 function은 어쨌든 클로저의 한 종류이니까 이 결과를 provider에 주는 걸까?</p>
+  </div>  
+
+# Filtering Items  
+
+  Enumeration을 이용하여 아이템들을 세개의 카테고리로 나눠봅니다.
+
+  higher-order function을 사용할 것입니다. 클로저를 통과시키는 패러미터를 사용합니다.  
+  map(_:)도 higher order function입니다.
+
+### 문제 해결  
+
+  ```swift
+  struct Item: Identifiable, Equatable {
+      var id: String = UUID().uuidString
+      var title: String
+      var startDate: Date = Date.now              // 등록 날짜 (기본값을 등록일로)
+      var expDate: Date                           // 유통기한 날짜
+      var storageType: Storage = Storage.all      // 보관 방법 (자료형 확인하기)
+      var dDay: Int = 0
+      var notes: String? = nil                    // 간단한 메모
+      var quantity: Double = 1
+      var isComplete: Bool = false
+  }
+
+  enum Storage{
+      case all
+      case 냉장
+      case 냉동
+      case 실온
+  }
+  ```
+
+  각 아이템에 사용하던 모델에 storageType이라는 속성이 있음.  
+  원래는 임시로 String 타입에 sample 데이터로 "냉장", "냉동" 이런식으로 입력중이었음.  
+  Storage라는 Enumeration을 생성하여 새로운 타입을 생성.  
+
+  ```swift
+  // supply data의 String
+  func text(for row: Row) -> String? {
+      switch row {
+      case .viewExpDate: return item.expDate.dateText
+      case .viewStartDate: return item.startDate.startText
+      case .viewNotes: return item.notes
+      case .viewQuantity: return item.quantity.quantityText
+      case .viewStorageType: return item.storageType
+      case .viewTitle: return item.title
+      default: return nil
+      }
+  }
+  ```
+
+  위의 function을 사용하여 디테일 뷰에서 정보들을 아래와 사진처럼 보이도록 포맷팅 해주고 있었는데,  
+  리턴되는 item.storageType이 더이상 String 타입이 아니게 되어 에러를 발생시켰다.
+
+  <center><img src="/assets/images/teamProject3.png" alt="teamProject3" width="400"></center>
+
+  임시적으로 강제 캐스팅을 시도했으나 실패하였고 😅  
+
+  ```swift
+  var storageTypeText: String {
+      switch self {
+      case .all:
+          return "all"
+      case .냉장:
+          return "냉장"
+      case .냉동:
+          return "냉동"
+      case .실온:
+          return "실온"
+      }
+  }
+  ```
+
+  위와 같은 computed property를 Storage enumeration안에 추가해주었다. 그리고 아래와 같이 수정해줌으로써 문제를 해결했다.
+
+  ```swift
+  case .viewStorageType: return item.storageType.storageTypeText
+  ```
+
+# .
+
+  filter()는 조건이 true인 요소로 새로운 배열을 만드는건가?
+
+
+
+
 
 
 
