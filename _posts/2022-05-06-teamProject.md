@@ -635,9 +635,28 @@ expDate를 리스트나 디테일 뷰에 나타나도록 해야할까?
   case .viewStorageType: return item.storageType.storageTypeText
   ```
 
-# .
+# 중간 궁금한 점
 
-  filter()는 조건이 true인 요소로 새로운 배열을 만드는건가?
+  - filter()는 조건이 true인 요소로 새로운 배열을 만드는건가?
+
+  - Segmented coltrol을 headerview에 넣을까?
+
+  - action 관련된 function은 왜 @objc가 붙을까? swift만으로는 작성 불가능한걸까?
+
+  - didSet 옵저버 이용하면 서플러먼터리 뷰의 타이틀 바꿀 수 있을까?
+
+# EvenKit  
+
+  다른 많은 API 처럼, EvenKit은 callbacks를 사용하여 요청에 비동기적으로 응답합니다.  
+
+  ```swift
+  func fetchReminders(matching predicate: NSPredicate) async throws -> [EKReminder] {
+
+  }
+  ```  
+  패러미터 뒤에 async 키워드는 해당 function이 비동기적으로 실행될 수 있다는 것을 나타냄.  
+  (그럼 function은 보통 동기적으로 실행되나..?)
+
 
 
 
