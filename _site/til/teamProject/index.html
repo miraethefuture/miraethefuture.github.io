@@ -234,7 +234,7 @@
           <aside class="sidebar__right sticky">
             <nav class="toc">
               <header><h4 class="nav__title"><i class="fas fa-kiwi-bird"></i>  </h4></header>
-              <ul class="toc__menu"><li><a href="#add-a-collection-view-controller">Add a Collection View Controller</a></li><li><a href="#데이터-모델">데이터 모델</a></li><li><a href="#configure-the-collection-as-a-list">Configure the Collection as a list</a><ul><li><a href="#search-text-field-코드">Search text field 코드</a></li><li><a href="#uicollectionviewcontroller">UICollectionViewController</a></li></ul></li><li><a href="#configure-the-data-source">Configure the Data Source</a></li><li><a href="#apply-a-snapshot">Apply a snapshot</a></li><li><a href="#displaying-cell-info">Displaying Cell Info</a></li><li><a href="#headerview">HeaderView</a><ul><li><a href="#uicollectionreusableview">UICollectionReusableView</a></li><li><a href="#headerview---subviews---constraints">HeaderView - Subviews - Constraints</a></li></ul></li><li><a href="#organize-view-controller">Organize View Controller</a></li><li><a href="#중간-정리">중간 정리</a><ul><li><a href="#ui">UI</a></li><li><a href="#header">Header</a></li><li><a href="#list-layout">List Layout</a></li><li><a href="#느낀점">느낀점</a></li></ul></li><li><a href="#make-the-model-identifiable">Make the Model Identifiable</a><ul><li><a href="#cell-info-추가">Cell Info 추가</a></li></ul></li><li><a href="#wire-a-target-action-pair">Wire a Target Action Pair</a></li><li><a href="#navigation-controller">Navigation controller</a></li><li><a href="#indexpath-와-itemid">IndexPath 와 Item.ID</a></li><li><a href="#edit-view-만드는-중">Edit view 만드는 중</a><ul><li><a href="#willset--didset">willSet / didSet</a></li></ul></li><li><a href="#downcasting">Downcasting</a></li><li><a href="#text-view">Text view</a></li><li><a href="#arc">ARC</a><ul><li><a href="#how-arc-works">How ARC Works</a></li></ul></li><li><a href="#weak-self">[weak self]</a></li><li><a href="#selector">#selector</a></li><li><a href="#궁금">궁금</a></li><li><a href="#nslocalizedstring">NSLocalizedString</a></li><li><a href="#swipe-actions">Swipe actions</a><ul><li><a href="#uiswipeactionsconfiguration">UISwipeActionsConfiguration</a></li><li><a href="#uicontextualaction">UIContextualAction</a></li><li><a href="#trailingswipeactionsconfigurationprovider">trailingSwipeActionsConfigurationProvider</a></li></ul></li><li><a href="#filtering-items">Filtering Items</a><ul><li><a href="#문제-해결">문제 해결</a></li></ul></li></ul></li><li><a href="#-1">.</a></li></ul>
+              <ul class="toc__menu"><li><a href="#tip">Tip!</a></li><li><a href="#add-a-collection-view-controller">Add a Collection View Controller</a></li><li><a href="#데이터-모델">데이터 모델</a></li><li><a href="#configure-the-collection-as-a-list">Configure the Collection as a list</a><ul><li><a href="#search-text-field-코드">Search text field 코드</a></li><li><a href="#uicollectionviewcontroller">UICollectionViewController</a></li></ul></li><li><a href="#configure-the-data-source">Configure the Data Source</a></li><li><a href="#apply-a-snapshot">Apply a snapshot</a></li><li><a href="#displaying-cell-info">Displaying Cell Info</a></li><li><a href="#headerview">HeaderView</a><ul><li><a href="#uicollectionreusableview">UICollectionReusableView</a></li><li><a href="#headerview---subviews---constraints">HeaderView - Subviews - Constraints</a></li></ul></li><li><a href="#organize-view-controller">Organize View Controller</a></li><li><a href="#중간-정리">중간 정리</a><ul><li><a href="#ui">UI</a></li><li><a href="#header">Header</a></li><li><a href="#list-layout">List Layout</a></li><li><a href="#느낀점">느낀점</a></li></ul></li><li><a href="#make-the-model-identifiable">Make the Model Identifiable</a><ul><li><a href="#cell-info-추가">Cell Info 추가</a></li></ul></li><li><a href="#wire-a-target-action-pair">Wire a Target Action Pair</a></li><li><a href="#navigation-controller">Navigation controller</a></li><li><a href="#indexpath-와-itemid">IndexPath 와 Item.ID</a></li><li><a href="#edit-view-만드는-중">Edit view 만드는 중</a><ul><li><a href="#willset--didset">willSet / didSet</a></li></ul></li><li><a href="#downcasting">Downcasting</a></li><li><a href="#text-view">Text view</a></li><li><a href="#arc">ARC</a><ul><li><a href="#how-arc-works">How ARC Works</a></li></ul></li><li><a href="#weak-self">[weak self]</a></li><li><a href="#selector">#selector</a></li><li><a href="#궁금">궁금</a></li><li><a href="#nslocalizedstring">NSLocalizedString</a></li><li><a href="#swipe-actions">Swipe actions</a><ul><li><a href="#uiswipeactionsconfiguration">UISwipeActionsConfiguration</a></li><li><a href="#uicontextualaction">UIContextualAction</a></li><li><a href="#trailingswipeactionsconfigurationprovider">trailingSwipeActionsConfigurationProvider</a></li></ul></li><li><a href="#filtering-items">Filtering Items</a><ul><li><a href="#문제-해결">문제 해결</a></li></ul></li></ul></li><li><a href="#중간-궁금한-점">중간 궁금한 점</a></li><li><a href="#eventkit">EventKit</a></li><li><a href="#item-store">Item Store</a><ul><li><a href="#swift-error-handling">Swift error handling</a></li></ul></li></ul>
 
             </nav>
           </aside>
@@ -249,6 +249,13 @@
   <li>search UITextField 옆에 cancel이나 x 버튼</li>
   <li>Accessibility (VoiceOver 등,,) 사용할지</li>
 </ul>
+
+<h1 id="tip">Tip!</h1>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>&lt;sub&gt;나에게 주는 팁!&lt;/sub&gt;
+
+- alert controller는 UX를 방해할 수 있기 때문에 꼭 필요한 정보를 전달할때만 사용할 것
+</code></pre></div></div>
 
 <h1 id="add-a-collection-view-controller">Add a Collection View Controller</h1>
 
@@ -854,9 +861,63 @@
 <div class="language-swift highlighter-rouge"><div class="highlight"><pre class="highlight"><code>  <span class="k">case</span> <span class="o">.</span><span class="nv">viewStorageType</span><span class="p">:</span> <span class="k">return</span> <span class="n">item</span><span class="o">.</span><span class="n">storageType</span><span class="o">.</span><span class="n">storageTypeText</span>
 </code></pre></div></div>
 
-<h1 id="-1">.</h1>
+<h1 id="중간-궁금한-점">중간 궁금한 점</h1>
 
-<p>filter()는 조건이 true인 요소로 새로운 배열을 만드는건가?</p>
+<ul>
+  <li>
+    <p>filter()는 조건이 true인 요소로 새로운 배열을 만드는건가?</p>
+  </li>
+  <li>
+    <p>Segmented coltrol을 headerview에 넣을까?</p>
+  </li>
+  <li>
+    <p>action 관련된 function은 왜 @objc가 붙을까? swift만으로는 작성 불가능한걸까?</p>
+  </li>
+  <li>
+    <p>didSet 옵저버 이용하면 서플러먼터리 뷰의 타이틀 바꿀 수 있을까?</p>
+  </li>
+</ul>
+
+<h1 id="eventkit">EventKit</h1>
+
+<p>다른 많은 API 처럼, EvenKit은 callbacks를 사용하여 요청에 비동기적으로 응답합니다.</p>
+
+<div class="language-swift highlighter-rouge"><div class="highlight"><pre class="highlight"><code>  <span class="kd">func</span> <span class="nf">fetchReminders</span><span class="p">(</span><span class="n">matching</span> <span class="nv">predicate</span><span class="p">:</span> <span class="kt">NSPredicate</span><span class="p">)</span> <span class="k">async</span> <span class="k">throws</span> <span class="o">-&gt;</span> <span class="p">[</span><span class="kt">EKReminder</span><span class="p">]</span> <span class="p">{</span>
+
+  <span class="p">}</span>
+</code></pre></div></div>
+<p>패러미터 뒤에 async 키워드는 해당 function이 비동기적으로 실행될 수 있다는 것을 나타냄.<br />
+  (그럼 function은 보통 동기적으로 실행되나..?)</p>
+
+<p>이 부분은 공부가 더 필요함.</p>
+
+<h1 id="item-store">Item Store</h1>
+
+<p>지금까지는 단순 배열을 사용하여 데이터를 관리.<br />
+  Reminder store abstraction을 생성하여 데이터를 영속적으로 관리할 수 있도록 할 것임.</p>
+
+<h2 id="swift-error-handling">Swift error handling</h2>
+
+<div class="language-swift highlighter-rouge"><div class="highlight"><pre class="highlight"><code>  <span class="kd">func</span> <span class="nf">prepareItemStore</span><span class="p">()</span> <span class="p">{</span>
+      <span class="kt">Task</span> <span class="p">{</span>
+          <span class="k">do</span> <span class="p">{</span>
+              <span class="k">try</span> <span class="k">await</span> <span class="n">itemStore</span><span class="o">.</span><span class="nf">requestAccess</span><span class="p">()</span>
+              <span class="c1">// Await the result of readAll(), and then assign its result to items.</span>
+              <span class="n">items</span> <span class="o">=</span> <span class="k">try</span> <span class="k">await</span> <span class="n">itemStore</span><span class="o">.</span><span class="nf">readAll</span><span class="p">()</span>
+          <span class="p">}</span> <span class="k">catch</span> <span class="kt">CingCingError</span><span class="o">.</span><span class="n">accessDenied</span><span class="p">,</span> <span class="kt">CingCingError</span><span class="o">.</span><span class="n">accessRestricted</span> <span class="p">{</span>
+              <span class="cp">#if DEBUG</span>
+              <span class="n">items</span> <span class="o">=</span> <span class="kt">Item</span><span class="o">.</span><span class="n">sampleData</span>
+              <span class="cp">#endif</span>
+          <span class="p">}</span> <span class="k">catch</span> <span class="p">{</span>
+                <span class="nf">showError</span><span class="p">(</span><span class="n">error</span><span class="p">)</span>
+          <span class="p">}</span>
+      <span class="p">}</span>
+  <span class="p">}</span>
+</code></pre></div></div>
+<p>스위프트 에러 핸들링은 switch문이랑 비슷함. do 블락에서 에러를 던지면 catch 블락으로 떨어짐.<br />
+  위 코드에서는 reminder를 가져옴. do 블락에서 리마인더에 접근을 시도하는데 만약 실패하면 에러를 던지고 catch 블락에서 일치하는 accessDenied가
+  있기 때문에 대신 sample 데이터를 사용하게 됨.<br />
+  맨 아래에 있는 catch 블락은 switch 문의 default와 비슷함. 남은 모든 에러를 잡음.</p>
 
 <!-- # Delegate?   -->
 
@@ -877,6 +938,9 @@
 ## Classes or Structures?
 
   각 아이템의 데이터를 담을 모델을 생성하려하다가 class를 사용해야 할지 structure를 사용해야 할지 고민됨.  -->
+
+<p><!-- 핸들러로는 클로저를 사용하네?
+   --></p>
 
         
       </section>

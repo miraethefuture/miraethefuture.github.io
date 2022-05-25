@@ -401,4 +401,11 @@ All information below comes from the Swift documentation and is for personal lea
   ```  
 
   이렇게 간단한 경우에도, 여러개의 completion handler로 코드가 작성되어야 했기 때문에 결국 nested 클로저를 작성하게 됩니다.  
-  이런 방식으로는, nesting이 더 깊어짐과 함께 코드가 복잡해지고 다루기 어려워집니다. 
+  이런 방식으로는, nesting이 더 깊어짐과 함께 코드가 복잡해지고 다루기 어려워집니다.
+
+# Codable  
+
+  <div class="notice">
+  <p>iOS 앱의 Data persistence에 대해 궁금해져서 찾아보다가 정리</p>
+  </div>  
+  
