@@ -1,4 +1,4 @@
-I"��<p><a href="https://docs.swift.org/swift-book/GuidedTour/GuidedTour.html">A Swift Tour</a>
+I"@�<p><a href="https://docs.swift.org/swift-book/GuidedTour/GuidedTour.html">A Swift Tour</a>
 <sub>아래 모든 정보의 출처는 Swift 공식 문서이며 개인의 학습 용도로만 사용되었음을 밝힙니다.<br />
 All information below comes from the Swift documentation and is for personal learning purposes only.</sub></p>
 
@@ -346,6 +346,28 @@ All information below comes from the Swift documentation and is for personal lea
 <p>Asynchronous code(비동기 코드)는 중단되었다가 다시 시작될 수 있습니다.</p>
 
 <p>Parallel code(병렬 코드)는 여러개의 코드가 동시에 동작하는 것을 의미합니다. 예를 들어 4 코어 프로세서를 가진 컴퓨터는 네개의 코드를 동시에 실행할 수 있습니다. 각각의 코어는 하나의 일을 수행합니다. 병렬(parallel) 그리고 비동기(asynchronous)코드는 한번에 여러개의 작업을 수행합니다.<br />
-  이것은 외부 시스템을 기다리고 있는 작업을 중지시킵니다.(?)<br />
-   그리고 memory-safe한 방식으로 코드를 작성하기 쉽도록 만들어 줍니다.</p>
+  이것은 외부 시스템을 기다리고 있는 작업을 중지시킵니다.(?) 그리고 memory-safe한 방식으로 코드를 작성하기 쉽도록 만들어 줍니다.</p>
+
+<p>아래 설명에서 concurrency라는 단어는 비동기적(asynchronous) 코드와 병렬(parallel)코드의 일반적인 콤비네이션을 나타내기 위해 사용됩니다.</p>
+
+<p>Swift 언어의 지원 없이도 concurrent 코드를 작성할 수 있지만, 그렇게 작성된 코드들은 알아보기 어려운 경우가 많습니다.<br />
+  예를 들면, 아래의 코드는 사진의 이름 목록을 다운로드 하고, 목록의 첫번째 사진을 다운로드 합니다. 그리고 그 사진을 사용자에게 보여줍니다.</p>
+
+<div class="language-swift highlighter-rouge"><div class="highlight"><pre class="highlight"><code>  <span class="nf">listPhotos</span><span class="p">(</span><span class="nv">inGallery</span><span class="p">:</span> <span class="s">"Summer Vacation"</span><span class="p">)</span> <span class="p">{</span> <span class="kt">PhotoNames</span> <span class="k">in</span>
+      <span class="k">let</span> <span class="nv">sortedNames</span> <span class="o">=</span> <span class="n">photoNames</span><span class="o">.</span><span class="nf">sorted</span><span class="p">()</span>
+      <span class="k">let</span> <span class="nv">name</span> <span class="o">=</span> <span class="n">sortedNames</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span>
+      <span class="nf">downloadPhoto</span><span class="p">(</span><span class="nv">name</span><span class="p">:</span> <span class="n">name</span><span class="p">)</span> <span class="p">{</span> <span class="n">photo</span> <span class="k">in</span>
+          <span class="nf">show</span><span class="p">(</span><span class="n">photo</span><span class="p">)</span>
+      <span class="p">}</span>  
+  <span class="p">}</span>
+</code></pre></div></div>
+
+<p>이렇게 간단한 경우에도, 여러개의 completion handler로 코드가 작성되어야 했기 때문에 결국 nested 클로저를 작성하게 됩니다.<br />
+  이런 방식으로는, nesting이 더 깊어짐과 함께 코드가 복잡해지고 다루기 어려워집니다.</p>
+
+<h1 id="codable">Codable</h1>
+
+<div class="notice">
+  <p>iOS 앱의 Data persistence에 대해 궁금해져서 찾아보다가 정리</p>
+  </div>
 :ET

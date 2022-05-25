@@ -24,6 +24,12 @@ toc_icon: "kiwi-bird"
   - search UITextField 옆에 cancel이나 x 버튼
   - Accessibility (VoiceOver 등,,) 사용할지
 
+# Tip!  
+
+    <sub>나에게 주는 팁!</sub>
+
+    - alert controller는 UX를 방해할 수 있기 때문에 꼭 필요한 정보를 전달할때만 사용할 것
+
 # Add a Collection View Controller  
 
   View Controller를 storyboard에 추가  
@@ -645,7 +651,7 @@ expDate를 리스트나 디테일 뷰에 나타나도록 해야할까?
 
   - didSet 옵저버 이용하면 서플러먼터리 뷰의 타이틀 바꿀 수 있을까?
 
-# EvenKit  
+# EventKit  
 
   다른 많은 API 처럼, EvenKit은 callbacks를 사용하여 요청에 비동기적으로 응답합니다.  
 
@@ -656,6 +662,48 @@ expDate를 리스트나 디테일 뷰에 나타나도록 해야할까?
   ```  
   패러미터 뒤에 async 키워드는 해당 function이 비동기적으로 실행될 수 있다는 것을 나타냄.  
   (그럼 function은 보통 동기적으로 실행되나..?)
+
+  이 부분은 공부가 더 필요함.
+
+# Item Store  
+
+  지금까지는 단순 배열을 사용하여 데이터를 관리.  
+  Reminder store abstraction을 생성하여 데이터를 영속적으로 관리할 수 있도록 할 것임.
+
+## Swift error handling
+
+  ```swift
+  func prepareItemStore() {
+      Task {
+          do {
+              try await itemStore.requestAccess()
+              // Await the result of readAll(), and then assign its result to items.
+              items = try await itemStore.readAll()
+          } catch CingCingError.accessDenied, CingCingError.accessRestricted {
+              #if DEBUG
+              items = Item.sampleData
+              #endif
+          } catch {
+                showError(error)
+          }
+      }
+  }
+  ```
+  스위프트 에러 핸들링은 switch문이랑 비슷함. do 블락에서 에러를 던지면 catch 블락으로 떨어짐.  
+  위 코드에서는 reminder를 가져옴. do 블락에서 리마인더에 접근을 시도하는데 만약 실패하면 에러를 던지고 catch 블락에서 일치하는 accessDenied가
+  있기 때문에 대신 sample 데이터를 사용하게 됨.  
+  맨 아래에 있는 catch 블락은 switch 문의 default와 비슷함. 남은 모든 에러를 잡음.
+
+
+
+
+
+
+
+
+
+
+
 
 
 
@@ -709,3 +757,6 @@ expDate를 리스트나 디테일 뷰에 나타나도록 해야할까?
 ## Classes or Structures?
 
   각 아이템의 데이터를 담을 모델을 생성하려하다가 class를 사용해야 할지 structure를 사용해야 할지 고민됨.  -->
+
+  <!-- 핸들러로는 클로저를 사용하네?
+   -->

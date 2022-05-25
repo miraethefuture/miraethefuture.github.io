@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="4.2.1">Jekyll</generator><link href="http://localhost:4000/feed.xml" rel="self" type="application/atom+xml" /><link href="http://localhost:4000/" rel="alternate" type="text/html" /><updated>2022-05-23T17:38:59+09:00</updated><id>http://localhost:4000/feed.xml</id><title type="html">Mirae 2 the Future</title><subtitle>An amazing website.</subtitle><author><name>Mirae</name></author><entry><title type="html">앱 출시 프로젝트 로그</title><link href="http://localhost:4000/til/teamProject/" rel="alternate" type="text/html" title="앱 출시 프로젝트 로그" /><published>2022-05-06T00:00:00+09:00</published><updated>2022-05-06T00:00:00+09:00</updated><id>http://localhost:4000/til/teamProject</id><content type="html" xml:base="http://localhost:4000/til/teamProject/">&lt;p&gt;&lt;sub&gt;📲 앱 출시 스터디 진행 중.&lt;/sub&gt;&lt;/p&gt;
+<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="4.2.1">Jekyll</generator><link href="http://localhost:4000/feed.xml" rel="self" type="application/atom+xml" /><link href="http://localhost:4000/" rel="alternate" type="text/html" /><updated>2022-05-25T02:48:51+09:00</updated><id>http://localhost:4000/feed.xml</id><title type="html">Mirae 2 the Future</title><subtitle>An amazing website.</subtitle><author><name>Mirae</name></author><entry><title type="html">앱 출시 프로젝트 로그</title><link href="http://localhost:4000/til/teamProject/" rel="alternate" type="text/html" title="앱 출시 프로젝트 로그" /><published>2022-05-06T00:00:00+09:00</published><updated>2022-05-06T00:00:00+09:00</updated><id>http://localhost:4000/til/teamProject</id><content type="html" xml:base="http://localhost:4000/til/teamProject/">&lt;p&gt;&lt;sub&gt;📲 앱 출시 스터디 진행 중.&lt;/sub&gt;&lt;/p&gt;
 
 &lt;h1&gt;?&lt;/h1&gt;
 
@@ -8,6 +8,13 @@
   &lt;li&gt;search UITextField 옆에 cancel이나 x 버튼&lt;/li&gt;
   &lt;li&gt;Accessibility (VoiceOver 등,,) 사용할지&lt;/li&gt;
 &lt;/ul&gt;
+
+&lt;h1 id=&quot;tip&quot;&gt;Tip!&lt;/h1&gt;
+
+&lt;div class=&quot;language-plaintext highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&amp;lt;sub&amp;gt;나에게 주는 팁!&amp;lt;/sub&amp;gt;
+
+- alert controller는 UX를 방해할 수 있기 때문에 꼭 필요한 정보를 전달할때만 사용할 것
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
 
 &lt;h1 id=&quot;add-a-collection-view-controller&quot;&gt;Add a Collection View Controller&lt;/h1&gt;
 
@@ -613,9 +620,63 @@
 &lt;div class=&quot;language-swift highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;  &lt;span class=&quot;k&quot;&gt;case&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nv&quot;&gt;viewStorageType&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;return&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;item&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;storageType&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;storageTypeText&lt;/span&gt;
 &lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
 
-&lt;h1 id=&quot;-1&quot;&gt;.&lt;/h1&gt;
+&lt;h1 id=&quot;중간-궁금한-점&quot;&gt;중간 궁금한 점&lt;/h1&gt;
 
-&lt;p&gt;filter()는 조건이 true인 요소로 새로운 배열을 만드는건가?&lt;/p&gt;
+&lt;ul&gt;
+  &lt;li&gt;
+    &lt;p&gt;filter()는 조건이 true인 요소로 새로운 배열을 만드는건가?&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;Segmented coltrol을 headerview에 넣을까?&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;action 관련된 function은 왜 @objc가 붙을까? swift만으로는 작성 불가능한걸까?&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;didSet 옵저버 이용하면 서플러먼터리 뷰의 타이틀 바꿀 수 있을까?&lt;/p&gt;
+  &lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h1 id=&quot;eventkit&quot;&gt;EventKit&lt;/h1&gt;
+
+&lt;p&gt;다른 많은 API 처럼, EvenKit은 callbacks를 사용하여 요청에 비동기적으로 응답합니다.&lt;/p&gt;
+
+&lt;div class=&quot;language-swift highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;  &lt;span class=&quot;kd&quot;&gt;func&lt;/span&gt; &lt;span class=&quot;nf&quot;&gt;fetchReminders&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;matching&lt;/span&gt; &lt;span class=&quot;nv&quot;&gt;predicate&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;kt&quot;&gt;NSPredicate&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;async&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;throws&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;-&amp;gt;&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;kt&quot;&gt;EKReminder&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;]&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
+
+  &lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+&lt;p&gt;패러미터 뒤에 async 키워드는 해당 function이 비동기적으로 실행될 수 있다는 것을 나타냄.&lt;br /&gt;
+  (그럼 function은 보통 동기적으로 실행되나..?)&lt;/p&gt;
+
+&lt;p&gt;이 부분은 공부가 더 필요함.&lt;/p&gt;
+
+&lt;h1 id=&quot;item-store&quot;&gt;Item Store&lt;/h1&gt;
+
+&lt;p&gt;지금까지는 단순 배열을 사용하여 데이터를 관리.&lt;br /&gt;
+  Reminder store abstraction을 생성하여 데이터를 영속적으로 관리할 수 있도록 할 것임.&lt;/p&gt;
+
+&lt;h2 id=&quot;swift-error-handling&quot;&gt;Swift error handling&lt;/h2&gt;
+
+&lt;div class=&quot;language-swift highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;  &lt;span class=&quot;kd&quot;&gt;func&lt;/span&gt; &lt;span class=&quot;nf&quot;&gt;prepareItemStore&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;()&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
+      &lt;span class=&quot;kt&quot;&gt;Task&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
+          &lt;span class=&quot;k&quot;&gt;do&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
+              &lt;span class=&quot;k&quot;&gt;try&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;await&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;itemStore&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nf&quot;&gt;requestAccess&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;()&lt;/span&gt;
+              &lt;span class=&quot;c1&quot;&gt;// Await the result of readAll(), and then assign its result to items.&lt;/span&gt;
+              &lt;span class=&quot;n&quot;&gt;items&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;try&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;await&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;itemStore&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nf&quot;&gt;readAll&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;()&lt;/span&gt;
+          &lt;span class=&quot;p&quot;&gt;}&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;catch&lt;/span&gt; &lt;span class=&quot;kt&quot;&gt;CingCingError&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;accessDenied&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;kt&quot;&gt;CingCingError&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;accessRestricted&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
+              &lt;span class=&quot;cp&quot;&gt;#if DEBUG&lt;/span&gt;
+              &lt;span class=&quot;n&quot;&gt;items&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;kt&quot;&gt;Item&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;sampleData&lt;/span&gt;
+              &lt;span class=&quot;cp&quot;&gt;#endif&lt;/span&gt;
+          &lt;span class=&quot;p&quot;&gt;}&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;catch&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
+                &lt;span class=&quot;nf&quot;&gt;showError&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;error&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
+          &lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
+      &lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
+  &lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+&lt;p&gt;스위프트 에러 핸들링은 switch문이랑 비슷함. do 블락에서 에러를 던지면 catch 블락으로 떨어짐.&lt;br /&gt;
+  위 코드에서는 reminder를 가져옴. do 블락에서 리마인더에 접근을 시도하는데 만약 실패하면 에러를 던지고 catch 블락에서 일치하는 accessDenied가
+  있기 때문에 대신 sample 데이터를 사용하게 됨.&lt;br /&gt;
+  맨 아래에 있는 catch 블락은 switch 문의 default와 비슷함. 남은 모든 에러를 잡음.&lt;/p&gt;
 
 &lt;!-- # Delegate?   --&gt;
 
@@ -635,7 +696,10 @@
 
 ## Classes or Structures?
 
-  각 아이템의 데이터를 담을 모델을 생성하려하다가 class를 사용해야 할지 structure를 사용해야 할지 고민됨.  --&gt;</content><author><name>Mirae</name></author><category term="TIL" /><category term="learning" /><category term="공부 기록" /><category term="Swift" /><category term="프로젝트 기록" /><summary type="html">📲 앱 출시 스터디 진행 중.</summary></entry><entry><title type="html">LeetCode: Swift</title><link href="http://localhost:4000/til/leetcode/" rel="alternate" type="text/html" title="LeetCode: Swift" /><published>2022-04-28T00:00:00+09:00</published><updated>2022-04-28T00:00:00+09:00</updated><id>http://localhost:4000/til/leetcode</id><content type="html" xml:base="http://localhost:4000/til/leetcode/">&lt;h1 id=&quot;-&quot;&gt;🗂 ..&lt;/h1&gt;
+  각 아이템의 데이터를 담을 모델을 생성하려하다가 class를 사용해야 할지 structure를 사용해야 할지 고민됨.  --&gt;
+
+&lt;p&gt;&lt;!-- 핸들러로는 클로저를 사용하네?
+   --&gt;&lt;/p&gt;</content><author><name>Mirae</name></author><category term="TIL" /><category term="learning" /><category term="공부 기록" /><category term="Swift" /><category term="프로젝트 기록" /><summary type="html">📲 앱 출시 스터디 진행 중.</summary></entry><entry><title type="html">LeetCode: Swift</title><link href="http://localhost:4000/til/leetcode/" rel="alternate" type="text/html" title="LeetCode: Swift" /><published>2022-04-28T00:00:00+09:00</published><updated>2022-04-28T00:00:00+09:00</updated><id>http://localhost:4000/til/leetcode</id><content type="html" xml:base="http://localhost:4000/til/leetcode/">&lt;h1 id=&quot;-&quot;&gt;🗂 ..&lt;/h1&gt;
 &lt;p&gt;LeetCode 문제를 풀어보며 사용되는 메서드나 풀이 방식을 정리합니다.&lt;/p&gt;
 
 &lt;h2 id=&quot;hasprefix_&quot;&gt;hasPrefix(_:)&lt;/h2&gt;

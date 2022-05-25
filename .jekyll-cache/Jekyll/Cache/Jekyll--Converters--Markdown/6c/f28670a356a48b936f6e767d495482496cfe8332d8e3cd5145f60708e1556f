@@ -1,4 +1,4 @@
-I"��<p><sub>📲 앱 출시 스터디 진행 중.</sub></p>
+I"�<p><sub>📲 앱 출시 스터디 진행 중.</sub></p>
 
 <h1>?</h1>
 
@@ -8,6 +8,13 @@
   <li>search UITextField 옆에 cancel이나 x 버튼</li>
   <li>Accessibility (VoiceOver 등,,) 사용할지</li>
 </ul>
+
+<h1 id="tip">Tip!</h1>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>&lt;sub&gt;나에게 주는 팁!&lt;/sub&gt;
+
+- alert controller는 UX를 방해할 수 있기 때문에 꼭 필요한 정보를 전달할때만 사용할 것
+</code></pre></div></div>
 
 <h1 id="add-a-collection-view-controller">Add a Collection View Controller</h1>
 
@@ -569,7 +576,107 @@
   <span class="p">}</span>
 </code></pre></div></div>
 
-<p>각 아이템에 사용하던 모델에 storageType이라는 속성이 있음.</p>
+<p>각 아이템에 사용하던 모델에 storageType이라는 속성이 있음.<br />
+  원래는 임시로 String 타입에 sample 데이터로 “냉장”, “냉동” 이런식으로 입력중이었음.<br />
+  Storage라는 Enumeration을 생성하여 새로운 타입을 생성.</p>
+
+<div class="language-swift highlighter-rouge"><div class="highlight"><pre class="highlight"><code>  <span class="c1">// supply data의 String</span>
+  <span class="kd">func</span> <span class="nf">text</span><span class="p">(</span><span class="k">for</span> <span class="nv">row</span><span class="p">:</span> <span class="kt">Row</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kt">String</span><span class="p">?</span> <span class="p">{</span>
+      <span class="k">switch</span> <span class="n">row</span> <span class="p">{</span>
+      <span class="k">case</span> <span class="o">.</span><span class="nv">viewExpDate</span><span class="p">:</span> <span class="k">return</span> <span class="n">item</span><span class="o">.</span><span class="n">expDate</span><span class="o">.</span><span class="n">dateText</span>
+      <span class="k">case</span> <span class="o">.</span><span class="nv">viewStartDate</span><span class="p">:</span> <span class="k">return</span> <span class="n">item</span><span class="o">.</span><span class="n">startDate</span><span class="o">.</span><span class="n">startText</span>
+      <span class="k">case</span> <span class="o">.</span><span class="nv">viewNotes</span><span class="p">:</span> <span class="k">return</span> <span class="n">item</span><span class="o">.</span><span class="n">notes</span>
+      <span class="k">case</span> <span class="o">.</span><span class="nv">viewQuantity</span><span class="p">:</span> <span class="k">return</span> <span class="n">item</span><span class="o">.</span><span class="n">quantity</span><span class="o">.</span><span class="n">quantityText</span>
+      <span class="k">case</span> <span class="o">.</span><span class="nv">viewStorageType</span><span class="p">:</span> <span class="k">return</span> <span class="n">item</span><span class="o">.</span><span class="n">storageType</span>
+      <span class="k">case</span> <span class="o">.</span><span class="nv">viewTitle</span><span class="p">:</span> <span class="k">return</span> <span class="n">item</span><span class="o">.</span><span class="n">title</span>
+      <span class="k">default</span><span class="p">:</span> <span class="k">return</span> <span class="kc">nil</span>
+      <span class="p">}</span>
+  <span class="p">}</span>
+</code></pre></div></div>
+
+<p>위의 function을 사용하여 디테일 뷰에서 정보들을 아래와 사진처럼 보이도록 포맷팅 해주고 있었는데,<br />
+  리턴되는 item.storageType이 더이상 String 타입이 아니게 되어 에러를 발생시켰다.</p>
+
+<center><img src="/assets/images/teamProject3.png" alt="teamProject3" width="400" /></center>
+
+<p>임시적으로 강제 캐스팅을 시도했으나 실패하였고 😅</p>
+
+<div class="language-swift highlighter-rouge"><div class="highlight"><pre class="highlight"><code>  <span class="k">var</span> <span class="nv">storageTypeText</span><span class="p">:</span> <span class="kt">String</span> <span class="p">{</span>
+      <span class="k">switch</span> <span class="k">self</span> <span class="p">{</span>
+      <span class="k">case</span> <span class="o">.</span><span class="nv">all</span><span class="p">:</span>
+          <span class="k">return</span> <span class="s">"all"</span>
+      <span class="k">case</span> <span class="o">.</span><span class="nv">냉장</span><span class="p">:</span>
+          <span class="k">return</span> <span class="s">"냉장"</span>
+      <span class="k">case</span> <span class="o">.</span><span class="nv">냉동</span><span class="p">:</span>
+          <span class="k">return</span> <span class="s">"냉동"</span>
+      <span class="k">case</span> <span class="o">.</span><span class="nv">실온</span><span class="p">:</span>
+          <span class="k">return</span> <span class="s">"실온"</span>
+      <span class="p">}</span>
+  <span class="p">}</span>
+</code></pre></div></div>
+
+<p>위와 같은 computed property를 Storage enumeration안에 추가해주었다. 그리고 아래와 같이 수정해줌으로써 문제를 해결했다.</p>
+
+<div class="language-swift highlighter-rouge"><div class="highlight"><pre class="highlight"><code>  <span class="k">case</span> <span class="o">.</span><span class="nv">viewStorageType</span><span class="p">:</span> <span class="k">return</span> <span class="n">item</span><span class="o">.</span><span class="n">storageType</span><span class="o">.</span><span class="n">storageTypeText</span>
+</code></pre></div></div>
+
+<h1 id="중간-궁금한-점">중간 궁금한 점</h1>
+
+<ul>
+  <li>
+    <p>filter()는 조건이 true인 요소로 새로운 배열을 만드는건가?</p>
+  </li>
+  <li>
+    <p>Segmented coltrol을 headerview에 넣을까?</p>
+  </li>
+  <li>
+    <p>action 관련된 function은 왜 @objc가 붙을까? swift만으로는 작성 불가능한걸까?</p>
+  </li>
+  <li>
+    <p>didSet 옵저버 이용하면 서플러먼터리 뷰의 타이틀 바꿀 수 있을까?</p>
+  </li>
+</ul>
+
+<h1 id="eventkit">EventKit</h1>
+
+<p>다른 많은 API 처럼, EvenKit은 callbacks를 사용하여 요청에 비동기적으로 응답합니다.</p>
+
+<div class="language-swift highlighter-rouge"><div class="highlight"><pre class="highlight"><code>  <span class="kd">func</span> <span class="nf">fetchReminders</span><span class="p">(</span><span class="n">matching</span> <span class="nv">predicate</span><span class="p">:</span> <span class="kt">NSPredicate</span><span class="p">)</span> <span class="k">async</span> <span class="k">throws</span> <span class="o">-&gt;</span> <span class="p">[</span><span class="kt">EKReminder</span><span class="p">]</span> <span class="p">{</span>
+
+  <span class="p">}</span>
+</code></pre></div></div>
+<p>패러미터 뒤에 async 키워드는 해당 function이 비동기적으로 실행될 수 있다는 것을 나타냄.<br />
+  (그럼 function은 보통 동기적으로 실행되나..?)</p>
+
+<p>이 부분은 공부가 더 필요함.</p>
+
+<h1 id="item-store">Item Store</h1>
+
+<p>지금까지는 단순 배열을 사용하여 데이터를 관리.<br />
+  Reminder store abstraction을 생성하여 데이터를 영속적으로 관리할 수 있도록 할 것임.</p>
+
+<h2 id="swift-error-handling">Swift error handling</h2>
+
+<div class="language-swift highlighter-rouge"><div class="highlight"><pre class="highlight"><code>  <span class="kd">func</span> <span class="nf">prepareItemStore</span><span class="p">()</span> <span class="p">{</span>
+      <span class="kt">Task</span> <span class="p">{</span>
+          <span class="k">do</span> <span class="p">{</span>
+              <span class="k">try</span> <span class="k">await</span> <span class="n">itemStore</span><span class="o">.</span><span class="nf">requestAccess</span><span class="p">()</span>
+              <span class="c1">// Await the result of readAll(), and then assign its result to items.</span>
+              <span class="n">items</span> <span class="o">=</span> <span class="k">try</span> <span class="k">await</span> <span class="n">itemStore</span><span class="o">.</span><span class="nf">readAll</span><span class="p">()</span>
+          <span class="p">}</span> <span class="k">catch</span> <span class="kt">CingCingError</span><span class="o">.</span><span class="n">accessDenied</span><span class="p">,</span> <span class="kt">CingCingError</span><span class="o">.</span><span class="n">accessRestricted</span> <span class="p">{</span>
+              <span class="cp">#if DEBUG</span>
+              <span class="n">items</span> <span class="o">=</span> <span class="kt">Item</span><span class="o">.</span><span class="n">sampleData</span>
+              <span class="cp">#endif</span>
+          <span class="p">}</span> <span class="k">catch</span> <span class="p">{</span>
+                <span class="nf">showError</span><span class="p">(</span><span class="n">error</span><span class="p">)</span>
+          <span class="p">}</span>
+      <span class="p">}</span>
+  <span class="p">}</span>
+</code></pre></div></div>
+<p>스위프트 에러 핸들링은 switch문이랑 비슷함. do 블락에서 에러를 던지면 catch 블락으로 떨어짐.<br />
+  위 코드에서는 reminder를 가져옴. do 블락에서 리마인더에 접근을 시도하는데 만약 실패하면 에러를 던지고 catch 블락에서 일치하는 accessDenied가
+  있기 때문에 대신 sample 데이터를 사용하게 됨.<br />
+  맨 아래에 있는 catch 블락은 switch 문의 default와 비슷함. 남은 모든 에러를 잡음.</p>
 
 <!-- # Delegate?   -->
 
@@ -590,4 +697,7 @@
 ## Classes or Structures?
 
   각 아이템의 데이터를 담을 모델을 생성하려하다가 class를 사용해야 할지 structure를 사용해야 할지 고민됨.  -->
+
+<p><!-- 핸들러로는 클로저를 사용하네?
+   --></p>
 :ET
