@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="4.2.1">Jekyll</generator><link href="http://localhost:4000/feed.xml" rel="self" type="application/atom+xml" /><link href="http://localhost:4000/" rel="alternate" type="text/html" /><updated>2022-05-25T02:48:51+09:00</updated><id>http://localhost:4000/feed.xml</id><title type="html">Mirae 2 the Future</title><subtitle>An amazing website.</subtitle><author><name>Mirae</name></author><entry><title type="html">앱 출시 프로젝트 로그</title><link href="http://localhost:4000/til/teamProject/" rel="alternate" type="text/html" title="앱 출시 프로젝트 로그" /><published>2022-05-06T00:00:00+09:00</published><updated>2022-05-06T00:00:00+09:00</updated><id>http://localhost:4000/til/teamProject</id><content type="html" xml:base="http://localhost:4000/til/teamProject/">&lt;p&gt;&lt;sub&gt;📲 앱 출시 스터디 진행 중.&lt;/sub&gt;&lt;/p&gt;
+<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="4.2.1">Jekyll</generator><link href="http://localhost:4000/feed.xml" rel="self" type="application/atom+xml" /><link href="http://localhost:4000/" rel="alternate" type="text/html" /><updated>2022-05-26T22:12:07+09:00</updated><id>http://localhost:4000/feed.xml</id><title type="html">Mirae 2 the Future</title><subtitle>An amazing website.</subtitle><author><name>Mirae</name></author><entry><title type="html">앱 출시 프로젝트 로그</title><link href="http://localhost:4000/til/teamProject/" rel="alternate" type="text/html" title="앱 출시 프로젝트 로그" /><published>2022-05-06T00:00:00+09:00</published><updated>2022-05-06T00:00:00+09:00</updated><id>http://localhost:4000/til/teamProject</id><content type="html" xml:base="http://localhost:4000/til/teamProject/">&lt;p&gt;&lt;sub&gt;📲 앱 출시 프로젝트 진행 중.&lt;/sub&gt;&lt;/p&gt;
 
 &lt;h1&gt;?&lt;/h1&gt;
 
@@ -11,10 +11,11 @@
 
 &lt;h1 id=&quot;tip&quot;&gt;Tip!&lt;/h1&gt;
 
-&lt;div class=&quot;language-plaintext highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&amp;lt;sub&amp;gt;나에게 주는 팁!&amp;lt;/sub&amp;gt;
+&lt;p&gt;&lt;sub&gt;나에게 주는 팁!&lt;/sub&gt;&lt;/p&gt;
 
-- alert controller는 UX를 방해할 수 있기 때문에 꼭 필요한 정보를 전달할때만 사용할 것
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+&lt;ul&gt;
+  &lt;li&gt;alert controller는 UX를 방해할 수 있기 때문에 꼭 필요한 정보를 전달할때만 사용할 것&lt;/li&gt;
+&lt;/ul&gt;
 
 &lt;h1 id=&quot;add-a-collection-view-controller&quot;&gt;Add a Collection View Controller&lt;/h1&gt;
 
@@ -699,7 +700,7 @@
   각 아이템의 데이터를 담을 모델을 생성하려하다가 class를 사용해야 할지 structure를 사용해야 할지 고민됨.  --&gt;
 
 &lt;p&gt;&lt;!-- 핸들러로는 클로저를 사용하네?
-   --&gt;&lt;/p&gt;</content><author><name>Mirae</name></author><category term="TIL" /><category term="learning" /><category term="공부 기록" /><category term="Swift" /><category term="프로젝트 기록" /><summary type="html">📲 앱 출시 스터디 진행 중.</summary></entry><entry><title type="html">LeetCode: Swift</title><link href="http://localhost:4000/til/leetcode/" rel="alternate" type="text/html" title="LeetCode: Swift" /><published>2022-04-28T00:00:00+09:00</published><updated>2022-04-28T00:00:00+09:00</updated><id>http://localhost:4000/til/leetcode</id><content type="html" xml:base="http://localhost:4000/til/leetcode/">&lt;h1 id=&quot;-&quot;&gt;🗂 ..&lt;/h1&gt;
+   --&gt;&lt;/p&gt;</content><author><name>Mirae</name></author><category term="TIL" /><category term="learning" /><category term="공부 기록" /><category term="Swift" /><category term="프로젝트 기록" /><summary type="html">📲 앱 출시 프로젝트 진행 중.</summary></entry><entry><title type="html">LeetCode: Swift</title><link href="http://localhost:4000/til/leetcode/" rel="alternate" type="text/html" title="LeetCode: Swift" /><published>2022-04-28T00:00:00+09:00</published><updated>2022-04-28T00:00:00+09:00</updated><id>http://localhost:4000/til/leetcode</id><content type="html" xml:base="http://localhost:4000/til/leetcode/">&lt;h1 id=&quot;-&quot;&gt;🗂 ..&lt;/h1&gt;
 &lt;p&gt;LeetCode 문제를 풀어보며 사용되는 메서드나 풀이 방식을 정리합니다.&lt;/p&gt;
 
 &lt;h2 id=&quot;hasprefix_&quot;&gt;hasPrefix(_:)&lt;/h2&gt;

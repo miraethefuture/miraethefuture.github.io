@@ -1,4 +1,4 @@
-I"�<p><sub>📲 앱 출시 스터디 진행 중.</sub></p>
+I"�<p><sub>📲 앱 출시 프로젝트 진행 중.</sub></p>
 
 <h1>?</h1>
 
@@ -11,9 +11,9 @@
 
 <h1 id="tip">Tip!</h1>
 
-<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>&lt;sub&gt;나에게 주는 팁!&lt;/sub&gt;
+<p><sub>나에게 주는 팁!</sub></p>
 
-- alert controller는 UX를 방해할 수 있기 때문에 꼭 필요한 정보를 전달할때만 사용할 것
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>- alert controller는 UX를 방해할 수 있기 때문에 꼭 필요한 정보를 전달할때만 사용할 것
 </code></pre></div></div>
 
 <h1 id="add-a-collection-view-controller">Add a Collection View Controller</h1>

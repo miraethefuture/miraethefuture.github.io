@@ -408,4 +408,7 @@ All information below comes from the Swift documentation and is for personal lea
   <div class="notice">
   <p>iOS 앱의 Data persistence에 대해 궁금해져서 찾아보다가 정리</p>
   </div>  
-  
+
+  Codable은 Encodable 프로토콜과 Decodable프로토콜을 합친 type alias입니다.  
+  이 프로토콜을 사용하면 JSON 파일로부터 데이터를 가져와 순서대로 출력하거나, 반대로 JSON 파일로 데이터를
+  순서대로 출력시킬 수 있는 Codable API를 사용할 수 있습니다.
