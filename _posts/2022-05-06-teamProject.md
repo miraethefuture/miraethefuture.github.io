@@ -14,7 +14,7 @@ toc_label: " "
 toc_icon: "kiwi-bird"
 ---
 
-<sub>📲 앱 출시 스터디 진행 중.</sub>
+<sub>📲 앱 출시 프로젝트 진행 중.</sub>
 
 
 # ?  
@@ -26,9 +26,9 @@ toc_icon: "kiwi-bird"
 
 # Tip!  
 
-    <sub>나에게 주는 팁!</sub>
+  <sub>나에게 주는 팁!</sub>
 
-    - alert controller는 UX를 방해할 수 있기 때문에 꼭 필요한 정보를 전달할때만 사용할 것
+  - alert controller는 UX를 방해할 수 있기 때문에 꼭 필요한 정보를 전달할때만 사용할 것
 
 # Add a Collection View Controller  
 
