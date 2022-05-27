@@ -234,7 +234,7 @@
           <aside class="sidebar__right sticky">
             <nav class="toc">
               <header><h4 class="nav__title"><i class="fas fa-kiwi-bird"></i> 📂</h4></header>
-              <ul class="toc__menu"><li><a href="#문자열과-변수의-값">문자열과 변수의 값</a></li><li><a href="#array-and-dictionary">Array and Dictionary</a><ul><li><a href="#빈-배열-빈-딕셔너리-생성하기">빈 배열, 빈 딕셔너리 생성하기</a></li></ul></li><li><a href="#optionals">Optionals</a><ul><li><a href="#optionals가-사용되는-방법">optionals가 사용되는 방법</a><ul><li><a href="#int">Int()</a></li><li><a href="#nil">nil</a></li><li><a href="#nil-coalescing-operator">Nil-Coalescing Operator</a></li><li><a href="#if문과-optionals">If문과 Optionals</a></li><li><a href="#forced-unwrapping">Forced unwrapping</a></li><li><a href="#optional-binding">Optional Binding</a></li><li><a href="#implicitly-unwrapped-optionals">Implicitly Unwrapped Optionals</a></li></ul></li></ul></li><li><a href="#switch">Switch</a><ul><li><a href="#hassuffix_">hasSuffix(_:)</a></li></ul></li><li><a href="#for-in과-dictionary">for-in과 Dictionary</a></li><li><a href="#tuples">Tuples</a><ul><li><a href="#http-status-code와-튜플">HTTP status code와 튜플</a></li><li><a href="#제한이-없는-튜플">제한이 없는 튜플</a></li><li><a href="#decompose-a-tuple">Decompose a Tuple</a></li><li><a href="#index를-이용하여-값에-접근하기">Index를 이용하여 값에 접근하기</a></li><li><a href="#정의와-동시에-값에-이름짓기">정의와 동시에 값에 이름짓기</a></li><li><a href="#functions와-튜플">Functions와 튜플</a></li><li><a href="#note">NOTE</a></li></ul></li><li><a href="#early-exit">Early Exit</a></li><li><a href="#parallel-code">Parallel Code</a></li></ul>
+              <ul class="toc__menu"><li><a href="#문자열과-변수의-값">문자열과 변수의 값</a></li><li><a href="#array-and-dictionary">Array and Dictionary</a><ul><li><a href="#빈-배열-빈-딕셔너리-생성하기">빈 배열, 빈 딕셔너리 생성하기</a></li></ul></li><li><a href="#optionals">Optionals</a><ul><li><a href="#optionals가-사용되는-방법">optionals가 사용되는 방법</a></li><li><a href="#int">Int()</a></li><li><a href="#nil">nil</a></li><li><a href="#nil-coalescing-operator">Nil-Coalescing Operator</a></li><li><a href="#if문과-optionals">If문과 Optionals</a></li><li><a href="#forced-unwrapping">Forced unwrapping</a></li><li><a href="#optional-binding">Optional Binding</a></li><li><a href="#implicitly-unwrapped-optionals">Implicitly Unwrapped Optionals</a></li></ul></li><li><a href="#switch">Switch</a><ul><li><a href="#hassuffix_">hasSuffix(_:)</a></li></ul></li><li><a href="#for-in과-dictionary">for-in과 Dictionary</a></li><li><a href="#tuples">Tuples</a><ul><li><a href="#http-status-code와-튜플">HTTP status code와 튜플</a></li><li><a href="#제한이-없는-튜플">제한이 없는 튜플</a></li><li><a href="#decompose-a-tuple">Decompose a Tuple</a></li><li><a href="#index를-이용하여-값에-접근하기">Index를 이용하여 값에 접근하기</a></li><li><a href="#정의와-동시에-값에-이름짓기">정의와 동시에 값에 이름짓기</a></li><li><a href="#functions와-튜플">Functions와 튜플</a></li><li><a href="#note">NOTE</a></li></ul></li><li><a href="#early-exit">Early Exit</a></li></ul>
 
             </nav>
           </aside>
@@ -243,7 +243,7 @@
 <sub>아래 모든 정보의 출처는 Swift 공식 문서이며 개인의 학습 용도로만 사용되었음을 밝힙니다.<br />
 All information below comes from the Swift documentation and is for personal learning purposes only.</sub></p>
 
-<h2 id="문자열과-변수의-값">문자열과 변수의 값</h2>
+<h1 id="문자열과-변수의-값">문자열과 변수의 값</h1>
 
 <div class="language-swift highlighter-rouge"><div class="highlight"><pre class="highlight"><code>  <span class="k">let</span> <span class="nv">apples</span> <span class="o">=</span> <span class="mi">3</span>
   <span class="k">let</span> <span class="nv">oranges</span> <span class="o">=</span> <span class="mi">5</span>
@@ -255,7 +255,7 @@ All information below comes from the Swift documentation and is for personal lea
   <li>\ 와 ()를 이용해서 문자열 안에 변수의 값을 포함할 수 있습니다.</li>
 </ul>
 
-<h2 id="array-and-dictionary">Array and Dictionary</h2>
+<h1 id="array-and-dictionary">Array and Dictionary</h1>
 
 <div class="language-swift highlighter-rouge"><div class="highlight"><pre class="highlight"><code>  <span class="c1">// 배열</span>
   <span class="k">var</span> <span class="nv">thingsIWannaGet</span> <span class="o">=</span> <span class="p">[</span><span class="s">"a chair"</span><span class="p">,</span> <span class="s">"plant"</span><span class="p">,</span> <span class="s">"tulips"</span><span class="p">]</span>
@@ -279,13 +279,13 @@ All information below comes from the Swift documentation and is for personal lea
   <li>print(배열이름)을 이용하여 간단하게 배열을 출력할 수 있습니다.</li>
 </ul>
 
-<h3 id="빈-배열-빈-딕셔너리-생성하기">빈 배열, 빈 딕셔너리 생성하기</h3>
+<h2 id="빈-배열-빈-딕셔너리-생성하기">빈 배열, 빈 딕셔너리 생성하기</h2>
 
 <div class="language-swift highlighter-rouge"><div class="highlight"><pre class="highlight"><code> <span class="k">var</span> <span class="nv">emptyArray</span><span class="p">:</span> <span class="p">[</span><span class="kt">String</span><span class="p">]</span> <span class="o">=</span> <span class="p">[]</span>
  <span class="k">var</span> <span class="nv">emptyDictionary</span><span class="p">:</span> <span class="p">[</span><span class="kt">String</span><span class="p">:</span> <span class="kt">Float</span><span class="p">]</span> <span class="o">=</span> <span class="p">[:]</span>
 </code></pre></div></div>
 
-<h2 id="optionals">Optionals</h2>
+<h1 id="optionals">Optionals</h1>
 
 <p>값이 없을 수도 있는 상황에서 optionals를 사용합니다. Optional은 두가지 가능성을 나타냅니다.</p>
 
@@ -294,9 +294,9 @@ All information below comes from the Swift documentation and is for personal lea
   <li>값이 없다.</li>
 </ol>
 
-<h3 id="optionals가-사용되는-방법">optionals가 사용되는 방법</h3>
+<h2 id="optionals가-사용되는-방법">optionals가 사용되는 방법</h2>
 
-<h4 id="int">Int()</h4>
+<h2 id="int">Int()</h2>
 
 <p>Int type은 문자열을 Int로 변환할 수 있는 initializer를 가지고 있습니다.</p>
 <div class="language-swift highlighter-rouge"><div class="highlight"><pre class="highlight"><code>  <span class="k">let</span> <span class="nv">possibleNumber</span> <span class="o">=</span> <span class="s">"123"</span>
@@ -307,7 +307,7 @@ All information below comes from the Swift documentation and is for personal lea
 </code></pre></div></div>
 <p>위의 방식으로 문자열을 Int 타입으로 변환할 수 있지만 모든 문자열을 Int 타입으로 변환할 수 있는 것은 아닙니다. “hello, world”와 같은 문자열은 명확한 숫자 값을 가지고 있지 않기 때문에 변환되지 않습니다. 이렇게 initializer가 변환을 실패할 수 있는 경우가 있기 때문에 Int가 아닌 optional Int 값을 변환합니다. Optional Int는 <strong>Int?</strong> 라고 표기합니다. ‘?’는 Int값이 있거나 어떠한 값도 가지고 있지 않다는 것을 나타냅니다. (Bool, String과 같은 값은 가지지 않음)</p>
 
-<h4 id="nil">nil</h4>
+<h2 id="nil">nil</h2>
 
 <p>nil값을 할당함으로써 optional 변수에 값이 없는 상태를 설정할 수 있습니다.</p>
 
@@ -322,11 +322,11 @@ All information below comes from the Swift documentation and is for personal lea
   <span class="c1">// surveyAnswer is automatically set to nil</span>
 </code></pre></div></div>
 
-<h4 id="nil-coalescing-operator">Nil-Coalescing Operator</h4>
+<h2 id="nil-coalescing-operator">Nil-Coalescing Operator</h2>
 
 <p>Nil-Coalescing Operator (a ?? b)는 만약 옵셔널 a가 값을 가지고 있다면 optional a를 unwrap 합니다. a가 nil이라면 default 값인 b를 리턴합니다.</p>
 
-<h4 id="if문과-optionals">If문과 Optionals</h4>
+<h2 id="if문과-optionals">If문과 Optionals</h2>
 
 <div class="language-swift highlighter-rouge"><div class="highlight"><pre class="highlight"><code> <span class="k">var</span> <span class="nv">optionalString</span><span class="p">:</span> <span class="kt">String</span><span class="p">?</span> <span class="o">=</span> <span class="s">"Hello"</span>
  <span class="nf">print</span><span class="p">(</span><span class="n">optionalString</span> <span class="o">==</span> <span class="kc">nil</span><span class="p">)</span>
@@ -361,7 +361,7 @@ All information below comes from the Swift documentation and is for personal lea
 
 <p>?? operator를 사용하여 optional에 default 값을 줄 수 있습니다. 만약 optional이 nil을 가지고 있다면 기본값을 사용합니다.</p>
 
-<h4 id="forced-unwrapping">Forced unwrapping</h4>
+<h2 id="forced-unwrapping">Forced unwrapping</h2>
 
 <p>만약 어떤 optional이 확실히 값을 가지고 있다는 것을 안다면 optional의 이름 뒤에 !를 붙여줌으로써 그 optional의 값에 접근할 수 있습니다. !는 ‘나는 이 optional이 값을 가지고 있는 것을 명확히 알고 있으니 그것을 사용하라’라는 메세지를 효과적으로 전달합니다. 이것을 optional값이 forced unwrapping이라고 합니다.</p>
 
@@ -370,7 +370,7 @@ All information below comes from the Swift documentation and is for personal lea
   <span class="p">}</span>
 </code></pre></div></div>
 
-<h4 id="optional-binding">Optional Binding</h4>
+<h2 id="optional-binding">Optional Binding</h2>
 
 <p>Optional binding은 optional이 값을 가지고 있는지, 가지고 있지 않은지 알아내기 위해 사용됩니다. 그리고 만약 값이 있다면 그 값을 일시적으로 constant나 variable로 사용 가능하도록 합니다. Optional binding은 optional안의 값을 확인하기 위해 그리고 그 값을 constant나 variable로 추출하기 위해 if문이나 while문과 함께 사용될 수 있습니다.</p>
 
@@ -416,7 +416,7 @@ All information below comes from the Swift documentation and is for personal lea
 
 <p>if문 안의 Optional binding의 과정에서 생성된 constant나 variable는 if문의 body부분에서만 사용할 수 있습니다.</p>
 
-<h4 id="implicitly-unwrapped-optionals">Implicitly Unwrapped Optionals</h4>
+<h2 id="implicitly-unwrapped-optionals">Implicitly Unwrapped Optionals</h2>
 
 <p>위에 묘사된 것처럼, optinals는 constants나 variables가 값이 없는 상태를 가질 수 있다는 것을 나타냅니다. if문을 이용하여 optionals에 값이 있는지 없는지 확인할 수 있습니다. 조건에 따라 optional binding을 이용하여 optionals를 unwrap하여 optional에 값이 있다면 그 값에 접근할 수 있게 됩니다.</p>
 
@@ -436,7 +436,7 @@ All information below comes from the Swift documentation and is for personal lea
   <span class="k">let</span> <span class="nv">implicitString</span><span class="p">:</span> <span class="kt">String</span> <span class="o">=</span> <span class="n">assumedString</span> <span class="c1">// ! 작성하지 않아도 됨</span>
 </code></pre></div></div>
 
-<h2 id="switch">Switch</h2>
+<h1 id="switch">Switch</h1>
 
 <div class="language-swift highlighter-rouge"><div class="highlight"><pre class="highlight"><code>  <span class="k">let</span> <span class="nv">vegetable</span> <span class="o">=</span> <span class="s">"red pepper"</span>
   <span class="k">switch</span> <span class="n">vegetable</span> <span class="p">{</span>
@@ -453,11 +453,11 @@ All information below comes from the Swift documentation and is for personal lea
 </code></pre></div></div>
 <p>Switch는 모든 자료형과 넓은 범위의 비교 연산자를 지원합니다. 조건이 일치하는 switch case의 코드를 실행한 뒤에 프로그램은 Switch문을 빠져나옵니다.</p>
 
-<h3 id="hassuffix_">hasSuffix(_:)</h3>
+<h2 id="hassuffix_">hasSuffix(_:)</h2>
 
 <p>특정 suffix(끝에 붙어서 어떤 한 다른 단어를 만드는 단어)로 끝나는 문자열인지 아닌지를 Boolean value를 리턴합니다. 위의 예시에서는 red pepper라는 문자열이 pepper로 끝나기 때문에 true를 반환합니다.</p>
 
-<h2 id="for-in과-dictionary">for-in과 Dictionary</h2>
+<h1 id="for-in과-dictionary">for-in과 Dictionary</h1>
 
 <div class="language-swift highlighter-rouge"><div class="highlight"><pre class="highlight"><code>  <span class="k">let</span> <span class="nv">interestingNumbers</span> <span class="o">=</span> <span class="p">[</span>
       <span class="s">"Prime"</span><span class="p">:</span> <span class="p">[</span><span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">5</span><span class="p">,</span> <span class="mi">7</span><span class="p">,</span> <span class="mi">11</span><span class="p">,</span> <span class="mi">13</span><span class="p">],</span>
@@ -481,11 +481,11 @@ All information below comes from the Swift documentation and is for personal lea
   가장 바깥쪽 for-in loop의 (_, numbers) 중 앞쪽은 딕셔너리의 키를 numbers는
   배열인 값을 의미합니다. 그러면 안쪽의 for-in loop는 값인 배열을 돌며 number의 각 요소를 할당합니다. 만약 number에 할당된 배열의 요소가 largest 보다 크다면 largest에 그 값을 할당합니다. 이렇게 각 키와 값을 돌며 가장 큰 수인 25를 출력합니다.</p>
 
-<h2 id="tuples">Tuples</h2>
+<h1 id="tuples">Tuples</h1>
 
 <p>Tuple은 여러개의 값을 하나의 합쳐진 그룹으로 만듭니다. 튜플 안의 값은 어떤 자료형이든 될 수 있고, 한 튜플안의 값은 같은 서로 다른 자료형을 가질 수 있습니다.</p>
 
-<h3 id="http-status-code와-튜플">HTTP status code와 튜플</h3>
+<h2 id="http-status-code와-튜플">HTTP status code와 튜플</h2>
 
 <p>예를 들어 (404, “Not Found”)는 HTTP status code를 나타내는 튜플입니다. HTTP status code는 웹 페이지를 요청할 때 웹 서버로부터 리턴되는 특정한 값입니다. 404 Not Found 코드는 요청한 웹 페이지가 존재하지 않을 때 리턴되는 코드입니다.</p>
 
@@ -494,11 +494,11 @@ All information below comes from the Swift documentation and is for personal lea
 </code></pre></div></div>
 <p>(404, “Not Found”)튜플은 HTTP status code에게 숫자와 사람이 읽을 수 있는 설명이라는 두개의 값을 주기 위해서 Int타입과 String타입을 하나의 그룹으로 만들었습니다. 이것은 “a tuple of type(Int, String)”이라고 할 수 있습니다.</p>
 
-<h3 id="제한이-없는-튜플">제한이 없는 튜플</h3>
+<h2 id="제한이-없는-튜플">제한이 없는 튜플</h2>
 
 <p>(Int, Int, Int) 또는 (String, Bool) 등의 튜플을 만들 수 있습니다. 값의 개수나 자료형의 제한이 없습니다.</p>
 
-<h3 id="decompose-a-tuple">Decompose a Tuple</h3>
+<h2 id="decompose-a-tuple">Decompose a Tuple</h2>
 
 <p>튜플의 컨텐츠를 각각의 상수나 변수로 나눌 수 있습니다.</p>
 
@@ -515,7 +515,7 @@ All information below comes from the Swift documentation and is for personal lea
   <span class="c1">// Prints "The status code is 404"</span>
 </code></pre></div></div>
 
-<h3 id="index를-이용하여-값에-접근하기">Index를 이용하여 값에 접근하기</h3>
+<h2 id="index를-이용하여-값에-접근하기">Index를 이용하여 값에 접근하기</h2>
 
 <div class="language-swift highlighter-rouge"><div class="highlight"><pre class="highlight"><code>  <span class="nf">print</span><span class="p">(</span><span class="s">"The Status code is </span><span class="se">\(</span><span class="n">http404Error</span><span class="o">.</span><span class="mi">0</span><span class="se">)</span><span class="s">"</span><span class="p">)</span>
   <span class="c1">// Prints "The status code is 404"</span>
@@ -525,7 +525,7 @@ All information below comes from the Swift documentation and is for personal lea
 </code></pre></div></div>
 <p>인덱스 번호를 이용해 각 값에 접근할 수 있습니다.</p>
 
-<h3 id="정의와-동시에-값에-이름짓기">정의와 동시에 값에 이름짓기</h3>
+<h2 id="정의와-동시에-값에-이름짓기">정의와 동시에 값에 이름짓기</h2>
 
 <div class="language-swift highlighter-rouge"><div class="highlight"><pre class="highlight"><code>  <span class="k">let</span> <span class="nv">http200Status</span> <span class="o">=</span> <span class="p">(</span><span class="nv">statusCode</span><span class="p">:</span> <span class="mi">200</span><span class="p">,</span> <span class="nv">description</span><span class="p">:</span> <span class="s">"OK"</span> <span class="p">)</span>
 </code></pre></div></div>
@@ -535,19 +535,19 @@ All information below comes from the Swift documentation and is for personal lea
   <span class="c1">// Prints "The statusCode is 200"</span>
 </code></pre></div></div>
 
-<h3 id="functions와-튜플">Functions와 튜플</h3>
+<h2 id="functions와-튜플">Functions와 튜플</h2>
 
 <p>튜플은 function의 리턴 값으로 사용될 때 특히 유용합니다. 웹 페이지를 가져오는 function은 페이지 가져오기가 성공했는지 실패했는지를 알려주기 위해 (Int, String) 튜플을 반환할 수 있습니다. 서로 다른 타입인 값을 가진 튜플을 리턴하는 function은 하나의 자료형인 하나의 값을 리턴하는 funtion보다 더 유용하게 사용될 수 있습니다.</p>
 
-<h3 id="note">NOTE</h3>
+<h2 id="note">NOTE</h2>
 
 <p>튜플은 관계가 있는 값들의 단순한 그룹들을 만드는데 유용합니다. 만약 데이터의 구조가 복잡하다면 class나 structure를 이용해 모델링하는 것이 더 좋은 방법이 될 것입니다.</p>
 
-<!-- ## Extension  
+<!-- # Extension  
 
   Extension은 이미 존재하는 class, structure, enumeration, protocol타입에 새로운 기능을 추가합니다. -->
 
-<h2 id="early-exit">Early Exit</h2>
+<h1 id="early-exit">Early Exit</h1>
 
 <p>guard statement는 if statement처럼 Boolean 값에 따라 코드를 실행합니다.
   guard statement뒤에 오는 코드를 실행시키기 위해, 조건이 true여야만 하는 상황을 요구할 때 guard statement를 사용합니다. if문과 다르게 항상 else절이 함께 사용됩니다.</p>
@@ -578,43 +578,9 @@ All information below comes from the Swift documentation and is for personal lea
 
 <p>만약 조건이 false라면 else 브랜치의 코드가 실행됩니다. 이런 경우에는 return, break, continue, throw등의 control transfer statement를 사용하여 코드 블락을 꼭 벗어나 주어야 합니다.</p>
 
-<h1 id="concurrency">Concurrency</h1>
+<!-- # Error Handling  
 
-<h2 id="parallel-code">Parallel Code</h2>
-
-<p>Swift는 구조화된 방식으로 비동기 및 병렬 코드를 작성할 수 있도록 돕는 내장 지원을 가지고 있습니다. (코드를 작성할 수 있는 방식 또는 키워드를 가지고 있는 거겠죠?)</p>
-
-<p>Asynchronous code(비동기 코드)는 중단되었다가 다시 시작될 수 있습니다.</p>
-
-<p>Parallel code(병렬 코드)는 여러개의 코드가 동시에 동작하는 것을 의미합니다. 예를 들어 4 코어 프로세서를 가진 컴퓨터는 네개의 코드를 동시에 실행할 수 있습니다. 각각의 코어는 하나의 일을 수행합니다. 병렬(parallel) 그리고 비동기(asynchronous)코드는 한번에 여러개의 작업을 수행합니다.<br />
-  이것은 외부 시스템을 기다리고 있는 작업을 중지시킵니다.(?) 그리고 memory-safe한 방식으로 코드를 작성하기 쉽도록 만들어 줍니다.</p>
-
-<p>아래 설명에서 concurrency라는 단어는 비동기적(asynchronous) 코드와 병렬(parallel)코드의 일반적인 콤비네이션을 나타내기 위해 사용됩니다.</p>
-
-<p>Swift 언어의 지원 없이도 concurrent 코드를 작성할 수 있지만, 그렇게 작성된 코드들은 알아보기 어려운 경우가 많습니다.<br />
-  예를 들면, 아래의 코드는 사진의 이름 목록을 다운로드 하고, 목록의 첫번째 사진을 다운로드 합니다. 그리고 그 사진을 사용자에게 보여줍니다.</p>
-
-<div class="language-swift highlighter-rouge"><div class="highlight"><pre class="highlight"><code>  <span class="nf">listPhotos</span><span class="p">(</span><span class="nv">inGallery</span><span class="p">:</span> <span class="s">"Summer Vacation"</span><span class="p">)</span> <span class="p">{</span> <span class="kt">PhotoNames</span> <span class="k">in</span>
-      <span class="k">let</span> <span class="nv">sortedNames</span> <span class="o">=</span> <span class="n">photoNames</span><span class="o">.</span><span class="nf">sorted</span><span class="p">()</span>
-      <span class="k">let</span> <span class="nv">name</span> <span class="o">=</span> <span class="n">sortedNames</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span>
-      <span class="nf">downloadPhoto</span><span class="p">(</span><span class="nv">name</span><span class="p">:</span> <span class="n">name</span><span class="p">)</span> <span class="p">{</span> <span class="n">photo</span> <span class="k">in</span>
-          <span class="nf">show</span><span class="p">(</span><span class="n">photo</span><span class="p">)</span>
-      <span class="p">}</span>  
-  <span class="p">}</span>
-</code></pre></div></div>
-
-<p>이렇게 간단한 경우에도, 여러개의 completion handler로 코드가 작성되어야 했기 때문에 결국 nested 클로저를 작성하게 됩니다.<br />
-  이런 방식으로는, nesting이 더 깊어짐과 함께 코드가 복잡해지고 다루기 어려워집니다.</p>
-
-<h1 id="codable">Codable</h1>
-
-<div class="notice">
-  <p>iOS 앱의 Data persistence에 대해 궁금해져서 찾아보다가 정리</p>
-  </div>
-
-<p>Codable은 Encodable 프로토콜과 Decodable프로토콜을 합친 type alias입니다.<br />
-  이 프로토콜을 사용하면 JSON 파일로부터 데이터를 가져와 순서대로 출력하거나, 반대로 JSON 파일로 데이터를
-  순서대로 출력시킬 수 있는 Codable API를 사용할 수 있습니다.</p>
+  Error handling은 프로그램에 에러 상태에 응답하고 그것을 복구하는 과정입니다. Swift는 프로그램이 실행되는 동안 회복될 수 있는 에러를  -->
 
         
       </section>
@@ -688,6 +654,47 @@ All information below comes from the Swift documentation and is for personal lea
     <div class="page__related">
       <h2 class="page__related-title">You may also enjoy</h2>
       <div class="grid__wrapper">
+        
+          
+
+
+
+<div class="grid__item">
+  <article class="archive__item" itemscope itemtype="https://schema.org/CreativeWork">
+    
+      <div class="archive__item-teaser">
+        <img src="/assets/images/teaser.jpg" alt="">
+      </div>
+    
+    <h2 class="archive__item-title no_toc" itemprop="headline">
+      
+        <a href="/til/moreSwift/" rel="permalink">심화 Swift
+</a>
+      
+    </h2>
+    
+
+  <p class="page__meta">
+    
+      
+      <span class="page__meta-date">
+        <i class="far fa-calendar-alt" aria-hidden="true"></i>
+        
+        <time datetime="2022-05-27T00:00:00+09:00">May 27, 2022</time>
+      </span>
+    
+
+    
+
+    
+  </p>
+
+
+    <p class="archive__item-excerpt" itemprop="description">📂 Swift language guide 외의 정보들을 기록합니다.
+</p>
+  </article>
+</div>
+
         
           
 
@@ -809,48 +816,6 @@ LeetCode 문제를 풀어보며 사용되는 메서드나 풀이 방식을 정�
 
     <p class="archive__item-excerpt" itemprop="description">📂 Develop in Swift Fundamentals
 아래 모든 정보의 출처는 Develop in Swift Fundamentals이며 개인의 학습 용도로만 사용되었음을 밝힙니다.
-</p>
-  </article>
-</div>
-
-        
-          
-
-
-
-<div class="grid__item">
-  <article class="archive__item" itemscope itemtype="https://schema.org/CreativeWork">
-    
-      <div class="archive__item-teaser">
-        <img src="/assets/images/teaser.jpg" alt="">
-      </div>
-    
-    <h2 class="archive__item-title no_toc" itemprop="headline">
-      
-        <a href="/til/generics/" rel="permalink">Generics
-</a>
-      
-    </h2>
-    
-
-  <p class="page__meta">
-    
-      
-      <span class="page__meta-date">
-        <i class="far fa-calendar-alt" aria-hidden="true"></i>
-        
-        <time datetime="2022-04-23T00:00:00+09:00">April 23, 2022</time>
-      </span>
-    
-
-    
-
-    
-  </p>
-
-
-    <p class="archive__item-excerpt" itemprop="description">📂 Language Guide / Generics
-아래 모든 정보의 출처는 apple developer 공식 페이지이며 개인의 학습 용도로만 사용되었음을 밝힙니다.
 </p>
   </article>
 </div>
