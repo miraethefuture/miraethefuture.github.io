@@ -823,7 +823,7 @@ All information below comes from the official apple developer page and is for pe
   ```
   위의 코드를 DailyScrum의 extension에 추가해주면 정상적으로 작동한다.
 
-### 이 튜토리얼에서는 ❕
+### 튜토리얼 중 이 부분에서는 ❕
 
   - @State property wrapper를 이용해서 value type의 source of truth를 생성해 보았습니다.
   - @Binding을 사용하여 다른 views의 state에 쓰기 권한을 공유해 보았습니다. (사용자로부터 입력받은 정보로 @State로 감싼 변수를 사용하는 views에 데이터를 업데이트한 것을 말하는 것 같습니다.)
@@ -963,6 +963,34 @@ All information below comes from the official apple developer page and is for pe
   }
   ```
   @StateObject로 속성을 wrapping 한다는 것은 속한 해당 view가 그 object의 source of truth를 소유한다는 것을 의미합니다. @StateObject는 ScrumTimer를 MeetingView life cycle에 속박시킵니다.
+
+## Persisting data  
+
+### Add a Method to Load Data  
+
+  ```swift
+  import Foundation
+  import SwiftUI
+
+  // ObservableObject는 class-constrained protocol -> 외부의 모델 데이터를 SwiftUI 뷰에 연결
+  class ScrumStore: ObservableObject {
+      @Published var scrums: [DailyScrum] = []
+
+      // 사용자의 Documents 폴더 안 파일에 scrums를 저장하고 가져올 것.
+      // 아래 function은 파일에 쉽게 접근하기 위해 사용됨.
+      private static func fileURL() throws -> URL {
+          // default file manager에 url을 호출
+          // 현 사용자의 documents 위치를 가져오기 위해 FileManager의 shared instance 사용.
+          try FileManager.default.url(for: .documentDirectory, in: .userDomainMask, appropriateFor: nil, create: false)
+              // scrms.data라는 이름을 가진 파일의 URL을 리턴
+              .appendingPathComponent("scrums.data")
+      }
+  }
+  ```
+
+#### Dispatch queues  
+
+  Dispatch queues는 first in, first out queue이다. 
 
 <!-- ### Add Life Cycle Events  
 

@@ -19,7 +19,7 @@ toc_icon: "kiwi-bird"
 <sub>아래 모든 정보의 출처는 Swift 공식 문서이며 개인의 학습 용도로만 사용되었음을 밝힙니다.  
 All information below comes from the Swift documentation and is for personal learning purposes only.</sub>
 
-## 문자열과 변수의 값  
+# 문자열과 변수의 값  
 
   ```swift
   let apples = 3
@@ -30,7 +30,7 @@ All information below comes from the Swift documentation and is for personal lea
 
   - \ 와 ()를 이용해서 문자열 안에 변수의 값을 포함할 수 있습니다.
 
-## Array and Dictionary
+# Array and Dictionary
 
   ```swift  
   // 배열
@@ -53,23 +53,23 @@ All information below comes from the Swift documentation and is for personal lea
   - 배열에 값을 추가시 배열의 크기는 자동으로 늘어납니다.
   - print(배열이름)을 이용하여 간단하게 배열을 출력할 수 있습니다.
 
-### 빈 배열, 빈 딕셔너리 생성하기
+## 빈 배열, 빈 딕셔너리 생성하기
 
  ```swift  
  var emptyArray: [String] = []
  var emptyDictionary: [String: Float] = [:]
  ```
 
-## Optionals
+# Optionals
 
   값이 없을 수도 있는 상황에서 optionals를 사용합니다. Optional은 두가지 가능성을 나타냅니다.
 
   1. 값이 있어서 optional을 unwrap하여 그 값에 접근할 수 있다.
   2. 값이 없다.
 
-### optionals가 사용되는 방법  
+## optionals가 사용되는 방법  
 
-#### Int()  
+## Int()  
 
   Int type은 문자열을 Int로 변환할 수 있는 initializer를 가지고 있습니다.
   ```swift  
@@ -81,7 +81,7 @@ All information below comes from the Swift documentation and is for personal lea
   ```
   위의 방식으로 문자열을 Int 타입으로 변환할 수 있지만 모든 문자열을 Int 타입으로 변환할 수 있는 것은 아닙니다. "hello, world"와 같은 문자열은 명확한 숫자 값을 가지고 있지 않기 때문에 변환되지 않습니다. 이렇게 initializer가 변환을 실패할 수 있는 경우가 있기 때문에 Int가 아닌 optional Int 값을 변환합니다. Optional Int는 **Int?** 라고 표기합니다. '?'는 Int값이 있거나 어떠한 값도 가지고 있지 않다는 것을 나타냅니다. (Bool, String과 같은 값은 가지지 않음)
 
-#### nil  
+## nil  
 
   nil값을 할당함으로써 optional 변수에 값이 없는 상태를 설정할 수 있습니다.
 
@@ -98,11 +98,11 @@ All information below comes from the Swift documentation and is for personal lea
   // surveyAnswer is automatically set to nil
   ```
 
-#### Nil-Coalescing Operator  
+## Nil-Coalescing Operator  
 
   Nil-Coalescing Operator (a ?? b)는 만약 옵셔널 a가 값을 가지고 있다면 optional a를 unwrap 합니다. a가 nil이라면 default 값인 b를 리턴합니다.
 
-#### If문과 Optionals  
+## If문과 Optionals  
 
  ```swift
  var optionalString: String? = "Hello"
@@ -140,7 +140,7 @@ All information below comes from the Swift documentation and is for personal lea
 
  ?? operator를 사용하여 optional에 default 값을 줄 수 있습니다. 만약 optional이 nil을 가지고 있다면 기본값을 사용합니다.
 
-#### Forced unwrapping  
+## Forced unwrapping  
 
   만약 어떤 optional이 확실히 값을 가지고 있다는 것을 안다면 optional의 이름 뒤에 !를 붙여줌으로써 그 optional의 값에 접근할 수 있습니다. !는 '나는 이 optional이 값을 가지고 있는 것을 명확히 알고 있으니 그것을 사용하라'라는 메세지를 효과적으로 전달합니다. 이것을 optional값이 forced unwrapping이라고 합니다.
 
@@ -150,7 +150,7 @@ All information below comes from the Swift documentation and is for personal lea
   }
   ```
 
-#### Optional Binding  
+## Optional Binding  
 
   Optional binding은 optional이 값을 가지고 있는지, 가지고 있지 않은지 알아내기 위해 사용됩니다. 그리고 만약 값이 있다면 그 값을 일시적으로 constant나 variable로 사용 가능하도록 합니다. Optional binding은 optional안의 값을 확인하기 위해 그리고 그 값을 constant나 variable로 추출하기 위해 if문이나 while문과 함께 사용될 수 있습니다.  
 
@@ -202,7 +202,7 @@ All information below comes from the Swift documentation and is for personal lea
   if문 안의 Optional binding의 과정에서 생성된 constant나 variable는 if문의 body부분에서만 사용할 수 있습니다.
 
 
-#### Implicitly Unwrapped Optionals  
+## Implicitly Unwrapped Optionals  
 
   위에 묘사된 것처럼, optinals는 constants나 variables가 값이 없는 상태를 가질 수 있다는 것을 나타냅니다. if문을 이용하여 optionals에 값이 있는지 없는지 확인할 수 있습니다. 조건에 따라 optional binding을 이용하여 optionals를 unwrap하여 optional에 값이 있다면 그 값에 접근할 수 있게 됩니다.  
 
@@ -223,7 +223,7 @@ All information below comes from the Swift documentation and is for personal lea
   let implicitString: String = assumedString // ! 작성하지 않아도 됨
   ```
 
-## Switch  
+# Switch  
 
   ```swift  
   let vegetable = "red pepper"
@@ -241,11 +241,11 @@ All information below comes from the Swift documentation and is for personal lea
   ```
   Switch는 모든 자료형과 넓은 범위의 비교 연산자를 지원합니다. 조건이 일치하는 switch case의 코드를 실행한 뒤에 프로그램은 Switch문을 빠져나옵니다.
 
-### hasSuffix(_:)  
+## hasSuffix(_:)  
 
   특정 suffix(끝에 붙어서 어떤 한 다른 단어를 만드는 단어)로 끝나는 문자열인지 아닌지를 Boolean value를 리턴합니다. 위의 예시에서는 red pepper라는 문자열이 pepper로 끝나기 때문에 true를 반환합니다.
 
-## for-in과 Dictionary  
+# for-in과 Dictionary  
 
   ```swift  
   let interestingNumbers = [
@@ -270,11 +270,11 @@ All information below comes from the Swift documentation and is for personal lea
   가장 바깥쪽 for-in loop의 (_, numbers) 중 앞쪽은 딕셔너리의 키를 numbers는
   배열인 값을 의미합니다. 그러면 안쪽의 for-in loop는 값인 배열을 돌며 number의 각 요소를 할당합니다. 만약 number에 할당된 배열의 요소가 largest 보다 크다면 largest에 그 값을 할당합니다. 이렇게 각 키와 값을 돌며 가장 큰 수인 25를 출력합니다.
 
-## Tuples
+# Tuples
 
   Tuple은 여러개의 값을 하나의 합쳐진 그룹으로 만듭니다. 튜플 안의 값은 어떤 자료형이든 될 수 있고, 한 튜플안의 값은 같은 서로 다른 자료형을 가질 수 있습니다.
 
-### HTTP status code와 튜플
+## HTTP status code와 튜플
 
   예를 들어 (404, "Not Found")는 HTTP status code를 나타내는 튜플입니다. HTTP status code는 웹 페이지를 요청할 때 웹 서버로부터 리턴되는 특정한 값입니다. 404 Not Found 코드는 요청한 웹 페이지가 존재하지 않을 때 리턴되는 코드입니다.
 
@@ -284,11 +284,11 @@ All information below comes from the Swift documentation and is for personal lea
   ```
   (404, "Not Found")튜플은 HTTP status code에게 숫자와 사람이 읽을 수 있는 설명이라는 두개의 값을 주기 위해서 Int타입과 String타입을 하나의 그룹으로 만들었습니다. 이것은 "a tuple of type(Int, String)"이라고 할 수 있습니다.
 
-### 제한이 없는 튜플
+## 제한이 없는 튜플
 
   (Int, Int, Int) 또는 (String, Bool) 등의 튜플을 만들 수 있습니다. 값의 개수나 자료형의 제한이 없습니다.
 
-### Decompose a Tuple
+## Decompose a Tuple
 
   튜플의 컨텐츠를 각각의 상수나 변수로 나눌 수 있습니다.
 
@@ -307,7 +307,7 @@ All information below comes from the Swift documentation and is for personal lea
   // Prints "The status code is 404"
   ```
 
-### Index를 이용하여 값에 접근하기  
+## Index를 이용하여 값에 접근하기  
 
   ```swift
   print("The Status code is \(http404Error.0)")
@@ -318,7 +318,7 @@ All information below comes from the Swift documentation and is for personal lea
   ```
   인덱스 번호를 이용해 각 값에 접근할 수 있습니다.
 
-### 정의와 동시에 값에 이름짓기
+## 정의와 동시에 값에 이름짓기
 
   ```swift
   let http200Status = (statusCode: 200, description: "OK" )
@@ -330,19 +330,19 @@ All information below comes from the Swift documentation and is for personal lea
   // Prints "The statusCode is 200"
   ```
 
-### Functions와 튜플  
+## Functions와 튜플  
 
   튜플은 function의 리턴 값으로 사용될 때 특히 유용합니다. 웹 페이지를 가져오는 function은 페이지 가져오기가 성공했는지 실패했는지를 알려주기 위해 (Int, String) 튜플을 반환할 수 있습니다. 서로 다른 타입인 값을 가진 튜플을 리턴하는 function은 하나의 자료형인 하나의 값을 리턴하는 funtion보다 더 유용하게 사용될 수 있습니다.
 
-### NOTE  
+## NOTE  
 
   튜플은 관계가 있는 값들의 단순한 그룹들을 만드는데 유용합니다. 만약 데이터의 구조가 복잡하다면 class나 structure를 이용해 모델링하는 것이 더 좋은 방법이 될 것입니다.
 
-<!-- ## Extension  
+<!-- # Extension  
 
   Extension은 이미 존재하는 class, structure, enumeration, protocol타입에 새로운 기능을 추가합니다. -->
 
-## Early Exit  
+# Early Exit  
 
   guard statement는 if statement처럼 Boolean 값에 따라 코드를 실행합니다.
   guard statement뒤에 오는 코드를 실행시키기 위해, 조건이 true여야만 하는 상황을 요구할 때 guard statement를 사용합니다. if문과 다르게 항상 else절이 함께 사용됩니다.  
@@ -372,43 +372,8 @@ All information below comes from the Swift documentation and is for personal lea
   // Prints "I hope the weather is nice in Cupertino."
   ```
 
-  만약 조건이 false라면 else 브랜치의 코드가 실행됩니다. 이런 경우에는 return, break, continue, throw등의 control transfer statement를 사용하여 코드 블락을 꼭 벗어나 주어야 합니다.
+  만약 조건이 false라면 else 브랜치의 코드가 실행됩니다. 이런 경우에는 return, break, continue, throw등의 control transfer statement를 사용하여 코드 블락을 꼭 벗어나 주어야 합니다.  
 
-# Concurrency  
+<!-- # Error Handling  
 
-## Parallel Code  
-
-  Swift는 구조화된 방식으로 비동기 및 병렬 코드를 작성할 수 있도록 돕는 내장 지원을 가지고 있습니다. (코드를 작성할 수 있는 방식 또는 키워드를 가지고 있는 거겠죠?)  
-
-  Asynchronous code(비동기 코드)는 중단되었다가 다시 시작될 수 있습니다.
-
-  Parallel code(병렬 코드)는 여러개의 코드가 동시에 동작하는 것을 의미합니다. 예를 들어 4 코어 프로세서를 가진 컴퓨터는 네개의 코드를 동시에 실행할 수 있습니다. 각각의 코어는 하나의 일을 수행합니다. 병렬(parallel) 그리고 비동기(asynchronous)코드는 한번에 여러개의 작업을 수행합니다.  
-  이것은 외부 시스템을 기다리고 있는 작업을 중지시킵니다.(?) 그리고 memory-safe한 방식으로 코드를 작성하기 쉽도록 만들어 줍니다.  
-
-  아래 설명에서 concurrency라는 단어는 비동기적(asynchronous) 코드와 병렬(parallel)코드의 일반적인 콤비네이션을 나타내기 위해 사용됩니다.  
-
-  Swift 언어의 지원 없이도 concurrent 코드를 작성할 수 있지만, 그렇게 작성된 코드들은 알아보기 어려운 경우가 많습니다.  
-  예를 들면, 아래의 코드는 사진의 이름 목록을 다운로드 하고, 목록의 첫번째 사진을 다운로드 합니다. 그리고 그 사진을 사용자에게 보여줍니다.
-
-  ```swift
-  listPhotos(inGallery: "Summer Vacation") { PhotoNames in
-      let sortedNames = photoNames.sorted()
-      let name = sortedNames[0]
-      downloadPhoto(name: name) { photo in
-          show(photo)
-      }  
-  }
-  ```  
-
-  이렇게 간단한 경우에도, 여러개의 completion handler로 코드가 작성되어야 했기 때문에 결국 nested 클로저를 작성하게 됩니다.  
-  이런 방식으로는, nesting이 더 깊어짐과 함께 코드가 복잡해지고 다루기 어려워집니다.
-
-# Codable  
-
-  <div class="notice">
-  <p>iOS 앱의 Data persistence에 대해 궁금해져서 찾아보다가 정리</p>
-  </div>  
-
-  Codable은 Encodable 프로토콜과 Decodable프로토콜을 합친 type alias입니다.  
-  이 프로토콜을 사용하면 JSON 파일로부터 데이터를 가져와 순서대로 출력하거나, 반대로 JSON 파일로 데이터를
-  순서대로 출력시킬 수 있는 Codable API를 사용할 수 있습니다.
+  Error handling은 프로그램에 에러 상태에 응답하고 그것을 복구하는 과정입니다. Swift는 프로그램이 실행되는 동안 회복될 수 있는 에러를  -->
