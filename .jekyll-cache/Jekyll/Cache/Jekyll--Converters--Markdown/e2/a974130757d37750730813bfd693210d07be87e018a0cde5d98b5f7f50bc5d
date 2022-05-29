@@ -1,7 +1,0 @@
-I"<p><sub>📂 Completion handler는 무엇인가?</sub></p>
-
-<h1 id="1">1</h1>
-
-<p>Completion handler는 어떤 task가 완료된 후에 호출되는 callback function이다.<br />
-  Callback function은 어떤 function의 인자(argument)로 통과된 function을 말한다.</p>
-:ET
