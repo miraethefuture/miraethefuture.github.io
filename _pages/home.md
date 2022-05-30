@@ -18,7 +18,7 @@ feature_row:
     excerpt: "🤘 SwiftUI를 이용한 완벽히 기능을 하는 앱을 만들어보며 iOS 앱 개발의 가장 중요한 부분들에 대해 알아봅니다."
     url: "/til/scrumdinger/"
     btn_class: "btn--primary"
-    btn_label: "Learn more"
+    btn_label: "read more"
 #  - image_path: /assets/images/mm-responsive-feature.png
 #    alt: "fully responsive"
 #    title: "Responsive layouts"
