@@ -1,4 +1,4 @@
-I"�f<p><sub>SwiftUI Tutorial을 따라가며 아래 Landmark앱을 만들어 보겠습니다. 튜토리얼의 출처는 <a href="https://developer.apple.com/tutorials/swiftui/creating-and-combining-views">SwiftUI Essentials</a> 입니다.</sub>
+I"{p<p><sub>SwiftUI Tutorial을 따라가며 아래 Landmark앱을 만들어 보겠습니다. 튜토리얼의 출처는 <a href="https://developer.apple.com/tutorials/swiftui/creating-and-combining-views">SwiftUI Essentials</a> 입니다.</sub>
 <br />
 <br />
 <br /></p>
@@ -287,6 +287,26 @@ span: 은 지도가 보여질 크기를 나타내는 horizontal span과 vertical
 <p>리스트 뷰를 커스터마이징하여 모든 아이템이 보이게 하거나, Favorite 아이템만 보이도록 할 수 있습니다. 이것을 하기 위해, LandmarkList 타입에 state를 추가해야 합니다.</p>
 
 <p><em>State</em> 는 시간이 지남에 따라 변할 수 있는 값 또는 값들의 모임입니다. 뷰의 behavior나 컨텐츠 또는 레이아웃에 영향을 미칩니다. 하나의 뷰에 state를 추가하기 위해 @State 어트리뷰트를 속성 앞에 작성해줍니다.</p>
+
+<h4 id="filter_">filter(_:)</h4>
+
+<div class="language-swift highlighter-rouge"><div class="highlight"><pre class="highlight"><code>  <span class="k">let</span> <span class="nv">cast</span> <span class="o">=</span> <span class="p">[</span><span class="s">"Vivien"</span><span class="p">,</span> <span class="s">"Marlon"</span><span class="p">,</span> <span class="s">"Kim"</span><span class="p">,</span> <span class="s">"Karl"</span><span class="p">]</span>
+  <span class="k">let</span> <span class="nv">shortNames</span> <span class="o">=</span> <span class="n">cast</span><span class="o">.</span><span class="n">filter</span> <span class="p">{</span> <span class="nv">$0</span><span class="o">.</span><span class="n">count</span> <span class="o">&lt;</span> <span class="mi">5</span> <span class="p">}</span>
+  <span class="nf">print</span><span class="p">(</span><span class="n">shortNames</span><span class="p">)</span>
+  <span class="c1">// Prints ["Kim", "Karl"]</span>
+</code></pre></div></div>
+
+<p>cast라는 배열이 있습니다. filter 메서드를 사용하여 기존 배열에서 글자수가 다섯자 이하인 단어만으로 새로운 배열을 생성합니다. 새롭게 생성된 배열은 shortNames 상수에 할당해줍니다. $0이 cast의 요소라는 것을 알 수 있습니다.</p>
+
+<div class="language-swift highlighter-rouge"><div class="highlight"><pre class="highlight"><code>  <span class="k">var</span> <span class="nv">filteredLandmarks</span><span class="p">:</span> <span class="p">[</span><span class="kt">Landmark</span><span class="p">]</span> <span class="p">{</span>
+  <span class="c1">//        landmarks.filter { landmark in</span>
+  <span class="c1">//            (!showFavoritesOnly || landmark.isFavorite)</span>
+  <span class="c1">//        }</span>
+      <span class="n">landmarks</span><span class="o">.</span><span class="n">filter</span> <span class="p">{</span> <span class="nv">$0</span><span class="o">.</span><span class="n">isFavorite</span> <span class="o">==</span> <span class="kc">true</span> <span class="p">}</span>
+  <span class="p">}</span>
+</code></pre></div></div>
+
+<p>주석처리 한 부분이 원래 튜토리얼의 filter 메서드 코드이고, 주석처리 되지 않은 코드는 위의 예시를 보고 같은 방식으로 만들어 보았습니다. 똑같이 작동하는 것을 알 수 있었습니다. (!showFavoritesOnly 부분은 아직 코드의 영향을 미치지 않음.)</p>
 
 <!-- ```swift
 var body: some View {

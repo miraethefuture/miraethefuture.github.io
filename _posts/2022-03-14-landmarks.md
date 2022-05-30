@@ -314,7 +314,29 @@ struct ContentView_Previews: PreviewProvider {
 
   리스트 뷰를 커스터마이징하여 모든 아이템이 보이게 하거나, Favorite 아이템만 보이도록 할 수 있습니다. 이것을 하기 위해, LandmarkList 타입에 state를 추가해야 합니다.  
 
-  _State_ 는 시간이 지남에 따라 변할 수 있는 값 또는 값들의 모임입니다. 뷰의 behavior나 컨텐츠 또는 레이아웃에 영향을 미칩니다. 하나의 뷰에 state를 추가하기 위해 @State 어트리뷰트를 속성 앞에 작성해줍니다. 
+  _State_ 는 시간이 지남에 따라 변할 수 있는 값 또는 값들의 모임입니다. 뷰의 behavior나 컨텐츠 또는 레이아웃에 영향을 미칩니다. 하나의 뷰에 state를 추가하기 위해 @State 어트리뷰트를 속성 앞에 작성해줍니다.
+
+#### filter(_:)  
+
+  ```swift
+  let cast = ["Vivien", "Marlon", "Kim", "Karl"]
+  let shortNames = cast.filter { $0.count < 5 }
+  print(shortNames)
+  // Prints ["Kim", "Karl"]
+  ```  
+
+  cast라는 배열이 있습니다. filter 메서드를 사용하여 기존 배열에서 글자수가 다섯자 이하인 단어만으로 새로운 배열을 생성합니다. 새롭게 생성된 배열은 shortNames 상수에 할당해줍니다. $0이 cast의 요소라는 것을 알 수 있습니다.
+
+  ```swift
+  var filteredLandmarks: [Landmark] {
+  //        landmarks.filter { landmark in
+  //            (!showFavoritesOnly || landmark.isFavorite)
+  //        }
+      landmarks.filter { $0.isFavorite == true }
+  }
+  ```  
+
+  주석처리 한 부분이 원래 튜토리얼의 filter 메서드 코드이고, 주석처리 되지 않은 코드는 위의 예시를 보고 같은 방식으로 만들어 보았습니다. 똑같이 작동하는 것을 알 수 있었습니다. (!showFavoritesOnly 부분은 아직 코드의 영향을 미치지 않음.)
 
 <!-- ```swift
 var body: some View {
