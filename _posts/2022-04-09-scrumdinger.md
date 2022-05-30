@@ -11,6 +11,8 @@ toc: true
 toc_sticky: true
 toc_label: "📂"
 toc_icon: "kiwi-bird"
+header:
+  teaser: /assets/images/scrum5.png
 ---
 
 [Getting Started with Scrumdinger](https://developer.apple.com/tutorials/app-dev-training/getting-started-with-scrumdinger)  
@@ -990,7 +992,7 @@ All information below comes from the official apple developer page and is for pe
 
 #### Dispatch queues  
 
-  Dispatch queues는 first in, first out queue이다. 
+  Dispatch queues는 first in, first out queue이다.
 
 <!-- ### Add Life Cycle Events  
 
