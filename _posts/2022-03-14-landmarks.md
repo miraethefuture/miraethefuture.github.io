@@ -1,5 +1,5 @@
 ---
-title: "SwiftUI Tutorial: 여러 개의 View를 만들고 결합하기"
+title: "SwiftUI Tutorial: Landmarks"
 categories:
   - TIL
 tags:
@@ -13,15 +13,18 @@ toc_label: "📂"
 toc_icon: "📂"
 ---
 
-SwiftUI Tutorial을 따라가며 아래 Landmark앱을 만들어 보겠습니다. 튜토리얼의 출처는 [SwiftUI Essentials:
-Creating and Combining Views](https://developer.apple.com/tutorials/swiftui/creating-and-combining-views) 입니다.
+<sub>SwiftUI Tutorial을 따라가며 아래 Landmark앱을 만들어 보겠습니다. 튜토리얼의 출처는 [SwiftUI Essentials](https://developer.apple.com/tutorials/swiftui/creating-and-combining-views) 입니다.</sub>
+<br>
+<br>
+<br>
 
 <center><video src="https://user-images.githubusercontent.com/85061148/159120793-a9d5166b-fad5-41f0-899a-fcfe0bee25da.mov" controls="controls" style="max-width: 300px">
 </video></center>  
 
+<br>
+<br>
 
-
-## **☑️ What I Learned From This Tutorial:**  
+# **☑️ What I Learned From This Tutorial**  
 
 - SwiftUI 프레임워크와 다른 프레임워크를 함께 사용하는 방식
 - 여러개의 파일을 하나의 View로 합치기
@@ -33,12 +36,11 @@ Creating and Combining Views](https://developer.apple.com/tutorials/swiftui/crea
 <!-- - Binding ($) -->
 
 <br>
-
-<center><img src="/assets/images/directoryTree.png" alt="tree" width= "300">
-</center>
 <br>
 
-## 1. Stacks을 이용해 텍스트 배치하기: ContentView.swift
+# SwiftUI Essentials
+## Creating and Combining Views
+### 1. Stacks을 이용해 텍스트 배치하기: ContentView.swift
 
 ```swift
 // ContentView.swift
@@ -89,11 +91,11 @@ struct ContentView_Previews: PreviewProvider {
   아래는 위 코드가 화면에 그려진 결과입니다. Divider()를 이용해 콘텐츠를 나누는 줄을 그릴 수 있습니다.
 
 
-<center><img src="/assets/images/gbg_text.png" alt="gbg" width= "300">
+<center><img src="/assets/images/Landmarks1.png" alt="gbg" width= "300">
 </center>  
 
 
-## 2. 지도와 관련된 데이터 불러오기: MapView.swift  
+### 2. 지도와 관련된 데이터 불러오기: MapView.swift  
 
 
 ```swift
@@ -148,7 +150,7 @@ body property의 Map()은 Generic Structure로, 사용할 지도 인터페이스
 </video></center>
 
 
-## 3. 동그라미 모양으로 이미지 잘라내기: CircleImage.swift
+### 3. 동그라미 모양으로 이미지 잘라내기: CircleImage.swift
 
 ```swift
 //  CircleImage.swift
@@ -175,9 +177,9 @@ struct CircleImage_Previews: PreviewProvider {
 ```  
 이 부분에서는 <code>.clipShape(Circle())</code> 메서드를 사용하여 이미지를 동그랗게 잘라냅니다. .overlay 부분에서는 테두리가 될 부분을 만들어 줍니다. overlay 메서드는 레이어를 만들어 줍니다. 우리가 앞에서 만들었던 동그라미 모양의 사진 위에 레이어가 한층 생기는 거죠. Circle().stroke(.white, lineWidth: 4)는 동그라미 모양의 테두리를 그려줍니다. .shadow는 그림자를 그려줍니다.
 
-<center><img src="/assets/images/gbg_image.png" alt="CircleImage" width="300"></center>
+<center><img src="/assets/images/Landmarks2.png" alt="CircleImage" width="300"></center>
 
-## 4. Views를 결합하기  
+### 4. Views를 결합하기  
 
 ```swift
 //  ContentView.swift
@@ -238,6 +240,81 @@ struct ContentView_Previews: PreviewProvider {
 ```
 
 이제 위에서 만든 모든 View 들은 합쳐줍니다. .offset() 메서드의 y 파라미터의 값을 주어 원래의 dimension에서 콘텐츠를 조금 올려줍니다. .offset() 메서드가 없다면 VStack 안에서 겹치지 않고 나열되어 있을 것입니다.
+
+## Handling User Input  
+### Section 1: Mark the User's Favorite Landmarks  
+
+  아래와 같이 Bool타입 속성을 landmark 모델에 추가해줍니다.  
+
+  ```swift
+  struct Landmark: Hashable, Codable, Identifiable {
+    var id: Int
+    var name: String
+    var park: String
+    var state: String
+    var description: String
+    var isFavorite: Bool
+    ...
+  }
+  ```
+
+  아래는 landmarkData.json 파일입니다. 아래와 같은 데이터가 각 랜드마크마다 입력되어 있습니다. 모델의 속성과 같은 이름의 키를 가지고 있습니다. Landmark structure가 Codable하기 때문에 키와 같은 이름을 가진 속성을 생성해줌으로써 json 파일에 연결된 값을 읽어올 수 있습니다.
+
+  ```swift
+  [
+    {
+        "name": "Turtle Rock",
+        "category": "Rivers",
+        "city": "Twentynine Palms",
+        "state": "California",
+        "id": 1001,
+        "isFeatured": true,
+        "isFavorite": true,
+        "park": "Joshua Tree National Park",
+        "coordinates": {
+            "longitude": -116.166868,
+            "latitude": 34.011286
+        },
+        "description": "Suscipit inceptos est felis purus aenean aliquet adipiscing diam venenatis, augue nibh duis neque aliquam tellus condimentum sagittis vivamus, ... Interdum mattis sapien ac orci vestibulum vulputate laoreet proin hac, maecenas mollis ridiculus morbi praesent cubilia vitae ligula vel, sem semper volutpat curae mauris justo nisl luctus, non eros primis ultrices nascetur erat varius integer.",
+        "imageName": "turtlerock"
+    },
+  ... ]
+  ```
+
+  ```swift
+  import SwiftUI
+
+  struct LandmarkRow: View {
+      var landmark: Landmark
+
+      var body: some View {
+          HStack {
+              landmark.image
+                  .resizable()
+                  .frame(width: 50, height: 50)
+              Text(landmark.name)
+
+              Spacer()
+
+              // SwiftUI blocks에서 조건적으로 뷰를 포함할 때 if문을 사용합니다.
+              // Landmark 모델의 isFavorite 속성이 true라면
+              if landmark.isFavorite {
+                  Image(systemName: "star.fill")
+                      .foregroundColor(.yellow)
+              }
+          }
+      }
+  }
+  ```
+  isFavorite 속성이 true인 경우에는 리스트에 별이 나타나도록 if문을 작성해줍니다.  
+
+  <center><img src="/assets/images/Landmarks3.png" alt="stars" width="400"></center>
+
+### Section 2: Filter the List View  
+
+  리스트 뷰를 커스터마이징하여 모든 아이템이 보이게 하거나, Favorite 아이템만 보이도록 할 수 있습니다. 이것을 하기 위해, LandmarkList 타입에 state를 추가해야 합니다.  
+
+  _State_ 는 시간이 지남에 따라 변할 수 있는 값 또는 값들의 모임입니다. 뷰의 behavior나 컨텐츠 또는 레이아웃에 영향을 미칩니다. 하나의 뷰에 state를 추가하기 위해 @State 어트리뷰트를 속성 앞에 작성해줍니다. 
 
 <!-- ```swift
 var body: some View {
