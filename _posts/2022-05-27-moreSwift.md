@@ -67,13 +67,41 @@ toc_icon: "kiwi-bird"
 
   비동기적 메서드를 호출할 때, 해당 메서드가 리턴할 때까지 실행이 중단됩니다. 실행이 중단될 가능성이 있는 호출 앞에 await 키워드를 사용하여 표시해줍니다. 이것은 에러를 던지는 함수를 호출할 때 try 키워드를 작성하는 것과 비슷합니다. try 키워드는 프로그램에 에러가 있다면 실행 흐름이 변경될 수 있다는 것을 알려줍니다.
 
+  <br>
+
 # Codable   
 
   Codable은 Encodable 프로토콜과 Decodable프로토콜을 합친 type alias입니다.  
   이 프로토콜을 사용하면 JSON 파일로부터 데이터를 가져와 순서대로 출력하거나, 반대로 JSON 파일로 데이터를
   순서대로 출력시킬 수 있는 Codable API를 사용할 수 있습니다.
 
+  <br>
+
 # Completion Handler
 
     Completion handler는 어떤 task가 완료된 후에 호출되는 callback function이다.  
     Callback function은 어떤 function의 인자(argument)로 통과된 function을 말한다.
+
+  <br>
+
+# filter(_:)  
+
+  ```swift
+  let cast = ["Vivien", "Marlon", "Kim", "Karl"]
+  let shortNames = cast.filter { $0.count < 5 }
+  print(shortNames)
+  // Prints ["Kim", "Karl"]
+  ```  
+
+  cast라는 배열이 있습니다. filter 메서드를 사용하여 기존 배열에서 글자수가 다섯자 이하인 단어만으로 새로운 배열을 생성합니다. 새롭게 생성된 배열은 shortNames 상수에 할당해줍니다. $0이 cast의 요소라는 것을 알 수 있습니다.
+
+  ```swift
+  var filteredLandmarks: [Landmark] {
+  //        landmarks.filter { landmark in
+  //            (!showFavoritesOnly || landmark.isFavorite)
+  //        }
+      landmarks.filter { $0.isFavorite == true }
+  }
+  ```  
+
+  주석처리 한 부분이 원래 튜토리얼의 filter 메서드 코드이고, 주석처리 되지 않은 코드는 위의 예시를 보고 같은 방식으로 만들어 보았습니다. 똑같이 작동하는 것을 알 수 있었습니다. (!showFavoritesOnly 부분은 아직 코드의 영향을 미치지 않음.)
