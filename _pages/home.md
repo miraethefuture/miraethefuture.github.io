@@ -19,13 +19,13 @@ feature_row:
     url: "/til/scrumdinger/"
     btn_class: "btn--primary"
     btn_label: "read more"
-#  - image_path: /assets/images/mm-responsive-feature.png
-#    alt: "fully responsive"
-#    title: "Responsive layouts"
-#    excerpt: "Built with HTML5 + CSS3. All layouts are fully responsive with helpers to augment your content."
-#    url: "/docs/layouts/"
-#    btn_class: "btn--primary"
-#    btn_label: "Learn more"
+  - image_path: /assets/images/teamProject2.png
+    alt: "teamProject2"
+    title: "앱 만들어보기(Collection view 사용해보기)"
+    excerpt: "튜토리얼을 응용하여 앱을 만들어 봅니다."
+    url: "/til/teamProject/"
+    btn_class: "btn--primary"
+    btn_label: "read more"
 #  - image_path: /assets/images/mm-free-feature.png
 #    alt: "100% free"
 #    title: "100% free"
