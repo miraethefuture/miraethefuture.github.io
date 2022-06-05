@@ -1,5 +1,5 @@
 ---
-title: "앱 출시 프로젝트 로그"
+title: "앱 만들어보기(Collection view 사용해보기)"
 categories:
   - TIL
 tags:
@@ -12,9 +12,11 @@ toc: true
 toc_sticky: true
 toc_label: " "
 toc_icon: "kiwi-bird"
+header:
+  teaser: /assets/images/teamProject2.png
 ---
 
-<sub>📲 앱 출시 프로젝트 진행 중.</sub>
+<sub>📲 튜토리얼을 따라가며 다른 스타일로 앱 만들어보기.</sub>
 
 
 # ?  
