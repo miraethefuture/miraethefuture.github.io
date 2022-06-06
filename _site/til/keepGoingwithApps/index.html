@@ -9,8 +9,8 @@
   <head>
     <meta charset="utf-8">
 
-<!-- begin _includes/seo.html --><title>Subscripts | Mirae2thefuture</title>
-<meta name="description" content="👩‍🌾 ..">
+<!-- begin _includes/seo.html --><title>Keep Going with Apps | Mirae2thefuture</title>
+<meta name="description" content="들어가며…">
 
 
   <meta name="author" content="Mirae">
@@ -22,30 +22,30 @@
 <meta property="og:type" content="article">
 <meta property="og:locale" content="en_US">
 <meta property="og:site_name" content="Mirae2thefuture">
-<meta property="og:title" content="Subscripts">
-<meta property="og:url" content="http://localhost:4000/til/subscripts/">
+<meta property="og:title" content="Keep Going with Apps">
+<meta property="og:url" content="http://localhost:4000/til/keepGoingwithApps/">
 
 
-  <meta property="og:description" content="👩‍🌾 ..">
-
-
-
-
-
-
-
-  <meta property="article:published_time" content="2022-04-18T00:00:00+09:00">
+  <meta property="og:description" content="들어가며…">
 
 
 
 
 
-  
+
+
+  <meta property="article:published_time" content="2022-06-07T00:00:00+09:00">
+
+
+
+
 
   
 
+  
 
-<link rel="canonical" href="http://localhost:4000/til/subscripts/">
+
+<link rel="canonical" href="http://localhost:4000/til/keepGoingwithApps/">
 
 
 
@@ -182,7 +182,7 @@
     
       
       
-        <li class="current">Subscripts</li>
+        <li class="current">Keep Going with Apps</li>
       
     
   </ol>
@@ -196,16 +196,16 @@
 
 
   <article class="page h-entry" itemscope itemtype="https://schema.org/CreativeWork">
-    <meta itemprop="headline" content="Subscripts">
-    <meta itemprop="description" content="👩‍🌾 ..">
-    <meta itemprop="datePublished" content="2022-04-18T00:00:00+09:00">
+    <meta itemprop="headline" content="Keep Going with Apps">
+    <meta itemprop="description" content="들어가며…">
+    <meta itemprop="datePublished" content="2022-06-07T00:00:00+09:00">
     
 
     <div class="page__inner-wrap">
       
         <header>
           <h1 id="page-title" class="page__title p-name" itemprop="headline">
-            <a href="http://localhost:4000/til/subscripts/" class="u-url" itemprop="url">Subscripts
+            <a href="http://localhost:4000/til/keepGoingwithApps/" class="u-url" itemprop="url">Keep Going with Apps
 </a>
           </h1>
           
@@ -216,7 +216,7 @@
       <span class="page__meta-date">
         <i class="far fa-calendar-alt" aria-hidden="true"></i>
         
-        <time datetime="2022-04-18T00:00:00+09:00">April 18, 2022</time>
+        <time datetime="2022-06-07T00:00:00+09:00">June 7, 2022</time>
       </span>
     
 
@@ -234,71 +234,75 @@
           <aside class="sidebar__right sticky">
             <nav class="toc">
               <header><h4 class="nav__title"><i class="fas fa-kiwi-bird"></i>  </h4></header>
-              <ul class="toc__menu"><li><a href="#-">👩‍🌾 ..</a><ul><li><a href="#subscript-syntax">Subscript Syntax</a></li><li><a href="#subscript-usage">Subscript Usage</a></li></ul></li></ul>
+              <ul class="toc__menu"><li><a href="#들어가며">들어가며…</a><ul><li><a href="#state">state</a></li><li><a href="#data-flow">data flow</a></li><li><a href="#data-separation">data separation</a></li></ul></li><li><a href="#modifying-state">Modifying State</a><ul><li><a href="#use-a-state-property-to-update-a-view">Use a state property to update a view</a><ul><li><a href="#property">property</a></li></ul></li><li><a href="#코드">코드</a><ul><li><a href="#source-of-truth">source of truth</a></li></ul></li></ul></li></ul>
 
             </nav>
           </aside>
         
-        <h1 id="-">👩‍🌾 ..</h1>
+        <h1 id="들어가며">들어가며…</h1>
 
-<p>Classes, structures, 그리고 enumerations는 subscripts를 정의할 수 있습니다. Subscripts는 collection이나 list 또는 sequence의 멤버 요소에 접근하는 쉬운 방법들입니다. 값을 설정하고 가져오기 위한 메서드 없이 subscripts를 사용하여 인덱스로 값을 설정하거나, 값을 가져옵니다. 예를 들어, someArray[index]로 Array instance의 요소에 접근할 수 있습니다. Dictionary instance의 요소에 접근하기 위해서는 someDictionary[key]를 이용합니다.</p>
+<h2 id="state">state</h2>
 
-<p>하나의 타입에 여러개의 subscripts를 정의할 수 있습니다. Subscript에 통과된 인덱스 값의 타입을 기준으로 그 중 적합한 subscript가 선택됩니다. Subscript는 1차원에 제약되지 않습니다. 커스텀 타입이 필요로 하는 여러개의 input 패러미터를 이용하여 subscript를 정의할 수 있습니다.</p>
+<p>특정 주어진 시간에 변수, 애플리케이션, 또는 시스템에 담긴 정보를 <strong>state</strong>라고 합니다. 예를 들어, level이라는 이름의 변수가 4라는 값을 가지고 있다면 현재 level 변수의 state는 4가 됩니다.</p>
 
-<h2 id="subscript-syntax">Subscript Syntax</h2>
+<h2 id="data-flow">data flow</h2>
 
-<p>Subscript는 하나 또는 여러개의 값을 instance의 이름 뒤 [] 안에 작성함으로써 인스턴스에 대한 정보를 가져오는 것을 가능하게 합니다. Subscript syntax는 instance method syntax 그리고 commputed property syntax와 비슷합니다. subscript keyword를 사용하고 하나 또는 여러개의 인풋 패러미터와 리턴 타입을 특정 지어 줍니다. (instance method와 같은 방법으로)<br />
-  Instance method와는 다르게, subscript는 read-write 또는 read-only가 될 수 있습니다. Computed property에서와 마찬가지로 getter 그리고 setter에 의해 실행됩니다.</p>
+<p>SwiftUI에서, 앱 전체에서 움직이는 데이터의 흐름과 그 데이터의 변화가 state 또는 앱의 UI에 변화가 일어나도록 하는 방식을 <strong>data flow</strong>라고 합니다.</p>
 
-<div class="language-swift highlighter-rouge"><div class="highlight"><pre class="highlight"><code>  <span class="nf">subscript</span><span class="p">(</span><span class="nv">index</span><span class="p">:</span> <span class="kt">Int</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kt">Int</span> <span class="p">{</span>
-    <span class="k">get</span> <span class="p">{</span>
-        <span class="c1">// 적합한 subscript 값을 리턴</span>
-    <span class="p">}</span>
-    <span class="nf">set</span><span class="p">(</span><span class="n">newValue</span><span class="p">)</span> <span class="p">{</span>
-        <span class="c1">// 적합한 setting action 수행</span>
-    <span class="p">}</span>
-  <span class="p">}</span>
-</code></pre></div></div>
+<h2 id="data-separation">data separation</h2>
 
-<p>newValue의 타입은 subscript의 리턴타입과 같습니다. Computed property에서처럼, setter의 (newValue)패러미터를 특정짓지 않을 수 있습니다. 만약 이렇게 특정짓지 않는다면 newValue라는 이름의 디폴트 패러미터가 제공됩니다.</p>
+<p>앱의 데이터 모델은 해당 데이터와 상호작용하고 그것을 화면에 보여주는 UI와 분리하여 정의해야한다는 컨셉입니다. Data separation은 데이터 모델과 UI를 서로로부터 독립시켜 따로 수정할 수 있도록 하고, 앱이 작동하는 방식을 더 쉽게 이해할 수 있도록 합니다. 그리고 앱을 테스트할 수 있는 가능성을 증진시켜줍니다.</p>
 
-<p>read-only computed property처럼, get 키워드와 { } 를 제거하여 read-only subscript를 단순한 형태로 정의할 수 있습니다.</p>
+<h1 id="modifying-state">Modifying State</h1>
 
-<div class="language-swift highlighter-rouge"><div class="highlight"><pre class="highlight"><code>  <span class="nf">subscript</span><span class="p">(</span><span class="nv">index</span><span class="p">:</span> <span class="kt">Int</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kt">Int</span> <span class="p">{</span>
-        <span class="c1">// 적합한 subscript 값을 리턴</span>
-  <span class="p">}</span>
-</code></pre></div></div>
+<p>코딩에서 state는 어떤 변수의 현재 값을 나타냅니다. 변수의 값이 바뀌었을 때 state가 변경되었다고 합니다. SwiftUI의 편리한 점 중 하나는 state가 변경되면 뷰의 모습(appearance)을 자동으로 업데이트 해준다는 것입니다. 앱의 데이터와 UI를 연결하면 SwiftUI는 해당 데이터를 감시할 수 있습니다. 데이터가 변경될 때마다 해당 데이터를 이용하고 있는 view를 업데이트 합니다. 이것은 당신의 UI에게 언제 어떻게 뷰를 업데이트해야 한다고 말해주는 코드를 작성하지 않아도 된다는 의미입니다.</p>
 
-<p>아래는 read-only subscript의 구현 예시입니다. TimesTable stucture는 한 정수의 n-times-table을 나타냅니다.</p>
+<h2 id="use-a-state-property-to-update-a-view">Use a state property to update a view</h2>
 
-<div class="language-swift highlighter-rouge"><div class="highlight"><pre class="highlight"><code>  <span class="kd">struct</span> <span class="kt">TimesTable</span> <span class="p">{</span>
-      <span class="k">let</span> <span class="nv">multiplier</span><span class="p">:</span> <span class="kt">Int</span>
-      <span class="nf">subscript</span><span class="p">(</span><span class="nv">index</span><span class="p">:</span> <span class="kt">Int</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kt">Int</span> <span class="p">{</span>
-          <span class="k">return</span> <span class="n">multiplier</span> <span class="o">*</span> <span class="n">index</span>
+<p>state property를 사용하여 뷰를 업데이트 합니다.</p>
+
+<h3 id="property">property</h3>
+
+<p><strong>type</strong>안에 정의된 변수(값을 담는 이름 지어진 컨테이너)</p>
+
+<h2 id="코드">코드</h2>
+
+<div class="language-swift highlighter-rouge"><div class="highlight"><pre class="highlight"><code>  <span class="kd">import</span> <span class="kt">SwiftUI</span>  
+
+  <span class="kd">struct</span> <span class="kt">ConditionalView</span><span class="p">:</span> <span class="kt">View</span> <span class="p">{</span>
+      <span class="kd">@State</span> <span class="k">var</span> <span class="nv">isOn</span> <span class="o">=</span> <span class="kc">false</span>
+
+      <span class="k">var</span> <span class="nv">body</span><span class="p">:</span> <span class="kd">some</span> <span class="kt">View</span> <span class="p">{</span>
+          <span class="kt">VStack</span> <span class="p">{</span>
+              <span class="c1">// 만약 isOn이 true라면 Circle을 그림</span>
+              <span class="k">if</span> <span class="n">isOn</span> <span class="p">{</span>
+                <span class="kt">Circle</span><span class="p">()</span>
+                    <span class="o">.</span><span class="nf">frame</span><span class="p">(</span><span class="nv">maxHeight</span><span class="p">:</span> <span class="mi">200</span><span class="p">)</span>
+                    <span class="o">.</span><span class="nf">foregroundColor</span><span class="p">(</span><span class="o">.</span><span class="n">yellow</span><span class="p">)</span>
+              <span class="p">}</span>
+              <span class="c1">// Button을 누를 때마다 true / false 값 바뀜.</span>
+              <span class="kt">Button</span><span class="p">(</span><span class="s">"Press Me"</span><span class="p">)</span> <span class="p">{</span>
+                  <span class="n">isOn</span><span class="o">.</span><span class="nf">toggle</span><span class="p">()</span>
+              <span class="p">}</span>
+          <span class="p">}</span>
       <span class="p">}</span>
   <span class="p">}</span>
-  <span class="k">let</span> <span class="nv">threeTimesTable</span> <span class="o">=</span> <span class="kt">TimesTable</span><span class="p">(</span><span class="nv">multiplier</span><span class="p">:</span> <span class="mi">3</span><span class="p">)</span>
-  <span class="nf">print</span><span class="p">(</span><span class="s">"six times three is </span><span class="se">\(</span><span class="n">threeTimesTable</span><span class="p">[</span><span class="mi">6</span><span class="p">]</span><span class="se">)</span><span class="s">"</span><span class="p">)</span>
-  <span class="c1">// Prints "six times three is 18"</span>
+  <span class="kd">struct</span> <span class="kt">ConditionalViews_Previews</span><span class="p">:</span> <span class="kt">PreviewProvider</span> <span class="p">{</span>
+      <span class="kd">static</span> <span class="k">var</span> <span class="nv">previews</span><span class="p">:</span> <span class="kd">some</span> <span class="kt">View</span> <span class="p">{</span>
+          <span class="kt">VStack</span> <span class="p">{</span>
+              <span class="kt">ConditionalViews</span><span class="p">()</span><span class="o">.</span><span class="nf">assess</span><span class="p">()</span>
+          <span class="p">}</span>
+      <span class="p">}</span>
+  <span class="p">}</span>
 </code></pre></div></div>
 
-<p>위의 예에서, TimesTable의 새 instance는 three-times-table을 나타내기 위해 생성되었습니다. 이것은 TimesTable structure의 생성자 multiplier패러미터에 값 3을 통과시킴으로써 이루어집니다.</p>
+<p>위의 코드에서, SwiftUI는 state의 변경이 일어날 때 뷰의 모습을 업데이트 합니다. “Press Me”라는 버튼을 누르면 isOn 속성의 값이 변경됩니다. 누를 때마다 true / false states 사이에서 변경됩니다. VStack 안의 if 문에서 isOn 속성이 true일 때 노란색 원이 나타나도록 작성되었기 때문에 버튼을 누를 때마다 원이 생겼다가 사라졌다가하게 됩니다.</p>
 
-<p>threeTimesTable의 subscript를 호출함으로써 정보를 가져올 수 있습니다. (threeTimesTable[6])</p>
+<p>뷰의 모습을 바꾸고 싶을 때, 먼저 state를 추적하기위해 데이터가 필요하다. (위에서는 true / false boolean 데이터를 추적하여 뷰의 모습을 변경.) 이 데이터를 뷰의 property로 담습니다.</p>
 
-<h2 id="subscript-usage">Subscript Usage</h2>
+<h3 id="source-of-truth">source of truth</h3>
 
-<p>“subscript”의 정확한 의미는 이것이 사용된 곳의 전후 관계에 달려있습니다. Subscripts는 보통 collection, list 또는 sequence의 요소에 접근하는 지름길(쉬운 방법)으로 사용됩니다.</p>
-
-<p>예를 들어, Swift의 Dictionary type은 어떤 Dictionary instance에 저장된 값을 가져오거나, 값을 설정하기 위해 subscript를 사용합니다. 딕셔너리의 키 타입에 맞는 키를 subscript brackets안에 제공하고 딕셔너리의 값 자료형과 일치하는 값을 할당해줌으로써 키와 값을 설정할 수 있습니다.</p>
-
-<div class="language-swift highlighter-rouge"><div class="highlight"><pre class="highlight"><code>  <span class="k">var</span> <span class="nv">numberOfLegs</span> <span class="o">=</span> <span class="p">[</span><span class="s">"Spider"</span><span class="p">:</span> <span class="mi">8</span><span class="p">,</span> <span class="s">"ant"</span><span class="p">:</span> <span class="mi">6</span><span class="p">,</span> <span class="s">"cat"</span><span class="p">:</span> <span class="mi">4</span><span class="p">]</span>
-  <span class="n">numberOfLegs</span><span class="p">[</span><span class="s">"bird"</span><span class="p">]</span> <span class="o">=</span> <span class="mi">2</span>
-</code></pre></div></div>
-
-<!-- ## Subscript Options  
-
-  Subscripts는  -->
+<p>앱 빌딩에서, 모든 데이터가 수정되는 하나의 위치를 말합니다. 이 데이터를 향한 모든 다른 연결들은 참조로써만 이루어집니다. 다른 위치에서는 정보의 복사가 되지 않습니다.</p>
 
         
       </section>
@@ -317,9 +321,9 @@
     
       <a href="/tags/#learning" class="page__taxonomy-item p-category" rel="tag">learning</a><span class="sep">, </span>
     
-      <a href="/tags/#subscripts" class="page__taxonomy-item p-category" rel="tag">Subscripts</a><span class="sep">, </span>
-    
       <a href="/tags/#swift" class="page__taxonomy-item p-category" rel="tag">Swift</a><span class="sep">, </span>
+    
+      <a href="/tags/#swiftui" class="page__taxonomy-item p-category" rel="tag">SwiftUI</a><span class="sep">, </span>
     
       <a href="/tags/#%EA%B3%B5%EB%B6%80-%EA%B8%B0%EB%A1%9D" class="page__taxonomy-item p-category" rel="tag">공부 기록</a>
     
@@ -346,7 +350,7 @@
 
         
 
-  <p class="page__date"><strong><i class="fas fa-fw fa-calendar-alt" aria-hidden="true"></i> Updated:</strong> <time class="dt-published" datetime="2022-04-18T00:00:00+09:00">April 18, 2022</time></p>
+  <p class="page__date"><strong><i class="fas fa-fw fa-calendar-alt" aria-hidden="true"></i> Updated:</strong> <time class="dt-published" datetime="2022-06-07T00:00:00+09:00">June 7, 2022</time></p>
 
       </footer>
 
@@ -355,12 +359,11 @@
       
   <nav class="pagination">
     
-      <a href="/til/closures/" class="pagination--pager" title="Closures
+      <a href="/til/moreSwift/" class="pagination--pager" title="심화 Swift
 ">Previous</a>
     
     
-      <a href="/til/functions/" class="pagination--pager" title="Functions
-">Next</a>
+      <a href="#" class="pagination--pager disabled">Next</a>
     
   </nav>
 
@@ -374,47 +377,6 @@
     <div class="page__related">
       <h2 class="page__related-title">You may also enjoy</h2>
       <div class="grid__wrapper">
-        
-          
-
-
-
-<div class="grid__item">
-  <article class="archive__item" itemscope itemtype="https://schema.org/CreativeWork">
-    
-      <div class="archive__item-teaser">
-        <img src="/assets/images/teaser.jpg" alt="">
-      </div>
-    
-    <h2 class="archive__item-title no_toc" itemprop="headline">
-      
-        <a href="/til/keepGoingwithApps/" rel="permalink">Keep Going with Apps
-</a>
-      
-    </h2>
-    
-
-  <p class="page__meta">
-    
-      
-      <span class="page__meta-date">
-        <i class="far fa-calendar-alt" aria-hidden="true"></i>
-        
-        <time datetime="2022-06-07T00:00:00+09:00">June 7, 2022</time>
-      </span>
-    
-
-    
-
-    
-  </p>
-
-
-    <p class="archive__item-excerpt" itemprop="description">들어가며…
-</p>
-  </article>
-</div>
-
         
           
 
@@ -538,6 +500,48 @@
 
     <p class="archive__item-excerpt" itemprop="description">🗂 ..
 LeetCode 문제를 풀어보며 사용되는 메서드나 풀이 방식을 정리합니다.
+</p>
+  </article>
+</div>
+
+        
+          
+
+
+
+<div class="grid__item">
+  <article class="archive__item" itemscope itemtype="https://schema.org/CreativeWork">
+    
+      <div class="archive__item-teaser">
+        <img src="/assets/images/teaser.jpg" alt="">
+      </div>
+    
+    <h2 class="archive__item-title no_toc" itemprop="headline">
+      
+        <a href="/til/fundamentals/" rel="permalink">Develop in Swift Fundamentals
+</a>
+      
+    </h2>
+    
+
+  <p class="page__meta">
+    
+      
+      <span class="page__meta-date">
+        <i class="far fa-calendar-alt" aria-hidden="true"></i>
+        
+        <time datetime="2022-04-27T00:00:00+09:00">April 27, 2022</time>
+      </span>
+    
+
+    
+
+    
+  </p>
+
+
+    <p class="archive__item-excerpt" itemprop="description">📂 Develop in Swift Fundamentals
+아래 모든 정보의 출처는 Develop in Swift Fundamentals이며 개인의 학습 용도로만 사용되었음을 밝힙니다.
 </p>
   </article>
 </div>
