@@ -16,6 +16,8 @@ toc_icon: "kiwi-bird"
 #  teaser: /assets/images/choose2.png
 ---
 
+<br><sub>아래 모든 정보의 출처는 Apple Playgrounds이며 개인의 학습 용도로만 사용되었음을 밝힙니다.</sub>
+
 # 들어가며...
 
 ## state
