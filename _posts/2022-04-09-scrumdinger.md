@@ -23,7 +23,7 @@ All information below comes from the official apple developer page and is for pe
 
 # 🤘
 
-  SwiftUI를 이용한 완벽히 기능을 하는 앱을 만들어보며 iOS 앱 개발의 가장 중요한 부분들에 대해 알아봅니다.  
+  SwiftUI 앱을 만들어보며 iOS 앱 개발의 가장 중요한 부분들에 대해 알아봅니다.  
 
 ## Tour of the App
 
@@ -830,10 +830,11 @@ All information below comes from the official apple developer page and is for pe
   - @State property wrapper를 이용해서 value type의 source of truth를 생성해 보았습니다.
   - @Binding을 사용하여 다른 views의 state에 쓰기 권한을 공유해 보았습니다. (사용자로부터 입력받은 정보로 @State로 감싼 변수를 사용하는 views에 데이터를 업데이트한 것을 말하는 것 같습니다.)
 
+# State management  
 
 ## Making Classes Observable  
 
-  위에서는 @State와 @Binding을 이용하여 value type를 source of truth로 정의하는 것에 대해 알아보았습니다. 여기서는 앱의 UI를 위해 reference type을 source of truth로 정의하는 방법에 대해 알아봅니다.  
+  위에서는 @State와 @Binding을 이용하여 value type을 source of truth로 정의하는 것에 대해 알아보았습니다. 여기서는 앱의 UI를 위해 reference type을 source of truth로 정의하는 방법에 대해 알아봅니다.  
 
   @State property wrapper는 value types에만 적용할 수 있습니다. structures나 enumerations 같은 것이죠. SwiftUI는 reference type을 source of truth로 정의하는 property wrappers를 제공합니다.
 
@@ -969,6 +970,10 @@ All information below comes from the official apple developer page and is for pe
 ## Persisting data  
 
 ### Add a Method to Load Data  
+
+  이 섹션에서는 scrums.data 파일의 데이터 정보로 scrums 배열을 채우는 메서드를 추가합니다.  
+
+  색 theme enum인 Theme,
 
   ```swift
   import Foundation
