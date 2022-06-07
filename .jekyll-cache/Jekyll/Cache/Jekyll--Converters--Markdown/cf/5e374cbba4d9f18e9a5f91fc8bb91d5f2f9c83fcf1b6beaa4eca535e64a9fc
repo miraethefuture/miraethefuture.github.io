@@ -1,0 +1,87 @@
+I":<p><br /><sub>아래 모든 정보의 출처는 Apple Playgrounds이며 개인의 학습 용도로만 사용되었음을 밝힙니다.</sub></p>
+
+<h1 id="들어가며">들어가며…</h1>
+
+<h2 id="state">state</h2>
+
+<p>특정 주어진 시간에 변수, 애플리케이션, 또는 시스템에 담긴 정보를 <strong>state</strong>라고 합니다. 예를 들어, level이라는 이름의 변수가 4라는 값을 가지고 있다면 현재 level 변수의 state는 4가 됩니다.</p>
+
+<h2 id="data-flow">data flow</h2>
+
+<p>SwiftUI에서, 앱 전체에서 움직이는 데이터의 흐름과 그 데이터의 변화가 state 또는 앱의 UI에 변화가 일어나도록 하는 방식을 <strong>data flow</strong>라고 합니다.</p>
+
+<h2 id="data-separation">data separation</h2>
+
+<p>앱의 데이터 모델은 해당 데이터와 상호작용하고 그것을 화면에 보여주는 UI와 분리하여 정의해야한다는 컨셉입니다. Data separation은 데이터 모델과 UI를 서로로부터 독립시켜 따로 수정할 수 있도록 하고, 앱이 작동하는 방식을 더 쉽게 이해할 수 있도록 합니다. 그리고 앱을 테스트할 수 있는 가능성을 증진시켜줍니다.</p>
+
+<h1 id="modifying-state">Modifying State</h1>
+
+<p>코딩에서 state는 어떤 변수의 현재 값을 나타냅니다. 변수의 값이 바뀌었을 때 state가 변경되었다고 합니다. SwiftUI의 편리한 점 중 하나는 state가 변경되면 뷰의 모습(appearance)을 자동으로 업데이트 해준다는 것입니다. 앱의 데이터와 UI를 연결하면 SwiftUI는 해당 데이터를 감시할 수 있습니다. 데이터가 변경될 때마다 해당 데이터를 이용하고 있는 view를 업데이트 합니다. 이것은 당신의 UI에게 언제 어떻게 뷰를 업데이트해야 한다고 말해주는 코드를 작성하지 않아도 된다는 의미입니다.</p>
+
+<h2 id="use-a-state-property-to-update-a-view">Use a state property to update a view</h2>
+
+<p>state property를 사용하여 뷰를 업데이트 합니다.</p>
+
+<h3 id="property">property</h3>
+
+<p><strong>type</strong>안에 정의된 변수(값을 담는 이름 지어진 컨테이너)</p>
+
+<h3 id="코드">코드</h3>
+
+<div class="language-swift highlighter-rouge"><div class="highlight"><pre class="highlight"><code>  <span class="kd">import</span> <span class="kt">SwiftUI</span>  
+
+  <span class="kd">struct</span> <span class="kt">ConditionalView</span><span class="p">:</span> <span class="kt">View</span> <span class="p">{</span>
+      <span class="kd">@State</span> <span class="k">var</span> <span class="nv">isOn</span> <span class="o">=</span> <span class="kc">false</span>
+
+      <span class="k">var</span> <span class="nv">body</span><span class="p">:</span> <span class="kd">some</span> <span class="kt">View</span> <span class="p">{</span>
+          <span class="kt">VStack</span> <span class="p">{</span>
+              <span class="c1">// 만약 isOn이 true라면 Circle을 그림</span>
+              <span class="k">if</span> <span class="n">isOn</span> <span class="p">{</span>
+                <span class="kt">Circle</span><span class="p">()</span>
+                    <span class="o">.</span><span class="nf">frame</span><span class="p">(</span><span class="nv">maxHeight</span><span class="p">:</span> <span class="mi">200</span><span class="p">)</span>
+                    <span class="o">.</span><span class="nf">foregroundColor</span><span class="p">(</span><span class="o">.</span><span class="n">yellow</span><span class="p">)</span>
+              <span class="p">}</span>
+              <span class="c1">// Button을 누를 때마다 true / false 값 바뀜.</span>
+              <span class="kt">Button</span><span class="p">(</span><span class="s">"Press Me"</span><span class="p">)</span> <span class="p">{</span>
+                  <span class="n">isOn</span><span class="o">.</span><span class="nf">toggle</span><span class="p">()</span>
+              <span class="p">}</span>
+          <span class="p">}</span>
+      <span class="p">}</span>
+  <span class="p">}</span>
+  <span class="kd">struct</span> <span class="kt">ConditionalViews_Previews</span><span class="p">:</span> <span class="kt">PreviewProvider</span> <span class="p">{</span>
+      <span class="kd">static</span> <span class="k">var</span> <span class="nv">previews</span><span class="p">:</span> <span class="kd">some</span> <span class="kt">View</span> <span class="p">{</span>
+          <span class="kt">VStack</span> <span class="p">{</span>
+              <span class="kt">ConditionalViews</span><span class="p">()</span><span class="o">.</span><span class="nf">assess</span><span class="p">()</span>
+          <span class="p">}</span>
+      <span class="p">}</span>
+  <span class="p">}</span>
+</code></pre></div></div>
+
+<p>위의 코드에서, SwiftUI는 state의 변경이 일어날 때 뷰의 모습을 업데이트 합니다. “Press Me”라는 버튼을 누르면 isOn 속성의 값이 변경됩니다. 누를 때마다 true / false states 사이에서 변경됩니다. VStack 안의 if 문에서 isOn 속성이 true일 때 노란색 원이 나타나도록 작성되었기 때문에 버튼을 누를 때마다 원이 생겼다가 사라졌다가하게 됩니다.</p>
+
+<p>뷰의 모습을 바꾸고 싶을 때, 먼저 state를 추적하기위해 데이터가 필요하다. (위에서는 true / false boolean 데이터를 추적하여 뷰의 모습을 변경.) 이 데이터를 뷰의 property로 담습니다.</p>
+
+<p>뷰의 데이터를 UI의 모습을 결정하는 source of truth라고 생각해 봅시다. 뷰를 직접적으로 수정하는 대신, 데이터를 수정하면 SwiftUI가 뷰를 업데이트 합니다. 여기서는 Boolean 값이 뷰를 보이게 할지(true) 사라지게 할지(false)를 결정합니다.</p>
+
+<h3 id="source-of-truth">source of truth</h3>
+
+<p>앱 빌딩에서, 모든 데이터가 수정되는 하나의 위치를 말합니다. 이 데이터를 향한 모든 다른 연결들은 참조로써만 이루어집니다. 다른 위치에서는 정보의 복사가 되지 않습니다.</p>
+
+<h3 id="important️">Important‼️</h3>
+
+<p>데이터는 항상 body 뷰 바깥쪽에 생성합니다. body를 no-data-creation zone이라고 생각합시다. body는 뷰의 겉모습을 선언할때만 사용됩니다. 이것은 앱을 만드는 것의 가장 핵심이 되는 원칙입니다. 이것을 data separation이라고 합니다.</p>
+
+<h3 id="property-wrapper">property wrapper</h3>
+
+<div class="language-swift highlighter-rouge"><div class="highlight"><pre class="highlight"><code>  <span class="kd">import</span> <span class="kt">SwiftUI</span>  
+
+  <span class="kd">struct</span> <span class="kt">ConditionalView</span><span class="p">:</span> <span class="kt">View</span> <span class="p">{</span>
+      <span class="kd">@State</span> <span class="k">var</span> <span class="nv">isOn</span> <span class="o">=</span> <span class="kc">false</span>
+
+      <span class="k">var</span> <span class="nv">body</span><span class="p">:</span> <span class="kd">some</span> <span class="kt">View</span> <span class="p">{</span>
+        <span class="o">...</span>
+      <span class="p">}</span>
+</code></pre></div></div>
+
+<p>SwiftUI가 자동으로 뷰를 업데이트할 수 있도록 어떤 뷰 속성을 관리하고 추적해야하는지 알려주어야 합니다. 이때 사용되는 것이 property wrapper입니다. 속성을 정의할 때 앞에 @State라는 property wrapper를 추가해주면 해당 속성은 state 속성이 됩니다. SwiftUI는 state 속성의 값을 관리하고 영향을 받는 뷰의 부분을 state가 변경될 때마다 업데이트합니다.</p>
+:ET

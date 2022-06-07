@@ -1,4 +1,6 @@
-I"<h1 id="들어가며">들어가며…</h1>
+I"b<p><br /><sub>아래 모든 정보의 출처는 Apple Playgrounds이며 개인의 학습 용도로만 사용되었음을 밝힙니다.</sub></p>
+
+<h1 id="들어가며">들어가며…</h1>
 
 <h2 id="state">state</h2>
 
@@ -24,7 +26,7 @@
 
 <p><strong>type</strong>안에 정의된 변수(값을 담는 이름 지어진 컨테이너)</p>
 
-<h2 id="코드">코드</h2>
+<h3 id="코드">코드</h3>
 
 <div class="language-swift highlighter-rouge"><div class="highlight"><pre class="highlight"><code>  <span class="kd">import</span> <span class="kt">SwiftUI</span>  
 
@@ -56,4 +58,16 @@
 </code></pre></div></div>
 
 <p>위의 코드에서, SwiftUI는 state의 변경이 일어날 때 뷰의 모습을 업데이트 합니다. “Press Me”라는 버튼을 누르면 isOn 속성의 값이 변경됩니다. 누를 때마다 true / false states 사이에서 변경됩니다. VStack 안의 if 문에서 isOn 속성이 true일 때 노란색 원이 나타나도록 작성되었기 때문에 버튼을 누를 때마다 원이 생겼다가 사라졌다가하게 됩니다.</p>
+
+<p>뷰의 모습을 바꾸고 싶을 때, 먼저 state를 추적하기위해 데이터가 필요하다. (위에서는 true / false boolean 데이터를 추적하여 뷰의 모습을 변경.) 이 데이터를 뷰의 property로 담습니다.</p>
+
+<p>뷰의 데이터를 UI의 모습을 결정하는 source of truth라고 생각해 봅시다. 뷰를 직접적으로 수정하는 대신, 데이터를 수정하면 SwiftUI가 뷰를 업데이트 합니다. 여기서는 Boolean 값이 뷰를 보이게 할지(true) 사라지게 할지(false)를 결정합니다.</p>
+
+<h3 id="source-of-truth">source of truth</h3>
+
+<p>앱 빌딩에서, 모든 데이터가 수정되는 하나의 위치를 말합니다. 이 데이터를 향한 모든 다른 연결들은 참조로써만 이루어집니다. 다른 위치에서는 정보의 복사가 되지 않습니다.</p>
+
+<h3 id="important️">Important‼️</h3>
+
+<p>데이터는 항상 body 뷰 바깥쪽에 생성합니다. body를 no-data-creation zone이라고 생각합시다. body는 뷰의 겉모습을 선언할때만 사용됩니다. 이것은 앱을 만드는 것의 가장 핵심이 되는 원칙입니다. 이것을 data separation이라고 합니다.</p>
 :ET
