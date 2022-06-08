@@ -144,3 +144,78 @@ toc_icon: "kiwi-bird"
   위의 if문은 isOn을 조건으로 사용합니다. true일 때 뷰를 보여주고 false일 때는 뷰를 숨깁니다.
 
   이런 방식으로 isOn 데이터는 뷰에 연결됩니다. isOn의 현재 state가 UI가 나타나는 방식을 결정합니다.
+
+
+## Add an else statement that shows a different color circle  
+
+  버튼을 탭하는 것이 뷰를 업데이트했던 방법에 대해 떠올려 봅시다.  
+  버튼을 탭하면 isOn의 state가 변경됩니다. SwiftUI는 이 변경사항을 감지하고 새로운 값을 이용해서 뷰를 업데이트합니다.  
+  위에서는 view body에서 if문을 사용하여 true일때는 뷰를 보여주고 false일때는 뷰를 숨겨주었습니다.
+
+### else  
+
+  ```swift
+  if isOn {
+    Circle()
+        .frame(maxHeight: 200)
+        .foregroundColor(.yellow)
+
+    Text("On")
+
+  } else {
+      Capsule() // 캡슐 모양
+        .frame(maxHeight: 200)
+        .foregroundColor(.green)   
+
+    Text("Off")
+
+  }
+  ```
+
+  else 문을 사용하면 false state에서 다른 뷰를 보여줄 수 있습니다.  
+  이제 두개의 뷰가 있으므로 Text()뷰를 사용하여 구별해 줍니다.
+
+### rubber ducky method
+
+  공부하는 방식(learning method)중 하나로 고무 오리 인형같은 무생물에게 컨셉에 대해 디테일하게 설명하는 것입니다. 먼저 설명을 들을 물체를 구합니다. 그리고 공부했던 개념을 소리내어 설명합니다. 설명을 듣고 있는 대상이 이해하는데 필요한 모든 정보를 전달할 수 있도록 합니다. 설명 중 만약 기억하지 못하는 부분이 있다면 메모해둡니다. 새롭게 발견한 것들을 추가하며 설명해 보기도 합니다.
+
+  <center><img src="/assets/images/myRubberDucky.png" alt="myRubberDucky" width="400"></center>
+  <sub>[오리 인형 사진 출처](https://www.redbubble.com/i/tote-bag/Rubber-Duckie-Rubber-Ducky-by-tziggles/39757353.A9G4R)</sub>
+
+### 생각해 볼 것  
+
+  UI와 UI가 보여줄 앱 데이터를 분리함으로써 single source of truth를 보존(preserve)할 수 있다고 하는데 이 의미에 대해 좀 더 생각해보기.
+
+
+# Using a Conditinal Modifier  
+
+  이전의 예시에서 state property인 isOn을 생성해 보았습니다.   SwiftUI는 state property의 storage를 관리합니다. isOn의 state를 변경하여 조건에 따라 두개의 다른 뷰 중 하나를 보여주었습니다.  
+
+  하지만 만약 존재하는 뷰의 색과 사이즈 같은 겉모습만을 변경하고 싶다면 어떨까요? 그것을 위해서 어떤 조건적인 코드를 작성해야 합니다. 그 코드는 state의 변화가 일어날 때 뷰가 나타날 방식을 알려줄 것입니다.  
+
+## Change view modifier conditionally  
+
+  if문을 사용하는 대신 조건을 나타내는 코드를 포함하고 있는 view modifier를 사용하여 뷰의 모습을 수정할 수 있습니다.
+
+  ```swift
+  @State var isOn = false
+
+  var body: some View {
+    VStack {
+        Circle()
+            .frame(maxHeight: 200)
+            .foregroundColor( isOn ? .yellow : .black)
+    }
+  }
+  ```
+
+  위의 예시 코드의 Circle()은 .foregroundColor(_:)라는 view modifier를 가지고 있습니다. 이 modifier는 ternary conditional operator라는 특별한 syntax를 가지고 있습니다.  
+  if-else문을 더 짧게, 한 줄에 작성할 수 있는 방식입니다.
+
+  ```swift
+  condition ? trueValue: falseValue
+  ```
+
+  위와 같은 구조를 가지고 있습니다. condition(조건)이 true일 때는 trueValue를 false일 때는 falseValue를 리턴합니다.
+
+<!-- ## Add a shadow(color:radius:) modifier that shows a different color shadow in each state   -->
