@@ -1,4 +1,4 @@
-I"=!<p><br /><sub>아래 모든 정보의 출처는 Apple Playgrounds이며 개인의 학습 용도로만 사용되었음을 밝힙니다.</sub></p>
+I"�5<p><br /><sub>아래 모든 정보의 출처는 Apple Playgrounds이며 개인의 학습 용도로만 사용되었음을 밝힙니다.</sub></p>
 
 <h1 id="들어가며">들어가며…</h1>
 
@@ -92,7 +92,69 @@
 <p>UI element의 시각적으로 보여지는 부분으로 view로 생성됩니다.<br />
   많은 SwiftUI의 빌트인 뷰들은 label(visual representation)과 또 다른 사용자 정의의 부분을 가지고 있습니다. NavigationLink의 destination view 또는 버튼의 action callback이 사용자 정의를 위한 부분의 예시입니다.</p>
 
-<p>```</p>
+<div class="language-swift highlighter-rouge"><div class="highlight"><pre class="highlight"><code>  <span class="c1">// label 부분</span>
+  <span class="kt">Button</span><span class="p">(</span><span class="s">"Press Me"</span><span class="p">)</span> <span class="p">{</span>
+      <span class="c1">// action callback 부분</span>
+      <span class="n">isOn</span><span class="o">.</span><span class="nf">toggle</span><span class="p">()</span>
+  <span class="p">}</span>
+</code></pre></div></div>
 
-<p>Button을 생성하기 위해,</p>
+<p>Button을 생성하기 위해, “Press Me”라는 텍스트 라벨을 통과시키고 action callback을 붙여줍니다.</p>
+
+<h3 id="callback">callback</h3>
+
+<p>데이터를 원래의 호출자에게 다시 전달하거나 중요한 이벤트를 알리기 위해 호출되도록 다른 함수에 대한 argument로 주어지는 코드입니다. 위의 Button에 추가된 action callback은 버튼이 탭 될 때마다 실행됩니다.</p>
+
+<p>사용자가 버튼을 탭하면 action callback은 toggle() 메서드를 사용하여 isOn의 값을 바꿉니다.</p>
+
+<h4 id="toggle">toggle()</h4>
+
+<p>toggle() 메서드는 값이 true일 때는 false로 false일 때는 true로 변경시킵니다. 전등의 스위치를 켜고 끄는 것과 비슷합니다.</p>
+
+<h3 id="if-statement">if statement</h3>
+
+<div class="language-swift highlighter-rouge"><div class="highlight"><pre class="highlight"><code>  <span class="k">if</span> <span class="n">isOn</span> <span class="p">{</span>
+    <span class="kt">Circle</span><span class="p">()</span>
+        <span class="o">.</span><span class="nf">frame</span><span class="p">(</span><span class="nv">maxHeight</span><span class="p">:</span> <span class="mi">200</span><span class="p">)</span>
+        <span class="o">.</span><span class="nf">foregroundColor</span><span class="p">(</span><span class="o">.</span><span class="n">yellow</span><span class="p">)</span>
+  <span class="p">}</span>
+</code></pre></div></div>
+<p>위의 if문은 isOn을 조건으로 사용합니다. true일 때 뷰를 보여주고 false일 때는 뷰를 숨깁니다.</p>
+
+<p>이런 방식으로 isOn 데이터는 뷰에 연결됩니다. isOn의 현재 state가 UI가 나타나는 방식을 결정합니다.</p>
+
+<h2 id="add-an-else-statement-that-shows-a-different-color-circle">Add an else statement that shows a different color circle</h2>
+
+<p>버튼을 탭하는 것이 뷰를 업데이트했던 방법에 대해 떠올려 봅시다.<br />
+  버튼을 탭하면 isOn의 state가 변경됩니다. SwiftUI는 이 변경사항을 감지하고 새로운 값을 이용해서 뷰를 업데이트합니다.<br />
+  위에서는 view body에서 if문을 사용하여 true일때는 뷰를 보여주고 false일때는 뷰를 숨겨주었습니다.</p>
+
+<h3 id="else">else</h3>
+
+<div class="language-swift highlighter-rouge"><div class="highlight"><pre class="highlight"><code>  <span class="k">if</span> <span class="n">isOn</span> <span class="p">{</span>
+    <span class="kt">Circle</span><span class="p">()</span>
+        <span class="o">.</span><span class="nf">frame</span><span class="p">(</span><span class="nv">maxHeight</span><span class="p">:</span> <span class="mi">200</span><span class="p">)</span>
+        <span class="o">.</span><span class="nf">foregroundColor</span><span class="p">(</span><span class="o">.</span><span class="n">yellow</span><span class="p">)</span>
+
+    <span class="kt">Text</span><span class="p">(</span><span class="s">"On"</span><span class="p">)</span>
+
+  <span class="p">}</span> <span class="k">else</span> <span class="p">{</span>
+      <span class="kt">Capsule</span><span class="p">()</span> <span class="c1">// 캡슐 모양</span>
+        <span class="o">.</span><span class="nf">frame</span><span class="p">(</span><span class="nv">maxHeight</span><span class="p">:</span> <span class="mi">200</span><span class="p">)</span>
+        <span class="o">.</span><span class="nf">foregroundColor</span><span class="p">(</span><span class="o">.</span><span class="n">green</span><span class="p">)</span>   
+
+    <span class="kt">Text</span><span class="p">(</span><span class="s">"Off"</span><span class="p">)</span>
+
+  <span class="p">}</span>
+</code></pre></div></div>
+
+<p>else 문을 사용하면 false state에서 다른 뷰를 보여줄 수 있습니다.<br />
+  이제 두개의 뷰가 있으므로 Text()뷰를 사용하여 구별해 줍니다.</p>
+
+<h3 id="rubber-ducky-method">rubber ducky method</h3>
+
+<p>공부하는 방식(learning method)중 하나로 고무 오리 인형같은 무생물에게 컨셉에 대해 디테일하게 설명하는 것입니다. 먼저 설명을 들을 물체를 구합니다. 그리고 공부했던 개념을 소리내어 설명합니다. 설명을 듣고 있는 대상이 이해하는데 필요한 모든 정보를 전달할 수 있도록 합니다. 설명 중 만약 기억하지 못하는 부분이 있다면 메모해둡니다. 새롭게 발견한 것들을 추가하며 설명해 보기도 합니다.</p>
+
+<center><img src="/assets/images/myRubberDucky.png" alt="myRubberDucky" width="400" /></center>
+<p><sub><a href="https://www.redbubble.com/i/tote-bag/Rubber-Duckie-Rubber-Ducky-by-tziggles/39757353.A9G4R">오리 인형 사진 출처</a></sub></p>
 :ET
