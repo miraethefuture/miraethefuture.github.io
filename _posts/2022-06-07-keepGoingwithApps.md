@@ -218,4 +218,30 @@ toc_icon: "kiwi-bird"
 
   위와 같은 구조를 가지고 있습니다. condition(조건)이 true일 때는 trueValue를 false일 때는 falseValue를 리턴합니다.
 
-<!-- ## Add a shadow(color:radius:) modifier that shows a different color shadow in each state   -->
+## Add a shadow(color:radius:) modifier that shows a different color shadow in each state  
+
+  또 다른 modifier인 **.shadow(color:radius:)**를 추가해봅니다.
+  역시 isOn의 값을 이용하여 뷰에 그림자를 추가합니다.
+
+  ```swift
+  Circle()
+      .frame(maxHeight: 200)
+      .foregroundColor( isOn ? .purple : .mint)
+      .shadow(color: isOn ? .indigo : .orange, radius: 20)
+      .scaleEffect( isOn ? 1 : 0.75 )
+  ```
+
+  .shadow(color:radius) / .scaleEffect(_:) 두개의 modifiers의 패러미터에 ternary conditional operator를 사용하여 state property의 값이 변경될 때마다 다른 값을 가져올 수 있도록 하였습니다.
+
+## Animate your state changes  
+
+  SwiftUI는 자동으로 뷰를 업데이트 할 수 있는 것처럼, 변화에 애니메이션을 추가할 수도 있습니다. 이것을 하기 위해서 .animation(_:value:) modifier를 사용합니다.
+
+  ```swift
+  Circle()
+      .frame(maxHeight: 200)
+      .foregroundColor( isOn ? .purple : .mint)
+      .shadow(color: isOn ? .indigo : .orange, radius: 20)
+      .scaleEffect( isOn ? 1 : 0.75 )
+      .animation(.default, value: inOn)
+  ```
