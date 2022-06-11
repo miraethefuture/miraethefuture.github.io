@@ -245,3 +245,23 @@ toc_icon: "kiwi-bird"
       .scaleEffect( isOn ? 1 : 0.75 )
       .animation(.default, value: inOn)
   ```
+
+  패러미터로는 애니메이션 중 하나를 선택하고, 변화를 감지할 값(여기서는 isOn)을 통과시켜 줍니다.  
+
+<!-- # SwiftUI Built-in Views
+
+## Use a binding  
+
+  지금까지는 UI를 지역적으로(locally), 또는 같은 뷰 안에서 변경시키기 위해 state property를 사용했습니다.  -->
+
+<!-- ### scope  
+
+  값이나 타입에 접근할 수 있는 프로젝트의 영역.
+
+### local scope
+
+
+
+  지역 범위(local scope)는 전역 범위(global scope) 아래에서 새로운 레벨의 코드 구성이 형성하는 범  예를 들면, 하나의 type은 새 지역 범위를 형성하고 그 type안에 functions와 코드 블락은 그들의 레벨의 범위(scope)을 형성합니다.  
+
+  예를 들어 A라는 타입안에 선언된 변수 B는 A타입 안에 있는 모든 functions와 코드 블락안에서 접근 가능합니다. 하지만 메서드 C안에서 선언된 상수 D는 오로지 해당 메서드 안에서만 접근할 수 있습니다.. -->
