@@ -248,20 +248,79 @@ toc_icon: "kiwi-bird"
 
   패러미터로는 애니메이션 중 하나를 선택하고, 변화를 감지할 값(여기서는 isOn)을 통과시켜 줍니다.  
 
-<!-- # SwiftUI Built-in Views
+# SwiftUI Built-in Views
 
 ## Use a binding  
 
-  지금까지는 UI를 지역적으로(locally), 또는 같은 뷰 안에서 변경시키기 위해 state property를 사용했습니다.  -->
+  지금까지는 UI를 지역적으로(local scope안에서), 또는 같은 뷰 안에서 변경시키기 위해 state property를 사용했습니다. 그런데 만약 subview가 그 데이터를 변경시키길 바란다면 어떨까요? 예를 들어, local view가 연락처 정보를 담고 있고, subview가 그 연락처의 번호를 변경할 custom interaction을 제공할 수 있습니다. 하지만 어떤 방식으로 subview가 data를 변경하도록 할 수 있을까요? 하나 이상의 source of truth를 생성하지 않고 말이죠.
 
-<!-- ### scope  
+  <div class="success">
+  <p>하나의 source of truth를 여러개의 소스 파일에서 공유하는 방식이 binding 같음.</p>
+  </div>  
+
+  두 뷰 사이에서 데이터의 변경사항을 전달하는 방식의 핵심을 binding이라고 합니다. binding은 source of truth를 하나로 유지할 수 있도록 하고, subview가 그 source of truth의 값을 멀리서(다른 local scope으로부터 떨어진 곳에서) 수정할 수 있도록 합니다.  
+
+  State property와 같은 source of truth를 세컨 뷰에 bind(묶음, 연결함)하기 때문에 binding이라고 합니다. 세컨 뷰에서 데이터를 변경할 때마다 source of truth는 업데이트 됩니다.
+
+### scope  
 
   값이나 타입에 접근할 수 있는 프로젝트의 영역.
 
 ### local scope
 
+  Global scope(전역 범위) 아래에 local scope(지역 범위)가 속해 있음. 지역 범위는 새로운 레벨의 코드 구성들마다 형성됨. 예를 들면, 새 type이 새로운 local scope(지역 범위)를 형성함. 그리고 그 타입 안에 생성된 코드 블락은 각자의 레벨의 scope을 형성함. 하나의 symbol이 어디에 선언되었냐에 따라 같은 레벨 또는 더 낮은 레벨 범위에 있는 코드로부터만 접근 가능하게 됨.
+
+  예를 들어 T라는 타입안에 선언된 변수 v는 T타입 안에 있는 모든 functions와 코드 블락안에서 접근 가능합니다. 하지만 메서드 M안에서 선언된 상수 c는 오로지 메서드 M안에서만 접근 할 수 있습니다.
+
+### global scope
+
+  같은 module안에 있는 모든 소스 파일에 있는 코드로부터 접근 가능한 symbols. 소스 파일의 top-level에서 선언된 인스턴스, 타입, 함수는 global scope을 갖습니다.
+
+  ```swift
+  import SwiftUI
+
+  struct Bindings: View {
+      // source of truth - stored locally in the Binding view
+      @State var isOn = false
+
+      // var body는 computed property?
+      var body: some View {
+          VStack {
+              Toggle("Press Me", isOn: $isOn)
 
 
-  지역 범위(local scope)는 전역 범위(global scope) 아래에서 새로운 레벨의 코드 구성이 형성하는 범  예를 들면, 하나의 type은 새 지역 범위를 형성하고 그 type안에 functions와 코드 블락은 그들의 레벨의 범위(scope)을 형성합니다.  
 
-  예를 들어 A라는 타입안에 선언된 변수 B는 A타입 안에 있는 모든 functions와 코드 블락안에서 접근 가능합니다. 하지만 메서드 C안에서 선언된 상수 D는 오로지 해당 메서드 안에서만 접근할 수 있습니다.. -->
+              Image(systemName: isOn ? "battery.100" :
+              "battery.25")
+                  .font(.system(size:150))
+          }
+          .padding()
+      }
+  }
+
+  struct Binding_Priview: PreviewProvider {
+      static var preview: some View {
+        Bindings().assess()
+      }
+  }
+  ```
+
+  <center><img src="/assets/images/keepGoingwithApps1.png" alt="keepGoingwithApps1.png" width="400"></center>
+
+  위의 코드는 토글뷰와 이미지 뷰로 이루어져 있습니다.
+
+  <center><img src="/assets/images/keepGoingwithApps2.png" alt="keepGoingwithApps2.png" width="400"></center>  
+
+  토글을 탭하면 이미지와 토글의 모습이 둘 다 변경됩니다. 토글은 간접적으로 source of truth를 변경할 수 있습니다. 토글 자신과 이미지 뷰가 분리된 두개의 뷰지만 같은 값을 공유할 수 있도록 합니다.  
+
+  Binding의 source of truth의 값은 SwiftUI로부터 관리되어야 합니다. @State property wrapper를 가진 state property처럼 말이죠.
+
+  ```swift
+  Toggle("Press Me", isOn: $isOn)
+  ```
+
+  이것은 빌트인 토글뷰입니다. Toogle은 binding boolean 값을 isOn 패러미터의 값으로 받습니다. 이것은 토글이 사용자가 토글을 탭하여 끄고 켜는 것과 같은 user interaction을 이용하여 불리언 값을 변경하는 방법을 안다는 의미가 됩니다.  
+
+  binding을 통과시키기 위해서 SwiftUI가 관리하는 state property를 $ 와 함께 사용합니다. $isOn을 통과시켜 토글의 값을 간접적으로 변경시킨 다는 것을 나타냅니다. 이 binding은 source of truth인 isOn의 값을 변경시킵니다.
+
+## 
