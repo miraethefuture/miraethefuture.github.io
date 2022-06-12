@@ -1,4 +1,4 @@
-I"d<p><br /><sub>아래 모든 정보의 출처는 Apple Playgrounds이며 개인의 학습 용도로만 사용되었음을 밝힙니다.</sub></p>
+I";z<p><br /><sub>아래 모든 정보의 출처는 Apple Playgrounds이며 개인의 학습 용도로만 사용되었음을 밝힙니다.</sub></p>
 
 <h1 id="들어가며">들어가며…</h1>
 
@@ -250,6 +250,7 @@
 <div class="language-swift highlighter-rouge"><div class="highlight"><pre class="highlight"><code>  <span class="kd">import</span> <span class="kt">SwiftUI</span>
 
   <span class="kd">struct</span> <span class="kt">Bindings</span><span class="p">:</span> <span class="kt">View</span> <span class="p">{</span>
+      <span class="c1">// source of truth - stored locally in the Binding view</span>
       <span class="kd">@State</span> <span class="k">var</span> <span class="nv">isOn</span> <span class="o">=</span> <span class="kc">false</span>
 
       <span class="c1">// var body는 computed property?</span>
@@ -274,4 +275,77 @@
   <span class="p">}</span>
 </code></pre></div></div>
 
+<center><img src="/assets/images/keepGoingwithApps1.png" alt="keepGoingwithApps1.png" width="400" /></center>
+
+<p>위의 코드는 토글뷰와 이미지 뷰로 이루어져 있습니다.</p>
+
+<center><img src="/assets/images/keepGoingwithApps2.png" alt="keepGoingwithApps2.png" width="400" /></center>
+
+<p>토글을 탭하면 이미지와 토글의 모습이 둘 다 변경됩니다. 토글은 간접적으로 source of truth를 변경할 수 있습니다. 토글 자신과 이미지 뷰가 분리된 두개의 뷰지만 같은 값을 공유할 수 있도록 합니다.</p>
+
+<p>Binding의 source of truth의 값은 SwiftUI로부터 관리되어야 합니다. @State property wrapper를 가진 state property처럼 말이죠.</p>
+
+<div class="language-swift highlighter-rouge"><div class="highlight"><pre class="highlight"><code>  <span class="kt">Toggle</span><span class="p">(</span><span class="s">"Press Me"</span><span class="p">,</span> <span class="nv">isOn</span><span class="p">:</span> <span class="err">$</span><span class="n">isOn</span><span class="p">)</span>
+</code></pre></div></div>
+
+<p>이것은 빌트인 토글뷰입니다. Toogle은 binding boolean 값을 isOn 패러미터의 값으로 받습니다. 이것은 토글이 사용자가 토글을 탭하여 끄고 켜는 것과 같은 user interaction을 이용하여 불리언 값을 변경하는 방법을 안다는 의미가 됩니다.</p>
+
+<p>binding을 통과시키기 위해서 SwiftUI가 관리하는 state property를 $ 와 함께 사용합니다. $isOn을 통과시켜 토글의 값을 간접적으로 변경시킨 다는 것을 나타냅니다. 이 binding은 source of truth인 isOn의 값을 변경시킵니다.</p>
+
+<h2 id="add-a-new-state-property-of-type-color">Add a new state property, of type Color</h2>
+
+<p>이번에는 위의 배터리 이미지의 색을 변경하기 위해 빌트인 ColorPicker 뷰와 binding을 사용해 볼 것입니다.</p>
+
+<p>이것을 하기 위해서, 먼저 state property를 생성합니다. 색 값을 위한 source of truth로 이용할 것입니다. 기본값으로 Color.primary를 설정해 줍니다.</p>
+
+<h2 id="create-a-colorpicker-and-pass-in-your-binding-value">Create a ColorPicker and pass in your binding value</h2>
+
+<p>Toggle view 아래에, ColorPicker를 생성합니다.</p>
+
+<div class="language-swift highlighter-rouge"><div class="highlight"><pre class="highlight"><code>  <span class="kt">ColorPicker</span><span class="p">(</span><span class="s">"Select a Color"</span><span class="p">,</span> <span class="nv">selection</span><span class="p">:</span> <span class="err">$</span><span class="n">color</span><span class="p">)</span>
+      <span class="o">.</span><span class="nf">frame</span><span class="p">(</span><span class="nv">maxHeight</span><span class="p">:</span> <span class="mi">100</span><span class="p">)</span>
+</code></pre></div></div>
+
+<h2 id="set-the-color-of-the-image-to-your-color-state-property">Set the color of the Image to your color state property</h2>
+
+<ol>
+  <li>
+    <p>ColorPicker를 이용하여 색을 변경하면, ColorPicker의 색만 변경되고 다른 뷰는 변경되지 않습니다. state propety가 다른 로컬 뷰에 연결되어 있지 않기 때문입니다.</p>
+  </li>
+  <li>
+    <p>foregroundColor(color) modifier 를 이미지 뷰에 추가해주면 이미지 뷰의 색도 바뀌게 됩니다.</p>
+  </li>
+</ol>
+
+<div class="success">
+  <p>데이터를 변경하는 것은 $color, 변경된 데이터를 가져오기만 하는 것은 color</p>
+  </div>
+
+<h1 id="practice-with-swiftui-built-in-views">Practice with SwiftUI Built-in Views</h1>
+
+<h2 id="create-a-slider">Create a slider</h2>
+
+<p>빌트인 Slider를 이용하는 뷰를 생성하여 그 Slider를 이용해 직사각형 뷰의 가로 길이를 변경해 볼 것입니다. 이것을 하기 위해서, 새로운 state property를 정의해야 합니다. 그리고 Slider에 binding으로 통과시켜야 하죠.</p>
+
+<p>.frame(width:) modifier를 사용해서 직사각형의 가로길이를 변경할 수 있습니다. 이 modifier는 Double 값을 이용하기 때문에 state property 역시 Double로 정의합니다.</p>
+
+<div class="language-swift highlighter-rouge"><div class="highlight"><pre class="highlight"><code>  <span class="kd">@State</span> <span class="k">var</span> <span class="nv">width</span><span class="p">:</span> <span class="kt">Double</span> <span class="o">=</span> <span class="mi">0</span>
+
+  <span class="k">var</span> <span class="nv">body</span><span class="p">:</span> <span class="kd">some</span> <span class="kt">View</span> <span class="p">{</span>
+      <span class="kt">VStack</span> <span class="p">{</span>
+        <span class="kt">Slider</span><span class="p">(</span><span class="nv">value</span><span class="p">:</span> <span class="err">$</span><span class="n">width</span><span class="p">)</span>
+
+        <span class="kt">Rectangle</span><span class="p">()</span>
+            <span class="o">.</span><span class="nf">frame</span><span class="p">(</span><span class="nv">width</span><span class="p">:</span> <span class="n">width</span> <span class="o">*</span> <span class="mi">300</span><span class="p">)</span>
+      <span class="p">}</span>
+      <span class="o">.</span><span class="nf">padding</span><span class="p">()</span>
+  <span class="p">}</span>
+</code></pre></div></div>
+
+<p>Slider 기본값의 범위가 0부터 1이기 때문에 .frame(width:)를 통과하는 width에 큰 수를 곱해주어 변화를 잘 볼 수 있도록 합니다.</p>
+
+<!-- 
+# Create a story  
+
+   -->
 :ET
