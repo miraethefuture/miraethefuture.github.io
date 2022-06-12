@@ -1,4 +1,4 @@
-I"�b<p><a href="https://developer.apple.com/tutorials/app-dev-training/getting-started-with-scrumdinger">Getting Started with Scrumdinger</a><br />
+I"pd<p><a href="https://developer.apple.com/tutorials/app-dev-training/getting-started-with-scrumdinger">Getting Started with Scrumdinger</a><br />
 <sub>아래 모든 정보의 출처는 apple developer 공식 페이지이며 개인의 학습 용도로만 사용되었음을 밝힙니다.<br />
 All information below comes from the official apple developer page and is for personal learning purposes only.</sub></p>
 
@@ -935,6 +935,11 @@ All information below comes from the official apple developer page and is for pe
 <p>@StateObject로 속성을 wrapping 한다는 것은 속한 해당 view가 그 object의 source of truth를 소유한다는 것을 의미합니다. @StateObject는 ScrumTimer를 MeetingView life cycle에 속박시킵니다.</p>
 
 <h2 id="persisting-data">Persisting data</h2>
+
+<p>앱을 끄고 다시 시작하는 것을 모든 데이터를 처음의 상태로 다시 리셋합니다.<br />
+  이 튜토리얼에서는 대부분의 앱의 필수적인 기능인 지속성을 지원하기 위하여 Scrumdinger를 업데이트 할 것입니다. 앱의 구조체들에 Codable conformance를 추가하고 scrums를 불러오고 저장하기 위한 메서드를 작성할 것입니다.</p>
+
+<h3 id="add-codable-conformance">Add Codable Conformance</h3>
 
 <h3 id="add-a-method-to-load-data">Add a Method to Load Data</h3>
 

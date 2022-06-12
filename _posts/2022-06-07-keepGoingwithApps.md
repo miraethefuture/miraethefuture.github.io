@@ -323,4 +323,56 @@ toc_icon: "kiwi-bird"
 
   binding을 통과시키기 위해서 SwiftUI가 관리하는 state property를 $ 와 함께 사용합니다. $isOn을 통과시켜 토글의 값을 간접적으로 변경시킨 다는 것을 나타냅니다. 이 binding은 source of truth인 isOn의 값을 변경시킵니다.
 
-## 
+## Add a new state property, of type Color  
+
+  이번에는 위의 배터리 이미지의 색을 변경하기 위해 빌트인 ColorPicker 뷰와 binding을 사용해 볼 것입니다.  
+
+  이것을 하기 위해서, 먼저 state property를 생성합니다. 색 값을 위한 source of truth로 이용할 것입니다. 기본값으로 Color.primary를 설정해 줍니다.
+
+## Create a ColorPicker and pass in your binding value  
+
+  Toggle view 아래에, ColorPicker를 생성합니다.
+
+  ```swift
+  ColorPicker("Select a Color", selection: $color)
+      .frame(maxHeight: 100)
+  ```
+
+## Set the color of the Image to your color state property
+
+  1. ColorPicker를 이용하여 색을 변경하면, ColorPicker의 색만 변경되고 다른 뷰는 변경되지 않습니다. state propety가 다른 로컬 뷰에 연결되어 있지 않기 때문입니다.  
+
+  2. foregroundColor(color) modifier 를 이미지 뷰에 추가해주면 이미지 뷰의 색도 바뀌게 됩니다.
+
+  <div class="success">
+  <p>데이터를 변경하는 것은 $color, 변경된 데이터를 가져오기만 하는 것은 color</p>
+  </div>
+
+# Practice with SwiftUI Built-in Views  
+
+## Create a slider  
+
+  빌트인 Slider를 이용하는 뷰를 생성하여 그 Slider를 이용해 직사각형 뷰의 가로 길이를 변경해 볼 것입니다. 이것을 하기 위해서, 새로운 state property를 정의해야 합니다. 그리고 Slider에 binding으로 통과시켜야 하죠.  
+
+  .frame(width:) modifier를 사용해서 직사각형의 가로길이를 변경할 수 있습니다. 이 modifier는 Double 값을 이용하기 때문에 state property 역시 Double로 정의합니다.  
+
+  ```swift
+  @State var width: Double = 0
+
+  var body: some View {
+      VStack {
+        Slider(value: $width)
+
+        Rectangle()
+            .frame(width: width * 300)
+      }
+      .padding()
+  }
+  ```
+
+  Slider 기본값의 범위가 0부터 1이기 때문에 .frame(width:)를 통과하는 width에 큰 수를 곱해주어 변화를 잘 볼 수 있도록 합니다.
+
+<!-- 
+# Create a story  
+
+   -->

@@ -969,6 +969,29 @@ All information below comes from the official apple developer page and is for pe
 
 ## Persisting data  
 
+  앱을 끄고 다시 시작하는 것을 모든 데이터를 처음의 상태로 다시 리셋합니다.  
+  이 튜토리얼에서는 대부분의 앱의 필수적인 기능인 지속성을 지원하기 위하여 Scrumdinger를 업데이트 할 것입니다. 앱의 구조체들에 Codable conformance를 추가하고 scrums를 불러오고 저장하기 위한 메서드를 작성할 것입니다.
+
+### Add Codable Conformance  
+
+  이 섹션에서는 Scrumdinger 앱의 models에 Codable conformance를 추가합니다.  
+
+  Codable은 Encodable / Decodable을 결합한 type alias입니다. 이 프로토콜에 순응하는 type은 Codable API를 사용하여 JSON 파일로부터 쉽게 데이터를 가져올 수 있습니다.  
+
+  UUID, Date, Int와 같은 표준 라이브러리와 Foundation의 많은 types는 원래부터 Codable합니다.  
+
+  위와 같이 원래부터 Codable한 타입들을 이용하여 stored propery를 선언하 커스텀 타입도 Codable을 적용할 수 있습니다.
+
+### Create a Data Store  
+
+  앱에 데이터 모델을 제공하기 위하여 새로운 클래스를 만들 것입니다.
+
+  1. Model 그룹에 ScrumStore.swift 라는 새 파일을 생성하고 SwiftUI를 import 해줍니다.  
+  2. 새 클래스를 생성하고 ObservableObject conformance를 추가해줍니다. ObservableObject는 클래스에 사용하는 프로토콜로 외부 모델 데이터를 SwiftUi 뷰에 연결해줍니다.
+  3. ```@Published var scrums: [DailyScrum] = []```을 추가합니다. ObservableObject는 **objectWillChange** 퍼블리셔를 가지고 있습니다. 
+  <!-- objectWillChange 공부 필요 -->
+
+
 ### Add a Method to Load Data  
 
   이 섹션에서는 scrums.data 파일의 데이터 정보로 scrums 배열을 채우는 메서드를 추가합니다.  
