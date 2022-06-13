@@ -995,21 +995,6 @@ All information below comes from the official apple developer page and is for pe
 
   Scrumdinger는 사용자의 Documents 폴더에 scrums를 저장하고 불러올 것입니다. 더욱 편리하게 scrums 파일에 접근하기 위해서 function을 추가할 것입니다.
 
-  ```swfit
-  private static fileURL() throws -> URL {
-
-  }
-  ```  
-  default file manager의 
-
-  위와 같이 URL을 반환하는 fileURL이라는 이름의 private static throwing function을 추가합니다.
-
-### Add a Method to Load Data  
-
-  이 섹션에서는 scrums.data 파일의 데이터 정보로 scrums 배열을 채우는 메서드를 추가합니다.  
-
-  색 theme enum인 Theme,
-
   ```swift
   import Foundation
   import SwiftUI
@@ -1029,6 +1014,20 @@ All information below comes from the official apple developer page and is for pe
       }
   }
   ```
+
+  default file manager에 url(for:in:appropriateFor:create:) 메서드를 호출합니다. FileManager 클래스의 공유된 인스턴스를 사용하여 현 사용자의 Documents 디렉토리의 위치를 얻을 수 있습니다.
+
+  위와 같이 URL을 반환하는 fileURL이라는 이름의 private static throwing function을 추가합니다.
+
+### Add a Method to Load Data  
+
+  이 섹션에서는 "scrums.data" 파일의 scrums 배열을 채우는 메서드를 추가합니다.  
+
+  ```swift
+  static func load(completion: @escaping (Result<[DailyScrum], Error>)->Void) {
+  }
+  ```
+
 
 #### Dispatch queues  
 
