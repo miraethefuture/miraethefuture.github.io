@@ -1,4 +1,4 @@
-I"i<p><a href="https://developer.apple.com/tutorials/app-dev-training/getting-started-with-scrumdinger">Getting Started with Scrumdinger</a><br />
+I"p<p><a href="https://developer.apple.com/tutorials/app-dev-training/getting-started-with-scrumdinger">Getting Started with Scrumdinger</a><br />
 <sub>아래 모든 정보의 출처는 apple developer 공식 페이지이며 개인의 학습 용도로만 사용되었음을 밝힙니다.<br />
 All information below comes from the official apple developer page and is for personal learning purposes only.</sub></p>
 
@@ -956,8 +956,23 @@ All information below comes from the official apple developer page and is for pe
 <ol>
   <li>Model 그룹에 ScrumStore.swift 라는 새 파일을 생성하고 SwiftUI를 import 해줍니다.</li>
   <li>새 클래스를 생성하고 ObservableObject conformance를 추가해줍니다. ObservableObject는 클래스에 사용하는 프로토콜로 외부 모델 데이터를 SwiftUi 뷰에 연결해줍니다.</li>
-  <li><code class="language-plaintext highlighter-rouge">@Published var scrums: [DailyScrum] = []</code></li>
+  <li><code class="language-plaintext highlighter-rouge">@Published var scrums: [DailyScrum] = []</code>을 추가합니다. ObservableObject는 <strong>objectWillChange</strong> 퍼블리셔를 가지고 있습니다.
+  <!-- objectWillChange 공부 필요 : @Published 속성이 변경 될 때 그것이 포함된 타입을 관찰하고 있는 뷰가 렌더링 된다는 말인가? --></li>
 </ol>
+
+<h4 id="fileurl">fileURL</h4>
+
+<p>Scrumdinger는 사용자의 Documents 폴더에 scrums를 저장하고 불러올 것입니다. 더욱 편리하게 scrums 파일에 접근하기 위해서 function을 추가할 것입니다.</p>
+
+<div class="language-swift highlighter-rouge"><div class="highlight"><pre class="highlight"><code>  <span class="k">try</span> <span class="kt">FileManager</span><span class="o">.</span><span class="k">default</span><span class="o">.</span><span class="nf">url</span><span class="p">(</span><span class="nv">for</span><span class="p">:</span> <span class="o">.</span><span class="n">documentDirectory</span><span class="p">,</span>
+                               <span class="nv">in</span><span class="p">:</span> <span class="o">.</span><span class="n">userDomainMask</span><span class="p">,</span>
+                               <span class="nv">appropriateFor</span><span class="p">:</span> <span class="kc">nil</span><span class="p">,</span>
+                               <span class="nv">create</span><span class="p">:</span> <span class="kc">false</span><span class="p">)</span>
+</code></pre></div></div>
+
+<p>default file manager에 url(for:in:appropriateFor:create:) 메서드를 호출합니다. FileManager 클래스의 공유된 인스턴스를 사용하여 현 사용자의 Documents 디렉토리의 위치를 얻을 수 있습니다.</p>
+
+<p>위와 같이 URL을 반환하는 fileURL이라는 이름의 private static throwing function을 추가합니다.</p>
 
 <h3 id="add-a-method-to-load-data">Add a Method to Load Data</h3>
 
