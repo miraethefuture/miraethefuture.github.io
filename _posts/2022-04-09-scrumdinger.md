@@ -988,9 +988,21 @@ All information below comes from the official apple developer page and is for pe
 
   1. Model 그룹에 ScrumStore.swift 라는 새 파일을 생성하고 SwiftUI를 import 해줍니다.  
   2. 새 클래스를 생성하고 ObservableObject conformance를 추가해줍니다. ObservableObject는 클래스에 사용하는 프로토콜로 외부 모델 데이터를 SwiftUi 뷰에 연결해줍니다.
-  3. ```@Published var scrums: [DailyScrum] = []```을 추가합니다. ObservableObject는 **objectWillChange** 퍼블리셔를 가지고 있습니다. 
-  <!-- objectWillChange 공부 필요 -->
+  3. ```@Published var scrums: [DailyScrum] = []```을 추가합니다. ObservableObject는 **objectWillChange** 퍼블리셔를 가지고 있습니다.
+  <!-- objectWillChange 공부 필요 : @Published 속성이 변경 될 때 그것이 포함된 타입을 관찰하고 있는 뷰가 렌더링 된다는 말인가? -->
 
+#### fileURL  
+
+  Scrumdinger는 사용자의 Documents 폴더에 scrums를 저장하고 불러올 것입니다. 더욱 편리하게 scrums 파일에 접근하기 위해서 function을 추가할 것입니다.
+
+  ```swfit
+  private static fileURL() throws -> URL {
+
+  }
+  ```  
+  default file manager의 
+
+  위와 같이 URL을 반환하는 fileURL이라는 이름의 private static throwing function을 추가합니다.
 
 ### Add a Method to Load Data  
 
