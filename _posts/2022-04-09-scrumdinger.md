@@ -19,15 +19,15 @@ header:
 <sub>아래 모든 정보의 출처는 apple developer 공식 페이지이며 개인의 학습 용도로만 사용되었음을 밝힙니다.  
 All information below comes from the official apple developer page and is for personal learning purposes only.</sub>
 
-<sub>영어로 작성된 튜토리얼을 읽으며 정리하는 것이기 때문에 한국어로 읽었을 때 자연스럽게 읽히도록 관사 'a'가 생략된 단수형 단어들이 많이 등장합니다.<br><s>작성자가 너무 신경쓰이는 것ㅎㅎㅠ</s></sub>
+<sub>영어로 작성된 튜토리얼을 읽으며 정리하는 것이기 때문에 한국어로 읽었을 때 자연스럽게 읽히도록 관사 'a'가 생략된 단수형 단어들이 많이 등장합니다.<br><s>작성자가 너무 신경쓰이는 것</s></sub>
 
 # 🤘
 
-  SwiftUI 앱을 만들어보며 iOS 앱 개발의 가장 중요한 부분들에 대해 알아봅니다.  
+  이 튜토리얼에서는 Scrumdinger라는 SwiftUI 앱을 만들어보며 iOS 앱 개발의 가장 중요한 부분들에 대해 알아봅니다.  
 
 ## Tour of the App
 
-  많은 소프트웨어 엔지니어링 팀들이 그날의 업무에 대한 계획을 짜기 위해 **scrums**라고 알려진 daily meeting을 합니다. Scrums는 미팅에 참석한 사람들이 어제 이뤄낸 성과들과 오늘 작업할 일, 그리고 그들의 작업에 영향을 미칠지도 모르는 장애물에 대하여 대화를 나누는 짧은 미팅입니다.  
+  많은 소프트웨어 엔지니어링 팀들이 그날의 업무에 대한 계획을 짜기 위해 **scrums**라고 알려진 데일리 미팅을 합니다. Scrums는 미팅에 참석한 사람들이 어제 이뤄낸 성과들과 오늘 작업할 일, 그리고 그들의 작업에 영향을 미칠지도 모르는 장애물에 대하여 대화를 나누는 짧은 미팅입니다.  
 
   이 모듈은 사용자들의 데일리 scrums의 관리를 돕는 iOS앱인 Scrumdinger를 개발하는 과정을 안내합니다.  
 
@@ -35,7 +35,9 @@ All information below comes from the official apple developer page and is for pe
 
 ## Build Groups of Views
 
-  View는 UI의 한 부분을 정의합니다. 앱의 한 블락을 구성합니다. 간단하고 작은 view들을 조합하여 복잡한 view를 만듭니다.
+  - View는 UI의 한 부분을 정의합니다.
+  - 앱의 한 블락을 구성합니다.
+  - 간단하고 작은 view들을 조합하여 복잡한 view를 만듭니다.
 
 ### ContentView.swift  
 
@@ -1027,7 +1029,6 @@ All information below comes from the official apple developer page and is for pe
   static func load(completion: @escaping (Result<[DailyScrum], Error>)->Void) {
   }
   ```
-
 
 #### Dispatch queues  
 
