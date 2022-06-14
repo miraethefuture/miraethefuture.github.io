@@ -41,7 +41,7 @@ All information below comes from the official apple developer page and is for pe
 
 ### ContentView.swift  
 
-  기본 SwiftUI view file은 두개의 structures를 정의합니다. 첫번째 structure는 View 프로토콜을 따릅니다. View 프로토콜의 조건은 한가지로, 하나의 view를 리턴하는 body property를 가지는 것입니다. Body 속성 부분에는 view의 content, layout, behavior를 묘사합니다. 두번째 structure는 canvas에 프리뷰를 제공합니다.
+  기본 SwiftUI view file은 두개의 structures를 정의합니다. 첫번째 structure는 View 프로토콜을 따릅니다. View 프로토콜의 조건은 한가지로, 하나의 view를 리턴하는 body property를 가지는 것입니다. Body 속성 부분에는 view의 content, layout, behavior를 묘사합니다. 두번째 structure는 캔버스에 프리뷰를 제공합니다.
 
 #### Refactor ContentView.swift  
 
@@ -1030,9 +1030,9 @@ All information below comes from the official apple developer page and is for pe
   }
   ```
 
-#### Dispatch queues  
+<!-- #### Dispatch queues  
 
-  Dispatch queues는 first in, first out queue이다.
+  Dispatch queues는 first in, first out queue이다. -->
 
 <!-- ### Add Life Cycle Events  
 
