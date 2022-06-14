@@ -1,12 +1,12 @@
-I"Vl<p><a href="https://developer.apple.com/tutorials/app-dev-training/getting-started-with-scrumdinger">Getting Started with Scrumdinger</a><br />
+I"?o<p><a href="https://developer.apple.com/tutorials/app-dev-training/getting-started-with-scrumdinger">Getting Started with Scrumdinger</a><br />
 <sub>아래 모든 정보의 출처는 apple developer 공식 페이지이며 개인의 학습 용도로만 사용되었음을 밝힙니다.<br />
 All information below comes from the official apple developer page and is for personal learning purposes only.</sub></p>
 
-<p><sub>영어로 작성된 튜토리얼을 읽으며 정리하는 것이기 때문에 한국어로 읽었을 때 자연스럽게 읽히도록 관사 ‘a’가 생략된 단수형 단어들이 많이 등장합니다.<br /><s>작성자가 너무 신경쓰이는 것ㅎㅎㅠ</s></sub></p>
+<p><sub>영어로 작성된 튜토리얼을 읽으며 정리하는 것이기 때문에 한국어로 읽었을 때 자연스럽게 읽히도록 관사 ‘a’가 생략된 단수형 단어들이 많이 등장합니다.<br /><s>작성자가 너무 신경쓰이는 것</s></sub></p>
 
 <h1>🤘</h1>
 
-<p>SwiftUI 앱을 만들어보며 iOS 앱 개발의 가장 중요한 부분들에 대해 알아봅니다.</p>
+<p>이 튜토리얼에서는 Scrumdinger라는 SwiftUI 앱을 만들어보며 iOS 앱 개발의 가장 중요한 부분들에 대해 알아봅니다.</p>
 
 <h2 id="tour-of-the-app">Tour of the App</h2>
 
@@ -990,6 +990,10 @@ All information below comes from the official apple developer page and is for pe
 <h3 id="add-a-method-to-load-data">Add a Method to Load Data</h3>
 
 <p>이 섹션에서는 “scrums.data” 파일의 scrums 배열을 채우는 메서드를 추가합니다.</p>
+
+<div class="language-swift highlighter-rouge"><div class="highlight"><pre class="highlight"><code>  <span class="kd">static</span> <span class="kd">func</span> <span class="nf">load</span><span class="p">(</span><span class="nv">completion</span><span class="p">:</span> <span class="kd">@escaping</span> <span class="p">(</span><span class="kt">Result</span><span class="o">&lt;</span><span class="p">[</span><span class="kt">DailyScrum</span><span class="p">],</span> <span class="kt">Error</span><span class="o">&gt;</span><span class="p">)</span><span class="o">-&gt;</span><span class="kt">Void</span><span class="p">)</span> <span class="p">{</span>
+  <span class="p">}</span>
+</code></pre></div></div>
 
 <h4 id="dispatch-queues">Dispatch queues</h4>
 

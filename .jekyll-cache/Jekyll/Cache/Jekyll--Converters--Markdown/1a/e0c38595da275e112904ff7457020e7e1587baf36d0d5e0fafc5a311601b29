@@ -1,0 +1,11 @@
+I"�<p>UIKit은 UIImage로부터 썸네일을 만드는 기능을 제공합니다. 아래의 코드를 보면 알 수 있듯이 동기 함수와 비동기 함수</p>
+
+<div class="language-swift highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1">// UIImage</span>
+
+<span class="c1">// synchronous function (동기)</span>
+<span class="kd">func</span> <span class="nf">preparingThumbnail</span><span class="p">(</span><span class="n">of</span> <span class="nv">size</span><span class="p">:</span> <span class="kt">CGSize</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kt">UIImage</span><span class="p">?</span>
+
+<span class="c1">// asynchronous function (비동기)</span>
+<span class="kd">func</span> <span class="nf">prepareThumbnail</span><span class="p">(</span><span class="n">of</span> <span class="nv">size</span><span class="p">:</span> <span class="kt">CGSize</span><span class="p">,</span> <span class="nv">completionHandler</span><span class="p">:</span> <span class="kd">@escaping</span> <span class="p">(</span><span class="kt">UIImage</span><span class="p">?)</span> <span class="o">-&gt;</span> <span class="kt">Void</span><span class="p">)</span>
+</code></pre></div></div>
+:ET

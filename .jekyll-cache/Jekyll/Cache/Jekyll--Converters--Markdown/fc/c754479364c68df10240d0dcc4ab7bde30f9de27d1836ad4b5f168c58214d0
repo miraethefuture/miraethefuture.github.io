@@ -1,16 +1,16 @@
-I"Go<p><a href="https://developer.apple.com/tutorials/app-dev-training/getting-started-with-scrumdinger">Getting Started with Scrumdinger</a><br />
+I"Bo<p><a href="https://developer.apple.com/tutorials/app-dev-training/getting-started-with-scrumdinger">Getting Started with Scrumdinger</a><br />
 <sub>아래 모든 정보의 출처는 apple developer 공식 페이지이며 개인의 학습 용도로만 사용되었음을 밝힙니다.<br />
 All information below comes from the official apple developer page and is for personal learning purposes only.</sub></p>
 
-<p><sub>영어로 작성된 튜토리얼을 읽으며 정리하는 것이기 때문에 한국어로 읽었을 때 자연스럽게 읽히도록 관사 ‘a’가 생략된 단수형 단어들이 많이 등장합니다.<br /><s>작성자가 너무 신경쓰이는 것ㅎㅎㅠ</s></sub></p>
+<p><sub>영어로 작성된 튜토리얼을 읽으며 정리하는 것이기 때문에 한국어로 읽었을 때 자연스럽게 읽히도록 관사 ‘a’가 생략된 단수형 단어들이 많이 등장합니다.<br /><s>작성자가 너무 신경쓰이는 것</s></sub></p>
 
 <h1>🤘</h1>
 
-<p>SwiftUI 앱을 만들어보며 iOS 앱 개발의 가장 중요한 부분들에 대해 알아봅니다.</p>
+<p>이 튜토리얼에서는 Scrumdinger라는 SwiftUI 앱을 만들어보며 iOS 앱 개발의 가장 중요한 부분들에 대해 알아봅니다.</p>
 
 <h2 id="tour-of-the-app">Tour of the App</h2>
 
-<p>많은 소프트웨어 엔지니어링 팀들이 그날의 업무에 대한 계획을 짜기 위해 <strong>scrums</strong>라고 알려진 daily meeting을 합니다. Scrums는 미팅에 참석한 사람들이 어제 이뤄낸 성과들과 오늘 작업할 일, 그리고 그들의 작업에 영향을 미칠지도 모르는 장애물에 대하여 대화를 나누는 짧은 미팅입니다.</p>
+<p>많은 소프트웨어 엔지니어링 팀들이 그날의 업무에 대한 계획을 짜기 위해 <strong>scrums</strong>라고 알려진 데일리 미팅을 합니다. Scrums는 미팅에 참석한 사람들이 어제 이뤄낸 성과들과 오늘 작업할 일, 그리고 그들의 작업에 영향을 미칠지도 모르는 장애물에 대하여 대화를 나누는 짧은 미팅입니다.</p>
 
 <p>이 모듈은 사용자들의 데일리 scrums의 관리를 돕는 iOS앱인 Scrumdinger를 개발하는 과정을 안내합니다.</p>
 
@@ -964,22 +964,6 @@ All information below comes from the official apple developer page and is for pe
 
 <p>Scrumdinger는 사용자의 Documents 폴더에 scrums를 저장하고 불러올 것입니다. 더욱 편리하게 scrums 파일에 접근하기 위해서 function을 추가할 것입니다.</p>
 
-<div class="language-swift highlighter-rouge"><div class="highlight"><pre class="highlight"><code>  <span class="k">try</span> <span class="kt">FileManager</span><span class="o">.</span><span class="k">default</span><span class="o">.</span><span class="nf">url</span><span class="p">(</span><span class="nv">for</span><span class="p">:</span> <span class="o">.</span><span class="n">documentDirectory</span><span class="p">,</span>
-                               <span class="nv">in</span><span class="p">:</span> <span class="o">.</span><span class="n">userDomainMask</span><span class="p">,</span>
-                               <span class="nv">appropriateFor</span><span class="p">:</span> <span class="kc">nil</span><span class="p">,</span>
-                               <span class="nv">create</span><span class="p">:</span> <span class="kc">false</span><span class="p">)</span>
-</code></pre></div></div>
-
-<p>default file manager의</p>
-
-<p>위와 같이 URL을 반환하는 fileURL이라는 이름의 private static throwing function을 추가합니다.</p>
-
-<h3 id="add-a-method-to-load-data">Add a Method to Load Data</h3>
-
-<p>이 섹션에서는 scrums.data 파일의 데이터 정보로 scrums 배열을 채우는 메서드를 추가합니다.</p>
-
-<p>색 theme enum인 Theme,</p>
-
 <div class="language-swift highlighter-rouge"><div class="highlight"><pre class="highlight"><code>  <span class="kd">import</span> <span class="kt">Foundation</span>
   <span class="kd">import</span> <span class="kt">SwiftUI</span>
 
@@ -996,6 +980,18 @@ All information below comes from the official apple developer page and is for pe
               <span class="c1">// scrms.data라는 이름을 가진 파일의 URL을 리턴</span>
               <span class="o">.</span><span class="nf">appendingPathComponent</span><span class="p">(</span><span class="s">"scrums.data"</span><span class="p">)</span>
       <span class="p">}</span>
+  <span class="p">}</span>
+</code></pre></div></div>
+
+<p>default file manager에 url(for:in:appropriateFor:create:) 메서드를 호출합니다. FileManager 클래스의 공유된 인스턴스를 사용하여 현 사용자의 Documents 디렉토리의 위치를 얻을 수 있습니다.</p>
+
+<p>위와 같이 URL을 반환하는 fileURL이라는 이름의 private static throwing function을 추가합니다.</p>
+
+<h3 id="add-a-method-to-load-data">Add a Method to Load Data</h3>
+
+<p>이 섹션에서는 “scrums.data” 파일의 scrums 배열을 채우는 메서드를 추가합니다.</p>
+
+<div class="language-swift highlighter-rouge"><div class="highlight"><pre class="highlight"><code>  <span class="kd">static</span> <span class="kd">func</span> <span class="nf">load</span><span class="p">(</span><span class="nv">completion</span><span class="p">:</span> <span class="kd">@escaping</span> <span class="p">(</span><span class="kt">Result</span><span class="o">&lt;</span><span class="p">[</span><span class="kt">DailyScrum</span><span class="p">],</span> <span class="kt">Error</span><span class="o">&gt;</span><span class="p">)</span><span class="o">-&gt;</span><span class="kt">Void</span><span class="p">)</span> <span class="p">{</span>
   <span class="p">}</span>
 </code></pre></div></div>
 
