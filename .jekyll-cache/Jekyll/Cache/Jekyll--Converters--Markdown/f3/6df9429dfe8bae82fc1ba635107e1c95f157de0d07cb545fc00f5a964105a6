@@ -1,4 +1,4 @@
-I"?o<p><a href="https://developer.apple.com/tutorials/app-dev-training/getting-started-with-scrumdinger">Getting Started with Scrumdinger</a><br />
+I"Wo<p><a href="https://developer.apple.com/tutorials/app-dev-training/getting-started-with-scrumdinger">Getting Started with Scrumdinger</a><br />
 <sub>아래 모든 정보의 출처는 apple developer 공식 페이지이며 개인의 학습 용도로만 사용되었음을 밝힙니다.<br />
 All information below comes from the official apple developer page and is for personal learning purposes only.</sub></p>
 
@@ -10,7 +10,7 @@ All information below comes from the official apple developer page and is for pe
 
 <h2 id="tour-of-the-app">Tour of the App</h2>
 
-<p>많은 소프트웨어 엔지니어링 팀들이 그날의 업무에 대한 계획을 짜기 위해 <strong>scrums</strong>라고 알려진 daily meeting을 합니다. Scrums는 미팅에 참석한 사람들이 어제 이뤄낸 성과들과 오늘 작업할 일, 그리고 그들의 작업에 영향을 미칠지도 모르는 장애물에 대하여 대화를 나누는 짧은 미팅입니다.</p>
+<p>많은 소프트웨어 엔지니어링 팀들이 그날의 업무에 대한 계획을 짜기 위해 <strong>scrums</strong>라고 알려진 데일리 미팅을 합니다. Scrums는 미팅에 참석한 사람들이 어제 이뤄낸 성과들과 오늘 작업할 일, 그리고 그들의 작업에 영향을 미칠지도 모르는 장애물에 대하여 대화를 나누는 짧은 미팅입니다.</p>
 
 <p>이 모듈은 사용자들의 데일리 scrums의 관리를 돕는 iOS앱인 Scrumdinger를 개발하는 과정을 안내합니다.</p>
 
@@ -18,11 +18,15 @@ All information below comes from the official apple developer page and is for pe
 
 <h2 id="build-groups-of-views">Build Groups of Views</h2>
 
-<p>View는 UI의 한 부분을 정의합니다. 앱의 한 블락을 구성합니다. 간단하고 작은 view들을 조합하여 복잡한 view를 만듭니다.</p>
+<ul>
+  <li>View는 UI의 한 부분을 정의합니다.</li>
+  <li>앱의 한 블락을 구성합니다.</li>
+  <li>간단하고 작은 view들을 조합하여 복잡한 view를 만듭니다.</li>
+</ul>
 
 <h3 id="contentviewswift">ContentView.swift</h3>
 
-<p>기본 SwiftUI view file은 두개의 structures를 정의합니다. 첫번째 structure는 View 프로토콜을 따릅니다. View 프로토콜의 조건은 한가지로, 하나의 view를 리턴하는 body property를 가지는 것입니다. Body 속성 부분에는 view의 content, layout, behavior를 묘사합니다. 두번째 structure는 canvas에 프리뷰를 제공합니다.</p>
+<p>기본 SwiftUI view file은 두개의 structures를 정의합니다. 첫번째 structure는 View 프로토콜을 따릅니다. View 프로토콜의 조건은 한가지로, 하나의 view를 리턴하는 body property를 가지는 것입니다. Body 속성 부분에는 view의 content, layout, behavior를 묘사합니다. 두번째 structure는 캔버스에 프리뷰를 제공합니다.</p>
 
 <h4 id="refactor-contentviewswift">Refactor ContentView.swift</h4>
 
@@ -995,9 +999,9 @@ All information below comes from the official apple developer page and is for pe
   <span class="p">}</span>
 </code></pre></div></div>
 
-<h4 id="dispatch-queues">Dispatch queues</h4>
+<!-- #### Dispatch queues  
 
-<p>Dispatch queues는 first in, first out queue이다.</p>
+  Dispatch queues는 first in, first out queue이다. -->
 
 <!-- ### Add Life Cycle Events  
 
