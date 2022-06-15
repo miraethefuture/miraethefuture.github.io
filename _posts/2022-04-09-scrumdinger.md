@@ -1029,9 +1029,20 @@ All information below comes from the official apple developer page and is for pe
   static func load(completion: @escaping (Result<[DailyScrum], Error>)->Void) {
   }
   ```
+  <div class="notice">
+     <h4>잠깐 생각해보기❕</h4>
+     <p>데이터를 로딩하는 일은 시간이 오래 걸릴 수 있으므로 비동기 함수를 사용.
+        Result는 completion 핸들러? 데이터를 가져오는 테스크가 완료되고 성공하면 가져온 데이터(scrums)를 보여주거나 에러를 표시</p>
+  </div>
 
-<!-- #### Dispatch queues  
+  <code>Result</code>는 어떤 작업이 성공했는지 실패했는지 결과를 보여주는 single type. 위의 ```load```함수는 패러미터로 받은 completion closure를 비동기적으로 호출합니다.
 
+
+<!-- #### Dispatch queues  (thread와 관련됨.)
+
+  어떤 task가
+
+  
   Dispatch queues는 first in, first out queue이다. -->
 
 <!-- ### Add Life Cycle Events  
