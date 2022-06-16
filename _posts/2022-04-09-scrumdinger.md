@@ -1038,12 +1038,12 @@ All information below comes from the official apple developer page and is for pe
   <code>Result</code>는 어떤 작업이 성공했는지 실패했는지 결과를 보여주는 single type. 위의 ```load```함수는 패러미터로 받은 completion closure를 비동기적으로 호출합니다.
 
 
-<!-- #### Dispatch queues  (thread와 관련됨.)
+#### Dispatch queues
 
-  어떤 task가
-
-  
-  Dispatch queues는 first in, first out queue이다. -->
+  - 어떤 task가 main thread에서 동작하고, 어떤 task가 background thread에서 동작할 것인지 선택하기 위해 dispatch queues를 사용합니다.  
+  - Dispatch queues는 first in, first out queue
+  - 애플리케이션이 테스크를 Dispatch queues로 테스크를 보냄
+  - Background 테스크는 가장 낮은 우선권을 가짐
 
 <!-- ### Add Life Cycle Events  
 
