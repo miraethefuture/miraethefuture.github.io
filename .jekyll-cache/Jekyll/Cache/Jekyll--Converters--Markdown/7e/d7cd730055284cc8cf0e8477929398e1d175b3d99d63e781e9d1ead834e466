@@ -1,0 +1,45 @@
+I"Q<p><a href="https://www.raywenderlich.com/23483920-scenekit-3d-programming-for-ios-getting-started">SceneKit 3D Programming for iOS: Getting Started</a></p>
+
+<p><sub>아래 모든 정보의 출처는 위의 웹페이지이며 개인의 학습 용도로만 사용되었음을 밝힙니다.</sub></p>
+
+<!-- # Getting Started
+
+# Exploring Solar Scene
+
+# Creating Your First Scene -->
+
+<h1 id="loading-a-scene">Loading a Scene</h1>
+
+<div class="language-swift highlighter-rouge"><div class="highlight"><pre class="highlight"><code>  <span class="k">var</span> <span class="nv">body</span><span class="p">:</span> <span class="kd">some</span> <span class="kt">View</span> <span class="p">{</span>
+  <span class="kt">ZStack</span> <span class="p">{</span>
+    <span class="kt">SceneView</span><span class="p">(</span>
+      <span class="c1">// 1</span>
+      <span class="nv">scene</span><span class="p">:</span> <span class="n">scene</span><span class="p">,</span>
+      <span class="c1">// 2</span>
+      <span class="nv">pointOfView</span><span class="p">:</span> <span class="nf">setUpCamera</span><span class="p">(</span><span class="nv">planet</span><span class="p">:</span> <span class="n">viewModel</span><span class="o">.</span><span class="n">selectedPlanet</span><span class="p">),</span>
+      <span class="c1">// 3</span>
+      <span class="nv">options</span><span class="p">:</span> <span class="o">.</span><span class="n">allowsCameraControl</span>
+    <span class="p">)</span>
+    <span class="c1">// 4</span>
+    <span class="o">.</span><span class="nf">background</span><span class="p">(</span><span class="kt">ColorPalette</span><span class="o">.</span><span class="n">secondary</span><span class="p">)</span>
+    <span class="o">.</span><span class="nf">edgesIgnoringSafeArea</span><span class="p">(</span><span class="o">.</span><span class="n">all</span><span class="p">)</span>
+
+    <span class="o">...</span> <span class="p">}</span>
+</code></pre></div></div>
+
+<p>body부분에 SceneView를 추가해주어 비어있던 앱의 백그라운드를 SceneView로 바꾸어줍니다.</p>
+
+<ol>
+  <li>어떤 scene을 추가할 것인지 선택합니다. 이 프로젝트에서는 아래와 같이 function을 작성하여 scene 변수에 SCNScene 타입의 값을 할당해두었습니다. 미리 생성해둔(과정 생략, 추가 예정) Solar Scene이라는 이름의 SceneKit Scene File을 생성해</li>
+</ol>
+
+<div class="language-swift highlighter-rouge"><div class="highlight"><pre class="highlight"><code>  <span class="c1">// Create the scene from the scene file</span>
+  <span class="kd">static</span> <span class="kd">func</span> <span class="nf">makeScene</span><span class="p">()</span> <span class="o">-&gt;</span> <span class="kt">SCNScene</span><span class="p">?</span> <span class="p">{</span>
+    <span class="k">let</span> <span class="nv">scene</span> <span class="o">=</span> <span class="kt">SCNScene</span><span class="p">(</span><span class="nv">named</span><span class="p">:</span> <span class="s">"Solar Scene.scn"</span><span class="p">)</span>
+    <span class="k">return</span> <span class="n">scene</span>
+  <span class="p">}</span>
+
+  <span class="c1">// Call makeScene() to load the scene</span>
+  <span class="k">var</span> <span class="nv">scene</span> <span class="o">=</span> <span class="nf">makeScene</span><span class="p">()</span>
+</code></pre></div></div>
+:ET
