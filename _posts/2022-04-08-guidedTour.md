@@ -374,6 +374,26 @@ All information below comes from the Swift documentation and is for personal lea
 
   만약 조건이 false라면 else 브랜치의 코드가 실행됩니다. 이런 경우에는 return, break, continue, throw등의 control transfer statement를 사용하여 코드 블락을 꼭 벗어나 주어야 합니다.  
 
-<!-- # Error Handling  
+# Error Handling  
 
-  Error handling은 프로그램에 에러 상태에 응답하고 그것을 복구하는 과정입니다. Swift는 프로그램이 실행되는 동안 회복될 수 있는 에러를  -->
+  Error handling은 프로그램에 에러 상태에 응답하고 그것을 해결하는 과정입니다.
+
+## Converting Errors to Optional Values  
+
+  ```swift
+  func someThrowingFunction() throw -> {
+      // ...
+  }
+
+  let x = try? someThrowingFunction()
+
+  let y: Int?
+  do {
+      y = try someThrowingFunction()
+  } catch {
+      y = nil
+  }
+  ```
+
+  위의 예시에서 x 와 y는 같은 과정으로 같은 값을 가지게 됩니다. try? 가 에러를 찾고, 에러가 던져지면 try? 뒤에 오는 expression의 값은 nil이 됩니다.  
+  someThrowingFunction()이 에러를 던지면, x와 y의 값은 nil이 됩니다. 에러를 던지지 않으면 x와 y의 값은 someThrowingFunction()의 리턴값이 됩니다.
