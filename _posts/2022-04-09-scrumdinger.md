@@ -1045,6 +1045,18 @@ All information below comes from the official apple developer page and is for pe
   - 애플리케이션이 테스크를 Dispatch queues로 테스크를 보냄
   - Background 테스크는 가장 낮은 우선권을 가짐
 
+#### do-catch statement
+
+  ```swift
+  static func load(completion: @escaping (Result<[DailyScrum], Error>)->Void) {  
+      DispatchQueue.global(qos: .background).async {
+        do {
+        } catch
+      }
+  }
+  ```
+  발생할 수 있는 에러를 다루기 위해서 do-catch문을 작성해줍니다.
+
 <!-- ### Add Life Cycle Events  
 
   SwiftUI는 view가 나타나고 사라질 때 이벤트를 일으키는 life cycle methods를 제공합니다. -->
