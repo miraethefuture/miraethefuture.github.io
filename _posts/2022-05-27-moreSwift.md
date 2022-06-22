@@ -105,3 +105,7 @@ toc_icon: "kiwi-bird"
   ```  
 
   주석처리 한 부분이 원래 튜토리얼의 filter 메서드 코드이고, 주석처리 되지 않은 코드는 위의 예시를 보고 같은 방식으로 만들어 보았습니다. 똑같이 작동하는 것을 알 수 있었습니다. (!showFavoritesOnly 부분은 아직 코드의 영향을 미치지 않음.)
+
+# weak self  
+
+  두 객체가 서로를 참조하는 strong reference cycle (retain cycle이라고도 함.) 같은 경우에는 서로를 항상 참조하기 때문에 reference count 가 항상 1이 됩니다. reference count가 0이 되면 ARC가 해당 객체가 차지하던 메모리를 풀어주는데 strong reference cycle의 경우에는 reference count가 0이 되지 않기 때문에 해당 객체의 인스턴스 값이 nil이 되더라도 메모리를 차지하고 있는 현상이 발생하게 됩니다. 이런 문제를 해결하기 위해 weak reference를 사용합니다.

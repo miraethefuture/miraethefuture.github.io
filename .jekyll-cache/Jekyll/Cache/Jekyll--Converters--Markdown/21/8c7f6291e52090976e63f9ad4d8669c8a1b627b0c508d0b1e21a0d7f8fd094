@@ -1,4 +1,4 @@
-I"��<p><a href="https://docs.swift.org/swift-book/GuidedTour/GuidedTour.html">A Swift Tour</a>
+I"��<p><a href="https://docs.swift.org/swift-book/GuidedTour/GuidedTour.html">A Swift Tour</a>
 <sub>아래 모든 정보의 출처는 Swift 공식 문서이며 개인의 학습 용도로만 사용되었음을 밝힙니다.<br />
 All information below comes from the Swift documentation and is for personal learning purposes only.</sub></p>
 
@@ -337,7 +337,23 @@ All information below comes from the Swift documentation and is for personal lea
 
 <p>만약 조건이 false라면 else 브랜치의 코드가 실행됩니다. 이런 경우에는 return, break, continue, throw등의 control transfer statement를 사용하여 코드 블락을 꼭 벗어나 주어야 합니다.</p>
 
-<!-- # Error Handling  
+<h1 id="error-handling">Error Handling</h1>
 
-  Error handling은 프로그램에 에러 상태에 응답하고 그것을 복구하는 과정입니다. Swift는 프로그램이 실행되는 동안 회복될 수 있는 에러를  -->
+<p>Error handling은 프로그램에 에러 상태에 응답하고 그것을 해결하는 과정입니다.</p>
+
+<h2 id="converting-errors-to-optional-values">Converting Errors to Optional Values</h2>
+
+<div class="language-swift highlighter-rouge"><div class="highlight"><pre class="highlight"><code>  <span class="kd">func</span> <span class="nf">someThrowingFunction</span><span class="p">()</span> <span class="k">throw</span> <span class="o">-&gt;</span> <span class="p">{</span>
+      <span class="c1">// ...</span>
+  <span class="p">}</span>
+
+  <span class="k">let</span> <span class="nv">x</span> <span class="o">=</span> <span class="k">try</span><span class="p">?</span> <span class="nf">someThrowingFunction</span><span class="p">()</span>
+
+  <span class="k">let</span> <span class="nv">y</span><span class="p">:</span> <span class="kt">Int</span><span class="p">?</span>
+  <span class="k">do</span> <span class="p">{</span>
+      <span class="n">y</span> <span class="o">=</span> <span class="k">try</span> <span class="nf">someThrowingFunction</span><span class="p">()</span>
+  <span class="p">}</span> <span class="k">catch</span> <span class="p">{</span>
+      <span class="n">y</span> <span class="o">=</span> <span class="kc">nil</span>
+  <span class="p">}</span>
+</code></pre></div></div>
 :ET

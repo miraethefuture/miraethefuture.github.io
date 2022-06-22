@@ -1261,12 +1261,13 @@ All information below comes from the official apple developer page and is for pe
 <h4 id="do-catch-statement">do-catch statement</h4>
 
 <div class="language-swift highlighter-rouge"><div class="highlight"><pre class="highlight"><code>  <span class="kd">static</span> <span class="kd">func</span> <span class="nf">load</span><span class="p">(</span><span class="nv">completion</span><span class="p">:</span> <span class="kd">@escaping</span> <span class="p">(</span><span class="kt">Result</span><span class="o">&lt;</span><span class="p">[</span><span class="kt">DailyScrum</span><span class="p">],</span> <span class="kt">Error</span><span class="o">&gt;</span><span class="p">)</span><span class="o">-&gt;</span><span class="kt">Void</span><span class="p">)</span> <span class="p">{</span>  
-      <span class="c1">// Create an asynchronous block on a background queue.</span>
       <span class="kt">DispatchQueue</span><span class="o">.</span><span class="nf">global</span><span class="p">(</span><span class="nv">qos</span><span class="p">:</span> <span class="o">.</span><span class="n">background</span><span class="p">)</span><span class="o">.</span><span class="k">async</span> <span class="p">{</span>
-
+        <span class="k">do</span> <span class="p">{</span>
+        <span class="p">}</span> <span class="k">catch</span>
       <span class="p">}</span>
   <span class="p">}</span>
 </code></pre></div></div>
+<p>발생할 수 있는 에러를 다루기 위해서 do-catch문을 작성해줍니다.</p>
 
 <!-- ### Add Life Cycle Events  
 
