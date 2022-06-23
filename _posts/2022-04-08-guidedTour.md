@@ -396,4 +396,14 @@ All information below comes from the Swift documentation and is for personal lea
   ```
 
   위의 예시에서 x 와 y는 같은 과정으로 같은 값을 가지게 됩니다. try? 가 에러를 찾고, 에러가 던져지면 try? 뒤에 오는 expression의 값은 nil이 됩니다.  
-  someThrowingFunction()이 에러를 던지면, x와 y의 값은 nil이 됩니다. 에러를 던지지 않으면 x와 y의 값은 someThrowingFunction()의 리턴값이 됩니다.
+  someThrowingFunction()이 에러를 던지면, x와 y의 값은 nil이 됩니다. 에러를 던지지 않으면 x와 y의 값은 someThrowingFunction()의 리턴값이 됩니다. function이 리턴하는 타입의 옵셔널이 됩니다.  
+
+  모든 에러를 같은 방식으로 핸들링하고 싶을 때, try?를 사용하여 간결한 에러 핸들링 코드를 작성할 수 있습니다.
+
+  ```swift
+  func fetchData() -> Data? {
+      if let data = try? fetchDataFromDisk() { return data }
+      if let data = try? fetchDataFromServer() { return data }
+      return nil
+  }
+  ```
