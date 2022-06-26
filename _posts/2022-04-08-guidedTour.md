@@ -404,6 +404,6 @@ All information below comes from the Swift documentation and is for personal lea
   func fetchData() -> Data? {
       if let data = try? fetchDataFromDisk() { return data }
       if let data = try? fetchDataFromServer() { return data }
-      return nil
+      return nil 
   }
   ```
