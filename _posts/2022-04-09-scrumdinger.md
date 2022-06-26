@@ -1055,7 +1055,7 @@ All information below comes from the official apple developer page and is for pe
       }
   }
   ```
-  발생할 수 있는 에러를 다루기 위해서 do-catch문을 작성해줍니다.
+  에러를 다루기 위해서 do-catch문을 작성해줍니다.
 
 <!-- ### Add Life Cycle Events  
 
