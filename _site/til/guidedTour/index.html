@@ -599,7 +599,16 @@ All information below comes from the Swift documentation and is for personal lea
 </code></pre></div></div>
 
 <p>위의 예시에서 x 와 y는 같은 과정으로 같은 값을 가지게 됩니다. try? 가 에러를 찾고, 에러가 던져지면 try? 뒤에 오는 expression의 값은 nil이 됩니다.<br />
-  someThrowingFunction()이 에러를 던지면, x와 y의 값은 nil이 됩니다. 에러를 던지지 않으면 x와 y의 값은 someThrowingFunction()의 리턴값이 됩니다.</p>
+  someThrowingFunction()이 에러를 던지면, x와 y의 값은 nil이 됩니다. 에러를 던지지 않으면 x와 y의 값은 someThrowingFunction()의 리턴값이 됩니다. function이 리턴하는 타입의 옵셔널이 됩니다.</p>
+
+<p>모든 에러를 같은 방식으로 핸들링하고 싶을 때, try?를 사용하여 간결한 에러 핸들링 코드를 작성할 수 있습니다. 예를 들어, 아래의 코드는 데이터를 가져오기 위해 여러번의 시도를 하고 모든 시도가 실패하면 nil을 리턴합니다.</p>
+
+<div class="language-swift highlighter-rouge"><div class="highlight"><pre class="highlight"><code>  <span class="kd">func</span> <span class="nf">fetchData</span><span class="p">()</span> <span class="o">-&gt;</span> <span class="kt">Data</span><span class="p">?</span> <span class="p">{</span>
+      <span class="k">if</span> <span class="k">let</span> <span class="nv">data</span> <span class="o">=</span> <span class="k">try</span><span class="p">?</span> <span class="nf">fetchDataFromDisk</span><span class="p">()</span> <span class="p">{</span> <span class="k">return</span> <span class="n">data</span> <span class="p">}</span>
+      <span class="k">if</span> <span class="k">let</span> <span class="nv">data</span> <span class="o">=</span> <span class="k">try</span><span class="p">?</span> <span class="nf">fetchDataFromServer</span><span class="p">()</span> <span class="p">{</span> <span class="k">return</span> <span class="n">data</span> <span class="p">}</span>
+      <span class="k">return</span> <span class="kc">nil</span>
+  <span class="p">}</span>
+</code></pre></div></div>
 
         
       </section>

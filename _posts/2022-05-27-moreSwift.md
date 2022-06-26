@@ -108,4 +108,85 @@ toc_icon: "kiwi-bird"
 
 # weak self  
 
-  두 객체가 서로를 참조하는 strong reference cycle (retain cycle이라고도 함.) 같은 경우에는 서로를 항상 참조하기 때문에 reference count 가 항상 1이 됩니다. reference count가 0이 되면 ARC가 해당 객체가 차지하던 메모리를 풀어주는데 strong reference cycle의 경우에는 reference count가 0이 되지 않기 때문에 해당 객체의 인스턴스 값이 nil이 되더라도 메모리를 차지하고 있는 현상이 발생하게 됩니다. 이런 문제를 해결하기 위해 weak reference를 사용합니다.
+  두 객체가 서로를 참조하는 strong reference cycle (retain cycle이라고도 함.) 같은 경우에는 서로를 항상 참조하기 때문에 reference count 가 항상 1이 됩니다. reference count가 0이 되면 ARC가 해당 객체가 차지하던 메모리를 풀어주는데 strong reference cycle의 경우에는 reference count가 0이 되지 않기 때문에 해당 객체의 인스턴스 값이 nil이 되더라도 메모리를 차지하고 있는 현상이 발생하게 됩니다. 이런 문제를 해결하기 위해 weak reference를 사용합니다.  
+
+  **weak reference**는 reference count를 증가시키지 않는 reference 타입입니다. 그렇기 때문에 ARC가 참조된 객체가 사용하는 메모리를 언제든 풀어줄 수 있게 됩니다.  
+
+  아래의 Pet / Owner 객체는 strong reference cycle을 생성합니다. Pet은 Owner를 참조하고 Owner는 Pet을 참조합니다.
+
+  ```swift
+  class Pet {
+      let name: String
+      var owner: Owner?
+
+      init(name: String) { self.name = name }
+
+      deinit {
+          print("Pet deallocated")
+        }
+  }
+
+  class Owner {
+      var name: String
+      var per: Pet?
+
+      init(name: String) { self.name = name }
+
+      deinit {
+          print("Owner deallocated")
+      }
+  }
+  ```  
+
+  이 strong reference cycle을 끊으려면 weak 키워드를 사용하여 weak reference로 만들면 됩니다.  
+
+  ```swift
+  class Pet {
+      let name: String
+      weak var owner: Owner?
+
+      init(name: String) { self.name = name }
+
+      deinit {
+          print("Pet deallocated")
+        }
+  }
+
+  class Owner {
+      var name: String
+      var per: Pet?
+
+      init(name: String) { self.name = name }
+
+      deinit {
+          print("Owner deallocated")
+      }
+  }
+  ```  
+
+  Pet 클래스의 owner 변수 앞에 weak 키워드를 작성해 주었습니다.
+
+  ```swift
+  var pet: Pet? = Pet(name: "Dog")
+  var owner: Owner? = Owner(name: "Alice")
+
+  pet!.owner = Owner
+  owner!.pet = pet
+
+  pet = nil
+  owner = nil
+
+  // Prints
+  "Owner deallocated
+  Pet deallocated"
+  ```
+
+  출력된 결과를 보면 deinit() 메서드가 정상적으로 작동한 것을 알 수 있습니다. 이것은 ARC가 이 객체들로부터 사용되던 메모리를 성공적으로 해제시켰다는 것을 의미합니다. 이것은..
+
+  ```swift
+  pet!.owner = owner
+  owner!.pet = pet
+  ```
+  pet.owner가 weak reference여서 owner의 reference count를 증가시키지 않아 strong reference cycle을 만들어내지 않았기 때문입니다.
+
+  **여기까지 배운 것** 

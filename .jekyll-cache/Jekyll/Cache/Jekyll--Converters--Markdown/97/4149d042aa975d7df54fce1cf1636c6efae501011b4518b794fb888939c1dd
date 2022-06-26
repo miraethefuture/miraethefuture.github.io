@@ -1,4 +1,4 @@
-I"�"<p><sub>📂 Swift language guide 외의 정보들을 기록합니다.</sub>
+I"4=<p><sub>📂 Swift language guide 외의 정보들을 기록합니다.</sub>
 <br />
 <br />
 <br /></p>
@@ -86,4 +86,77 @@ Callback function은 어떤 function의 인자(argument)로 통과된 function�
 
 <h1 id="weak-self">weak self</h1>
 
+<p>두 객체가 서로를 참조하는 strong reference cycle (retain cycle이라고도 함.) 같은 경우에는 서로를 항상 참조하기 때문에 reference count 가 항상 1이 됩니다. reference count가 0이 되면 ARC가 해당 객체가 차지하던 메모리를 풀어주는데 strong reference cycle의 경우에는 reference count가 0이 되지 않기 때문에 해당 객체의 인스턴스 값이 nil이 되더라도 메모리를 차지하고 있는 현상이 발생하게 됩니다. 이런 문제를 해결하기 위해 weak reference를 사용합니다.</p>
+
+<p><strong>weak reference</strong>는 reference count를 증가시키지 않는 reference 타입입니다. 그렇기 때문에 ARC가 참조된 객체가 사용하는 메모리를 언제든 풀어줄 수 있게 됩니다.</p>
+
+<p>아래의 Pet / Owner 객체는 strong reference cycle을 생성합니다. Pet은 Owner를 참조하고 Owner는 Pet을 참조합니다.</p>
+
+<div class="language-swift highlighter-rouge"><div class="highlight"><pre class="highlight"><code>  <span class="kd">class</span> <span class="kt">Pet</span> <span class="p">{</span>
+      <span class="k">let</span> <span class="nv">name</span><span class="p">:</span> <span class="kt">String</span>
+      <span class="k">var</span> <span class="nv">owner</span><span class="p">:</span> <span class="kt">Owner</span><span class="p">?</span>
+
+      <span class="nf">init</span><span class="p">(</span><span class="nv">name</span><span class="p">:</span> <span class="kt">String</span><span class="p">)</span> <span class="p">{</span> <span class="k">self</span><span class="o">.</span><span class="n">name</span> <span class="o">=</span> <span class="n">name</span> <span class="p">}</span>
+
+      <span class="kd">deinit</span> <span class="p">{</span>
+          <span class="nf">print</span><span class="p">(</span><span class="s">"Pet deallocated"</span><span class="p">)</span>
+        <span class="p">}</span>
+  <span class="p">}</span>
+
+  <span class="kd">class</span> <span class="kt">Owner</span> <span class="p">{</span>
+      <span class="k">var</span> <span class="nv">name</span><span class="p">:</span> <span class="kt">String</span>
+      <span class="k">var</span> <span class="nv">per</span><span class="p">:</span> <span class="kt">Pet</span><span class="p">?</span>
+
+      <span class="nf">init</span><span class="p">(</span><span class="nv">name</span><span class="p">:</span> <span class="kt">String</span><span class="p">)</span> <span class="p">{</span> <span class="k">self</span><span class="o">.</span><span class="n">name</span> <span class="o">=</span> <span class="n">name</span> <span class="p">}</span>
+
+      <span class="kd">deinit</span> <span class="p">{</span>
+          <span class="nf">print</span><span class="p">(</span><span class="s">"Owner deallocated"</span><span class="p">)</span>
+      <span class="p">}</span>
+  <span class="p">}</span>
+</code></pre></div></div>
+
+<p>이 strong reference cycle을 끊으려면 weak 키워드를 사용하여 weak reference로 만들면 됩니다.</p>
+
+<div class="language-swift highlighter-rouge"><div class="highlight"><pre class="highlight"><code>  <span class="kd">class</span> <span class="kt">Pet</span> <span class="p">{</span>
+      <span class="k">let</span> <span class="nv">name</span><span class="p">:</span> <span class="kt">String</span>
+      <span class="k">weak</span> <span class="k">var</span> <span class="nv">owner</span><span class="p">:</span> <span class="kt">Owner</span><span class="p">?</span>
+
+      <span class="nf">init</span><span class="p">(</span><span class="nv">name</span><span class="p">:</span> <span class="kt">String</span><span class="p">)</span> <span class="p">{</span> <span class="k">self</span><span class="o">.</span><span class="n">name</span> <span class="o">=</span> <span class="n">name</span> <span class="p">}</span>
+
+      <span class="kd">deinit</span> <span class="p">{</span>
+          <span class="nf">print</span><span class="p">(</span><span class="s">"Pet deallocated"</span><span class="p">)</span>
+        <span class="p">}</span>
+  <span class="p">}</span>
+
+  <span class="kd">class</span> <span class="kt">Owner</span> <span class="p">{</span>
+      <span class="k">var</span> <span class="nv">name</span><span class="p">:</span> <span class="kt">String</span>
+      <span class="k">var</span> <span class="nv">per</span><span class="p">:</span> <span class="kt">Pet</span><span class="p">?</span>
+
+      <span class="nf">init</span><span class="p">(</span><span class="nv">name</span><span class="p">:</span> <span class="kt">String</span><span class="p">)</span> <span class="p">{</span> <span class="k">self</span><span class="o">.</span><span class="n">name</span> <span class="o">=</span> <span class="n">name</span> <span class="p">}</span>
+
+      <span class="kd">deinit</span> <span class="p">{</span>
+          <span class="nf">print</span><span class="p">(</span><span class="s">"Owner deallocated"</span><span class="p">)</span>
+      <span class="p">}</span>
+  <span class="p">}</span>
+</code></pre></div></div>
+
+<p>Pet 클래스의 owner 변수 앞에 weak 키워드를 작성해 주었습니다.</p>
+
+<div class="language-swift highlighter-rouge"><div class="highlight"><pre class="highlight"><code>  <span class="k">var</span> <span class="nv">pet</span><span class="p">:</span> <span class="kt">Pet</span><span class="p">?</span> <span class="o">=</span> <span class="kt">Pet</span><span class="p">(</span><span class="nv">name</span><span class="p">:</span> <span class="s">"Dog"</span><span class="p">)</span>
+  <span class="k">var</span> <span class="nv">owner</span><span class="p">:</span> <span class="kt">Owner</span><span class="p">?</span> <span class="o">=</span> <span class="kt">Owner</span><span class="p">(</span><span class="nv">name</span><span class="p">:</span> <span class="s">"Alice"</span><span class="p">)</span>
+
+  <span class="n">pet</span><span class="o">!.</span><span class="n">owner</span> <span class="o">=</span> <span class="kt">Owner</span>
+  <span class="n">owner</span><span class="o">!.</span><span class="n">pet</span> <span class="o">=</span> <span class="n">pet</span>
+
+  <span class="n">pet</span> <span class="o">=</span> <span class="kc">nil</span>
+  <span class="n">owner</span> <span class="o">=</span> <span class="kc">nil</span>
+
+  <span class="c1">// Prints</span>
+  <span class="s">"Owner deallocated
+  Pet deallocated"</span>
+</code></pre></div></div>
+
+<p>출력된 결과를 보면 deinit() 메서드가 정상적으로 작동한 것을 알 수 있습니다. 이것은 ARC가 이 객체들로부터 사용되던 메모리를 성공적으로 해제시켰다는 것을 의미합니다.</p>
+
+<p>```</p>
 :ET
