@@ -189,4 +189,8 @@ toc_icon: "kiwi-bird"
   ```
   pet.owner가 weak reference여서 owner의 reference count를 증가시키지 않아 strong reference cycle을 만들어내지 않았기 때문입니다.
 
-  **여기까지 배운 것** 
+  <!-- **여기까지 배운 것**   -->
+
+## [weak self] in Swift  
+
+  Swift에서 [weak self]는 클로저가 발생시킬 수 있는 메모리 손실을 방지하는 역할을 합니다. [weak self]를 사용하면 컴파일러는 자기 자신에게 weak reference를 생성합니다. 필요할 때 ARC가 스스로를 메모리로부터 해제시킬 수 있게 됩니다.
