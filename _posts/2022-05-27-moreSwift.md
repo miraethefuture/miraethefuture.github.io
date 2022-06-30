@@ -106,6 +106,29 @@ toc_icon: "kiwi-bird"
 
   주석처리 한 부분이 원래 튜토리얼의 filter 메서드 코드이고, 주석처리 되지 않은 코드는 위의 예시를 보고 같은 방식으로 만들어 보았습니다. 똑같이 작동하는 것을 알 수 있었습니다. (!showFavoritesOnly 부분은 아직 코드의 영향을 미치지 않음.)
 
+# makeUIView(context:)  
+
+  ```swift
+  func makeUIView(context: Self.Context) -> Self.UIViewType
+  ```
+  View 객체를 생성하고 초기 상태를 설정합니다. 제공한 정보로 설정된 UIKit 뷰를 리턴합니다.
+
+  ```swift
+  struct myView: UIViewRepresentable {
+      func makeUIView(context: Context) -> ARView {
+          let view = ARView()
+          return view
+      }
+
+      func updateUIView(_ uiView: ARView, context: Context) {
+      }
+  }
+  ```
+
+  패러미터인 context에는 현재 시스템의 상태에 대한 정보를 담고 있는 structure가 통과됩니다. 위의 예시의 Context는 UIViewRepresentableContext<Self>의 typealias입니다.  
+
+  뷰 객체를 생성하기 위해 이 메서드를 생성하고 사용합니다.
+
 # Strong reference cycle
 
   두 객체가 서로를 참조하는 strong reference cycle (retain cycle이라고도 함.) 같은 경우에는 서로를 항상 참조하기 때문에 reference count 가 항상 1이 됩니다. reference count가 0이 되면 ARC가 해당 객체가 차지하던 메모리를 풀어주는데 strong reference cycle의 경우에는 reference count가 0이 되지 않기 때문에 해당 객체의 인스턴스 값이 nil이 되더라도 메모리를 차지하고 있는 현상이 발생하게 됩니다. 이런 문제를 해결하기 위해 weak reference를 사용합니다.  
@@ -195,4 +218,10 @@ toc_icon: "kiwi-bird"
 
   Swift에서 [weak self]는 클로저가 발생시킬 수 있는 메모리 손실을 방지하는 역할을 합니다. [weak self]를 사용하면 컴파일러는 자기 자신에게 weak reference를 생성합니다. 필요할 때 ARC가 스스로를 메모리로부터 해제시킬 수 있게 됩니다.
 
-### Closures and Strong Reference Cycles 
+### Closures and Strong Reference Cycles  
+
+  클로저 안에 언급된 것은 어떤 것이든 해당 클로저와 strong reference가 생성됩니다.  
+
+  만약 클래스 안에 self를 사용하는 클로저가 있다면, 그 클로저가 메모리에 할당되어 있는 한 self와 strong reference를 가진 상태를 유지할 것입니다.
+
+  👷

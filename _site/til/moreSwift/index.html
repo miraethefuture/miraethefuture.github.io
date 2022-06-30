@@ -234,7 +234,7 @@
           <aside class="sidebar__right sticky">
             <nav class="toc">
               <header><h4 class="nav__title"><i class="fas fa-kiwi-bird"></i>  </h4></header>
-              <ul class="toc__menu"><li><a href="#concurrency">Concurrency</a><ul><li><a href="#parallel-code">Parallel Code</a></li><li><a href="#defining-and-calling-asynchronous-functions">Defining and Calling Asynchronous Functions</a></li></ul></li><li><a href="#codable">Codable</a></li><li><a href="#completion-handler">Completion Handler</a></li><li><a href="#filter_">filter(_:)</a></li><li><a href="#weak-self">weak self</a></li></ul>
+              <ul class="toc__menu"><li><a href="#concurrency">Concurrency</a><ul><li><a href="#parallel-code">Parallel Code</a></li><li><a href="#defining-and-calling-asynchronous-functions">Defining and Calling Asynchronous Functions</a></li></ul></li><li><a href="#codable">Codable</a></li><li><a href="#completion-handler">Completion Handler</a></li><li><a href="#filter_">filter(_:)</a></li><li><a href="#makeuiviewcontext">makeUIView(context:)</a></li><li><a href="#strong-reference-cycle">Strong reference cycle</a><ul><li><a href="#weak-self-in-swift">[weak self] in Swift</a><ul><li><a href="#closures-and-strong-reference-cycles">Closures and Strong Reference Cycles</a></li></ul></li></ul></li></ul>
 
             </nav>
           </aside>
@@ -325,7 +325,28 @@ Callback function은 어떤 function의 인자(argument)로 통과된 function�
 
 <p>주석처리 한 부분이 원래 튜토리얼의 filter 메서드 코드이고, 주석처리 되지 않은 코드는 위의 예시를 보고 같은 방식으로 만들어 보았습니다. 똑같이 작동하는 것을 알 수 있었습니다. (!showFavoritesOnly 부분은 아직 코드의 영향을 미치지 않음.)</p>
 
-<h1 id="weak-self">weak self</h1>
+<h1 id="makeuiviewcontext">makeUIView(context:)</h1>
+
+<div class="language-swift highlighter-rouge"><div class="highlight"><pre class="highlight"><code>  <span class="kd">func</span> <span class="nf">makeUIView</span><span class="p">(</span><span class="nv">context</span><span class="p">:</span> <span class="k">Self</span><span class="o">.</span><span class="kt">Context</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="k">Self</span><span class="o">.</span><span class="kt">UIViewType</span>
+</code></pre></div></div>
+<p>View 객체를 생성하고 초기 상태를 설정합니다. 제공한 정보로 설정된 UIKit 뷰를 리턴합니다.</p>
+
+<div class="language-swift highlighter-rouge"><div class="highlight"><pre class="highlight"><code>  <span class="kd">struct</span> <span class="nv">myView</span><span class="p">:</span> <span class="kt">UIViewRepresentable</span> <span class="p">{</span>
+      <span class="kd">func</span> <span class="nf">makeUIView</span><span class="p">(</span><span class="nv">context</span><span class="p">:</span> <span class="kt">Context</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kt">ARView</span> <span class="p">{</span>
+          <span class="k">let</span> <span class="nv">view</span> <span class="o">=</span> <span class="kt">ARView</span><span class="p">()</span>
+          <span class="k">return</span> <span class="n">view</span>
+      <span class="p">}</span>
+
+      <span class="kd">func</span> <span class="nf">updateUIView</span><span class="p">(</span><span class="n">_</span> <span class="nv">uiView</span><span class="p">:</span> <span class="kt">ARView</span><span class="p">,</span> <span class="nv">context</span><span class="p">:</span> <span class="kt">Context</span><span class="p">)</span> <span class="p">{</span>
+      <span class="p">}</span>
+  <span class="p">}</span>
+</code></pre></div></div>
+
+<p>패러미터인 context에는 현재 시스템의 상태에 대한 정보를 담고 있는 structure가 통과됩니다. 위의 예시의 Context는 UIViewRepresentableContext<Self>의 typealias입니다.</Self></p>
+
+<p>뷰 객체를 생성하기 위해 이 메서드를 생성하고 사용합니다.</p>
+
+<h1 id="strong-reference-cycle">Strong reference cycle</h1>
 
 <p>두 객체가 서로를 참조하는 strong reference cycle (retain cycle이라고도 함.) 같은 경우에는 서로를 항상 참조하기 때문에 reference count 가 항상 1이 됩니다. reference count가 0이 되면 ARC가 해당 객체가 차지하던 메모리를 풀어주는데 strong reference cycle의 경우에는 reference count가 0이 되지 않기 때문에 해당 객체의 인스턴스 값이 nil이 되더라도 메모리를 차지하고 있는 현상이 발생하게 됩니다. 이런 문제를 해결하기 위해 weak reference를 사용합니다.</p>
 
@@ -404,7 +425,19 @@ Callback function은 어떤 function의 인자(argument)로 통과된 function�
 </code></pre></div></div>
 <p>pet.owner가 weak reference여서 owner의 reference count를 증가시키지 않아 strong reference cycle을 만들어내지 않았기 때문입니다.</p>
 
-<p><strong>여기까지 배운 것</strong></p>
+<p><!-- **여기까지 배운 것**   --></p>
+
+<h2 id="weak-self-in-swift">[weak self] in Swift</h2>
+
+<p>Swift에서 [weak self]는 클로저가 발생시킬 수 있는 메모리 손실을 방지하는 역할을 합니다. [weak self]를 사용하면 컴파일러는 자기 자신에게 weak reference를 생성합니다. 필요할 때 ARC가 스스로를 메모리로부터 해제시킬 수 있게 됩니다.</p>
+
+<h3 id="closures-and-strong-reference-cycles">Closures and Strong Reference Cycles</h3>
+
+<p>클로저 안에 언급된 것은 어떤 것이든 해당 클로저와 strong reference가 생성됩니다.</p>
+
+<p>만약 클래스 안에 self를 사용하는 클로저가 있다면, 그 클로저가 메모리에 할당되어 있는 한 self와 strong reference를 가진 상태를 유지할 것입니다.</p>
+
+<p>👷</p>
 
         
       </section>
