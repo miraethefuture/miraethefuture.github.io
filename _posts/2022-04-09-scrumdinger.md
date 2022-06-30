@@ -1055,7 +1055,19 @@ All information below comes from the official apple developer page and is for pe
       }
   }
   ```
-  에러를 다루기 위해서 do-catch문을 작성해줍니다.
+  에러를 다루기 위해서 do-catch문을 작성해줍니다.  
+  do절 안에 파일 URL을 담을 지역 상수(local constant)를 생성합니다.  
+
+  ```swift
+  // ScrumStroe.swift
+
+      DispatchQueue.global(qos: .background).async {
+          do {
+              let fileURL = try fileURL()
+          } catch {
+          }
+      }
+  ```
 
 <!-- ### Add Life Cycle Events  
 
