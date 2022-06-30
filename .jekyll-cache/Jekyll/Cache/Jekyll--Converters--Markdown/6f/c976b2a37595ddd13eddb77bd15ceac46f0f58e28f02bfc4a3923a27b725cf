@@ -1,4 +1,4 @@
-I"Wx<p><a href="https://developer.apple.com/tutorials/app-dev-training/getting-started-with-scrumdinger">Getting Started with Scrumdinger</a><br />
+I"�<p><a href="https://developer.apple.com/tutorials/app-dev-training/getting-started-with-scrumdinger">Getting Started with Scrumdinger</a><br />
 <sub>아래 모든 정보의 출처는 apple developer 공식 페이지이며 개인의 학습 용도로만 사용되었음을 밝힙니다.<br />
 All information below comes from the official apple developer page and is for personal learning purposes only.</sub></p>
 
@@ -1025,6 +1025,24 @@ All information below comes from the official apple developer page and is for pe
   <span class="p">}</span>
 </code></pre></div></div>
 <p>에러를 다루기 위해서 do-catch문을 작성해줍니다.</p>
+
+<div class="language-swift highlighter-rouge"><div class="highlight"><pre class="highlight"><code>  <span class="c1">// ScrumStroe.swift</span>
+
+      <span class="kt">DispatchQueue</span><span class="o">.</span><span class="nf">global</span><span class="p">(</span><span class="nv">qos</span><span class="p">:</span> <span class="o">.</span><span class="n">background</span><span class="p">)</span><span class="o">.</span><span class="k">async</span> <span class="p">{</span>
+          <span class="k">do</span> <span class="p">{</span>
+              <span class="k">let</span> <span class="nv">fileURL</span> <span class="o">=</span> <span class="k">try</span> <span class="nf">fileURL</span><span class="p">()</span>
+              <span class="k">guard</span> <span class="k">let</span> <span class="nv">file</span> <span class="o">=</span> <span class="k">try</span><span class="p">?</span> <span class="kt">FileHandle</span><span class="p">(</span><span class="nv">forReadingFrom</span><span class="p">:</span> <span class="n">fileURL</span><span class="p">)</span> <span class="k">else</span> <span class="p">{</span>
+                  <span class="kt">DispatchQueue</span><span class="o">.</span><span class="n">main</span><span class="o">.</span><span class="k">async</span> <span class="p">{</span>
+                      <span class="nf">completion</span><span class="p">(</span><span class="o">.</span><span class="nf">success</span><span class="p">([]))</span>
+                  <span class="p">}</span>
+              <span class="p">}</span>
+          <span class="p">}</span> <span class="k">catch</span> <span class="p">{</span>
+          <span class="p">}</span>
+      <span class="p">}</span>
+</code></pre></div></div>
+
+<p>do절 안에 파일 URL을 담을 지역 상수(local constant)를 생성합니다.
+  file handle을 생성하여 scums.data를 읽어옵니다.</p>
 
 <!-- ### Add Life Cycle Events  
 
