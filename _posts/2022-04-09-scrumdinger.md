@@ -991,7 +991,13 @@ All information below comes from the official apple developer page and is for pe
   1. Model 그룹에 ScrumStore.swift 라는 새 파일을 생성하고 SwiftUI를 import 해줍니다.  
   2. 새 클래스를 생성하고 ObservableObject conformance를 추가해줍니다. ObservableObject는 클래스에 사용하는 프로토콜로 외부 모델 데이터를 SwiftUi 뷰에 연결해줍니다.
   3. ```@Published var scrums: [DailyScrum] = []```을 추가합니다. ObservableObject는 **objectWillChange** 퍼블리셔를 가지고 있습니다.
-  <!-- objectWillChange 공부 필요 : @Published 속성이 변경 될 때 그것이 포함된 타입을 관찰하고 있는 뷰가 렌더링 된다는 말인가? -->
+
+
+#### objectWillChange  
+
+  객체가 변경되기 전 내보내는 퍼블리셔(게시자).  
+
+  ScrumStore는 ObservableObject 프로토콜을 따르고 있다. 이 ObservableObject 프로토콜은 objectWillChange라는 퍼블리셔를 포함하고 있는데 property wrapper인 @Published가 붙어있는 속성중 하나가 변경되려고 할 때 emit한다. emit을 어떻게 번역하면 좋을까 고민중인데.. 퍼블리셔가 게시자고 emit에 발행, 내보내다, 내뿜다 등의 뜻이 있으니 '발행한다.'로 해석하면 어떨까 싶다. ScrumStore의 인스턴스에 일어나는 변화를 관찰하고 있는 뷰는 @Published가 붙은 속성의 값이 변할 때 objectWillChange 퍼블리셔가 게시하는 정보를 읽고 렌더링하여 변경된 정보를 보여준다. 
 
 #### fileURL  
 
