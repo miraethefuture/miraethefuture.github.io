@@ -1074,7 +1074,9 @@ All information below comes from the official apple developer page and is for pe
                   DispatchQueue.main.async {
                       completion(.success([]))
                   }
+                  return
               }
+               let dailyScrums = try JSONDecoder().decode([DailyScrum].self, from: file.availableData)
           } catch {
           }
       }
@@ -1083,12 +1085,14 @@ All information below comes from the official apple developer page and is for pe
   do절 안에 파일 URL을 담을 지역 상수(local constant)를 생성합니다.
   file handle을 생성하여 scums.data를 읽어옵니다.  
 
-  else 블락은 file handle을 열 때 에러가 있을 경우 실행되는데, 맨 처음 사용자가 앱을 구동시켰을때는 scrums.data가 존재하지않기 때문에 빈 배열을 가진 completion handler를 호출합니다.
+  else 블락은 file handle을 열 때 에러가 있을 경우 실행되는데, 맨 처음 사용자가 앱을 구동시켰을때는 scrums.data가 존재하지않기 때문에 빈 배열을 가진 completion handler를 호출합니다. scrums.data가 있을 때는 DailyScrum 타입의 배열을 가져옴.
 
   <div class="notice">
      <h4>궁 금...</h4>
      <p>load(completion:) 메서드를 앱이 맨 처음 구동될때만 사용하나..?</p>
-  </div>
+  </div>  
+
+  사용 가능한 데이터를 디코딩하여 지역 상수(local constant)로 만듭니다. (해당 상수에 디코딩한 값을 할당합니다.) 상수의 이름은 dailyScrums입니다.
 
 
 
