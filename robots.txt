@@ -1,0 +1,4 @@
+Sitemap: https://miraethefuture.github.io/sitemap.xml
+
+User-agent: *
+Allow: /
