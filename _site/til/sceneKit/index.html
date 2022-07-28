@@ -1,0 +1,702 @@
+<!doctype html>
+<!--
+  Minimal Mistakes Jekyll Theme 4.24.0 by Michael Rose
+  Copyright 2013-2020 Michael Rose - mademistakes.com | @mmistakes
+  Free for personal and commercial use under the MIT license
+  https://github.com/mmistakes/minimal-mistakes/blob/master/LICENSE
+-->
+<html lang="en" class="no-js">
+  <head>
+    <meta charset="utf-8">
+
+<!-- begin _includes/seo.html --><title>SceneKit 3D Programming for iOS: Getting Started | Mirae2thefuture</title>
+<meta name="description" content="SceneKit 3D Programming for iOS: Getting Started">
+
+
+  <meta name="author" content="Mirae">
+  
+  <meta property="article:author" content="Mirae">
+  
+
+
+<meta property="og:type" content="article">
+<meta property="og:locale" content="en_US">
+<meta property="og:site_name" content="Mirae2thefuture">
+<meta property="og:title" content="SceneKit 3D Programming for iOS: Getting Started">
+<meta property="og:url" content="http://localhost:4000/til/sceneKit/">
+
+
+  <meta property="og:description" content="SceneKit 3D Programming for iOS: Getting Started">
+
+
+
+
+
+
+
+  <meta property="article:published_time" content="2022-06-18T00:00:00+09:00">
+
+
+
+
+
+  
+
+  
+
+
+<link rel="canonical" href="http://localhost:4000/til/sceneKit/">
+
+
+
+
+<script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    
+      "@type": "Person",
+      "name": "Mirae 2 the Future",
+      "url": "http://localhost:4000/"
+    
+  }
+</script>
+
+
+
+
+
+
+
+<!-- end _includes/seo.html -->
+
+
+
+  <link href="/feed.xml" type="application/atom+xml" rel="alternate" title="Mirae2thefuture Feed">
+
+
+<!-- https://t.co/dKP3o1e -->
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<script>
+  document.documentElement.className = document.documentElement.className.replace(/\bno-js\b/g, '') + ' js ';
+</script>
+
+<!-- For all browsers -->
+<link rel="stylesheet" href="/assets/css/main.css">
+<link rel="preload" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@5/css/all.min.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
+<noscript><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@5/css/all.min.css"></noscript>
+
+
+
+    <!-- start custom head snippets -->
+
+<!-- insert favicons. use https://realfavicongenerator.net/ -->
+<link rel="apple-touch-icon" sizes="152x152" href="/assets/images/apple-touch-icon.png">
+<link rel="icon" type="image/png" sizes="32x32" href="/assets/images/favicon-32x32.png">
+<link rel="icon" type="image/png" sizes="16x16" href="/assets/images/favicon-16x16.png">
+<link rel="manifest" href="/assets/images/site.webmanifest">
+<link rel="mask-icon" href="/assets/images/safari-pinned-tab.svg" color="#5bbad5">
+<meta name="msapplication-TileColor" content="#da532c">
+<meta name="theme-color" content="#ffffff">
+
+<!-- end custom head snippets -->
+
+  </head>
+
+  <body class="layout--single">
+    <nav class="skip-links">
+  <ul>
+    <li><a href="#site-nav" class="screen-reader-shortcut">Skip to primary navigation</a></li>
+    <li><a href="#main" class="screen-reader-shortcut">Skip to content</a></li>
+    <li><a href="#footer" class="screen-reader-shortcut">Skip to footer</a></li>
+  </ul>
+</nav>
+
+    <!--[if lt IE 9]>
+<div class="notice--danger align-center" style="margin: 0;">You are using an <strong>outdated</strong> browser. Please <a href="https://browsehappy.com/">upgrade your browser</a> to improve your experience.</div>
+<![endif]-->
+
+    
+
+<div class="masthead">
+  <div class="masthead__inner-wrap">
+    <div class="masthead__menu">
+      <nav id="site-nav" class="greedy-nav">
+        
+        <a class="site-title" href="/">
+           
+          
+        </a>
+        <ul class="visible-links"><li class="masthead__menu-item">
+              <a href="/categories/">Categories</a>
+            </li><li class="masthead__menu-item">
+              <a href="/tags/">Tags</a>
+            </li></ul>
+        
+        <button class="search__toggle" type="button">
+          <span class="visually-hidden">Toggle search</span>
+          <i class="fas fa-search"></i>
+        </button>
+        
+        <button class="greedy-nav__toggle hidden" type="button">
+          <span class="visually-hidden">Toggle menu</span>
+          <div class="navicon"></div>
+        </button>
+        <ul class="hidden-links hidden"></ul>
+      </nav>
+    </div>
+  </div>
+</div>
+
+
+    <div class="initial-content">
+      
+
+
+  
+    
+
+
+
+<nav class="breadcrumbs">
+  <ol itemscope itemtype="https://schema.org/BreadcrumbList">
+    
+    
+    
+      
+        <li itemprop="itemListElement" itemscope itemtype="https://schema.org/ListItem">
+          <a href="/" itemprop="item"><span itemprop="name">Home</span></a>
+
+          <meta itemprop="position" content="1" />
+        </li>
+        <span class="sep">/</span>
+      
+      
+        
+        <li itemprop="itemListElement" itemscope itemtype="https://schema.org/ListItem">
+          <a href="/categories/#til" itemprop="item"><span itemprop="name">Til</span></a>
+          <meta itemprop="position" content="2" />
+        </li>
+        <span class="sep">/</span>
+      
+    
+      
+      
+        <li class="current">SceneKit 3D Programming for iOS: Getting Started</li>
+      
+    
+  </ol>
+</nav>
+
+  
+
+
+<div id="main" role="main">
+  
+
+
+  <article class="page h-entry" itemscope itemtype="https://schema.org/CreativeWork">
+    <meta itemprop="headline" content="SceneKit 3D Programming for iOS: Getting Started">
+    <meta itemprop="description" content="SceneKit 3D Programming for iOS: Getting Started">
+    <meta itemprop="datePublished" content="2022-06-18T00:00:00+09:00">
+    
+
+    <div class="page__inner-wrap">
+      
+        <header>
+          <h1 id="page-title" class="page__title p-name" itemprop="headline">
+            <a href="http://localhost:4000/til/sceneKit/" class="u-url" itemprop="url">SceneKit 3D Programming for iOS: Getting Started
+</a>
+          </h1>
+          
+
+  <p class="page__meta">
+    
+      
+      <span class="page__meta-date">
+        <i class="far fa-calendar-alt" aria-hidden="true"></i>
+        
+        <time datetime="2022-06-18T00:00:00+09:00">June 18, 2022</time>
+      </span>
+    
+
+    
+
+    
+  </p>
+
+
+        </header>
+      
+
+      <section class="page__content e-content" itemprop="text">
+        
+          <aside class="sidebar__right sticky">
+            <nav class="toc">
+              <header><h4 class="nav__title"><i class="fas fa-kiwi-bird"></i>  </h4></header>
+              <ul class="toc__menu"><li><a href="#loading-a-scene">Loading a Scene</a></li><li><a href="#adding-object">Adding Object</a></li><li><a href="#modifying-materials">Modifying Materials</a></li><li><a href="#setting-up-the-camera-node">Setting Up the Camera Node</a></li><li><a href="#creating-planets">Creating Planets</a><ul><li><a href="#mercury">Mercury</a></li></ul></li></ul>
+
+            </nav>
+          </aside>
+        
+        <p><a href="https://www.raywenderlich.com/23483920-scenekit-3d-programming-for-ios-getting-started">SceneKit 3D Programming for iOS: Getting Started</a></p>
+
+<p><sub>아래 모든 정보의 출처는 위의 웹페이지이며 개인의 학습 용도로만 사용되었음을 밝힙니다.</sub></p>
+
+<!-- # Getting Started
+
+# Exploring Solar Scene
+
+# Creating Your First Scene -->
+
+<h1 id="loading-a-scene">Loading a Scene</h1>
+
+<div class="language-swift highlighter-rouge"><div class="highlight"><pre class="highlight"><code>  <span class="k">var</span> <span class="nv">body</span><span class="p">:</span> <span class="kd">some</span> <span class="kt">View</span> <span class="p">{</span>
+  <span class="kt">ZStack</span> <span class="p">{</span>
+    <span class="kt">SceneView</span><span class="p">(</span>
+      <span class="c1">// 1</span>
+      <span class="nv">scene</span><span class="p">:</span> <span class="n">scene</span><span class="p">,</span>
+      <span class="c1">// 2</span>
+      <span class="nv">pointOfView</span><span class="p">:</span> <span class="nf">setUpCamera</span><span class="p">(</span><span class="nv">planet</span><span class="p">:</span> <span class="n">viewModel</span><span class="o">.</span><span class="n">selectedPlanet</span><span class="p">),</span>
+      <span class="c1">// 3</span>
+      <span class="nv">options</span><span class="p">:</span> <span class="o">.</span><span class="n">allowsCameraControl</span>
+    <span class="p">)</span>
+    <span class="c1">// 4</span>
+    <span class="o">.</span><span class="nf">background</span><span class="p">(</span><span class="kt">ColorPalette</span><span class="o">.</span><span class="n">secondary</span><span class="p">)</span>
+    <span class="o">.</span><span class="nf">edgesIgnoringSafeArea</span><span class="p">(</span><span class="o">.</span><span class="n">all</span><span class="p">)</span>
+
+    <span class="o">...</span> <span class="p">}</span>
+</code></pre></div></div>
+
+<p>body부분에 SceneView를 추가해주어 비어있던 앱의 백그라운드를 SceneView로 바꾸어줍니다.</p>
+
+<ul>
+  <li>// 1 : 어떤 scene을 추가할 것인지 선택합니다. 이 프로젝트에서는 아래와 같이 function을 작성하여 scene 변수에 SCNScene 타입의 값을 할당해두었습니다. 미리 생성해둔(과정 생략, 추가 예정) Solar Scene이라는 이름의 SceneKit Scene File을 이용했습니다.</li>
+</ul>
+
+<div class="language-swift highlighter-rouge"><div class="highlight"><pre class="highlight"><code>  <span class="c1">// Create the scene from the scene file</span>
+  <span class="kd">static</span> <span class="kd">func</span> <span class="nf">makeScene</span><span class="p">()</span> <span class="o">-&gt;</span> <span class="kt">SCNScene</span><span class="p">?</span> <span class="p">{</span>
+    <span class="k">let</span> <span class="nv">scene</span> <span class="o">=</span> <span class="kt">SCNScene</span><span class="p">(</span><span class="nv">named</span><span class="p">:</span> <span class="s">"Solar Scene.scn"</span><span class="p">)</span>
+    <span class="k">return</span> <span class="n">scene</span>
+  <span class="p">}</span>
+
+  <span class="c1">// Call makeScene() to load the scene</span>
+  <span class="k">var</span> <span class="nv">scene</span> <span class="o">=</span> <span class="nf">makeScene</span><span class="p">()</span>
+</code></pre></div></div>
+
+<ul>
+  <li>// 2 : <code class="language-plaintext highlighter-rouge">pointOfView</code>는 화면에 scene을 비춰줄(보여줄) 카메라입니다. 어떤 게임들은 이 속성을 이용하여 여러개의 카메라를 이동하며 현재 보고 있는 화면의 시점을 바꿀 수 있습니다.</li>
+</ul>
+
+<div class="language-swift highlighter-rouge"><div class="highlight"><pre class="highlight"><code>  <span class="c1">// Get a reference to the camera node</span>
+  <span class="kd">func</span> <span class="nf">setUpCamera</span><span class="p">(</span><span class="nv">planet</span><span class="p">:</span> <span class="kt">Planet</span><span class="p">?)</span> <span class="o">-&gt;</span> <span class="kt">SCNNode</span><span class="p">?</span> <span class="p">{</span>
+    <span class="k">let</span> <span class="nv">cameraNode</span> <span class="o">=</span> <span class="n">scene</span><span class="p">?</span><span class="o">.</span><span class="n">rootNode</span>
+      <span class="o">.</span><span class="nf">childNode</span><span class="p">(</span><span class="nv">withName</span><span class="p">:</span> <span class="s">"camera"</span><span class="p">,</span> <span class="nv">recursively</span><span class="p">:</span> <span class="kc">false</span><span class="p">)</span>
+    <span class="k">return</span> <span class="n">cameraNode</span>
+  <span class="p">}</span>
+</code></pre></div></div>
+
+<ul>
+  <li>
+    <p>// 3 : 여기서는 .allowsCameraControl 옵션을 사용하여 사용자가 카메라를 조정할 수 있도록 하였습니다. 이 외에도 여러가지 옵션을 이용하여 <code class="language-plaintext highlighter-rouge">SceneView</code>의 동작을 제어할 수 있습니다.</p>
+  </li>
+  <li>
+    <p>Scene view가 로딩되는 동안 보일 화면의 색을 설정하고, 화면 전체에 scene view가 보여지도록 합니다.</p>
+  </li>
+</ul>
+
+<p>짠 아래처럼 scene이 나타난 화면을 볼 수 있습니다.</p>
+
+<center><img src="/assets/images/sceneKit1.png" alt="sceneKit1.png" width="300" /></center>
+<p><br /></p>
+
+<h1 id="adding-object">Adding Object</h1>
+
+<p>SceneKit이 제공하는 도형을 사용하거나 Metal과 같은 다른 3D 모델링 도구를 이용하여 만든 커스텀 도형을 사용하여 오브젝트를 추가할 수 있습니다.</p>
+
+<p>이 튜토리얼에서는 SceneKit이 제공하는 기본 오브젝트 중 Sphere을 추가하여 태양의 형태를 만들어 봅니다.</p>
+
+<ul>
+  <li>오른쪽 위의 + 버튼을 클릭하여 Library를 엽니다.</li>
+  <li>Sphere을 검색하여 찾은 뒤 scene graph에 드래그하여 추가합니다.</li>
+</ul>
+
+<center><img src="/assets/images/sceneKit2.png" alt="sceneKit2.png" width="700" /></center>
+<p><br /></p>
+
+<h1 id="modifying-materials">Modifying Materials</h1>
+
+<p>추가한 구의 material을 수정하여 조금 더 태양처럼 보이도록 합니다.</p>
+
+<ul>
+  <li>Inspectors panel - Materials inspector 을 선택합니다.</li>
+  <li>Diffuse의 색을 클릭하여 컬러 픽커를 가져온 뒤. 색을 선택합니다. Material의 diffuse는 오브젝트의 기본 색상으로 생각하면 됩니다.</li>
+  <li>Illumination 색을 흰색으로 변경합니다. Material의 illumination은 빛이 오브젝트에 닿는 방식을 결정합니다.</li>
+</ul>
+
+<center><img src="/assets/images/sceneKit3.png" alt="sceneKit3.png" width="300" /></center>
+<p><br /></p>
+
+<ul>
+  <li>Attributes inspector에서 구의 반지름을 조정하여 크기를 키웁니다. 크기를 띄운 뒤 앱을 빌드하고 실행하면 태양이 사라져있습니다. 사이즈가 커져서 카메라를 가리게 됩니다. 카메라의 거리를 변경해야 합니다.</li>
+</ul>
+
+<h1 id="setting-up-the-camera-node">Setting Up the Camera Node</h1>
+
+<ul>
+  <li>camera 노트를 선택하고 Node inspector(상자 모양)을 선택합니다.</li>
+  <li>camera 노드의 포지션을 변경하는 것은 camera 노드에 첨부된 카메라의 포지션도 변경합니다. (노드에 일어난 변경은 첨부된 것에도 똑같이 일어남.)</li>
+  <li>모든 Node는 아래의 속성들을 가지고 있습니다. 이 속성들은 Node inspector에서 변경할 수 있습니다.
+    <ul>
+      <li>Identity: 노드의 이름. 코드에서 이 이름을 이용하여 노드에 접근합니다.</li>
+      <li>Position: scene에서 노드의 위치</li>
+      <li>Euler: 노드의 회전</li>
+      <li>Scale: 각 축에 따른 사이즈를 변경할 수 있음</li>
+    </ul>
+  </li>
+  <li>Node inspector의 position / Euler 값을 변경</li>
+  <li>Attributes inspector의 Z Clipping 값을 변경</li>
+</ul>
+
+<h1 id="creating-planets">Creating Planets</h1>
+
+<p>아래 다섯개의 행성을 추가합니다.</p>
+<ul>
+  <li>Mercury 수성</li>
+  <li>Venus 금성</li>
+  <li>Earth 지구</li>
+  <li>Mars 화성</li>
+  <li>Saturn 토성</li>
+</ul>
+
+<p>위에서 생성한 태양과 마찬가지로 구(sphere)입니다. 색과 크기, 위치와 같은 디테일을 설정할 것입니다.</p>
+
+<h2 id="mercury">Mercury</h2>
+
+<ol>
+  <li>먼저 Objects Library에서 구 하나를 생성해 줍니다.</li>
+  <li>Node inspector에서 x:0 y:0 z:25 그리고 이름을 mercury로 변경합니다.</li>
+  <li>Material inspector에서 Diffuse를 #BBBBBB로 변경합니다.</li>
+  <li>Roughness 값을 1로 변경합니다. 이 값을 변경하면 물체를 빛나게 하거나 그 반대로 설정할 수 있습니다. 0이 가장 빛나는 값 -&gt; 1이 빛을 가장 적게 반사하는 값입니다.</li>
+</ol>
+
+<p>빌드하고 실행시켜봅니다!</p>
+
+<center><img src="/assets/images/sceneKit4.png" alt="sceneKit4.png" width="300" /></center>
+<p><br /></p>
+
+        
+      </section>
+
+      <footer class="page__meta">
+        
+        
+  
+
+
+  
+
+  <p class="page__taxonomy">
+    <strong><i class="fas fa-fw fa-tags" aria-hidden="true"></i> Tags: </strong>
+    <span itemprop="keywords">
+    
+      <a href="/tags/#learning" class="page__taxonomy-item p-category" rel="tag">learning</a><span class="sep">, </span>
+    
+      <a href="/tags/#swift" class="page__taxonomy-item p-category" rel="tag">Swift</a><span class="sep">, </span>
+    
+      <a href="/tags/#%EA%B3%B5%EB%B6%80-%EA%B8%B0%EB%A1%9D" class="page__taxonomy-item p-category" rel="tag">공부 기록</a>
+    
+    </span>
+  </p>
+
+
+
+
+  
+
+
+  
+
+  <p class="page__taxonomy">
+    <strong><i class="fas fa-fw fa-folder-open" aria-hidden="true"></i> Categories: </strong>
+    <span itemprop="keywords">
+    
+      <a href="/categories/#til" class="page__taxonomy-item p-category" rel="tag">TIL</a>
+    
+    </span>
+  </p>
+
+
+        
+
+  <p class="page__date"><strong><i class="fas fa-fw fa-calendar-alt" aria-hidden="true"></i> Updated:</strong> <time class="dt-published" datetime="2022-06-18T00:00:00+09:00">June 18, 2022</time></p>
+
+      </footer>
+
+      
+
+      
+  <nav class="pagination">
+    
+      <a href="/til/asyncAwait/" class="pagination--pager" title="async/await in Swift
+">Previous</a>
+    
+    
+      <a href="#" class="pagination--pager disabled">Next</a>
+    
+  </nav>
+
+    </div>
+
+    
+  </article>
+
+  
+  
+    <div class="page__related">
+      <h2 class="page__related-title">You may also enjoy</h2>
+      <div class="grid__wrapper">
+        
+          
+
+
+
+<div class="grid__item">
+  <article class="archive__item" itemscope itemtype="https://schema.org/CreativeWork">
+    
+      <div class="archive__item-teaser">
+        <img src="/assets/images/teaser.jpg" alt="">
+      </div>
+    
+    <h2 class="archive__item-title no_toc" itemprop="headline">
+      
+        <a href="/til/asyncAwait/" rel="permalink">async/await in Swift
+</a>
+      
+    </h2>
+    
+
+  <p class="page__meta">
+    
+      
+      <span class="page__meta-date">
+        <i class="far fa-calendar-alt" aria-hidden="true"></i>
+        
+        <time datetime="2022-06-14T00:00:00+09:00">June 14, 2022</time>
+      </span>
+    
+
+    
+
+    
+  </p>
+
+
+    <p class="archive__item-excerpt" itemprop="description">Functions: 동기 / 비동기
+</p>
+  </article>
+</div>
+
+        
+          
+
+
+
+<div class="grid__item">
+  <article class="archive__item" itemscope itemtype="https://schema.org/CreativeWork">
+    
+      <div class="archive__item-teaser">
+        <img src="/assets/images/teaser.jpg" alt="">
+      </div>
+    
+    <h2 class="archive__item-title no_toc" itemprop="headline">
+      
+        <a href="/til/keepGoingwithApps/" rel="permalink">Keep Going with Apps
+</a>
+      
+    </h2>
+    
+
+  <p class="page__meta">
+    
+      
+      <span class="page__meta-date">
+        <i class="far fa-calendar-alt" aria-hidden="true"></i>
+        
+        <time datetime="2022-06-07T00:00:00+09:00">June 7, 2022</time>
+      </span>
+    
+
+    
+
+    
+  </p>
+
+
+    <p class="archive__item-excerpt" itemprop="description">아래 모든 정보의 출처는 Apple Playgrounds이며 개인의 학습 용도로만 사용되었음을 밝힙니다.
+</p>
+  </article>
+</div>
+
+        
+          
+
+
+
+<div class="grid__item">
+  <article class="archive__item" itemscope itemtype="https://schema.org/CreativeWork">
+    
+      <div class="archive__item-teaser">
+        <img src="/assets/images/teaser.jpg" alt="">
+      </div>
+    
+    <h2 class="archive__item-title no_toc" itemprop="headline">
+      
+        <a href="/til/moreSwift/" rel="permalink">심화 Swift
+</a>
+      
+    </h2>
+    
+
+  <p class="page__meta">
+    
+      
+      <span class="page__meta-date">
+        <i class="far fa-calendar-alt" aria-hidden="true"></i>
+        
+        <time datetime="2022-05-27T00:00:00+09:00">May 27, 2022</time>
+      </span>
+    
+
+    
+
+    
+  </p>
+
+
+    <p class="archive__item-excerpt" itemprop="description">📂 Swift language guide 외의 정보들을 기록합니다.
+
+
+
+</p>
+  </article>
+</div>
+
+        
+          
+
+
+
+<div class="grid__item">
+  <article class="archive__item" itemscope itemtype="https://schema.org/CreativeWork">
+    
+      <div class="archive__item-teaser">
+        <img src="/assets/images/teamProject2.png" alt="">
+      </div>
+    
+    <h2 class="archive__item-title no_toc" itemprop="headline">
+      
+        <a href="/til/teamProject/" rel="permalink">앱 만들어보기(Collection view 사용해보기)
+</a>
+      
+    </h2>
+    
+
+  <p class="page__meta">
+    
+      
+      <span class="page__meta-date">
+        <i class="far fa-calendar-alt" aria-hidden="true"></i>
+        
+        <time datetime="2022-05-06T00:00:00+09:00">May 6, 2022</time>
+      </span>
+    
+
+    
+
+    
+  </p>
+
+
+    <p class="archive__item-excerpt" itemprop="description">📲 튜토리얼을 따라가며 다른 스타일로 앱 만들어보기.
+</p>
+  </article>
+</div>
+
+        
+      </div>
+    </div>
+  
+  
+</div>
+    </div>
+
+    
+      <div class="search-content">
+        <div class="search-content__inner-wrap"><form class="search-content__form" onkeydown="return event.key != 'Enter';" role="search">
+    <label class="sr-only" for="search">
+      Enter your search term...
+    </label>
+    <input type="search" id="search" class="search-input" tabindex="-1" placeholder="Enter your search term..." />
+  </form>
+  <div id="results" class="results"></div></div>
+
+      </div>
+    
+
+    <div id="footer" class="page__footer">
+      <footer>
+        <!-- start custom footer snippets -->
+
+<!-- end custom footer snippets -->
+        <div class="page__footer-follow">
+  <ul class="social-icons">
+    
+      <li><strong>Follow:</strong></li>
+    
+
+    
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+
+    
+      <li><a href="/feed.xml"><i class="fas fa-fw fa-rss-square" aria-hidden="true"></i> Feed</a></li>
+    
+  </ul>
+</div>
+
+<div class="page__footer-copyright">&copy; 2022 Mirae 2 the Future. Powered by <a href="https://jekyllrb.com" rel="nofollow">Jekyll</a> &amp; <a href="https://mademistakes.com/work/minimal-mistakes-jekyll-theme/" rel="nofollow">Minimal Mistakes</a>.</div>
+
+      </footer>
+    </div>
+
+    
+  <script src="/assets/js/main.min.js"></script>
+
+
+
+
+<script src="/assets/js/lunr/lunr.min.js"></script>
+<script src="/assets/js/lunr/lunr-store.js"></script>
+<script src="/assets/js/lunr/lunr-en.js"></script>
+
+
+
+
+
+
+
+  </body>
+</html>
