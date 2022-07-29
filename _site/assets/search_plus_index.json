@@ -1,51 +1,21 @@
-{"/home/pages/about/": {
+{"/pages/about/": {
     "title": "About",
     "keywords": "Jekyll",
-    "url": "/home/pages/about/",
+    "url": "/pages/about/",
     "body": "This is an about page."
-  },"/home/pages/contact/": {
+  },"/pages/contact/": {
     "title": "Contact",
     "keywords": "Jekyll",
-    "url": "/home/pages/contact/",
+    "url": "/pages/contact/",
     "body": "This is an contact page."
-  },"/home/pages/design/draft/": {
+  },"/pages/design/draft/": {
     "title": "Design Draft",
     "keywords": "Jekyll",
-    "url": "/home/pages/design/draft/",
+    "url": "/pages/design/draft/",
     "body": "This is an draft page."
-  },"/home/jekyll/2022-06-30-tips_warnings_dangers.html": {
-    "title": "Tips, Warnings, and Dangers",
-    "keywords": "Jekyll",
-    "url": "/home/jekyll/2022-06-30-tips_warnings_dangers.html",
-    "body": "The jekyll-theme supports tips, warnings, and dangers blocks and the style is referred from the discord.js website. You could have the following markdown attributes (supported by kramdown): Tips Using a {: .block-tip} attribute: &gt; ##### TIP &gt; &gt; This guide is last tested with @napi-rs/canvas^0.1.20, so make sure you have &gt; this or a similar version after installation. {: .block-tip } TIP This guide is last tested with @napi-rs/canvas^0.1.20, so make sure you have this or a similar version after installation. Warnings Using a {: .block-warning} attribute: &gt; ##### WARNING &gt; &gt; Be sure that you're familiar with things like async/await and object destructuring &gt; before continuing, as we'll be making use of features like these. {: .block-warning } WARNING Be sure that you’re familiar with things like async/await and object destructuring before continuing, as we’ll be making use of features like these. Dangers Using a {: .block-danger} attribute: &gt; ##### DANGER &gt; &gt; You cannot delete an ephemeral message. {: .block-danger } DANGER You cannot delete an ephemeral message."
-  },"/home/jekyll/2022-06-26-wide_tables.html": {
-    "title": "Wide tables",
-    "keywords": "Jekyll",
-    "url": "/home/jekyll/2022-06-26-wide_tables.html",
-    "body": "A wide tables needs to be wrapped into a div with class table-wrapper to make sure it displayed as expected on mobile devices. For example, &lt;div class=\"table-wrapper\" markdown=\"block\"&gt; |title1|title2|title3|title4|title5|title6|title7|title8| |:-:|:-:|:-:|:-:|:-:|:-:|:-:|:-:| |1|2|3|4|5|6|7|8| |1|2|3|4|5|6|7|8| |1|2|3|4|5|6|7|8| |1|2|3|4|5|6|7|8| &lt;/div&gt; Will be rendered as title1 title2 title3 title4 title5 title6 title7 title8 1 2 3 4 5 6 7 8 1 2 3 4 5 6 7 8 1 2 3 4 5 6 7 8 1 2 3 4 5 6 7 8"
-  },"/home/jekyll/2022-05-24-page_cover.html": {
-    "title": "Page with cover image",
-    "keywords": "Jekyll",
-    "url": "/home/jekyll/2022-05-24-page_cover.html",
-    "body": "The jekyll-gitbook theme supports adding a cover image to a specific page by adding a cover field to the page metadata: --- title: Page with cover image author: Tao He date: 2022-05-24 category: Jekyll layout: post + cover: /assets/jekyll-gitbook/dinosaur.gif ---"
-  },"/home/jekyll/2021-08-10-toc.html": {
-    "title": "How to Generate TOC",
-    "keywords": "Jekyll",
-    "url": "/home/jekyll/2021-08-10-toc.html",
-    "body": "The jekyll-gitbook theme leverages jekyll-toc to generate the Contents for the page. The TOC feature is not enabled by default. To use the TOC feature, modify the TOC configuration in _config.yml: toc: enabled: true Why this repo long contents ….. a b c d Why this repo long contents ….. 1 2 3 4 Why this repo long contents ….. e f g h Why this repo 5 6 7 8 Why this repo long contents ….. a b c d Why this repo long contents ….. 1 2 3 4 Why this repo long contents ….. e f g h Why this repo 5 6 7 8 Why this repo long contents ….. a b c d Why this repo long contents ….. 1 2 3 4 Why this repo long contents ….. e f g h Why this repo 5 6 7 8 Why this repo long contents ….. a b c d Why this repo long contents ….. 1 2 3 4 Why this repo long contents ….. e f g h Why this repo 5 6 7 8"
-  },"/home/jekyll/2019-04-29-license.html": {
-    "title": "License",
-    "keywords": "Jekyll",
-    "url": "/home/jekyll/2019-04-29-license.html",
-    "body": "This work is open sourced under the Apache License, Version 2.0, using the same license as the original GitBook repository. Copyright 2019 Tao He."
-  },"/home/jekyll/2019-04-28-howto.html": {
-    "title": "How to Get Started",
-    "keywords": "Jekyll",
-    "url": "/home/jekyll/2019-04-28-howto.html",
-    "body": "The jekyll-gitbook theme can be used just as other Jekyll themes and support remote theme on Github Pages, see the official guide as well. You can introduce this jekyll theme into your own site by either Fork this repository and add your markdown posts to the _posts folder, then push to your own Github repository. Use as a remote theme in your _config.yml(just like what we do for this site itself), # Configurations title: Jekyll Gitbook longtitle: Jekyll Gitbook remote_theme: sighingnow/jekyll-gitbook TIP No need to push generated HTML bundle."
-  },"/home/jekyll/2019-04-27-why.html": {
-    "title": "Why Jekyll with GitBook",
-    "keywords": "Jekyll",
-    "url": "/home/jekyll/2019-04-27-why.html",
-    "body": "GitBook is an amazing frontend style to present and organize contents (such as book chapters and blogs) on Web. The typical to deploy GitBook at Github Pages is building HTML files locally and then push to Github repository, usually to the gh-pages branch. However, it’s quite annoying to repeat such workload and make it hard for people do version control via git for when there are generated HTML files to be staged in and out. This theme takes style definition out of generated GitBook site and provided the template for Jekyll to rendering markdown documents to HTML, thus the whole site can be deployed to Github Pages without generating and uploading HTML bundle every time when there are changes to the original repository."
+  },"/til/2022-06-18-sceneKit.html": {
+    "title": "SceneKit 3D Programming for iOS: Getting Started",
+    "keywords": "learning 공부 기록 Swift TIL",
+    "url": "/til/2022-06-18-sceneKit.html",
+    "body": "SceneKit 3D Programming for iOS: Getting Started 아래 모든 정보의 출처는 위의 웹페이지이며 개인의 학습 용도로만 사용되었음을 밝힙니다. Loading a Scene var body: some View { ZStack { SceneView( // 1 scene: scene, // 2 pointOfView: setUpCamera(planet: viewModel.selectedPlanet), // 3 options: .allowsCameraControl ) // 4 .background(ColorPalette.secondary) .edgesIgnoringSafeArea(.all) ... } body부분에 SceneView를 추가해주어 비어있던 앱의 백그라운드를 SceneView로 바꾸어줍니다. // 1 : 어떤 scene을 추가할 것인지 선택합니다. 이 프로젝트에서는 아래와 같이 function을 작성하여 scene 변수에 SCNScene 타입의 값을 할당해두었습니다. 미리 생성해둔(과정 생략, 추가 예정) Solar Scene이라는 이름의 SceneKit Scene File을 이용했습니다. // Create the scene from the scene file static func makeScene() -&gt; SCNScene? { let scene = SCNScene(named: \"Solar Scene.scn\") return scene } // Call makeScene() to load the scene var scene = makeScene() // 2 : pointOfView는 화면에 scene을 비춰줄(보여줄) 카메라입니다. 어떤 게임들은 이 속성을 이용하여 여러개의 카메라를 이동하며 현재 보고 있는 화면의 시점을 바꿀 수 있습니다. // Get a reference to the camera node func setUpCamera(planet: Planet?) -&gt; SCNNode? { let cameraNode = scene?.rootNode .childNode(withName: \"camera\", recursively: false) return cameraNode } // 3 : 여기서는 .allowsCameraControl 옵션을 사용하여 사용자가 카메라를 조정할 수 있도록 하였습니다. 이 외에도 여러가지 옵션을 이용하여 SceneView의 동작을 제어할 수 있습니다. Scene view가 로딩되는 동안 보일 화면의 색을 설정하고, 화면 전체에 scene view가 보여지도록 합니다. 짠 아래처럼 scene이 나타난 화면을 볼 수 있습니다. Adding Object SceneKit이 제공하는 도형을 사용하거나 Metal과 같은 다른 3D 모델링 도구를 이용하여 만든 커스텀 도형을 사용하여 오브젝트를 추가할 수 있습니다. 이 튜토리얼에서는 SceneKit이 제공하는 기본 오브젝트 중 Sphere을 추가하여 태양의 형태를 만들어 봅니다. 오른쪽 위의 + 버튼을 클릭하여 Library를 엽니다. Sphere을 검색하여 찾은 뒤 scene graph에 드래그하여 추가합니다. Modifying Materials 추가한 구의 material을 수정하여 조금 더 태양처럼 보이도록 합니다. Inspectors panel - Materials inspector 을 선택합니다. Diffuse의 색을 클릭하여 컬러 픽커를 가져온 뒤. 색을 선택합니다. Material의 diffuse는 오브젝트의 기본 색상으로 생각하면 됩니다. Illumination 색을 흰색으로 변경합니다. Material의 illumination은 빛이 오브젝트에 닿는 방식을 결정합니다. Attributes inspector에서 구의 반지름을 조정하여 크기를 키웁니다. 크기를 띄운 뒤 앱을 빌드하고 실행하면 태양이 사라져있습니다. 사이즈가 커져서 카메라를 가리게 됩니다. 카메라의 거리를 변경해야 합니다. Setting Up the Camera Node camera 노트를 선택하고 Node inspector(상자 모양)을 선택합니다. camera 노드의 포지션을 변경하는 것은 camera 노드에 첨부된 카메라의 포지션도 변경합니다. (노드에 일어난 변경은 첨부된 것에도 똑같이 일어남.) 모든 Node는 아래의 속성들을 가지고 있습니다. 이 속성들은 Node inspector에서 변경할 수 있습니다. Identity: 노드의 이름. 코드에서 이 이름을 이용하여 노드에 접근합니다. Position: scene에서 노드의 위치 Euler: 노드의 회전 Scale: 각 축에 따른 사이즈를 변경할 수 있음 Node inspector의 position / Euler 값을 변경 Attributes inspector의 Z Clipping 값을 변경 Creating Planets 아래 다섯개의 행성을 추가합니다. Mercury 수성 Venus 금성 Earth 지구 Mars 화성 Saturn 토성 위에서 생성한 태양과 마찬가지로 구(sphere)입니다. 색과 크기, 위치와 같은 디테일을 설정할 것입니다. Mercury 먼저 Objects Library에서 구 하나를 생성해 줍니다. Node inspector에서 x:0 y:0 z:25 그리고 이름을 mercury로 변경합니다. Material inspector에서 Diffuse를 #BBBBBB로 변경합니다. Roughness 값을 1로 변경합니다. 이 값을 변경하면 물체를 빛나게 하거나 그 반대로 설정할 수 있습니다. 0이 가장 빛나는 값 -&gt; 1이 빛을 가장 적게 반사하는 값입니다. 빌드하고 실행시켜봅니다!"
   }}
