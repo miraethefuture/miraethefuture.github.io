@@ -15,7 +15,7 @@ baseurl:          '/home'
 rss:              RSS
 
 # bootstrap: use the remote theme for the site itself
-remote_theme: miraethefuture.github.io/jekyll-gitbook
+remote_theme: sighingnow/jekyll-gitbook
 
 toc:
   enabled: true
@@ -59,3 +59,6 @@ plugins:
   - jekyll-feed
   - jekyll-readme-index
   - jemoji
+  # 아래 두개는 remote theme 방식 사용하려 후에 추가
+  - jekyll-remote-theme
+  - jekyll-include-cache
