@@ -34,7 +34,7 @@ kramdown:
   syntax_highlighter_opts:
     guess_lang:           true
 
-syntax_highlighter_style: gruvbox.dark
+syntax_highlighter_style: base16.dark
 
 markdown_ext:     markdown,mkdown,mkdn,mkd,md
 
