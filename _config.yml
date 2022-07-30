@@ -62,3 +62,7 @@ plugins:
   # 아래 두개는 remote theme 방식 사용하려 후에 추가
   - jekyll-remote-theme
   - jekyll-include-cache
+
+
+tracker:
+  google_analytics: "UA-236066895-2"

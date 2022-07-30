@@ -13,6 +13,11 @@
     "keywords": "Jekyll",
     "url": "/pages/design/draft/",
     "body": "This is an draft page."
+  },"/2022-07-30-2022-07-30-today.html": {
+    "title": "",
+    "keywords": "",
+    "url": "/2022-07-30-2022-07-30-today.html",
+    "body": "why"
   },"/til/2022-06-18-sceneKit.html": {
     "title": "SceneKit 3D Programming for iOS: Getting Started",
     "keywords": "learning 공부 기록 Swift TIL",
