@@ -1,6 +1,29 @@
-<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="3.9.2">Jekyll</generator><link href="http://localhost:4000/feed.xml" rel="self" type="application/atom+xml" /><link href="http://localhost:4000/" rel="alternate" type="text/html" /><updated>2022-07-30T19:01:00+09:00</updated><id>http://localhost:4000/feed.xml</id><title type="html">fitf_</title><subtitle>거대한 정보의 바다를 신나게 헤엄치고 있습니다. Let us swim in the internet ocean together!
+<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="3.9.2">Jekyll</generator><link href="http://localhost:4000/feed.xml" rel="self" type="application/atom+xml" /><link href="http://localhost:4000/" rel="alternate" type="text/html" /><updated>2022-07-30T19:48:23+09:00</updated><id>http://localhost:4000/feed.xml</id><title type="html">fitf_</title><subtitle>거대한 정보의 바다를 신나게 헤엄치고 있습니다. Let us swim in the internet ocean together!
 </subtitle><author><name>Mirae</name></author><entry><title type="html">iOS 개발 튜토리얼 / UIKit essentials / 앱 Today</title><link href="http://localhost:4000/til/2022-07-30-today.html" rel="alternate" type="text/html" title="iOS 개발 튜토리얼 / UIKit essentials / 앱 Today" /><published>2022-07-30T00:00:00+09:00</published><updated>2022-07-30T00:00:00+09:00</updated><id>http://localhost:4000/til/today</id><content type="html" xml:base="http://localhost:4000/til/2022-07-30-today.html">&lt;p&gt;&lt;a href=&quot;https://developer.apple.com/tutorials/app-dev-training/getting-started-with-today&quot;&gt;iOS App Dev Tutorials: UIKit Essential&lt;/a&gt;&lt;br /&gt;
-위 공식 UIKit 개발 튜토리얼을 따라가며 그 과정을 정리해 봅니다.&lt;/p&gt;</content><author><name>Mirae</name></author><category term="TIL" /><summary type="html">iOS App Dev Tutorials: UIKit Essential 위 공식 UIKit 개발 튜토리얼을 따라가며 그 과정을 정리해 봅니다.</summary></entry><entry><title type="html">SceneKit 3D Programming for iOS: Getting Started</title><link href="http://localhost:4000/til/2022-06-18-sceneKit.html" rel="alternate" type="text/html" title="SceneKit 3D Programming for iOS: Getting Started" /><published>2022-06-18T00:00:00+09:00</published><updated>2022-06-18T00:00:00+09:00</updated><id>http://localhost:4000/til/sceneKit</id><content type="html" xml:base="http://localhost:4000/til/2022-06-18-sceneKit.html">&lt;p&gt;&lt;a href=&quot;https://www.raywenderlich.com/23483920-scenekit-3d-programming-for-ios-getting-started&quot;&gt;SceneKit 3D Programming for iOS: Getting Started&lt;/a&gt;&lt;/p&gt;
+위 공식 UIKit 개발 튜토리얼을 따라가며 그 과정을 정리해 봅니다.&lt;/p&gt;
+
+&lt;h1 id=&quot;creating-a-list-view&quot;&gt;Creating a List View&lt;/h1&gt;
+
+&lt;p&gt;이 부분에서는 앱의 root view를 생성합니다. 리스트 레이아웃의 콜렉션 뷰로 사용자의 데일리 리마인더를 화면에 보여줍니다. 리스트를 보여줄 콜렉션 뷰를 생성하고 content configuration object를 사용하여 셀들의 외형을 정합니다. 그리고 그 셀들을 diffable 데이터 소스에 연결하여 데이터가 변경될 때 사용자의 인터페이스도 함께 변경되도록 합니다.&lt;/p&gt;
+
+&lt;h2 id=&quot;section-1---create-a-project&quot;&gt;Section 1 - Create a Project&lt;/h2&gt;
+
+&lt;p&gt;이 모듈의 전체 과정을 거쳐 앱을 만들어가며 앱 개발의 가장 중요한 부분들을 배울 것입니다. Xcode와 UIKit을 사용하는 일반적인 프로그래밍 패턴에 대해 알아볼 것입니다. 먼저, Xcode 템플릿을 사용여 iOS 앱 프로젝트를 생성해 봅니다.&lt;br /&gt;
+  (프로젝트 생성과 시뮬레이터 사용에 대해서는 알고 있기 때문에 스킵합니다.)&lt;/p&gt;
+
+&lt;h2 id=&quot;section-2---add-a-collection-view-controller&quot;&gt;Section 2 - Add a Collection View Controller&lt;/h2&gt;
+
+&lt;div class=&quot;language-plaintext highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;뷰 컨트롤러를 스토리보드에 추가함으로써 앱 Today 만들기를 시작합니다. 뷰 컨트롤러는 데이터 모델과 뷰 사이에서 다리 역할을 합니다. 각 컨트롤러는 뷰 계층을 관리하고, 뷰의 컨텐츠를 업데이트하고, UI의 이벤트에 응답합니다.  
+콜렉션 뷰를 생성하기 위해 Interface Builder를 사용할 것입니다. 콜렉션 뷰는 그리드, 컬럼, 로우, 테이블의 형태로 셀을 나타낼 수 있습니다.  
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;h3 id=&quot;step-1&quot;&gt;Step 1&lt;/h3&gt;
+&lt;div class=&quot;language-plaintext highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;Main 스토리보드에 프로젝트 생성 시 자동으로 생성되어 있는 View Controller Scene을 삭제해줍니다. (선택 후 키보드 delete ⌫ 키 누르기) 이 뷰 컨트롤러를 리스트를 보여 줄 뷰 컨트롤러로 대체 할 것입니다.  
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;h3 id=&quot;step-2&quot;&gt;Step 2.&lt;/h3&gt;
+&lt;div class=&quot;language-plaintext highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;오른쪽 위에 + 아이콘(라이브러리 아이콘)을 클릭한 뒤 Collection View Controller를 검색하고 캔바스로 드래그하여 새로운 콜렉션 뷰를 생성합니다. 
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;</content><author><name>Mirae</name></author><category term="TIL" /><summary type="html">iOS App Dev Tutorials: UIKit Essential 위 공식 UIKit 개발 튜토리얼을 따라가며 그 과정을 정리해 봅니다.</summary></entry><entry><title type="html">SceneKit 3D Programming for iOS: Getting Started</title><link href="http://localhost:4000/til/2022-06-18-sceneKit.html" rel="alternate" type="text/html" title="SceneKit 3D Programming for iOS: Getting Started" /><published>2022-06-18T00:00:00+09:00</published><updated>2022-06-18T00:00:00+09:00</updated><id>http://localhost:4000/til/sceneKit</id><content type="html" xml:base="http://localhost:4000/til/2022-06-18-sceneKit.html">&lt;p&gt;&lt;a href=&quot;https://www.raywenderlich.com/23483920-scenekit-3d-programming-for-ios-getting-started&quot;&gt;SceneKit 3D Programming for iOS: Getting Started&lt;/a&gt;&lt;/p&gt;
 
 &lt;p&gt;&lt;sub&gt;아래 모든 정보의 출처는 위의 웹페이지이며 개인의 학습 용도로만 사용되었음을 밝힙니다.&lt;/sub&gt;&lt;/p&gt;
 
