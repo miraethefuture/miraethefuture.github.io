@@ -63,6 +63,10 @@ plugins:
   - jekyll-remote-theme
   - jekyll-include-cache
 
-
+# google_analytics 사용하려고 추가
+# search console 추가 해야 함.
 tracker:
   google_analytics: "UA-236066895-2"
+
+# 로컬호스트에서 렌더링 되지 않아 추가
+encoding: UTF-8
