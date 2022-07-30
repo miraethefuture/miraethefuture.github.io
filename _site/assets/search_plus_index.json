@@ -13,10 +13,10 @@
     "keywords": "Jekyll",
     "url": "/pages/design/draft/",
     "body": "This is an draft page."
-  },"/2022-07-30-2022-07-30-today.html": {
-    "title": "",
-    "keywords": "",
-    "url": "/2022-07-30-2022-07-30-today.html",
+  },"/til/2022-07-30-today.html": {
+    "title": "iOS 개발 튜토리얼 / UIKit essentials / 앱 Today",
+    "keywords": "TIL",
+    "url": "/til/2022-07-30-today.html",
     "body": "why"
   },"/til/2022-06-18-sceneKit.html": {
     "title": "SceneKit 3D Programming for iOS: Getting Started",
