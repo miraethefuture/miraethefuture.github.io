@@ -1,5 +1,5 @@
 ---
-title: iOS 개발 튜토리얼 / UIKit essentials / 앱 Today
+title: Compose custom layouts with SwiftUI / SwiftUI / 커스텀 레이아웃 만들기 (출처: wwdc2022)
 author: Mirae
 date: 2022-08-07
 category: TIL
@@ -8,7 +8,10 @@ layout: post
 ---
 
 
-[Compose custom layouts wirh SwiftUI](https://developer.apple.com/videos/play/wwdc2022/10056/)
+[Compose custom layouts with SwiftUI](https://developer.apple.com/videos/play/wwdc2022/10056/)
+
+> 이 글의 모든 정보의 출처는 위 링크의 wwdc2022 영상입니다.
+{: .block-tip } 
   
   SwiftUI는 앱의 인터페이스를 구성할 때 사용할 수 있는 여러가지 빌딩 블락을 제공합니다.  
   
@@ -18,4 +21,5 @@ layout: post
   
 > #####  Leader board
 > 경쟁자들의 점수와 이름을 보여주는 점수표
-{: .block-tip } 
+>
+{: .block-tip } s
