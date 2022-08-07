@@ -1,5 +1,5 @@
 ---
-title: Compose custom layouts with SwiftUI / SwiftUI / 커스텀 레이아웃 만들기 (출처: wwdc2022)
+title: Compose custom layouts with SwiftUI / SwiftUI / 커스텀 레이아웃 만들기 (출처 - wwdc2022)
 author: Mirae
 date: 2022-08-07
 category: TIL
@@ -22,4 +22,7 @@ layout: post
 > #####  Leader board
 > 경쟁자들의 점수와 이름을 보여주는 점수표
 >
-{: .block-tip } s
+{: .block-tip } 
+
+
+  <center><img src="/assets/images/sceneKit2.png" alt="sceneKit2.png" width="700"></center><br>
