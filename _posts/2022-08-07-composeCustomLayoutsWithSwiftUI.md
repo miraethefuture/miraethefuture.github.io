@@ -25,4 +25,4 @@ layout: post
 {: .block-tip } 
 
 
-  <center><img src="/assets/images/sceneKit2.png" alt="sceneKit2.png" width="700"></center><br>
+  <center><img src="/assets/images/cclws1.png" alt="cclws1.png" width="500"></center><br>
