@@ -4,7 +4,7 @@ author: Mirae
 date: 2022-07-30
 category: TIL
 layout: post
-cover: /assets/images/team.gif
+<!--cover: /assets/images/team.gif-->
 ---
 
 [Demystify SwiftUI](https://developer.apple.com/videos/play/wwdc2021/10022/)  
