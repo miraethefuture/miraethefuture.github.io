@@ -51,6 +51,14 @@ SwiftUI가 선언형 UI 라는 말을 들어보셨을 겁니다. 원하는 UI를
    
    Explicit identity의 예로는 포인터가 있습니다. AppKit과 UIKit은 포인터를 사용합니다.  SwiftUI는 포인터를 사용하지 않지만 포인터에 대해 알아보는 것이 SwiftUI가 어떤 방식으로, 그리고 왜 다른지 이해하는 것에 도움이 되기 때문에 잠깐 포인터에 대해 알아봅시다. 
    	
+ 
+  <center><img src="/assets/images/DemystifySwift2.png" alt="DemystifySwift2" width="700"></center><br>
     
+    UIView와 NSView는 클래스이기 때문에 각 뷰가 메모리의 할당에 대한 고유한 포인터를 가지고 있습니다. 포인터를 사용하여 각각의 뷰를 참조할 수 있고 만약 두 뷰가 같은 포인터를 공유한다면 그들이 동일한 뷰라는 것을 확신할 수 있습니다. 
+    
+    
+  <center><img src="/assets/images/DemystifySwift2.png" alt="DemystifySwift2" width="700"></center><br>
+  
+  SwiftUI의 뷰는 value type이기 때문에 포인터를 사용하지 않습니다.
      
    
