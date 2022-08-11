@@ -59,6 +59,18 @@ SwiftUI가 선언형 UI 라는 말을 들어보셨을 겁니다. 원하는 UI를
     
   <center><img src="/assets/images/DemystifySwift2.png" alt="DemystifySwift2" width="700"></center><br>
   
-  SwiftUI의 뷰는 value type이기 때문에 포인터를 사용하지 않습니다.
+  SwiftUI의 뷰는 일반적으로 class가 아닌 struct로 표현되는 value type이기 때문에 포인터를 사용하지 않습니다. 포인터를 사용하지 않는다는 것은 뷰의 영구적인 아이덴티티로 사용할 표준 참조 기준이 없다는 것이죠. 
+  SwiftUI는 포인터가 대신 다른 형태의 explicit 아이덴티티를 사용합니다.  
+  
+  
+  SwiftUI가 왜 Value type을 사용하는지는 wwdc19 SwiftUI essentials에 자세한 설명이 있다고 하여 그 영상의 내용을 정리해봅니다. 
+  
+#### SwiftUI Essentials (wwdc19)
+
+<!--  <center><img src="/assets/images/DemystifySwift4.png" alt="DemystifySwift4" width="700"></center><br>  -->
+<!--  -->
+<!--  구조견의 목록을 표현한 리스트를 봅시다. -->
+  
+   
      
    
