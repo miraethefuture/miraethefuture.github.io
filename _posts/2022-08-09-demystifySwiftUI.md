@@ -63,29 +63,30 @@ SwiftUI가 선언형 UI 라는 말을 들어보셨을 겁니다. 원하는 UI를
   
   
   SwiftUI가 왜 Value type을 사용하는지는 wwdc19 SwiftUI essentials에 자세한 설명이 있다고 하여 그 영상의 내용을 정리해봅니다. 
+ 
   
 #### SwiftUI Essentials (wwdc19)
   
-    <center><img src="/assets/images/DemystifySwift5.png" alt="DemystifySwift5" width="700"></center><br>
+  <center><img src="/assets/images/DemystifySwift5.png" alt="DemystifySwift5" width="700"></center><br>
     
-    뷰는 사용자 인터페이스의 기본적인 빌딩 블럭입니다. 고레벨에서 뷰는 UI의 한 부분을 정의하는 어떤 것입니다. 
+  뷰는 사용자 인터페이스의 기본적인 빌딩 블럭입니다. 고레벨에서 뷰는 UI의 한 부분을 정의하는 어떤 것입니다. 
     
-    <center><img src="/assets/images/DemystifySwift6.png" alt="DemystifySwift6" width="700"></center><br>
+  <center><img src="/assets/images/DemystifySwift6.png" alt="DemystifySwift6" width="700"></center><br>
     
-    위 캡처에 보이는 앱 화면의 모든 것들이 뷰로 선언됩니다. 
-    - Order 버튼과 같은 individual control은 뷰입니다. 이것들을 담고 있는 컨테이너도 뷰입니다. 
+  위 캡처에 보이는 앱 화면의 모든 것들이 뷰로 선언됩니다. 
+  - Order 버튼과 같은 individual control은 뷰입니다. 이것들을 담고 있는 컨테이너도 뷰입니다. 
    <!--  infect every single pixel you can see on screen can be traced back in some way to a view 먼말이야? -->
    
-    <center><img src="/assets/images/DemystifySwift7.png" alt="DemystifySwift7" width="700"></center><br>   
+  <center><img src="/assets/images/DemystifySwift7.png" alt="DemystifySwift7" width="700"></center><br>   
        
-    이 뷰들을 계층 형식으로 결합하여 사용자 인터페이스를 구성합니다. 
-    Vertical Stack은 Container로 root 에 위치하고 text, shape, image 등의 뷰들은 bottom 부분입니다.
+  이 뷰들을 계층 형식으로 결합하여 사용자 인터페이스를 구성합니다. 
+  Vertical Stack은 Container로 root 에 위치하고 text, shape, image 등의 뷰들은 bottom 부분입니다.
      
-     뷰가 코드 안에서 표현되는 방식이 우리가 익숙한 방식과는 좀 다를 수 있습니다. 
-     코드를 보겠습니다.
+  뷰가 코드 안에서 표현되는 방식이 우리가 익숙한 방식과는 좀 다를 수 있습니다. 
+  코드를 보겠습니다.
      
-    <center><img src="/assets/images/DemystifySwift8.png" alt="DemystifySwift8" width="700"></center><br>
-     
+  <center><img src="/assets/images/DemystifySwift8.png" alt="DemystifySwift8" width="700"></center><br>
+
      
      
     
