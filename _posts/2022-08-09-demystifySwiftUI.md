@@ -57,7 +57,7 @@ SwiftUI가 선언형 UI 라는 말을 들어보셨을 겁니다. 원하는 UI를
     UIView와 NSView는 클래스이기 때문에 각 뷰가 메모리의 할당에 대한 고유한 포인터를 가지고 있습니다. 포인터를 사용하여 각각의 뷰를 참조할 수 있고 만약 두 뷰가 같은 포인터를 공유한다면 그들이 동일한 뷰라는 것을 확신할 수 있습니다. 
     
     
-  <center><img src="/assets/images/DemystifySwift2.png" alt="DemystifySwift2" width="700"></center><br>
+  <center><img src="/assets/images/DemystifySwift3.png" alt="DemystifySwift3" width="700"></center><br>
   
   SwiftUI의 뷰는 일반적으로 class가 아닌 struct로 표현되는 value type이기 때문에 포인터를 사용하지 않습니다. 포인터를 사용하지 않는다는 것은 뷰의 영구적인 아이덴티티로 사용할 표준 참조 기준이 없다는 것이죠. 
   SwiftUI는 포인터가 대신 다른 형태의 explicit 아이덴티티를 사용합니다.  
@@ -66,6 +66,15 @@ SwiftUI가 선언형 UI 라는 말을 들어보셨을 겁니다. 원하는 UI를
   SwiftUI가 왜 Value type을 사용하는지는 wwdc19 SwiftUI essentials에 자세한 설명이 있다고 하여 그 영상의 내용을 정리해봅니다. 
   
 #### SwiftUI Essentials (wwdc19)
+  
+    <center><img src="/assets/images/DemystifySwift5.png" alt="DemystifySwift5" width="700"></center><br>
+    
+    뷰는 사용자 인터페이스의 기본적인 빌딩 블럭입니다. 고레벨에서 뷰는 UI의 한 부분을 정의하는 어떤 것입니다. 
+    
+    <center><img src="/assets/images/DemystifySwift6.png" alt="DemystifySwift5" width="700"></center><br>
+    
+    
+    
 
 <!--  <center><img src="/assets/images/DemystifySwift4.png" alt="DemystifySwift4" width="700"></center><br>  -->
 <!--  -->
