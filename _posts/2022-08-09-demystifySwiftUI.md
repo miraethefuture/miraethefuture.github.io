@@ -77,7 +77,7 @@ SwiftUI가 선언형 UI 라는 말을 들어보셨을 겁니다. 원하는 UI를
   - Order 버튼과 같은 individual control은 뷰입니다. 이것들을 담고 있는 컨테이너도 뷰입니다. 
    <!--  infect every single pixel you can see on screen can be traced back in some way to a view 먼말이야? -->
    
-  <center><img src="/assets/images/DemystifySwift7.png" alt="DemystifySwift7" width="700"></center><br>   
+  <center><img src="/assets/images/DemystifySwift7.png" alt="DemystifySwift7" width="500"></center><br>   
        
   이 뷰들을 계층 형식으로 결합하여 사용자 인터페이스를 구성합니다. 
   Vertical Stack은 Container로 root 에 위치하고 text, shape, image 등의 뷰들은 bottom 부분입니다.
@@ -85,9 +85,11 @@ SwiftUI가 선언형 UI 라는 말을 들어보셨을 겁니다. 원하는 UI를
   뷰가 코드 안에서 표현되는 방식이 우리가 익숙한 방식과는 좀 다를 수 있습니다. 
   코드를 보겠습니다.
      
-  <center><img src="/assets/images/DemystifySwift8.png" alt="DemystifySwift8" width="700"></center><br>
-
-     
+  <center><img src="/assets/images/DemystifySwift8.png" alt="DemystifySwift8" width="500"></center><br>
+  
+  샘플 앱은 Text와 Controls를 포함한 VStack으로 작성되어 있습니다. 코드를 읽으면서 바로 이해가 되도록 잘 보이게 쓰여져 있죠. 그리고 위에 있던 뷰 계층 다이어그램과도 비슷합니다. 
+  add subviews와 같은 function을 호출하는 부분은 없는데요. 뷰 계층을 하나하나 쌓는게 아니라 완전하게 구성된 스트럭쳐로써 초기화하기 때문입니다.  
+  SwiftUI는 뷰를 명령형이 아닌 선언적으로 정의하기 때문입니다.  
      
     
     
