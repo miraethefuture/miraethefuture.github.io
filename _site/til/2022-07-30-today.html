@@ -33,9 +33,11 @@
         }
     };
 </script><!-- trackers -->
-            <link rel="prev" href="//til/2022-06-18-sceneKit.html" />
+            <link rel="prev" href="//til/2022-07-30-closures.html" />
         
 
+        
+            <link rel="next" href="//til/2022-07-30-demystifySwiftUI.html" />
         
     </head>
     <body>
@@ -120,6 +122,17 @@
                         </li>
                     
                         
+                        <li class="chapter" data-level="1.1" data-path="//til/2022-07-30-closures.html">
+                        
+                            <a href="//til/2022-07-30-closures.html">
+                                Closures? 그러니까,, 클로저가 뭐냐면,,
+                            </a>
+                            
+                                
+                            
+                        </li>
+                    
+                        
                         <li class="chapter active" data-level="1.2" data-path="//til/2022-07-30-today.html">
                         
                             <a href="//til/2022-07-30-today.html">
@@ -127,8 +140,30 @@
                             </a>
                             
                                 
-                                    <ul><li><a href="#creating-a-list-view">Creating a List View</a><ul><li><a href="#section-1---create-a-project">Section 1 - Create a Project</a></li><li><a href="#section-2---add-a-collection-view-controller">Section 2 - Add a Collection View Controller</a><ul><li><a href="#step-1">Step 1</a></li><li><a href="#step-2">Step 2.</a></li></ul></li></ul></li></ul>
+                                    <ul><li><a href="#creating-a-list-view">Creating a List View</a><ul><li><a href="#section-1---create-a-project">Section 1 - Create a Project</a></li><li><a href="#section-2---add-a-collection-view-controller">Section 2 - Add a Collection View Controller</a></li><li><a href="#section-3---create-a-reminder-model">Section 3 - Create a Reminder Model</a></li><li><a href="#section-4---configure-the-collection-as-a-list">Section 4 - Configure the Collection as a List</a></li><li><a href="#section-5----configure-the-data-source">Section 5 -  Configure the Data Source</a></li></ul></li></ul>
 
+                                
+                            
+                        </li>
+                    
+                        
+                        <li class="chapter" data-level="1.1" data-path="//til/2022-07-30-demystifySwiftUI.html">
+                        
+                            <a href="//til/2022-07-30-demystifySwiftUI.html">
+                                Demystify SwiftUI / WWDC21
+                            </a>
+                            
+                                
+                            
+                        </li>
+                    
+                        
+                        <li class="chapter" data-level="1.1" data-path="//til/2022-08-14-myBoxes.html">
+                        
+                            <a href="//til/2022-08-14-myBoxes.html">
+                                My Boxes
+                            </a>
+                            
                                 
                             
                         </li>
@@ -191,17 +226,238 @@
 
 <h2 id="section-2---add-a-collection-view-controller">Section 2 - Add a Collection View Controller</h2>
 
-<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>뷰 컨트롤러를 스토리보드에 추가함으로써 앱 Today 만들기를 시작합니다. 뷰 컨트롤러는 데이터 모델과 뷰 사이에서 다리 역할을 합니다. 각 컨트롤러는 뷰 계층을 관리하고, 뷰의 컨텐츠를 업데이트하고, UI의 이벤트에 응답합니다.  
-콜렉션 뷰를 생성하기 위해 Interface Builder를 사용할 것입니다. 콜렉션 뷰는 그리드, 컬럼, 로우, 테이블의 형태로 셀을 나타낼 수 있습니다.  
-</code></pre></div></div>
+<p>뷰 컨트롤러를 스토리보드에 추가함으로써 앱 Today 만들기를 시작합니다. 뷰 컨트롤러는 데이터 모델과 뷰 사이에서 다리 역할을 합니다. 각 컨트롤러는 뷰 계층을 관리하고, 뷰의 컨텐츠를 업데이트하고, UI의 이벤트에 응답합니다.<br />
+  콜렉션 뷰를 생성하기 위해 Interface Builder를 사용할 것입니다. 콜렉션 뷰는 그리드, 컬럼, 로우, 테이블의 형태로 셀을 나타낼 수 있습니다.</p>
 
-<h3 id="step-1">Step 1</h3>
-<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>Main 스토리보드에 프로젝트 생성 시 자동으로 생성되어 있는 View Controller Scene을 삭제해줍니다. (선택 후 키보드 delete ⌫ 키 누르기) 이 뷰 컨트롤러를 리스트를 보여 줄 뷰 컨트롤러로 대체 할 것입니다.  
-</code></pre></div></div>
+<ul>
+  <li>
+    <p>Step 1<br />
+Main 스토리보드에 프로젝트 생성 시 자동으로 생성되어 있는 View Controller Scene을 삭제해줍니다. (선택 후 키보드 delete ⌫ 키 누르기) 이 뷰 컨트롤러를 리스트를 보여 줄 뷰 컨트롤러로 대체 할 것입니다.</p>
+  </li>
+  <li>
+    <p>Step 2<br />
+오른쪽 위에 + 아이콘(라이브러리 아이콘)을 클릭한 뒤 Collection View Controller를 검색합니다.</p>
+  </li>
+  <li>
+    <p>Step 3<br />
+콜렉션 뷰 컨트롤러를 캔바스로 드래그하여 새로운 콜렉션 뷰를 생성합니다.</p>
+  </li>
+  <li>
+    <p>Step 4
+Attributes inspector에서 Is initial View Controller 체크박스를 선택하여 해당 Scene을 스토리보드 엔트리 포인트로 설정합니다. initial view controller 값은 앱이 스토리보드를 로드할 때 어떤 뷰 컨트롤러가 로드될 지 결정합니다.<br />
+ NOTE: 앱은 여러개의 스토리보드를 가질 수 있습니다. 앱의 프로젝트 파일 안에 있는 Main Interface setting은 어떤 스토리보드가 앱이 처음 실행되었을 때 로드될 지 결정합니다.</p>
+  </li>
+</ul>
 
-<h3 id="step-2">Step 2.</h3>
-<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>오른쪽 위에 + 아이콘(라이브러리 아이콘)을 클릭한 뒤 Collection View Controller를 검색하고 캔바스로 드래그하여 새로운 콜렉션 뷰를 생성합니다. 
-</code></pre></div></div>
+<p>(Step 5 생략)</p>
+
+<p>여기까지 콜렉션 뷰 컨트롤러를 생성하고 initial view로 설정하였습니다. 다음으로는, 리마인더를 담을 데이터 모델을 생성하여 데이터 설정을 해보도록 하겠습니다.</p>
+
+<h2 id="section-3---create-a-reminder-model">Section 3 - Create a Reminder Model</h2>
+
+<p>앱 Today는 MVC(모델-뷰-컨트롤러) 구조 패턴을 사용할 것입니다. UIKit 앱에서 주로 사용되는 패턴입니다. 뷰 객체는 데이터가 나타나는 모습에 대한 것을 제공합니다. 모델 객체는 앱의 데이터와 비즈니스 로직을 관리합니다.<br />
+   위에서 생성한 뷰 컨트롤러는 모델이 직접적으로 뷰를 변경시키거나, 뷰가 직접적으로 모델에 영향을 끼치지 않도록 합니다. 이제 데이터 모델을 생성하여 리스트의 리마인더를 보여줄 것입니다.</p>
+
+<ul>
+  <li>
+    <p>Step 1<br />
+Xcode의 왼쪽에 있는 프로젝트 네비게이터에서 Models라는 새 그룹을 생성합니다. (프로젝트 네비게이터 아래 부분에 있는 + 버튼 클릭 → New Group)</p>
+  </li>
+  <li>
+    <p>Step 2<br />
+Models에 Reminder.swift 라는 새 파일을 생성하고 struct Reminder를 생성합니다.</p>
+
+    <div class="language-swift highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">import</span> <span class="kt">Foundation</span>
+  
+<span class="kd">struct</span> <span class="kt">Reminder</span> <span class="p">{</span>
+    <span class="k">var</span> <span class="nv">title</span><span class="p">:</span> <span class="kt">String</span>
+    <span class="k">var</span> <span class="nv">dueDate</span><span class="p">:</span> <span class="kt">Date</span>
+    <span class="k">var</span> <span class="nv">notes</span><span class="p">:</span> <span class="kt">String</span><span class="p">?</span> <span class="o">=</span> <span class="kc">nil</span>
+    <span class="k">var</span> <span class="nv">isComplete</span><span class="p">:</span> <span class="kt">Bool</span> <span class="o">=</span> <span class="kc">false</span>
+<span class="p">}</span>
+  
+<span class="cp">#if DEBUG</span>
+<span class="kd">extension</span> <span class="kt">Reminder</span> <span class="p">{</span>
+<span class="p">}</span>
+<span class="cp">#endif</span>
+</code></pre></div>    </div>
+  </li>
+  <li>
+    <p>Step 3<br />
+title, dueDate 속성을 선언합니다.</p>
+  </li>
+  <li>
+    <p>Step 4. 
+옵셔널 스트링 속성인 notes를 선언하고 기본값으로 nil을 줍니다.</p>
+  </li>
+  <li>
+    <p>Step 5<br />
+불리언 타입의 속성 isComplete을 선언하고 기본 값으로 false를 줍니다.</p>
+  </li>
+  <li>
+    <p>Step 6<br />
+파일의 아래 부분에 샘플 데이터를 담을 extension을 추가합니다. 그리고 #if. DEBUG 블락안에 extexsion을 위치시킵니다.</p>
+  </li>
+  <li>
+    <p>#If DEBUG flag 는 compilation directive인데 이 플래그로 감싼 코드는 출시된 앱을 빌드할 때 컴파일되지 않습니다. 디버그 빌드 시 코드를 테스트하기 위해 사용하거나 샘플 테스트 데이터를 제공하기 위해 사용할 수 있습니다. 이 단계에서는 샘플 데이터를 제공하기 위해 사용합니다.</p>
+  </li>
+  <li>
+    <p>Step 7
+샘플 리마인더 정보를 가진 static 배열을 정의합니다.</p>
+
+    <div class="language-swift highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">import</span> <span class="kt">Foundation</span>
+  
+<span class="kd">struct</span> <span class="kt">Reminder</span> <span class="p">{</span>
+    <span class="k">var</span> <span class="nv">title</span><span class="p">:</span> <span class="kt">String</span>
+    <span class="k">var</span> <span class="nv">dueDate</span><span class="p">:</span> <span class="kt">Date</span>
+    <span class="k">var</span> <span class="nv">notes</span><span class="p">:</span> <span class="kt">String</span><span class="p">?</span> <span class="o">=</span> <span class="kc">nil</span>
+    <span class="k">var</span> <span class="nv">isComplete</span><span class="p">:</span> <span class="kt">Bool</span> <span class="o">=</span> <span class="kc">false</span>
+<span class="p">}</span>
+  
+<span class="cp">#if DEBUG</span>
+<span class="kd">extension</span> <span class="kt">Reminder</span> <span class="p">{</span>
+    <span class="kd">static</span> <span class="k">var</span> <span class="nv">sampleData</span> <span class="o">=</span> <span class="p">[</span>
+      <span class="kt">Reminder</span><span class="p">(</span><span class="nv">title</span><span class="p">:</span> <span class="s">"예약한 책 확인하기"</span><span class="p">,</span> <span class="nv">dueDate</span><span class="p">:</span> <span class="kt">Date</span><span class="p">()</span><span class="o">.</span><span class="nf">addingTimeInterval</span><span class="p">(</span><span class="mf">800.0</span><span class="p">),</span> <span class="nv">notes</span><span class="p">:</span> <span class="s">"전자 도서관 앱에서 확인하기"</span><span class="p">),</span>
+      <span class="kt">Reminder</span><span class="p">(</span><span class="nv">title</span><span class="p">:</span> <span class="s">"도시락 구입하기"</span><span class="p">,</span> <span class="nv">dueDate</span><span class="p">:</span> <span class="kt">Date</span><span class="p">()</span><span class="o">.</span><span class="nf">addingTimeInterval</span><span class="p">(</span><span class="mf">14000.0</span><span class="p">),</span> <span class="nv">notes</span><span class="p">:</span> <span class="s">"B마트 쿠폰 확인하기"</span><span class="p">,</span> <span class="nv">isComplete</span><span class="p">:</span> <span class="kc">true</span><span class="p">),</span>
+      <span class="kt">Reminder</span><span class="p">(</span><span class="nv">title</span><span class="p">:</span> <span class="s">"선인장 물주기"</span><span class="p">,</span> <span class="nv">dueDate</span><span class="p">:</span> <span class="kt">Date</span><span class="p">()</span><span class="o">.</span><span class="nf">addingTimeInterval</span><span class="p">(</span><span class="mf">24000.0</span><span class="p">),</span> <span class="nv">notes</span><span class="p">:</span> <span class="s">"물주고 통풍 신경쓰기"</span><span class="p">),</span>
+      <span class="kt">Reminder</span><span class="p">(</span><span class="nv">title</span><span class="p">:</span> <span class="s">"블로그 글 정리하기"</span><span class="p">,</span> <span class="nv">dueDate</span><span class="p">:</span> <span class="kt">Date</span><span class="p">()</span><span class="o">.</span><span class="nf">addingTimeInterval</span><span class="p">(</span><span class="mf">60000.0</span><span class="p">),</span> <span class="nv">notes</span><span class="p">:</span> <span class="s">"조금이라도 하기"</span><span class="p">),</span>
+      <span class="kt">Reminder</span><span class="p">(</span><span class="nv">title</span><span class="p">:</span> <span class="s">"요가 일주일 테스트 신청"</span><span class="p">,</span> <span class="nv">dueDate</span><span class="p">:</span> <span class="kt">Date</span><span class="p">()</span><span class="o">.</span><span class="nf">addingTimeInterval</span><span class="p">(</span><span class="mf">72000.0</span><span class="p">),</span> <span class="nv">notes</span><span class="p">:</span> <span class="s">"요일도 생각해보기"</span><span class="p">),</span>
+      <span class="kt">Reminder</span><span class="p">(</span><span class="nv">title</span><span class="p">:</span> <span class="s">"보고 피피티 끝내기"</span><span class="p">,</span> <span class="nv">dueDate</span><span class="p">:</span> <span class="kt">Date</span><span class="p">()</span><span class="o">.</span><span class="nf">addingTimeInterval</span><span class="p">(</span><span class="mf">3200.0</span><span class="p">),</span> <span class="nv">notes</span><span class="p">:</span> <span class="s">"너무 늦지 않게 끝내기"</span><span class="p">)</span>
+  <span class="p">]</span>
+<span class="p">}</span>
+<span class="cp">#endif</span>
+</code></pre></div>    </div>
+  </li>
+</ul>
+
+<blockquote class="block-tip">
+  <h5 id="addingtimeinterval_">addingTimeInterval(_:)</h5>
+
+  <p>특정 시간만큼의 간격을 더하여 새로운 날짜 값을 생성합니다. 패러미터 값으로는 초(seconds)를 사용합니다.</p>
+</blockquote>
+
+<p>여기까지, 프로젝트와 스토리보드를 설정하고 데이타 스트럭쳐를 생성하였습니다. 이제부터는 콜렉션 뷰의 컴포넌트에 대해 알아보며 콜렉션 뷰의 외형에 대해 알아보겠습니다.</p>
+
+<h2 id="section-4---configure-the-collection-as-a-list">Section 4 - Configure the Collection as a List</h2>
+
+<p>컴포지셔널 레이아웃을 사용하여 콜렉션 뷰 설정을 시작합니다. 컴포지셔널 레이아웃은 섹션, 그룹, 아이템이라는 컴포넌트들을 결합하여 뷰를 그립니다. 섹션은 아이템들을 가지고 있는 그룹을 담고 있는 컨테이너 뷰를 화면에 보여줍니다. 
+  스토리 보드의 콜렉션 뷰 컨트롤러를 backing code에 연결하며 시작해 봅니다.</p>
+
+<ul>
+  <li>
+    <p>Step 1<br />
+프로젝트 생성 시 자동으로 생성되었던 ViewController.swift 파일에 있는 클래스  ViewController의 이름을 컨트롤 + 클릭합니다. Refactor &gt; Rename 하여 클래스의 이름을 ReminderListViewController로 변경합니다. 그리고 슈퍼 클래스를 UIViewController에서 UICollectionViewControllerfh 로 변경합니다.</p>
+
+    <ul>
+      <li>
+        <p>Step 2<br />
+Main.storyboard를 열고 오른쪽의 inspector 중 Identity inspector에서 Custom Class - Class를 ReminderListViewController로 변경합니다. 
+뷰 컨트롤러의 indentity를 변경해줌으로써, ReminderListViewController의 속성과 메서드에 접근 권한을 얻습니다.</p>
+
+        <p>앱 Today는 리스트의 형태로 리마인더를 보여줍니다. 미리 정의되어 있는 배치(Configuration)를 사용하여 리스트의 외형을 정의해 봅시다.</p>
+      </li>
+    </ul>
+  </li>
+  <li>
+    <p>Step 3
+ReminderListViewController.swift 안에 listLayout()이라는 function을 생성합니다. 새 리스트의 외형을 담을 변수를 grouped appearance를 사용하여 생성합니다.</p>
+
+    <div class="language-swift highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">func</span> <span class="nf">listLayout</span><span class="p">()</span> <span class="o">-&gt;</span> <span class="kt">UICollectionViewCompositionalLayout</span> <span class="p">{</span>
+  <span class="k">var</span> <span class="nv">listConfiguration</span> <span class="o">=</span> <span class="kt">UICollectionLayoutListConfiguration</span><span class="p">(</span><span class="nv">appearance</span><span class="p">:</span> <span class="o">.</span><span class="n">grouped</span><span class="p">)</span>
+  <span class="n">listConfiguration</span><span class="o">.</span><span class="n">showsSeparators</span> <span class="o">=</span> <span class="kc">false</span>
+  <span class="n">listConfiguration</span><span class="o">.</span><span class="n">backgroundColor</span> <span class="o">=</span> <span class="o">.</span><span class="n">clear</span>
+  <span class="k">return</span> <span class="kt">UICollectionViewCompositionalLayout</span><span class="o">.</span><span class="nf">list</span><span class="p">(</span><span class="nv">using</span><span class="p">:</span> <span class="n">listConfiguration</span>
+<span class="p">}</span>
+</code></pre></div>    </div>
+    <p>UICollectionLayoutListConfiguration는 리스트 레이아웃 형태의 섹션을 생성합니다.</p>
+  </li>
+  <li>
+    <p>Step 4<br />
+구분선이 나타나지 않도록 하고 배경색을 .clear로 설정합니다.</p>
+  </li>
+  <li>
+    <p>Step 5 
+리스트 형태의 컴포지셔널 레이아웃을 리턴합니다.</p>
+  </li>
+  <li>
+    <p>Step 6 
+ViewDidLoad() 메서드 안에 새 리스트 레이아웃을 생성합니다.</p>
+
+    <p>뷰 컨트롤러가 자신의 뷰 계층 구조를 메모리에 로드한 뒤 시스템이 viewDidLoad()를 호출합니다.</p>
+
+    <div class="language-swift highlighter-rouge"><div class="highlight"><pre class="highlight"><code>    <span class="k">override</span> <span class="kd">func</span> <span class="nf">viewDidLoad</span><span class="p">()</span> <span class="p">{</span>
+      <span class="k">super</span><span class="o">.</span><span class="nf">viewDidLoad</span><span class="p">()</span>
+        
+      <span class="k">let</span> <span class="nv">listLayout</span> <span class="o">=</span> <span class="nf">listLayout</span><span class="p">()</span>
+      <span class="n">collectionView</span><span class="o">.</span><span class="n">collectionViewLayout</span> <span class="o">=</span> <span class="n">listLayout</span>
+        
+      <span class="c1">// collectionView는 현재 뷰 컨트롤러가 관리하는 콜렉션뷰 객체</span>
+  <span class="p">}</span>
+</code></pre></div>    </div>
+  </li>
+  <li>
+    <p>Step 7 
+listLayout을 콜렉션 뷰 레이아웃에 할당합니다.</p>
+  </li>
+</ul>
+
+<h2 id="section-5----configure-the-data-source">Section 5 -  Configure the Data Source</h2>
+<!--데이터 소스를 컨피규어 한다라...-->
+<p>컴포지셔널 레이아웃을 사용하여 콜렉션 뷰에 리스트 섹션을 생성했습니다.<br />
+  콜렉션 뷰에 셀을 등록하고 content configuration을 사용하여 셀의 모양을 정의할 것입니다. 그리고나서 데이터 소스와 셀을 연결합니다. 데이터가 변경될 때마다 사용자 인터페이스를 업데이트하고 움직임을 줄 diffable 데이타 소스를 사용할 것입니다. 
+<!--셀을 register 한다라...셀을 등록한다..?--></p>
+
+<ul>
+  <li>
+    <p>Step 1<br />
+새로운 cell registration을 생성합니다.<br />
+Cell Registration은 셀의 속성(내용과 모양)을 구성하는 방법을 지정해 줍니다.</p>
+
+    <div class="language-swift highlighter-rouge"><div class="highlight"><pre class="highlight"><code>    <span class="k">override</span> <span class="kd">func</span> <span class="nf">viewDidLoad</span><span class="p">()</span> <span class="p">{</span>
+      <span class="k">super</span><span class="o">.</span><span class="nf">viewDidLoad</span><span class="p">()</span>
+        
+      <span class="k">let</span> <span class="nv">listLayout</span> <span class="o">=</span> <span class="nf">listLayout</span><span class="p">()</span>
+      <span class="n">collectionView</span><span class="o">.</span><span class="n">collectionViewLayout</span> <span class="o">=</span> <span class="n">listLayout</span>
+        
+      <span class="c1">// collectionView는 현재 뷰 컨트롤러가 관리하는 콜렉션뷰 객체</span>
+        
+      <span class="k">let</span> <span class="nv">cellRegistration</span> <span class="o">=</span> <span class="kt">UICollectionView</span><span class="o">.</span><span class="kt">CellRegistration</span> <span class="p">{</span> <span class="p">(</span><span class="nv">cell</span><span class="p">:</span> <span class="kt">UICollectionViewListCell</span><span class="p">,</span> <span class="nv">indexPath</span><span class="p">:</span> <span class="kt">IndexPath</span><span class="p">,</span> <span class="nv">itemIdentifier</span><span class="p">:</span> <span class="kt">String</span><span class="p">)</span> <span class="k">in</span> 
+          <span class="k">let</span> <span class="nv">reminder</span> <span class="o">=</span> <span class="kt">Reminder</span><span class="o">.</span><span class="n">sampleData</span><span class="p">[</span><span class="n">indexPath</span><span class="o">.</span><span class="n">item</span><span class="p">]</span>
+          <span class="k">var</span> <span class="nv">contentConfiguration</span> <span class="o">=</span> <span class="n">cell</span><span class="o">.</span><span class="nf">defaultContentConfiguration</span><span class="p">()</span>
+          <span class="n">contentConfiguration</span><span class="o">.</span><span class="n">text</span> <span class="o">=</span> <span class="n">reminder</span><span class="o">.</span><span class="n">title</span> <span class="n">cell</span><span class="o">.</span><span class="n">contentConfiguration</span> <span class="o">=</span> <span class="n">contentConfiguration</span>
+<span class="p">}</span>
+  <span class="p">}</span>
+</code></pre></div>    </div>
+  </li>
+  <li>
+    <p>Step 2
+item에 연결된 리마인더를 가져옵니다.</p>
+  </li>
+  <li>Step 3 
+셀의 default content configuration을 가져옵니다. defaultContentConfiguration() 메서드는 미리 정의되어 있는 시스템 스타일을 생성합니다.
+    <ul>
+      <li>Step 4<br />
+샘플 데이터인 reminder의 타이틀을 content configuration에 할당합니다.<br />
+리스트는 configuration 텍스트를 셀의 프라이머리 텍스트로 보여줍니다.</li>
+    </ul>
+  </li>
+  <li>
+    <p>Step 5
+설정한 content configuration을 셀에 할당합니다.</p>
+
+    <p>여기 까지 셀의 내용과 모양을 설정했습니다. 이제부터는 diffable data 소스에 셀을 연결해 봅시다.</p>
+  </li>
+  <li>Step 6 
+Diffable data source를 위해 type alias를 추가합니다.<br />
+Type alias는 이미 있는 타입을 좀 더 명확하게 나타내는 이름으로 사용할 수 있도록 합니다. 아래와 같이 길고 알아보기 어려운 타입의 이름을 DataSource처럼 알아보기 쉬운 이름으로 사용할 수 있습니다.
+    <div class="language-swift highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">typealias</span> <span class="kt">DataSource</span> <span class="o">=</span> <span class="kt">UICollectionViewDiffableDataSource</span><span class="o">&lt;</span><span class="kt">Int</span><span class="p">,</span> <span class="kt">String</span><span class="o">&gt;</span>
+<span class="k">var</span> <span class="nv">dataSource</span><span class="p">:</span> <span class="kt">DataSource</span><span class="o">!</span>
+</code></pre></div>    </div>
+  </li>
+  <li>Step 7 
+dataSource 라는 이름의 속성을 추가합니다. DataSource가 확실히 있다는 예상하에 implicitly하게 언래핑해 줍니다. 
+옵셔널이 값을 가진다는 것을 확실히 알 때에만 이렇게 언래핑합니다. 만약 값이 없다면 앱을 중단시키는 런타임 에러를 발생시키기 때문에 주의해야 합니다.</li>
+</ul>
 
 
                 </section>
@@ -217,11 +473,15 @@
     </div>
 </div>
 
-                        <a href="//til/2022-06-18-sceneKit.html" class="navigation navigation-prev navigation-unique" aria-label="Previous page: SceneKit 3D Programming for iOS: Getting Started">
+                        <a href="//til/2022-07-30-closures.html" class="navigation navigation-prev navigation-unique" aria-label="Previous page: Closures? 그러니까,, 클로저가 뭐냐면,,">
                             <i class="fa fa-angle-left"></i>
                         </a>
                     
 
+                    
+                        <a href="//til/2022-07-30-demystifySwiftUI.html" class="navigation navigation-next navigation-unique" aria-label="Next page: Demystify SwiftUI / WWDC21">
+                            <i class="fa fa-angle-right"></i>
+                        </a>
                     
                 </div>
             </div>
@@ -234,6 +494,15 @@
         "title": "Introduction",
         "level": "1.1",
         "depth": 1,
+        
+        "next": {
+            "title": "Demystify SwiftUI / WWDC21",
+            "level": "1.2",
+            "depth": 1,
+            "path": "_posts/2022-08-09-demystifySwiftUI.md",
+            "ref": "_posts/2022-08-09-demystifySwiftUI.md",
+            "articles": []
+        },
         
         "dir": "ltr"
     },    "config": {
@@ -312,7 +581,7 @@
     },
     "gitbook": {
         "version": "3.2.3",
-        "time": "2022-07-30 19:48:23 +0900"
+        "time": "2022-08-20 23:50:40 +0900"
     },
     "basePath": "/",
     "book": {

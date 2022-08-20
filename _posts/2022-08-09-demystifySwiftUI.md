@@ -111,7 +111,7 @@ SwiftUI가 선언형 UI 라는 말을 들어보셨을 겁니다. 원하는 UI를
   컨테이너 뷰는 각자의 내용을 가지고 있는 다른 뷰들의 조합으로 이루어집니다. 이 컨텐트 뷰는 view builder라는 특별한 종류의 클로저안에서 선언됩니다. 
   예를 들어, 앞의 예시 코드에서 봤던 VStack은 컨테이너의 한 예입니다. 뷰 빌더는 클로저의 바디 부분에 우리가 선언형의 코드를 작성할 수 있도록 합니다. AddSubview와 같은 함수를 호출하는 대신 우리는 그냥 이 클로저 안에 우리의 컨텐츠를 쭉 작성해 내려갑니다. 
   이것이 어떻게 작동하는지 좀 더 알아보기 위해 VStack의 실제 API를 들여다 봅시다. 
-  
+    
   <center><img src="/assets/images/DemystifySwift9.png" alt="DemystifySwift9" width="700"></center><br>
   
   클로저로 정의된 컨텐트 패러미터를 볼 수 있습니다. ViewBuilder 어트리뷰트로 표시되어 있죠. 
