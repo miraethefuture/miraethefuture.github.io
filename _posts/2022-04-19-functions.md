@@ -130,9 +130,9 @@ layout: post
 
 ## Variadic Parameters
 
-  Variadic parameter는 특정 타입의 0개 또는 더 많은 수의 값을 받습니다. Function이 호출될 때해당 패러미터를 가진 인풋값의 a varying number을 통과시킬 수 있다는 것을 나타내기 위해서 variadic parameter를 사용합니다. 패러미터의 타입 이름 뒤에 ...(세개의 .)을 추가해줍니다.
+  Variadic 패러미터는 0개 또는 그 이상의 값을 받을 수 있습니다. Variadic 패러미터를 가진 함수를 호출할 때 여러개의 인풋값을 통과시킬 수 있습니다. 패러미터의 타입 뒤에 ...(세개의 .)을 추가하여 variadic 패러미터를 작성합니다.
 
-  Variadic parameter를 통해 들어온 값들은 function의 바디부분에서 배열로 사용가능합니다.  
+  Variadic 패러미터를 통해 들어온 값들은 function의 바디부분에서 배열로 사용가능합니다.  
   예를 들어, 아래 코드의 numbers라는 Double... 타입의 패러미터는 function의 바디부분에서 numbers라는 이름을 가진 [Double] 타입의 constant 배열로 사용되었습니다.
 
   아래의 function arithmeticMean은 수의 평균을 구합니다. (수의 길이 상관 없음)
