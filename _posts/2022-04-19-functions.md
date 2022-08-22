@@ -132,10 +132,10 @@ layout: post
 
   Variadic 패러미터는 0개 또는 그 이상의 값을 받을 수 있습니다. Variadic 패러미터를 가진 함수를 호출할 때 여러개의 인풋값을 통과시킬 수 있습니다. 패러미터의 타입 뒤에 ...(세개의 .)을 추가하여 variadic 패러미터를 작성합니다.
 
-  Variadic 패러미터를 통해 들어온 값들은 function의 바디부분에서 배열로 사용가능합니다.  
-  예를 들어, 아래 코드의 numbers라는 Double... 타입의 패러미터는 function의 바디부분에서 numbers라는 이름을 가진 [Double] 타입의 constant 배열로 사용되었습니다.
+  Variadic 패러미터를 통해 들어온 값들은 함수의 바디부분에서 배열로 사용가능합니다.  
+  예를 들어, 아래  예시 코드의 numbers라는 Double... 타입의 패러미터는 arithmeticMean 함수의 바디부분에서 numbers라는 이름을 가진 [Double] 타입의 constant 배열로 사용되었습니다.
 
-  아래의 function arithmeticMean은 수의 평균을 구합니다. (수의 길이 상관 없음)
+  아래의 arithmeticMean 함수는 수의 평균을 구	합니다. (수의 길이 상관 없음)
 
   ```swift
   func arithmeticMean(_ numbers: Double...) -> {
