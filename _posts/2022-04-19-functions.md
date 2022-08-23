@@ -135,7 +135,7 @@ layout: post
   Variadic 패러미터를 통해 들어온 값들은 함수의 바디부분에서 배열로 사용가능합니다.  
   예를 들어, 아래  예시 코드의 numbers라는 Double... 타입의 패러미터는 arithmeticMean 함수의 바디부분에서 numbers라는 이름을 가진 [Double] 타입의 constant 배열로 사용되었습니다.
 
-  아래의 arithmeticMean 함수는 수의 평균을 구	합니다. (수의 길이 상관 없음)
+  아래의 arithmeticMean 함수는 수의 평균을 구합니다. (수의 길이는 상관 없음)
 
   ```swift
   func arithmeticMean(_ numbers: Double...) -> {
@@ -151,7 +151,7 @@ layout: post
   // 10.0을 리턴합니다.
   ```
 
-  하나의 function은 여러개의 variadic parameters를 가질 수 있습니다. Variadic parameter 다음에 처음으로 오는 패러미터는 필수적으로 argument lable을 가져야합니다. Argument Lable은 어떤 arguments가 variadic 패러미터에 통과되었는지, 어떤 arguments가 variadic 패러미터 다음에 오는 패러미터에 통과되었는지를 명확히 구별할 수 있게 돕습니다.
+  하나의 함수는 여러개의 variadic 패러미터를 가질 수 있습니다. Variadic parameter 다음에 처음으로 오는 패러미터는 필수적으로 argument lable을 가져야합니다. Argument Lable은 어떤 arguments가 variadic 패러미터에 통과되었는지, 어떤 arguments가 variadic 패러미터 다음에 오는 패러미터에 통과되었는지를 명확히 구별할 수 있게 돕습니다.
 
 
 ## In-Out Parameters
