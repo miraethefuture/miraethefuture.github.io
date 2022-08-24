@@ -151,7 +151,7 @@ layout: post
   // 10.0을 리턴합니다.
   ```
 
-  하나의 함수는 여러개의 variadic 패러미터를 가질 수 있습니다. Variadic parameter 다음에 처음으로 오는 패러미터는 필수적으로 argument lable을 가져야합니다. Argument Lable은 어떤 arguments가 variadic 패러미터에 통과되었는지, 어떤 arguments가 variadic 패러미터 다음에 오는 패러미터에 통과되었는지를 명확히 구별할 수 있게 돕습니다.
+  하나의 함수는 여러개의 variadic 패러미터를 가질 수 있습니다. Variadic parameter 다음에 처음으로 오는 패러미터는 필수적으로 argument lable을 가져야합니다. Argument Lable은 어떤 인자(argument)가 variadic 패러미터에 통과되었는지, 어떤 인자가 variadic 패러미터 다음에 오는 패러미터에 통과되었는지를 명확히 구별할 수 있게 돕습니다.
 
 
 ## In-Out Parameters
