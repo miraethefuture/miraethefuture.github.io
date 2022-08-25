@@ -156,7 +156,7 @@ layout: post
 
 ## In-Out Parameters
 
-  Function parameters는 기본적으로 constants입니다. Function 패러미터의 값을 function의 바디부분에서 변경하려고 시도하는 것은 컴파일 에러를 발생시킵니다. 이것은 패러미터의 값을 실수로 변경할 수 없다는 것을 의미합니다. 만약 function이 패러미터의 값을 수정하길 원한다면, 그리고 function의 호출이 끝난 이후에도 그 변경사항이 계속해서 유지되길 원한다면 해당 패러미터를 in-out 패러미터로 정의해야 합니다.  
+  함수의 패러미터는 기본적으로 상수(constant)입니다. 함수의 패러미터의 값을 바디부분에서 변경하려고 시도하는 것은 컴파일 에러를 발생시킵니다. 이것은 패러미터의 값을 실수로 변경할 수 없다는 것을 의미합니다. 만약 function이 패러미터의 값을 수정하길 원한다면, 그리고 function의 호출이 끝난 이후에도 그 변경사항이 계속해서 유지되길 원한다면 해당 패러미터를 in-out 패러미터로 정의해야 합니다.  
 
   패러미터의 타입 앞에 inout 키워드를 추가해줌으로써 in-out 패러미터를 작성할 수 있습니다. In-out 패러미터는 function으로 통과되어 들어오고(passed in to the function), function으로부터 수정되고, 원래의 값을 교체하기 위해 밖으로 통과되어 나가는(back out of the function) 값을 가집니다.  
 
