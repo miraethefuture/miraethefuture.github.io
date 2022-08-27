@@ -10,9 +10,9 @@ layout: post
 # ⚙️
   Functions는 특정 기능을 수행하는 완전한 코드 덩어리입니다. Functions는 이름을 가집니다. 보통은 어떤 일을 하는지 알 수 있는 이름을 지어줍니다. 그리고 필요할 때 그 이름을 사용해서 function을 호출하여 특정 기능을 수행할 수 있도록 합니다.
 
-  패러미터는 function의 호출을 단순화하기 위해서 기본값을 제공할 수 있습니다. 그리고 in-out 패러미터로써 인자를 통과시킬 수 있습니다.
+  파라미터는 function의 호출을 단순화하기 위해서 기본값을 제공할 수 있습니다. 그리고 in-out 파라미터로써 인자를 통과시킬 수 있습니다.
 
-  스위프트의 모든 function은 type을 가지고 있습니다. function의 패러미터의 types와 리턴 type으로 이루어져 있습니다.
+  스위프트의 모든 function은 type을 가지고 있습니다. function의 파라미터의 types와 리턴 type으로 이루어져 있습니다.
 
   ```swift
   func greet(person: String) -> String {
@@ -71,7 +71,7 @@ layout: post
 
 ## Funtion Argument Labels and Parameter Names
 
-  각각의 function 패러미터는 argument label과 parameter name을 가집니다. Argument label은 function을 호출할 때 사용됩니다. 각각의 argument는 function call의 코드 속에 argument label 뒤에 작성됩니다. 패러미터의 이름은 function을 구현할 때 사용됩니다. 기본적으로, 패러미터는 parameter name을 argument name으로 사용합니다.  
+  각각의 function 파라미터는 argument label과 parameter name을 가집니다. Argument label은 function을 호출할 때 사용됩니다. 각각의 argument는 function call의 코드 속에 argument label 뒤에 작성됩니다. 파라미터의 이름은 function을 구현할 때 사용됩니다. 기본적으로, 파라미터는 parameter name을 argument name으로 사용합니다.  
 
   ```swift
   func someFunction(firstParameterName: Int, secondParameterName: Int) {
@@ -86,11 +86,11 @@ layout: post
 
   ```swift
   func someFunction(argumentLabel parameter name: Int) {
-    // function의 바디부분에서 parameterName은 해당 패러미터에 통과되는 argument 값을 참조합니다.
+    // function의 바디부분에서 parameterName은 해당 파라미터에 통과되는 argument 값을 참조합니다.
   }
   ```
 
-  아래의 예시는 greet(person:) function의 변형된 버전입니다. 사람의 이름과 고향을 패러미터로 통과시키고 인사말을 리턴합니다.
+  아래의 예시는 greet(person:) function의 변형된 버전입니다. 사람의 이름과 고향을 파라미터로 통과시키고 인사말을 리턴합니다.
 
   ```swift
   func greet(person: String, from hometown: String) -> String {
@@ -102,7 +102,7 @@ layout: post
 
 ## Omitting Argument Lables  
 
-  만약, 패러미터에 argument label을 사용하고 싶지 않다면, underscore(_)를 argument name 대신 작성해줍니다.
+  만약, 파라미터에 argument label을 사용하고 싶지 않다면, underscore(_)를 argument name 대신 작성해줍니다.
 
   ```swift
   func someFunction(_ firstParameterName: Int, secondParameterName: Int) {
@@ -113,7 +113,7 @@ layout: post
 
 ## Default Parameter Values  
 
-  Function의 패러미터 타입 뒤에 값을 할당해줌으로써 패러미터의 기본값을  줄수 있습니다. 기본값이 주어진 패러미터는 function을 호출할 때 생략할 수 있습니다.  
+  Function의 파라미터 타입 뒤에 값을 할당해줌으로써 파라미터의 기본값을  줄수 있습니다. 기본값이 주어진 파라미터는 function을 호출할 때 생략할 수 있습니다.  
 
   ```swift
   func someFunction(parameterWithoutDefault: Int, parameterWithDefault: Int = 12) {
@@ -125,15 +125,15 @@ layout: post
   // 위에서 parameterWithDefault 는 12
   ```  
 
-  기본값을 가지지 않은 패러미터를 가장 먼저 써줍니다. 주로 기본값이 없는 패러미터가 function의 의미에 더 중요한 역할을 하기 때문입니다. 기본값을 가지지 않은 패러미터를 먼저 첫번째로 둠으로써 같은 function이 호출되었을 때 생략된 패러미와 관계없이 function을 구별하기 쉽게 만들어 줍니다.
+  기본값을 가지지 않은 파라미터를 가장 먼저 써줍니다. 주로 기본값이 없는 파라미터가 function의 의미에 더 중요한 역할을 하기 때문입니다. 기본값을 가지지 않은 파라미터를 먼저 첫번째로 둠으로써 같은 function이 호출되었을 때 생략된 패러미와 관계없이 function을 구별하기 쉽게 만들어 줍니다.
 
 
 ## Variadic Parameters
 
-  Variadic 패러미터는 0개 또는 그 이상의 값을 받을 수 있습니다. Variadic 패러미터를 가진 함수를 호출할 때 여러개의 인풋값을 통과시킬 수 있습니다. 패러미터의 타입 뒤에 ...(세개의 .)을 추가하여 variadic 패러미터를 작성합니다.
+  Variadic 파라미터는 0개 또는 그 이상의 값을 받을 수 있습니다. Variadic 파라미터를 가진 함수를 호출할 때 여러개의 인풋값을 통과시킬 수 있습니다. 파라미터의 타입 뒤에 ...(세개의 .)을 추가하여 variadic 파라미터를 작성합니다.
 
-  Variadic 패러미터를 통해 들어온 값들은 함수의 바디부분에서 배열로 사용가능합니다.  
-  예를 들어, 아래  예시 코드의 numbers라는 Double... 타입의 패러미터는 arithmeticMean 함수의 바디부분에서 numbers라는 이름을 가진 [Double] 타입의 constant 배열로 사용되었습니다.
+  Variadic 파라미터를 통해 들어온 값들은 함수의 바디부분에서 배열로 사용가능합니다.  
+  예를 들어, 아래  예시 코드의 numbers라는 Double... 타입의 파라미터는 arithmeticMean 함수의 바디부분에서 numbers라는 이름을 가진 [Double] 타입의 constant 배열로 사용되었습니다.
 
   아래의 arithmeticMean 함수는 수의 평균을 구합니다. (수의 길이는 상관 없음)
 
@@ -151,24 +151,24 @@ layout: post
   // 10.0을 리턴합니다.
   ```
 
-  하나의 함수는 여러개의 variadic 패러미터를 가질 수 있습니다. Variadic parameter 다음에 처음으로 오는 패러미터는 필수적으로 argument lable을 가져야합니다. Argument Lable은 어떤 인자(argument)가 variadic 패러미터에 통과되었는지, 어떤 인자가 variadic 패러미터 다음에 오는 패러미터에 통과되었는지를 명확히 구별할 수 있게 돕습니다.
+  하나의 함수는 여러개의 variadic 파라미터를 가질 수 있습니다. Variadic parameter 다음에 처음으로 오는 파라미터는 필수적으로 argument lable을 가져야합니다. Argument Lable은 어떤 인자(argument)가 variadic 파라미터에 통과되었는지, 어떤 인자가 variadic 파라미터 다음에 오는 파라미터에 통과되었는지를 명확히 구별할 수 있게 돕습니다.
 
 
 ## In-Out Parameters
 
-  함수의 패러미터는 기본적으로 상수(constant)입니다. 함수의 패러미터의 값을 바디부분에서 변경하려고 시도하는 것은 컴파일 에러를 발생시킵니다. 이것은 패러미터의 값을 실수로 변경할 수 없다는 것을 의미합니다. 만약 function이 패러미터의 값을 수정하길 원한다면, 그리고 function의 호출이 끝난 이후에도 그 변경사항이 계속해서 유지되길 원한다면 해당 패러미터를 in-out 패러미터로 정의해야 합니다.  
+  함수의 파라미터는 기본적으로 상수(constant)입니다. 함수의 파라미터의 값을 바디부분에서 변경하려고 시도하는 것은 컴파일 에러를 발생시킵니다. 이것은 파라미터의 값을 실수로 변경할 수 없다는 것을 의미합니다. 만약 function이 파라미터의 값을 수정하길 원한다면, 그리고 function의 호출이 끝난 이후에도 그 변경사항이 계속해서 유지되길 원한다면 해당 파라미터를 in-out 파라미터로 정의해야 합니다.  
 
-  패러미터의 타입 앞에 키워드 inout을 추가해줌으로써 in-out 패러미터를 작성할 수 있습니다. In-out 패러미터는 함수로 통과되어 들어오고(passed in to the function), 함수로부터 수정되고, 원래의 값을 교체하기 위해 밖으로 통과되어 나가는(back out of the function) 값을 가집니다.  
+  파라미터의 타입 앞에 키워드 inout을 추가해줌으로써 in-out 파라미터를 작성할 수 있습니다. In-out 파라미터는 함수로 통과되어 들어오고(passed in to the function), 함수로부터 수정되고, 원래의 값을 교체하기 위해 밖으로 통과되어 나가는(back out of the function) 값을 가집니다.  
 
-  In-out 패러미터의 인자로는 오직 variable만 통과시킬 수 있습니다. constants나 literal 값은 수정될 수 없기 때문에 인자로 통과시킬 수 없습니다. &(ampersand)를 variable의 이름 앞에 적음으로써 in-out 패러미의 argument로 통과시킨다는 것을 알려줍니다.  
+  In-out 파라미터의 인자로는 오직 변수(variable)만 통과시킬 수 있습니다. constants나 literal 값은 수정될 수 없기 때문에 인자로 통과시킬 수 없습니다. &(ampersand 기호)를 변수 이름 앞에 적음으로써 in-out 파라미터의 argument로 통과시킨다는 것을 알려줍니다.  
 
   <div class="notice">
      <h4>N O T E</h4>
-     <p>In-out 패러미터는 기본값을 가질 수 없습니다. 그리고 variadic 패러미터는 inout 키워드를 사용할 수 없습니다.
+     <p>In-out 파라미터는 기본값을 가질 수 없습니다. 그리고 variadic 파라미터는 inout 키워드를 사용할 수 없습니다.
      </p>
   </div>
 
-  아래의 function swapTwoInts는 a와 b라는 in-out integer 패러미터를 가지고 있습니다.
+  아래의 function swapTwoInts는 a와 b라는 in-out integer 파라미터를 가지고 있습니다.
 
   ```swift
   func swapTwoInts(_ a: inout Int, _ b: inout Int) {
@@ -194,14 +194,14 @@ layout: post
 
   <div class="notice">
      <h4>N O T E</h4>
-     <p>In-out 패러미터는 function으로 부터 값을 리턴하는 것과는 다릅니다. 위의 swapTwoInts예시는 리턴 타입을 정의하지 않았고, 값을 리턴하지 않습니다. 하지만 여전히 someInt와 anotherInt의 값을 변경시킵니다. In-out 패러미터는 function의 바디 부분의 범위를 넘어서서 영향을 미칠 수 있는 또 다른 방법입니다.
+     <p>In-out 파라미터는 function으로 부터 값을 리턴하는 것과는 다릅니다. 위의 swapTwoInts예시는 리턴 타입을 정의하지 않았고, 값을 리턴하지 않습니다. 하지만 여전히 someInt와 anotherInt의 값을 변경시킵니다. In-out 파라미터는 function의 바디 부분의 범위를 넘어서서 영향을 미칠 수 있는 또 다른 방법입니다.
      </p>
   </div>  
 
 
 ## Function Types  
 
-  모든 function은 패러미터의 타입 + 리턴 타입으로 이루어진 특정한 function type을 가지고 있습니다.  
+  모든 function은 파라미터의 타입 + 리턴 타입으로 이루어진 특정한 function type을 가지고 있습니다.  
 
   예를 들면:
   ```swift
@@ -223,7 +223,7 @@ layout: post
   }
   ```
 
-  위 function은 타입은 () -> Void이고, "패러미터를 가지고 있지 않고 Void를 리턴하는 function"이라고 합니다.  
+  위 function은 타입은 () -> Void이고, "파라미터를 가지고 있지 않고 Void를 리턴하는 function"이라고 합니다.  
 
 
 ## Using Function Types  
@@ -249,7 +249,7 @@ layout: post
 
 ## Function Types as Parameter Types  
 
-  (Int, Int) -> Int와 같은 function type을 다른 function의 패러미터 타입으로 사용할 수 있습니다.  
+  (Int, Int) -> Int와 같은 function type을 다른 function의 파라미터 타입으로 사용할 수 있습니다.  
 
   위에서 생성한 math functions의 결과를 출력하기 위한 예제입니다.
 
@@ -261,6 +261,6 @@ layout: post
   // "Result: 8"을 출력합니다.
   ```
 
-  위의 예시는 printMathResult(_:\_:\_:)를 정의합니다. 세개의 패러미터를 가지고 있습니다. 첫번째 패러미터의 이름은 mathFunction이고 타입은 (Int, Int) -> Int 입니다. 두번째 그리고 세번째 패러미터는 a와 b이고 Int 타입입니다. 이 둘은 주어진 math function의 input 값으로 사용됩니다.
+  위의 예시는 printMathResult(_:\_:\_:)를 정의합니다. 세개의 파라미터를 가지고 있습니다. 첫번째 파라미터의 이름은 mathFunction이고 타입은 (Int, Int) -> Int 입니다. 두번째 그리고 세번째 파라미터는 a와 b이고 Int 타입입니다. 이 둘은 주어진 math function의 input 값으로 사용됩니다.
 
 <!-- ## Function Types as Return Types -->
