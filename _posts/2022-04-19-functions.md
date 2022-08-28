@@ -162,13 +162,12 @@ layout: post
 
   In-out 파라미터의 인자로는 오직 변수(variable)만 통과시킬 수 있습니다. constants나 literal 값은 수정될 수 없기 때문에 인자로 통과시킬 수 없습니다. &(ampersand 기호)를 변수 이름 앞에 적음으로써 in-out 파라미터의 argument로 통과시킨다는 것을 알려줍니다.  
 
-  <div class="notice">
-     <h4>N O T E</h4>
-     <p>In-out 파라미터는 기본값을 가질 수 없습니다. 그리고 variadic 파라미터는 inout 키워드를 사용할 수 없습니다.
-     </p>
-  </div>
+  
+  > N O T E
+  > In-out 파라미터는 기본값을 가질 수 없습니다. 그리고 variadic 파라미터는 inout 키워드를 사용할 수 없습니다.
+  {: .block-tip } 
 
-  아래의 function swapTwoInts는 a와 b라는 in-out integer 파라미터를 가지고 있습니다.
+  아래의 swapTwoInts 함수는 a와 b라는 in-out 정수 (integer) 파라미터를 가지고 있습니다.
 
   ```swift
   func swapTwoInts(_ a: inout Int, _ b: inout Int) {

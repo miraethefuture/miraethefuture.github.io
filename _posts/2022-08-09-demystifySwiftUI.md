@@ -65,7 +65,7 @@ SwiftUI가 선언형 UI 라는 말을 들어보셨을 겁니다. 원하는 UI를
   SwiftUI가 왜 Value type을 사용하는지는 wwdc19 SwiftUI essentials에 자세한 설명이 있다고 하여 그 영상의 내용을 정리해봅니다. 
  
   
-#### SwiftUI Essentials (wwdc19)
+### SwiftUI Essentials (wwdc19)
   
   <center><img src="/assets/images/DemystifySwift5.png" alt="DemystifySwift5" width="700"></center><br>
     
@@ -107,7 +107,7 @@ SwiftUI가 선언형 UI 라는 말을 들어보셨을 겁니다. 원하는 UI를
   
   우리가 위와 같은 코드를 작성하면, SwiftUI는 그 코드를 화면에 렌더링 된 결과물로 변환하는 어려운 작업을 해줍니다. 
 
-##### Container views
+#### Container views
   컨테이너 뷰는 각자의 내용을 가지고 있는 다른 뷰들의 조합으로 이루어집니다. 이 컨텐트 뷰는 view builder라는 특별한 종류의 클로저안에서 선언됩니다. 
   예를 들어, 앞의 예시 코드에서 봤던 VStack은 컨테이너의 한 예입니다. 뷰 빌더는 클로저의 바디 부분에 우리가 선언형의 코드를 작성할 수 있도록 합니다. AddSubview와 같은 함수를 호출하는 대신 우리는 그냥 이 클로저 안에 우리의 컨텐츠를 쭉 작성해 내려갑니다. 
   이것이 어떻게 작동하는지 좀 더 알아보기 위해 VStack의 실제 API를 들여다 봅시다. 
@@ -119,8 +119,23 @@ SwiftUI가 선언형 UI 라는 말을 들어보셨을 겁니다. 원하는 UI를
   
   이런식으로 SwifUI는 Swift의 기능을 사용하여 우리가 더 적은 양의 코드를 작성할 수 있도록 돕습니다. 
   
-  VStack과 비슷한 뷰들은 content 패러미터 뿐 아니라 다른 패러미터도 가지고 있습니다. 
+<!--  VStack과 비슷한 뷰들은 content 패러미터 뿐 아니라 다른 패러미터도 가지고 있습니다. -->
+<!-- 내용 생략됨 후에 추가할 것 -->
+
+#### @State
+  ```swift
+  VStack {
+        Stepper(value: $order.quantity, in: 1...10) {
+            Text("Quantity: \(order.quantity)")
+      }
+  }
+  ```
   
+   위 예시 코드를 보면 스텝퍼의 패러미터에 인자로 통과된 order.quantity 앞에 $(달러사인)이 붙어있다. 이것은 일반적인 값이 아닌 **바인딩**을 컨트롤의 인자로 통과시키겠다는 의미인데
+   
+   바인딩이 뭘까? 
+   
+   
   
      
     
