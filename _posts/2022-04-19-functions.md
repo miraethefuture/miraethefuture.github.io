@@ -177,7 +177,7 @@ layout: post
   }
   ```
 
-  swapTwoInts function은 단순히 b의 값을 a로 바꾸고, a의 값을 b로 바꿉니다. 이 function은 두 수의 교체를 temporaryA라는 temporary constant를 이용해서 수행합니다. a의 값을 temporaryA에 먼저 할당하고 - a에 b를 할당 - b에 a를 할당합니다.  
+  swapTwoInts 함수는 단순히 b의 값을 a로 바꾸고, a의 값을 b로 바꿉니다. 이 함수는 두 수의 교체를 temporaryA라는 temporary constant를 이용해서 수행합니다. a의 값을 temporaryA에 먼저 할당하고 - a에 b를 할당 - b에 a를 할당합니다.  
 
   두개의 Int 타입 variables의 값을 바꾸기 위해 swapTwoInts function을 호출할 수 있습니다. &을 someInt와 anotherInt 앞에 붙여주었습니다.
 
