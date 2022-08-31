@@ -34,9 +34,9 @@ layout: post
 
 ## Function with Multiple Return Values  
 
-  여러개의 값을 리턴하는 function을 위해 하나로 합쳐진 리턴 값으로써 tuple을 리턴 타입으로 사용할 수 있습니다.
+  여러개의 값을 리턴하는 함수에 튜플을 사용하여 하나로 합쳐진 리턴 타입으로 사용할 수 있습니다.
 
-  아래의 예시는 minMax(array:)라는 function을 정의합니다. Int값을 가진 배열에서 가장 작은 수와 가장 큰 수를 찾아내는 function 입니다.
+  아래의 예시는 minMax(array:)라는 function을 정의합니다. Int값을 가진 배열에서 가장 작은 수와 가장 큰 수를 찾아내는 함수입니다.
 
   ```swift
   func minMax(array: [Int] -> (min: Int, max: Int) {
