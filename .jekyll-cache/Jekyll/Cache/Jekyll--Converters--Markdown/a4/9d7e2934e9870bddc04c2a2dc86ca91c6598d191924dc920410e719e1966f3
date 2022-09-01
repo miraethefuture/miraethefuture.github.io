@@ -1,0 +1,236 @@
+I"�l<h1 id="️">⚙️</h1>
+<p>Functions는 특정 기능을 수행하는 완전한 코드 덩어리입니다. Functions는 이름을 가집니다. 보통은 어떤 일을 하는지 알 수 있는 이름을 지어줍니다. 그리고 필요할 때 그 이름을 사용해서 function을 호출하여 특정 기능을 수행할 수 있도록 합니다.</p>
+
+<p>파라미터는 function의 호출을 단순화하기 위해서 기본값을 제공할 수 있습니다. 그리고 in-out 파라미터로써 인자를 통과시킬 수 있습니다.</p>
+
+<p>스위프트의 모든 function은 type을 가지고 있습니다. function의 파라미터의 types와 리턴 type으로 이루어져 있습니다.</p>
+
+<div class="language-swift highlighter-rouge"><div class="highlight"><pre class="highlight"><code>  <span class="kd">func</span> <span class="nf">greet</span><span class="p">(</span><span class="nv">person</span><span class="p">:</span> <span class="kt">String</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kt">String</span> <span class="p">{</span>
+    <span class="k">let</span> <span class="nv">greeting</span> <span class="o">=</span> <span class="s">"Hello"</span> <span class="o">+</span> <span class="n">person</span> <span class="o">+</span> <span class="s">"!"</span>
+    <span class="k">return</span> <span class="n">greeting</span>
+  <span class="p">}</span>
+</code></pre></div></div>
+<ul>
+  <li>-(a hyphen)</li>
+  <li>&gt;(a right angle bracket)</li>
+</ul>
+
+<p>을 이용해서 -&gt; 리턴 타입을 나타냅니다.</p>
+
+<div class="language-swift highlighter-rouge"><div class="highlight"><pre class="highlight"><code>  <span class="kd">func</span> <span class="nf">greetAgain</span><span class="p">(</span><span class="nv">person</span><span class="p">:</span> <span class="kt">String</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kt">String</span> <span class="p">{</span>
+    <span class="k">return</span> <span class="s">"Hello again,"</span> <span class="o">+</span> <span class="n">person</span> <span class="o">+</span> <span class="s">"!"</span>
+  <span class="p">}</span>
+</code></pre></div></div>
+<p>return 뒤에 바로 문자열을 주면 코드를 더 짧게 작성할 수 있습니다.</p>
+
+<h2 id="function-with-multiple-return-values">Function with Multiple Return Values</h2>
+
+<p>여러개의 값을 리턴하는 function을 위해 하나로 합쳐진 리턴 값으로써 tuple을 리턴 타입으로 사용할 수 있습니다.</p>
+
+<p>아래의 예시는 minMax(array:)라는 function을 정의합니다. Int값을 가진 배열에서 가장 작은 수와 가장 큰 수를 찾아내는 function 입니다.</p>
+
+<div class="language-swift highlighter-rouge"><div class="highlight"><pre class="highlight"><code>  <span class="kd">func</span> <span class="nf">minMax</span><span class="p">(</span><span class="nv">array</span><span class="p">:</span> <span class="p">[</span><span class="kt">Int</span><span class="p">]</span> <span class="o">-&gt;</span> <span class="p">(</span><span class="nv">min</span><span class="p">:</span> <span class="kt">Int</span><span class="p">,</span> <span class="nv">max</span><span class="p">:</span> <span class="kt">Int</span><span class="p">)</span> <span class="p">{</span>
+    <span class="k">var</span> <span class="nv">currentMin</span> <span class="o">=</span> <span class="n">array</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span>
+    <span class="k">var</span> <span class="nv">currentMax</span> <span class="o">=</span> <span class="n">array</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span>
+    <span class="k">for</span> <span class="n">value</span> <span class="k">in</span> <span class="n">array</span><span class="p">[</span><span class="mi">1</span><span class="o">..&lt;</span><span class="n">array</span><span class="o">.</span><span class="n">count</span><span class="p">]</span> <span class="p">{</span>
+      <span class="k">if</span> <span class="n">value</span> <span class="o">&lt;</span> <span class="n">currentMin</span> <span class="p">{</span>
+          <span class="n">currentMin</span> <span class="o">=</span> <span class="n">value</span>
+      <span class="p">}</span> <span class="k">else</span> <span class="k">if</span> <span class="n">value</span> <span class="o">&gt;</span> <span class="n">currentMax</span> <span class="p">{</span>
+          <span class="n">currentMax</span> <span class="o">=</span> <span class="n">value</span>
+      <span class="p">}</span>
+    <span class="p">}</span>
+    <span class="nf">return</span> <span class="p">(</span><span class="n">currentMin</span><span class="p">,</span> <span class="n">currentMax</span><span class="p">)</span>
+  <span class="p">}</span>
+</code></pre></div></div>
+
+<p>위의 minMax(array:) function은 두개의 Int 값을 가지고 있는 tuple을 리턴합니다. 이 값들은 min, max라는 이름으로 labeled 되었고, 그렇기 때문에 function의 리턴 값에 접근이 필요할 때 이름으로 접근할 수 있습니다.</p>
+
+<p>minMax(array:)의 바디는 두개의 변수 currentMin과 currentMax를 설정하는 것으로 시작합니다. 이것들은 배열의 첫번째 값을 초기값으로 가지고 있습니다. 그리고 function은 배열의 남은 요소들에 대해 반복해서 코드를 실행하며 각 요소가 currentMin보다 작은지, currentMax보다 큰지를 확인합니다. 그리고나서 가장 작은 수와 가장 큰 수를 가지고 있는 튜플을 리턴합니다.</p>
+
+<p>튜플의 멤버 값이 이름을 가지고 있기 때문에 dot syntax를 사용하여 값에 접근하고 가장 작은 수와 큰 수를 가져올 수 있습니다.</p>
+
+<div class="language-swift highlighter-rouge"><div class="highlight"><pre class="highlight"><code>  <span class="k">let</span> <span class="nv">bounds</span> <span class="o">=</span> <span class="nf">minMax</span><span class="p">(</span><span class="nv">array</span><span class="p">:</span> <span class="p">[</span><span class="mi">8</span><span class="p">,</span> <span class="o">-</span><span class="mi">6</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">109</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">71</span><span class="p">])</span>
+  <span class="nf">print</span><span class="p">(</span><span class="s">"min is </span><span class="se">\(</span><span class="n">bounds</span><span class="o">.</span><span class="n">min</span><span class="se">)</span><span class="s"> and max is </span><span class="se">\(</span><span class="n">bounds</span><span class="o">.</span><span class="n">max</span><span class="se">)</span><span class="s">"</span><span class="p">)</span>
+
+  <span class="c1">// Prints "min is -6 and max is 109"</span>
+</code></pre></div></div>
+
+<p>리턴되는 튜플 멤버의 이름은 function의 정의 과정에서 리턴 타입의 이름으로 이미 주었기 때문에 튜플이 function으로부터 리턴될 때는 이름을 줄 필요가 없습니다.</p>
+
+<h2 id="funtion-argument-labels-and-parameter-names">Funtion Argument Labels and Parameter Names</h2>
+
+<p>각각의 function 파라미터는 argument label과 parameter name을 가집니다. Argument label은 function을 호출할 때 사용됩니다. 각각의 argument는 function call의 코드 속에 argument label 뒤에 작성됩니다. 파라미터의 이름은 function을 구현할 때 사용됩니다. 기본적으로, 파라미터는 parameter name을 argument name으로 사용합니다.</p>
+
+<div class="language-swift highlighter-rouge"><div class="highlight"><pre class="highlight"><code>  <span class="kd">func</span> <span class="nf">someFunction</span><span class="p">(</span><span class="nv">firstParameterName</span><span class="p">:</span> <span class="kt">Int</span><span class="p">,</span> <span class="nv">secondParameterName</span><span class="p">:</span> <span class="kt">Int</span><span class="p">)</span> <span class="p">{</span>
+    <span class="c1">// function의 바디부분에서 firstParameterName과 secondParameterName은 argument의 값을 나타냅니다.</span>
+  <span class="p">}</span>
+  <span class="nf">someFunction</span><span class="p">(</span><span class="nv">firstParameterName</span><span class="p">:</span> <span class="mi">1</span><span class="p">,</span> <span class="nv">secondParameterName</span><span class="p">:</span> <span class="mi">2</span><span class="p">)</span>
+</code></pre></div></div>
+
+<h2 id="specifying-argument-labels">Specifying Argument Labels</h2>
+
+<p>Argument name은 patameter name 앞에 작성합니다. (space로 띄어서 구분해 줍니다.)</p>
+
+<div class="language-swift highlighter-rouge"><div class="highlight"><pre class="highlight"><code>  <span class="kd">func</span> <span class="nf">someFunction</span><span class="p">(</span><span class="n">argumentLabel</span> <span class="n">parameter</span> <span class="nv">name</span><span class="p">:</span> <span class="kt">Int</span><span class="p">)</span> <span class="p">{</span>
+    <span class="c1">// function의 바디부분에서 parameterName은 해당 파라미터에 통과되는 argument 값을 참조합니다.</span>
+  <span class="p">}</span>
+</code></pre></div></div>
+
+<p>아래의 예시는 greet(person:) function의 변형된 버전입니다. 사람의 이름과 고향을 파라미터로 통과시키고 인사말을 리턴합니다.</p>
+
+<div class="language-swift highlighter-rouge"><div class="highlight"><pre class="highlight"><code>  <span class="kd">func</span> <span class="nf">greet</span><span class="p">(</span><span class="nv">person</span><span class="p">:</span> <span class="kt">String</span><span class="p">,</span> <span class="n">from</span> <span class="nv">hometown</span><span class="p">:</span> <span class="kt">String</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kt">String</span> <span class="p">{</span>
+    <span class="k">return</span> <span class="s">"Hello </span><span class="se">\(</span><span class="n">person</span><span class="se">)</span><span class="s">! Glad you visit from </span><span class="se">\(</span><span class="n">hometown</span><span class="se">)</span><span class="s">."</span>
+  <span class="p">}</span>
+  <span class="nf">print</span><span class="p">(</span><span class="nf">greet</span><span class="p">(</span><span class="nv">person</span><span class="p">:</span> <span class="s">"Bill"</span><span class="p">,</span> <span class="nv">from</span><span class="p">:</span> <span class="s">"Cupertino"</span><span class="p">))</span>
+  <span class="c1">// Prints "Hello Bill! Glad you visit from Cupertino."</span>
+</code></pre></div></div>
+
+<h2 id="omitting-argument-lables">Omitting Argument Lables</h2>
+
+<p>만약, 파라미터에 argument label을 사용하고 싶지 않다면, underscore(_)를 argument name 대신 작성해줍니다.</p>
+
+<div class="language-swift highlighter-rouge"><div class="highlight"><pre class="highlight"><code>  <span class="kd">func</span> <span class="nf">someFunction</span><span class="p">(</span><span class="n">_</span> <span class="nv">firstParameterName</span><span class="p">:</span> <span class="kt">Int</span><span class="p">,</span> <span class="nv">secondParameterName</span><span class="p">:</span> <span class="kt">Int</span><span class="p">)</span> <span class="p">{</span>
+
+  <span class="p">}</span>
+  <span class="nf">someFunction</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="nv">secondParameterName</span><span class="p">:</span> <span class="mi">2</span><span class="p">)</span>
+</code></pre></div></div>
+
+<h2 id="default-parameter-values">Default Parameter Values</h2>
+
+<p>Function의 파라미터 타입 뒤에 값을 할당해줌으로써 파라미터의 기본값을  줄수 있습니다. 기본값이 주어진 파라미터는 function을 호출할 때 생략할 수 있습니다.</p>
+
+<div class="language-swift highlighter-rouge"><div class="highlight"><pre class="highlight"><code>  <span class="kd">func</span> <span class="nf">someFunction</span><span class="p">(</span><span class="nv">parameterWithoutDefault</span><span class="p">:</span> <span class="kt">Int</span><span class="p">,</span> <span class="nv">parameterWithDefault</span><span class="p">:</span> <span class="kt">Int</span> <span class="o">=</span> <span class="mi">12</span><span class="p">)</span> <span class="p">{</span>
+    <span class="c1">// 이 function을 호출할 때 두번째 argument를 생략하면, 기본값인 12가 function의 바디에서 사용됩니다.</span>
+  <span class="p">}</span>
+  <span class="nf">someFunction</span><span class="p">(</span><span class="nv">parameterWithoutDefault</span><span class="p">:</span> <span class="mi">3</span><span class="p">,</span> <span class="nv">parameterWithDefault</span><span class="p">:</span> <span class="mi">6</span><span class="p">)</span>
+  <span class="c1">// 위에서 parameterWithDefault 는 6</span>
+  <span class="nf">someFunction</span><span class="p">(</span><span class="nv">parameterWithoutDefault</span><span class="p">:</span> <span class="mi">4</span><span class="p">)</span>
+  <span class="c1">// 위에서 parameterWithDefault 는 12</span>
+</code></pre></div></div>
+
+<p>기본값을 가지지 않은 파라미터를 가장 먼저 써줍니다. 주로 기본값이 없는 파라미터가 function의 의미에 더 중요한 역할을 하기 때문입니다. 기본값을 가지지 않은 파라미터를 먼저 첫번째로 둠으로써 같은 function이 호출되었을 때 생략된 패러미와 관계없이 function을 구별하기 쉽게 만들어 줍니다.</p>
+
+<h2 id="variadic-parameters">Variadic Parameters</h2>
+
+<p>Variadic 파라미터는 0개 또는 그 이상의 값을 받을 수 있습니다. Variadic 파라미터를 가진 함수를 호출할 때 여러개의 인풋값을 통과시킬 수 있습니다. 파라미터의 타입 뒤에 …(세개의 .)을 추가하여 variadic 파라미터를 작성합니다.</p>
+
+<p>Variadic 파라미터를 통해 들어온 값들은 함수의 바디부분에서 배열로 사용가능합니다.<br />
+  예를 들어, 아래  예시 코드의 numbers라는 Double… 타입의 파라미터는 arithmeticMean 함수의 바디부분에서 numbers라는 이름을 가진 [Double] 타입의 constant 배열로 사용되었습니다.</p>
+
+<p>아래의 arithmeticMean 함수는 수의 평균을 구합니다. (수의 길이는 상관 없음)</p>
+
+<div class="language-swift highlighter-rouge"><div class="highlight"><pre class="highlight"><code>  <span class="kd">func</span> <span class="nf">arithmeticMean</span><span class="p">(</span><span class="n">_</span> <span class="nv">numbers</span><span class="p">:</span> <span class="kt">Double</span><span class="o">...</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="p">{</span>
+      <span class="k">var</span> <span class="nv">total</span><span class="p">:</span> <span class="kt">Double</span> <span class="o">=</span> <span class="mi">0</span>
+      <span class="k">for</span> <span class="n">number</span> <span class="k">in</span> <span class="n">numbers</span> <span class="p">{</span>
+        <span class="n">total</span> <span class="o">+=</span> <span class="n">number</span>
+      <span class="p">}</span>
+      <span class="k">return</span> <span class="n">total</span> <span class="o">/</span> <span class="kt">Double</span><span class="p">(</span><span class="n">numbers</span><span class="o">.</span><span class="n">count</span><span class="p">)</span>
+  <span class="p">}</span>
+  <span class="nf">arithmeticMean</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">4</span><span class="p">,</span> <span class="mi">5</span><span class="p">)</span>
+  <span class="c1">// 3.0을 리턴합니다.</span>
+  <span class="nf">arithmeticMean</span><span class="p">(</span><span class="mi">3</span><span class="p">,</span> <span class="mf">8.25</span><span class="p">,</span> <span class="mf">18.75</span><span class="p">)</span>
+  <span class="c1">// 10.0을 리턴합니다.</span>
+</code></pre></div></div>
+
+<p>하나의 함수는 여러개의 variadic 파라미터를 가질 수 있습니다. Variadic parameter 다음에 처음으로 오는 파라미터는 필수적으로 argument lable을 가져야합니다. Argument Lable은 어떤 인자(argument)가 variadic 파라미터에 통과되었는지, 어떤 인자가 variadic 파라미터 다음에 오는 파라미터에 통과되었는지를 명확히 구별할 수 있게 돕습니다.</p>
+
+<h2 id="in-out-parameters">In-Out Parameters</h2>
+
+<p>함수의 파라미터는 기본적으로 상수(constant)입니다. 함수의 파라미터의 값을 바디부분에서 변경하려고 시도하는 것은 컴파일 에러를 발생시킵니다. 이것은 파라미터의 값을 실수로 변경할 수 없다는 것을 의미합니다. 만약 function이 파라미터의 값을 수정하길 원한다면, 그리고 function의 호출이 끝난 이후에도 그 변경사항이 계속해서 유지되길 원한다면 해당 파라미터를 in-out 파라미터로 정의해야 합니다.</p>
+
+<p>파라미터의 타입 앞에 키워드 inout을 추가해줌으로써 in-out 파라미터를 작성할 수 있습니다. In-out 파라미터는 함수로 통과되어 들어오고(passed in to the function), 함수로부터 수정되고, 원래의 값을 교체하기 위해 밖으로 통과되어 나가는(back out of the function) 값을 가집니다.</p>
+
+<p>In-out 파라미터의 인자로는 오직 변수(variable)만 통과시킬 수 있습니다. constants나 literal 값은 수정될 수 없기 때문에 인자로 통과시킬 수 없습니다. &amp;(ampersand 기호)를 변수 이름 앞에 적음으로써 in-out 파라미터의 argument로 통과시킨다는 것을 알려줍니다.</p>
+
+<blockquote class="block-tip">
+  <p>N O T E
+In-out 파라미터는 기본값을 가질 수 없습니다. 그리고 variadic 파라미터는 inout 키워드를 사용할 수 없습니다.</p>
+</blockquote>
+
+<p>아래의 swapTwoInts 함수는 a와 b라는 in-out 정수 (integer) 파라미터를 가지고 있습니다.</p>
+
+<div class="language-swift highlighter-rouge"><div class="highlight"><pre class="highlight"><code>  <span class="kd">func</span> <span class="nf">swapTwoInts</span><span class="p">(</span><span class="n">_</span> <span class="nv">a</span><span class="p">:</span> <span class="k">inout</span> <span class="kt">Int</span><span class="p">,</span> <span class="n">_</span> <span class="nv">b</span><span class="p">:</span> <span class="k">inout</span> <span class="kt">Int</span><span class="p">)</span> <span class="p">{</span>
+      <span class="k">let</span> <span class="nv">temporaryA</span> <span class="o">=</span> <span class="n">a</span>
+      <span class="n">a</span> <span class="o">=</span> <span class="n">b</span>
+      <span class="n">b</span> <span class="o">=</span> <span class="n">temporaryA</span>
+  <span class="p">}</span>
+</code></pre></div></div>
+
+<p>swapTwoInts function은 단순히 b의 값을 a로 바꾸고, a의 값을 b로 바꿉니다. 이 function은 두 수의 교체를 temporaryA라는 temporary constant를 이용해서 수행합니다. a의 값을 temporaryA에 먼저 할당하고 - a에 b를 할당 - b에 a를 할당합니다.</p>
+
+<p>두개의 Int 타입 variables의 값을 바꾸기 위해 swapTwoInts function을 호출할 수 있습니다. &amp;을 someInt와 anotherInt 앞에 붙여주었습니다.</p>
+
+<div class="language-swift highlighter-rouge"><div class="highlight"><pre class="highlight"><code>  <span class="k">var</span> <span class="nv">someInt</span> <span class="o">=</span> <span class="mi">3</span>
+  <span class="k">var</span> <span class="nv">anotherInt</span> <span class="o">=</span> <span class="mi">107</span>
+  <span class="nf">swapTwoInts</span><span class="p">(</span><span class="o">&amp;</span><span class="n">someInt</span><span class="p">,</span> <span class="o">&amp;</span><span class="n">anotherInt</span><span class="p">)</span>
+  <span class="nf">print</span><span class="p">(</span><span class="s">"someInt is now </span><span class="se">\(</span><span class="n">someInt</span><span class="se">)</span><span class="s">, and anotherInt is now </span><span class="se">\(</span><span class="n">anotherInt</span><span class="se">)</span><span class="s">"</span><span class="p">)</span>
+  <span class="c1">// "someInt is now 107, and anotherInt is 3"을 출력합니다.</span>
+</code></pre></div></div>
+
+<p>위의 예시에서 두 variables someInt와 anotherInt는 function swapTwoInts의 바깥에서 정의되었음에도 function을 통해 원래의 값이 서로 교체되었습니다.</p>
+
+<div class="notice">
+     <h4>N O T E</h4>
+     <p>In-out 파라미터는 function으로 부터 값을 리턴하는 것과는 다릅니다. 위의 swapTwoInts예시는 리턴 타입을 정의하지 않았고, 값을 리턴하지 않습니다. 하지만 여전히 someInt와 anotherInt의 값을 변경시킵니다. In-out 파라미터는 function의 바디 부분의 범위를 넘어서서 영향을 미칠 수 있는 또 다른 방법입니다.
+     </p>
+  </div>
+
+<h2 id="function-types">Function Types</h2>
+
+<p>모든 function은 파라미터의 타입 + 리턴 타입으로 이루어진 특정한 function type을 가지고 있습니다.</p>
+
+<p>예를 들면:</p>
+<div class="language-swift highlighter-rouge"><div class="highlight"><pre class="highlight"><code>  <span class="kd">func</span> <span class="nf">addTwoInts</span><span class="p">(</span><span class="n">_</span> <span class="nv">a</span><span class="p">:</span> <span class="kt">Int</span><span class="p">,</span> <span class="n">_</span> <span class="nv">b</span><span class="p">:</span> <span class="kt">Int</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kt">Int</span> <span class="p">{</span>
+      <span class="k">return</span> <span class="n">a</span> <span class="o">+</span> <span class="n">b</span>
+  <span class="p">}</span>
+  <span class="kd">func</span> <span class="nf">multiplyTwoInts</span><span class="p">(</span><span class="n">_</span> <span class="nv">a</span><span class="p">:</span> <span class="kt">Int</span><span class="p">,</span> <span class="n">_</span> <span class="nv">b</span><span class="p">:</span> <span class="kt">Int</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kt">Int</span> <span class="p">{</span>
+      <span class="k">return</span> <span class="n">a</span> <span class="o">*</span> <span class="n">b</span>
+  <span class="p">}</span>
+</code></pre></div></div>
+
+<p>위의 예는 두개의 단순한 계산을 수행하는 addTwoInts와 multiplyTwoInts라는 functions를 정의합니다. 이 functions는 각각 두개의 Int 값을 이용하여 계산 후 하나의 Int 값을 리턴합니다.</p>
+
+<p>위 두 functions의 타입은 <strong>(Int, Int) -&gt; Int</strong> 입니다.</p>
+
+<div class="language-swift highlighter-rouge"><div class="highlight"><pre class="highlight"><code>  <span class="kd">func</span> <span class="nf">printHelloWorld</span><span class="p">()</span> <span class="p">{</span>
+      <span class="nf">print</span><span class="p">(</span><span class="s">"hello, world"</span><span class="p">)</span>
+  <span class="p">}</span>
+</code></pre></div></div>
+
+<p>위 function은 타입은 () -&gt; Void이고, “파라미터를 가지고 있지 않고 Void를 리턴하는 function”이라고 합니다.</p>
+
+<h2 id="using-function-types">Using Function Types</h2>
+
+<p>Swift의 다른 타입처럼 function 타입을 사용합니다. 예를 들어, constant나 variable을 정의하고 function 타입을 지정한 뒤 적절한 function을 할당할 수 있습니다.</p>
+
+<div class="language-swift highlighter-rouge"><div class="highlight"><pre class="highlight"><code>  <span class="k">var</span> <span class="nv">mathFunction</span><span class="p">:</span> <span class="p">(</span><span class="kt">Int</span><span class="p">,</span> <span class="kt">Int</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kt">Int</span> <span class="o">=</span> <span class="n">addTwoInts</span>
+</code></pre></div></div>
+
+<p>addTwoInts function이 mathFunction과 같은 타입을 가지고 있기 때문에 Swift의 type-checker가 이 assignment를 수락합니다.</p>
+
+<div class="language-swift highlighter-rouge"><div class="highlight"><pre class="highlight"><code>  <span class="nf">print</span><span class="p">(</span><span class="s">"Result: </span><span class="se">\(</span><span class="nf">mathFunction</span><span class="p">(</span><span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">)</span><span class="se">)</span><span class="s">"</span><span class="p">)</span>
+  <span class="c1">// "Result: 5" 를 출력합니다.</span>
+</code></pre></div></div>
+
+<p>다른 타입들처럼, function을 constant나 variable에 할당할 때, Swift가 function type을 추측하도록 할 수 있습니다.</p>
+
+<div class="language-swift highlighter-rouge"><div class="highlight"><pre class="highlight"><code>  <span class="k">let</span> <span class="nv">anotherMathFunction</span> <span class="o">=</span> <span class="n">addTwonInts</span>
+</code></pre></div></div>
+
+<h2 id="function-types-as-parameter-types">Function Types as Parameter Types</h2>
+
+<p>(Int, Int) -&gt; Int와 같은 function type을 다른 function의 파라미터 타입으로 사용할 수 있습니다.</p>
+
+<p>위에서 생성한 math functions의 결과를 출력하기 위한 예제입니다.</p>
+
+<div class="language-swift highlighter-rouge"><div class="highlight"><pre class="highlight"><code>  <span class="kd">func</span> <span class="nf">printMathResult</span><span class="p">(</span><span class="n">_</span> <span class="nv">mathFunction</span><span class="p">:</span> <span class="p">(</span><span class="kt">Int</span><span class="p">,</span> <span class="kt">Int</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kt">Int</span><span class="p">,</span> <span class="n">_</span> <span class="n">a</span><span class="p">;</span> <span class="kt">Int</span><span class="p">,</span> <span class="n">_</span> <span class="nv">b</span><span class="p">:</span> <span class="kt">Int</span><span class="p">)</span> <span class="p">{</span>
+       <span class="nf">print</span><span class="p">(</span><span class="s">"Result: </span><span class="se">\(</span><span class="nf">mathFunction</span><span class="p">(</span><span class="n">a</span><span class="p">,</span> <span class="n">b</span><span class="p">)</span><span class="se">)</span><span class="s">"</span><span class="p">)</span>
+    <span class="p">}</span>
+  <span class="nf">printMathResult</span><span class="p">(</span><span class="n">addTwoInts</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">5</span><span class="p">)</span>
+  <span class="c1">// "Result: 8"을 출력합니다.</span>
+</code></pre></div></div>
+
+<p>위의 예시는 printMathResult(_:_:_:)를 정의합니다. 세개의 파라미터를 가지고 있습니다. 첫번째 파라미터의 이름은 mathFunction이고 타입은 (Int, Int) -&gt; Int 입니다. 두번째 그리고 세번째 파라미터는 a와 b이고 Int 타입입니다. 이 둘은 주어진 math function의 input 값으로 사용됩니다.</p>
+
+<!-- ## Function Types as Return Types -->
+:ET

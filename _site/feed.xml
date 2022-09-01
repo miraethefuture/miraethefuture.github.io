@@ -1,0 +1,691 @@
+<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="4.2.2">Jekyll</generator><link href="http://localhost:4000/jekyll-gitbook/feed.xml" rel="self" type="application/atom+xml" /><link href="http://localhost:4000/jekyll-gitbook/" rel="alternate" type="text/html" /><updated>2022-09-01T22:52:55+09:00</updated><id>http://localhost:4000/jekyll-gitbook/feed.xml</id><title type="html">Jekyll Gitbook</title><subtitle>Build Jekyll site with the GitBook style.
+</subtitle><author><name>HE Tao</name></author><entry><title type="html">My Boxes</title><link href="http://localhost:4000/jekyll-gitbook/til/2022-08-14-myBoxes.html" rel="alternate" type="text/html" title="My Boxes" /><published>2022-08-14T00:00:00+09:00</published><updated>2022-08-14T00:00:00+09:00</updated><id>http://localhost:4000/jekyll-gitbook/til/myBoxes</id><content type="html" xml:base="http://localhost:4000/jekyll-gitbook/til/2022-08-14-myBoxes.html"><![CDATA[<h1 id="앱-프로젝트">앱 프로젝트</h1>
+<p>작은 개인 프로젝트 시작했습니다.</p>
+
+<p>## NavigationView
+  네비게이션 뷰를 사용하여 뷰 사이를 이동</p>
+
+<p>## Edit View</p>
+<ul>
+  <li>사용자가 아이템을 등록/수정할 뷰</li>
+  <li>타입을 새로 하나 만들어서 편집할 때는 거기에 담아두고 완료 버튼을 누르면 그때 뷰에 
+업데이트 되도록 함</li>
+</ul>]]></content><author><name>Mirae</name></author><category term="TIL" /><summary type="html"><![CDATA[앱 프로젝트 작은 개인 프로젝트 시작했습니다. ## NavigationView 네비게이션 뷰를 사용하여 뷰 사이를 이동 ## Edit View 사용자가 아이템을 등록/수정할 뷰 타입을 새로 하나 만들어서 편집할 때는 거기에 담아두고 완료 버튼을 누르면 그때 뷰에 업데이트 되도록 함]]></summary></entry><entry><title type="html">Closures? 그러니까,, 클로저가 뭐냐면,,</title><link href="http://localhost:4000/jekyll-gitbook/til/2022-07-30-closures.html" rel="alternate" type="text/html" title="Closures? 그러니까,, 클로저가 뭐냐면,," /><published>2022-07-30T00:00:00+09:00</published><updated>2022-07-30T00:00:00+09:00</updated><id>http://localhost:4000/jekyll-gitbook/til/closures</id><content type="html" xml:base="http://localhost:4000/jekyll-gitbook/til/2022-07-30-closures.html"><![CDATA[<p><a href="https://docs.swift.org/swift-book/LanguageGuide/Closures.html">📑</a><br />
+아래 모든 정보의 출처는 The swift programming language guide이며 개인의 학습 용도로만 사용되었음을 밝힙니다.</p>
+
+<h1 id="-">{ }</h1>
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>Closures는 기능을 담고 있는 자체적으로  완전한 블락으로 패러미터로 전달되거나 
+코드 안에서 사용되며 상수(Constants)와 변수(Variables)의 references를 찾아내고 담을 수 있습니다.
+이것을 *closing over* 이라고 합니다. 
+&lt;!-- 먼 말이야..? 예시좀.. --&gt;
+</code></pre></div></div>
+
+<p>Swift가 capturing과 관련된 모든 메모리 관리를 처리해줍니다.</p>
+
+<h2 id="functions-and-closures">Functions and Closures</h2>
+
+<p>전역범위의 functions 그리고 nested funtions는 모두 사실 특별한 케이스의 클로저입니다.<br />
+  클로저는 세가지 형태로 나눠집니다.</p>
+
+<ol>
+  <li>Global functions는 이름을 가지고 있지만 어떤 값도 capture하지 않는 클로저입니다.</li>
+  <li>Nested functions는 이름을 가지고 있고 자신을 감싸고 있는 function의 값을 capture할 수 있는 클로저입니다.</li>
+  <li>Closure expressions는 주변의 값을 캡처할 수 있고, 단순화된 syntax로 쓰여진, 이름이 없는 클로저입니다.</li>
+</ol>
+
+<h2 id="closure-expressions">Closure Expressions</h2>
+
+<p>Swift의 <strong>closure expressions</strong>는 간결하고 깔끔하게 최적화된 syntax와 함께 명확한 스타일을 가지고 있습니다.<br />
+  이 최적화 과정에는 아래 네가지 사항이 포함됩니다.</p>
+
+<ol>
+  <li>패러미터와 리턴 값의 타입을 문맥의 흐름으로부터 추론합니다.</li>
+  <li>single-expressions closures로부터의 키워드로 표현되지 않은 returns</li>
+  <li>약칭으로 된 argument의 이름</li>
+  <li>Trailing closure syntax</li>
+</ol>
+
+<p>Closure expressions는 인라인 클로저를 짧고 집중된 형태의 syntax로 작성하는 방식입니다.</p>
+
+<blockquote class="block-tip">
+  <p>💡
+inline은 사용되기 전에 중간 변수에 할당되지 않고 바로 사용되는 것을 말합니다.</p>
+</blockquote>
+
+<p>Closure expressions는 정확함과 의도를 잃지 않으면서 closures를 단축된 형태로 작성하기 
+  위한 몇몇개의 syntax 최적화를 제공합니다.</p>
+
+<h3 id="the-sorted-method">The Sorted Method</h3>
+
+<p>Swift의 표준 라이브러리는 sorted(by:)를 제공합니다. 타입이 명확한 값을 가지고 있는 배열을 정렬해주는 메서드입니다. sorting closure의 출력결과를 기반으로 배열의 값을 정렬합니다. 정렬하는 과정이 완료되면 sorted(by:) 메서드는 조건대로 정렬된 새로운 배열을 리턴합니다. 이 정렬된 새 배열은 원배열과 같은 타입과 사이즈를 가집니다. 원배열이 수정되는 것이 아니라 새 배열을 리턴합니다.</p>
+
+<p>아래의 예제는 closure expressions로 문자열 타입의 값을 가진 names라는 배열을 알파벳 순서의 반대로 정렬할 것입니다.</p>
+
+<div class="language-swift highlighter-rouge"><div class="highlight"><pre class="highlight"><code>  <span class="k">let</span> <span class="nv">names</span> <span class="o">=</span> <span class="p">[</span><span class="s">"Chris"</span><span class="p">,</span> <span class="s">"Alex"</span><span class="p">,</span> <span class="s">"Ewa"</span><span class="p">,</span> <span class="s">"Barry"</span><span class="p">,</span> <span class="s">"Daniella"</span><span class="p">]</span>
+</code></pre></div></div>
+<p>sorted(by:)메서드의 클로저는 배열의 요소와 같은 타입의 인자(arguments) 두 개를 받아들입니다. 그리고 값들이 정렬되었을 때 첫번째 값(인자로 들어온)이 두번째 값(역시 인자로 들어온)의 전, 또는 후에 나타나야 한다는 것을 알려주는 Bool 값을 리턴합니다. 이 sorting closure는 첫번째 값이 두번째 값 전에 나타나야 한다면 true를 리턴합니다. 그리고 반대 상황에서는 false를 리턴합니다.</p>
+
+<p>이 예시는 문자열 타입의 값을 가진 배열을 정렬하는 것이므로 sorting closure는 (String, String) -&gt; Bool 타입의 function이 됩니다.</p>
+
+<h4 id="the-sorting-closure-방식1">The sorting closure: 방식1</h4>
+
+<p><strong>function</strong>을 작성하고 sorted(by:)메서드의 인자로 통과시키는 방법이 있습니다.</p>
+
+<div class="language-swift highlighter-rouge"><div class="highlight"><pre class="highlight"><code>  <span class="kd">func</span> <span class="nf">backward</span><span class="p">(</span><span class="n">_</span> <span class="nv">s1</span><span class="p">:</span> <span class="kt">String</span><span class="p">,</span> <span class="n">_</span> <span class="nv">s2</span><span class="p">:</span> <span class="kt">String</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kt">Bool</span> <span class="p">{</span>
+      <span class="k">return</span> <span class="n">s1</span> <span class="o">&gt;</span> <span class="n">s2</span>
+  <span class="p">}</span>
+  <span class="k">var</span> <span class="nv">reversedNames</span> <span class="o">=</span> <span class="n">names</span><span class="o">.</span><span class="nf">sorted</span><span class="p">(</span><span class="nv">by</span><span class="p">:</span> <span class="n">backward</span><span class="p">)</span>
+  <span class="c1">// reversedNames = ["Ewa", "Daniella", "Chris", "Barry", "Alex"]</span>
+</code></pre></div></div>
+<p>만약 첫번째 문자열(s1)이 두번째 문자열(s2)보다 크면, backward function은 true를 리턴합니다. 이것은 정렬된 배열에서 s1이 s2보다 앞에 나타나야 한다는 것을 나타냅니다. 알파벳에서는 뒤로 갈수록 큰 값이기 때문에 알파벳의 역순으로 정렬됩니다.</p>
+
+<p>위의 방법은 꼭 필요한 single expression function (a &gt; b)를 작성한 긴 버전의 방법이었습니다.
+  클로저 표현식을 사용하여 인라인 방식으로 sorting closure를 작성하는 것이 더 간편할 것입니다.</p>
+
+<h4 id="the-sorting-closure-방식2">The sorting closure: 방식2</h4>
+
+<p>클로저 표현식 syntax의 일반적인 형태:</p>
+
+<div class="language-swift highlighter-rouge"><div class="highlight"><pre class="highlight"><code>  <span class="p">{</span> <span class="p">(</span> <span class="n">parameters</span> <span class="p">)</span> <span class="o">-&gt;</span> <span class="k">return</span> <span class="n">type</span> <span class="k">in</span>
+      <span class="n">statements</span>
+  <span class="p">}</span>
+</code></pre></div></div>
+
+<p>클로저 표현식의 패러미터로 in-out 패러미터를 사용할 수 있습니다. 하지만 기본값은 가질 수 없습니다. 아래의 예시는 closure expression 버전의 backward function입니다.</p>
+
+<div class="language-swift highlighter-rouge"><div class="highlight"><pre class="highlight"><code>  <span class="n">reversedNames</span> <span class="o">=</span> <span class="n">names</span><span class="o">.</span><span class="nf">sorted</span><span class="p">(</span><span class="nv">by</span><span class="p">:</span> <span class="p">{</span> <span class="p">(</span><span class="nv">s1</span><span class="p">:</span> <span class="kt">String</span><span class="p">,</span> <span class="nv">s2</span><span class="p">:</span> <span class="kt">String</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kt">Bool</span> <span class="k">in</span>
+        <span class="k">return</span> <span class="n">s1</span> <span class="o">&gt;</span> <span class="n">s2</span>
+  <span class="p">})</span>
+</code></pre></div></div>
+
+<p>위의 inline closure의 패러미터와 리턴 타입을 정의한 방식은 backward function의 정의한 방식과 똑같습니다. 둘다 (s1: String, s2: String) -&gt; Bool 이라고 쓰였습니다. 하지만 inline closure expression에서는 { } 밖이 아니라 안에 작성되었다는 차이점이 있습니다. 그리고 바디 부분의 시작을 in 키워드로 알렸습니다. in 키워드는 클로저의 패러미터와 리턴 타입의 정의가 끝났다는 것을 알려주고 바디 부분이 시작된다는 것을 나타냅니다.</p>
+
+<h4 id="inferring-type-from-context">Inferring Type From Context</h4>
+
+<p>위의 sorting closure가 sorted(by:) 메서드의 argument로 통과되기 때문에 Swift는 sorting closure의 패러미터의 타입과 리턴 값의 타입을 추측할 수 있습니다. 그렇기 때문에 패러미터와 리턴 값의 타입은 작성될 필요가 없어집니다. 모든 타입들이 추측 가능해짐으로 return arrow(-&gt;)와 패러미터를 감싸는 괄호 또한 생략 가능해집니다.</p>
+
+<div class="language-swift highlighter-rouge"><div class="highlight"><pre class="highlight"><code>  <span class="n">reversedNames</span> <span class="o">=</span> <span class="n">names</span><span class="o">.</span><span class="nf">sorted</span><span class="p">(</span><span class="nv">by</span><span class="p">:</span> <span class="p">{</span> <span class="n">s1</span><span class="p">,</span> <span class="n">s2</span> <span class="k">in</span> <span class="k">return</span> <span class="n">s1</span> <span class="o">&gt;</span> <span class="n">s2</span> <span class="p">}</span> <span class="p">)</span>
+</code></pre></div></div>
+<p>Function이나 method에 closure를 통과시킬때는 언제나 패러미터 타입과 리턴 값의 타입을 추측하는 것이 가능합니다. 그렇기 때문에 function이나 method의 인자로써 inline closure을 사용할 때는 완전한 형태로 작성할 필요가 없어집니다.</p>
+
+<p>그럼에도 불구하고, 원한다면 자료형을 명시할 수 있습니다. 만약 코드를 읽어야하는 사람들을 위해 모호한 부분을 피하고 싶다면 자료형을 명시하는 것은 좋은 방법이 될 것입니다.</p>
+
+<h4 id="implicit-returns-from-single-expression-closures">Implicit Returns from Single-Expression closures</h4>
+
+<p>Single-expression closures는 return 키워드를 생략하고 single expression의 결과를 리턴할 수 있습니다.</p>
+
+<div class="language-swift highlighter-rouge"><div class="highlight"><pre class="highlight"><code>  <span class="n">reversedNames</span> <span class="o">=</span> <span class="n">names</span><span class="o">.</span><span class="nf">sorted</span><span class="p">(</span><span class="nv">by</span><span class="p">:</span> <span class="p">{</span> <span class="n">s1</span><span class="p">,</span> <span class="n">s2</span> <span class="k">in</span> <span class="n">s1</span> <span class="o">&gt;</span> <span class="n">s2</span> <span class="p">}</span> <span class="p">)</span>
+</code></pre></div></div>
+
+<h4 id="shorthand-argument-names">Shorthand Argument Names</h4>
+
+<p>Swift는 inline closures의 argument 이름을 간단하게 전달하는 방법을 제공합니다. $0, $1, $2 등으로 클로저의 인자값을 나타낼 때 사용됩니다.</p>
+
+<p>만약 closure expression에서 이 shorthand argument names를 사용한다면, 클로저의 argument list를 생략할 수 있습니다. shorthand argument names의 자료형은 사용되길 예상되는 function의 자료형으로부터 추측 가능하고, 가장 높은 수의 shorthand argument는 해당 클로저가 사용할 argument의 개수를 결정합니다. 이 closure expression의 전체가 바디부분으로 이루어져 있음으로 in 키워드도 생략이 가능합니다.</p>
+
+<div class="language-swift highlighter-rouge"><div class="highlight"><pre class="highlight"><code>  <span class="n">reversedNames</span> <span class="o">=</span> <span class="n">names</span><span class="o">.</span><span class="nf">sorted</span><span class="p">(</span><span class="nv">by</span><span class="p">:</span> <span class="p">{</span> <span class="nv">$0</span> <span class="o">&gt;</span> <span class="nv">$1</span> <span class="p">}</span> <span class="p">)</span>
+</code></pre></div></div>
+
+<p>위의 예시에서, $0은 첫번째 String argument를 $1 은 두번째 String argument를 나타냅니다. $1이 가장 높은 숫자의 shorthand argument라는 것은 해당 클로저가 두개의 arguments를 사용하는 것을 나타냅니다.</p>
+
+<h4 id="operator-methods">Operator Methods</h4>
+
+<p>심지어 더 짧은 방식으로 closure expression을 작성할 수 있습니다. Swift의 String type은 greater-than operator(&gt;)의 특정 이행 메서드를 가지고 있습니다. 이 메서드의 패러미터 타입과 리턴 타입이 sorted(by:)메서드에게 필요한 패러미터 타입, 그리고 리턴 타입과 정확히 일치하기 때문에 단순히 &gt; 하나만 통과시키더라도 Swift는 String 타입의 string-specific implementation을 사용하길 원한다는 것을 추론할 수 있을 것입니다.</p>
+
+<div class="language-swift highlighter-rouge"><div class="highlight"><pre class="highlight"><code>  <span class="n">reversedNames</span> <span class="o">=</span> <span class="n">names</span><span class="o">.</span><span class="nf">sorted</span><span class="p">(</span><span class="nv">by</span><span class="p">:</span> <span class="o">&gt;</span> <span class="p">)</span>
+</code></pre></div></div>
+
+<h4 id="trailing-closures">Trailing closures</h4>
+
+<p>클로저 표현식(Closure expression)을 어떤 함수의 마지막 인지로 통과시켜야 하고 그 클로저 표현식이 길다면, 해당 closure expression을 trailing closure로 작성하는 것이 유용한 방법이 될 수 있습니다. 사용하는 trailing closure가 function의 argument이더라도  function call의 () 뒤에 trailing closure을 작성합니다. 이 trailing closure syntax를 사용할때는 function을 호출할 때 첫번째 closure의 argument label (closure: // 같은)은 작성하지 않습니다. 아래의 예제는 single trailing closure를 사용하고 있지만 하나의 function call이 여러개의 trailing closures를 포함할 수 잇습니다.</p>
+
+<div class="language-swift highlighter-rouge"><div class="highlight"><pre class="highlight"><code>  <span class="kd">func</span> <span class="nf">someFunctionThatTakesAClosure</span><span class="p">(</span><span class="nv">closure</span><span class="p">:</span> <span class="p">()</span> <span class="o">-&gt;</span> <span class="kt">Void</span><span class="p">)</span> <span class="p">{</span>
+      <span class="c1">// funtion body 부분</span>
+  <span class="p">}</span>
+
+  <span class="c1">// trailing closure를 사용하지 않고 위의 function을 호출하는 방법</span>
+  <span class="nf">someFunctionThatTakesAClosure</span><span class="p">(</span><span class="nv">closure</span><span class="p">:</span> <span class="p">{</span>
+      <span class="c1">// closure의 바디 부분</span>
+    <span class="p">})</span>
+
+  <span class="c1">// trailing closure 사용</span>
+  <span class="nf">someFunctionThatTakesAClosure</span><span class="p">()</span> <span class="p">{</span>
+      <span class="c1">// trailing closure의 바디 부분</span>
+  <span class="p">}</span>  
+</code></pre></div></div>
+
+<p>위에서 작성해보았던 string-sorting closure도 sorted(by:)메서드의 괄호 밖에서 trailing closure로 작성될 수 있습니다.</p>
+
+<div class="language-swift highlighter-rouge"><div class="highlight"><pre class="highlight"><code>  <span class="n">reversedNames</span> <span class="o">=</span> <span class="n">names</span><span class="o">.</span><span class="nf">sorted</span><span class="p">()</span> <span class="p">{</span> <span class="nv">$0</span> <span class="o">&gt;</span> <span class="nv">$1</span> <span class="p">}</span>
+</code></pre></div></div>
+
+<p>만약 closure expression이 function이나 method의 유일한 argument이고 trailing closure로 작성한다면 ()를 생략할 수 있습니다.</p>
+
+<div class="language-swift highlighter-rouge"><div class="highlight"><pre class="highlight"><code>  <span class="n">reversedNames</span> <span class="o">=</span> <span class="n">names</span><span class="o">.</span><span class="n">sorted</span> <span class="p">{</span> <span class="nv">$0</span> <span class="o">&gt;</span> <span class="nv">$1</span> <span class="p">}</span>
+</code></pre></div></div>
+
+<p>Trailing closures는 어떤 closure가 한 줄 위에 inline 형식으로 작성이 어려울 정도로 길이가 길 때 가장 유용하게 사용됩니다. 예를 들어, Swift의 Array type은 map(_:) 메서드를 가지고 있습니다. 이 메서드는 하나의 closure expression을 argument로 가집니다. 해당 클로저는 배열의 각 아이템마다 한번씩 호출됩니다. 그리고 해당 item을 다르게 mapped된 value를 리턴합니다. (다른 타입일 수 있습니다.) map(_:) 메서드에 통과시킬 클로저 안에 코드를 작성함으로써 mapping의 종류와 리턴 값의 타입을 특정 짓습니다.</p>
+
+<p>주어진 클로저를 배열의 각 요소마다 적용한 뒤에, map(_:) 메서드는 새로 mapped된 값을 원래의 연결된 배열의 값과 같은 순서로 담고 있는 새 배열을 리턴합니다.</p>
+
+<p>아래 예시는 map(_:)메서드와 trailing closure를 사용하여 Int 타입의 값을 가지고 있는 배열을 String 타입의 값을 가진 배열로 변환하는 방법을 설명합니다. 배열 [16, 58, 510]은 새로운 배열인 [“OneSix”, “FiveEight”, “FiveOneZero”]를 생성하기 위해 사용되었습니다.</p>
+
+<div class="language-swift highlighter-rouge"><div class="highlight"><pre class="highlight"><code>  <span class="k">let</span> <span class="nv">digitNames</span> <span class="o">=</span> <span class="p">[</span>
+      <span class="mi">0</span><span class="p">:</span> <span class="s">"Zero"</span><span class="p">,</span> <span class="mi">1</span><span class="p">:</span> <span class="s">"One"</span><span class="p">,</span> <span class="mi">2</span><span class="p">:</span> <span class="s">"Two"</span><span class="p">,</span> <span class="mi">3</span><span class="p">:</span> <span class="s">"Three"</span><span class="p">,</span> <span class="mi">4</span><span class="p">:</span> <span class="s">"Four"</span><span class="p">,</span>
+      <span class="mi">5</span><span class="p">:</span> <span class="s">"Five"</span><span class="p">,</span> <span class="mi">6</span><span class="p">:</span> <span class="s">"Six"</span><span class="p">,</span> <span class="mi">7</span><span class="p">:</span> <span class="s">"Seven"</span><span class="p">,</span> <span class="mi">8</span><span class="p">:</span> <span class="s">"Eight"</span><span class="p">,</span> <span class="mi">9</span><span class="p">:</span> <span class="s">"Nine"</span>
+  <span class="p">]</span>
+  <span class="k">let</span> <span class="nv">numbers</span> <span class="o">=</span> <span class="p">[</span><span class="mi">16</span><span class="p">,</span> <span class="mi">58</span><span class="p">,</span> <span class="mi">510</span><span class="p">]</span>
+</code></pre></div></div>
+<p>위의 코드는 숫자와 영어 버전의 숫자 이름을 맵핑한 dictionary를 생성합니다. 문자열 배열로 변환될 numbers 배열도 정의합니다.</p>
+
+<p>Array 타입의 map(_:)메서드에 trailing clousre로 closure expression을 통과시켜 numbers 배열을 문자열 배열로 만들어 봅니다.</p>
+
+<div class="language-swift highlighter-rouge"><div class="highlight"><pre class="highlight"><code>  <span class="k">let</span> <span class="nv">string</span> <span class="o">=</span> <span class="n">numbers</span><span class="o">.</span><span class="n">map</span> <span class="p">{</span> <span class="p">(</span><span class="n">number</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kt">String</span> <span class="k">in</span>
+      <span class="k">var</span> <span class="nv">number</span> <span class="o">=</span> <span class="n">number</span>
+      <span class="k">var</span> <span class="nv">output</span> <span class="o">=</span> <span class="s">""</span>
+      <span class="k">repeat</span> <span class="p">{</span>
+          <span class="n">output</span> <span class="o">=</span> <span class="n">digitNames</span><span class="p">[</span><span class="n">number</span> <span class="o">%</span> <span class="mi">10</span><span class="p">]</span><span class="o">!</span> <span class="o">+</span> <span class="n">output</span>
+          <span class="n">number</span> <span class="o">/=</span> <span class="mi">10</span>
+      <span class="p">}</span> <span class="k">while</span> <span class="n">number</span> <span class="o">&gt;</span> <span class="mi">0</span>
+      <span class="k">return</span> <span class="n">output</span>
+  <span class="p">}</span>
+  <span class="c1">// strings 상수의 타입은 [String]으로 추론됩니다.</span>
+  <span class="c1">// 값은 ["OneSix", "FiveEight", "FiveOneZero"] 입니다.</span>
+</code></pre></div></div>
+<p>map(_:) 메서드는 numbers 배열안의 각 item마다 closure expression을 호출합니다. 맵핑될 배열의 값으로부터 타입을 추론할 수 있기 때문에 클로저의 인풋 패러미터인 number의 타입을 특정지을 필요가 없습니다.</p>
+
+<p>위의 예시에서 var number는 초기값으로 closure의 패러미터인 number를 가집니다. 이렇게 함으로써 클로저의 바디안에서 그 값이 변경될 수 있게 됩니다. (function 또는 closures의 패러미터는 언제나 constants 이기 때문에) 이 closure expression은 또한 mapped output 배열안의 담길 값의 타입을 나타내기위해 리턴 타입을 String으로 특정 지었습니다.</p>
+
+<p>위의 closure expression은 호출될 때마다 ouput이라는 이름의 문자열을 만듭니다. 이것은 remainder operator (number % 10)을 사용하여 number의 마지막 수를 찾아내고 이렇게 찾아낸 숫자를 digitNames dictionary에서 키 값으로 가지는 값을 찾기 위해 사용합니다. 그리고 찾은 문자열 값을 현재 output 문자열과 합칩니다. 이 클로저는 0보다 큰 어떤 숫자를 문자 형식으로 나타내기 위해 사용될 수 있습니다. 클로저가 output 값으로 만들어진 새로운 배열이 map(_:) 메서드로부터 만들어집니다.</p>
+
+<p>위의 예시에서의 trailing closure의 사용은 클로저가 사용된 function 바로 뒤에 클로저의 기능을 바로 요약해서 나타내줍니다. map(_:)의 괄호로 감쌀 필요가 없습니다.</p>
+
+<p>만약 어떤 function이 여러개의 closures를 취한다면, 첫번째 trailing closure의 argument label은 생략하고 나머지 trailing closures의 argument label은 적어줍니다. 아래의 function은 photo gallery를 위해 사진을 가져옵니다.</p>
+
+<div class="language-swift highlighter-rouge"><div class="highlight"><pre class="highlight"><code>  <span class="kd">func</span> <span class="nf">loadPicture</span><span class="p">(</span><span class="n">from</span> <span class="nv">server</span><span class="p">:</span> <span class="kt">Server</span><span class="p">,</span> <span class="nv">completion</span><span class="p">:</span> <span class="p">(</span><span class="kt">Picture</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kt">Void</span><span class="p">,</span> <span class="nv">onFailure</span><span class="p">:</span> <span class="p">()</span> <span class="o">-&gt;</span> <span class="kt">Void</span><span class="p">)</span> <span class="p">{</span>
+      <span class="k">if</span> <span class="k">let</span> <span class="nv">picture</span> <span class="o">=</span> <span class="nf">download</span><span class="p">(</span><span class="s">"photo.jpg"</span><span class="p">,</span> <span class="nv">from</span><span class="p">:</span> <span class="n">server</span><span class="p">)</span> <span class="p">{</span>
+          <span class="nf">completion</span><span class="p">(</span><span class="n">picture</span><span class="p">)</span>
+      <span class="p">}</span> <span class="k">else</span> <span class="p">{</span>
+          <span class="nf">onFailure</span><span class="p">()</span>
+      <span class="p">}</span>
+  <span class="p">}</span>
+</code></pre></div></div>
+<p>사진을 가져오기 위해 위의 function을 호출하면, 두개의 closures를 사용할 수 있다. 첫번째 클로저는 completion handler다. 이 클로저는 성공적인 사진 다운로드 후에 사진을 보여준다. 두번째 클로저는 error handler이다. 이 클로저는 사용자에게 에러를 보여준다.</p>
+
+<div class="language-swift highlighter-rouge"><div class="highlight"><pre class="highlight"><code>  <span class="nf">loadPicture</span><span class="p">(</span><span class="nv">from</span><span class="p">:</span> <span class="n">someServer</span><span class="p">)</span> <span class="p">{</span> <span class="n">picture</span> <span class="k">in</span>
+      <span class="n">someView</span><span class="o">.</span><span class="n">currentPicture</span> <span class="o">=</span> <span class="n">picture</span>
+  <span class="p">}</span> <span class="nv">onFailure</span><span class="p">:</span> <span class="p">{</span>
+      <span class="nf">print</span><span class="p">(</span><span class="s">"Couldn't download the next picture."</span><span class="p">)</span>
+  <span class="p">}</span>      
+</code></pre></div></div>
+<p>위의 예제에서 loadPicture(from:completion:onFailure:) function은 network task를 백그라운드로 보내고 그 network task가 완료되었을 때 두개의 completion handlers 중 하나를 호출합니다. 이런 방식으로 function을 작성하는 것은 성공적으로 다운로드 후 UI를 업데이트 하는 코드를 network failure를 다루는 코드로부터 분리시킵니다.</p>
+
+<h2 id="capturing-values">Capturing Values</h2>
+
+<p>클로저는 constants나 variables가 정의된 곳 안에서 constants나 variables를 <em>capture</em>할 수 있습니다. 그리고나서 해당 클로저의 바디 안에서 캡쳐한 해당 값을 조회하거나 수정할 수 있습니다. 심지어 해당 constants나 variables가 더이상 원래의 범위안에 존재하지 않더라도 클로저는 해당 값을 조회, 수정할 수 있습니다.</p>
+
+<p>Swift에서 값을 capture할 수 있는 가장 간단한 형태의 클로저는 바로 다른 function의 바디부분에 작성된 ested function 입니다. nested function은 바깥쪽 function의 argument를 capture할 수 있고 바깥쪽 function 안에 정의된 constants나 variables를 capture할 수 있습니다.</p>
+
+<p>아래 예제는 makeIncrementer이라는 function입니다. incrementer이라는 nested function을 담고 있습니다. 이 nested function인 incrementer()는 자신을 둘러싸고 있는 코드의 전후 관계로부터 runningTotal과 amount라는 두개의 값을 capture합니다. 이 두개의 값을 capturing 한 후, incrementer는 makeIncrementer로부터 클로저로 리턴됩니다. incrementer 클로저는 호출 될 때마다 runningTotal를 amount의 수만큼 증가시킵니다.</p>
+
+<div class="language-swift highlighter-rouge"><div class="highlight"><pre class="highlight"><code>  <span class="kd">func</span> <span class="nf">makeIncrementer</span><span class="p">(</span><span class="n">forIncrement</span> <span class="nv">amount</span><span class="p">:</span> <span class="kt">Int</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="p">()</span> <span class="o">-&gt;</span> <span class="kt">Int</span> <span class="p">{</span>
+    <span class="k">var</span> <span class="nv">runningTotal</span> <span class="o">=</span> <span class="mi">0</span>
+    <span class="kd">func</span> <span class="nf">incrementer</span><span class="p">()</span> <span class="o">-&gt;</span> <span class="kt">Int</span> <span class="p">{</span>
+        <span class="n">runningTotal</span> <span class="o">+=</span> <span class="n">amount</span>
+        <span class="k">return</span> <span class="n">runningTotal</span>
+    <span class="p">}</span>
+    <span class="k">return</span> <span class="n">incrementer</span>
+  <span class="p">}</span>
+</code></pre></div></div>
+<p>makeIncrementer function의 리턴 타입은 () -&gt; Int 입니다. 이것은 makeIncrementer function이 단순한 값이 아니라 function을 리턴한다는 것을 의미합니다. 이 예제에서는 리턴되는 function이 패러미터를 가지고 있지 않고 호출될 때마다 Int 타입의 값을 리턴합니다.</p>
+
+<p><!-- 👷 Function Types as Return Types에 자세한 내용 참고 --></p>
+
+<p>makeIncrementer(forIncrement:)는 runningTotal이라는 integer variable을 정의합니다. 이것은 리턴될 incrementer의 현재 runningTotal을 담을 것입니다. 초기값은 0입니다. makeIncrementer(forIncrement:) function은 하나의 Int 패러미터를 가지고 있습니다. 이 패러터는 forIncrement라는 argument lable을 가지고 있죠. amount는 패러미터의 이름입니다. 이 패러미터로 통과된 argument의 값은 리턴된 incrementer function이 호출될 때마다 runningTotal이 얼만큼 증가 될지를 조건으로 지정합니다. makeIncrementer function은 incrementer이라는 이름의 nested function을 정의합니다. 이 function이 실제로 수의 증가를 실행합니다. 이 function은 단순히 amount를 runningTotal에 더하고 그 결과를 리턴합니다.</p>
+
+<p>이 nested function을 따로 떼어놓고 본다면, 이것은 조금 특이해 보일 수 있습니다.</p>
+
+<div class="language-swift highlighter-rouge"><div class="highlight"><pre class="highlight"><code>  <span class="kd">func</span> <span class="nf">incrementer</span><span class="p">()</span> <span class="o">-&gt;</span> <span class="kt">Int</span> <span class="p">{</span>
+    <span class="n">runningTotal</span> <span class="o">+=</span> <span class="n">amount</span>
+    <span class="n">retrun</span> <span class="n">runningTotal</span>
+  <span class="p">}</span>
+</code></pre></div></div>
+
+<p>이 incrementer() function은 패러미터를 가지고 있지 않습니다. 그리고 runningTotal과 amount를 function의 바디부분 안에서 참조하고 있습니다. 이것은 감싸고 있는 function으로부터  runningTotal과 amount의 reference를 capturing 하고 그것을 function의 바디부분에서 사용는 방식으로 이용됩니다. Reference를 capturing하는 것은 makeIncrementer에 대한 호출이 끝났을 때도 runningTotal과 amount가 사라지지 않는 것을 보증합니다. 그리고 또 runningTotal이 incrementer function이 다음에 또 호출될 때도 이용 가능하도록 합니다.</p>
+
+<p><!-- 👷 이 부분 잘 이해가 안됨. nested function을 사용한 이유인 것 같음 --></p>
+
+<p>아래는 function makeIncrementer의 사용 예시입니다.</p>
+<div class="language-swift highlighter-rouge"><div class="highlight"><pre class="highlight"><code>  <span class="k">let</span> <span class="nv">incrementByTen</span> <span class="o">=</span> <span class="nf">makeIncrementer</span><span class="p">(</span><span class="nv">forIncrement</span><span class="p">:</span> <span class="mi">10</span><span class="p">)</span>
+</code></pre></div></div>
+
+<p>이 예시는 incrementByTen이라는 constant를 설정하고 incrementer fuction을 참조합니다. 이 function은 호출될 때마다 10을 runningTotal에 더합니다. 아래는 여러번 이 function을 리턴했을 때의 코드입니다.</p>
+
+<div class="language-swift highlighter-rouge"><div class="highlight"><pre class="highlight"><code>  <span class="nf">incrementByTen</span><span class="p">()</span>
+  <span class="c1">// 값 10을 리턴</span>
+  <span class="nf">incrementByTen</span><span class="p">()</span>
+  <span class="c1">// 값 20을 리턴</span>
+  <span class="nf">incrementByTen</span><span class="p">()</span>
+  <span class="c1">// 값 30을 리턴</span>
+</code></pre></div></div>
+
+<p>두번째 incrementer을 생성한다면, 그것은 그것만의 분리된 새로운 runningTotal 변수의 reference를 가지게 됩니다.</p>
+
+<div class="language-swift highlighter-rouge"><div class="highlight"><pre class="highlight"><code>  <span class="k">let</span> <span class="nv">incrementBySeven</span> <span class="o">=</span> <span class="nf">makeIncrementer</span><span class="p">(</span><span class="nv">forIncrement</span><span class="p">:</span> <span class="mi">7</span><span class="p">)</span>
+  <span class="nf">incrementBySeven</span><span class="p">()</span>
+  <span class="c1">// 값 7을 리턴</span>
+</code></pre></div></div>
+
+<p>원래의 incrementer인 incrementByTen을 다시 호출하는 것은 계속해서 그것이 참조한 runningTotal의 값을 증가시킵니다. 그리고 incrementBySeven으로부터 capture된 값에는 영향을 미치지 않습니다.</p>
+
+<div class="language-swift highlighter-rouge"><div class="highlight"><pre class="highlight"><code>  <span class="nf">incrementByTen</span><span class="p">()</span>
+  <span class="c1">// 값 40을 리턴</span>
+</code></pre></div></div>
+
+<h2 id="closures-are-reference-types">Closures Are Reference Types</h2>
+
+<p>위의 예시에서, incrementByTen과 incrementBySeven은 constants입니다. 하지만 이 constants가 나타내는 클로저는 여전히 캡쳐한 runningTotal 변수를 증가 시킬 수 있습니다. 이것이 functions와 closures가 reference type인 이유입니다.</p>
+
+<p>function이나 closure를 constant나 variable에 할당할 때마다 실제로는 해당 constant와 variable을 function이나 closure의 reference가 되도록 설정하는 것입니다.</p>
+
+<p><!-- 👷 모르겠음 --></p>
+
+<p>두개의 다른 contents나 variables에 하나의 클로저를 할당한다면, 두개 모두 똑같은 클로저를 나타내게 됩니다.</p>
+
+<div class="language-swift highlighter-rouge"><div class="highlight"><pre class="highlight"><code>  <span class="k">let</span> <span class="nv">alsoIncrementByTen</span> <span class="o">=</span> <span class="n">incrementByTen</span>
+  <span class="nf">alsoIncrementByTen</span><span class="p">()</span>
+  <span class="c1">// 50을 리턴</span>
+
+  <span class="nf">incrementByTen</span><span class="p">()</span>
+  <span class="c1">// 60을 리턴</span>
+</code></pre></div></div>
+
+<p>위의 예시는 alsoIncrementByTen를 호출하는 것은 incrementByTen을 호출하는 것과 같다는 것을 보여줍니다. 두 개가 같은 클로저를 참조하고 있기 때문에 둘 다 같은 runningTotal을 증가시키고 리턴합니다.</p>
+
+<h2 id="escaping-closures">Escaping Closures</h2>
+
+<div class="language-swift highlighter-rouge"><div class="highlight"><pre class="highlight"><code>  <span class="k">var</span> <span class="nv">completionHandlers</span><span class="p">:</span> <span class="p">[()</span> <span class="o">-&gt;</span> <span class="kt">Void</span><span class="p">]</span> <span class="o">=</span> <span class="p">[]</span>
+  <span class="kd">func</span> <span class="nf">someFunctionWithEscapingClosure</span><span class="p">(</span><span class="nv">completionHandler</span><span class="p">:</span> <span class="kd">@escaping</span> <span class="p">()</span> <span class="o">-&gt;</span> <span class="kt">Void</span><span class="p">)</span> <span class="p">{</span>
+    <span class="n">completionHandlers</span><span class="o">.</span><span class="nf">append</span><span class="p">(</span><span class="n">completionHandler</span><span class="p">)</span>
+  <span class="p">}</span>
+</code></pre></div></div>
+<p>함수가 리턴된 뒤에 해당 함수의 인자로써 통과된 클로저가 호출되는 것을 클로저가 escape한다고 합니다.</p>
+
+<p>클로저를 취하는 패러미터의 타입 앞에 @escaping이라고 적어주면 해당 클로저가 escape된다는 것을 나타낼 수 있습니다.</p>
+
+<p>someFunctionWithEscapingClosure(_:) function은 argument로 closure를 가집니다.</p>]]></content><author><name>Mirae</name></author><category term="TIL" /><summary type="html"><![CDATA[📑 아래 모든 정보의 출처는 The swift programming language guide이며 개인의 학습 용도로만 사용되었음을 밝힙니다.]]></summary></entry><entry><title type="html">Demystify SwiftUI / WWDC21</title><link href="http://localhost:4000/jekyll-gitbook/til/2022-07-30-demystifySwiftUI.html" rel="alternate" type="text/html" title="Demystify SwiftUI / WWDC21" /><published>2022-07-30T00:00:00+09:00</published><updated>2022-07-30T00:00:00+09:00</updated><id>http://localhost:4000/jekyll-gitbook/til/demystifySwiftUI</id><content type="html" xml:base="http://localhost:4000/jekyll-gitbook/til/2022-07-30-demystifySwiftUI.html"><![CDATA[<p><a href="https://developer.apple.com/videos/play/wwdc2021/10022/">Demystify SwiftUI</a></p>
+<blockquote class="block-tip">
+  <p>이 글의 모든 정보의 출처는 위 링크의 WWDC21 영상입니다.</p>
+</blockquote>
+
+<p>디미스티파이가  뭔지 먼저 검색해봅니다. 사전에는 to make a subject that seems difficult or complicated easier to understand, especially by explaining it in simpler language. 라고 나와 있습니다. 어렵거나 복잡해보이는 주제를 쉬운 언어를 사용하여 이해하기 쉽도록 만드는 것이라고 하는데요. Demystify SwiftUI! 라고하니…<br />
+ 어렵고, 복잡해보이는 SwiftUI를 쉽게 이해해보자는 것 같습니다.</p>
+
+<h1 id="declarative-ui">Declarative UI</h1>
+
+<p>SwiftUI가 선언형 UI 라는 말을 들어보셨을 겁니다. 원하는 UI를 하이레벨 언어로 묘사하면 SwiftUI가 어떻게 그것을 이루어낼건지 결정합니다. 대부분 이것은 잘 작동합니다. 하지만 가끔은 의도하지 않은 방식으로 작동할 떄가 있죠. 그리고 바로 그때,  SwiftUI가 보이지 않는 곳에서, 우리가 원하는 결과를 얻기 위해 무엇을 하고 있는지 이해하는 것이 도움이 될 것입니다.</p>
+
+<h2 id="swiftui가-우리의-코드를-볼-때-뭐가-보일까">SwiftUI가 우리의 코드를 볼 때, 뭐가 보일까?</h2>
+<ul>
+  <li>Identity : 아이덴티티는 SwiftUI가 요소를 구별하는 방법입니다. 같은가? 다른가?</li>
+  <li>Lifetime : 라이프타임은 SwiftUI가 시간에 지남에 따라 달라지는 뷰와 데이터의 존재유무를 추적하는 방법입니다.</li>
+  <li>Dependencies : SwiftUI가 언제 우리의 인터페이스가 업데이트 되야하는지, 그리고 왜 업데이트 되야하는지 이해하는 방법입니다.</li>
+</ul>
+
+<p>이 세 가지를 통해 SwiftUI는 뭐가, 언제, 어떻게 바뀌어야 하는지를 알 수 있습니다. 결과적으로 우리는 화면에서 동적인 사용자 인터페이스의 형태로 이것을 확인 할 수 있죠.</p>
+
+<p>이 세 가지에 대해 좀 더 깊이 알아봅시다.</p>
+
+<h3 id="identity">Identity</h3>
+<p>먼저 아이덴티티에 대해 알아봅니다. 아래 캡처한 이미지에는 두개의 강아지 발바닥 뷰가 있습니다. 저 두 뷰는 색과 위치만 다른 같은 뷰일까요? 아니면 아예 다른 뷰일까요? 이 두 차이는 중요합니다. 왜냐하면, 이 차이로 인해  뷰가 어떤 한 상태에서 다른 상태로 바뀌는 방법이 바뀌기 떄문입니다.</p>
+
+<center><img src="/assets/images/DemystifySwift1.png" alt="DemystifySwift1" width="700" /></center>
+<p><br /></p>
+
+<p>두 아이콘이 다른 두개의 뷰라면 하나가 나타나고 사라지고, 또 다른 하나가 사라지고 나타나는 방식으로 뷰를 변경시킬 것입니다. 반대로 두 뷰가 같은 뷰라면, 슬라이딩과 같은 방식으로 뷰를 움직일 것입니다.<br />
+<!--  따라서 서로 다른 상태에 걸쳐 뷰를 연결하는 것이 중요합니다. 왜냐하면 이것이 SwiftUI가 뷰 간에 전환하는 방법을 이해하는 방식이기 때문입니다.  --></p>
+
+<p>#### View Identity<br />
+   같은 아이덴티티를 공유하는 뷰들은 같은 컨셉의 UI 요소의 다른 상태를 보여줍니다.<br />
+   위의 강아지 발바닥 아이콘을 예로 들면, 같은 컨셉의 아이콘이지만 색과 위치라는 상태가 다르게 나타나죠. 두 아이콘을 같은 뷰라고 가정하면 이 둘은 같은 아이덴티티를 가지고 있는 것이겠죠.
+   반대로 두 아이콘이 다른 아이덴티티를 가졌다면 다른 두 뷰인 것입니다.</p>
+
+<p>그렇다면 코드 속에서 아이덴티티가 어떻게 나타나는지 알아봅시다.</p>
+
+<p>SwiftUI가 사용하는 두가지 방식을 집중적으로 알아봅시다.</p>
+
+<h4 id="types-of-identity">Types of identity</h4>
+<ol>
+  <li>Explicit identity : 이름과 같은 assigning name 또는 identifier</li>
+  <li>Structural identity :  타입, 위치, 계층(view hierarchy)으로 구별</li>
+</ol>
+
+<p>Explicit identity의 예로는 포인터가 있습니다. AppKit과 UIKit은 포인터를 사용합니다.  SwiftUI는 포인터를 사용하지 않지만 포인터에 대해 알아보는 것이 SwiftUI가 어떤 방식으로, 그리고 왜 다른지 이해하는 것에 도움이 되기 때문에 잠깐 포인터에 대해 알아봅시다.</p>
+
+<center><img src="/assets/images/DemystifySwift2.png" alt="DemystifySwift2" width="700" /></center>
+<p><br /></p>
+
+<p>UIView와 NSView는 클래스이기 때문에 각 뷰가 메모리의 할당에 대한 고유한 포인터를 가지고 있습니다. 포인터를 사용하여 각각의 뷰를 참조할 수 있고 만약 두 뷰가 같은 포인터를 공유한다면 그들이 동일한 뷰라는 것을 확신할 수 있습니다.</p>
+
+<center><img src="/assets/images/DemystifySwift3.png" alt="DemystifySwift3" width="700" /></center>
+<p><br /></p>
+
+<p>SwiftUI의 뷰는 일반적으로 class가 아닌 struct로 표현되는 value type이기 때문에 포인터를 사용하지 않습니다. 포인터를 사용하지 않는다는 것은 뷰의 영구적인 아이덴티티로 사용할 표준 참조 기준이 없다는 것이죠. 
+  SwiftUI는 포인터가 대신 다른 형태의 explicit 아이덴티티를 사용합니다.</p>
+
+<p>SwiftUI가 왜 Value type을 사용하는지는 wwdc19 SwiftUI essentials에 자세한 설명이 있다고 하여 그 영상의 내용을 정리해봅니다.</p>
+
+<h3 id="swiftui-essentials-wwdc19">SwiftUI Essentials (wwdc19)</h3>
+
+<center><img src="/assets/images/DemystifySwift5.png" alt="DemystifySwift5" width="700" /></center>
+<p><br /></p>
+
+<p>뷰는 사용자 인터페이스의 기본적인 빌딩 블럭입니다. 고레벨에서 뷰는 UI의 한 부분을 정의하는 어떤 것입니다.</p>
+
+<center><img src="/assets/images/DemystifySwift6.png" alt="DemystifySwift6" width="700" /></center>
+<p><br /></p>
+
+<p>위 캡처에 보이는 앱 화면의 모든 것들이 뷰로 선언됩니다.</p>
+<ul>
+  <li>Order 버튼과 같은 individual control은 뷰입니다. 이것들을 담고 있는 컨테이너도 뷰입니다. 
+   <!--  infect every single pixel you can see on screen can be traced back in some way to a view 먼말이야? --></li>
+</ul>
+
+<center><img src="/assets/images/DemystifySwift7.png" alt="DemystifySwift7" width="500" /></center>
+<p><br /></p>
+
+<p>이 뷰들을 계층 형식으로 결합하여 사용자 인터페이스를 구성합니다. 
+  Vertical Stack은 Container로 root 에 위치하고 text, shape, image 등의 뷰들은 bottom 부분입니다.</p>
+
+<p>뷰가 코드 안에서 표현되는 방식이 우리가 익숙한 방식과는 좀 다를 수 있습니다. 
+  코드를 보겠습니다.</p>
+
+<center><img src="/assets/images/DemystifySwift8.png" alt="DemystifySwift8" width="500" /></center>
+<p><br /></p>
+
+<p>샘플 앱은 Text와 Controls를 포함한 VStack으로 작성되어 있습니다. 코드를 읽으면서 바로 이해가 되도록 잘 보이게 쓰여져 있죠. 그리고 위에 있던 뷰 계층 다이어그램과도 비슷합니다. 
+  add subviews와 같은 function을 호출하는 부분은 없는데요. 뷰 계층을 하나하나 쌓는게 아니라 완전하게 구성된 스트럭쳐로써 초기화하기 때문입니다.<br />
+  SwiftUI는 뷰를 명령형이 아닌 선언적으로 정의하기 때문입니다.</p>
+
+<p>Imperative code(명령형의 코드)는 직접적으로 명령들을 보내 결과를 생성해 냅니다. 이 과정은 마치 친구에게 전화로 아보카도 토스트를 만드는 방법을 설명하는 것과 비슷합니다.  어떤 재료가 필요한지, 어떤 조리 기구가 필요한지, 빵을 굽는 방법과 아보카도를 자르는 방법을 설명해야 하죠. 그리고 이 아보카도 토스트를 만든는 것을 지시하는 과정은 좀 길고 지루할 것입니다. 
+  그리고 만약 당신의 친구가 빵을 굽는 것을 깜빡하는 것과 같은 실수를 한다면 아보카도 토스트는 제대로 완성되지 않을 것입니다.</p>
+
+<p>이제 declaratively(선언적)한 방법으로 아보카도 토스트를 만들어 보겠습니다.<br />
+  Declarative code(선언적 코드)는 우리가 원하는 것을 묘사하고 그것을 어떻게 만들지 알아내는 것은 다른 누군가에게 맡깁니다. 아보카도 전문가에게 아보카도 토스트를 주문하는 것과 비슷하죠.</p>
+
+<p>우리의 코드로 돌아가서 SwiftUI는 우리를 도울 준비가 되어있는 전문가 역할을 합니다. 
+  코드의 형태에서 우리는 관계들을 코드화하는 structure를 이니셜라이징 함으로써 뷰들 사이의 계층 관계를 선업합니다.</p>
+
+<blockquote class="block-tip">
+  <p>structure를 initializing 한 다는게 갑자기 헷갈려서 검색!
+Initialization은 사용하기 위해  class, structure, enumeration의 인스턴스를 준비하는 과정
+그러니까 위에서는 뷰 계층을 구성하는데 사용되는 structure의 인스턴스를 준비한다는 것</p>
+</blockquote>
+
+<p>우리가 위와 같은 코드를 작성하면, SwiftUI는 그 코드를 화면에 렌더링 된 결과물로 변환하는 어려운 작업을 해줍니다.</p>
+
+<h4 id="container-views">Container views</h4>
+<p>컨테이너 뷰는 각자의 내용을 가지고 있는 다른 뷰들의 조합으로 이루어집니다. 이 컨텐트 뷰는 view builder라는 특별한 종류의 클로저안에서 선언됩니다. 
+  예를 들어, 앞의 예시 코드에서 봤던 VStack은 컨테이너의 한 예입니다. 뷰 빌더는 클로저의 바디 부분에 우리가 선언형의 코드를 작성할 수 있도록 합니다. AddSubview와 같은 함수를 호출하는 대신 우리는 그냥 이 클로저 안에 우리의 컨텐츠를 쭉 작성해 내려갑니다. 
+  이것이 어떻게 작동하는지 좀 더 알아보기 위해 VStack의 실제 API를 들여다 봅시다.</p>
+
+<center><img src="/assets/images/DemystifySwift9.png" alt="DemystifySwift9" width="700" /></center>
+<p><br /></p>
+
+<p>클로저로 정의된 컨텐트 패러미터를 볼 수 있습니다. ViewBuilder 어트리뷰트로 표시되어 있죠. 
+  Swift의 컴파일러는 이 어트리뷰트로 표시된 클로저를 스택안에 있는 모든 컨텐츠를 보여주는 싱글뷰를 반환하는 새 클로저로 변환합니다.</p>
+
+<p>이런식으로 SwifUI는 Swift의 기능을 사용하여 우리가 더 적은 양의 코드를 작성할 수 있도록 돕습니다.</p>
+
+<!--  VStack과 비슷한 뷰들은 content 패러미터 뿐 아니라 다른 패러미터도 가지고 있습니다. -->
+<!-- 내용 생략됨 후에 추가할 것 -->
+
+<h4 id="state">@State</h4>
+<div class="language-swift highlighter-rouge"><div class="highlight"><pre class="highlight"><code>  <span class="kt">VStack</span> <span class="p">{</span>
+        <span class="kt">Stepper</span><span class="p">(</span><span class="nv">value</span><span class="p">:</span> <span class="err">$</span><span class="n">order</span><span class="o">.</span><span class="n">quantity</span><span class="p">,</span> <span class="nv">in</span><span class="p">:</span> <span class="mi">1</span><span class="o">...</span><span class="mi">10</span><span class="p">)</span> <span class="p">{</span>
+            <span class="kt">Text</span><span class="p">(</span><span class="s">"Quantity: </span><span class="se">\(</span><span class="n">order</span><span class="o">.</span><span class="n">quantity</span><span class="se">)</span><span class="s">"</span><span class="p">)</span>
+      <span class="p">}</span>
+  <span class="p">}</span>
+</code></pre></div></div>
+
+<p>위 예시 코드를 보면 스텝퍼의 패러미터에 인자로 통과된 order.quantity 앞에 $(달러사인)이 붙어있다. 이것은 일반적인 값이 아닌 <strong>바인딩</strong>을 컨트롤의 인자로 통과시키겠다는 의미인데</p>
+
+<p>바인딩이 뭘까?</p>
+
+<!--  <center><img src="/assets/images/DemystifySwift4.png" alt="DemystifySwift4" width="700"></center><br>  -->
+<!--  -->
+<!--  구조견의 목록을 표현한 리스트를 봅시다. -->]]></content><author><name>Mirae</name></author><category term="TIL" /><summary type="html"><![CDATA[Demystify SwiftUI 이 글의 모든 정보의 출처는 위 링크의 WWDC21 영상입니다.]]></summary></entry><entry><title type="html">Swift Function / 함수</title><link href="http://localhost:4000/jekyll-gitbook/til/2022-04-19-functions.html" rel="alternate" type="text/html" title="Swift Function / 함수" /><published>2022-04-19T00:00:00+09:00</published><updated>2022-04-19T00:00:00+09:00</updated><id>http://localhost:4000/jekyll-gitbook/til/functions</id><content type="html" xml:base="http://localhost:4000/jekyll-gitbook/til/2022-04-19-functions.html"><![CDATA[<h1 id="️">⚙️</h1>
+<p>Functions는 특정 기능을 수행하는 완전한 코드 덩어리입니다. Functions는 이름을 가집니다. 보통은 어떤 일을 하는지 알 수 있는 이름을 지어줍니다. 그리고 필요할 때 그 이름을 사용해서 function을 호출하여 특정 기능을 수행할 수 있도록 합니다.</p>
+
+<p>파라미터는 function의 호출을 단순화하기 위해서 기본값을 제공할 수 있습니다. 그리고 in-out 파라미터로써 인자를 통과시킬 수 있습니다.</p>
+
+<p>스위프트의 모든 function은 type을 가지고 있습니다. function의 파라미터의 types와 리턴 type으로 이루어져 있습니다.</p>
+
+<div class="language-swift highlighter-rouge"><div class="highlight"><pre class="highlight"><code>  <span class="kd">func</span> <span class="nf">greet</span><span class="p">(</span><span class="nv">person</span><span class="p">:</span> <span class="kt">String</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kt">String</span> <span class="p">{</span>
+    <span class="k">let</span> <span class="nv">greeting</span> <span class="o">=</span> <span class="s">"Hello"</span> <span class="o">+</span> <span class="n">person</span> <span class="o">+</span> <span class="s">"!"</span>
+    <span class="k">return</span> <span class="n">greeting</span>
+  <span class="p">}</span>
+</code></pre></div></div>
+<ul>
+  <li>-(a hyphen)</li>
+  <li>&gt;(a right angle bracket)</li>
+</ul>
+
+<p>을 이용해서 -&gt; 리턴 타입을 나타냅니다.</p>
+
+<div class="language-swift highlighter-rouge"><div class="highlight"><pre class="highlight"><code>  <span class="kd">func</span> <span class="nf">greetAgain</span><span class="p">(</span><span class="nv">person</span><span class="p">:</span> <span class="kt">String</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kt">String</span> <span class="p">{</span>
+    <span class="k">return</span> <span class="s">"Hello again,"</span> <span class="o">+</span> <span class="n">person</span> <span class="o">+</span> <span class="s">"!"</span>
+  <span class="p">}</span>
+</code></pre></div></div>
+<p>return 뒤에 바로 문자열을 주면 코드를 더 짧게 작성할 수 있습니다.</p>
+
+<h2 id="function-with-multiple-return-values">Function with Multiple Return Values</h2>
+
+<p>여러개의 값을 리턴하는 function을 위해 하나로 합쳐진 리턴 값으로써 tuple을 리턴 타입으로 사용할 수 있습니다.</p>
+
+<p>아래의 예시는 minMax(array:)라는 function을 정의합니다. Int값을 가진 배열에서 가장 작은 수와 가장 큰 수를 찾아내는 function 입니다.</p>
+
+<div class="language-swift highlighter-rouge"><div class="highlight"><pre class="highlight"><code>  <span class="kd">func</span> <span class="nf">minMax</span><span class="p">(</span><span class="nv">array</span><span class="p">:</span> <span class="p">[</span><span class="kt">Int</span><span class="p">]</span> <span class="o">-&gt;</span> <span class="p">(</span><span class="nv">min</span><span class="p">:</span> <span class="kt">Int</span><span class="p">,</span> <span class="nv">max</span><span class="p">:</span> <span class="kt">Int</span><span class="p">)</span> <span class="p">{</span>
+    <span class="k">var</span> <span class="nv">currentMin</span> <span class="o">=</span> <span class="n">array</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span>
+    <span class="k">var</span> <span class="nv">currentMax</span> <span class="o">=</span> <span class="n">array</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span>
+    <span class="k">for</span> <span class="n">value</span> <span class="k">in</span> <span class="n">array</span><span class="p">[</span><span class="mi">1</span><span class="o">..&lt;</span><span class="n">array</span><span class="o">.</span><span class="n">count</span><span class="p">]</span> <span class="p">{</span>
+      <span class="k">if</span> <span class="n">value</span> <span class="o">&lt;</span> <span class="n">currentMin</span> <span class="p">{</span>
+          <span class="n">currentMin</span> <span class="o">=</span> <span class="n">value</span>
+      <span class="p">}</span> <span class="k">else</span> <span class="k">if</span> <span class="n">value</span> <span class="o">&gt;</span> <span class="n">currentMax</span> <span class="p">{</span>
+          <span class="n">currentMax</span> <span class="o">=</span> <span class="n">value</span>
+      <span class="p">}</span>
+    <span class="p">}</span>
+    <span class="nf">return</span> <span class="p">(</span><span class="n">currentMin</span><span class="p">,</span> <span class="n">currentMax</span><span class="p">)</span>
+  <span class="p">}</span>
+</code></pre></div></div>
+
+<p>위의 minMax(array:) function은 두개의 Int 값을 가지고 있는 tuple을 리턴합니다. 이 값들은 min, max라는 이름으로 labeled 되었고, 그렇기 때문에 function의 리턴 값에 접근이 필요할 때 이름으로 접근할 수 있습니다.</p>
+
+<p>minMax(array:)의 바디는 두개의 변수 currentMin과 currentMax를 설정하는 것으로 시작합니다. 이것들은 배열의 첫번째 값을 초기값으로 가지고 있습니다. 그리고 function은 배열의 남은 요소들에 대해 반복해서 코드를 실행하며 각 요소가 currentMin보다 작은지, currentMax보다 큰지를 확인합니다. 그리고나서 가장 작은 수와 가장 큰 수를 가지고 있는 튜플을 리턴합니다.</p>
+
+<p>튜플의 멤버 값이 이름을 가지고 있기 때문에 dot syntax를 사용하여 값에 접근하고 가장 작은 수와 큰 수를 가져올 수 있습니다.</p>
+
+<div class="language-swift highlighter-rouge"><div class="highlight"><pre class="highlight"><code>  <span class="k">let</span> <span class="nv">bounds</span> <span class="o">=</span> <span class="nf">minMax</span><span class="p">(</span><span class="nv">array</span><span class="p">:</span> <span class="p">[</span><span class="mi">8</span><span class="p">,</span> <span class="o">-</span><span class="mi">6</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">109</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">71</span><span class="p">])</span>
+  <span class="nf">print</span><span class="p">(</span><span class="s">"min is </span><span class="se">\(</span><span class="n">bounds</span><span class="o">.</span><span class="n">min</span><span class="se">)</span><span class="s"> and max is </span><span class="se">\(</span><span class="n">bounds</span><span class="o">.</span><span class="n">max</span><span class="se">)</span><span class="s">"</span><span class="p">)</span>
+
+  <span class="c1">// Prints "min is -6 and max is 109"</span>
+</code></pre></div></div>
+
+<p>리턴되는 튜플 멤버의 이름은 function의 정의 과정에서 리턴 타입의 이름으로 이미 주었기 때문에 튜플이 function으로부터 리턴될 때는 이름을 줄 필요가 없습니다.</p>
+
+<h2 id="funtion-argument-labels-and-parameter-names">Funtion Argument Labels and Parameter Names</h2>
+
+<p>각각의 function 파라미터는 argument label과 parameter name을 가집니다. Argument label은 function을 호출할 때 사용됩니다. 각각의 argument는 function call의 코드 속에 argument label 뒤에 작성됩니다. 파라미터의 이름은 function을 구현할 때 사용됩니다. 기본적으로, 파라미터는 parameter name을 argument name으로 사용합니다.</p>
+
+<div class="language-swift highlighter-rouge"><div class="highlight"><pre class="highlight"><code>  <span class="kd">func</span> <span class="nf">someFunction</span><span class="p">(</span><span class="nv">firstParameterName</span><span class="p">:</span> <span class="kt">Int</span><span class="p">,</span> <span class="nv">secondParameterName</span><span class="p">:</span> <span class="kt">Int</span><span class="p">)</span> <span class="p">{</span>
+    <span class="c1">// function의 바디부분에서 firstParameterName과 secondParameterName은 argument의 값을 나타냅니다.</span>
+  <span class="p">}</span>
+  <span class="nf">someFunction</span><span class="p">(</span><span class="nv">firstParameterName</span><span class="p">:</span> <span class="mi">1</span><span class="p">,</span> <span class="nv">secondParameterName</span><span class="p">:</span> <span class="mi">2</span><span class="p">)</span>
+</code></pre></div></div>
+
+<h2 id="specifying-argument-labels">Specifying Argument Labels</h2>
+
+<p>Argument name은 patameter name 앞에 작성합니다. (space로 띄어서 구분해 줍니다.)</p>
+
+<div class="language-swift highlighter-rouge"><div class="highlight"><pre class="highlight"><code>  <span class="kd">func</span> <span class="nf">someFunction</span><span class="p">(</span><span class="n">argumentLabel</span> <span class="n">parameter</span> <span class="nv">name</span><span class="p">:</span> <span class="kt">Int</span><span class="p">)</span> <span class="p">{</span>
+    <span class="c1">// function의 바디부분에서 parameterName은 해당 파라미터에 통과되는 argument 값을 참조합니다.</span>
+  <span class="p">}</span>
+</code></pre></div></div>
+
+<p>아래의 예시는 greet(person:) function의 변형된 버전입니다. 사람의 이름과 고향을 파라미터로 통과시키고 인사말을 리턴합니다.</p>
+
+<div class="language-swift highlighter-rouge"><div class="highlight"><pre class="highlight"><code>  <span class="kd">func</span> <span class="nf">greet</span><span class="p">(</span><span class="nv">person</span><span class="p">:</span> <span class="kt">String</span><span class="p">,</span> <span class="n">from</span> <span class="nv">hometown</span><span class="p">:</span> <span class="kt">String</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kt">String</span> <span class="p">{</span>
+    <span class="k">return</span> <span class="s">"Hello </span><span class="se">\(</span><span class="n">person</span><span class="se">)</span><span class="s">! Glad you visit from </span><span class="se">\(</span><span class="n">hometown</span><span class="se">)</span><span class="s">."</span>
+  <span class="p">}</span>
+  <span class="nf">print</span><span class="p">(</span><span class="nf">greet</span><span class="p">(</span><span class="nv">person</span><span class="p">:</span> <span class="s">"Bill"</span><span class="p">,</span> <span class="nv">from</span><span class="p">:</span> <span class="s">"Cupertino"</span><span class="p">))</span>
+  <span class="c1">// Prints "Hello Bill! Glad you visit from Cupertino."</span>
+</code></pre></div></div>
+
+<h2 id="omitting-argument-lables">Omitting Argument Lables</h2>
+
+<p>만약, 파라미터에 argument label을 사용하고 싶지 않다면, underscore(_)를 argument name 대신 작성해줍니다.</p>
+
+<div class="language-swift highlighter-rouge"><div class="highlight"><pre class="highlight"><code>  <span class="kd">func</span> <span class="nf">someFunction</span><span class="p">(</span><span class="n">_</span> <span class="nv">firstParameterName</span><span class="p">:</span> <span class="kt">Int</span><span class="p">,</span> <span class="nv">secondParameterName</span><span class="p">:</span> <span class="kt">Int</span><span class="p">)</span> <span class="p">{</span>
+
+  <span class="p">}</span>
+  <span class="nf">someFunction</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="nv">secondParameterName</span><span class="p">:</span> <span class="mi">2</span><span class="p">)</span>
+</code></pre></div></div>
+
+<h2 id="default-parameter-values">Default Parameter Values</h2>
+
+<p>Function의 파라미터 타입 뒤에 값을 할당해줌으로써 파라미터의 기본값을  줄수 있습니다. 기본값이 주어진 파라미터는 function을 호출할 때 생략할 수 있습니다.</p>
+
+<div class="language-swift highlighter-rouge"><div class="highlight"><pre class="highlight"><code>  <span class="kd">func</span> <span class="nf">someFunction</span><span class="p">(</span><span class="nv">parameterWithoutDefault</span><span class="p">:</span> <span class="kt">Int</span><span class="p">,</span> <span class="nv">parameterWithDefault</span><span class="p">:</span> <span class="kt">Int</span> <span class="o">=</span> <span class="mi">12</span><span class="p">)</span> <span class="p">{</span>
+    <span class="c1">// 이 function을 호출할 때 두번째 argument를 생략하면, 기본값인 12가 function의 바디에서 사용됩니다.</span>
+  <span class="p">}</span>
+  <span class="nf">someFunction</span><span class="p">(</span><span class="nv">parameterWithoutDefault</span><span class="p">:</span> <span class="mi">3</span><span class="p">,</span> <span class="nv">parameterWithDefault</span><span class="p">:</span> <span class="mi">6</span><span class="p">)</span>
+  <span class="c1">// 위에서 parameterWithDefault 는 6</span>
+  <span class="nf">someFunction</span><span class="p">(</span><span class="nv">parameterWithoutDefault</span><span class="p">:</span> <span class="mi">4</span><span class="p">)</span>
+  <span class="c1">// 위에서 parameterWithDefault 는 12</span>
+</code></pre></div></div>
+
+<p>기본값을 가지지 않은 파라미터를 가장 먼저 써줍니다. 주로 기본값이 없는 파라미터가 function의 의미에 더 중요한 역할을 하기 때문입니다. 기본값을 가지지 않은 파라미터를 먼저 첫번째로 둠으로써 같은 function이 호출되었을 때 생략된 패러미와 관계없이 function을 구별하기 쉽게 만들어 줍니다.</p>
+
+<h2 id="variadic-parameters">Variadic Parameters</h2>
+
+<p>Variadic 파라미터는 0개 또는 그 이상의 값을 받을 수 있습니다. Variadic 파라미터를 가진 함수를 호출할 때 여러개의 인풋값을 통과시킬 수 있습니다. 파라미터의 타입 뒤에 …(세개의 .)을 추가하여 variadic 파라미터를 작성합니다.</p>
+
+<p>Variadic 파라미터를 통해 들어온 값들은 함수의 바디부분에서 배열로 사용가능합니다.<br />
+  예를 들어, 아래  예시 코드의 numbers라는 Double… 타입의 파라미터는 arithmeticMean 함수의 바디부분에서 numbers라는 이름을 가진 [Double] 타입의 constant 배열로 사용되었습니다.</p>
+
+<p>아래의 arithmeticMean 함수는 수의 평균을 구합니다. (수의 길이는 상관 없음)</p>
+
+<div class="language-swift highlighter-rouge"><div class="highlight"><pre class="highlight"><code>  <span class="kd">func</span> <span class="nf">arithmeticMean</span><span class="p">(</span><span class="n">_</span> <span class="nv">numbers</span><span class="p">:</span> <span class="kt">Double</span><span class="o">...</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="p">{</span>
+      <span class="k">var</span> <span class="nv">total</span><span class="p">:</span> <span class="kt">Double</span> <span class="o">=</span> <span class="mi">0</span>
+      <span class="k">for</span> <span class="n">number</span> <span class="k">in</span> <span class="n">numbers</span> <span class="p">{</span>
+        <span class="n">total</span> <span class="o">+=</span> <span class="n">number</span>
+      <span class="p">}</span>
+      <span class="k">return</span> <span class="n">total</span> <span class="o">/</span> <span class="kt">Double</span><span class="p">(</span><span class="n">numbers</span><span class="o">.</span><span class="n">count</span><span class="p">)</span>
+  <span class="p">}</span>
+  <span class="nf">arithmeticMean</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">4</span><span class="p">,</span> <span class="mi">5</span><span class="p">)</span>
+  <span class="c1">// 3.0을 리턴합니다.</span>
+  <span class="nf">arithmeticMean</span><span class="p">(</span><span class="mi">3</span><span class="p">,</span> <span class="mf">8.25</span><span class="p">,</span> <span class="mf">18.75</span><span class="p">)</span>
+  <span class="c1">// 10.0을 리턴합니다.</span>
+</code></pre></div></div>
+
+<p>하나의 함수는 여러개의 variadic 파라미터를 가질 수 있습니다. Variadic parameter 다음에 처음으로 오는 파라미터는 필수적으로 argument lable을 가져야합니다. Argument Lable은 어떤 인자(argument)가 variadic 파라미터에 통과되었는지, 어떤 인자가 variadic 파라미터 다음에 오는 파라미터에 통과되었는지를 명확히 구별할 수 있게 돕습니다.</p>
+
+<h2 id="in-out-parameters">In-Out Parameters</h2>
+
+<p>함수의 파라미터는 기본적으로 상수(constant)입니다. 함수의 파라미터의 값을 바디부분에서 변경하려고 시도하는 것은 컴파일 에러를 발생시킵니다. 이것은 파라미터의 값을 실수로 변경할 수 없다는 것을 의미합니다. 만약 function이 파라미터의 값을 수정하길 원한다면, 그리고 function의 호출이 끝난 이후에도 그 변경사항이 계속해서 유지되길 원한다면 해당 파라미터를 in-out 파라미터로 정의해야 합니다.</p>
+
+<p>파라미터의 타입 앞에 키워드 inout을 추가해줌으로써 in-out 파라미터를 작성할 수 있습니다. In-out 파라미터는 함수로 통과되어 들어오고(passed in to the function), 함수로부터 수정되고, 원래의 값을 교체하기 위해 밖으로 통과되어 나가는(back out of the function) 값을 가집니다.</p>
+
+<p>In-out 파라미터의 인자로는 오직 변수(variable)만 통과시킬 수 있습니다. constants나 literal 값은 수정될 수 없기 때문에 인자로 통과시킬 수 없습니다. &amp;(ampersand 기호)를 변수 이름 앞에 적음으로써 in-out 파라미터의 argument로 통과시킨다는 것을 알려줍니다.</p>
+
+<blockquote class="block-tip">
+  <p>N O T E
+In-out 파라미터는 기본값을 가질 수 없습니다. 그리고 variadic 파라미터는 inout 키워드를 사용할 수 없습니다.</p>
+</blockquote>
+
+<p>아래의 swapTwoInts 함수는 a와 b라는 in-out 정수 (integer) 파라미터를 가지고 있습니다.</p>
+
+<div class="language-swift highlighter-rouge"><div class="highlight"><pre class="highlight"><code>  <span class="kd">func</span> <span class="nf">swapTwoInts</span><span class="p">(</span><span class="n">_</span> <span class="nv">a</span><span class="p">:</span> <span class="k">inout</span> <span class="kt">Int</span><span class="p">,</span> <span class="n">_</span> <span class="nv">b</span><span class="p">:</span> <span class="k">inout</span> <span class="kt">Int</span><span class="p">)</span> <span class="p">{</span>
+      <span class="k">let</span> <span class="nv">temporaryA</span> <span class="o">=</span> <span class="n">a</span>
+      <span class="n">a</span> <span class="o">=</span> <span class="n">b</span>
+      <span class="n">b</span> <span class="o">=</span> <span class="n">temporaryA</span>
+  <span class="p">}</span>
+</code></pre></div></div>
+
+<p>swapTwoInts function은 단순히 b의 값을 a로 바꾸고, a의 값을 b로 바꿉니다. 이 function은 두 수의 교체를 temporaryA라는 temporary constant를 이용해서 수행합니다. a의 값을 temporaryA에 먼저 할당하고 - a에 b를 할당 - b에 a를 할당합니다.</p>
+
+<p>두개의 Int 타입 variables의 값을 바꾸기 위해 swapTwoInts function을 호출할 수 있습니다. &amp;을 someInt와 anotherInt 앞에 붙여주었습니다.</p>
+
+<div class="language-swift highlighter-rouge"><div class="highlight"><pre class="highlight"><code>  <span class="k">var</span> <span class="nv">someInt</span> <span class="o">=</span> <span class="mi">3</span>
+  <span class="k">var</span> <span class="nv">anotherInt</span> <span class="o">=</span> <span class="mi">107</span>
+  <span class="nf">swapTwoInts</span><span class="p">(</span><span class="o">&amp;</span><span class="n">someInt</span><span class="p">,</span> <span class="o">&amp;</span><span class="n">anotherInt</span><span class="p">)</span>
+  <span class="nf">print</span><span class="p">(</span><span class="s">"someInt is now </span><span class="se">\(</span><span class="n">someInt</span><span class="se">)</span><span class="s">, and anotherInt is now </span><span class="se">\(</span><span class="n">anotherInt</span><span class="se">)</span><span class="s">"</span><span class="p">)</span>
+  <span class="c1">// "someInt is now 107, and anotherInt is 3"을 출력합니다.</span>
+</code></pre></div></div>
+
+<p>위의 예시에서 두 variables someInt와 anotherInt는 function swapTwoInts의 바깥에서 정의되었음에도 function을 통해 원래의 값이 서로 교체되었습니다.</p>
+
+<div class="notice">
+     <h4>N O T E</h4>
+     <p>In-out 파라미터는 function으로 부터 값을 리턴하는 것과는 다릅니다. 위의 swapTwoInts예시는 리턴 타입을 정의하지 않았고, 값을 리턴하지 않습니다. 하지만 여전히 someInt와 anotherInt의 값을 변경시킵니다. In-out 파라미터는 function의 바디 부분의 범위를 넘어서서 영향을 미칠 수 있는 또 다른 방법입니다.
+     </p>
+  </div>
+
+<h2 id="function-types">Function Types</h2>
+
+<p>모든 function은 파라미터의 타입 + 리턴 타입으로 이루어진 특정한 function type을 가지고 있습니다.</p>
+
+<p>예를 들면:</p>
+<div class="language-swift highlighter-rouge"><div class="highlight"><pre class="highlight"><code>  <span class="kd">func</span> <span class="nf">addTwoInts</span><span class="p">(</span><span class="n">_</span> <span class="nv">a</span><span class="p">:</span> <span class="kt">Int</span><span class="p">,</span> <span class="n">_</span> <span class="nv">b</span><span class="p">:</span> <span class="kt">Int</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kt">Int</span> <span class="p">{</span>
+      <span class="k">return</span> <span class="n">a</span> <span class="o">+</span> <span class="n">b</span>
+  <span class="p">}</span>
+  <span class="kd">func</span> <span class="nf">multiplyTwoInts</span><span class="p">(</span><span class="n">_</span> <span class="nv">a</span><span class="p">:</span> <span class="kt">Int</span><span class="p">,</span> <span class="n">_</span> <span class="nv">b</span><span class="p">:</span> <span class="kt">Int</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kt">Int</span> <span class="p">{</span>
+      <span class="k">return</span> <span class="n">a</span> <span class="o">*</span> <span class="n">b</span>
+  <span class="p">}</span>
+</code></pre></div></div>
+
+<p>위의 예는 두개의 단순한 계산을 수행하는 addTwoInts와 multiplyTwoInts라는 functions를 정의합니다. 이 functions는 각각 두개의 Int 값을 이용하여 계산 후 하나의 Int 값을 리턴합니다.</p>
+
+<p>위 두 functions의 타입은 <strong>(Int, Int) -&gt; Int</strong> 입니다.</p>
+
+<div class="language-swift highlighter-rouge"><div class="highlight"><pre class="highlight"><code>  <span class="kd">func</span> <span class="nf">printHelloWorld</span><span class="p">()</span> <span class="p">{</span>
+      <span class="nf">print</span><span class="p">(</span><span class="s">"hello, world"</span><span class="p">)</span>
+  <span class="p">}</span>
+</code></pre></div></div>
+
+<p>위 function은 타입은 () -&gt; Void이고, “파라미터를 가지고 있지 않고 Void를 리턴하는 function”이라고 합니다.</p>
+
+<h2 id="using-function-types">Using Function Types</h2>
+
+<p>Swift의 다른 타입처럼 function 타입을 사용합니다. 예를 들어, constant나 variable을 정의하고 function 타입을 지정한 뒤 적절한 function을 할당할 수 있습니다.</p>
+
+<div class="language-swift highlighter-rouge"><div class="highlight"><pre class="highlight"><code>  <span class="k">var</span> <span class="nv">mathFunction</span><span class="p">:</span> <span class="p">(</span><span class="kt">Int</span><span class="p">,</span> <span class="kt">Int</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kt">Int</span> <span class="o">=</span> <span class="n">addTwoInts</span>
+</code></pre></div></div>
+
+<p>addTwoInts function이 mathFunction과 같은 타입을 가지고 있기 때문에 Swift의 type-checker가 이 assignment를 수락합니다.</p>
+
+<div class="language-swift highlighter-rouge"><div class="highlight"><pre class="highlight"><code>  <span class="nf">print</span><span class="p">(</span><span class="s">"Result: </span><span class="se">\(</span><span class="nf">mathFunction</span><span class="p">(</span><span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">)</span><span class="se">)</span><span class="s">"</span><span class="p">)</span>
+  <span class="c1">// "Result: 5" 를 출력합니다.</span>
+</code></pre></div></div>
+
+<p>다른 타입들처럼, function을 constant나 variable에 할당할 때, Swift가 function type을 추측하도록 할 수 있습니다.</p>
+
+<div class="language-swift highlighter-rouge"><div class="highlight"><pre class="highlight"><code>  <span class="k">let</span> <span class="nv">anotherMathFunction</span> <span class="o">=</span> <span class="n">addTwonInts</span>
+</code></pre></div></div>
+
+<h2 id="function-types-as-parameter-types">Function Types as Parameter Types</h2>
+
+<p>(Int, Int) -&gt; Int와 같은 function type을 다른 function의 파라미터 타입으로 사용할 수 있습니다.</p>
+
+<p>위에서 생성한 math functions의 결과를 출력하기 위한 예제입니다.</p>
+
+<div class="language-swift highlighter-rouge"><div class="highlight"><pre class="highlight"><code>  <span class="kd">func</span> <span class="nf">printMathResult</span><span class="p">(</span><span class="n">_</span> <span class="nv">mathFunction</span><span class="p">:</span> <span class="p">(</span><span class="kt">Int</span><span class="p">,</span> <span class="kt">Int</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kt">Int</span><span class="p">,</span> <span class="n">_</span> <span class="n">a</span><span class="p">;</span> <span class="kt">Int</span><span class="p">,</span> <span class="n">_</span> <span class="nv">b</span><span class="p">:</span> <span class="kt">Int</span><span class="p">)</span> <span class="p">{</span>
+       <span class="nf">print</span><span class="p">(</span><span class="s">"Result: </span><span class="se">\(</span><span class="nf">mathFunction</span><span class="p">(</span><span class="n">a</span><span class="p">,</span> <span class="n">b</span><span class="p">)</span><span class="se">)</span><span class="s">"</span><span class="p">)</span>
+    <span class="p">}</span>
+  <span class="nf">printMathResult</span><span class="p">(</span><span class="n">addTwoInts</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">5</span><span class="p">)</span>
+  <span class="c1">// "Result: 8"을 출력합니다.</span>
+</code></pre></div></div>
+
+<p>위의 예시는 printMathResult(_:_:_:)를 정의합니다. 세개의 파라미터를 가지고 있습니다. 첫번째 파라미터의 이름은 mathFunction이고 타입은 (Int, Int) -&gt; Int 입니다. 두번째 그리고 세번째 파라미터는 a와 b이고 Int 타입입니다. 이 둘은 주어진 math function의 input 값으로 사용됩니다.</p>
+
+<!-- ## Function Types as Return Types -->]]></content><author><name>Mirae</name></author><category term="TIL" /><summary type="html"><![CDATA[⚙️ Functions는 특정 기능을 수행하는 완전한 코드 덩어리입니다. Functions는 이름을 가집니다. 보통은 어떤 일을 하는지 알 수 있는 이름을 지어줍니다. 그리고 필요할 때 그 이름을 사용해서 function을 호출하여 특정 기능을 수행할 수 있도록 합니다.]]></summary></entry></feed>
