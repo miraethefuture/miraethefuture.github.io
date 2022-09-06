@@ -4,7 +4,7 @@ author: Mirae
 date: 2022-09-06
 category: TIL
 layout: post
-cover: /assets/images/Thinking.gif.small
+cover: /assets/images/Thinking.gif
 ---
 
   <center><img src="/assets/images/ternaryOperator.png" alt="ternaryOperator.png" width="600"></center><br>
