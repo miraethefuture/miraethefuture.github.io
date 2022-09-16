@@ -4,23 +4,22 @@ author: Mirae
 date: 2022-09-16
 category: TIL
 layout: post
-cover: /assets/images/Thinking.gif
+<!--cover: /assets/images/Thinking.gif-->
 ---
 
-  <center><img src="/assets/images/UserIdGenerator.png" alt="UserIdGenerator.png" width="600"></center><br>
+  <center><img src="/assets/images/UserIdGenerator.png" alt="UserIdGenerator.png" width="1000"></center><br>
 
-> 코딩테스트 문제를 풀다가 다시 한번 복습해보는 스위프트의 유일한 삼항연산자,,
+> 코딩테스트 연습하기
 {: .block-tip }
 
-# Ternary conditional operator 
+  [문제 링크입니다.](https://school.programmers.co.kr/learn/courses/30/lessons/72410)
+
+# 풀이 과정  
+  - 1) lowercased() 함수를 사용하여 모두 소문자로 치환 
+  - 2) 나타날 수 있는 특수문자 중 사용 불가능한 문자들로 이루어진 배열 생성 
+  - 3) 2)에서 생성한 배열의 요소와 일치하는 특수문자를 아이디가 포함하고 있다면 계속해서 while 문을 돌며 그 문자를 제거. 원래는 while  자리에 if 를 사용했는데 &&처럼 반복되는 특수문자가 있을 때 첫번째 인덱스의 & 하나만 제거하여 나머지 &은 제거되지 않는 문제가 발생하여 while로 변경하여 아이디가 &을 포함하는 한 계속해서 반복하며 제거할 수 있도록 했다. 
   
-  이름에서 알 수 있듯이 세 개의 항을 가진 연산자입니다.  
-  삼항 조건 연산자는 스위프트의 유일한 삼항 연산자라고 합니다.  
+
     
     
-  위 사진에서는, 첫번째 줄에 let RT 라는 상수에 그 뒤에 오는 삼항연산자의 결과 값을 할당해 줍니다.  
-  1) 각 딕셔너리 키에 해당하는 값 (여기서는 Int 타입 값)을 비교  
-  2) ? 뒤에는 true : false 라고 생각하면 됩니다.   
-  3) Dict["R"]! 의 값이 3 이라고 하고, Dict["T"]의 값이 2라고 한다면...  
-  4) 조건은 true 가 되므로 let RT = "R"이 됩니다.   
  
