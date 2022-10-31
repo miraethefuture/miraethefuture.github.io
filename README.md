@@ -1,6 +1,6 @@
 ---
 layout: home
-title: 반가워요! fitf\_의 블로그입니다.
+title: 반가워요! fitf_의 블로그입니다.
 permalink: /
 ---
 
