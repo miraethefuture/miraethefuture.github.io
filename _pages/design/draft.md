@@ -6,4 +6,4 @@ category: Jekyll
 layout: post
 ---
 
-This is an draft page.
+  <center><img src="/assets/images/Artwork_1.jpg" alt="Artwork_1.jpg" width="600"></center><br>  
