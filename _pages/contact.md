@@ -1,9 +1,11 @@
 ---
 title: Contact
-author: Tao He
-date: 2022-02-05
-category: Jekyll
+author: Mirae Jung
+date: 2022-12-12
+<!--category: Jekyll-->
 layout: post
 ---
 
-This is an contact page.
+📧 mirae2thefuture@gmail.com
+🐈‍⬛ https://github.com/miraethefuture
+
