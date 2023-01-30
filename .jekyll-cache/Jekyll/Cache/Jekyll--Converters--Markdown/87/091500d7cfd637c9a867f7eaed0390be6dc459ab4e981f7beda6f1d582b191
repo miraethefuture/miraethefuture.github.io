@@ -1,0 +1,19 @@
+I"<p><a href="https://developer.apple.com/tutorials/app-dev-training/decoding-structured-json">Earthquakes app tutorial</a></p>
+<blockquote>
+  <p>이 글은 위의 apple developer tutorial을 따라가며 정리한 내용입니다.</p>
+</blockquote>
+
+<h1 id="error">Error</h1>
+<blockquote>
+  <p>/decoding-structured-json/Decode earthquake data/step 8</p>
+</blockquote>
+
+<p>Swift에서는 Error 프로토콜을 따르는 타입을 사용하여 에러를 나타냅니다.<br />
+  Error 프로토콜은 에러를 핸들링하기 위해 사용되는 타입이라는 것을 나타낼 뿐 아무런 내용이 없습니다.<br />
+  요구사항도 없습니다. 그래서 커스텀 타입에 자유롭게 사용할 수 있습니다.</p>
+
+<p>```swift 
+enum QuakeError: Error {
+    case missingData
+}</p>
+:ET

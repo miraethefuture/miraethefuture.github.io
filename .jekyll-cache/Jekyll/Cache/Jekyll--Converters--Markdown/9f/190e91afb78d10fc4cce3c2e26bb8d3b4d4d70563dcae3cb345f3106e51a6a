@@ -1,0 +1,180 @@
+I"�R<p><a href="https://developer.apple.com/tutorials/app-dev-training/decoding-structured-json">Earthquakes app tutorial</a></p>
+<blockquote>
+  <p>이 글은 위의 apple developer tutorial을 따라가며 정리한 내용입니다.</p>
+</blockquote>
+
+<h1 id="error">Error</h1>
+<blockquote>
+  <p>/decoding-structured-json/Decode earthquake data/step 8</p>
+</blockquote>
+
+<p>Swift에서는 Error 프로토콜을 따르는 타입을 사용하여 에러를 나타냅니다.<br />
+  Error 프로토콜은 에러를 핸들링하기 위해 사용되는 타입이라는 것을 나타낼 뿐 아무런 내용이 없습니다.<br />
+  요구사항도 없습니다. 그래서 커스텀 타입에 자유롭게 사용할 수 있습니다.</p>
+
+<div class="language-swift highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">enum</span> <span class="kt">QuakeError</span><span class="p">:</span> <span class="kt">Error</span> <span class="p">{</span>
+    <span class="k">case</span> <span class="n">missingData</span>
+<span class="p">}</span>
+
+<span class="kd">extension</span> <span class="kt">QuakeError</span><span class="p">:</span> <span class="kt">LocalizedError</span> <span class="p">{</span>
+    <span class="k">var</span> <span class="nv">errorDescription</span><span class="p">:</span> <span class="kt">String</span><span class="p">?</span> <span class="p">{</span>
+        <span class="k">switch</span> <span class="k">self</span> <span class="p">{</span>
+        <span class="k">case</span> <span class="o">.</span><span class="nv">missingData</span><span class="p">:</span>
+            <span class="k">return</span> <span class="kt">NSLocalizedString</span><span class="p">(</span><span class="s">"Found and will discard a quake missing a valid code, magnitude, place, or time."</span><span class="p">,</span> <span class="nv">comment</span><span class="p">:</span> <span class="s">""</span><span class="p">)</span>
+        <span class="p">}</span>
+    <span class="p">}</span>
+<span class="p">}</span>
+</code></pre></div></div>
+
+<p>위 QuakeError enumeration은 case missingData를 가지는데 LocalizedError 프로토콜을 따르는 extension을 작성하여, QuakeError.missingData로 에러가 던져질 경우 “code, maginitude, place, time 중 없는 데이터가 있어 정상적으로 코드가 작동하지 않았다”는 메세지를 표출할 것입니다.</p>
+
+<div class="language-swift highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1">// Quake struct라는 설계도를 사용하여 디코딩하는 인스턴스를 생성하기 위해 from decoder:_를 인자로 가지는 init 사용</span>
+<span class="c1">// throws function, try, try?를 사용하여 디코딩 과정 중 에러 발생 시 nil을 반환하도록 처리함</span>
+<span class="nf">init</span><span class="p">(</span><span class="n">from</span> <span class="nv">decoder</span><span class="p">:</span> <span class="kt">Decoder</span><span class="p">)</span> <span class="k">throws</span> <span class="p">{</span>
+    <span class="k">let</span> <span class="nv">values</span> <span class="o">=</span> <span class="k">try</span> <span class="n">decoder</span><span class="o">.</span><span class="nf">container</span><span class="p">(</span><span class="nv">keyedBy</span><span class="p">:</span> <span class="kt">CodingKeys</span><span class="o">.</span><span class="k">self</span><span class="p">)</span>
+    <span class="k">let</span> <span class="nv">rawMagnitude</span> <span class="o">=</span> <span class="k">try</span><span class="p">?</span> <span class="n">values</span><span class="o">.</span><span class="nf">decode</span><span class="p">(</span><span class="kt">Double</span><span class="o">.</span><span class="k">self</span><span class="p">,</span> <span class="nv">forKey</span><span class="p">:</span> <span class="o">.</span><span class="n">magitude</span><span class="p">)</span>
+    <span class="k">let</span> <span class="nv">rawPlace</span> <span class="o">=</span> <span class="k">try</span><span class="p">?</span> <span class="n">values</span><span class="o">.</span><span class="nf">decode</span><span class="p">(</span><span class="kt">String</span><span class="o">.</span><span class="k">self</span><span class="p">,</span> <span class="nv">forKey</span><span class="p">:</span> <span class="o">.</span><span class="n">place</span><span class="p">)</span>
+    <span class="k">let</span> <span class="nv">rawTime</span> <span class="o">=</span> <span class="k">try</span><span class="p">?</span> <span class="n">values</span><span class="o">.</span><span class="nf">decode</span><span class="p">(</span><span class="kt">Date</span><span class="o">.</span><span class="k">self</span><span class="p">,</span> <span class="nv">forKey</span><span class="p">:</span> <span class="o">.</span><span class="n">time</span><span class="p">)</span>
+    <span class="k">let</span> <span class="nv">rawCode</span> <span class="o">=</span> <span class="k">try</span><span class="p">?</span> <span class="n">values</span><span class="o">.</span><span class="nf">decode</span><span class="p">(</span><span class="kt">String</span><span class="o">.</span><span class="k">self</span><span class="p">,</span> <span class="nv">forKey</span><span class="p">:</span> <span class="o">.</span><span class="n">code</span><span class="p">)</span>
+    <span class="k">let</span> <span class="nv">rawDetail</span> <span class="o">=</span> <span class="k">try</span><span class="p">?</span> <span class="n">values</span><span class="o">.</span><span class="nf">decode</span><span class="p">(</span><span class="kt">URL</span><span class="o">.</span><span class="k">self</span><span class="p">,</span> <span class="nv">forKey</span><span class="p">:</span> <span class="o">.</span><span class="n">detail</span><span class="p">)</span>
+    
+    <span class="c1">// try? 가 사용된 곳에서 에러가 발생하지 않으면 옵셔널 값이 반환되므로 해당 값을 unwrapping 함</span>
+    <span class="k">guard</span> <span class="k">let</span> <span class="nv">magnitude</span> <span class="o">=</span> <span class="n">rawMagnitude</span><span class="p">,</span>
+          <span class="k">let</span> <span class="nv">place</span> <span class="o">=</span> <span class="n">rawPlace</span><span class="p">,</span>
+          <span class="k">let</span> <span class="nv">time</span> <span class="o">=</span> <span class="n">rawTime</span><span class="p">,</span>
+          <span class="k">let</span> <span class="nv">code</span> <span class="o">=</span> <span class="n">rawCode</span><span class="p">,</span>
+          <span class="k">let</span> <span class="nv">detail</span> <span class="o">=</span> <span class="n">rawDetail</span>
+    <span class="k">else</span> <span class="p">{</span>
+        <span class="k">throw</span> <span class="kt">QuakeError</span><span class="o">.</span><span class="n">missingData</span>
+    <span class="p">}</span>
+</code></pre></div></div>
+
+<p>위 예시의 가장 아래쪽에 있는 else 구문에서 throw 키워드를 사용하여 에러를 던졌습니다. magnitude, place, time, code, detail 중 데이터가 없는 것이 있을 때 QuakeError.missingData 에러가 던져집니다.</p>
+
+<h1 id="experiment">Experiment</h1>
+<blockquote>
+  <p>/decoding-structured-json/Decoding structured JSON/test the decoder</p>
+</blockquote>
+
+<ul>
+  <li>쓰나미 경보를 푸시 알림으로 보내려 하는 상황</li>
+  <li>
+    <p>튜토리얼 내용을 참고하여 쓰나미 관련 데이터를 디코딩해보기</p>
+  </li>
+  <li>USGS 사이트에서 쓰나미의 데이터 타입을 찾음 -&gt; Integer</li>
+  <li>Quake 스트럭처에 tsunami 프로퍼티 추가</li>
+</ul>
+
+<div class="language-swift highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">struct</span> <span class="kt">Quake</span><span class="p">:</span> <span class="kt">Identifiable</span> <span class="p">{</span>
+    
+    <span class="k">let</span> <span class="nv">magnitude</span><span class="p">:</span> <span class="kt">Double</span>
+    <span class="k">let</span> <span class="nv">place</span><span class="p">:</span> <span class="kt">String</span>
+    <span class="k">let</span> <span class="nv">time</span><span class="p">:</span> <span class="kt">Date</span>
+    <span class="k">let</span> <span class="nv">code</span><span class="p">:</span> <span class="kt">String</span>
+    <span class="k">let</span> <span class="nv">detail</span><span class="p">:</span> <span class="kt">URL</span>
+    <span class="k">let</span> <span class="nv">tsunami</span><span class="p">:</span> <span class="kt">Int</span>
+    
+<span class="p">}</span>
+</code></pre></div></div>
+<ul>
+  <li>키 값으로 사용되는 CodingKeys enum에 tsunami일 경우를 추가</li>
+</ul>
+
+<div class="language-swift highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">private</span> <span class="kd">enum</span> <span class="kt">CodingKeys</span><span class="p">:</span> <span class="kt">String</span><span class="p">,</span> <span class="kt">CodingKey</span> <span class="p">{</span>
+    <span class="k">case</span> <span class="n">magitude</span> <span class="o">=</span> <span class="s">"mag"</span>
+    <span class="k">case</span> <span class="n">place</span>
+    <span class="k">case</span> <span class="n">time</span>
+    <span class="k">case</span> <span class="n">code</span>
+    <span class="k">case</span> <span class="n">detail</span>
+    <span class="k">case</span> <span class="n">tsunami</span>
+<span class="p">}</span>
+</code></pre></div></div>
+<ul>
+  <li>생성자에 필요한 코드 추가</li>
+</ul>
+
+<div class="language-swift highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nf">init</span><span class="p">(</span><span class="n">from</span> <span class="nv">decoder</span><span class="p">:</span> <span class="kt">Decoder</span><span class="p">)</span> <span class="k">throws</span> <span class="p">{</span>
+    <span class="k">let</span> <span class="nv">values</span> <span class="o">=</span> <span class="k">try</span> <span class="n">decoder</span><span class="o">.</span><span class="nf">container</span><span class="p">(</span><span class="nv">keyedBy</span><span class="p">:</span> <span class="kt">CodingKeys</span><span class="o">.</span><span class="k">self</span><span class="p">)</span>
+    <span class="k">let</span> <span class="nv">rawMagnitude</span> <span class="o">=</span> <span class="k">try</span><span class="p">?</span> <span class="n">values</span><span class="o">.</span><span class="nf">decode</span><span class="p">(</span><span class="kt">Double</span><span class="o">.</span><span class="k">self</span><span class="p">,</span> <span class="nv">forKey</span><span class="p">:</span> <span class="o">.</span><span class="n">magitude</span><span class="p">)</span>
+    <span class="k">let</span> <span class="nv">rawPlace</span> <span class="o">=</span> <span class="k">try</span><span class="p">?</span> <span class="n">values</span><span class="o">.</span><span class="nf">decode</span><span class="p">(</span><span class="kt">String</span><span class="o">.</span><span class="k">self</span><span class="p">,</span> <span class="nv">forKey</span><span class="p">:</span> <span class="o">.</span><span class="n">place</span><span class="p">)</span>
+    <span class="k">let</span> <span class="nv">rawTime</span> <span class="o">=</span> <span class="k">try</span><span class="p">?</span> <span class="n">values</span><span class="o">.</span><span class="nf">decode</span><span class="p">(</span><span class="kt">Date</span><span class="o">.</span><span class="k">self</span><span class="p">,</span> <span class="nv">forKey</span><span class="p">:</span> <span class="o">.</span><span class="n">time</span><span class="p">)</span>
+    <span class="k">let</span> <span class="nv">rawCode</span> <span class="o">=</span> <span class="k">try</span><span class="p">?</span> <span class="n">values</span><span class="o">.</span><span class="nf">decode</span><span class="p">(</span><span class="kt">String</span><span class="o">.</span><span class="k">self</span><span class="p">,</span> <span class="nv">forKey</span><span class="p">:</span> <span class="o">.</span><span class="n">code</span><span class="p">)</span>
+    <span class="k">let</span> <span class="nv">rawDetail</span> <span class="o">=</span> <span class="k">try</span><span class="p">?</span> <span class="n">values</span><span class="o">.</span><span class="nf">decode</span><span class="p">(</span><span class="kt">URL</span><span class="o">.</span><span class="k">self</span><span class="p">,</span> <span class="nv">forKey</span><span class="p">:</span> <span class="o">.</span><span class="n">detail</span><span class="p">)</span>
+    <span class="k">let</span> <span class="nv">rawTsunami</span> <span class="o">=</span> <span class="k">try</span><span class="p">?</span> <span class="n">values</span><span class="o">.</span><span class="nf">decode</span><span class="p">(</span><span class="kt">Int</span><span class="o">.</span><span class="k">self</span><span class="p">,</span> <span class="nv">forKey</span><span class="p">:</span> <span class="o">.</span><span class="n">tsunami</span><span class="p">)</span>
+    
+    <span class="c1">// try? 가 사용된 곳에서 에러가 발생하지 않으면 옵셔널 값이 반환되므로 해당 값을 unwrapping 함</span>
+    <span class="k">guard</span> <span class="k">let</span> <span class="nv">magnitude</span> <span class="o">=</span> <span class="n">rawMagnitude</span><span class="p">,</span>
+          <span class="k">let</span> <span class="nv">place</span> <span class="o">=</span> <span class="n">rawPlace</span><span class="p">,</span>
+          <span class="k">let</span> <span class="nv">time</span> <span class="o">=</span> <span class="n">rawTime</span><span class="p">,</span>
+          <span class="k">let</span> <span class="nv">code</span> <span class="o">=</span> <span class="n">rawCode</span><span class="p">,</span>
+          <span class="k">let</span> <span class="nv">detail</span> <span class="o">=</span> <span class="n">rawDetail</span><span class="p">,</span>
+          <span class="k">let</span> <span class="nv">tsunami</span> <span class="o">=</span> <span class="n">rawTsunami</span>
+    <span class="k">else</span> <span class="p">{</span>
+        <span class="k">throw</span> <span class="kt">QuakeError</span><span class="o">.</span><span class="n">missingData</span>
+    <span class="p">}</span>
+    
+    <span class="k">self</span><span class="o">.</span><span class="n">magnitude</span> <span class="o">=</span> <span class="n">magnitude</span>
+    <span class="k">self</span><span class="o">.</span><span class="n">place</span> <span class="o">=</span> <span class="n">place</span>
+    <span class="k">self</span><span class="o">.</span><span class="n">time</span> <span class="o">=</span> <span class="n">time</span>
+    <span class="k">self</span><span class="o">.</span><span class="n">code</span> <span class="o">=</span> <span class="n">code</span>
+    <span class="k">self</span><span class="o">.</span><span class="n">detail</span> <span class="o">=</span> <span class="n">detail</span>
+    <span class="k">self</span><span class="o">.</span><span class="n">tsunami</span> <span class="o">=</span> <span class="n">tsunami</span>
+    
+<span class="p">}</span>
+</code></pre></div></div>
+
+<ul>
+  <li>현재 테스트 데이터의 값인 0과 같은지 테스트를 통해 확인</li>
+</ul>
+
+<div class="language-swift highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">import</span> <span class="kt">XCTest</span>
+<span class="kd">@testable</span> <span class="kd">import</span> <span class="kt">FollwingEarthquake</span>
+
+<span class="kd">class</span> <span class="kt">FollwingEarthquakeTests</span><span class="p">:</span> <span class="kt">XCTestCase</span> <span class="p">{</span>
+    
+    <span class="kd">func</span> <span class="nf">testGeoJSONDecoderDecodesQuake</span><span class="p">()</span> <span class="k">throws</span> <span class="p">{</span>
+        <span class="k">let</span> <span class="nv">decoder</span> <span class="o">=</span> <span class="kt">JSONDecoder</span><span class="p">()</span>
+        <span class="n">decoder</span><span class="o">.</span><span class="n">dateDecodingStrategy</span> <span class="o">=</span> <span class="o">.</span><span class="n">millisecondsSince1970</span>
+        <span class="k">let</span> <span class="nv">quake</span> <span class="o">=</span> <span class="k">try</span> <span class="n">decoder</span><span class="o">.</span><span class="nf">decode</span><span class="p">(</span><span class="kt">Quake</span><span class="o">.</span><span class="k">self</span><span class="p">,</span> <span class="nv">from</span><span class="p">:</span> <span class="n">testFeature_nc73649170</span><span class="p">)</span>
+        
+        <span class="kt">XCTAssertEqual</span><span class="p">(</span><span class="n">quake</span><span class="o">.</span><span class="n">code</span><span class="p">,</span> <span class="s">"73649170"</span><span class="p">)</span>
+        
+        
+        <span class="k">let</span> <span class="nv">expectedSeconds</span> <span class="o">=</span> <span class="kt">TimeInterval</span><span class="p">(</span><span class="mi">1636129710550</span><span class="p">)</span> <span class="o">/</span> <span class="mi">1000</span>
+        <span class="k">let</span> <span class="nv">decodedSeconds</span> <span class="o">=</span> <span class="n">quake</span><span class="o">.</span><span class="n">time</span><span class="o">.</span><span class="n">timeIntervalSince1970</span>
+        
+        <span class="kt">XCTAssertEqual</span><span class="p">(</span><span class="n">expectedSeconds</span><span class="p">,</span> <span class="n">decodedSeconds</span><span class="p">,</span> <span class="nv">accuracy</span><span class="p">:</span> <span class="mf">0.00001</span><span class="p">)</span>
+        
+        
+        <span class="kt">XCTAssertEqual</span><span class="p">(</span><span class="n">quake</span><span class="o">.</span><span class="n">tsunami</span><span class="p">,</span> <span class="mi">0</span><span class="p">)</span> <span class="c1">// 테스트 통과</span>
+        
+    <span class="p">}</span>
+<span class="p">}</span>
+</code></pre></div></div>
+
+<h1 id="privateset">private(set)</h1>
+
+<div class="language-swift highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">struct</span> <span class="kt">GeoJSON</span> <span class="p">{</span>
+    <span class="kd">private(set)</span> <span class="k">var</span> <span class="nv">quakes</span><span class="p">:[</span><span class="kt">Quake</span><span class="p">]</span> <span class="o">=</span> <span class="p">[]</span>
+<span class="p">}</span>
+</code></pre></div></div>
+
+<p>private(set) modifier가 사용된 배열 quakes는 GeoJSON 스트럭쳐 안에있는 코드에서만 수정 가능합니다.<br />
+  GeoJSON 스트럭처 바깥에서 작성된 코드에서는 quakes의 값을 읽는 것만 가능합니다.</p>
+
+<h1 id="structuredjson">structuredJSON</h1>
+
+<center><img src="/assets/images/structuredJSON.jpg" alt="structuredJSON.jpg" width="550" /></center>
+<p><br /></p>
+
+<p>USGS의 지진 정보는 structuredJSON 형태로 제공됩니다. 필요한 정보인 latitude / longitude를 얻기 위해 
+각 structure를 정의합니다. Products 타입을 사용하여 RootProperties 타입 안에 products를 정의하고<br />
+Origin 타입을 사용하여 Products 타입 안에 origin 을 정의하는 것과 같은 방법으로 이미지 속 GeoJSON 계층을<br />
+모델링합니다.</p>
+
+<div class="language-swift highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">var</span> <span class="nv">latitude</span><span class="p">:</span> <span class="kt">Double</span> <span class="p">{</span> <span class="n">properties</span><span class="o">.</span><span class="n">products</span><span class="o">.</span><span class="n">origin</span><span class="o">.</span><span class="n">first</span><span class="o">!.</span><span class="n">properties</span><span class="o">.</span><span class="n">latitude</span> <span class="p">}</span>
+<span class="k">var</span> <span class="nv">longitude</span><span class="p">:</span> <span class="kt">Double</span> <span class="p">{</span> <span class="n">properties</span><span class="o">.</span><span class="n">products</span><span class="o">.</span><span class="n">origin</span><span class="o">.</span><span class="n">first</span><span class="o">!.</span><span class="n">properties</span><span class="o">.</span><span class="n">longitude</span> <span class="p">}</span>
+</code></pre></div></div>
+<p>모델링한 스트럭처를 이용하여 위와 같이 latitude, longitude 정보를 계산합니다. 루트 프로퍼티로부터 한 계층씩 내려가며 
+최종적으로 latitude와 longitude를 계산하는 방식이 인상깊었습니다.</p>
+:ET
