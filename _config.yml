@@ -33,9 +33,9 @@ kramdown:
   toc_levels:             1..6
   syntax_highlighter:     rouge
   syntax_highlighter_opts:
-    guess_lang:           true
+    guess_lang:           false
 
-syntax_highlighter_style: XcodeStyle
+syntax_highlighter_style: base16
 
 markdown_ext:     markdown,mkdown,mkdn,mkd,md
 
