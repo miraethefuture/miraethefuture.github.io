@@ -35,7 +35,7 @@ kramdown:
   syntax_highlighter_opts:
     guess_lang:           true
 
-syntax_highlighter_style: magritte
+syntax_highlighter_style: XcodeStyle
 
 markdown_ext:     markdown,mkdown,mkdn,mkd,md
 
@@ -60,7 +60,6 @@ plugins:
   - jekyll-feed
   - jekyll-readme-index
   - jemoji
-  # 아래 두개는 remote theme 방식 사용하려 후에 추가
   - jekyll-remote-theme
   - jekyll-include-cache
 
