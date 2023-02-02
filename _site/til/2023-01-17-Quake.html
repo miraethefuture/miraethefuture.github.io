@@ -127,7 +127,7 @@
                             </a>
                             
                                 
-                                    <ul><li><a href="#error">Error</a></li><li><a href="#experiment">Experiment</a></li><li><a href="#privateset">private(set)</a></li><li><a href="#structuredjson">structuredJSON</a></li></ul>
+                                    <ul><li><a href="#error">Error</a></li><li><a href="#experiment">Experiment</a></li><li><a href="#privateset">private(set)</a></li><li><a href="#structuredjson">structuredJSON</a></li><li><a href="#codingkey-enum">CodingKey enum</a></li></ul>
 
                                 
                             
@@ -253,7 +253,7 @@
 </ul>
 
 <div class="language-swift highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">private</span> <span class="kd">enum</span> <span class="kt">CodingKeys</span><span class="p">:</span> <span class="kt">String</span><span class="p">,</span> <span class="kt">CodingKey</span> <span class="p">{</span>
-    <span class="k">case</span> <span class="n">magitude</span> <span class="o">=</span> <span class="s">"mag"</span>
+    <span class="k">case</span> <span class="n">magnitude</span> <span class="o">=</span> <span class="s">"mag"</span>
     <span class="k">case</span> <span class="n">place</span>
     <span class="k">case</span> <span class="n">time</span>
     <span class="k">case</span> <span class="n">code</span>
@@ -349,6 +349,35 @@ Origin 타입을 사용하여 Products 타입 안에 origin 을 정의하는 것
 </code></pre></div></div>
 <p>모델링한 스트럭처를 이용하여 위와 같이 latitude, longitude 정보를 계산합니다. 루트 프로퍼티로부터 한 계층씩 내려가며 
 최종적으로 latitude와 longitude를 계산하는 방식이 인상깊었습니다.</p>
+
+<h1 id="codingkey-enum">CodingKey enum</h1>
+<div class="language-swift highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">private</span> <span class="kd">enum</span> <span class="kt">CodingKeys</span><span class="p">:</span> <span class="kt">String</span><span class="p">,</span> <span class="kt">CodingKey</span> <span class="p">{</span>
+    <span class="k">case</span> <span class="n">magnitude</span> <span class="o">=</span> <span class="s">"mag"</span>
+    <span class="k">case</span> <span class="n">place</span>
+    <span class="k">case</span> <span class="n">time</span>
+    <span class="k">case</span> <span class="n">code</span>
+    <span class="k">case</span> <span class="n">detail</span>
+    <span class="k">case</span> <span class="n">tsunami</span>
+<span class="p">}</span>
+</code></pre></div></div>
+<p>위 예시의 nested coding keys enumeration은 case magnitude = “mag” 값을 가지고 있습니다.<br />
+place, time, code, detail, tsunami는 GeoJSON 객체에서 같은 이름을 키값으로 사용하고 있고,<br />
+magnitude는 GeoJSON 객체에서 “mag”를 키값으로 가집니다.</p>
+<div class="language-swift highlighter-rouge"><div class="highlight"><pre class="highlight"><code>    <span class="nf">init</span><span class="p">(</span><span class="n">from</span> <span class="nv">decoder</span><span class="p">:</span> <span class="kt">Decoder</span><span class="p">)</span> <span class="k">throws</span> <span class="p">{</span>
+        <span class="k">let</span> <span class="nv">values</span> <span class="o">=</span> <span class="k">try</span> <span class="n">decoder</span><span class="o">.</span><span class="nf">container</span><span class="p">(</span><span class="nv">keyedBy</span><span class="p">:</span> <span class="kt">CodingKeys</span><span class="o">.</span><span class="k">self</span><span class="p">)</span>
+        <span class="k">let</span> <span class="nv">rawMagnitude</span> <span class="o">=</span> <span class="k">try</span><span class="p">?</span> <span class="n">values</span><span class="o">.</span><span class="nf">decode</span><span class="p">(</span><span class="kt">Double</span><span class="o">.</span><span class="k">self</span><span class="p">,</span> <span class="nv">forKey</span><span class="p">:</span> <span class="o">.</span><span class="n">magnitude</span><span class="p">)</span>
+        <span class="k">let</span> <span class="nv">rawPlace</span> <span class="o">=</span> <span class="k">try</span><span class="p">?</span> <span class="n">values</span><span class="o">.</span><span class="nf">decode</span><span class="p">(</span><span class="kt">String</span><span class="o">.</span><span class="k">self</span><span class="p">,</span> <span class="nv">forKey</span><span class="p">:</span> <span class="o">.</span><span class="n">place</span><span class="p">)</span>
+        <span class="k">let</span> <span class="nv">rawTime</span> <span class="o">=</span> <span class="k">try</span><span class="p">?</span> <span class="n">values</span><span class="o">.</span><span class="nf">decode</span><span class="p">(</span><span class="kt">Date</span><span class="o">.</span><span class="k">self</span><span class="p">,</span> <span class="nv">forKey</span><span class="p">:</span> <span class="o">.</span><span class="n">time</span><span class="p">)</span>
+        <span class="k">let</span> <span class="nv">rawCode</span> <span class="o">=</span> <span class="k">try</span><span class="p">?</span> <span class="n">values</span><span class="o">.</span><span class="nf">decode</span><span class="p">(</span><span class="kt">String</span><span class="o">.</span><span class="k">self</span><span class="p">,</span> <span class="nv">forKey</span><span class="p">:</span> <span class="o">.</span><span class="n">code</span><span class="p">)</span>
+        <span class="k">let</span> <span class="nv">rawDetail</span> <span class="o">=</span> <span class="k">try</span><span class="p">?</span> <span class="n">values</span><span class="o">.</span><span class="nf">decode</span><span class="p">(</span><span class="kt">URL</span><span class="o">.</span><span class="k">self</span><span class="p">,</span> <span class="nv">forKey</span><span class="p">:</span> <span class="o">.</span><span class="n">detail</span><span class="p">)</span>
+        <span class="k">let</span> <span class="nv">rawTsunami</span> <span class="o">=</span> <span class="k">try</span><span class="p">?</span> <span class="n">values</span><span class="o">.</span><span class="nf">decode</span><span class="p">(</span><span class="kt">Int</span><span class="o">.</span><span class="k">self</span><span class="p">,</span> <span class="nv">forKey</span><span class="p">:</span> <span class="o">.</span><span class="n">tsunami</span><span class="p">)</span>
+        
+        <span class="o">...</span> <span class="p">}</span>
+</code></pre></div></div>
+<p>디코딩하는 생성자 함수에서 magnitude를 키값으로 사용한 것을 확인할 수 있습니다.<br />
+CodingKeys enum의 케이스 이름은 Quake struct의 프로퍼티를 나타냅니다.<br />
+JSON 객체의 키 값과 이름이 같은 경우는 case 이름만 작성 / 다른 경우는 case magnitude = “mag”와 같이 작성합니다.</p>
+
 
                 </section>
             </div><div class="search-results">
@@ -461,7 +490,7 @@ Origin 타입을 사용하여 Products 타입 안에 origin 을 정의하는 것
     },
     "gitbook": {
         "version": "3.2.3",
-        "time": "2023-01-30 18:58:48 +0900"
+        "time": "2023-02-03 02:58:15 +0900"
     },
     "basePath": "",
     "book": {
