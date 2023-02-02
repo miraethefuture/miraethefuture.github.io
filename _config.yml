@@ -62,6 +62,7 @@ plugins:
   - jemoji
   - jekyll-remote-theme
   - jekyll-include-cache
+  - jekyll-sitemap
 
 # google_analytics 사용하려고 추가
 # search console 추가 해야 함.
