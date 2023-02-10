@@ -1,4 +1,4 @@
-I"�g<p><a href="https://developer.apple.com/tutorials/app-dev-training/decoding-structured-json">Earthquakes app tutorial</a></p>
+I"�n<p><a href="https://developer.apple.com/tutorials/app-dev-training/decoding-structured-json">Earthquakes app tutorial</a></p>
 <blockquote>
   <p>이 글은 위의 apple developer tutorial을 따라가며 정리한 내용입니다.</p>
 </blockquote>
@@ -206,4 +206,26 @@ magnitude는 GeoJSON 객체에서 “mag”를 키값으로 가집니다.</p>
 CodingKeys enum의 케이스 이름은 Quake struct의 프로퍼티를 나타냅니다.<br />
 JSON 객체의 키 값과 이름이 같은 경우는 case 이름만 작성 / 다른 경우는 case magnitude = “mag”와 같이 작성합니다.</p>
 
+<h1 id="existential-types">Existential Types</h1>
+<blockquote>
+  <p><a href="https://developer.apple.com/tutorials/app-dev-training/building-a-network-test-client">Building a network test client</a></p>
+</blockquote>
+
+<p>원래 앱에서는 remote network server에서 데이터를 가져옴
+테스트를 위해서 데이터를 가져오는 두번째 경우가 있음
+Data Downloader를 각각 다른 것을 사용할 것인데 두 다운로더를 완전히 따로 작성하는 것이 아니라
+existential type을 사용하여 작성한 하나의 다운로더를 사용할 것임.</p>
+
+<p>Existentnial type은 any 키워드를 앞에 붙여 사용할 수 있음</p>
+
+<p>lazy는 let과 함께 사용할 수 없음. var와 함께 사용.</p>
+
+<div class="language-swift highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1">//computed porperty의 타입이 있고 milliseconds로 변경하기 위해 이렇게 사용한건가?</span>
+<span class="c1">//date decoding strategy를 변경하기 위해서 anonymous 클로저를 사용해서 init 함</span>
+<span class="kd">private</span> <span class="kd">lazy</span> <span class="k">var</span> <span class="nv">decoder</span><span class="p">:</span> <span class="kt">JSONDecoder</span> <span class="o">=</span> <span class="p">{</span>
+    <span class="k">let</span> <span class="nv">aDecoder</span> <span class="o">=</span> <span class="kt">JSONDecoder</span><span class="p">()</span>
+    <span class="n">aDecoder</span><span class="o">.</span><span class="n">dateDecodingStrategy</span> <span class="o">=</span> <span class="o">.</span><span class="n">millisecondsSince1970</span>
+    <span class="k">return</span> <span class="n">aDecoder</span>
+<span class="p">}()</span>
+</code></pre></div></div>
 :ET
