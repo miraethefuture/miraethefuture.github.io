@@ -127,7 +127,7 @@
                             </a>
                             
                                 
-                                    <ul><li><a href="#error">Error</a></li><li><a href="#experiment">Experiment</a></li><li><a href="#privateset">private(set)</a></li><li><a href="#structuredjson">structuredJSON</a></li><li><a href="#codingkey-enum">CodingKey enum</a></li><li><a href="#existential-types">Existential Types</a></li></ul>
+                                    <ul><li><a href="#error">Error</a></li><li><a href="#experiment">Experiment</a></li><li><a href="#privateset">private(set)</a></li><li><a href="#structuredjson">structuredJSON</a></li><li><a href="#codingkey-enum">CodingKey enum</a></li><li><a href="#existential-types">Existential Types</a></li><li><a href="#viewsquakes">Views/Quakes</a></li></ul>
 
                                 
                             
@@ -435,6 +435,27 @@ async, throws 키워드를 사용. property에 async와 throws를 사용하려�
 <span class="p">}</span>
 </code></pre></div></div>
 
+<p><strong>URL 사용하여 데이터 가져오기</strong></p>
+<ol>
+  <li>URLSession의 인스턴스 메서드인 data를 사용하여 데이터를 가져오려고 함</li>
+  <li>
+    <p>커스텀 프로토콜인 HTTPDataDownloader를 생성</p>
+
+    <div class="language-swift highlighter-rouge"><div class="highlight"><pre class="highlight"><code> <span class="kd">protocol</span> <span class="kt">HTTPDataDownloader</span> <span class="p">{</span>
+ <span class="kd">func</span> <span class="nf">httpData</span><span class="p">(</span><span class="nv">from</span><span class="p">:</span> <span class="kt">URL</span><span class="p">)</span> <span class="k">async</span> <span class="k">throws</span> <span class="o">-&gt;</span> <span class="kt">Data</span>
+ <span class="p">}</span>
+</code></pre></div>    </div>
+  </li>
+  <li>URLSession에 extension을 작성하여 위 커스텀 프로토콜을 따르도록 함</li>
+  <li>httpData(from:_) 함수의 바디 부분에 인스턴스 메서드 data를 사용하여 data를 가져옴</li>
+</ol>
+
+<ul>
+  <li>Preview Content 폴더로 test data 파일을 옮기면 SwiftUI 프리뷰와 유닛 테스트 둘 다에서 데이터를 사용할 수 있음</li>
+</ul>
+
+<h1 id="viewsquakes">Views/Quakes</h1>
+
 
                 </section>
             </div><div class="search-results">
@@ -547,7 +568,7 @@ async, throws 키워드를 사용. property에 async와 throws를 사용하려�
     },
     "gitbook": {
         "version": "3.2.3",
-        "time": "2023-02-10 15:45:19 +0900"
+        "time": "2023-02-14 16:23:26 +0900"
     },
     "basePath": "",
     "book": {

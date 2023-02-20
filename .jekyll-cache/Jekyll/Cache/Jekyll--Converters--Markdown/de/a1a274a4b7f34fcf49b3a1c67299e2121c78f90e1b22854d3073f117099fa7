@@ -1,4 +1,4 @@
-I"�|<p><a href="https://developer.apple.com/tutorials/app-dev-training/decoding-structured-json">Earthquakes app tutorial</a></p>
+I"��<p><a href="https://developer.apple.com/tutorials/app-dev-training/decoding-structured-json">Earthquakes app tutorial</a></p>
 <blockquote>
   <p>이 글은 위의 apple developer tutorial을 따라가며 정리한 내용입니다.</p>
 </blockquote>
@@ -262,5 +262,19 @@ async, throws 키워드를 사용. property에 async와 throws를 사용하려�
     <span class="p">}</span>
 <span class="p">}</span>
 </code></pre></div></div>
+
+<ol>
+  <li>URLSession의 인스턴스 메서드인 data를 사용하여 데이터를 가져오려고 함</li>
+  <li>
+    <p>커스텀 프로토콜인 HTTPDataDownloader를 생성</p>
+
+    <div class="language-swift highlighter-rouge"><div class="highlight"><pre class="highlight"><code> <span class="kd">protocol</span> <span class="kt">HTTPDataDownloader</span> <span class="p">{</span>
+ <span class="kd">func</span> <span class="nf">httpData</span><span class="p">(</span><span class="nv">from</span><span class="p">:</span> <span class="kt">URL</span><span class="p">)</span> <span class="k">async</span> <span class="k">throws</span> <span class="o">-&gt;</span> <span class="kt">Data</span>
+ <span class="p">}</span>
+</code></pre></div>    </div>
+  </li>
+  <li>URLSession에 extension을 작성하여 위 커스텀 프로토콜을 따르도록 함</li>
+  <li>httpData(from:_) 함수의 바디 부분에 인스턴스 메서드 data를 사용하여 data를 가져옴</li>
+</ol>
 
 :ET
