@@ -37,6 +37,8 @@
         
 
         
+            <link rel="next" href="/til/2023-02-20-StanfordLecture.html" />
+        
     </head>
     <body>
         <div class="book"><div class="book-summary">
@@ -127,8 +129,19 @@
                             </a>
                             
                                 
-                                    <ul><li><a href="#error">Error</a></li><li><a href="#experiment">Experiment</a></li><li><a href="#privateset">private(set)</a></li><li><a href="#structuredjson">structuredJSON</a></li><li><a href="#codingkey-enum">CodingKey enum</a></li><li><a href="#existential-types">Existential Types</a></li><li><a href="#viewsquakes">Views/Quakes</a></li></ul>
+                                    <ul><li><a href="#error">Error</a></li><li><a href="#experiment">Experiment</a></li><li><a href="#privateset">private(set)</a></li><li><a href="#structuredjson">structuredJSON</a></li><li><a href="#codingkey-enum">CodingKey enum</a></li><li><a href="#existential-types">Existential Types</a></li></ul>
 
+                                
+                            
+                        </li>
+                    
+                        
+                        <li class="chapter" data-level="1.1" data-path="/til/2023-02-20-StanfordLecture.html">
+                        
+                            <a href="/til/2023-02-20-StanfordLecture.html">
+                                Stanford Lectures
+                            </a>
+                            
                                 
                             
                         </li>
@@ -198,7 +211,7 @@
 <span class="p">}</span>
 </code></pre></div></div>
 
-<p>위 QuakeError enumeration은 case missingData를 가지는데 LocalizedError 프로토콜을 따르는 extension을 작성하여, QuakeError.missingData로 에러가 던져질 경우 “code, maginitude, place, time 중 없는 데이터가 있어 정상적으로 코드가 작동하지 않았다”는 메세지를 표출할 것입니다.</p>
+<p>위 QuakeError enumeration은 case missingData를 가지는데 LocalizedError 프로토콜을 따르는 extension을 작성하여, QuakeError.missingData로 에러가 던져질 경우 “code, maginitude, place, time 중 없는 데이터가 있어 정상적으로 코드가 작동하지 않았다.”는 메세지를 표출할 것입니다.</p>
 
 <div class="language-swift highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1">// Quake struct라는 설계도를 사용하여 디코딩하는 인스턴스를 생성하기 위해 from decoder:_를 인자로 가지는 init 사용</span>
 <span class="c1">// throws function, try, try?를 사용하여 디코딩 과정 중 에러 발생 시 nil을 반환하도록 처리함</span>
@@ -454,8 +467,6 @@ async, throws 키워드를 사용. property에 async와 throws를 사용하려�
   <li>Preview Content 폴더로 test data 파일을 옮기면 SwiftUI 프리뷰와 유닛 테스트 둘 다에서 데이터를 사용할 수 있음</li>
 </ul>
 
-<h1 id="viewsquakes">Views/Quakes</h1>
-
 
                 </section>
             </div><div class="search-results">
@@ -476,6 +487,10 @@ async, throws 키워드를 사용. property에 async와 throws를 사용하려�
                     
 
                     
+                        <a href="/til/2023-02-20-StanfordLecture.html" class="navigation navigation-next navigation-unique" aria-label="Next page: Stanford Lectures">
+                            <i class="fa fa-angle-right"></i>
+                        </a>
+                    
                 </div>
             </div>
 
@@ -487,6 +502,15 @@ async, throws 키워드를 사용. property에 async와 throws를 사용하려�
         "title": "Introduction",
         "level": "1.1",
         "depth": 1,
+        
+        "next": {
+            "title": "Stanford Lectures",
+            "level": "1.2",
+            "depth": 1,
+            "path": "_posts/2023-02-20-StanfordLecture.md",
+            "ref": "_posts/2023-02-20-StanfordLecture.md",
+            "articles": []
+        },
         
         "dir": "ltr"
     },    "config": {
@@ -568,7 +592,7 @@ async, throws 키워드를 사용. property에 async와 throws를 사용하려�
     },
     "gitbook": {
         "version": "3.2.3",
-        "time": "2023-02-14 16:23:26 +0900"
+        "time": "2023-03-24 20:55:06 +0900"
     },
     "basePath": "",
     "book": {

@@ -107,7 +107,7 @@
                             </a>
                             
                                 
-                                    <ul><li><a href="#앱-프로젝트-my-boxes">앱 프로젝트: My Boxes</a><ul><li><a href="#915">9/15</a></li><li><a href="#919">9/19</a></li><li><a href="#925">9/25</a></li><li><a href="#928">9/28</a></li><li><a href="#930">9/30</a></li><li><a href="#102">10/2</a><ul><li><a href="#testing">Testing..</a></li></ul></li><li><a href="#106">10/6</a></li><li><a href="#108">10/8</a></li><li><a href="#1010">10/10</a></li><li><a href="#1011">10/11</a></li><li><a href="#1012">10/12</a></li><li><a href="#1013">10/13</a></li><li><a href="#1016">10/16</a></li><li><a href="#1017">10/17</a></li><li><a href="#1018">10/18</a></li><li><a href="#1019">10/19</a></li><li><a href="#1020">10/20</a></li><li><a href="#1021">10/21</a></li><li><a href="#1022">10/22</a></li><li><a href="#1023">10/23</a></li><li><a href="#1025">10/25</a></li><li><a href="#1026">10/26</a></li><li><a href="#1027">10/27</a></li><li><a href="#1028">10/28</a></li><li><a href="#1031">10/31</a></li><li><a href="#1105">11/05</a></li><li><a href="#1107">11/07</a></li><li><a href="#1113">11/13</a></li><li><a href="#1201">12/01</a></li><li><a href="#수정할-것">수정할 것</a></li><li><a href="#1211">12/11</a></li></ul></li></ul>
+                                    <ul><li><a href="#my-box---swiftui-프로젝트">My Box - SwiftUI 프로젝트</a><ul><li><a href="#testing">Testing..</a></li></ul></li><li><a href="#106">10/6</a></li><li><a href="#108">10/8</a></li><li><a href="#1010">10/10</a></li><li><a href="#1011">10/11</a></li><li><a href="#1012">10/12</a></li><li><a href="#1013">10/13</a></li><li><a href="#1016">10/16</a></li><li><a href="#1017">10/17</a></li><li><a href="#1018">10/18</a></li><li><a href="#1019">10/19</a></li><li><a href="#1020">10/20</a></li><li><a href="#1021">10/21</a></li><li><a href="#1022">10/22</a></li><li><a href="#1023">10/23</a></li><li><a href="#1025">10/25</a></li><li><a href="#1026">10/26</a></li><li><a href="#1027">10/27</a></li><li><a href="#1028">10/28</a></li><li><a href="#1031">10/31</a></li><li><a href="#1105">11/05</a></li><li><a href="#1107">11/07</a></li><li><a href="#1113">11/13</a></li><li><a href="#1201">12/01</a></li><li><a href="#수정할-것">수정할 것</a></li><li><a href="#1211">12/11</a></li></ul></li></ul>
 
                                 
                             
@@ -129,6 +129,17 @@
                         
                             <a href="/til/2023-01-17-Quake.html">
                                 앱 Earthquakes 튜토리얼을 따라가며 정리
+                            </a>
+                            
+                                
+                            
+                        </li>
+                    
+                        
+                        <li class="chapter" data-level="1.1" data-path="/til/2023-02-20-StanfordLecture.html">
+                        
+                            <a href="/til/2023-02-20-StanfordLecture.html">
+                                Stanford Lectures
                             </a>
                             
                                 
@@ -172,76 +183,65 @@
                         <h1 id="/til/myBoxes">My Boxes</h1>
                     
 
-                    <h1 id="앱-프로젝트-my-boxes">앱 프로젝트: My Boxes</h1>
-<p>개인 프로젝트를 시작했습니다.</p>
-<s>목표는 9월 안에 1차 완성 후 테스트 플라이트에 등록하기!</s>
-<p>하루하루 무엇을 했는지 기록을 남겨봅니다.</p>
-
-<h2 id="915">9/15</h2>
-
-<center><video src="https://user-images.githubusercontent.com/85061148/190425324-cebc28eb-9cf7-45f9-a66a-96bb1ba0aef6.mov" controls="controls" style="max-width: 600px">
-</video></center>
-
-<blockquote class="block-tip">
-  <p>8월 14일 프로젝트 시작 후 그동안 무엇을 했는지 영상으로 보면..</p>
+                    <h1 id="my-box---swiftui-프로젝트">My Box - SwiftUI 프로젝트</h1>
+<video src="https://user-images.githubusercontent.com/85061148/190425324-cebc28eb-9cf7-45f9-a66a-96bb1ba0aef6.mov" controls="controls" style="max-width: 600px">
+</video>
+<blockquote>
+  <p>~9/15<br />
+  <b>📌 진행사항</b></p>
+  <ul>
+    <li>보관함 목록</li>
+    <li>아이템 목록</li>
+    <li>보관함 편집 화면</li>
+  </ul>
 </blockquote>
 
-<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>"어디에 뒀더라... 분명 어디 있는데?"  
-위와 같은 생각이 반복되다보니 내가 어떤 물건을, 어디에 가지고 있는지를 목록으로 만들어보고 싶었습니다.  
-</code></pre></div></div>
-
-<p>메인 리스트 뷰 / 각 상자 속 아이텝의 리스트 뷰 / 편집뷰를 만든 상태입니다.<br />
-  아직 편집 화면에서 추가한 아이템이나 변경 사항들이 리스트에 반영되는 곳까지 데이터 플로우를 처리하지 못했습니다. 일단 그것을 먼저해야 할 것 같습니다.</p>
-
-<h2 id="919">9/19</h2>
-<blockquote class="block-tip">
-  <p>좀 더 정확하게 이해해보기</p>
+<blockquote>
+  <p>~9/19<br />
+  <b>📋 메모</b><br />
+  Edit 뷰를 만들기 전에 타입 Box 안에 nested 형태로 Data라는 타입을 생성했다.<br />
+  타입 Data는 왜 필요했을까?</p>
+  <ul>
+    <li>Data에는 Box의 속성 중, 편집 가능하도록 할 속성을 담는다.</li>
+    <li>사용자가 편집한 내용을 Data의 각 속성에 담는다.</li>
+    <li>변경사항이 저장되는게 확실해지면 (‘확인’ 또는 ‘Done’ 버튼을 눌렀을 때…)</li>
+    <li>Data에 담긴 내용을 Box에 업데이트한다.</li>
+  </ul>
 </blockquote>
-<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>Edit 뷰를 만들기 전에 타입 Box 안에 nested 형태로 Data라는 타입을 생성했다. 
-- 타입 Data는 왜 필요했을까?  
-1) Data에는 Box의 속성 중, 편집 가능하도록 할 속성을 담는다. 
-2) 사용자가 편집한 내용을 Data의 각 속성에 담는다. 
-3) 변경사항이 저장되는게 확실해지면 ('확인' 또는 'Done' 버튼을 눌렀을 때...)
-4) Data에 담긴 내용을 Box에 업데이트한다.   
-</code></pre></div></div>
 
-<!--  급 궁금 : 화면에 글자를 쓰는 것 만으로 메모리에 할당되는가? 저장을 해야 할당되는가?  -->
-
-<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>- computed property인 data의 역할은?
-a. data는 Box 타입의 extension { } 안에서 정의됨 
-b. data의 리턴 타입은 Data
-c. Box의 속성값들을 사용하여 Data() 를 리턴 
-</code></pre></div></div>
-
-<!--  is data doing something on the edit view? something like...show the property value that I already have on the item list view?   -->
-
-<h2 id="925">9/25</h2>
-
-<center><video src="https://user-images.githubusercontent.com/85061148/192147063-40f9f830-3ce6-4b31-bca1-b9950092c6f6.mov" controls="controls" style="max-width: 600px">
-</video></center>
-
-<p>Done 버튼을 누르면 모달뷰가 내려가고, Box.Data()에 담아두었던 원래 입력되어 있던 데이터 + 변경된 데이터를 Box에 업데이트하여 아이템 리스트에서도 볼 수 있도록 함.</p>
-
-<h2 id="928">9/28</h2>
-
-<p>State 와 binding을 사용하여 데이터가 뷰 사이에서 전달되도록 했지만, 앱을 종료했다 다시 시작하면 모든 데이터가 날라간다. 데이터를 저장하고 가져오는 메서드를 작성해야 한다.</p>
-
-<h2 id="930">9/30</h2>
-
-<p>데이터를 file/Document에 저장하고 가져오는 함수를 따로 작성하고 앱이 열릴 때 데이터를 가져오는 함수 적용 중…</p>
-
-<h2 id="102">10/2</h2>
-
-<center><video src="https://user-images.githubusercontent.com/85061148/193455920-c93634a8-1fe1-468a-b779-29c0cd696d84.mov" controls="controls" style="max-width: 600px">
-</video></center>
-
-<p>@Environment 속성에 scenePhase 값을 설정하여 앱이 inactive한 상태로 바뀔 때 사용자가 입력한 데이터를 저장하도록 함. 이제 앱을 종료하고 다시 열어도 그대로 데이터가 저장되어 있는 상태가 되었다.</p>
-<ul>
-  <li>보관함 리스트를 삭제하는 기능 추가 완료</li>
-  <li>보관함에 pin 심볼을 다른 것으로 변경하기</li>
-  <li>기존에 임의로 설정해두었던 배경/글자색을 주석처리하여 기본색으로 설정</li>
-  <li>태그 심볼 제거</li>
-</ul>
+<video src="https://user-images.githubusercontent.com/85061148/192147063-40f9f830-3ce6-4b31-bca1-b9950092c6f6.mov" controls="controls" style="max-width: 600px">
+</video>
+<blockquote>
+  <p>~9/25<br />
+  <b>📌 진행사항</b></p>
+  <ul>
+    <li>Done 버튼을 누르면 편집 화면 사라짐</li>
+    <li>Box.Data() 인스턴스에 저장된 데이터를 Box 인스턴스에 업데이트하는 함수 실행
+      <div class="language-swift highlighter-rouge"><div class="highlight"><pre class="highlight"><code>  <span class="kt">ToolbarItem</span><span class="p">(</span><span class="nv">placement</span><span class="p">:</span> <span class="o">.</span><span class="n">confirmationAction</span><span class="p">)</span> <span class="p">{</span>
+<span class="kt">Button</span><span class="p">(</span><span class="s">"Done"</span><span class="p">)</span> <span class="p">{</span>
+    <span class="n">isPresentingEditView</span> <span class="o">=</span> <span class="kc">false</span>
+    <span class="n">box</span><span class="o">.</span><span class="nf">update</span><span class="p">(</span><span class="nv">from</span><span class="p">:</span> <span class="n">data</span><span class="p">)</span>
+<span class="p">}</span>
+  <span class="p">}</span>
+</code></pre></div>      </div>
+    </li>
+  </ul>
+</blockquote>
+<video src="https://user-images.githubusercontent.com/85061148/193455920-c93634a8-1fe1-468a-b779-29c0cd696d84.mov" controls="controls" style="max-width: 600px">
+</video>
+<blockquote>
+  <p>~10/2<br />
+  <b>📌 진행사항</b></p>
+  <ul>
+    <li>State 와 binding을 사용하여 데이터가 뷰 사이에서 전달되도록 했지만, 앱을 종료했다 다시 시작하면 모든 데이터가 날라간다. 데이터를 저장하고 가져오는 메서드를 작성해야 한다.</li>
+    <li>데이터를 file/Document에 저장하고 가져오는 함수를 따로 작성하고 앱이 열릴 때 데이터를 가져오는 함수 적용 중</li>
+    <li>@Environment 속성에 scenePhase 값을 설정하여 앱이 inactive한 상태로 바뀔 때 사용자가 입력한 데이터를 저장하도록 함. 이제 앱을 종료하고 다시 열어도 그대로 데이터가 저장되어 있는 상태가 되었다.</li>
+    <li>보관함 리스트를 삭제하는 기능 추가 완료</li>
+    <li>보관함에 pin 심볼을 다른 것으로 변경하기</li>
+    <li>기존에 임의로 설정해두었던 배경/글자색을 주석처리하여 기본색으로 설정</li>
+    <li>태그 심볼 제거</li>
+  </ul>
+</blockquote>
 
 <h3 id="testing">Testing..</h3>
 
@@ -592,7 +592,7 @@ searchable 을 사용하여 검색 기능을 구현하는 방법을 엄청 검�
     },
     "gitbook": {
         "version": "3.2.3",
-        "time": "2023-02-14 16:23:26 +0900"
+        "time": "2023-03-24 20:55:06 +0900"
     },
     "basePath": "",
     "book": {

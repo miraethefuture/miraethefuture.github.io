@@ -1,0 +1,34 @@
+I"�<h1 id="my-box---swiftui-프로젝트">My Box - SwiftUI 프로젝트</h1>
+<center><video src="https://user-images.githubusercontent.com/85061148/190425324-cebc28eb-9cf7-45f9-a66a-96bb1ba0aef6.mov" controls="controls" style="max-width: 600px">
+</video></center>
+<p><br /></p>
+<blockquote>
+  <p>~9/15<br />
+  <b>📌 진행사항</b></p>
+  <ul>
+    <li>보관함 목록</li>
+    <li>아이템 목록</li>
+    <li>보관함 편집 화면</li>
+  </ul>
+</blockquote>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>&gt; ~9/19  
+&lt;b&gt;📌 진행사항&lt;/b&gt;
+Edit 뷰를 만들기 전에 타입 Box 안에 nested 형태로 Data라는 타입을 생성했다. 
+- 타입 Data는 왜 필요했을까?  
+1) Data에는 Box의 속성 중, 편집 가능하도록 할 속성을 담는다. 
+2) 사용자가 편집한 내용을 Data의 각 속성에 담는다. 
+3) 변경사항이 저장되는게 확실해지면 ('확인' 또는 'Done' 버튼을 눌렀을 때...)
+4) Data에 담긴 내용을 Box에 업데이트한다.   
+</code></pre></div></div>
+
+<!--  급 궁금 : 화면에 글자를 쓰는 것 만으로 메모리에 할당되는가? 저장을 해야 할당되는가?  -->
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>- computed property인 data의 역할은?
+a. data는 Box 타입의 extension { } 안에서 정의됨 
+b. data의 리턴 타입은 Data
+c. Box의 속성값들을 사용하여 Data() 를 리턴 
+</code></pre></div></div>
+
+<!--  is data doing something on the edit view? something like...show the property value that I already have on the item list view?   -->
+:ET
