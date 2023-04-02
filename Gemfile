@@ -8,8 +8,5 @@ gem 'jekyll-feed'
 gem 'jekyll-readme-index'
 gem 'jemoji'
 gem 'webrick'
-gem 'jekyll-remote-theme'
-gem 'jekyll-include-cache'
-gem 'jekyll-sitemap'
 
 # gem "rails"
