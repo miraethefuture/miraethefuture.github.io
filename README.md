@@ -4,6 +4,7 @@ title: Mirae Jung
 permalink: /
 ---
 
-##  iOS Developer
+##  iOS Developer  
+..👷 블로그 공사중 🚧..
 
 
