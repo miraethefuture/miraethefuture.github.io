@@ -1,16 +1,16 @@
 # Configurations
-title:            Jekyll Gitbook
+title:            Mirae Jung  iOS Developer
 longtitle:        Jekyll Gitbook
-author:           HE Tao
-email:            sighingnow@gmail.com
+author:           Mirae
+email:            mirae2thefuture@gmail.com
 description: >
-  Build Jekyll site with the GitBook style.
+  안녕하세요. iOS Developer 정미래입니다.
 
 version:          1.0
 gitbook_version:  3.2.3
 
-url:              'https://sighingnow.github.io'
-baseurl:          '/jekyll-gitbook'
+url:              'https://miraethefuture.github.io'
+baseurl:          '/mirae-jung'
 rss:              RSS
 
 # bootstrap: use the remote theme for the site itself
@@ -64,3 +64,6 @@ plugins:
   - jekyll-feed
   - jekyll-readme-index
   - jemoji
+
+# 렌더링 되지 않아 추가
+encoding: UTF-8
