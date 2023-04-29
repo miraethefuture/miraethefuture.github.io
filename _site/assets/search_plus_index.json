@@ -13,11 +13,16 @@
     "keywords": "Jekyll",
     "url": "/pages/design/draft/",
     "body": "This is an draft page."
-  },"/til/2023-04-06-multipleNetworkRequests.html": {
-    "title": "여러 개의 비동기적 네트워크 요청을 동시에 보내기",
+  },"/til/2023-04-29-VerticalTabView.html": {
+    "title": "Vertical TabView in SwiftUI",
     "keywords": "TIL",
-    "url": "/til/2023-04-06-multipleNetworkRequests.html",
-    "body": "- iOS App Dev Tutorials - Managing structured concurrency - Documentation/The Swift Programming/Language/Concurrency 위 내용을 참고 Concurrency Concurrency는 비동기적이고 병렬적인 작업을 수행하는 것, 그 작업을 수행하는 코드를 의미합니다. Swift는 비동기 코드, 병렬 코드를 구조화된 방식으로 작성할 수 있도록 지원하는데요. 비동기 코드는 무엇이고, 병렬 코드는 또 무엇이고 구조화된 방식은 어떤 방식을 말하는 걸까요? 1. 비동기 코드 (Asynchronous Code) 프로그램이 실행되고 있다고 상상해 봅시다. 순서대로 실행되던 중 여러개의 이미지 파일을 다운로드 하는 함수를 실행하는 코드를 만났는데 그 아래에 UI를 업데이트하는 코드가 있다면, 이미지 파일을 모두 다운로드해서 리턴할 때까지 UI는 그려지지 않고 있겠죠? 사용자는 UI가 그려질 때까지 기다려야 하므로 좋은 프로그램이 아니게 됩니다. 이때 사용할 수 있는 것이 비동기 코드입니다. 예시로 들었던 이미지를 다운로드하는 함수를 비동기 함수로 작성하면, 이미지가 다운로드 되는 동안 전체 프로그램 흐름에서 비동기 코드는 잠시 일시 정지하고 다음에 실행될 코드인 UI 업데이트를 수행합니다. 그리고 이미지가 모두 다운로드 되어 결과가 리턴되면 다시 비동기 코드를 시작하는 것입니다. 2. 병렬 코드 (Paralllel Code) 병렬코드는 여러개의 코드를 동시에 실행하는 것을 의미합니다. 결과적으로, 위 두개의 방식을 사용하여 여러개의 작업을 한번에 실행할 수 있습니다. Tasks and Task Groups 여러개의 네트워크 요청을 비동기적으로 수행하기 위해서 Task Group을 사용할 수 있습니다. task는 비동기적으로 실행될 수 있는 작업의 한 단위인데 계층의 형태로 정렬됩니다. 한 Task group 안에 여러개의 task를 추가할 수 있고 각 task는 같은 parent task를 가지며, 각 task는 child task를 가질 수 있습니다."
+    "url": "/til/2023-04-29-VerticalTabView.html",
+    "body": "import SwiftUI struct ContentView: View { var body: some View { GeometryReader { proxy in TabView { ForEach(0..&lt;3, id: \\.self) { i in Image(\"img_\\(i + 1)\") .resizable() .scaledToFill() .rotationEffect(.degrees(-90)) // 1 .frame( width: proxy.size.width, height: proxy.size.height ) // 2 } } .frame( width: proxy.size.height, // Height &amp; width swap height: proxy.size.width ) // 3 .rotationEffect(.degrees(90), anchor: .topLeading) // 4 .offset(x: proxy.size.width) // 5 .tabViewStyle(PageTabViewStyle(indexDisplayMode: .never)) } } } 👉🏻 참고한 글 .tabViewStyle(PageTabViewStyle(indexDisplayMode: .never)) SwiftUI의 PageTabViewStyle은 기본적으로 수평으로 넘길 수 있는 paged scrolling 탭뷰입니다. 페이지를 넘기는 것과 같은 효과를 줄 수 있는데요. 위 코드와 같이, rotationEffect와 GeometryReader를 사용하여 수직으로 넘어가는 탭뷰를 만들 수 있습니다. // 1 : rotationEffect를 사용하여 왼쪽으로 90도 이미지를 로테이션 시켜줍니다. 현재 탭뷰 안의 이미지는 아래와 같이 살짝 커졌지만 가운데 정렬된 상태로 나타납니다. // 2: 이때 width / height는 누워있는 이미지와 같이 width가 더 큰 직사각형 형태로 존재합니다. // 3: 여기서 TabView의 frame을 정의하는데, height와 width를 바꿔줍니다. 그러면 width가 heigt보다 작은 세로로 기다란 모양의 직사각형 frame이 되겠죠? // 4 : anchor는 어느 꼭지점을 기준으로 로테이트 할 지 정할 때 사용하는데 .topLeading을 기준으로 90도 로테이트 했으므로 화면에는 이미지가 보여지지 않게 됩니다. 로테이트 하면서 화면 밖에 위치하게 되는데요. // 5 : 그래서 offset에 x 값을 현재 width만큼 주어서 오른쪽으로 이동시킵니다. 여기까지하면, 화면에 수직으로 이동하는 페이징 탭뷰가 맨 위에 있는 영상처럼 잘 나타나게 됩니다. 그런데 LazyVStack 안에 다른 뷰와 함께 탭뷰를 화면에 보이려고 하면 문제가 생기는데요. LazyVStack은 모든 아이템을 먼저 그리는게 아니라 필요할 때 아이템을 렌더링 하기 떄문에 기존의. VStack과는 다른 레이아웃 룰을 가지고 있습니다. 그래서 높이가 10 정도 되는 뷰만 그려주게 됩니다. 일단 VStack으로 교체하면 이 문제는 해결할 수 있습니다."
+  },"/til/2023-04-24-CoreData.html": {
+    "title": "Persisting Data",
+    "keywords": "TIL",
+    "url": "/til/2023-04-24-CoreData.html",
+    "body": "💿 JSON 형태의 Open API를 이용해서 사용자 목록을 가져오고, 팔로우/언팔로우 정보를 추가해서 보여주는 개인 과제를 하고 있습니다. API를 통해 가져오는 정보에는 팔로우에 대한 속성이 없음 때문에, 데이터를 받는 클라이언트/프로바이더 단에서 팔로우/언팔로우에 대한 bool 값을 가지고 있지 않음 프로바이더를 통해 메인 뷰에서 데이터를 뿌려주는데 팔로우/언팔로우에 대한 정보가 없기 때문에 네비게이션 링크를 통해 가야하는 디테일 뷰에 팔로우/언팔로우에 대한 State 정보를 줄 수 없는 것이 문제.. UserDefaults에 사용자의 id를 키로 설정하고, 값에는 팔로우/언팔로우 정보를 bool 타입으로 저장함 디코딩하는 이니셜라이저에서 UserDefaluts에 저장되어 있는 bool 값도 함께 가져옴 SaveAction { } ㄲ"
   },"/til/2023-02-20-StanfordLecture.html": {
     "title": "Stanford Lectures",
     "keywords": "TIL",

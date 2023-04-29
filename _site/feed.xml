@@ -1,29 +1,83 @@
-<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="4.3.2">Jekyll</generator><link href="http://localhost:4000/feed.xml" rel="self" type="application/atom+xml" /><link href="http://localhost:4000/" rel="alternate" type="text/html" /><updated>2023-04-07T09:20:01+09:00</updated><id>http://localhost:4000/feed.xml</id><title type="html">Mirae Jung  iOS Developer</title><subtitle>안녕하세요. iOS Developer 정미래입니다.
-</subtitle><author><name>Mirae</name></author><entry><title type="html">여러 개의 비동기적 네트워크 요청을 동시에 보내기</title><link href="http://localhost:4000/til/2023-04-06-multipleNetworkRequests.html" rel="alternate" type="text/html" title="여러 개의 비동기적 네트워크 요청을 동시에 보내기" /><published>2023-04-06T00:00:00+09:00</published><updated>2023-04-06T00:00:00+09:00</updated><id>http://localhost:4000/til/multipleNetworkRequests</id><content type="html" xml:base="http://localhost:4000/til/2023-04-06-multipleNetworkRequests.html"><![CDATA[<p><a href="https://developer.apple.com/tutorials/app-dev-training/managing-structured-concurrency">- iOS App Dev Tutorials - Managing structured concurrency</a><br />
-<a href="https://docs.swift.org/swift-book/documentation/the-swift-programming-language/concurrency/">- Documentation/The Swift Programming/Language/Concurrency</a></p>
-<blockquote>
-  <p>위 내용을 참고</p>
-</blockquote>
+<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="4.3.2">Jekyll</generator><link href="http://localhost:4000/feed.xml" rel="self" type="application/atom+xml" /><link href="http://localhost:4000/" rel="alternate" type="text/html" /><updated>2023-04-29T20:06:31+09:00</updated><id>http://localhost:4000/feed.xml</id><title type="html">Mirae Jung  iOS Developer</title><subtitle>안녕하세요. iOS Developer 정미래입니다.
+</subtitle><author><name>Mirae</name></author><entry><title type="html">Vertical TabView in SwiftUI</title><link href="http://localhost:4000/til/2023-04-29-VerticalTabView.html" rel="alternate" type="text/html" title="Vertical TabView in SwiftUI" /><published>2023-04-29T00:00:00+09:00</published><updated>2023-04-29T00:00:00+09:00</updated><id>http://localhost:4000/til/VerticalTabView</id><content type="html" xml:base="http://localhost:4000/til/2023-04-29-VerticalTabView.html"><![CDATA[<video src="https://user-images.githubusercontent.com/85061148/235292829-c16fccb8-e5ae-4243-86e3-356f57443024.mov" controls="controls" style="max-width: 300px">
+</video>
 
-<h2 id="concurrency">Concurrency</h2>
+<div class="language-swift highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">import</span> <span class="kt">SwiftUI</span>
 
-<p><code class="language-plaintext highlighter-rouge">Concurrency</code>는 비동기적이고 병렬적인 작업을 수행하는 것, 그 작업을 수행하는 코드를 의미합니다.<br />
-Swift는 비동기 코드, 병렬 코드를 구조화된 방식으로 작성할 수 있도록 지원하는데요.<br />
-비동기 코드는 무엇이고, 병렬 코드는 또 무엇이고 구조화된 방식은 어떤 방식을 말하는 걸까요?</p>
+<span class="kd">struct</span> <span class="kt">ContentView</span><span class="p">:</span> <span class="kt">View</span> <span class="p">{</span>
+    <span class="k">var</span> <span class="nv">body</span><span class="p">:</span> <span class="kd">some</span> <span class="kt">View</span> <span class="p">{</span>
+        <span class="kt">GeometryReader</span> <span class="p">{</span> <span class="n">proxy</span> <span class="k">in</span>
+            <span class="kt">TabView</span> <span class="p">{</span>
+                <span class="kt">ForEach</span><span class="p">(</span><span class="mi">0</span><span class="o">..&lt;</span><span class="mi">3</span><span class="p">,</span> <span class="nv">id</span><span class="p">:</span> <span class="p">\</span><span class="o">.</span><span class="k">self</span><span class="p">)</span> <span class="p">{</span> <span class="n">i</span> <span class="k">in</span>
+                    <span class="kt">Image</span><span class="p">(</span><span class="s">"img_</span><span class="se">\(</span><span class="n">i</span> <span class="o">+</span> <span class="mi">1</span><span class="se">)</span><span class="s">"</span><span class="p">)</span>
+                        <span class="o">.</span><span class="nf">resizable</span><span class="p">()</span>
+                        <span class="o">.</span><span class="nf">scaledToFill</span><span class="p">()</span>
+                        <span class="o">.</span><span class="nf">rotationEffect</span><span class="p">(</span><span class="o">.</span><span class="nf">degrees</span><span class="p">(</span><span class="o">-</span><span class="mi">90</span><span class="p">))</span> <span class="c1">// 1</span>
+                        <span class="o">.</span><span class="nf">frame</span><span class="p">(</span>
+                            <span class="nv">width</span><span class="p">:</span> <span class="n">proxy</span><span class="o">.</span><span class="n">size</span><span class="o">.</span><span class="n">width</span><span class="p">,</span>
+                            <span class="nv">height</span><span class="p">:</span> <span class="n">proxy</span><span class="o">.</span><span class="n">size</span><span class="o">.</span><span class="n">height</span>
+                        <span class="p">)</span> <span class="c1">// 2</span>
+                <span class="p">}</span>
+            <span class="p">}</span>
+            <span class="o">.</span><span class="nf">frame</span><span class="p">(</span>
+                <span class="nv">width</span><span class="p">:</span> <span class="n">proxy</span><span class="o">.</span><span class="n">size</span><span class="o">.</span><span class="n">height</span><span class="p">,</span> <span class="c1">// Height &amp; width swap</span>
+                <span class="nv">height</span><span class="p">:</span> <span class="n">proxy</span><span class="o">.</span><span class="n">size</span><span class="o">.</span><span class="n">width</span>
+            <span class="p">)</span> <span class="c1">// 3</span>
+            <span class="o">.</span><span class="nf">rotationEffect</span><span class="p">(</span><span class="o">.</span><span class="nf">degrees</span><span class="p">(</span><span class="mi">90</span><span class="p">),</span> <span class="nv">anchor</span><span class="p">:</span> <span class="o">.</span><span class="n">topLeading</span><span class="p">)</span> <span class="c1">// 4</span>
+            <span class="o">.</span><span class="nf">offset</span><span class="p">(</span><span class="nv">x</span><span class="p">:</span> <span class="n">proxy</span><span class="o">.</span><span class="n">size</span><span class="o">.</span><span class="n">width</span><span class="p">)</span> <span class="c1">// 5</span>
+            <span class="o">.</span><span class="nf">tabViewStyle</span><span class="p">(</span><span class="kt">PageTabViewStyle</span><span class="p">(</span><span class="nv">indexDisplayMode</span><span class="p">:</span> <span class="o">.</span><span class="n">never</span><span class="p">))</span>
+        <span class="p">}</span>
+    <span class="p">}</span>
+<span class="p">}</span>
+</code></pre></div></div>
 
-<p><b>1. 비동기 코드 (Asynchronous Code)</b><br />
-  프로그램이 실행되고 있다고 상상해 봅시다. 순서대로 실행되던 중 여러개의 이미지 파일을 다운로드 하는 함수를 실행하는 코드를 만났는데 그 아래에 UI를 업데이트하는 코드가 있다면, 이미지 파일을 모두 다운로드해서 리턴할 때까지 UI는 그려지지 않고 있겠죠? 사용자는 UI가 그려질 때까지 기다려야 하므로 좋은 프로그램이 아니게 됩니다. 이때 사용할 수 있는 것이 비동기 코드입니다. 예시로 들었던 이미지를 다운로드하는 함수를 비동기 함수로 작성하면, 이미지가 다운로드 되는 동안 전체 프로그램 흐름에서 비동기 코드는 잠시 일시 정지하고 다음에 실행될 코드인 UI 업데이트를 수행합니다. 그리고 이미지가 모두 다운로드 되어 결과가 리턴되면 다시 비동기 코드를 시작하는 것입니다.</p>
+<p><a href="https://morioh.com/p/81b0a940fba0">👉🏻 참고한 글</a></p>
 
-<p><b>2. 병렬 코드 (Paralllel Code)</b><br />
-  병렬코드는 여러개의 코드를 동시에 실행하는 것을 의미합니다.</p>
+<div class="language-swift highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="o">.</span><span class="nf">tabViewStyle</span><span class="p">(</span><span class="kt">PageTabViewStyle</span><span class="p">(</span><span class="nv">indexDisplayMode</span><span class="p">:</span> <span class="o">.</span><span class="n">never</span><span class="p">))</span>
+</code></pre></div></div>
 
-<p>결과적으로, 위 두개의 방식을 사용하여 여러개의 작업을 한번에 실행할 수 있습니다.</p>
+<p>SwiftUI의 PageTabViewStyle은 기본적으로 수평으로 넘길 수 있는 paged scrolling 탭뷰입니다.
+페이지를 넘기는 것과 같은 효과를 줄 수 있는데요.</p>
 
-<h2 id="tasks-and-task-groups">Tasks and Task Groups</h2>
+<p>위 코드와 같이, rotationEffect와 GeometryReader를 사용하여 수직으로 넘어가는 탭뷰를 만들 수 있습니다.</p>
 
-<p>여러개의 네트워크 요청을 비동기적으로 수행하기 위해서 Task Group을 사용할 수 있습니다.<br />
-<code class="language-plaintext highlighter-rouge">task</code>는 비동기적으로 실행될 수 있는 작업의 한 단위인데 계층의 형태로 정렬됩니다. 한 Task group 안에 여러개의  task를 추가할 수 있고 각 task는 같은 parent task를 가지며, 각 task는 child task를 가질 수 있습니다.
-<!--이게 무슨 말이냐면..--></p>]]></content><author><name>Mirae</name></author><category term="TIL" /><summary type="html"><![CDATA[- iOS App Dev Tutorials - Managing structured concurrency - Documentation/The Swift Programming/Language/Concurrency 위 내용을 참고]]></summary></entry><entry><title type="html">Stanford Lectures</title><link href="http://localhost:4000/til/2023-02-20-StanfordLecture.html" rel="alternate" type="text/html" title="Stanford Lectures" /><published>2023-02-20T00:00:00+09:00</published><updated>2023-02-20T00:00:00+09:00</updated><id>http://localhost:4000/til/StanfordLecture</id><content type="html" xml:base="http://localhost:4000/til/2023-02-20-StanfordLecture.html"><![CDATA[<p><a href="https://www.youtube.com/watch?v=TZL5AmwuwlA&amp;list=PL3d_SFOiG7_8ofjyKzX6Nl1wZehbdiZC_">Stanford - Developing iOS 11 Apps with Swift</a></p>
+<ul>
+  <li>// 1 : rotationEffect를 사용하여 왼쪽으로 90도 이미지를 로테이션 시켜줍니다. 현재 탭뷰 안의 이미지는 아래와 같이 살짝 커졌지만 가운데 정렬된 상태로 나타납니다.</li>
+</ul>
+
+<center><img src="/assets/images/VerticalTabView_2.png" alt="VerticalTabView_2.png" width="300" /><br /></center>
+
+<ul>
+  <li>
+    <p>// 2: 이때 width / height는 누워있는 이미지와 같이 width가 더 큰 직사각형 형태로 존재합니다.</p>
+  </li>
+  <li>
+    <p>// 3: 여기서 TabView의 frame을 정의하는데, height와 width를 바꿔줍니다. 그러면 width가 heigt보다 작은 세로로 기다란 모양의 직사각형 frame이 되겠죠?</p>
+  </li>
+  <li>
+    <p>// 4 : anchor는 어느 꼭지점을 기준으로 로테이트 할 지 정할 때 사용하는데 .topLeading을 기준으로 90도 로테이트 했으므로 화면에는 이미지가 보여지지 않게 됩니다. 로테이트 하면서 화면 밖에 위치하게 되는데요.</p>
+  </li>
+  <li>
+    <p>// 5 : 그래서 offset에 x 값을 현재 width만큼 주어서 오른쪽으로 이동시킵니다.</p>
+  </li>
+</ul>
+
+<p>여기까지하면, 화면에 수직으로 이동하는 페이징 탭뷰가 맨 위에 있는 영상처럼 잘 나타나게 됩니다.<br />
+그런데 LazyVStack 안에 다른 뷰와 함께 탭뷰를 화면에 보이려고 하면 문제가 생기는데요.<br />
+LazyVStack은 모든 아이템을 먼저 그리는게 아니라 필요할 때 아이템을 렌더링 하기 떄문에 기존의. VStack과는 다른 레이아웃 룰을 가지고 있습니다. 그래서 높이가 10 정도 되는 뷰만 그려주게 됩니다.<br />
+일단 VStack으로 교체하면 이 문제는 해결할 수 있습니다.</p>]]></content><author><name>Mirae</name></author><category term="TIL" /><summary type="html"><![CDATA[]]></summary></entry><entry><title type="html">Persisting Data</title><link href="http://localhost:4000/til/2023-04-24-CoreData.html" rel="alternate" type="text/html" title="Persisting Data" /><published>2023-04-24T00:00:00+09:00</published><updated>2023-04-24T00:00:00+09:00</updated><id>http://localhost:4000/til/CoreData</id><content type="html" xml:base="http://localhost:4000/til/2023-04-24-CoreData.html"><![CDATA[<h1>💿</h1>
+<p>JSON 형태의 Open API를 이용해서 사용자 목록을 가져오고, 팔로우/언팔로우 정보를 추가해서 보여주는 개인 과제를 하고 있습니다.</p>
+<ul>
+  <li>API를 통해 가져오는 정보에는 팔로우에 대한 속성이 없음</li>
+  <li>때문에, 데이터를 받는 클라이언트/프로바이더 단에서 팔로우/언팔로우에 대한 bool 값을 가지고 있지 않음</li>
+  <li>프로바이더를 통해 메인 뷰에서 데이터를 뿌려주는데 팔로우/언팔로우에 대한 정보가 없기 때문에 네비게이션 링크를 통해 가야하는 디테일 뷰에 팔로우/언팔로우에 대한 State 정보를 줄 수 없는 것이 문제..</li>
+  <li>UserDefaults에 사용자의 id를 키로 설정하고, 값에는 팔로우/언팔로우 정보를 bool 타입으로 저장함</li>
+  <li>디코딩하는 이니셜라이저에서 UserDefaluts에 저장되어 있는 bool 값도 함께 가져옴</li>
+</ul>
+
+<h2 id="saveaction--">SaveAction { }</h2>
+
+<p>ㄲ</p>]]></content><author><name>Mirae</name></author><category term="TIL" /><summary type="html"><![CDATA[💿 JSON 형태의 Open API를 이용해서 사용자 목록을 가져오고, 팔로우/언팔로우 정보를 추가해서 보여주는 개인 과제를 하고 있습니다. API를 통해 가져오는 정보에는 팔로우에 대한 속성이 없음 때문에, 데이터를 받는 클라이언트/프로바이더 단에서 팔로우/언팔로우에 대한 bool 값을 가지고 있지 않음 프로바이더를 통해 메인 뷰에서 데이터를 뿌려주는데 팔로우/언팔로우에 대한 정보가 없기 때문에 네비게이션 링크를 통해 가야하는 디테일 뷰에 팔로우/언팔로우에 대한 State 정보를 줄 수 없는 것이 문제.. UserDefaults에 사용자의 id를 키로 설정하고, 값에는 팔로우/언팔로우 정보를 bool 타입으로 저장함 디코딩하는 이니셜라이저에서 UserDefaluts에 저장되어 있는 bool 값도 함께 가져옴]]></summary></entry><entry><title type="html">Stanford Lectures</title><link href="http://localhost:4000/til/2023-02-20-StanfordLecture.html" rel="alternate" type="text/html" title="Stanford Lectures" /><published>2023-02-20T00:00:00+09:00</published><updated>2023-02-20T00:00:00+09:00</updated><id>http://localhost:4000/til/StanfordLecture</id><content type="html" xml:base="http://localhost:4000/til/2023-02-20-StanfordLecture.html"><![CDATA[<p><a href="https://www.youtube.com/watch?v=TZL5AmwuwlA&amp;list=PL3d_SFOiG7_8ofjyKzX6Nl1wZehbdiZC_">Stanford - Developing iOS 11 Apps with Swift</a></p>
 <blockquote>
   <p>강의 내용 중 필요한 것 정리.</p>
 </blockquote>
