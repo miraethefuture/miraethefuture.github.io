@@ -12,3 +12,4 @@ layout: post
     - Combine 추가 
     - 데이터 로드하는 함수를 제네릭 함수로 변경
     - 데이터 로드 함수를 실행하는 init() 제거
+    - 데이터 로드 함수가 observable object 클래스 안이 아닌 바깥 쪽에 정의
