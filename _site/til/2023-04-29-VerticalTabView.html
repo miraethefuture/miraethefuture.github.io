@@ -26,6 +26,8 @@
         
 
         
+            <link rel="next" href="/til/2023-05-24-studyProject.html" />
+        
     </head>
     <body>
         <div class="book"><div class="book-summary">
@@ -188,6 +190,17 @@
                             
                         </li>
                     
+                        
+                        <li class="chapter" data-level="1.1" data-path="/til/2023-05-24-studyProject.html">
+                        
+                            <a href="/til/2023-05-24-studyProject.html">
+                                스터디 프로젝트 진행하며 정리
+                            </a>
+                            
+                                
+                            
+                        </li>
+                    
 
                     
                         <li class="divider"></li>
@@ -293,6 +306,36 @@
 LazyVStack은 모든 아이템을 먼저 그리는게 아니라 필요할 때 아이템을 렌더링 하기 떄문에 기존의. VStack과는 다른 레이아웃 룰을 가지고 있습니다. 그래서 높이가 10 정도 되는 뷰만 그려주게 됩니다.<br />
 일단 VStack으로 교체하면 이 문제는 해결할 수 있습니다.</p>
 
+<h4 id="uikit-사용한-horizontal-paged-tabview">UIKit 사용한 Horizontal paged tabView</h4>
+
+<p>SwiftUI 프로젝트에 UIKit 뷰와 뷰 컨트롤러 사용하기</p>
+
+<p>UIViewRepresentable / UIViewControllerRepresentable(프로토콜)을 채택하는 커스텀 타입을 생성 
+SwiftUI가 라이프 사이클과 업데이트를 관리하는 UIKit 타입을 생성하는 커스텀 타입</p>
+
+<p>UIViewControllerRepresentable은 정의해야하는 두가지 요구사항이 있음</p>
+
+<ol>
+  <li>UIPageViewController를 리턴하는 makeUIViewController(context:_)를 구현</li>
+</ol>
+
+<div class="language-swift highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">func</span> <span class="nf">makeUIViewController</span><span class="p">(</span><span class="nv">context</span><span class="p">:</span> <span class="kt">Context</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kt">UIPageViewController</span> <span class="p">{</span>
+    <span class="k">let</span> <span class="nv">pageViewController</span> <span class="o">=</span> <span class="kt">UIPageViewController</span><span class="p">(</span>
+        <span class="nv">transitionStyle</span><span class="p">:</span> <span class="o">.</span><span class="n">scroll</span><span class="p">,</span> <span class="c1">// .PageCurl 스타일도 있음</span>
+        <span class="nv">navigationOrientation</span><span class="p">:</span> <span class="o">.</span><span class="n">horizontal</span><span class="p">)</span> <span class="c1">// .vertical도 있음</span>
+    
+    <span class="k">return</span> <span class="n">pageViewController</span>
+        
+<span class="p">}</span>
+</code></pre></div></div>
+<ul>
+  <li>UIPageViewController의 트랜지션 스타일과 .horizontal / .vertical 방식 중 하나를 설정하여 리턴</li>
+</ul>
+
+<ol>
+  <li>updateUIViewController(<em>:context:) 메서드를 구현하여 setViewControllers(</em>:direction:animated:) 메서드를 호출</li>
+</ol>
+
 </section>
             </div><div class="search-results">
     <div class="has-results">
@@ -327,6 +370,10 @@ MathJax = {
                     
 
                     
+                        <a href="/til/2023-05-24-studyProject.html" class="navigation navigation-next navigation-unique" aria-label="Next page: 스터디 프로젝트 진행하며 정리">
+                            <i class="fa fa-angle-right"></i>
+                        </a>
+                    
                 </div>
             </div>
 
@@ -338,6 +385,15 @@ MathJax = {
         "title": "Introduction",
         "level": "1.1",
         "depth": 1,
+        
+        "next": {
+            "title": "스터디 프로젝트 진행하며 정리",
+            "level": "1.2",
+            "depth": 1,
+            "path": "_posts/2023-05-24-studyProject.md",
+            "ref": "_posts/2023-05-24-studyProject.md",
+            "articles": []
+        },
         
         "dir": "ltr"
     },    "config": {
@@ -419,7 +475,7 @@ MathJax = {
     },
     "gitbook": {
         "version": "3.2.3",
-        "time": "2023-04-29 20:06:31 +0900"
+        "time": "2023-05-24 23:32:27 +0900"
     },
     "basePath": "",
     "book": {

@@ -1,5 +1,15 @@
-<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="4.3.2">Jekyll</generator><link href="http://localhost:4000/feed.xml" rel="self" type="application/atom+xml" /><link href="http://localhost:4000/" rel="alternate" type="text/html" /><updated>2023-04-29T20:06:31+09:00</updated><id>http://localhost:4000/feed.xml</id><title type="html">Mirae Jung  iOS Developer</title><subtitle>안녕하세요. iOS Developer 정미래입니다.
-</subtitle><author><name>Mirae</name></author><entry><title type="html">Vertical TabView in SwiftUI</title><link href="http://localhost:4000/til/2023-04-29-VerticalTabView.html" rel="alternate" type="text/html" title="Vertical TabView in SwiftUI" /><published>2023-04-29T00:00:00+09:00</published><updated>2023-04-29T00:00:00+09:00</updated><id>http://localhost:4000/til/VerticalTabView</id><content type="html" xml:base="http://localhost:4000/til/2023-04-29-VerticalTabView.html"><![CDATA[<video src="https://user-images.githubusercontent.com/85061148/235292829-c16fccb8-e5ae-4243-86e3-356f57443024.mov" controls="controls" style="max-width: 300px">
+<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="4.3.2">Jekyll</generator><link href="http://localhost:4000/feed.xml" rel="self" type="application/atom+xml" /><link href="http://localhost:4000/" rel="alternate" type="text/html" /><updated>2023-05-24T23:32:27+09:00</updated><id>http://localhost:4000/feed.xml</id><title type="html">Mirae Jung  iOS Developer</title><subtitle>안녕하세요. iOS Developer 정미래입니다.
+</subtitle><author><name>Mirae</name></author><entry><title type="html">스터디 프로젝트 진행하며 정리</title><link href="http://localhost:4000/til/2023-05-24-studyProject.html" rel="alternate" type="text/html" title="스터디 프로젝트 진행하며 정리" /><published>2023-05-24T00:00:00+09:00</published><updated>2023-05-24T00:00:00+09:00</updated><id>http://localhost:4000/til/studyProject</id><content type="html" xml:base="http://localhost:4000/til/2023-05-24-studyProject.html"><![CDATA[<ul>
+  <li>@State 프로퍼티는 항상 private으로 사용 (해당하는 뷰와 서브 뷰의 특정한 정보를 담기 때문)</li>
+  <li>observable object class 수정
+    <ul>
+      <li>final class로 변경</li>
+      <li>Combine 추가</li>
+      <li>데이터 로드하는 함수를 제네릭 함수로 변경</li>
+      <li>데이터 로드 함수를 실행하는 init() 제거</li>
+    </ul>
+  </li>
+</ul>]]></content><author><name>Mirae</name></author><category term="TIL" /><summary type="html"><![CDATA[@State 프로퍼티는 항상 private으로 사용 (해당하는 뷰와 서브 뷰의 특정한 정보를 담기 때문) observable object class 수정 final class로 변경 Combine 추가 데이터 로드하는 함수를 제네릭 함수로 변경 데이터 로드 함수를 실행하는 init() 제거]]></summary></entry><entry><title type="html">Vertical TabView in SwiftUI</title><link href="http://localhost:4000/til/2023-04-29-VerticalTabView.html" rel="alternate" type="text/html" title="Vertical TabView in SwiftUI" /><published>2023-04-29T00:00:00+09:00</published><updated>2023-04-29T00:00:00+09:00</updated><id>http://localhost:4000/til/VerticalTabView</id><content type="html" xml:base="http://localhost:4000/til/2023-04-29-VerticalTabView.html"><![CDATA[<video src="https://user-images.githubusercontent.com/85061148/235292829-c16fccb8-e5ae-4243-86e3-356f57443024.mov" controls="controls" style="max-width: 300px">
 </video>
 
 <div class="language-swift highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">import</span> <span class="kt">SwiftUI</span>
@@ -65,7 +75,37 @@
 <p>여기까지하면, 화면에 수직으로 이동하는 페이징 탭뷰가 맨 위에 있는 영상처럼 잘 나타나게 됩니다.<br />
 그런데 LazyVStack 안에 다른 뷰와 함께 탭뷰를 화면에 보이려고 하면 문제가 생기는데요.<br />
 LazyVStack은 모든 아이템을 먼저 그리는게 아니라 필요할 때 아이템을 렌더링 하기 떄문에 기존의. VStack과는 다른 레이아웃 룰을 가지고 있습니다. 그래서 높이가 10 정도 되는 뷰만 그려주게 됩니다.<br />
-일단 VStack으로 교체하면 이 문제는 해결할 수 있습니다.</p>]]></content><author><name>Mirae</name></author><category term="TIL" /><summary type="html"><![CDATA[]]></summary></entry><entry><title type="html">Persisting Data</title><link href="http://localhost:4000/til/2023-04-24-CoreData.html" rel="alternate" type="text/html" title="Persisting Data" /><published>2023-04-24T00:00:00+09:00</published><updated>2023-04-24T00:00:00+09:00</updated><id>http://localhost:4000/til/CoreData</id><content type="html" xml:base="http://localhost:4000/til/2023-04-24-CoreData.html"><![CDATA[<h1>💿</h1>
+일단 VStack으로 교체하면 이 문제는 해결할 수 있습니다.</p>
+
+<h4 id="uikit-사용한-horizontal-paged-tabview">UIKit 사용한 Horizontal paged tabView</h4>
+
+<p>SwiftUI 프로젝트에 UIKit 뷰와 뷰 컨트롤러 사용하기</p>
+
+<p>UIViewRepresentable / UIViewControllerRepresentable(프로토콜)을 채택하는 커스텀 타입을 생성 
+SwiftUI가 라이프 사이클과 업데이트를 관리하는 UIKit 타입을 생성하는 커스텀 타입</p>
+
+<p>UIViewControllerRepresentable은 정의해야하는 두가지 요구사항이 있음</p>
+
+<ol>
+  <li>UIPageViewController를 리턴하는 makeUIViewController(context:_)를 구현</li>
+</ol>
+
+<div class="language-swift highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">func</span> <span class="nf">makeUIViewController</span><span class="p">(</span><span class="nv">context</span><span class="p">:</span> <span class="kt">Context</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kt">UIPageViewController</span> <span class="p">{</span>
+    <span class="k">let</span> <span class="nv">pageViewController</span> <span class="o">=</span> <span class="kt">UIPageViewController</span><span class="p">(</span>
+        <span class="nv">transitionStyle</span><span class="p">:</span> <span class="o">.</span><span class="n">scroll</span><span class="p">,</span> <span class="c1">// .PageCurl 스타일도 있음</span>
+        <span class="nv">navigationOrientation</span><span class="p">:</span> <span class="o">.</span><span class="n">horizontal</span><span class="p">)</span> <span class="c1">// .vertical도 있음</span>
+    
+    <span class="k">return</span> <span class="n">pageViewController</span>
+        
+<span class="p">}</span>
+</code></pre></div></div>
+<ul>
+  <li>UIPageViewController의 트랜지션 스타일과 .horizontal / .vertical 방식 중 하나를 설정하여 리턴</li>
+</ul>
+
+<ol>
+  <li>updateUIViewController(<em>:context:) 메서드를 구현하여 setViewControllers(</em>:direction:animated:) 메서드를 호출</li>
+</ol>]]></content><author><name>Mirae</name></author><category term="TIL" /><summary type="html"><![CDATA[]]></summary></entry><entry><title type="html">Persisting Data</title><link href="http://localhost:4000/til/2023-04-24-CoreData.html" rel="alternate" type="text/html" title="Persisting Data" /><published>2023-04-24T00:00:00+09:00</published><updated>2023-04-24T00:00:00+09:00</updated><id>http://localhost:4000/til/CoreData</id><content type="html" xml:base="http://localhost:4000/til/2023-04-24-CoreData.html"><![CDATA[<h1>💿</h1>
 <p>JSON 형태의 Open API를 이용해서 사용자 목록을 가져오고, 팔로우/언팔로우 정보를 추가해서 보여주는 개인 과제를 하고 있습니다.</p>
 <ul>
   <li>API를 통해 가져오는 정보에는 팔로우에 대한 속성이 없음</li>

@@ -1,7 +1,7 @@
 <!DOCTYPE HTML>
 <html lang="en" >
     <head><meta charset="UTF-8">
-<meta content="text/html; charset=utf-8" http-equiv="Content-Type"><title>Tips, Warnings, and Dangers · Mirae Jung  iOS Developer</title><meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<meta content="text/html; charset=utf-8" http-equiv="Content-Type"><title>스터디 프로젝트 진행하며 정리 · Mirae Jung  iOS Developer</title><meta http-equiv="X-UA-Compatible" content="IE=edge" />
 <meta name="description" content="안녕하세요. iOS Developer 정미래입니다.
 "><meta name="generator" content="Jekyll (using style of GitBook 3.2.3)"><meta name="author" content="Mirae"><link rel="stylesheet" href="/assets/gitbook/style.css">
 <link rel="stylesheet" href="/assets/gitbook/gitbook-plugin-fontsettings/website.css">
@@ -22,11 +22,9 @@
 
 
 
-            <link rel="prev" href="/jekyll/2022-06-26-wide_tables.html" />
+            <link rel="prev" href="/til/2023-04-29-VerticalTabView.html" />
         
 
-        
-            <link rel="next" href="/til/2022-08-14-myBoxes.html" />
         
     </head>
     <body>
@@ -122,15 +120,12 @@
                         </li>
                     
                         
-                        <li class="chapter active" data-level="1.2" data-path="/jekyll/2022-06-30-tips_warnings_dangers.html">
+                        <li class="chapter" data-level="1.1" data-path="/jekyll/2022-06-30-tips_warnings_dangers.html">
                         
                             <a href="/jekyll/2022-06-30-tips_warnings_dangers.html">
                                 Tips, Warnings, and Dangers
                             </a>
                             
-                                
-                                    <ul><li><a href="#tips">Tips</a></li><li><a href="#warnings">Warnings</a></li><li><a href="#dangers">Dangers</a></li></ul>
-
                                 
                             
                         </li>
@@ -191,12 +186,15 @@
                         </li>
                     
                         
-                        <li class="chapter" data-level="1.1" data-path="/til/2023-05-24-studyProject.html">
+                        <li class="chapter active" data-level="1.2" data-path="/til/2023-05-24-studyProject.html">
                         
                             <a href="/til/2023-05-24-studyProject.html">
                                 스터디 프로젝트 진행하며 정리
                             </a>
                             
+                                
+                                    
+
                                 
                             
                         </li>
@@ -222,7 +220,7 @@
                     <h1>
                         <i class="fa fa-circle-o-notch fa-spin"></i>
                         
-                            <a href="." >Tips, Warnings, and Dangers</a>
+                            <a href="." >스터디 프로젝트 진행하며 정리</a>
                         
                     </h1>
                 </div>
@@ -235,66 +233,20 @@
             <div class="search-noresults">
                 <section class="normal markdown-section">
                     
-                        <h1 id="/jekyll/tips_warnings_dangers">Tips, Warnings, and Dangers</h1>
+                        <h1 id="/til/studyProject">스터디 프로젝트 진행하며 정리</h1>
                     
 
-                    <p>The jekyll-theme supports tips, warnings, and dangers blocks and the style is referred
-from <a href="https://discordjs.guide/popular-topics/canvas.html#setting-up-napi-rs-canvas">the discord.js website</a>.</p>
-
-<p>You could have the following <a href="https://kramdown.gettalong.org/quickref.html#block-attributes">markdown attributes (supported by kramdown)</a>:</p>
-
-<h3 id="tips">Tips</h3>
-
-<p>Using a <code class="language-plaintext highlighter-rouge">{: .block-tip}</code> attribute:</p>
-
-<div class="language-markdown highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="gt">&gt; ##### TIP</span>
-<span class="gt">&gt;</span>
-<span class="gt">&gt; This guide is last tested with @napi-rs/canvas^0.1.20, so make sure you have</span>
-<span class="gt">&gt; this or a similar version after installation.</span>
-{: .block-tip }
-</code></pre></div></div>
-
-<blockquote class="block-tip">
-  <h5 id="tip">TIP</h5>
-
-  <p>This guide is last tested with @napi-rs/canvas^0.1.20, so make sure you have
-this or a similar version after installation.</p>
-</blockquote>
-
-<h3 id="warnings">Warnings</h3>
-
-<p>Using a <code class="language-plaintext highlighter-rouge">{: .block-warning}</code> attribute:</p>
-
-<div class="language-markdown highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="gt">&gt; ##### WARNING</span>
-<span class="gt">&gt;</span>
-<span class="gt">&gt; Be sure that you're familiar with things like async/await and object destructuring</span>
-<span class="gt">&gt; before continuing, as we'll be making use of features like these.</span>
-{: .block-warning }
-</code></pre></div></div>
-
-<blockquote class="block-warning">
-  <h5 id="warning">WARNING</h5>
-
-  <p>Be sure that you’re familiar with things like async/await and object destructuring
-before continuing, as we’ll be making use of features like these.</p>
-</blockquote>
-
-<h3 id="dangers">Dangers</h3>
-
-<p>Using a <code class="language-plaintext highlighter-rouge">{: .block-danger}</code> attribute:</p>
-
-<div class="language-markdown highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="gt">&gt; ##### DANGER</span>
-<span class="gt">&gt;</span>
-<span class="gt">&gt; You cannot delete an ephemeral message.</span>
-{: .block-danger }
-</code></pre></div></div>
-
-<blockquote class="block-danger">
-  <h5 id="danger">DANGER</h5>
-
-  <p>You cannot delete an ephemeral message.</p>
-</blockquote>
-
+                    <ul>
+  <li>@State 프로퍼티는 항상 private으로 사용 (해당하는 뷰와 서브 뷰의 특정한 정보를 담기 때문)</li>
+  <li>observable object class 수정
+    <ul>
+      <li>final class로 변경</li>
+      <li>Combine 추가</li>
+      <li>데이터 로드하는 함수를 제네릭 함수로 변경</li>
+      <li>데이터 로드 함수를 실행하는 init() 제거</li>
+    </ul>
+  </li>
+</ul>
 </section>
             </div><div class="search-results">
     <div class="has-results">
@@ -323,15 +275,11 @@ MathJax = {
   src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js">
 </script>
 
-                        <a href="/jekyll/2022-06-26-wide_tables.html" class="navigation navigation-prev navigation-unique" aria-label="Previous page: Wide tables">
+                        <a href="/til/2023-04-29-VerticalTabView.html" class="navigation navigation-prev navigation-unique" aria-label="Previous page: Vertical TabView in SwiftUI">
                             <i class="fa fa-angle-left"></i>
                         </a>
                     
 
-                    
-                        <a href="/til/2022-08-14-myBoxes.html" class="navigation navigation-next navigation-unique" aria-label="Next page: My Box">
-                            <i class="fa fa-angle-right"></i>
-                        </a>
                     
                 </div>
             </div>
@@ -344,15 +292,6 @@ MathJax = {
         "title": "Introduction",
         "level": "1.1",
         "depth": 1,
-        
-        "next": {
-            "title": "My Box",
-            "level": "1.2",
-            "depth": 1,
-            "path": "_posts/2022-08-14-myBoxes.md",
-            "ref": "_posts/2022-08-14-myBoxes.md",
-            "articles": []
-        },
         
         "dir": "ltr"
     },    "config": {
@@ -428,8 +367,8 @@ MathJax = {
         "gitbook": "*"
     },
     "file": {
-        "path": "_posts/2022-06-30-tips_warnings_dangers.md",
-        "mtime": "2022-06-30 00:00:00 +0900",
+        "path": "_posts/2023-05-24-studyProject.md",
+        "mtime": "2023-05-24 00:00:00 +0900",
         "type": "markdown"
     },
     "gitbook": {

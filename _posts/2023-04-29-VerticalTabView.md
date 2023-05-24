@@ -70,4 +70,29 @@ LazyVStack은 모든 아이템을 먼저 그리는게 아니라 필요할 때 �
 
 
 
+#### UIKit 사용한 Horizontal paged tabView
+
+SwiftUI 프로젝트에 UIKit 뷰와 뷰 컨트롤러 사용하기 
+
+UIViewRepresentable / UIViewControllerRepresentable(프로토콜)을 채택하는 커스텀 타입을 생성 
+SwiftUI가 라이프 사이클과 업데이트를 관리하는 UIKit 타입을 생성하는 커스텀 타입
+
+UIViewControllerRepresentable은 정의해야하는 두가지 요구사항이 있음 
+
+1. UIPageViewController를 리턴하는 makeUIViewController(context:_)를 구현 
+
+```swift
+func makeUIViewController(context: Context) -> UIPageViewController {
+    let pageViewController = UIPageViewController(
+        transitionStyle: .scroll, // .PageCurl 스타일도 있음
+        navigationOrientation: .horizontal) // .vertical도 있음
+    
+    return pageViewController
+        
+}
+```  
+- UIPageViewController의 트랜지션 스타일과 .horizontal / .vertical 방식 중 하나를 설정하여 리턴
+
+2. updateUIViewController(_:context:) 메서드를 구현하여 setViewControllers(_:direction:animated:) 메서드를 호출
+
 
