@@ -1,7 +1,7 @@
 <!DOCTYPE HTML>
 <html lang="en" >
     <head><meta charset="UTF-8">
-<meta content="text/html; charset=utf-8" http-equiv="Content-Type"><title>스터디 프로젝트 진행하며 정리 · Mirae Jung  iOS Developer</title><meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<meta content="text/html; charset=utf-8" http-equiv="Content-Type"><title>TIL · Mirae Jung  iOS Developer</title><meta http-equiv="X-UA-Compatible" content="IE=edge" />
 <meta name="description" content="안녕하세요. iOS Developer 정미래입니다.
 "><meta name="generator" content="Jekyll (using style of GitBook 3.2.3)"><meta name="author" content="Mirae"><link rel="stylesheet" href="/assets/gitbook/style.css">
 <link rel="stylesheet" href="/assets/gitbook/gitbook-plugin-fontsettings/website.css">
@@ -189,11 +189,11 @@
                         <li class="chapter active" data-level="1.2" data-path="/til/2023-05-24-studyProject.html">
                         
                             <a href="/til/2023-05-24-studyProject.html">
-                                스터디 프로젝트 진행하며 정리
+                                TIL
                             </a>
                             
                                 
-                                    
+                                    <ul><li><a href="#스터디-과제-진행하며-정리-67">스터디 과제 진행하며 정리 (~6/7)</a></li><li><a href="#swiftui">SwiftUI</a></li></ul>
 
                                 
                             
@@ -220,7 +220,7 @@
                     <h1>
                         <i class="fa fa-circle-o-notch fa-spin"></i>
                         
-                            <a href="." >스터디 프로젝트 진행하며 정리</a>
+                            <a href="." >TIL</a>
                         
                     </h1>
                 </div>
@@ -233,14 +233,15 @@
             <div class="search-noresults">
                 <section class="normal markdown-section">
                     
-                        <h1 id="/til/studyProject">스터디 프로젝트 진행하며 정리</h1>
+                        <h1 id="/til/studyProject">TIL</h1>
                     
 
-                    <ul>
+                    <h2 id="스터디-과제-진행하며-정리-67">스터디 과제 진행하며 정리 (~6/7)</h2>
+<ul>
   <li>@State 프로퍼티는 항상 private으로 사용 (해당하는 뷰와 서브 뷰의 특정한 정보를 담기 때문)</li>
   <li>observable object class 수정
     <ul>
-      <li>published 값이 옵셔널로 설정되어 있었음</li>
+      <li>published 값이 옵셔널로 설정되어 있음 -&gt; 뷰 부분에서 처리해주어야 하는 불편함을 해결하기 위해 수정</li>
       <li>final class로 변경</li>
       <li>Combine 추가</li>
       <li>데이터 로드하는 함수를 제네릭 함수로 변경</li>
@@ -255,6 +256,34 @@
     </ul>
   </li>
 </ul>
+
+<h2 id="swiftui">SwiftUI</h2>
+
+<p><b>Source of truth 생성하기</b></p>
+<ul>
+  <li>@State와 @Binding은 value type(ex. structure, enum)을 뷰를 업데이트하는 source of truth로 만들어 줌</li>
+  <li>value type이 아니고 reference type인 클래스는 @ObservedObject, @StateObject, @EnvironmentObject 프로퍼티 래퍼를 사용</li>
+  <li>@ObservedObject, @StateObject, @EnvironmentObject를 사용하기 위해서 클래스를 observable하게 만들어 주어야 함
+    <ul>
+      <li>@StateObject는 observable 객체를 생성</li>
+      <li>@ObservedObject는 parent view로부터 객체를 받는다는 걸 나타냄 (@StateObject로 생성된 객체를 받음)</li>
+      <li>@EnvironmentObject는 복잡한 뷰에서 사용됨. 이니셜라이저를 통해 객체를 통과시키지 않고 .environmentObject() 모더파이어를 통해 해당 뷰가 객체를 사용할 수 있도록 함 (부모-자식-자식의 자식뷰에서 자식뷰가 .environmentObject() 모더파이어를 통해 객체를 사용할 수 있게 되면 자식의 자식뷰도 @EnvironmentObject 속성을 통해 사용할 수 있게 됨)</li>
+    </ul>
+  </li>
+  <li>클래스가 ObservableObject 프로토콜을 따르도록 만들면 됨</li>
+  <li>클래스 안에는 값이 변경되었을 때 UI가 업데이트 되어야 하는 속성들이 정의됨</li>
+  <li>각 속성은 @Published atrribute를 사용해 정의되어 뷰에서 사용할 수 있게됨</li>
+</ul>
+
+<p><b>Scene architecture</b></p>
+<ul>
+  <li>하나의 앱을 만들기 위해서, App 프로토콜을 따르는 스트럭처를 생성함</li>
+  <li>이때 앞에 @main 어트리뷰트를 사용하여 이 스트럭처가 앱의 유일한 entry point라는 것을 시스템에 알려줌</li>
+  <li>앱 스트럭처의 바디 부분에 Scene 프로토콜을 따르는 스트럭처를 생성 (여러개 생성 가능)</li>
+  <li>Scene은 앱이 보여줄 뷰 게층을 담을 컨테이너</li>
+  <li>보통 iOS / WatchOS는 하나의 Scene을 가지고 macOS / iPadOS 는 여러개의 Scene을 가짐</li>
+</ul>
+
 </section>
             </div><div class="search-results">
     <div class="has-results">
@@ -381,7 +410,7 @@ MathJax = {
     },
     "gitbook": {
         "version": "3.2.3",
-        "time": "2023-05-25 00:10:26 +0900"
+        "time": "2023-05-29 20:07:42 +0900"
     },
     "basePath": "",
     "book": {
