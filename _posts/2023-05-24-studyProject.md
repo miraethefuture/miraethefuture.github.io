@@ -37,10 +37,23 @@ layout: post
   
   
 <b>Scene architecture</b>
+- Scene의 구조
 - 하나의 앱을 만들기 위해서, App 프로토콜을 따르는 스트럭처를 생성함
 - 이때 앞에 @main 어트리뷰트를 사용하여 이 스트럭처가 앱의 유일한 entry point라는 것을 시스템에 알려줌
 - 앱 스트럭처의 바디 부분에 Scene 프로토콜을 따르는 스트럭처를 생성 (여러개 생성 가능)
 - Scene은 앱이 보여줄 뷰 게층을 담을 컨테이너
 - 보통 iOS / WatchOS는 하나의 Scene을 가지고 macOS / iPadOS 는 여러개의 Scene을 가짐 
+
+<b>Scene Phases and transitions</b>
+- Scene의 단계와 변형 과정
+- 앱이 실행되는 동안 Scene은 세 단계로 변화될 수 있음
+- active: scene이 foreground에 있고 사용자가 상호작용할 수 있음 
+- inactive: scene이 보이지만, 시스템이 scene과 상호작용할 수 없음. 예를 들면, 아이패드에서 멀티태스킹 기능을 사용할 때 사용하지 않는 쪽은 보이지만 inactive 상태임. (scene은 foreground에 있음)
+- background: 앱이 작동하고 있지만 사용자는 앱을 볼 수 없음. 앱이 꺼지기 직전에 Scene이 이 단계가 됨.
+- scenePhase environment value를 사용해서 현재 scene의 상태를 알 수 있음.
+- scene이 특정 상태가 됐을 때, 어떤 동작을 수행하도록 할 수 있음. (ex. 앱이 inactive 상태가 될 때 데이터를 저장하도록 함)
+
+
+
 
 
