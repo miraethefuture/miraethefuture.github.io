@@ -296,6 +296,34 @@
   <li>scene이 특정 상태가 됐을 때, 어떤 동작을 수행하도록 할 수 있음. (ex. 앱이 inactive 상태가 될 때 데이터를 저장하도록 함)</li>
 </ul>
 
+<p><b>SwiftUI 기본 Structure</b></p>
+<ul>
+  <li>var body: some View { } 는 Scene, View, App 프로토콜을 다르는 structure가 꼭 구햔헤야 하는 필수 computed property</li>
+  <li>@main 으로 표시하여 App의 entry point를 정의할 수 있음. 앱에는 단 하나의 entry point만이 존재할 수 있음</li>
+  <li>아래 예시에서 WindowGroup은 첫번째 scene, Settings는 두번째 scene</li>
+  <li>Settings scene은 거의 모든 mac앱에서 볼 수 있는 Settings 메뉴를 생성</li>
+  <li>Settings scene은 macOS 에서만 사용 가능</li>
+</ul>
+
+<div class="language-swift highlighter-rouge"><div class="highlight"><pre class="highlight"><code>    <span class="cp">#if os(iOS)</span>
+    
+    <span class="c1">// iOS로 컴파일 될 코드</span>
+    
+    <span class="cp">#elseif os(macOS)</span>
+    <span class="kt">WindowGroup</span> <span class="p">{</span>
+        <span class="kt">AlternativeContentView</span><span class="p">()</span>
+    <span class="p">}</span>
+    
+    <span class="kt">Settings</span> <span class="p">{</span>
+        <span class="kt">SettingsView</span><span class="p">()</span>
+    <span class="p">}</span>
+    <span class="cp">#endif</span>
+</code></pre></div></div>
+
+<ul>
+  <li>#if os(iOS) 와 #elseif os(macOS), #endif는 platform conditional compilation block으로 Swift 컴파일러에게 특정 타겟 플랫폼에서만 조건문 안쪽의 코드를 컴파일 하도록 함</li>
+</ul>
+
 </section>
             </div><div class="search-results">
     <div class="has-results">
@@ -422,7 +450,7 @@ MathJax = {
     },
     "gitbook": {
         "version": "3.2.3",
-        "time": "2023-05-30 21:59:56 +0900"
+        "time": "2023-06-01 22:43:10 +0900"
     },
     "basePath": "",
     "book": {

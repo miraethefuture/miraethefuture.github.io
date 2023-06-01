@@ -56,6 +56,28 @@ layout: post
 <b>SwiftUI 기본 Structure</b>
 - var body: some View { } 는 Scene, View, App 프로토콜을 다르는 structure가 꼭 구햔헤야 하는 필수 computed property
 - @main 으로 표시하여 App의 entry point를 정의할 수 있음. 앱에는 단 하나의 entry point만이 존재할 수 있음
+- 아래 예시에서 WindowGroup은 첫번째 scene, Settings는 두번째 scene 
+- Settings scene은 거의 모든 mac앱에서 볼 수 있는 Settings 메뉴를 생성
+- Settings scene은 macOS 에서만 사용 가능  
+
+```swift
+    #if os(iOS)
+    
+    // iOS로 컴파일 될 코드
+    
+    #elseif os(macOS)
+    WindowGroup {
+        AlternativeContentView()
+    }
+    
+    Settings {
+        SettingsView()
+    }
+    #endif
+```
+  
+- #if os(iOS) 와 #elseif os(macOS), #endif는 platform conditional compilation block으로 Swift 컴파일러에게 특정 타겟 플랫폼에서만 조건문 안쪽의 코드를 컴파일 하도록 함
+
 
 
 
