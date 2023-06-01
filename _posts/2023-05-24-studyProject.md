@@ -53,6 +53,9 @@ layout: post
 - scenePhase environment value를 사용해서 현재 scene의 상태를 알 수 있음.
 - scene이 특정 상태가 됐을 때, 어떤 동작을 수행하도록 할 수 있음. (ex. 앱이 inactive 상태가 될 때 데이터를 저장하도록 함)
 
+<b>SwiftUI 기본 Structure</b>
+- var body: some View { } 는 Scene, View, App 프로토콜을 다르는 structure가 꼭 구햔헤야 하는 필수 computed property
+- @main 으로 표시하여 App의 entry point를 정의할 수 있음. 앱에는 단 하나의 entry point만이 존재할 수 있음
 
 
 
