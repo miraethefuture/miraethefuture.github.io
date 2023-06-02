@@ -51,7 +51,15 @@ layout: post
 - inactive: scene이 보이지만, 시스템이 scene과 상호작용할 수 없음. 예를 들면, 아이패드에서 멀티태스킹 기능을 사용할 때 사용하지 않는 쪽은 보이지만 inactive 상태임. (scene은 foreground에 있음)
 - background: 앱이 작동하고 있지만 사용자는 앱을 볼 수 없음. 앱이 꺼지기 직전에 Scene이 이 단계가 됨.
 - scenePhase environment value를 사용해서 현재 scene의 상태를 알 수 있음.
-- scene이 특정 상태가 됐을 때, 어떤 동작을 수행하도록 할 수 있음. (ex. 앱이 inactive 상태가 될 때 데이터를 저장하도록 함)
+- scene이 특정 상태가 됐을 때, 어떤 동작을 수행하도록 할 수 있음. (ex. 앱이 inactive 상태가 될 때 데이터를 저장하도록 함)  
+
+<b>Events and State</b>
+- 프로그램의 상태가 변할 때 뷰도 변하도록 하는 imperative 패턴과는 다르게, SwiftUI는 declarative 프로그래밍 패턴을 따름 
+- SwiftUI의 뷰 바디에, 모든 상태에 대해 UI가 어떻게 나타날지 묘사함
+- 프로그램이 실행되는 동안, 상태가 변함에 따라 변화되어야 하는 UI를 업데이트 함으로써 상태(state)와 UI가 서로 동기화되도록 함
+- 사용자와의 상호작용이나, 알림 같은 event는 앱이 응답해야하는 상황을 만드는데, 이때 클로저가 이벤트의 응답으로써 실행됨. 이것이 Source of truth를 변경시킴
+- Source of truth에 일어난 변화를 감지하고, 이것을 뷰에 업데이트 하고 UI를 렌더링함
+
 
 <b>SwiftUI 기본 Structure</b>
 - var body: some View { } 는 Scene, View, App 프로토콜을 다르는 structure가 꼭 구햔헤야 하는 필수 computed property
@@ -77,6 +85,17 @@ layout: post
 ```
   
 - #if os(iOS) 와 #elseif os(macOS), #endif는 platform conditional compilation block으로 Swift 컴파일러에게 특정 타겟 플랫폼에서만 조건문 안쪽의 코드를 컴파일 하도록 함
+- 커스텀 뷰처럼 커스텀 Scene도 만들 수 있음
+
+```swift
+struct CustomScene: Scene {
+    var body: some Scene {
+        WindowGroup {
+            // Scene 내용
+        }
+    }   
+}
+```
 
 
 
