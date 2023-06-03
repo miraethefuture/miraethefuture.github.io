@@ -16,11 +16,26 @@ layout: post
     - 데이터 로드하는 함수를 제네릭 함수로 변경
     - 데이터 로드 함수를 실행하는 init() 제거
     - 데이터 로드 함수가 observable object 클래스 안이 아닌 바깥 쪽에 정의  
+
+```swift
+func testSearching() throws {
+    
+    let searchText = "주차"
+
+    let result = ModelData().roomList.rooms.filter { $0.hashTags.contains(searchText) }
+
+    XCTAssertEqual(result.count, 40)
+    
+}
+```
+- 간단한 테스트 코드 작성하여 search function test
+- 위 코드에서 searchText의 값과 XCTAssertEqual()의 값만 변경하여 여러가지 검색어 상황에 따른 데이터 결과를 확인할 수 있었음
     
     
-- 오류 해결 내용 
+- 문제 해결 내용 
     - ```swift 
             let file = Bundle.main.url(forResource: filename, withExtension: "txt")``` 에서 withExtension을 nil로 주면 이름이 일치하는 첫번째 파일을 가져온다고 하여 nil로 주었으나 파일을 찾지 못한다는 에러가 발생하여 파일의 익스텐션인 "txt"로 수정하여 해결
+    - 검색 기능을 추가하면서 search text를 해시 태그로 가지고 있는 방 데이터를 필터링하여 목록을 생성. 이 목록을 @State 변수에 할당해야 하는데, 현재 버튼으로 필터링하기 위해 computed property를 사용하고 있음. 
 
 ## SwiftUI 
 
