@@ -1,5 +1,5 @@
-<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="4.3.2">Jekyll</generator><link href="http://localhost:4000/feed.xml" rel="self" type="application/atom+xml" /><link href="http://localhost:4000/" rel="alternate" type="text/html" /><updated>2023-06-04T23:21:10+09:00</updated><id>http://localhost:4000/feed.xml</id><title type="html">Mirae Jung  iOS Developer</title><subtitle>안녕하세요. iOS Developer 정미래입니다.
-</subtitle><author><name>Mirae</name></author><entry><title type="html">TIL</title><link href="http://localhost:4000/til/2023-05-24-studyProject.html" rel="alternate" type="text/html" title="TIL" /><published>2023-05-24T00:00:00+09:00</published><updated>2023-05-24T00:00:00+09:00</updated><id>http://localhost:4000/til/studyProject</id><content type="html" xml:base="http://localhost:4000/til/2023-05-24-studyProject.html"><![CDATA[<h2 id="스터디-과제-진행하며-정리-67">스터디 과제 진행하며 정리 (~6/7)</h2>
+<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="4.3.2">Jekyll</generator><link href="http://localhost:4000/feed.xml" rel="self" type="application/atom+xml" /><link href="http://localhost:4000/" rel="alternate" type="text/html" /><updated>2023-06-04T23:57:53+09:00</updated><id>http://localhost:4000/feed.xml</id><title type="html">Mirae Jung  iOS Developer</title><subtitle>안녕하세요. iOS Developer 정미래입니다.
+</subtitle><author><name>Mirae</name></author><entry><title type="html">TIL</title><link href="http://localhost:4000/til/2023-05-24-TIL.html" rel="alternate" type="text/html" title="TIL" /><published>2023-05-24T00:00:00+09:00</published><updated>2023-05-24T00:00:00+09:00</updated><id>http://localhost:4000/til/TIL</id><content type="html" xml:base="http://localhost:4000/til/2023-05-24-TIL.html"><![CDATA[<h2 id="스터디-과제-진행하며-정리-67">스터디 과제 진행하며 정리 (~6/7)</h2>
 <ul>
   <li>@State 프로퍼티는 항상 private으로 사용 (해당하는 뷰와 서브 뷰의 특정한 정보를 담기 때문)</li>
   <li>observable object class 수정
@@ -127,7 +127,41 @@
         <span class="p">}</span>
     <span class="p">}</span>   
 <span class="p">}</span>
-</code></pre></div></div>]]></content><author><name>Mirae</name></author><category term="TIL" /><summary type="html"><![CDATA[스터디 과제 진행하며 정리 (~6/7) @State 프로퍼티는 항상 private으로 사용 (해당하는 뷰와 서브 뷰의 특정한 정보를 담기 때문) observable object class 수정 published 값이 옵셔널로 설정되어 있음 -&gt; 뷰 부분에서 처리해주어야 하는 불편함을 해결하기 위해 수정 final class로 변경 Combine 추가 데이터 로드하는 함수를 제네릭 함수로 변경 데이터 로드 함수를 실행하는 init() 제거 데이터 로드 함수가 observable object 클래스 안이 아닌 바깥 쪽에 정의]]></summary></entry><entry><title type="html">Vertical TabView in SwiftUI</title><link href="http://localhost:4000/til/2023-04-29-VerticalTabView.html" rel="alternate" type="text/html" title="Vertical TabView in SwiftUI" /><published>2023-04-29T00:00:00+09:00</published><updated>2023-04-29T00:00:00+09:00</updated><id>http://localhost:4000/til/VerticalTabView</id><content type="html" xml:base="http://localhost:4000/til/2023-04-29-VerticalTabView.html"><![CDATA[<video src="https://user-images.githubusercontent.com/85061148/235292829-c16fccb8-e5ae-4243-86e3-356f57443024.mov" controls="controls" style="max-width: 300px">
+</code></pre></div></div>]]></content><author><name>Mirae</name></author><category term="TIL" /><summary type="html"><![CDATA[스터디 과제 진행하며 정리 (~6/7) @State 프로퍼티는 항상 private으로 사용 (해당하는 뷰와 서브 뷰의 특정한 정보를 담기 때문) observable object class 수정 published 값이 옵셔널로 설정되어 있음 -&gt; 뷰 부분에서 처리해주어야 하는 불편함을 해결하기 위해 수정 final class로 변경 Combine 추가 데이터 로드하는 함수를 제네릭 함수로 변경 데이터 로드 함수를 실행하는 init() 제거 데이터 로드 함수가 observable object 클래스 안이 아닌 바깥 쪽에 정의]]></summary></entry><entry><title type="html">SwiftUI 뷰 레이아웃</title><link href="http://localhost:4000/til/2023-05-24-ViewLayout.html" rel="alternate" type="text/html" title="SwiftUI 뷰 레이아웃" /><published>2023-05-24T00:00:00+09:00</published><updated>2023-05-24T00:00:00+09:00</updated><id>http://localhost:4000/til/ViewLayout</id><content type="html" xml:base="http://localhost:4000/til/2023-05-24-ViewLayout.html"><![CDATA[<center><img src="/assets/images/VerticalTabView_2.png" alt="VerticalTabView_2.png" width="300" /><br /></center>
+
+<div class="language-swift highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">struct</span> <span class="kt">ReusableLabel</span><span class="p">:</span> <span class="kt">View</span> <span class="p">{</span>
+    <span class="k">let</span> <span class="nv">keyword</span><span class="p">:</span> <span class="kt">String</span>
+    <span class="k">let</span> <span class="nv">symbol</span><span class="p">:</span> <span class="kt">String</span>
+    <span class="k">var</span> <span class="nv">body</span><span class="p">:</span> <span class="kd">some</span> <span class="kt">View</span> <span class="p">{</span>
+        <span class="kt">Label</span><span class="p">(</span><span class="n">keyword</span><span class="p">,</span> <span class="nv">systemImage</span><span class="p">:</span> <span class="n">symbol</span><span class="p">)</span>
+            <span class="o">.</span><span class="nf">font</span><span class="p">(</span><span class="o">.</span><span class="n">title</span><span class="p">)</span>
+            <span class="o">.</span><span class="nf">foregroundColor</span><span class="p">(</span><span class="o">.</span><span class="n">white</span><span class="p">)</span>
+            <span class="o">.</span><span class="nf">padding</span><span class="p">()</span>
+            <span class="o">.</span><span class="nf">background</span><span class="p">(</span><span class="o">.</span><span class="n">green</span><span class="o">.</span><span class="nf">opacity</span><span class="p">(</span><span class="mf">0.75</span><span class="p">),</span> <span class="nv">in</span><span class="p">:</span> <span class="kt">Capsule</span><span class="p">())</span> <span class="c1">// - 1</span>
+            
+    <span class="p">}</span>
+<span class="p">}</span>
+
+<span class="kd">struct</span> <span class="kt">ReusableLabel_Previews</span><span class="p">:</span> <span class="kt">PreviewProvider</span> <span class="p">{</span> <span class="c1">// - 2</span>
+    
+    <span class="kd">static</span> <span class="k">let</span> <span class="nv">keywords</span> <span class="o">=</span> <span class="p">[</span><span class="s">"Hello"</span><span class="p">,</span> <span class="s">"Good Morning"</span><span class="p">]</span>
+    
+    <span class="kd">static</span> <span class="k">var</span> <span class="nv">previews</span><span class="p">:</span> <span class="kd">some</span> <span class="kt">View</span> <span class="p">{</span> <span class="c1">// - 3</span>
+        <span class="kt">VStack</span> <span class="p">{</span> <span class="c1">// - 4</span>
+            <span class="kt">ForEach</span><span class="p">(</span><span class="n">keywords</span><span class="p">,</span> <span class="nv">id</span><span class="p">:</span> <span class="p">\</span><span class="o">.</span><span class="k">self</span><span class="p">)</span> <span class="p">{</span> <span class="n">word</span> <span class="k">in</span>
+                <span class="kt">KeywordBubbleDefaultPadding</span><span class="p">(</span><span class="nv">keyword</span><span class="p">:</span> <span class="n">word</span><span class="p">,</span> <span class="nv">symbol</span><span class="p">:</span> <span class="s">"fish"</span><span class="p">)</span>
+            <span class="p">}</span>
+        <span class="p">}</span>
+    <span class="p">}</span>
+<span class="p">}</span>
+</code></pre></div></div>
+
+<ul>
+  <li>1: .background에 Capsule()을 정의해줌으로써 캡슐 모양이 Label의 뒷쪽에 오도록 함. 이때 .padding()을 백그라운드의 윗쪽에 선언해주어야 패딩을 포함한 백그라운드에 캡슐 모양을 생성할 수 있음.</li>
+  <li>2: PreviewProvider 프로토콜을 사용하여 커스텀 스위프트UI 뷰의 코드가 생성하는 화면을 미리 볼 수 있음</li>
+  <li>3: PreviewProvider 프로토콜을 구현하기 위해선 static previews 프로퍼티를 정의해야 함</li>
+  <li>4: VStack 안에 ForEach를 사용하여, ReusableLabel 스트럭쳐가 생성하는 라벨 뷰가 다른 텍스트 길이에서 어떻게 적용되는지 한 화면에서 확인할 수 있음</li>
+</ul>]]></content><author><name>Mirae</name></author><category term="TIL" /><summary type="html"><![CDATA[]]></summary></entry><entry><title type="html">Vertical TabView in SwiftUI</title><link href="http://localhost:4000/til/2023-04-29-VerticalTabView.html" rel="alternate" type="text/html" title="Vertical TabView in SwiftUI" /><published>2023-04-29T00:00:00+09:00</published><updated>2023-04-29T00:00:00+09:00</updated><id>http://localhost:4000/til/VerticalTabView</id><content type="html" xml:base="http://localhost:4000/til/2023-04-29-VerticalTabView.html"><![CDATA[<video src="https://user-images.githubusercontent.com/85061148/235292829-c16fccb8-e5ae-4243-86e3-356f57443024.mov" controls="controls" style="max-width: 300px">
 </video>
 
 <div class="language-swift highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">import</span> <span class="kt">SwiftUI</span>
@@ -173,7 +207,7 @@
   <li>// 1 : rotationEffect를 사용하여 왼쪽으로 90도 이미지를 로테이션 시켜줍니다. 현재 탭뷰 안의 이미지는 아래와 같이 살짝 커졌지만 가운데 정렬된 상태로 나타납니다.</li>
 </ul>
 
-<center><img src="/assets/images/VerticalTabView_2.png" alt="VerticalTabView_2.png" width="300" /><br /></center>
+<center><img src="/assets/images/viewLayout_1.png" alt="viewLayout_1.png" width="300" /><br /></center>
 
 <ul>
   <li>

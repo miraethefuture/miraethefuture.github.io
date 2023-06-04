@@ -1,7 +1,7 @@
 <!DOCTYPE HTML>
 <html lang="en" >
     <head><meta charset="UTF-8">
-<meta content="text/html; charset=utf-8" http-equiv="Content-Type"><title>TIL · Mirae Jung  iOS Developer</title><meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<meta content="text/html; charset=utf-8" http-equiv="Content-Type"><title>SwiftUI 뷰 레이아웃 · Mirae Jung  iOS Developer</title><meta http-equiv="X-UA-Compatible" content="IE=edge" />
 <meta name="description" content="안녕하세요. iOS Developer 정미래입니다.
 "><meta name="generator" content="Jekyll (using style of GitBook 3.2.3)"><meta name="author" content="Mirae"><link rel="stylesheet" href="/assets/gitbook/style.css">
 <link rel="stylesheet" href="/assets/gitbook/gitbook-plugin-fontsettings/website.css">
@@ -22,7 +22,7 @@
 
 
 
-            <link rel="prev" href="/til/2023-04-29-VerticalTabView.html" />
+            <link rel="prev" href="/til/2023-05-24-TIL.html" />
         
 
         
@@ -186,14 +186,25 @@
                         </li>
                     
                         
-                        <li class="chapter active" data-level="1.2" data-path="/til/2023-05-24-studyProject.html">
+                        <li class="chapter" data-level="1.1" data-path="/til/2023-05-24-TIL.html">
                         
-                            <a href="/til/2023-05-24-studyProject.html">
+                            <a href="/til/2023-05-24-TIL.html">
                                 TIL
                             </a>
                             
                                 
-                                    <ul><li><a href="#스터디-과제-진행하며-정리-67">스터디 과제 진행하며 정리 (~6/7)</a></li><li><a href="#swiftui">SwiftUI</a></li></ul>
+                            
+                        </li>
+                    
+                        
+                        <li class="chapter active" data-level="1.2" data-path="/til/2023-05-24-ViewLayout.html">
+                        
+                            <a href="/til/2023-05-24-ViewLayout.html">
+                                SwiftUI 뷰 레이아웃
+                            </a>
+                            
+                                
+                                    
 
                                 
                             
@@ -220,7 +231,7 @@
                     <h1>
                         <i class="fa fa-circle-o-notch fa-spin"></i>
                         
-                            <a href="." >TIL</a>
+                            <a href="." >SwiftUI 뷰 레이아웃</a>
                         
                     </h1>
                 </div>
@@ -233,138 +244,44 @@
             <div class="search-noresults">
                 <section class="normal markdown-section">
                     
-                        <h1 id="/til/studyProject">TIL</h1>
+                        <h1 id="/til/ViewLayout">SwiftUI 뷰 레이아웃</h1>
                     
 
-                    <h2 id="스터디-과제-진행하며-정리-67">스터디 과제 진행하며 정리 (~6/7)</h2>
-<ul>
-  <li>@State 프로퍼티는 항상 private으로 사용 (해당하는 뷰와 서브 뷰의 특정한 정보를 담기 때문)</li>
-  <li>observable object class 수정
-    <ul>
-      <li>published 값이 옵셔널로 설정되어 있음 -&gt; 뷰 부분에서 처리해주어야 하는 불편함을 해결하기 위해 수정</li>
-      <li>final class로 변경</li>
-      <li>Combine 추가</li>
-      <li>데이터 로드하는 함수를 제네릭 함수로 변경</li>
-      <li>데이터 로드 함수를 실행하는 init() 제거</li>
-      <li>데이터 로드 함수가 observable object 클래스 안이 아닌 바깥 쪽에 정의</li>
-    </ul>
-  </li>
-</ul>
+                    <center><img src="/assets/images/VerticalTabView_2.png" alt="VerticalTabView_2.png" width="300" /><br /></center>
 
-<div class="language-swift highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">func</span> <span class="nf">testSearching</span><span class="p">()</span> <span class="k">throws</span> <span class="p">{</span>
-    
-    <span class="k">let</span> <span class="nv">searchText</span> <span class="o">=</span> <span class="s">"주차"</span>
-
-    <span class="k">let</span> <span class="nv">result</span> <span class="o">=</span> <span class="kt">ModelData</span><span class="p">()</span><span class="o">.</span><span class="n">roomList</span><span class="o">.</span><span class="n">rooms</span><span class="o">.</span><span class="n">filter</span> <span class="p">{</span> <span class="nv">$0</span><span class="o">.</span><span class="n">hashTags</span><span class="o">.</span><span class="nf">contains</span><span class="p">(</span><span class="n">searchText</span><span class="p">)</span> <span class="p">}</span>
-
-    <span class="kt">XCTAssertEqual</span><span class="p">(</span><span class="n">result</span><span class="o">.</span><span class="n">count</span><span class="p">,</span> <span class="mi">40</span><span class="p">)</span>
-    
+<div class="language-swift highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">struct</span> <span class="kt">ReusableLabel</span><span class="p">:</span> <span class="kt">View</span> <span class="p">{</span>
+    <span class="k">let</span> <span class="nv">keyword</span><span class="p">:</span> <span class="kt">String</span>
+    <span class="k">let</span> <span class="nv">symbol</span><span class="p">:</span> <span class="kt">String</span>
+    <span class="k">var</span> <span class="nv">body</span><span class="p">:</span> <span class="kd">some</span> <span class="kt">View</span> <span class="p">{</span>
+        <span class="kt">Label</span><span class="p">(</span><span class="n">keyword</span><span class="p">,</span> <span class="nv">systemImage</span><span class="p">:</span> <span class="n">symbol</span><span class="p">)</span>
+            <span class="o">.</span><span class="nf">font</span><span class="p">(</span><span class="o">.</span><span class="n">title</span><span class="p">)</span>
+            <span class="o">.</span><span class="nf">foregroundColor</span><span class="p">(</span><span class="o">.</span><span class="n">white</span><span class="p">)</span>
+            <span class="o">.</span><span class="nf">padding</span><span class="p">()</span>
+            <span class="o">.</span><span class="nf">background</span><span class="p">(</span><span class="o">.</span><span class="n">green</span><span class="o">.</span><span class="nf">opacity</span><span class="p">(</span><span class="mf">0.75</span><span class="p">),</span> <span class="nv">in</span><span class="p">:</span> <span class="kt">Capsule</span><span class="p">())</span> <span class="c1">// - 1</span>
+            
+    <span class="p">}</span>
 <span class="p">}</span>
-</code></pre></div></div>
-<ul>
-  <li>간단한 테스트 코드 작성하여 search function test</li>
-  <li>
-    <p>위 코드에서 searchText의 값과 XCTAssertEqual()의 값만 변경하여 여러가지 검색어 상황에 따른 데이터 결과를 확인할 수 있었음</p>
-  </li>
-  <li>문제 해결 내용
-    <ul>
-      <li><code class="language-plaintext highlighter-rouge">swift 
-      let file = Bundle.main.url(forResource: filename, withExtension: "txt")</code> 에서 withExtension을 nil로 주면 이름이 일치하는 첫번째 파일을 가져온다고 하여 nil로 주었으나 파일을 찾지 못한다는 에러가 발생하여 파일의 익스텐션인 “txt”로 수정하여 해결</li>
-      <li>검색 기능을 추가하면서 search text를 해시 태그로 가지고 있는 방 데이터를 필터링하여 목록을 생성. 이 목록을 @State 변수에 할당해야 하는데, 현재 버튼으로 필터링하기 위해 computed property를 사용하고 있음.</li>
-    </ul>
-  </li>
-</ul>
 
-<h2 id="swiftui">SwiftUI</h2>
-
-<p><b>Source of truth 생성하기</b></p>
-<ul>
-  <li>@State와 @Binding은 value type(ex. structure, enum)을 뷰를 업데이트하는 source of truth로 만들어 줌</li>
-  <li>value type이 아니고 reference type인 클래스는 @ObservedObject, @StateObject, @EnvironmentObject 프로퍼티 래퍼를 사용</li>
-  <li>@ObservedObject, @StateObject, @EnvironmentObject를 사용하기 위해서 클래스를 observable하게 만들어 주어야 함
-    <ul>
-      <li>@StateObject는 observable 객체를 생성</li>
-      <li>@ObservedObject는 parent view로부터 객체를 받는다는 걸 나타냄 (@StateObject로 생성된 객체를 받음)</li>
-      <li>@EnvironmentObject는 복잡한 뷰에서 사용됨. 이니셜라이저를 통해 객체를 통과시키지 않고 .environmentObject() 모더파이어를 통해 해당 뷰가 객체를 사용할 수 있도록 함 (부모-자식-자식의 자식뷰에서 자식뷰가 .environmentObject() 모더파이어를 통해 객체를 사용할 수 있게 되면 자식의 자식뷰도 @EnvironmentObject 속성을 통해 사용할 수 있게 됨)</li>
-    </ul>
-  </li>
-  <li>클래스가 ObservableObject 프로토콜을 따르도록 만들면 됨</li>
-  <li>클래스 안에는 값이 변경되었을 때 UI가 업데이트 되어야 하는 속성들이 정의됨</li>
-  <li>각 속성은 @Published atrribute를 사용해 정의되어 뷰에서 사용할 수 있게됨</li>
-</ul>
-
-<p><b>Scene architecture</b></p>
-<ul>
-  <li>Scene의 구조</li>
-  <li>하나의 앱을 만들기 위해서, App 프로토콜을 따르는 스트럭처를 생성함</li>
-  <li>이때 앞에 @main 어트리뷰트를 사용하여 이 스트럭처가 앱의 유일한 entry point라는 것을 시스템에 알려줌</li>
-  <li>앱 스트럭처의 바디 부분에 Scene 프로토콜을 따르는 스트럭처를 생성 (여러개 생성 가능)</li>
-  <li>Scene은 앱이 보여줄 뷰 게층을 담을 컨테이너</li>
-  <li>보통 iOS / WatchOS는 하나의 Scene을 가지고 macOS / iPadOS 는 여러개의 Scene을 가짐</li>
-</ul>
-
-<p><b>Scene Phases and transitions</b></p>
-<ul>
-  <li>Scene의 단계와 변형 과정</li>
-  <li>앱이 실행되는 동안 Scene은 세 단계로 변화될 수 있음</li>
-  <li>active: scene이 foreground에 있고 사용자가 상호작용할 수 있음</li>
-  <li>inactive: scene이 보이지만, 시스템이 scene과 상호작용할 수 없음. 예를 들면, 아이패드에서 멀티태스킹 기능을 사용할 때 사용하지 않는 쪽은 보이지만 inactive 상태임. (scene은 foreground에 있음)</li>
-  <li>background: 앱이 작동하고 있지만 사용자는 앱을 볼 수 없음. 앱이 꺼지기 직전에 Scene이 이 단계가 됨.</li>
-  <li>scenePhase environment value를 사용해서 현재 scene의 상태를 알 수 있음.</li>
-  <li>scene이 특정 상태가 됐을 때, 어떤 동작을 수행하도록 할 수 있음. (ex. 앱이 inactive 상태가 될 때 데이터를 저장하도록 함)</li>
-</ul>
-
-<p><b>Events and State</b></p>
-<ul>
-  <li>프로그램의 상태가 변할 때 뷰도 변하도록 하는 imperative 패턴과는 다르게, SwiftUI는 declarative 프로그래밍 패턴을 따름</li>
-  <li>SwiftUI의 뷰 바디에, 모든 상태에 대해 UI가 어떻게 나타날지 묘사함</li>
-  <li>프로그램이 실행되는 동안, 상태가 변함에 따라 변화되어야 하는 UI를 업데이트 함으로써 상태(state)와 UI가 서로 동기화되도록 함</li>
-  <li>사용자와의 상호작용이나, 알림 같은 event는 앱이 응답해야하는 상황을 만드는데, 이때 클로저가 이벤트의 응답으로써 실행됨. 이것이 Source of truth를 변경시킴</li>
-  <li>Source of truth에 일어난 변화를 감지하고, 이것을 뷰에 업데이트 하고 UI를 렌더링함</li>
-</ul>
-
-<p><b>View life cycle events</b></p>
-<ul>
-  <li>뷰가 나타나더나 스크린에서 사라질 때, 앱의 상태를 변경시키려면 onAppear(perform:) / onDisappear(perform:) / task(priority:_:) modifier 를 사용</li>
-</ul>
-
-<p><b>SwiftUI 기본 Structure</b></p>
-<ul>
-  <li>var body: some View { } 는 Scene, View, App 프로토콜을 다르는 structure가 꼭 구햔헤야 하는 필수 computed property</li>
-  <li>@main 으로 표시하여 App의 entry point를 정의할 수 있음. 앱에는 단 하나의 entry point만이 존재할 수 있음</li>
-  <li>아래 예시에서 WindowGroup은 첫번째 scene, Settings는 두번째 scene</li>
-  <li>Settings scene은 거의 모든 mac앱에서 볼 수 있는 Settings 메뉴를 생성</li>
-  <li>Settings scene은 macOS 에서만 사용 가능</li>
-</ul>
-
-<div class="language-swift highlighter-rouge"><div class="highlight"><pre class="highlight"><code>    <span class="cp">#if os(iOS)</span>
+<span class="kd">struct</span> <span class="kt">ReusableLabel_Previews</span><span class="p">:</span> <span class="kt">PreviewProvider</span> <span class="p">{</span> <span class="c1">// - 2</span>
     
-    <span class="c1">// iOS로 컴파일 될 코드</span>
+    <span class="kd">static</span> <span class="k">let</span> <span class="nv">keywords</span> <span class="o">=</span> <span class="p">[</span><span class="s">"Hello"</span><span class="p">,</span> <span class="s">"Good Morning"</span><span class="p">]</span>
     
-    <span class="cp">#elseif os(macOS)</span>
-    <span class="kt">WindowGroup</span> <span class="p">{</span>
-        <span class="kt">AlternativeContentView</span><span class="p">()</span>
-    <span class="p">}</span>
-    
-    <span class="kt">Settings</span> <span class="p">{</span>
-        <span class="kt">SettingsView</span><span class="p">()</span>
-    <span class="p">}</span>
-    <span class="cp">#endif</span>
-</code></pre></div></div>
-
-<ul>
-  <li>#if os(iOS) 와 #elseif os(macOS), #endif는 platform conditional compilation block으로 Swift 컴파일러에게 특정 타겟 플랫폼에서만 조건문 안쪽의 코드를 컴파일 하도록 함</li>
-  <li>커스텀 뷰처럼 커스텀 Scene도 만들 수 있음</li>
-</ul>
-
-<div class="language-swift highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">struct</span> <span class="kt">CustomScene</span><span class="p">:</span> <span class="kt">Scene</span> <span class="p">{</span>
-    <span class="k">var</span> <span class="nv">body</span><span class="p">:</span> <span class="kd">some</span> <span class="kt">Scene</span> <span class="p">{</span>
-        <span class="kt">WindowGroup</span> <span class="p">{</span>
-            <span class="c1">// Scene 내용</span>
+    <span class="kd">static</span> <span class="k">var</span> <span class="nv">previews</span><span class="p">:</span> <span class="kd">some</span> <span class="kt">View</span> <span class="p">{</span> <span class="c1">// - 3</span>
+        <span class="kt">VStack</span> <span class="p">{</span> <span class="c1">// - 4</span>
+            <span class="kt">ForEach</span><span class="p">(</span><span class="n">keywords</span><span class="p">,</span> <span class="nv">id</span><span class="p">:</span> <span class="p">\</span><span class="o">.</span><span class="k">self</span><span class="p">)</span> <span class="p">{</span> <span class="n">word</span> <span class="k">in</span>
+                <span class="kt">KeywordBubbleDefaultPadding</span><span class="p">(</span><span class="nv">keyword</span><span class="p">:</span> <span class="n">word</span><span class="p">,</span> <span class="nv">symbol</span><span class="p">:</span> <span class="s">"fish"</span><span class="p">)</span>
+            <span class="p">}</span>
         <span class="p">}</span>
-    <span class="p">}</span>   
+    <span class="p">}</span>
 <span class="p">}</span>
 </code></pre></div></div>
+
+<ul>
+  <li>1: .background에 Capsule()을 정의해줌으로써 캡슐 모양이 Label의 뒷쪽에 오도록 함. 이때 .padding()을 백그라운드의 윗쪽에 선언해주어야 패딩을 포함한 백그라운드에 캡슐 모양을 생성할 수 있음.</li>
+  <li>2: PreviewProvider 프로토콜을 사용하여 커스텀 스위프트UI 뷰의 코드가 생성하는 화면을 미리 볼 수 있음</li>
+  <li>3: PreviewProvider 프로토콜을 구현하기 위해선 static previews 프로퍼티를 정의해야 함</li>
+  <li>4: VStack 안에 ForEach를 사용하여, ReusableLabel 스트럭쳐가 생성하는 라벨 뷰가 다른 텍스트 길이에서 어떻게 적용되는지 한 화면에서 확인할 수 있음</li>
+</ul>
 
 </section>
             </div><div class="search-results">
@@ -394,7 +311,7 @@ MathJax = {
   src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js">
 </script>
 
-                        <a href="/til/2023-04-29-VerticalTabView.html" class="navigation navigation-prev navigation-unique" aria-label="Previous page: Vertical TabView in SwiftUI">
+                        <a href="/til/2023-05-24-TIL.html" class="navigation navigation-prev navigation-unique" aria-label="Previous page: TIL">
                             <i class="fa fa-angle-left"></i>
                         </a>
                     
@@ -486,13 +403,13 @@ MathJax = {
         "gitbook": "*"
     },
     "file": {
-        "path": "_posts/2023-05-24-studyProject.md",
+        "path": "_posts/2023-06-04-ViewLayout.md",
         "mtime": "2023-05-24 00:00:00 +0900",
         "type": "markdown"
     },
     "gitbook": {
         "version": "3.2.3",
-        "time": "2023-06-04 23:21:10 +0900"
+        "time": "2023-06-04 23:57:53 +0900"
     },
     "basePath": "",
     "book": {

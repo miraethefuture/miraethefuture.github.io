@@ -52,7 +52,7 @@ SwiftUI의 PageTabViewStyle은 기본적으로 수평으로 넘길 수 있는 pa
 
 - // 1 : rotationEffect를 사용하여 왼쪽으로 90도 이미지를 로테이션 시켜줍니다. 현재 탭뷰 안의 이미지는 아래와 같이 살짝 커졌지만 가운데 정렬된 상태로 나타납니다. 
 
-<center><img src="/assets/images/VerticalTabView_2.png" alt="VerticalTabView_2.png" width="300"><br></center>
+<center><img src="/assets/images/viewLayout_1.png" alt="viewLayout_1.png" width="300"><br></center>
 
 - // 2: 이때 width / height는 누워있는 이미지와 같이 width가 더 큰 직사각형 형태로 존재합니다. 
 
