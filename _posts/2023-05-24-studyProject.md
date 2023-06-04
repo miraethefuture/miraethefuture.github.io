@@ -75,6 +75,8 @@ func testSearching() throws {
 - 사용자와의 상호작용이나, 알림 같은 event는 앱이 응답해야하는 상황을 만드는데, 이때 클로저가 이벤트의 응답으로써 실행됨. 이것이 Source of truth를 변경시킴
 - Source of truth에 일어난 변화를 감지하고, 이것을 뷰에 업데이트 하고 UI를 렌더링함
 
+<b>View life cycle events</b>
+- 뷰가 나타나더나 스크린에서 사라질 때, 앱의 상태를 변경시키려면 onAppear(perform:) / onDisappear(perform:) / task(priority:_:) modifier 를 사용
 
 <b>SwiftUI 기본 Structure</b>
 - var body: some View { } 는 Scene, View, App 프로토콜을 다르는 structure가 꼭 구햔헤야 하는 필수 computed property

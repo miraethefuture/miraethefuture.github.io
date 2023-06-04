@@ -249,10 +249,28 @@
       <li>데이터 로드 함수가 observable object 클래스 안이 아닌 바깥 쪽에 정의</li>
     </ul>
   </li>
-  <li>오류 해결 내용
+</ul>
+
+<div class="language-swift highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">func</span> <span class="nf">testSearching</span><span class="p">()</span> <span class="k">throws</span> <span class="p">{</span>
+    
+    <span class="k">let</span> <span class="nv">searchText</span> <span class="o">=</span> <span class="s">"주차"</span>
+
+    <span class="k">let</span> <span class="nv">result</span> <span class="o">=</span> <span class="kt">ModelData</span><span class="p">()</span><span class="o">.</span><span class="n">roomList</span><span class="o">.</span><span class="n">rooms</span><span class="o">.</span><span class="n">filter</span> <span class="p">{</span> <span class="nv">$0</span><span class="o">.</span><span class="n">hashTags</span><span class="o">.</span><span class="nf">contains</span><span class="p">(</span><span class="n">searchText</span><span class="p">)</span> <span class="p">}</span>
+
+    <span class="kt">XCTAssertEqual</span><span class="p">(</span><span class="n">result</span><span class="o">.</span><span class="n">count</span><span class="p">,</span> <span class="mi">40</span><span class="p">)</span>
+    
+<span class="p">}</span>
+</code></pre></div></div>
+<ul>
+  <li>간단한 테스트 코드 작성하여 search function test</li>
+  <li>
+    <p>위 코드에서 searchText의 값과 XCTAssertEqual()의 값만 변경하여 여러가지 검색어 상황에 따른 데이터 결과를 확인할 수 있었음</p>
+  </li>
+  <li>문제 해결 내용
     <ul>
       <li><code class="language-plaintext highlighter-rouge">swift 
       let file = Bundle.main.url(forResource: filename, withExtension: "txt")</code> 에서 withExtension을 nil로 주면 이름이 일치하는 첫번째 파일을 가져온다고 하여 nil로 주었으나 파일을 찾지 못한다는 에러가 발생하여 파일의 익스텐션인 “txt”로 수정하여 해결</li>
+      <li>검색 기능을 추가하면서 search text를 해시 태그로 가지고 있는 방 데이터를 필터링하여 목록을 생성. 이 목록을 @State 변수에 할당해야 하는데, 현재 버튼으로 필터링하기 위해 computed property를 사용하고 있음.</li>
     </ul>
   </li>
 </ul>
@@ -303,6 +321,11 @@
   <li>프로그램이 실행되는 동안, 상태가 변함에 따라 변화되어야 하는 UI를 업데이트 함으로써 상태(state)와 UI가 서로 동기화되도록 함</li>
   <li>사용자와의 상호작용이나, 알림 같은 event는 앱이 응답해야하는 상황을 만드는데, 이때 클로저가 이벤트의 응답으로써 실행됨. 이것이 Source of truth를 변경시킴</li>
   <li>Source of truth에 일어난 변화를 감지하고, 이것을 뷰에 업데이트 하고 UI를 렌더링함</li>
+</ul>
+
+<p><b>View life cycle events</b></p>
+<ul>
+  <li>뷰가 나타나더나 스크린에서 사라질 때, 앱의 상태를 변경시키려면 onAppear(perform:) / onDisappear(perform:) / task(priority:_:) modifier 를 사용</li>
 </ul>
 
 <p><b>SwiftUI 기본 Structure</b></p>
@@ -469,7 +492,7 @@ MathJax = {
     },
     "gitbook": {
         "version": "3.2.3",
-        "time": "2023-06-02 22:20:03 +0900"
+        "time": "2023-06-04 23:21:10 +0900"
     },
     "basePath": "",
     "book": {
