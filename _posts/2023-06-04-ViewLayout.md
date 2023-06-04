@@ -6,7 +6,6 @@ category: TIL
 layout: post
 ---
 
-<center><img src="/assets/images/VerticalTabView_2.png" alt="VerticalTabView_2.png" width="300"><br></center>
 
 ```swift
 struct ReusableLabel: View {
@@ -41,4 +40,4 @@ struct ReusableLabel_Previews: PreviewProvider { // - 2
 - 3: PreviewProvider 프로토콜을 구현하기 위해선 static previews 프로퍼티를 정의해야 함
 - 4: VStack 안에 ForEach를 사용하여, ReusableLabel 스트럭쳐가 생성하는 라벨 뷰가 다른 텍스트 길이에서 어떻게 적용되는지 한 화면에서 확인할 수 있음
 
-
+<center><img src="/assets/images/viewLayout_1.png" alt="viewLayout_1.png" width="600"><br></center>
