@@ -41,3 +41,28 @@ struct ReusableLabel_Previews: PreviewProvider { // - 2
 - 4: VStack 안에 ForEach를 사용하여, ReusableLabel 스트럭쳐가 생성하는 라벨 뷰가 다른 텍스트 길이에서 어떻게 적용되는지 한 화면에서 확인할 수 있음
 
 <center><img src="/assets/images/viewLayout_1.png" alt="viewLayout_1.png" width="600"><br></center>
+  
+<br>
+<b>ScaledMetric를 사용하여 동적으로 넓이 조정하기</b>
+- padding() modifier를 사용하여 패딩을 주었을 때, 폰트 사이즈가 달라지면 아래 이미지와 같이 큰 사이즈의 폰트에서는 패딩이 충분하지 않는 경우가 있음
+- 이때 패딩 값을 그냥 키워주면 작은 폰트에서는 패딩이 너무 넓어질 수 있음 
+- @ScaledMetric 프로퍼티 래퍼를 사용하여 .title과 같은 environment’s effective font size에 숫자값을 적용할 수 있음
+
+```swift
+struct KeywordBubbleDefaultPadding: View {
+    let keyword: String
+    let symbol: String
+    @ScaledMetric(relativeTo: .title) var paddingWidth = 20.5 // <- 여기
+    var body: some View {
+        Label(keyword, systemImage: symbol)
+            .font(.title)
+            .foregroundColor(.white)
+            .padding(paddingWidth) // <- 여기
+//            .padding()
+            .background(.green.opacity(0.75), in: Capsule())
+            
+    }
+}
+```
+<center><img src="/assets/images/viewLayout_2.png" alt="viewLayout_2.png" width="350"> <img src="/assets/images/viewLayout_3.png" alt="viewLayout_3.png" width="350"><br></center>
+

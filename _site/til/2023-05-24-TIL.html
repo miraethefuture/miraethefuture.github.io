@@ -195,7 +195,7 @@
                             </a>
                             
                                 
-                                    <ul><li><a href="#스터디-과제-진행하며-정리-67">스터디 과제 진행하며 정리 (~6/7)</a></li><li><a href="#swiftui">SwiftUI</a></li></ul>
+                                    <ul><li><a href="#스터디-과제-진행하며-정리-67">스터디 과제 진행하며 정리 (~6/7)</a></li><li><a href="#swiftui">SwiftUI</a></li><li><a href="#코테-0단계">코테 0단계</a></li></ul>
 
                                 
                             
@@ -379,6 +379,60 @@
 <span class="p">}</span>
 </code></pre></div></div>
 
+<h2 id="코테-0단계">코테 0단계</h2>
+
+<p><a href="https://www.acmicpc.net/problem/5622">백준 - 다이얼</a></p>
+
+<ul>
+  <li>더 간단하게 만들 방법을 찾기</li>
+</ul>
+
+<div class="language-swift highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1">// 소요 시간 35분</span>
+
+<span class="k">let</span> <span class="nv">inputStr</span> <span class="o">=</span> <span class="nf">readLine</span><span class="p">()</span><span class="o">!</span>
+
+<span class="k">var</span> <span class="nv">sum</span> <span class="o">=</span> <span class="mi">0</span>
+
+<span class="k">let</span> <span class="nv">arr</span> <span class="o">=</span> <span class="kt">Array</span><span class="p">(</span><span class="n">inputStr</span><span class="p">)</span>
+
+<span class="k">let</span> <span class="nv">two</span> <span class="o">=</span> <span class="p">[</span><span class="s">"A"</span><span class="p">,</span> <span class="s">"B"</span><span class="p">,</span> <span class="s">"C"</span><span class="p">]</span>
+<span class="k">let</span> <span class="nv">three</span> <span class="o">=</span> <span class="p">[</span><span class="s">"D"</span><span class="p">,</span> <span class="s">"E"</span><span class="p">,</span> <span class="s">"F"</span><span class="p">]</span>
+<span class="k">let</span> <span class="nv">four</span> <span class="o">=</span> <span class="p">[</span><span class="s">"G"</span><span class="p">,</span> <span class="s">"H"</span><span class="p">,</span> <span class="s">"I"</span><span class="p">]</span>
+<span class="k">let</span> <span class="nv">five</span> <span class="o">=</span> <span class="p">[</span><span class="s">"J"</span><span class="p">,</span> <span class="s">"K"</span><span class="p">,</span> <span class="s">"L"</span><span class="p">]</span>
+<span class="k">let</span> <span class="nv">six</span> <span class="o">=</span> <span class="p">[</span><span class="s">"M"</span><span class="p">,</span> <span class="s">"N"</span><span class="p">,</span> <span class="s">"O"</span><span class="p">]</span>
+<span class="k">let</span> <span class="nv">seven</span> <span class="o">=</span> <span class="p">[</span><span class="s">"P"</span><span class="p">,</span> <span class="s">"Q"</span><span class="p">,</span> <span class="s">"R"</span><span class="p">,</span> <span class="s">"S"</span><span class="p">]</span>
+<span class="k">let</span> <span class="nv">eight</span> <span class="o">=</span> <span class="p">[</span><span class="s">"T"</span><span class="p">,</span> <span class="s">"U"</span><span class="p">,</span> <span class="s">"V"</span><span class="p">]</span>
+<span class="k">let</span> <span class="nv">nine</span> <span class="o">=</span> <span class="p">[</span><span class="s">"W"</span><span class="p">,</span> <span class="s">"X"</span><span class="p">,</span> <span class="s">"Y"</span><span class="p">,</span> <span class="s">"Z"</span><span class="p">]</span>
+
+<span class="k">for</span> <span class="n">i</span> <span class="k">in</span> <span class="n">arr</span> <span class="p">{</span>
+
+    <span class="k">if</span> <span class="n">two</span><span class="o">.</span><span class="nf">contains</span><span class="p">(</span><span class="kt">String</span><span class="p">(</span><span class="n">i</span><span class="p">))</span> <span class="p">{</span>
+        <span class="n">sum</span> <span class="o">+=</span> <span class="mi">3</span>
+    <span class="p">}</span> <span class="k">else</span> <span class="k">if</span> <span class="n">three</span><span class="o">.</span><span class="nf">contains</span><span class="p">(</span><span class="kt">String</span><span class="p">(</span><span class="n">i</span><span class="p">))</span> <span class="p">{</span>
+        <span class="n">sum</span> <span class="o">+=</span> <span class="mi">4</span>
+    <span class="p">}</span>
+    <span class="k">else</span> <span class="k">if</span> <span class="n">four</span><span class="o">.</span><span class="nf">contains</span><span class="p">(</span><span class="kt">String</span><span class="p">(</span><span class="n">i</span><span class="p">))</span> <span class="p">{</span>
+        <span class="n">sum</span> <span class="o">+=</span> <span class="mi">5</span>
+    <span class="p">}</span>
+    <span class="k">else</span> <span class="k">if</span> <span class="n">five</span><span class="o">.</span><span class="nf">contains</span><span class="p">(</span><span class="kt">String</span><span class="p">(</span><span class="n">i</span><span class="p">))</span> <span class="p">{</span>
+        <span class="n">sum</span> <span class="o">+=</span> <span class="mi">6</span>
+    <span class="p">}</span>
+    <span class="k">else</span> <span class="k">if</span> <span class="n">six</span><span class="o">.</span><span class="nf">contains</span><span class="p">(</span><span class="kt">String</span><span class="p">(</span><span class="n">i</span><span class="p">))</span> <span class="p">{</span>
+        <span class="n">sum</span> <span class="o">+=</span> <span class="mi">7</span>
+    <span class="p">}</span>
+    <span class="k">else</span> <span class="k">if</span> <span class="n">seven</span><span class="o">.</span><span class="nf">contains</span><span class="p">(</span><span class="kt">String</span><span class="p">(</span><span class="n">i</span><span class="p">))</span> <span class="p">{</span>
+        <span class="n">sum</span> <span class="o">+=</span> <span class="mi">8</span>
+    <span class="p">}</span>
+    <span class="k">else</span> <span class="k">if</span> <span class="n">eight</span><span class="o">.</span><span class="nf">contains</span><span class="p">(</span><span class="kt">String</span><span class="p">(</span><span class="n">i</span><span class="p">))</span> <span class="p">{</span>
+        <span class="n">sum</span> <span class="o">+=</span> <span class="mi">9</span>
+    <span class="p">}</span>
+    <span class="k">else</span> <span class="k">if</span> <span class="n">nine</span><span class="o">.</span><span class="nf">contains</span><span class="p">(</span><span class="kt">String</span><span class="p">(</span><span class="n">i</span><span class="p">))</span> <span class="p">{</span>
+        <span class="n">sum</span> <span class="o">+=</span> <span class="mi">10</span>
+    <span class="p">}</span>
+<span class="p">}</span>
+<span class="nf">print</span><span class="p">(</span><span class="n">sum</span><span class="p">)</span>
+</code></pre></div></div>
+
 </section>
             </div><div class="search-results">
     <div class="has-results">
@@ -518,7 +572,7 @@ MathJax = {
     },
     "gitbook": {
         "version": "3.2.3",
-        "time": "2023-06-05 00:00:11 +0900"
+        "time": "2023-06-07 23:12:12 +0900"
     },
     "basePath": "",
     "book": {
