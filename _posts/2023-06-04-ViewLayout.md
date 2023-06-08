@@ -65,4 +65,16 @@ struct KeywordBubbleDefaultPadding: View {
 }
 ```
 <center><img src="/assets/images/viewLayout_2.png" alt="viewLayout_2.png" width="350"> <img src="/assets/images/viewLayout_3.png" alt="viewLayout_3.png" width="350"><br></center>
+<br>
+
+## Layering Content
+
+- 어떤 컨텐츠를 겹쳐서 (z-axis) 나타낼 때, ZStack{}/.overlay()/.background()을 사용
+- ZStack 다른 뷰들과 상관 없이, 사용 가능한 공간에 따라 뷰의 사이즈를 정함
+- 다른 컨텐츠의 사이즈와 관련하여 뷰의 사이즈를 조정하고 싶다면 overlay와 background를 사용하면 됨
+- Image() 뷰 이니셜라이저는 기본적으로 이미지의 원래 사이즈로 이미지를 가져옴
+- resizable() 모더파이어와 scaledToFit() 같은 모더파이어를 사용하여 이미지 사이즈를 조정할 수 있음
+- .clipShape(RoundedRectangle(cornerRadius: 10.0, style: .continuous)) 을 사용하여 뷰의 위치나 크기를 변경하지 않고 corner radius를 설정할 수 있음
+
+
 
