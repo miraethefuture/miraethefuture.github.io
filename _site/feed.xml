@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="4.3.2">Jekyll</generator><link href="http://localhost:4000/feed.xml" rel="self" type="application/atom+xml" /><link href="http://localhost:4000/" rel="alternate" type="text/html" /><updated>2023-06-08T23:54:44+09:00</updated><id>http://localhost:4000/feed.xml</id><title type="html">Mirae Jung  iOS Developer</title><subtitle>안녕하세요. iOS Developer 정미래입니다.
+<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="4.3.2">Jekyll</generator><link href="http://localhost:4000/feed.xml" rel="self" type="application/atom+xml" /><link href="http://localhost:4000/" rel="alternate" type="text/html" /><updated>2023-06-10T23:56:33+09:00</updated><id>http://localhost:4000/feed.xml</id><title type="html">Mirae Jung  iOS Developer</title><subtitle>안녕하세요. iOS Developer 정미래입니다.
 </subtitle><author><name>Mirae</name></author><entry><title type="html">TIL</title><link href="http://localhost:4000/til/2023-05-24-TIL.html" rel="alternate" type="text/html" title="TIL" /><published>2023-05-24T00:00:00+09:00</published><updated>2023-05-24T00:00:00+09:00</updated><id>http://localhost:4000/til/TIL</id><content type="html" xml:base="http://localhost:4000/til/2023-05-24-TIL.html"><![CDATA[<h2 id="스터디-과제-진행하며-정리-67">스터디 과제 진행하며 정리 (~6/7)</h2>
 <ul>
   <li>@State 프로퍼티는 항상 private으로 사용 (해당하는 뷰와 서브 뷰의 특정한 정보를 담기 때문)</li>
@@ -700,7 +700,35 @@ async, throws 키워드를 사용. property에 async와 throws를 사용하려�
 
 <ul>
   <li>Preview Content 폴더로 test data 파일을 옮기면 SwiftUI 프리뷰와 유닛 테스트 둘 다에서 데이터를 사용할 수 있음</li>
-</ul>]]></content><author><name>Mirae</name></author><category term="TIL" /><summary type="html"><![CDATA[Earthquakes app tutorial 이 글은 위의 apple developer tutorial을 따라가며 정리한 내용입니다. Error /decoding-structured-json/Decode earthquake data/step 8 Swift에서는 Error 프로토콜을 따르는 타입을 사용하여 에러를 나타냅니다. Error 프로토콜은 에러를 핸들링하기 위해 사용되는 타입이라는 것을 나타낼 뿐 아무런 내용이 없습니다. 요구사항도 없습니다. 그래서 커스텀 타입에 자유롭게 사용할 수 있습니다. ```swift enum QuakeError: Error { case missingData }]]></summary></entry><entry><title type="html">My Box</title><link href="http://localhost:4000/til/2022-08-14-myBoxes.html" rel="alternate" type="text/html" title="My Box" /><published>2022-08-14T00:00:00+09:00</published><updated>2022-08-14T00:00:00+09:00</updated><id>http://localhost:4000/til/myBoxes</id><content type="html" xml:base="http://localhost:4000/til/2022-08-14-myBoxes.html"><![CDATA[<h1 id="my-box---swiftui-프로젝트">My Box - SwiftUI 프로젝트</h1>
+</ul>
+
+<h1 id="add-the-map-view">Add the map view</h1>
+
+<p>MapKit 프레임워크를 사용하여 지진이 발생한 곳을 지도로 보여주려고 함.</p>
+
+<div class="language-swift highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">import</span> <span class="kt">MapKit</span> <span class="c1">// 1 </span>
+
+<span class="kd">struct</span> <span class="kt">QuakeDetailMap</span><span class="p">:</span> <span class="kt">View</span> <span class="p">{</span>
+    <span class="kd">@State</span> <span class="kd">private</span> <span class="k">var</span> <span class="nv">region</span> <span class="o">=</span> <span class="kt">MKCoordinateRegion</span><span class="p">()</span> <span class="c1">// 2</span>
+    
+        <span class="k">var</span> <span class="nv">body</span><span class="p">:</span> <span class="kd">some</span> <span class="kt">View</span> <span class="p">{</span>
+            <span class="kt">Map</span><span class="p">(</span><span class="nv">coordinateRegion</span><span class="p">:</span> <span class="err">$</span><span class="n">region</span><span class="p">)</span> <span class="c1">// 3</span>
+                <span class="o">.</span><span class="n">onAppear</span> <span class="p">{</span> <span class="c1">// 4</span>
+                    <span class="n">withAnimation</span> <span class="p">{</span>
+                        <span class="n">region</span><span class="o">.</span><span class="n">center</span> <span class="o">=</span> <span class="kt">CLLocationCoordinate2D</span><span class="p">(</span><span class="nv">latitude</span><span class="p">:</span> <span class="o">-</span><span class="mf">30.0</span><span class="p">,</span> <span class="nv">longitude</span><span class="p">:</span> <span class="mf">130.0</span><span class="p">)</span>
+                        <span class="n">region</span><span class="o">.</span><span class="n">span</span> <span class="o">=</span> <span class="kt">MKCoordinateSpan</span><span class="p">(</span><span class="nv">latitudeDelta</span><span class="p">:</span> <span class="mi">50</span><span class="p">,</span> <span class="nv">longitudeDelta</span><span class="p">:</span> <span class="mi">70</span><span class="p">)</span>
+            <span class="p">}</span>
+        <span class="p">}</span>
+    <span class="p">}</span>
+<span class="p">}</span>
+
+</code></pre></div></div>
+<ol>
+  <li>맵킷 프레임워크 추가</li>
+  <li>맵이 보여줄 지역을 담은 state property</li>
+  <li>바디 프로퍼티 부분에 맵뷰를 추가하여 뷰에 지도 뿌리기</li>
+  <li>onAppear{} 사용하여 맵뷰가 열릴 때 특정 지역이 보이도록 함</li>
+</ol>]]></content><author><name>Mirae</name></author><category term="TIL" /><summary type="html"><![CDATA[Earthquakes app tutorial 이 글은 위의 apple developer tutorial을 따라가며 정리한 내용입니다. Error /decoding-structured-json/Decode earthquake data/step 8 Swift에서는 Error 프로토콜을 따르는 타입을 사용하여 에러를 나타냅니다. Error 프로토콜은 에러를 핸들링하기 위해 사용되는 타입이라는 것을 나타낼 뿐 아무런 내용이 없습니다. 요구사항도 없습니다. 그래서 커스텀 타입에 자유롭게 사용할 수 있습니다. ```swift enum QuakeError: Error { case missingData }]]></summary></entry><entry><title type="html">My Box</title><link href="http://localhost:4000/til/2022-08-14-myBoxes.html" rel="alternate" type="text/html" title="My Box" /><published>2022-08-14T00:00:00+09:00</published><updated>2022-08-14T00:00:00+09:00</updated><id>http://localhost:4000/til/myBoxes</id><content type="html" xml:base="http://localhost:4000/til/2022-08-14-myBoxes.html"><![CDATA[<h1 id="my-box---swiftui-프로젝트">My Box - SwiftUI 프로젝트</h1>
 <video src="https://user-images.githubusercontent.com/85061148/190425324-cebc28eb-9cf7-45f9-a66a-96bb1ba0aef6.mov" controls="controls" style="max-width: 600px">
 </video>
 <blockquote>
