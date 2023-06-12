@@ -151,7 +151,7 @@
                             </a>
                             
                                 
-                                    <ul><li><a href="#error">Error</a></li><li><a href="#experiment">Experiment</a></li><li><a href="#privateset">private(set)</a></li><li><a href="#structuredjson">structuredJSON</a></li><li><a href="#codingkey-enum">CodingKey enum</a></li><li><a href="#existential-types">Existential Types</a></li><li><a href="#add-the-map-view">Add the map view</a></li></ul>
+                                    <ul><li><a href="#error">Error</a></li><li><a href="#experiment">Experiment</a></li><li><a href="#privateset">private(set)</a></li><li><a href="#structuredjson">structuredJSON</a></li><li><a href="#codingkey-enum">CodingKey enum</a></li><li><a href="#existential-types">Existential Types</a></li><li><a href="#add-the-map-view">Add the map view</a></li><li><a href="#managing-structured-concurrency">Managing structured concurrency</a></li></ul>
 
                                 
                             
@@ -558,8 +558,20 @@ async, throws 키워드를 사용. property에 async와 throws를 사용하려�
   <li>맵킷 프레임워크 추가</li>
   <li>맵이 보여줄 지역을 담은 state property</li>
   <li>바디 프로퍼티 부분에 맵뷰를 추가하여 뷰에 지도 뿌리기</li>
-  <li>onAppear{} 사용하여 맵뷰가 열릴 때 특정 지역이 보이도록 함</li>
+  <li>onAppear{} 사용하여 맵뷰가 열릴 때 특정 지역이 보이도록 함.</li>
 </ol>
+
+<ul>
+  <li>프리뷰에서 핀치 제스처 하는 방법 - 마우스 클릭하고 옵션 키 누르기</li>
+  <li>
+    <p>디테일에 추가할 맵뷰를 파일로 따로 생성한 경우, 디테일 뷰의 프리뷰에서 맵뷰를 확인할 수 있게 되면 프리뷰 자체를 삭제해도 됨. (그동안은 프리뷰 부분을 유지해야겠다고만 생각해서 추가 작업이 필요했음)</p>
+  </li>
+  <li>region.center = CLLocationCoordinate2D(latitude: 35.0, longitude: 127.0) 값을 수정하여 한국이 나타나도록 해봄</li>
+</ul>
+<center><img src="/assets/images/earthQuake_map.png" alt="earthQuake_map.png" width="800" /></center>
+<p><br /></p>
+
+<h1 id="managing-structured-concurrency">Managing structured concurrency</h1>
 
 </section>
             </div><div class="search-results">
@@ -700,7 +712,7 @@ MathJax = {
     },
     "gitbook": {
         "version": "3.2.3",
-        "time": "2023-06-10 23:56:33 +0900"
+        "time": "2023-06-12 22:06:09 +0900"
     },
     "basePath": "",
     "book": {
