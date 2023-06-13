@@ -151,7 +151,7 @@
                             </a>
                             
                                 
-                                    <ul><li><a href="#error">Error</a></li><li><a href="#experiment">Experiment</a></li><li><a href="#privateset">private(set)</a></li><li><a href="#structuredjson">structuredJSON</a></li><li><a href="#codingkey-enum">CodingKey enum</a></li><li><a href="#existential-types">Existential Types</a></li><li><a href="#add-the-map-view">Add the map view</a></li><li><a href="#managing-structured-concurrency">Managing structured concurrency</a></li></ul>
+                                    <ul><li><a href="#error">Error</a></li><li><a href="#experiment">Experiment</a></li><li><a href="#privateset">private(set)</a></li><li><a href="#structuredjson">structuredJSON</a></li><li><a href="#codingkey-enum">CodingKey enum</a></li><li><a href="#existential-types">Existential Types</a></li><li><a href="#add-the-map-view">Add the map view</a></li><li><a href="#managing-structured-concurrency">Managing structured concurrency</a><ul><li><a href="#fetching-multiple-urls">Fetching multiple URLs</a></li></ul></li></ul>
 
                                 
                             
@@ -573,6 +573,12 @@ async, throws 키워드를 사용. property에 async와 throws를 사용하려�
 
 <h1 id="managing-structured-concurrency">Managing structured concurrency</h1>
 
+<h2 id="fetching-multiple-urls">Fetching multiple URLs</h2>
+<p>현재 Earthquakes 앱의 클라이언트는 지진의 정보 목록을 가져오기 위해서 하나의 요청을 보내고 있음.<br />
+이제 클라이언트가 concurrency 기능을 사용하여 여러개의 요청을 동시에 보내도록 수정하려고 함.<br />
+비동기 함수와 프로퍼티를 사용해서 네트워크 요청에 대한 값을 가져오는 작업이 실행되는 동안 잠깐 해당 부분에 실행을 멈춤.<br />
+그동안 다른 작업이 진행됨.</p>
+
 </section>
             </div><div class="search-results">
     <div class="has-results">
@@ -712,7 +718,7 @@ MathJax = {
     },
     "gitbook": {
         "version": "3.2.3",
-        "time": "2023-06-12 22:06:09 +0900"
+        "time": "2023-06-13 22:54:31 +0900"
     },
     "basePath": "",
     "book": {

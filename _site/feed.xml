@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="4.3.2">Jekyll</generator><link href="http://localhost:4000/feed.xml" rel="self" type="application/atom+xml" /><link href="http://localhost:4000/" rel="alternate" type="text/html" /><updated>2023-06-12T22:06:09+09:00</updated><id>http://localhost:4000/feed.xml</id><title type="html">Mirae Jung  iOS Developer</title><subtitle>안녕하세요. iOS Developer 정미래입니다.
+<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="4.3.2">Jekyll</generator><link href="http://localhost:4000/feed.xml" rel="self" type="application/atom+xml" /><link href="http://localhost:4000/" rel="alternate" type="text/html" /><updated>2023-06-13T22:54:31+09:00</updated><id>http://localhost:4000/feed.xml</id><title type="html">Mirae Jung  iOS Developer</title><subtitle>안녕하세요. iOS Developer 정미래입니다.
 </subtitle><author><name>Mirae</name></author><entry><title type="html">TIL</title><link href="http://localhost:4000/til/2023-05-24-TIL.html" rel="alternate" type="text/html" title="TIL" /><published>2023-05-24T00:00:00+09:00</published><updated>2023-05-24T00:00:00+09:00</updated><id>http://localhost:4000/til/TIL</id><content type="html" xml:base="http://localhost:4000/til/2023-05-24-TIL.html"><![CDATA[<h2 id="스터디-과제-진행하며-정리-67">스터디 과제 진행하며 정리 (~6/7)</h2>
 <ul>
   <li>@State 프로퍼티는 항상 private으로 사용 (해당하는 뷰와 서브 뷰의 특정한 정보를 담기 때문)</li>
@@ -740,7 +740,13 @@ async, throws 키워드를 사용. property에 async와 throws를 사용하려�
 <center><img src="/assets/images/earthQuake_map.png" alt="earthQuake_map.png" width="800" /></center>
 <p><br /></p>
 
-<h1 id="managing-structured-concurrency">Managing structured concurrency</h1>]]></content><author><name>Mirae</name></author><category term="TIL" /><summary type="html"><![CDATA[Earthquakes app tutorial 이 글은 위의 apple developer tutorial을 따라가며 정리한 내용입니다. Error /decoding-structured-json/Decode earthquake data/step 8 Swift에서는 Error 프로토콜을 따르는 타입을 사용하여 에러를 나타냅니다. Error 프로토콜은 에러를 핸들링하기 위해 사용되는 타입이라는 것을 나타낼 뿐 아무런 내용이 없습니다. 요구사항도 없습니다. 그래서 커스텀 타입에 자유롭게 사용할 수 있습니다. ```swift enum QuakeError: Error { case missingData }]]></summary></entry><entry><title type="html">My Box</title><link href="http://localhost:4000/til/2022-08-14-myBoxes.html" rel="alternate" type="text/html" title="My Box" /><published>2022-08-14T00:00:00+09:00</published><updated>2022-08-14T00:00:00+09:00</updated><id>http://localhost:4000/til/myBoxes</id><content type="html" xml:base="http://localhost:4000/til/2022-08-14-myBoxes.html"><![CDATA[<h1 id="my-box---swiftui-프로젝트">My Box - SwiftUI 프로젝트</h1>
+<h1 id="managing-structured-concurrency">Managing structured concurrency</h1>
+
+<h2 id="fetching-multiple-urls">Fetching multiple URLs</h2>
+<p>현재 Earthquakes 앱의 클라이언트는 지진의 정보 목록을 가져오기 위해서 하나의 요청을 보내고 있음.<br />
+이제 클라이언트가 concurrency 기능을 사용하여 여러개의 요청을 동시에 보내도록 수정하려고 함.<br />
+비동기 함수와 프로퍼티를 사용해서 네트워크 요청에 대한 값을 가져오는 작업이 실행되는 동안 잠깐 해당 부분에 실행을 멈춤.<br />
+그동안 다른 작업이 진행됨.</p>]]></content><author><name>Mirae</name></author><category term="TIL" /><summary type="html"><![CDATA[Earthquakes app tutorial 이 글은 위의 apple developer tutorial을 따라가며 정리한 내용입니다. Error /decoding-structured-json/Decode earthquake data/step 8 Swift에서는 Error 프로토콜을 따르는 타입을 사용하여 에러를 나타냅니다. Error 프로토콜은 에러를 핸들링하기 위해 사용되는 타입이라는 것을 나타낼 뿐 아무런 내용이 없습니다. 요구사항도 없습니다. 그래서 커스텀 타입에 자유롭게 사용할 수 있습니다. ```swift enum QuakeError: Error { case missingData }]]></summary></entry><entry><title type="html">My Box</title><link href="http://localhost:4000/til/2022-08-14-myBoxes.html" rel="alternate" type="text/html" title="My Box" /><published>2022-08-14T00:00:00+09:00</published><updated>2022-08-14T00:00:00+09:00</updated><id>http://localhost:4000/til/myBoxes</id><content type="html" xml:base="http://localhost:4000/til/2022-08-14-myBoxes.html"><![CDATA[<h1 id="my-box---swiftui-프로젝트">My Box - SwiftUI 프로젝트</h1>
 <video src="https://user-images.githubusercontent.com/85061148/190425324-cebc28eb-9cf7-45f9-a66a-96bb1ba0aef6.mov" controls="controls" style="max-width: 600px">
 </video>
 <blockquote>
