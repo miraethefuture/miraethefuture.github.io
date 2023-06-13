@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="4.3.2">Jekyll</generator><link href="http://localhost:4000/feed.xml" rel="self" type="application/atom+xml" /><link href="http://localhost:4000/" rel="alternate" type="text/html" /><updated>2023-06-13T22:54:31+09:00</updated><id>http://localhost:4000/feed.xml</id><title type="html">Mirae Jung  iOS Developer</title><subtitle>안녕하세요. iOS Developer 정미래입니다.
+<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="4.3.2">Jekyll</generator><link href="http://localhost:4000/feed.xml" rel="self" type="application/atom+xml" /><link href="http://localhost:4000/" rel="alternate" type="text/html" /><updated>2023-06-13T23:02:39+09:00</updated><id>http://localhost:4000/feed.xml</id><title type="html">Mirae Jung  iOS Developer</title><subtitle>안녕하세요. iOS Developer 정미래입니다.
 </subtitle><author><name>Mirae</name></author><entry><title type="html">TIL</title><link href="http://localhost:4000/til/2023-05-24-TIL.html" rel="alternate" type="text/html" title="TIL" /><published>2023-05-24T00:00:00+09:00</published><updated>2023-05-24T00:00:00+09:00</updated><id>http://localhost:4000/til/TIL</id><content type="html" xml:base="http://localhost:4000/til/2023-05-24-TIL.html"><![CDATA[<h2 id="스터디-과제-진행하며-정리-67">스터디 과제 진행하며 정리 (~6/7)</h2>
 <ul>
   <li>@State 프로퍼티는 항상 private으로 사용 (해당하는 뷰와 서브 뷰의 특정한 정보를 담기 때문)</li>
@@ -130,7 +130,7 @@
 </code></pre></div></div>
 
 <h2 id="코테-0단계">코테 0단계</h2>
-
+<h3 id="다이얼">다이얼</h3>
 <p><a href="https://www.acmicpc.net/problem/5622">백준 - 다이얼</a></p>
 
 <ul>
@@ -181,6 +181,20 @@
     <span class="p">}</span>
 <span class="p">}</span>
 <span class="nf">print</span><span class="p">(</span><span class="n">sum</span><span class="p">)</span>
+</code></pre></div></div>
+
+<h3 id="문자열-다루기">문자열 다루기</h3>
+
+<div class="language-swift highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">func</span> <span class="nf">solution</span><span class="p">()</span> <span class="o">-&gt;</span> <span class="kt">String</span> <span class="p">{</span>
+    <span class="k">var</span> <span class="nv">str</span> <span class="o">=</span> <span class="s">"aaa_bbb_ccc"</span>
+    <span class="k">var</span> <span class="nv">separatorChar</span> <span class="o">=</span> <span class="s">"_"</span>
+    <span class="k">var</span> <span class="nv">strArr</span> <span class="o">=</span> <span class="n">str</span><span class="o">.</span><span class="nf">split</span><span class="p">(</span><span class="nv">separator</span><span class="p">:</span> <span class="n">separatorChar</span><span class="p">)</span>
+    
+    <span class="k">let</span> <span class="nv">capitalizedStrArr</span> <span class="o">=</span> <span class="n">strArr</span><span class="o">.</span><span class="n">map</span><span class="p">{</span><span class="nv">$0</span><span class="o">.</span><span class="n">capitalized</span><span class="p">}</span>
+    <span class="k">let</span> <span class="nv">result</span> <span class="o">=</span> <span class="n">capitalizedStrArr</span><span class="o">.</span><span class="nf">joined</span><span class="p">(</span><span class="nv">separator</span><span class="p">:</span><span class="s">"-"</span><span class="p">)</span>
+    
+    <span class="k">return</span> <span class="n">result</span> <span class="c1">// "AaaBbbCcc"</span>
+<span class="p">}</span>
 </code></pre></div></div>]]></content><author><name>Mirae</name></author><category term="TIL" /><summary type="html"><![CDATA[스터디 과제 진행하며 정리 (~6/7) @State 프로퍼티는 항상 private으로 사용 (해당하는 뷰와 서브 뷰의 특정한 정보를 담기 때문) observable object class 수정 published 값이 옵셔널로 설정되어 있음 -&gt; 뷰 부분에서 처리해주어야 하는 불편함을 해결하기 위해 수정 final class로 변경 Combine 추가 데이터 로드하는 함수를 제네릭 함수로 변경 데이터 로드 함수를 실행하는 init() 제거 데이터 로드 함수가 observable object 클래스 안이 아닌 바깥 쪽에 정의]]></summary></entry><entry><title type="html">SwiftUI 뷰 레이아웃</title><link href="http://localhost:4000/til/2023-05-24-ViewLayout.html" rel="alternate" type="text/html" title="SwiftUI 뷰 레이아웃" /><published>2023-05-24T00:00:00+09:00</published><updated>2023-05-24T00:00:00+09:00</updated><id>http://localhost:4000/til/ViewLayout</id><content type="html" xml:base="http://localhost:4000/til/2023-05-24-ViewLayout.html"><![CDATA[<div class="language-swift highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">struct</span> <span class="kt">ReusableLabel</span><span class="p">:</span> <span class="kt">View</span> <span class="p">{</span>
     <span class="k">let</span> <span class="nv">keyword</span><span class="p">:</span> <span class="kt">String</span>
     <span class="k">let</span> <span class="nv">symbol</span><span class="p">:</span> <span class="kt">String</span>

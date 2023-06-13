@@ -195,7 +195,7 @@
                             </a>
                             
                                 
-                                    <ul><li><a href="#스터디-과제-진행하며-정리-67">스터디 과제 진행하며 정리 (~6/7)</a></li><li><a href="#swiftui">SwiftUI</a></li><li><a href="#코테-0단계">코테 0단계</a></li></ul>
+                                    <ul><li><a href="#스터디-과제-진행하며-정리-67">스터디 과제 진행하며 정리 (~6/7)</a></li><li><a href="#swiftui">SwiftUI</a></li><li><a href="#코테-0단계">코테 0단계</a><ul><li><a href="#다이얼">다이얼</a></li><li><a href="#문자열-다루기">문자열 다루기</a></li></ul></li></ul>
 
                                 
                             
@@ -380,7 +380,7 @@
 </code></pre></div></div>
 
 <h2 id="코테-0단계">코테 0단계</h2>
-
+<h3 id="다이얼">다이얼</h3>
 <p><a href="https://www.acmicpc.net/problem/5622">백준 - 다이얼</a></p>
 
 <ul>
@@ -431,6 +431,20 @@
     <span class="p">}</span>
 <span class="p">}</span>
 <span class="nf">print</span><span class="p">(</span><span class="n">sum</span><span class="p">)</span>
+</code></pre></div></div>
+
+<h3 id="문자열-다루기">문자열 다루기</h3>
+
+<div class="language-swift highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">func</span> <span class="nf">solution</span><span class="p">()</span> <span class="o">-&gt;</span> <span class="kt">String</span> <span class="p">{</span>
+    <span class="k">var</span> <span class="nv">str</span> <span class="o">=</span> <span class="s">"aaa_bbb_ccc"</span>
+    <span class="k">var</span> <span class="nv">separatorChar</span> <span class="o">=</span> <span class="s">"_"</span>
+    <span class="k">var</span> <span class="nv">strArr</span> <span class="o">=</span> <span class="n">str</span><span class="o">.</span><span class="nf">split</span><span class="p">(</span><span class="nv">separator</span><span class="p">:</span> <span class="n">separatorChar</span><span class="p">)</span>
+    
+    <span class="k">let</span> <span class="nv">capitalizedStrArr</span> <span class="o">=</span> <span class="n">strArr</span><span class="o">.</span><span class="n">map</span><span class="p">{</span><span class="nv">$0</span><span class="o">.</span><span class="n">capitalized</span><span class="p">}</span>
+    <span class="k">let</span> <span class="nv">result</span> <span class="o">=</span> <span class="n">capitalizedStrArr</span><span class="o">.</span><span class="nf">joined</span><span class="p">(</span><span class="nv">separator</span><span class="p">:</span><span class="s">"-"</span><span class="p">)</span>
+    
+    <span class="k">return</span> <span class="n">result</span> <span class="c1">// "AaaBbbCcc"</span>
+<span class="p">}</span>
 </code></pre></div></div>
 
 </section>
@@ -572,7 +586,7 @@ MathJax = {
     },
     "gitbook": {
         "version": "3.2.3",
-        "time": "2023-06-13 22:54:31 +0900"
+        "time": "2023-06-13 23:02:39 +0900"
     },
     "basePath": "",
     "book": {
