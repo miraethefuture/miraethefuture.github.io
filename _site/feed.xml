@@ -1,5 +1,30 @@
-<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="4.3.2">Jekyll</generator><link href="http://localhost:4000/feed.xml" rel="self" type="application/atom+xml" /><link href="http://localhost:4000/" rel="alternate" type="text/html" /><updated>2023-06-13T23:02:39+09:00</updated><id>http://localhost:4000/feed.xml</id><title type="html">Mirae Jung  iOS Developer</title><subtitle>안녕하세요. iOS Developer 정미래입니다.
-</subtitle><author><name>Mirae</name></author><entry><title type="html">TIL</title><link href="http://localhost:4000/til/2023-05-24-TIL.html" rel="alternate" type="text/html" title="TIL" /><published>2023-05-24T00:00:00+09:00</published><updated>2023-05-24T00:00:00+09:00</updated><id>http://localhost:4000/til/TIL</id><content type="html" xml:base="http://localhost:4000/til/2023-05-24-TIL.html"><![CDATA[<h2 id="스터디-과제-진행하며-정리-67">스터디 과제 진행하며 정리 (~6/7)</h2>
+<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="4.3.2">Jekyll</generator><link href="http://localhost:4000/feed.xml" rel="self" type="application/atom+xml" /><link href="http://localhost:4000/" rel="alternate" type="text/html" /><updated>2023-06-14T21:54:33+09:00</updated><id>http://localhost:4000/feed.xml</id><title type="html">Mirae Jung  iOS Developer</title><subtitle>안녕하세요. iOS Developer 정미래입니다.
+</subtitle><author><name>Mirae</name></author><entry><title type="html">TIL</title><link href="http://localhost:4000/til/2023-05-24-TIL.html" rel="alternate" type="text/html" title="TIL" /><published>2023-05-24T00:00:00+09:00</published><updated>2023-05-24T00:00:00+09:00</updated><id>http://localhost:4000/til/TIL</id><content type="html" xml:base="http://localhost:4000/til/2023-05-24-TIL.html"><![CDATA[<h2 id="스터디">스터디</h2>
+<ul>
+  <li>WWDC 2023 주제 정해서 발표하기
+    <ul>
+      <li>Debugging 으로 주제 선택</li>
+      <li>Xcode 디버거 위주로 정리
+        <ul>
+          <li>실행 중인 앱에서 버그를 찾고 해결하기</li>
+          <li>앱을 조사하여,
+            <ul>
+              <li>버그를 따로 분리하여 해결</li>
+              <li>앱 크래시를 해결</li>
+              <li>지나친 시스템 자원 사용을 찾아냄</li>
+              <li>메모리 버그를 시각화</li>
+              <li>뷰 레이아웃 문제를 찾아냄</li>
+            </ul>
+          </li>
+          <li>유닛 테스트는 코드를 작성하며 기대한 결과가 나오는지 확인할 수 있지만, 정상적으로 동작하지 않을 때 그 원인을 알려주지 못함</li>
+          <li>앱이 동작하는 동안 브레이크 포인트를 사용하여 디버거로 에러의 원인을 밝히고, 에러를 재현하고, 에러의 원인을 찾을 수 있음</li>
+        </ul>
+      </li>
+    </ul>
+  </li>
+</ul>
+
+<h2 id="스터디-과제-진행하며-정리-67">스터디 과제 진행하며 정리 (~6/7)</h2>
 <ul>
   <li>@State 프로퍼티는 항상 private으로 사용 (해당하는 뷰와 서브 뷰의 특정한 정보를 담기 때문)</li>
   <li>observable object class 수정
@@ -195,7 +220,7 @@
     
     <span class="k">return</span> <span class="n">result</span> <span class="c1">// "AaaBbbCcc"</span>
 <span class="p">}</span>
-</code></pre></div></div>]]></content><author><name>Mirae</name></author><category term="TIL" /><summary type="html"><![CDATA[스터디 과제 진행하며 정리 (~6/7) @State 프로퍼티는 항상 private으로 사용 (해당하는 뷰와 서브 뷰의 특정한 정보를 담기 때문) observable object class 수정 published 값이 옵셔널로 설정되어 있음 -&gt; 뷰 부분에서 처리해주어야 하는 불편함을 해결하기 위해 수정 final class로 변경 Combine 추가 데이터 로드하는 함수를 제네릭 함수로 변경 데이터 로드 함수를 실행하는 init() 제거 데이터 로드 함수가 observable object 클래스 안이 아닌 바깥 쪽에 정의]]></summary></entry><entry><title type="html">SwiftUI 뷰 레이아웃</title><link href="http://localhost:4000/til/2023-05-24-ViewLayout.html" rel="alternate" type="text/html" title="SwiftUI 뷰 레이아웃" /><published>2023-05-24T00:00:00+09:00</published><updated>2023-05-24T00:00:00+09:00</updated><id>http://localhost:4000/til/ViewLayout</id><content type="html" xml:base="http://localhost:4000/til/2023-05-24-ViewLayout.html"><![CDATA[<div class="language-swift highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">struct</span> <span class="kt">ReusableLabel</span><span class="p">:</span> <span class="kt">View</span> <span class="p">{</span>
+</code></pre></div></div>]]></content><author><name>Mirae</name></author><category term="TIL" /><summary type="html"><![CDATA[스터디 WWDC 2023 주제 정해서 발표하기 Debugging 으로 주제 선택 Xcode 디버거 위주로 정리 실행 중인 앱에서 버그를 찾고 해결하기 앱을 조사하여, 버그를 따로 분리하여 해결 앱 크래시를 해결 지나친 시스템 자원 사용을 찾아냄 메모리 버그를 시각화 뷰 레이아웃 문제를 찾아냄 유닛 테스트는 코드를 작성하며 기대한 결과가 나오는지 확인할 수 있지만, 정상적으로 동작하지 않을 때 그 원인을 알려주지 못함 앱이 동작하는 동안 브레이크 포인트를 사용하여 디버거로 에러의 원인을 밝히고, 에러를 재현하고, 에러의 원인을 찾을 수 있음]]></summary></entry><entry><title type="html">SwiftUI 뷰 레이아웃</title><link href="http://localhost:4000/til/2023-05-24-ViewLayout.html" rel="alternate" type="text/html" title="SwiftUI 뷰 레이아웃" /><published>2023-05-24T00:00:00+09:00</published><updated>2023-05-24T00:00:00+09:00</updated><id>http://localhost:4000/til/ViewLayout</id><content type="html" xml:base="http://localhost:4000/til/2023-05-24-ViewLayout.html"><![CDATA[<div class="language-swift highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">struct</span> <span class="kt">ReusableLabel</span><span class="p">:</span> <span class="kt">View</span> <span class="p">{</span>
     <span class="k">let</span> <span class="nv">keyword</span><span class="p">:</span> <span class="kt">String</span>
     <span class="k">let</span> <span class="nv">symbol</span><span class="p">:</span> <span class="kt">String</span>
     <span class="k">var</span> <span class="nv">body</span><span class="p">:</span> <span class="kd">some</span> <span class="kt">View</span> <span class="p">{</span>
