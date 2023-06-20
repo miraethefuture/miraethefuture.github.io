@@ -574,11 +574,39 @@ async, throws 키워드를 사용. property에 async와 throws를 사용하려�
 <h1 id="managing-structured-concurrency">Managing structured concurrency</h1>
 
 <h2 id="fetching-multiple-urls">Fetching multiple URLs</h2>
-<p>현재 Earthquakes 앱의 클라이언트는 지진의 정보 목록을 가져오기 위해서 하나의 요청을 보내고 있음.<br />
+<p><a href="https://developer.apple.com/tutorials/app-dev-training/managing-structured-concurrency#Protecting-data-with-actors">→</a>
+현재 Earthquakes 앱의 클라이언트는 지진의 정보 목록을 가져오기 위해서 하나의 요청을 보내고 있음.<br />
 이제 클라이언트가 concurrency 기능을 사용하여 여러개의 요청을 동시에 보내도록 수정하려고 함.<br />
-비동기 함수와 프로퍼티를 사용해서 네트워크 요청에 대한 값을 가져오는 작업이 실행되는 동안 잠깐 해당 부분에 실행을 멈춤.<br />
-그동안 다른 작업이 진행됨.</p>
+비동기 함수와 비동기 프로퍼티를 사용해서 네트워크 요청에 대한 값을 가져오는 작업이 실행되는 동안 잠깐 해당 부분에 실행을 멈춤.
+그동안 다른 작업이 먼저 진행됨.</p>
 
+<div class="language-swift highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">let</span> <span class="nv">quakes</span><span class="p">:</span> <span class="p">[</span><span class="kt">Quake</span><span class="p">]</span> <span class="o">=</span> <span class="k">try</span> <span class="k">await</span> <span class="n">quakeClient</span><span class="o">.</span><span class="n">quakes</span>
+</code></pre></div></div>
+<p>위 코드에서는 비동기 프로퍼티가 지진의 목록을 가져옴. (비동기 속서이기 때문에, 정보를 가져올때까지 기다림.)</p>
+
+<div class="language-swift highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">func</span> <span class="nf">quakeLocation</span><span class="p">(</span><span class="n">from</span> <span class="nv">url</span><span class="p">:</span> <span class="kt">URL</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kt">QuakeLocation</span>
+</code></pre></div></div>
+<p>위 코드에서는 각 지진의 디테일 정보 중 위치 정보를 가져옴.<br />
+이 두 개의 네트워크 요청을 동시에 보내려고 함.</p>
+
+<div class="language-swift highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">let</span> <span class="nv">quakes</span><span class="p">:</span> <span class="p">[</span><span class="kt">Quake</span><span class="p">]</span> <span class="o">=</span> <span class="k">try</span> <span class="k">await</span> <span class="n">quakeClient</span><span class="o">.</span><span class="n">quakes</span>
+<span class="k">var</span> <span class="nv">locations</span><span class="p">:</span> <span class="p">[</span><span class="kt">QuakeLocation</span><span class="p">]</span> <span class="o">=</span> <span class="p">[]</span>
+
+<span class="k">for</span> <span class="n">quake</span> <span class="k">in</span> <span class="n">quakes</span> <span class="p">{</span>
+    <span class="k">let</span> <span class="nv">location</span> <span class="o">=</span> <span class="k">await</span> <span class="n">quakeClient</span><span class="o">.</span><span class="nf">quakeLocation</span><span class="p">(</span><span class="nv">from</span><span class="p">:</span> <span class="n">quake</span><span class="o">.</span><span class="n">url</span><span class="p">)</span>
+    <span class="n">location</span><span class="o">.</span><span class="nf">append</span><span class="p">(</span><span class="n">location</span><span class="p">)</span>
+<span class="p">}</span>
+</code></pre></div></div>
+<p>위 코드를 보면, 가져온 지진 정보 마다 가지고 있는 위치 정보 url을 사용하여 위치 정보를 얻어오고, 그 정보를 locations 배열에 추가함.<br />
+for loop 안에 작성된 quakeClient.quakeLocation(from: quake.url) 함수는 각 반복마다 quakeLocation() 함수가 결과 값을 가져올동안 중단되고, 다시 실행되면 다음 suspension point(quakeLocation()이 다시 실행되는 곳)까지 실행됨. <br />
+비동기 함수이지만 순차적으로 진행되게 됨. 이것을 동시에 실행되도록 해야 함.</p>
+
+<p><b>Task Group</b>
+이때 사용할 수 있는 것이 테스크 그룸. 테스크 그룹을 사용하면 많은 테스크를 동시에 실행할 수 있음.<br />
+시스템은 병렬 쓰레드를 사용하여 테스크를 동시에 실행함. 
+-withTaskGroup() 
+-withThrowingTaskGroup()<br />
+위 두가지 함수를 사용하여 테스크 그룹을 사용할 수 있는데, 여기서는 throwing 함수를 사용하기 때문에 withThrowingTaskGroupo()을 사용함.</p>
 </section>
             </div><div class="search-results">
     <div class="has-results">
@@ -718,7 +746,7 @@ MathJax = {
     },
     "gitbook": {
         "version": "3.2.3",
-        "time": "2023-06-14 21:54:33 +0900"
+        "time": "2023-06-20 22:47:35 +0900"
     },
     "basePath": "",
     "book": {
