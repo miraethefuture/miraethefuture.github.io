@@ -1,5 +1,82 @@
-<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="4.3.2">Jekyll</generator><link href="http://localhost:4000/feed.xml" rel="self" type="application/atom+xml" /><link href="http://localhost:4000/" rel="alternate" type="text/html" /><updated>2023-06-20T22:47:35+09:00</updated><id>http://localhost:4000/feed.xml</id><title type="html">Mirae Jung  iOS Developer</title><subtitle>안녕하세요. iOS Developer 정미래입니다.
-</subtitle><author><name>Mirae</name></author><entry><title type="html">TIL</title><link href="http://localhost:4000/til/2023-05-24-TIL.html" rel="alternate" type="text/html" title="TIL" /><published>2023-05-24T00:00:00+09:00</published><updated>2023-05-24T00:00:00+09:00</updated><id>http://localhost:4000/til/TIL</id><content type="html" xml:base="http://localhost:4000/til/2023-05-24-TIL.html"><![CDATA[<h2 id="스터디">스터디</h2>
+<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="4.3.2">Jekyll</generator><link href="http://localhost:4000/feed.xml" rel="self" type="application/atom+xml" /><link href="http://localhost:4000/" rel="alternate" type="text/html" /><updated>2023-07-03T20:11:28+09:00</updated><id>http://localhost:4000/feed.xml</id><title type="html">Mirae Jung  iOS Developer</title><subtitle>안녕하세요. iOS Developer 정미래입니다.
+</subtitle><author><name>Mirae</name></author><entry><title type="html">SwiftUI 업데이트</title><link href="http://localhost:4000/til/2023-07-03-SwiftUIUpdates.html" rel="alternate" type="text/html" title="SwiftUI 업데이트" /><published>2023-07-03T00:00:00+09:00</published><updated>2023-07-03T00:00:00+09:00</updated><id>http://localhost:4000/til/SwiftUIUpdates</id><content type="html" xml:base="http://localhost:4000/til/2023-07-03-SwiftUIUpdates.html"><![CDATA[<h1 id="onchangeofinitial_">onChange(of:initial:_:)</h1>
+
+<h2 id="파라미터">파라미터</h2>
+
+<ul>
+  <li>value : of 뒤에 작성되는 값으로, value의 값에 변화가 생기면 onChange 클로저가 실행됨</li>
+</ul>]]></content><author><name>Mirae</name></author><category term="TIL" /><summary type="html"><![CDATA[onChange(of:initial:_:)]]></summary></entry><entry><title type="html">SwiftUI 뷰 레이아웃</title><link href="http://localhost:4000/til/2023-05-24-ViewLayout.html" rel="alternate" type="text/html" title="SwiftUI 뷰 레이아웃" /><published>2023-05-24T00:00:00+09:00</published><updated>2023-05-24T00:00:00+09:00</updated><id>http://localhost:4000/til/ViewLayout</id><content type="html" xml:base="http://localhost:4000/til/2023-05-24-ViewLayout.html"><![CDATA[<div class="language-swift highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">struct</span> <span class="kt">ReusableLabel</span><span class="p">:</span> <span class="kt">View</span> <span class="p">{</span>
+    <span class="k">let</span> <span class="nv">keyword</span><span class="p">:</span> <span class="kt">String</span>
+    <span class="k">let</span> <span class="nv">symbol</span><span class="p">:</span> <span class="kt">String</span>
+    <span class="k">var</span> <span class="nv">body</span><span class="p">:</span> <span class="kd">some</span> <span class="kt">View</span> <span class="p">{</span>
+        <span class="kt">Label</span><span class="p">(</span><span class="n">keyword</span><span class="p">,</span> <span class="nv">systemImage</span><span class="p">:</span> <span class="n">symbol</span><span class="p">)</span>
+            <span class="o">.</span><span class="nf">font</span><span class="p">(</span><span class="o">.</span><span class="n">title</span><span class="p">)</span>
+            <span class="o">.</span><span class="nf">foregroundColor</span><span class="p">(</span><span class="o">.</span><span class="n">white</span><span class="p">)</span>
+            <span class="o">.</span><span class="nf">padding</span><span class="p">()</span>
+            <span class="o">.</span><span class="nf">background</span><span class="p">(</span><span class="o">.</span><span class="n">green</span><span class="o">.</span><span class="nf">opacity</span><span class="p">(</span><span class="mf">0.75</span><span class="p">),</span> <span class="nv">in</span><span class="p">:</span> <span class="kt">Capsule</span><span class="p">())</span> <span class="c1">// - 1</span>
+            
+    <span class="p">}</span>
+<span class="p">}</span>
+
+<span class="kd">struct</span> <span class="kt">ReusableLabel_Previews</span><span class="p">:</span> <span class="kt">PreviewProvider</span> <span class="p">{</span> <span class="c1">// - 2</span>
+    
+    <span class="kd">static</span> <span class="k">let</span> <span class="nv">keywords</span> <span class="o">=</span> <span class="p">[</span><span class="s">"Hello"</span><span class="p">,</span> <span class="s">"Good Morning"</span><span class="p">]</span>
+    
+    <span class="kd">static</span> <span class="k">var</span> <span class="nv">previews</span><span class="p">:</span> <span class="kd">some</span> <span class="kt">View</span> <span class="p">{</span> <span class="c1">// - 3</span>
+        <span class="kt">VStack</span> <span class="p">{</span> <span class="c1">// - 4</span>
+            <span class="kt">ForEach</span><span class="p">(</span><span class="n">keywords</span><span class="p">,</span> <span class="nv">id</span><span class="p">:</span> <span class="p">\</span><span class="o">.</span><span class="k">self</span><span class="p">)</span> <span class="p">{</span> <span class="n">word</span> <span class="k">in</span>
+                <span class="kt">KeywordBubbleDefaultPadding</span><span class="p">(</span><span class="nv">keyword</span><span class="p">:</span> <span class="n">word</span><span class="p">,</span> <span class="nv">symbol</span><span class="p">:</span> <span class="s">"fish"</span><span class="p">)</span>
+            <span class="p">}</span>
+        <span class="p">}</span>
+    <span class="p">}</span>
+<span class="p">}</span>
+</code></pre></div></div>
+
+<ul>
+  <li>1: .background에 Capsule()을 정의해줌으로써 캡슐 모양이 Label의 뒷쪽에 오도록 함. 이때 .padding()을 백그라운드의 윗쪽에 선언해주어야 패딩을 포함한 백그라운드에 캡슐 모양을 생성할 수 있음.</li>
+  <li>2: PreviewProvider 프로토콜을 사용하여 커스텀 스위프트UI 뷰의 코드가 생성하는 화면을 미리 볼 수 있음</li>
+  <li>3: PreviewProvider 프로토콜을 구현하기 위해선 static previews 프로퍼티를 정의해야 함</li>
+  <li>4: VStack 안에 ForEach를 사용하여, ReusableLabel 스트럭쳐가 생성하는 라벨 뷰가 다른 텍스트 길이에서 어떻게 적용되는지 한 화면에서 확인할 수 있음</li>
+</ul>
+
+<center><img src="/assets/images/viewLayout_1.png" alt="viewLayout_1.png" width="600" /><br /></center>
+
+<p><br />
+<b>ScaledMetric를 사용하여 동적으로 넓이 조정하기</b></p>
+<ul>
+  <li>padding() modifier를 사용하여 패딩을 주었을 때, 폰트 사이즈가 달라지면 아래 이미지와 같이 큰 사이즈의 폰트에서는 패딩이 충분하지 않는 경우가 있음</li>
+  <li>이때 패딩 값을 그냥 키워주면 작은 폰트에서는 패딩이 너무 넓어질 수 있음</li>
+  <li>@ScaledMetric 프로퍼티 래퍼를 사용하여 .title과 같은 environment’s effective font size에 숫자값을 적용할 수 있음</li>
+</ul>
+
+<div class="language-swift highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">struct</span> <span class="kt">KeywordBubbleDefaultPadding</span><span class="p">:</span> <span class="kt">View</span> <span class="p">{</span>
+    <span class="k">let</span> <span class="nv">keyword</span><span class="p">:</span> <span class="kt">String</span>
+    <span class="k">let</span> <span class="nv">symbol</span><span class="p">:</span> <span class="kt">String</span>
+    <span class="kd">@ScaledMetric</span><span class="p">(</span><span class="nv">relativeTo</span><span class="p">:</span> <span class="o">.</span><span class="n">title</span><span class="p">)</span> <span class="k">var</span> <span class="nv">paddingWidth</span> <span class="o">=</span> <span class="mf">20.5</span> <span class="c1">// &lt;- 여기</span>
+    <span class="k">var</span> <span class="nv">body</span><span class="p">:</span> <span class="kd">some</span> <span class="kt">View</span> <span class="p">{</span>
+        <span class="kt">Label</span><span class="p">(</span><span class="n">keyword</span><span class="p">,</span> <span class="nv">systemImage</span><span class="p">:</span> <span class="n">symbol</span><span class="p">)</span>
+            <span class="o">.</span><span class="nf">font</span><span class="p">(</span><span class="o">.</span><span class="n">title</span><span class="p">)</span>
+            <span class="o">.</span><span class="nf">foregroundColor</span><span class="p">(</span><span class="o">.</span><span class="n">white</span><span class="p">)</span>
+            <span class="o">.</span><span class="nf">padding</span><span class="p">(</span><span class="n">paddingWidth</span><span class="p">)</span> <span class="c1">// &lt;- 여기</span>
+<span class="c1">//            .padding()</span>
+            <span class="o">.</span><span class="nf">background</span><span class="p">(</span><span class="o">.</span><span class="n">green</span><span class="o">.</span><span class="nf">opacity</span><span class="p">(</span><span class="mf">0.75</span><span class="p">),</span> <span class="nv">in</span><span class="p">:</span> <span class="kt">Capsule</span><span class="p">())</span>
+            
+    <span class="p">}</span>
+<span class="p">}</span>
+</code></pre></div></div>
+<center><img src="/assets/images/viewLayout_2.png" alt="viewLayout_2.png" width="350" /> <img src="/assets/images/viewLayout_3.png" alt="viewLayout_3.png" width="350" /><br /></center>
+<p><br /></p>
+
+<h2 id="layering-content">Layering Content</h2>
+
+<ul>
+  <li>어떤 컨텐츠를 겹쳐서 (z-axis) 나타낼 때, ZStack{}/.overlay()/.background()을 사용</li>
+  <li>ZStack 다른 뷰들과 상관 없이, 사용 가능한 공간에 따라 뷰의 사이즈를 정함</li>
+  <li>다른 컨텐츠의 사이즈와 관련하여 뷰의 사이즈를 조정하고 싶다면 overlay와 background를 사용하면 됨</li>
+  <li>Image() 뷰 이니셜라이저는 기본적으로 이미지의 원래 사이즈로 이미지를 가져옴</li>
+  <li>resizable() 모더파이어와 scaledToFit() 같은 모더파이어를 사용하여 이미지 사이즈를 조정할 수 있음</li>
+  <li>.clipShape(RoundedRectangle(cornerRadius: 10.0, style: .continuous)) 을 사용하여 뷰의 위치나 크기를 변경하지 않고 corner radius를 설정할 수 있음</li>
+</ul>]]></content><author><name>Mirae</name></author><category term="TIL" /><summary type="html"><![CDATA[```swift struct ReusableLabel: View { let keyword: String let symbol: String var body: some View { Label(keyword, systemImage: symbol) .font(.title) .foregroundColor(.white) .padding() .background(.green.opacity(0.75), in: Capsule()) // - 1 } }]]></summary></entry><entry><title type="html">TIL</title><link href="http://localhost:4000/til/2023-05-24-TIL.html" rel="alternate" type="text/html" title="TIL" /><published>2023-05-24T00:00:00+09:00</published><updated>2023-05-24T00:00:00+09:00</updated><id>http://localhost:4000/til/TIL</id><content type="html" xml:base="http://localhost:4000/til/2023-05-24-TIL.html"><![CDATA[<h2 id="스터디">스터디</h2>
 <ul>
   <li>WWDC 2023 주제 정해서 발표하기
     <ul>
@@ -220,78 +297,7 @@
     
     <span class="k">return</span> <span class="n">result</span> <span class="c1">// "AaaBbbCcc"</span>
 <span class="p">}</span>
-</code></pre></div></div>]]></content><author><name>Mirae</name></author><category term="TIL" /><summary type="html"><![CDATA[스터디 WWDC 2023 주제 정해서 발표하기 Debugging 으로 주제 선택 Xcode 디버거 위주로 정리 실행 중인 앱에서 버그를 찾고 해결하기 앱을 조사하여, 버그를 따로 분리하여 해결 앱 크래시를 해결 지나친 시스템 자원 사용을 찾아냄 메모리 버그를 시각화 뷰 레이아웃 문제를 찾아냄 유닛 테스트는 코드를 작성하며 기대한 결과가 나오는지 확인할 수 있지만, 정상적으로 동작하지 않을 때 그 원인을 알려주지 못함 앱이 동작하는 동안 브레이크 포인트를 사용하여 디버거로 에러의 원인을 밝히고, 에러를 재현하고, 에러의 원인을 찾을 수 있음]]></summary></entry><entry><title type="html">SwiftUI 뷰 레이아웃</title><link href="http://localhost:4000/til/2023-05-24-ViewLayout.html" rel="alternate" type="text/html" title="SwiftUI 뷰 레이아웃" /><published>2023-05-24T00:00:00+09:00</published><updated>2023-05-24T00:00:00+09:00</updated><id>http://localhost:4000/til/ViewLayout</id><content type="html" xml:base="http://localhost:4000/til/2023-05-24-ViewLayout.html"><![CDATA[<div class="language-swift highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">struct</span> <span class="kt">ReusableLabel</span><span class="p">:</span> <span class="kt">View</span> <span class="p">{</span>
-    <span class="k">let</span> <span class="nv">keyword</span><span class="p">:</span> <span class="kt">String</span>
-    <span class="k">let</span> <span class="nv">symbol</span><span class="p">:</span> <span class="kt">String</span>
-    <span class="k">var</span> <span class="nv">body</span><span class="p">:</span> <span class="kd">some</span> <span class="kt">View</span> <span class="p">{</span>
-        <span class="kt">Label</span><span class="p">(</span><span class="n">keyword</span><span class="p">,</span> <span class="nv">systemImage</span><span class="p">:</span> <span class="n">symbol</span><span class="p">)</span>
-            <span class="o">.</span><span class="nf">font</span><span class="p">(</span><span class="o">.</span><span class="n">title</span><span class="p">)</span>
-            <span class="o">.</span><span class="nf">foregroundColor</span><span class="p">(</span><span class="o">.</span><span class="n">white</span><span class="p">)</span>
-            <span class="o">.</span><span class="nf">padding</span><span class="p">()</span>
-            <span class="o">.</span><span class="nf">background</span><span class="p">(</span><span class="o">.</span><span class="n">green</span><span class="o">.</span><span class="nf">opacity</span><span class="p">(</span><span class="mf">0.75</span><span class="p">),</span> <span class="nv">in</span><span class="p">:</span> <span class="kt">Capsule</span><span class="p">())</span> <span class="c1">// - 1</span>
-            
-    <span class="p">}</span>
-<span class="p">}</span>
-
-<span class="kd">struct</span> <span class="kt">ReusableLabel_Previews</span><span class="p">:</span> <span class="kt">PreviewProvider</span> <span class="p">{</span> <span class="c1">// - 2</span>
-    
-    <span class="kd">static</span> <span class="k">let</span> <span class="nv">keywords</span> <span class="o">=</span> <span class="p">[</span><span class="s">"Hello"</span><span class="p">,</span> <span class="s">"Good Morning"</span><span class="p">]</span>
-    
-    <span class="kd">static</span> <span class="k">var</span> <span class="nv">previews</span><span class="p">:</span> <span class="kd">some</span> <span class="kt">View</span> <span class="p">{</span> <span class="c1">// - 3</span>
-        <span class="kt">VStack</span> <span class="p">{</span> <span class="c1">// - 4</span>
-            <span class="kt">ForEach</span><span class="p">(</span><span class="n">keywords</span><span class="p">,</span> <span class="nv">id</span><span class="p">:</span> <span class="p">\</span><span class="o">.</span><span class="k">self</span><span class="p">)</span> <span class="p">{</span> <span class="n">word</span> <span class="k">in</span>
-                <span class="kt">KeywordBubbleDefaultPadding</span><span class="p">(</span><span class="nv">keyword</span><span class="p">:</span> <span class="n">word</span><span class="p">,</span> <span class="nv">symbol</span><span class="p">:</span> <span class="s">"fish"</span><span class="p">)</span>
-            <span class="p">}</span>
-        <span class="p">}</span>
-    <span class="p">}</span>
-<span class="p">}</span>
-</code></pre></div></div>
-
-<ul>
-  <li>1: .background에 Capsule()을 정의해줌으로써 캡슐 모양이 Label의 뒷쪽에 오도록 함. 이때 .padding()을 백그라운드의 윗쪽에 선언해주어야 패딩을 포함한 백그라운드에 캡슐 모양을 생성할 수 있음.</li>
-  <li>2: PreviewProvider 프로토콜을 사용하여 커스텀 스위프트UI 뷰의 코드가 생성하는 화면을 미리 볼 수 있음</li>
-  <li>3: PreviewProvider 프로토콜을 구현하기 위해선 static previews 프로퍼티를 정의해야 함</li>
-  <li>4: VStack 안에 ForEach를 사용하여, ReusableLabel 스트럭쳐가 생성하는 라벨 뷰가 다른 텍스트 길이에서 어떻게 적용되는지 한 화면에서 확인할 수 있음</li>
-</ul>
-
-<center><img src="/assets/images/viewLayout_1.png" alt="viewLayout_1.png" width="600" /><br /></center>
-
-<p><br />
-<b>ScaledMetric를 사용하여 동적으로 넓이 조정하기</b></p>
-<ul>
-  <li>padding() modifier를 사용하여 패딩을 주었을 때, 폰트 사이즈가 달라지면 아래 이미지와 같이 큰 사이즈의 폰트에서는 패딩이 충분하지 않는 경우가 있음</li>
-  <li>이때 패딩 값을 그냥 키워주면 작은 폰트에서는 패딩이 너무 넓어질 수 있음</li>
-  <li>@ScaledMetric 프로퍼티 래퍼를 사용하여 .title과 같은 environment’s effective font size에 숫자값을 적용할 수 있음</li>
-</ul>
-
-<div class="language-swift highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">struct</span> <span class="kt">KeywordBubbleDefaultPadding</span><span class="p">:</span> <span class="kt">View</span> <span class="p">{</span>
-    <span class="k">let</span> <span class="nv">keyword</span><span class="p">:</span> <span class="kt">String</span>
-    <span class="k">let</span> <span class="nv">symbol</span><span class="p">:</span> <span class="kt">String</span>
-    <span class="kd">@ScaledMetric</span><span class="p">(</span><span class="nv">relativeTo</span><span class="p">:</span> <span class="o">.</span><span class="n">title</span><span class="p">)</span> <span class="k">var</span> <span class="nv">paddingWidth</span> <span class="o">=</span> <span class="mf">20.5</span> <span class="c1">// &lt;- 여기</span>
-    <span class="k">var</span> <span class="nv">body</span><span class="p">:</span> <span class="kd">some</span> <span class="kt">View</span> <span class="p">{</span>
-        <span class="kt">Label</span><span class="p">(</span><span class="n">keyword</span><span class="p">,</span> <span class="nv">systemImage</span><span class="p">:</span> <span class="n">symbol</span><span class="p">)</span>
-            <span class="o">.</span><span class="nf">font</span><span class="p">(</span><span class="o">.</span><span class="n">title</span><span class="p">)</span>
-            <span class="o">.</span><span class="nf">foregroundColor</span><span class="p">(</span><span class="o">.</span><span class="n">white</span><span class="p">)</span>
-            <span class="o">.</span><span class="nf">padding</span><span class="p">(</span><span class="n">paddingWidth</span><span class="p">)</span> <span class="c1">// &lt;- 여기</span>
-<span class="c1">//            .padding()</span>
-            <span class="o">.</span><span class="nf">background</span><span class="p">(</span><span class="o">.</span><span class="n">green</span><span class="o">.</span><span class="nf">opacity</span><span class="p">(</span><span class="mf">0.75</span><span class="p">),</span> <span class="nv">in</span><span class="p">:</span> <span class="kt">Capsule</span><span class="p">())</span>
-            
-    <span class="p">}</span>
-<span class="p">}</span>
-</code></pre></div></div>
-<center><img src="/assets/images/viewLayout_2.png" alt="viewLayout_2.png" width="350" /> <img src="/assets/images/viewLayout_3.png" alt="viewLayout_3.png" width="350" /><br /></center>
-<p><br /></p>
-
-<h2 id="layering-content">Layering Content</h2>
-
-<ul>
-  <li>어떤 컨텐츠를 겹쳐서 (z-axis) 나타낼 때, ZStack{}/.overlay()/.background()을 사용</li>
-  <li>ZStack 다른 뷰들과 상관 없이, 사용 가능한 공간에 따라 뷰의 사이즈를 정함</li>
-  <li>다른 컨텐츠의 사이즈와 관련하여 뷰의 사이즈를 조정하고 싶다면 overlay와 background를 사용하면 됨</li>
-  <li>Image() 뷰 이니셜라이저는 기본적으로 이미지의 원래 사이즈로 이미지를 가져옴</li>
-  <li>resizable() 모더파이어와 scaledToFit() 같은 모더파이어를 사용하여 이미지 사이즈를 조정할 수 있음</li>
-  <li>.clipShape(RoundedRectangle(cornerRadius: 10.0, style: .continuous)) 을 사용하여 뷰의 위치나 크기를 변경하지 않고 corner radius를 설정할 수 있음</li>
-</ul>]]></content><author><name>Mirae</name></author><category term="TIL" /><summary type="html"><![CDATA[```swift struct ReusableLabel: View { let keyword: String let symbol: String var body: some View { Label(keyword, systemImage: symbol) .font(.title) .foregroundColor(.white) .padding() .background(.green.opacity(0.75), in: Capsule()) // - 1 } }]]></summary></entry><entry><title type="html">Vertical TabView in SwiftUI</title><link href="http://localhost:4000/til/2023-04-29-VerticalTabView.html" rel="alternate" type="text/html" title="Vertical TabView in SwiftUI" /><published>2023-04-29T00:00:00+09:00</published><updated>2023-04-29T00:00:00+09:00</updated><id>http://localhost:4000/til/VerticalTabView</id><content type="html" xml:base="http://localhost:4000/til/2023-04-29-VerticalTabView.html"><![CDATA[<video src="https://user-images.githubusercontent.com/85061148/235292829-c16fccb8-e5ae-4243-86e3-356f57443024.mov" controls="controls" style="max-width: 300px">
+</code></pre></div></div>]]></content><author><name>Mirae</name></author><category term="TIL" /><summary type="html"><![CDATA[스터디 WWDC 2023 주제 정해서 발표하기 Debugging 으로 주제 선택 Xcode 디버거 위주로 정리 실행 중인 앱에서 버그를 찾고 해결하기 앱을 조사하여, 버그를 따로 분리하여 해결 앱 크래시를 해결 지나친 시스템 자원 사용을 찾아냄 메모리 버그를 시각화 뷰 레이아웃 문제를 찾아냄 유닛 테스트는 코드를 작성하며 기대한 결과가 나오는지 확인할 수 있지만, 정상적으로 동작하지 않을 때 그 원인을 알려주지 못함 앱이 동작하는 동안 브레이크 포인트를 사용하여 디버거로 에러의 원인을 밝히고, 에러를 재현하고, 에러의 원인을 찾을 수 있음]]></summary></entry><entry><title type="html">Vertical TabView in SwiftUI</title><link href="http://localhost:4000/til/2023-04-29-VerticalTabView.html" rel="alternate" type="text/html" title="Vertical TabView in SwiftUI" /><published>2023-04-29T00:00:00+09:00</published><updated>2023-04-29T00:00:00+09:00</updated><id>http://localhost:4000/til/VerticalTabView</id><content type="html" xml:base="http://localhost:4000/til/2023-04-29-VerticalTabView.html"><![CDATA[<video src="https://user-images.githubusercontent.com/85061148/235292829-c16fccb8-e5ae-4243-86e3-356f57443024.mov" controls="controls" style="max-width: 300px">
 </video>
 
 <div class="language-swift highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">import</span> <span class="kt">SwiftUI</span>
@@ -1178,15 +1184,4 @@ to make sure it displayed as expected on mobile devices. For example,</p>
     </tbody>
   </table>
 
-</div>]]></content><author><name>Tao He</name></author><category term="Jekyll" /><summary type="html"><![CDATA[A wide tables needs to be wrapped into a div with class table-wrapper to make sure it displayed as expected on mobile devices. For example,]]></summary></entry><entry><title type="html">Page with cover image</title><link href="http://localhost:4000/jekyll/2022-05-24-page_cover.html" rel="alternate" type="text/html" title="Page with cover image" /><published>2022-05-24T00:00:00+09:00</published><updated>2022-05-24T00:00:00+09:00</updated><id>http://localhost:4000/jekyll/page_cover</id><content type="html" xml:base="http://localhost:4000/jekyll/2022-05-24-page_cover.html"><![CDATA[<p>The jekyll-gitbook theme supports adding a cover image to a specific page by adding
-a <code class="language-plaintext highlighter-rouge">cover</code> field to the page metadata:</p>
-
-<div class="language-diff highlighter-rouge"><div class="highlight"><pre class="highlight"><code>  ---
-  title: Page with cover image
-  author: Tao He
-  date: 2022-05-24
-  category: Jekyll
-  layout: post
-<span class="gi">+ cover: /assets/jekyll-gitbook/dinosaur.gif
-</span>  ---
-</code></pre></div></div>]]></content><author><name>Tao He</name></author><category term="Jekyll" /><summary type="html"><![CDATA[The jekyll-gitbook theme supports adding a cover image to a specific page by adding a cover field to the page metadata:]]></summary></entry></feed>
+</div>]]></content><author><name>Tao He</name></author><category term="Jekyll" /><summary type="html"><![CDATA[A wide tables needs to be wrapped into a div with class table-wrapper to make sure it displayed as expected on mobile devices. For example,]]></summary></entry></feed>
