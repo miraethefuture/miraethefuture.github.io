@@ -78,4 +78,12 @@ macro stringify(_ value: Int) -> (Int, String) // 1
   
   - 파라미터의 타입이 일치하는지 체크하고 (제네릭 타입 매크로도 작성 가능), 컴파일러는 macro expansion 실행 (macro expansion은 매크로가 실행되고 값을 리턴하는 과정을 말함)
   
+```swift 
+@freestanding(expression) 
+
+@attached(member) 
+```
+
+- MemberMacro 프로토콜은 하나의 요구사항을 가짐. 이 요구사항은 'expansion' 함수인데, 
+  
 

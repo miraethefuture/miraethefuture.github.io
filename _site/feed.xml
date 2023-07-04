@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="4.3.2">Jekyll</generator><link href="http://localhost:4000/feed.xml" rel="self" type="application/atom+xml" /><link href="http://localhost:4000/" rel="alternate" type="text/html" /><updated>2023-07-03T21:06:10+09:00</updated><id>http://localhost:4000/feed.xml</id><title type="html">Mirae Jung  iOS Developer</title><subtitle>안녕하세요. iOS Developer 정미래입니다.
+<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="4.3.2">Jekyll</generator><link href="http://localhost:4000/feed.xml" rel="self" type="application/atom+xml" /><link href="http://localhost:4000/" rel="alternate" type="text/html" /><updated>2023-07-03T21:39:24+09:00</updated><id>http://localhost:4000/feed.xml</id><title type="html">Mirae Jung  iOS Developer</title><subtitle>안녕하세요. iOS Developer 정미래입니다.
 </subtitle><author><name>Mirae</name></author><entry><title type="html">SwiftUI 업데이트</title><link href="http://localhost:4000/til/2023-07-03-SwiftUIUpdates.html" rel="alternate" type="text/html" title="SwiftUI 업데이트" /><published>2023-07-03T00:00:00+09:00</published><updated>2023-07-03T00:00:00+09:00</updated><id>http://localhost:4000/til/SwiftUIUpdates</id><content type="html" xml:base="http://localhost:4000/til/2023-07-03-SwiftUIUpdates.html"><![CDATA[<h1 id="onchangeofinitial_">onChange(of:initial:_:)</h1>
 
 <h2 id="파라미터">파라미터</h2>
@@ -81,6 +81,15 @@
       <li>파라미터의 타입이 일치하는지 체크하고 (제네릭 타입 매크로도 작성 가능), 컴파일러는 macro expansion 실행 (macro expansion은 매크로가 실행되고 값을 리턴하는 과정을 말함)</li>
     </ul>
   </li>
+</ul>
+
+<div class="language-swift highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">@freestanding</span><span class="p">(</span><span class="n">expression</span><span class="p">)</span> 
+
+<span class="kd">@attached</span><span class="p">(</span><span class="n">member</span><span class="p">)</span> 
+</code></pre></div></div>
+
+<ul>
+  <li>MemberMacro 프로토콜은 하나의 요구사항을 가짐. 이 요구사항은 ‘expansion’ 함수인데,</li>
 </ul>]]></content><author><name>Mirae</name></author><category term="TIL" /><summary type="html"><![CDATA[onChange(of:initial:_:)]]></summary></entry><entry><title type="html">SwiftUI 뷰 레이아웃</title><link href="http://localhost:4000/til/2023-05-24-ViewLayout.html" rel="alternate" type="text/html" title="SwiftUI 뷰 레이아웃" /><published>2023-05-24T00:00:00+09:00</published><updated>2023-05-24T00:00:00+09:00</updated><id>http://localhost:4000/til/ViewLayout</id><content type="html" xml:base="http://localhost:4000/til/2023-05-24-ViewLayout.html"><![CDATA[<div class="language-swift highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">struct</span> <span class="kt">ReusableLabel</span><span class="p">:</span> <span class="kt">View</span> <span class="p">{</span>
     <span class="k">let</span> <span class="nv">keyword</span><span class="p">:</span> <span class="kt">String</span>
     <span class="k">let</span> <span class="nv">symbol</span><span class="p">:</span> <span class="kt">String</span>
