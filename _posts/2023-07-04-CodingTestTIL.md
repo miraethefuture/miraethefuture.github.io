@@ -48,5 +48,24 @@ originArray.forEach { print($0, terminator: " ") }
 // 위 예시 코드에서는 각 요소가 출력 될 때마다 space를 출력함
 ```
 
+### 프로그래머스 : 내적 
+
+```swift
+import Foundation
+
+func solution(_ a:[Int], _ b:[Int]) -> Int {
+    let n = a.count
+    var array: [Int] = []
+    
+    for index in 0..<n {
+        array.append(a[index] * b[index])
+    }
+    
+    let sumResult = array.reduce(.zero, +)
+    
+    return sumResult
+}
+```
+
 
 
