@@ -67,5 +67,6 @@ func solution(_ a:[Int], _ b:[Int]) -> Int {
 }
 ```
 
+- forEach 문은 느리기 때문에 시간제한에 걸릴 수 있음. 
 
 

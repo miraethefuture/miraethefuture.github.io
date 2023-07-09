@@ -26,6 +26,8 @@
         
 
         
+            <link rel="next" href="/til/2023-07-04-CodingTestTIL.html" />
+        
     </head>
     <body>
         <div class="book"><div class="book-summary">
@@ -221,6 +223,17 @@
                             
                         </li>
                     
+                        
+                        <li class="chapter" data-level="1.1" data-path="/til/2023-07-04-CodingTestTIL.html">
+                        
+                            <a href="/til/2023-07-04-CodingTestTIL.html">
+                                Coding Test TIL
+                            </a>
+                            
+                                
+                            
+                        </li>
+                    
 
                     
                         <li class="divider"></li>
@@ -313,6 +326,82 @@
 
 <h1 id="매크로">매크로</h1>
 
+<p>매크로를 사용하면 반복적으로 사용되는 코드를 컴파일 할 때 생성할 수 있음. 반복적인 코드를 짧게 줄일 수 있으므로 더 읽기 편해짐.</p>
+
+<div class="language-swift highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1">/// Slopes in my favorite ski resort.</span>
+<span class="kd">enum</span> <span class="kt">Slope</span> <span class="p">{</span>
+    <span class="k">case</span> <span class="n">beginnersParadise</span>
+    <span class="k">case</span> <span class="n">practiceRun</span>
+    <span class="k">case</span> <span class="n">livingRoom</span>
+    <span class="k">case</span> <span class="n">olympicRun</span>
+    <span class="k">case</span> <span class="n">blackBeauty</span>
+<span class="p">}</span>
+
+<span class="c1">/// Slopes suitable for beginners. Subset of `Slopes`.</span>
+<span class="kd">enum</span> <span class="kt">EasySlope</span> <span class="p">{</span>
+    <span class="k">case</span> <span class="n">beginnersParadise</span>
+    <span class="k">case</span> <span class="n">practiceRun</span>
+
+    <span class="nf">init</span><span class="p">?(</span><span class="n">_</span> <span class="nv">slope</span><span class="p">:</span> <span class="kt">Slope</span><span class="p">)</span> <span class="p">{</span>
+        <span class="k">switch</span> <span class="n">slope</span> <span class="p">{</span>
+        <span class="k">case</span> <span class="o">.</span><span class="nv">beginnersParadise</span><span class="p">:</span> <span class="k">self</span> <span class="o">=</span> <span class="o">.</span><span class="n">beginnersParadise</span>
+        <span class="k">case</span> <span class="o">.</span><span class="nv">practiceRun</span><span class="p">:</span> <span class="k">self</span> <span class="o">=</span> <span class="o">.</span><span class="n">practiceRun</span>
+        <span class="k">default</span><span class="p">:</span> <span class="k">return</span> <span class="kc">nil</span>
+        <span class="p">}</span>
+    <span class="p">}</span>
+
+    <span class="k">var</span> <span class="nv">slope</span><span class="p">:</span> <span class="kt">Slope</span> <span class="p">{</span>
+        <span class="k">switch</span> <span class="k">self</span> <span class="p">{</span>
+        <span class="k">case</span> <span class="o">.</span><span class="nv">beginnersParadise</span><span class="p">:</span> <span class="k">return</span> <span class="o">.</span><span class="n">beginnersParadise</span>
+        <span class="k">case</span> <span class="o">.</span><span class="nv">practiceRun</span><span class="p">:</span> <span class="k">return</span> <span class="o">.</span><span class="n">practiceRun</span>
+        <span class="p">}</span>
+    <span class="p">}</span>
+<span class="p">}</span>
+</code></pre></div></div>
+<ul>
+  <li>Slope 타입에 있는 case 중 초보자에게 적합한 slope이 있을 경우, EasySlope 타입으로 변환함.</li>
+  <li>이때 초보자에게 적합한 slope을 추가하기 위해서는 Slope 타입의 case, EasySlope 타입의 case, 이니셜라이저, computed property인 slope에 총 네번 코드를 추가해 주어야 함.</li>
+  <li>위 작업을 매크로를 사용해서 줄일 수 있는지 알아보겠음.
+    <ul>
+      <li>이니셜라이저와 컴퓨티드 프로퍼티는 EasySlope 타입의 멤버임. -&gt; attached member 매크로를 정의할 것</li>
+      <li>매크로를 구현할 컴파일러 플러그인을 생성해야 함.</li>
+      <li>매크로가 원하는대로 동작하는지 확인하기 위해서 test driven way로 코드를 작성.</li>
+      <li>정상적으로 코드를 작성할 시, 이니셜라이저에 해당되는 코드를 제거하고, 이니셜라이저 코드를 컴파일 타임에 생성할 매크로를 추가하게 됨.</li>
+    </ul>
+  </li>
+</ul>
+
+<div class="language-swift highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1">// EasySlope의 멤버인 이니셜라이저를 생성할 매크로</span>
+<span class="kd">@attached</span><span class="p">(</span><span class="n">member</span><span class="p">,</span> <span class="nv">names</span><span class="p">:</span> <span class="nf">named</span><span class="p">(</span><span class="kd">init</span><span class="p">))</span>
+<span class="c1">// SlopeSubset은 매크로의 이름</span>
+<span class="kd">public</span> <span class="n">macro</span> <span class="kt">SlopeSubset</span><span class="p">()</span> <span class="o">=</span> <span class="err">#</span><span class="nf">externalMacro</span><span class="p">(</span><span class="nv">module</span><span class="p">:</span> <span class="s">"MyMacroMacros"</span><span class="p">,</span> <span class="nv">type</span><span class="p">:</span> <span class="s">"SlopeSubsetMacro"</span><span class="p">)</span>
+</code></pre></div></div>
+<ul>
+  <li>여기까지는 매크로의 정의. 아직 implementation 부분을 작성한 것은 아님. (실행될 코드 부분을 expansion이라고 함.)</li>
+  <li>“SlopeSubsetMacro” 타입을 생성해야 함.</li>
+</ul>
+
+<div class="language-swift highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1">// attached member 매크로는 MemberMacro 프로토콜을 따라야 함.</span>
+<span class="c1">// MemberMacro 요구사항은 하나 -&gt; expansion() 함수</span>
+<span class="kd">public</span> <span class="kd">struct</span> <span class="kt">SlopeSubsetMacro</span><span class="p">:</span> <span class="kt">MemberMacro</span> <span class="p">{</span>
+    <span class="kd">public</span> <span class="kd">static</span> <span class="kd">func</span> <span class="nf">expansion</span><span class="p">(</span>
+        <span class="n">of</span> <span class="nv">attribute</span><span class="p">:</span> <span class="kt">AttributeSyntax</span><span class="p">,</span>
+        <span class="n">providingMembersOf</span> <span class="nv">declaration</span><span class="p">:</span> <span class="kd">some</span> <span class="kt">DeclGroupSyntax</span><span class="p">,</span>
+        <span class="k">in</span> <span class="nv">context</span><span class="p">:</span> <span class="kd">some</span> <span class="kt">MacroExpansionContext</span>
+    <span class="p">)</span> <span class="k">throws</span> <span class="o">-&gt;</span> <span class="p">[</span><span class="kt">DeclSyntax</span><span class="p">]</span> <span class="p">{</span>
+        <span class="k">return</span> <span class="p">[]</span>
+    <span class="p">}</span>
+<span class="p">}</span>
+
+<span class="c1">// providingMacros 프로퍼티를 작성하여 컴파일러가 작성한 매크로를 감지할 수 있도록 함.</span>
+<span class="kd">@main</span>
+<span class="kd">struct</span> <span class="kt">WWDCPlugin</span><span class="p">:</span> <span class="kt">CompilerPlugin</span> <span class="p">{</span>
+    <span class="k">let</span> <span class="nv">providingMacros</span><span class="p">:</span> <span class="p">[</span><span class="kt">Macro</span><span class="o">.</span><span class="k">Type</span><span class="p">]</span> <span class="o">=</span> <span class="p">[</span>
+        <span class="kt">SlopeSubsetMacro</span><span class="o">.</span><span class="k">self</span>
+    <span class="p">]</span>
+<span class="p">}</span>
+</code></pre></div></div>
+
 <p>#stringify : 스트링이파이 매크로</p>
 
 <div class="language-swift highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">let</span> <span class="nv">calculations</span> <span class="o">=</span> <span class="p">[</span>
@@ -385,6 +474,10 @@ MathJax = {
                     
 
                     
+                        <a href="/til/2023-07-04-CodingTestTIL.html" class="navigation navigation-next navigation-unique" aria-label="Next page: Coding Test TIL">
+                            <i class="fa fa-angle-right"></i>
+                        </a>
+                    
                 </div>
             </div>
 
@@ -396,6 +489,15 @@ MathJax = {
         "title": "Introduction",
         "level": "1.1",
         "depth": 1,
+        
+        "next": {
+            "title": "Coding Test TIL",
+            "level": "1.2",
+            "depth": 1,
+            "path": "_posts/2023-07-04-CodingTestTIL.md",
+            "ref": "_posts/2023-07-04-CodingTestTIL.md",
+            "articles": []
+        },
         
         "dir": "ltr"
     },    "config": {
@@ -477,7 +579,7 @@ MathJax = {
     },
     "gitbook": {
         "version": "3.2.3",
-        "time": "2023-07-03 21:39:24 +0900"
+        "time": "2023-07-09 23:50:19 +0900"
     },
     "basePath": "",
     "book": {
