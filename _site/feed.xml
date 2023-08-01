@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="4.3.2">Jekyll</generator><link href="http://localhost:4000/feed.xml" rel="self" type="application/atom+xml" /><link href="http://localhost:4000/" rel="alternate" type="text/html" /><updated>2023-07-09T23:50:19+09:00</updated><id>http://localhost:4000/feed.xml</id><title type="html">Mirae Jung  iOS Developer</title><subtitle>안녕하세요. iOS Developer 정미래입니다.
+<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="4.3.2">Jekyll</generator><link href="http://localhost:4000/feed.xml" rel="self" type="application/atom+xml" /><link href="http://localhost:4000/" rel="alternate" type="text/html" /><updated>2023-07-31T22:38:22+09:00</updated><id>http://localhost:4000/feed.xml</id><title type="html">Mirae Jung  iOS Developer</title><subtitle>안녕하세요. iOS Developer 정미래입니다.
 </subtitle><author><name>Mirae</name></author><entry><title type="html">Coding Test TIL</title><link href="http://localhost:4000/til/2023-07-04-CodingTestTIL.html" rel="alternate" type="text/html" title="Coding Test TIL" /><published>2023-07-04T00:00:00+09:00</published><updated>2023-07-04T00:00:00+09:00</updated><id>http://localhost:4000/til/CodingTestTIL</id><content type="html" xml:base="http://localhost:4000/til/2023-07-04-CodingTestTIL.html"><![CDATA[<h3 id="백준-10811번-바구니-뒤집기">백준 10811번: 바구니 뒤집기</h3>
 
 <div class="language-swift highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">import</span> <span class="kt">Foundation</span>
@@ -298,32 +298,7 @@
   <li>Image() 뷰 이니셜라이저는 기본적으로 이미지의 원래 사이즈로 이미지를 가져옴</li>
   <li>resizable() 모더파이어와 scaledToFit() 같은 모더파이어를 사용하여 이미지 사이즈를 조정할 수 있음</li>
   <li>.clipShape(RoundedRectangle(cornerRadius: 10.0, style: .continuous)) 을 사용하여 뷰의 위치나 크기를 변경하지 않고 corner radius를 설정할 수 있음</li>
-</ul>]]></content><author><name>Mirae</name></author><category term="TIL" /><summary type="html"><![CDATA[```swift struct ReusableLabel: View { let keyword: String let symbol: String var body: some View { Label(keyword, systemImage: symbol) .font(.title) .foregroundColor(.white) .padding() .background(.green.opacity(0.75), in: Capsule()) // - 1 } }]]></summary></entry><entry><title type="html">TIL</title><link href="http://localhost:4000/til/2023-05-24-TIL.html" rel="alternate" type="text/html" title="TIL" /><published>2023-05-24T00:00:00+09:00</published><updated>2023-05-24T00:00:00+09:00</updated><id>http://localhost:4000/til/TIL</id><content type="html" xml:base="http://localhost:4000/til/2023-05-24-TIL.html"><![CDATA[<h2 id="스터디">스터디</h2>
-<ul>
-  <li>WWDC 2023 주제 정해서 발표하기
-    <ul>
-      <li>Debugging 으로 주제 선택</li>
-      <li>Xcode 디버거 위주로 정리
-        <ul>
-          <li>실행 중인 앱에서 버그를 찾고 해결하기</li>
-          <li>앱을 조사하여,
-            <ul>
-              <li>버그를 따로 분리하여 해결</li>
-              <li>앱 크래시를 해결</li>
-              <li>지나친 시스템 자원 사용을 찾아냄</li>
-              <li>메모리 버그를 시각화</li>
-              <li>뷰 레이아웃 문제를 찾아냄</li>
-            </ul>
-          </li>
-          <li>유닛 테스트는 코드를 작성하며 기대한 결과가 나오는지 확인할 수 있지만, 정상적으로 동작하지 않을 때 그 원인을 알려주지 못함</li>
-          <li>앱이 동작하는 동안 브레이크 포인트를 사용하여 디버거로 에러의 원인을 밝히고, 에러를 재현하고, 에러의 원인을 찾을 수 있음</li>
-        </ul>
-      </li>
-    </ul>
-  </li>
-</ul>
-
-<h2 id="스터디-과제-진행하며-정리-67">스터디 과제 진행하며 정리 (~6/7)</h2>
+</ul>]]></content><author><name>Mirae</name></author><category term="TIL" /><summary type="html"><![CDATA[```swift struct ReusableLabel: View { let keyword: String let symbol: String var body: some View { Label(keyword, systemImage: symbol) .font(.title) .foregroundColor(.white) .padding() .background(.green.opacity(0.75), in: Capsule()) // - 1 } }]]></summary></entry><entry><title type="html">TIL</title><link href="http://localhost:4000/til/2023-05-24-TIL.html" rel="alternate" type="text/html" title="TIL" /><published>2023-05-24T00:00:00+09:00</published><updated>2023-05-24T00:00:00+09:00</updated><id>http://localhost:4000/til/TIL</id><content type="html" xml:base="http://localhost:4000/til/2023-05-24-TIL.html"><![CDATA[<h2 id="스터디-과제-진행하며-정리-67">스터디 과제 진행하며 정리 (~6/7)</h2>
 <ul>
   <li>@State 프로퍼티는 항상 private으로 사용 (해당하는 뷰와 서브 뷰의 특정한 정보를 담기 때문)</li>
   <li>observable object class 수정
@@ -360,6 +335,11 @@
       <li>검색 기능을 추가하면서 search text를 해시 태그로 가지고 있는 방 데이터를 필터링하여 목록을 생성. 이 목록을 @State 변수에 할당해야 하는데, 현재 버튼으로 필터링하기 위해 computed property를 사용하고 있음.</li>
     </ul>
   </li>
+</ul>
+
+<h2 id="스터디-과제-진행하며-정리-719">스터디 과제 진행하며 정리 (~7/19)</h2>
+<ul>
+  <li>final 키워드가 붙은 class는 서브 클래스가 오버라이딩할 수 없음</li>
 </ul>
 
 <h2 id="swiftui">SwiftUI</h2>
@@ -453,73 +433,25 @@
 <span class="p">}</span>
 </code></pre></div></div>
 
-<h2 id="코테-0단계">코테 0단계</h2>
-<h3 id="다이얼">다이얼</h3>
-<p><a href="https://www.acmicpc.net/problem/5622">백준 - 다이얼</a></p>
+<h4 id="731">7/31</h4>
 
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>에러 내용: 
+
+Photo library access not determined.
+
+This app has crashed because it attempted to access privacy-sensitive data without a usage description.  The app's Info.plist must contain an NSPhotoLibraryUsageDescription key with a string value explaining to the user how the app uses this data.
+</code></pre></div></div>
 <ul>
-  <li>더 간단하게 만들 방법을 찾기</li>
+  <li>TARGETS - Info - Privacy - Photo Library Usage Description 키 값 추가 - value 추가하여 해결</li>
 </ul>
 
-<div class="language-swift highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1">// 소요 시간 35분</span>
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>에러 내용: 
 
-<span class="k">let</span> <span class="nv">inputStr</span> <span class="o">=</span> <span class="nf">readLine</span><span class="p">()</span><span class="o">!</span>
-
-<span class="k">var</span> <span class="nv">sum</span> <span class="o">=</span> <span class="mi">0</span>
-
-<span class="k">let</span> <span class="nv">arr</span> <span class="o">=</span> <span class="kt">Array</span><span class="p">(</span><span class="n">inputStr</span><span class="p">)</span>
-
-<span class="k">let</span> <span class="nv">two</span> <span class="o">=</span> <span class="p">[</span><span class="s">"A"</span><span class="p">,</span> <span class="s">"B"</span><span class="p">,</span> <span class="s">"C"</span><span class="p">]</span>
-<span class="k">let</span> <span class="nv">three</span> <span class="o">=</span> <span class="p">[</span><span class="s">"D"</span><span class="p">,</span> <span class="s">"E"</span><span class="p">,</span> <span class="s">"F"</span><span class="p">]</span>
-<span class="k">let</span> <span class="nv">four</span> <span class="o">=</span> <span class="p">[</span><span class="s">"G"</span><span class="p">,</span> <span class="s">"H"</span><span class="p">,</span> <span class="s">"I"</span><span class="p">]</span>
-<span class="k">let</span> <span class="nv">five</span> <span class="o">=</span> <span class="p">[</span><span class="s">"J"</span><span class="p">,</span> <span class="s">"K"</span><span class="p">,</span> <span class="s">"L"</span><span class="p">]</span>
-<span class="k">let</span> <span class="nv">six</span> <span class="o">=</span> <span class="p">[</span><span class="s">"M"</span><span class="p">,</span> <span class="s">"N"</span><span class="p">,</span> <span class="s">"O"</span><span class="p">]</span>
-<span class="k">let</span> <span class="nv">seven</span> <span class="o">=</span> <span class="p">[</span><span class="s">"P"</span><span class="p">,</span> <span class="s">"Q"</span><span class="p">,</span> <span class="s">"R"</span><span class="p">,</span> <span class="s">"S"</span><span class="p">]</span>
-<span class="k">let</span> <span class="nv">eight</span> <span class="o">=</span> <span class="p">[</span><span class="s">"T"</span><span class="p">,</span> <span class="s">"U"</span><span class="p">,</span> <span class="s">"V"</span><span class="p">]</span>
-<span class="k">let</span> <span class="nv">nine</span> <span class="o">=</span> <span class="p">[</span><span class="s">"W"</span><span class="p">,</span> <span class="s">"X"</span><span class="p">,</span> <span class="s">"Y"</span><span class="p">,</span> <span class="s">"Z"</span><span class="p">]</span>
-
-<span class="k">for</span> <span class="n">i</span> <span class="k">in</span> <span class="n">arr</span> <span class="p">{</span>
-
-    <span class="k">if</span> <span class="n">two</span><span class="o">.</span><span class="nf">contains</span><span class="p">(</span><span class="kt">String</span><span class="p">(</span><span class="n">i</span><span class="p">))</span> <span class="p">{</span>
-        <span class="n">sum</span> <span class="o">+=</span> <span class="mi">3</span>
-    <span class="p">}</span> <span class="k">else</span> <span class="k">if</span> <span class="n">three</span><span class="o">.</span><span class="nf">contains</span><span class="p">(</span><span class="kt">String</span><span class="p">(</span><span class="n">i</span><span class="p">))</span> <span class="p">{</span>
-        <span class="n">sum</span> <span class="o">+=</span> <span class="mi">4</span>
-    <span class="p">}</span>
-    <span class="k">else</span> <span class="k">if</span> <span class="n">four</span><span class="o">.</span><span class="nf">contains</span><span class="p">(</span><span class="kt">String</span><span class="p">(</span><span class="n">i</span><span class="p">))</span> <span class="p">{</span>
-        <span class="n">sum</span> <span class="o">+=</span> <span class="mi">5</span>
-    <span class="p">}</span>
-    <span class="k">else</span> <span class="k">if</span> <span class="n">five</span><span class="o">.</span><span class="nf">contains</span><span class="p">(</span><span class="kt">String</span><span class="p">(</span><span class="n">i</span><span class="p">))</span> <span class="p">{</span>
-        <span class="n">sum</span> <span class="o">+=</span> <span class="mi">6</span>
-    <span class="p">}</span>
-    <span class="k">else</span> <span class="k">if</span> <span class="n">six</span><span class="o">.</span><span class="nf">contains</span><span class="p">(</span><span class="kt">String</span><span class="p">(</span><span class="n">i</span><span class="p">))</span> <span class="p">{</span>
-        <span class="n">sum</span> <span class="o">+=</span> <span class="mi">7</span>
-    <span class="p">}</span>
-    <span class="k">else</span> <span class="k">if</span> <span class="n">seven</span><span class="o">.</span><span class="nf">contains</span><span class="p">(</span><span class="kt">String</span><span class="p">(</span><span class="n">i</span><span class="p">))</span> <span class="p">{</span>
-        <span class="n">sum</span> <span class="o">+=</span> <span class="mi">8</span>
-    <span class="p">}</span>
-    <span class="k">else</span> <span class="k">if</span> <span class="n">eight</span><span class="o">.</span><span class="nf">contains</span><span class="p">(</span><span class="kt">String</span><span class="p">(</span><span class="n">i</span><span class="p">))</span> <span class="p">{</span>
-        <span class="n">sum</span> <span class="o">+=</span> <span class="mi">9</span>
-    <span class="p">}</span>
-    <span class="k">else</span> <span class="k">if</span> <span class="n">nine</span><span class="o">.</span><span class="nf">contains</span><span class="p">(</span><span class="kt">String</span><span class="p">(</span><span class="n">i</span><span class="p">))</span> <span class="p">{</span>
-        <span class="n">sum</span> <span class="o">+=</span> <span class="mi">10</span>
-    <span class="p">}</span>
-<span class="p">}</span>
-<span class="nf">print</span><span class="p">(</span><span class="n">sum</span><span class="p">)</span>
+스마트 앨범의 카운트가 실제와 다르게 큰 수로 나타남
 </code></pre></div></div>
-
-<h3 id="문자열-다루기">문자열 다루기</h3>
-
-<div class="language-swift highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">func</span> <span class="nf">solution</span><span class="p">()</span> <span class="o">-&gt;</span> <span class="kt">String</span> <span class="p">{</span>
-    <span class="k">var</span> <span class="nv">str</span> <span class="o">=</span> <span class="s">"aaa_bbb_ccc"</span>
-    <span class="k">var</span> <span class="nv">separatorChar</span> <span class="o">=</span> <span class="s">"_"</span>
-    <span class="k">var</span> <span class="nv">strArr</span> <span class="o">=</span> <span class="n">str</span><span class="o">.</span><span class="nf">split</span><span class="p">(</span><span class="nv">separator</span><span class="p">:</span> <span class="n">separatorChar</span><span class="p">)</span>
-    
-    <span class="k">let</span> <span class="nv">capitalizedStrArr</span> <span class="o">=</span> <span class="n">strArr</span><span class="o">.</span><span class="n">map</span><span class="p">{</span><span class="nv">$0</span><span class="o">.</span><span class="n">capitalized</span><span class="p">}</span>
-    <span class="k">let</span> <span class="nv">result</span> <span class="o">=</span> <span class="n">capitalizedStrArr</span><span class="o">.</span><span class="nf">joined</span><span class="p">(</span><span class="nv">separator</span><span class="p">:</span><span class="s">"-"</span><span class="p">)</span>
-    
-    <span class="k">return</span> <span class="n">result</span> <span class="c1">// "AaaBbbCcc"</span>
-<span class="p">}</span>
-</code></pre></div></div>]]></content><author><name>Mirae</name></author><category term="TIL" /><summary type="html"><![CDATA[스터디 WWDC 2023 주제 정해서 발표하기 Debugging 으로 주제 선택 Xcode 디버거 위주로 정리 실행 중인 앱에서 버그를 찾고 해결하기 앱을 조사하여, 버그를 따로 분리하여 해결 앱 크래시를 해결 지나친 시스템 자원 사용을 찾아냄 메모리 버그를 시각화 뷰 레이아웃 문제를 찾아냄 유닛 테스트는 코드를 작성하며 기대한 결과가 나오는지 확인할 수 있지만, 정상적으로 동작하지 않을 때 그 원인을 알려주지 못함 앱이 동작하는 동안 브레이크 포인트를 사용하여 디버거로 에러의 원인을 밝히고, 에러를 재현하고, 에러의 원인을 찾을 수 있음]]></summary></entry><entry><title type="html">Vertical TabView in SwiftUI</title><link href="http://localhost:4000/til/2023-04-29-VerticalTabView.html" rel="alternate" type="text/html" title="Vertical TabView in SwiftUI" /><published>2023-04-29T00:00:00+09:00</published><updated>2023-04-29T00:00:00+09:00</updated><id>http://localhost:4000/til/VerticalTabView</id><content type="html" xml:base="http://localhost:4000/til/2023-04-29-VerticalTabView.html"><![CDATA[<video src="https://user-images.githubusercontent.com/85061148/235292829-c16fccb8-e5ae-4243-86e3-356f57443024.mov" controls="controls" style="max-width: 300px">
+<ul>
+  <li>estimatedAssetCount를 사용할 경우, 정확한 결과를 가져오지 못할 수 있으므로 fetchAssets를 사용하여 정확한 asset의 수를 구하여 해결</li>
+</ul>]]></content><author><name>Mirae</name></author><category term="TIL" /><summary type="html"><![CDATA[스터디 과제 진행하며 정리 (~6/7) @State 프로퍼티는 항상 private으로 사용 (해당하는 뷰와 서브 뷰의 특정한 정보를 담기 때문) observable object class 수정 published 값이 옵셔널로 설정되어 있음 -&gt; 뷰 부분에서 처리해주어야 하는 불편함을 해결하기 위해 수정 final class로 변경 Combine 추가 데이터 로드하는 함수를 제네릭 함수로 변경 데이터 로드 함수를 실행하는 init() 제거 데이터 로드 함수가 observable object 클래스 안이 아닌 바깥 쪽에 정의]]></summary></entry><entry><title type="html">Vertical TabView in SwiftUI</title><link href="http://localhost:4000/til/2023-04-29-VerticalTabView.html" rel="alternate" type="text/html" title="Vertical TabView in SwiftUI" /><published>2023-04-29T00:00:00+09:00</published><updated>2023-04-29T00:00:00+09:00</updated><id>http://localhost:4000/til/VerticalTabView</id><content type="html" xml:base="http://localhost:4000/til/2023-04-29-VerticalTabView.html"><![CDATA[<video src="https://user-images.githubusercontent.com/85061148/235292829-c16fccb8-e5ae-4243-86e3-356f57443024.mov" controls="controls" style="max-width: 300px">
 </video>
 
 <div class="language-swift highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">import</span> <span class="kt">SwiftUI</span>
@@ -1275,59 +1207,4 @@ searchable 을 사용하여 검색 기능을 구현하는 방법을 엄청 검�
   <ul>
     <li>키보드에 가려져 작성중인 아이템이 보이지 않는 부분</li>
   </ul>
-</blockquote>]]></content><author><name>Mirae</name></author><category term="TIL" /><summary type="html"><![CDATA[My Box - SwiftUI 프로젝트 ~9/15 📌 진행사항 보관함 목록 아이템 목록 보관함 편집 화면 ~9/19 📋 메모 Edit 뷰를 만들기 전에 타입 Box 안에 nested 형태로 Data라는 타입을 생성했다. 타입 Data는 왜 필요했을까? Data에는 Box의 속성 중, 편집 가능하도록 할 속성을 담는다. 사용자가 편집한 내용을 Data의 각 속성에 담는다. 변경사항이 저장되는게 확실해지면 (‘확인’ 또는 ‘Done’ 버튼을 눌렀을 때…) Data에 담긴 내용을 Box에 업데이트한다.]]></summary></entry><entry><title type="html">Tips, Warnings, and Dangers</title><link href="http://localhost:4000/jekyll/2022-06-30-tips_warnings_dangers.html" rel="alternate" type="text/html" title="Tips, Warnings, and Dangers" /><published>2022-06-30T00:00:00+09:00</published><updated>2022-06-30T00:00:00+09:00</updated><id>http://localhost:4000/jekyll/tips_warnings_dangers</id><content type="html" xml:base="http://localhost:4000/jekyll/2022-06-30-tips_warnings_dangers.html"><![CDATA[<p>The jekyll-theme supports tips, warnings, and dangers blocks and the style is referred
-from <a href="https://discordjs.guide/popular-topics/canvas.html#setting-up-napi-rs-canvas">the discord.js website</a>.</p>
-
-<p>You could have the following <a href="https://kramdown.gettalong.org/quickref.html#block-attributes">markdown attributes (supported by kramdown)</a>:</p>
-
-<h3 id="tips">Tips</h3>
-
-<p>Using a <code class="language-plaintext highlighter-rouge">{: .block-tip}</code> attribute:</p>
-
-<div class="language-markdown highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="gt">&gt; ##### TIP</span>
-<span class="gt">&gt;</span>
-<span class="gt">&gt; This guide is last tested with @napi-rs/canvas^0.1.20, so make sure you have</span>
-<span class="gt">&gt; this or a similar version after installation.</span>
-{: .block-tip }
-</code></pre></div></div>
-
-<blockquote class="block-tip">
-  <h5 id="tip">TIP</h5>
-
-  <p>This guide is last tested with @napi-rs/canvas^0.1.20, so make sure you have
-this or a similar version after installation.</p>
-</blockquote>
-
-<h3 id="warnings">Warnings</h3>
-
-<p>Using a <code class="language-plaintext highlighter-rouge">{: .block-warning}</code> attribute:</p>
-
-<div class="language-markdown highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="gt">&gt; ##### WARNING</span>
-<span class="gt">&gt;</span>
-<span class="gt">&gt; Be sure that you're familiar with things like async/await and object destructuring</span>
-<span class="gt">&gt; before continuing, as we'll be making use of features like these.</span>
-{: .block-warning }
-</code></pre></div></div>
-
-<blockquote class="block-warning">
-  <h5 id="warning">WARNING</h5>
-
-  <p>Be sure that you’re familiar with things like async/await and object destructuring
-before continuing, as we’ll be making use of features like these.</p>
-</blockquote>
-
-<h3 id="dangers">Dangers</h3>
-
-<p>Using a <code class="language-plaintext highlighter-rouge">{: .block-danger}</code> attribute:</p>
-
-<div class="language-markdown highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="gt">&gt; ##### DANGER</span>
-<span class="gt">&gt;</span>
-<span class="gt">&gt; You cannot delete an ephemeral message.</span>
-{: .block-danger }
-</code></pre></div></div>
-
-<blockquote class="block-danger">
-  <h5 id="danger">DANGER</h5>
-
-  <p>You cannot delete an ephemeral message.</p>
-</blockquote>]]></content><author><name>Tao He</name></author><category term="Jekyll" /><summary type="html"><![CDATA[The jekyll-theme supports tips, warnings, and dangers blocks and the style is referred from the discord.js website.]]></summary></entry></feed>
+</blockquote>]]></content><author><name>Mirae</name></author><category term="TIL" /><summary type="html"><![CDATA[My Box - SwiftUI 프로젝트 ~9/15 📌 진행사항 보관함 목록 아이템 목록 보관함 편집 화면 ~9/19 📋 메모 Edit 뷰를 만들기 전에 타입 Box 안에 nested 형태로 Data라는 타입을 생성했다. 타입 Data는 왜 필요했을까? Data에는 Box의 속성 중, 편집 가능하도록 할 속성을 담는다. 사용자가 편집한 내용을 Data의 각 속성에 담는다. 변경사항이 저장되는게 확실해지면 (‘확인’ 또는 ‘Done’ 버튼을 눌렀을 때…) Data에 담긴 내용을 Box에 업데이트한다.]]></summary></entry></feed>

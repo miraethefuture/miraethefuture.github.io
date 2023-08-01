@@ -100,39 +100,6 @@
 
                     
                         
-                        <li class="chapter" data-level="1.1" data-path="/jekyll/2022-05-24-page_cover.html">
-                        
-                            <a href="/jekyll/2022-05-24-page_cover.html">
-                                Page with cover image
-                            </a>
-                            
-                                
-                            
-                        </li>
-                    
-                        
-                        <li class="chapter" data-level="1.1" data-path="/jekyll/2022-06-26-wide_tables.html">
-                        
-                            <a href="/jekyll/2022-06-26-wide_tables.html">
-                                Wide tables
-                            </a>
-                            
-                                
-                            
-                        </li>
-                    
-                        
-                        <li class="chapter" data-level="1.1" data-path="/jekyll/2022-06-30-tips_warnings_dangers.html">
-                        
-                            <a href="/jekyll/2022-06-30-tips_warnings_dangers.html">
-                                Tips, Warnings, and Dangers
-                            </a>
-                            
-                                
-                            
-                        </li>
-                    
-                        
                         <li class="chapter" data-level="1.1" data-path="/til/2022-08-14-myBoxes.html">
                         
                             <a href="/til/2022-08-14-myBoxes.html">
@@ -195,7 +162,7 @@
                             </a>
                             
                                 
-                                    <ul><li><a href="#스터디">스터디</a></li><li><a href="#스터디-과제-진행하며-정리-67">스터디 과제 진행하며 정리 (~6/7)</a></li><li><a href="#swiftui">SwiftUI</a></li><li><a href="#코테-0단계">코테 0단계</a><ul><li><a href="#다이얼">다이얼</a></li><li><a href="#문자열-다루기">문자열 다루기</a></li></ul></li></ul>
+                                    <ul><li><a href="#스터디-과제-진행하며-정리-67">스터디 과제 진행하며 정리 (~6/7)</a></li><li><a href="#스터디-과제-진행하며-정리-719">스터디 과제 진행하며 정리 (~7/19)</a></li><li><a href="#swiftui">SwiftUI</a></li></ul>
 
                                 
                             
@@ -271,32 +238,7 @@
                         <h1 id="/til/TIL">TIL</h1>
                     
 
-                    <h2 id="스터디">스터디</h2>
-<ul>
-  <li>WWDC 2023 주제 정해서 발표하기
-    <ul>
-      <li>Debugging 으로 주제 선택</li>
-      <li>Xcode 디버거 위주로 정리
-        <ul>
-          <li>실행 중인 앱에서 버그를 찾고 해결하기</li>
-          <li>앱을 조사하여,
-            <ul>
-              <li>버그를 따로 분리하여 해결</li>
-              <li>앱 크래시를 해결</li>
-              <li>지나친 시스템 자원 사용을 찾아냄</li>
-              <li>메모리 버그를 시각화</li>
-              <li>뷰 레이아웃 문제를 찾아냄</li>
-            </ul>
-          </li>
-          <li>유닛 테스트는 코드를 작성하며 기대한 결과가 나오는지 확인할 수 있지만, 정상적으로 동작하지 않을 때 그 원인을 알려주지 못함</li>
-          <li>앱이 동작하는 동안 브레이크 포인트를 사용하여 디버거로 에러의 원인을 밝히고, 에러를 재현하고, 에러의 원인을 찾을 수 있음</li>
-        </ul>
-      </li>
-    </ul>
-  </li>
-</ul>
-
-<h2 id="스터디-과제-진행하며-정리-67">스터디 과제 진행하며 정리 (~6/7)</h2>
+                    <h2 id="스터디-과제-진행하며-정리-67">스터디 과제 진행하며 정리 (~6/7)</h2>
 <ul>
   <li>@State 프로퍼티는 항상 private으로 사용 (해당하는 뷰와 서브 뷰의 특정한 정보를 담기 때문)</li>
   <li>observable object class 수정
@@ -333,6 +275,11 @@
       <li>검색 기능을 추가하면서 search text를 해시 태그로 가지고 있는 방 데이터를 필터링하여 목록을 생성. 이 목록을 @State 변수에 할당해야 하는데, 현재 버튼으로 필터링하기 위해 computed property를 사용하고 있음.</li>
     </ul>
   </li>
+</ul>
+
+<h2 id="스터디-과제-진행하며-정리-719">스터디 과제 진행하며 정리 (~7/19)</h2>
+<ul>
+  <li>final 키워드가 붙은 class는 서브 클래스가 오버라이딩할 수 없음</li>
 </ul>
 
 <h2 id="swiftui">SwiftUI</h2>
@@ -426,73 +373,25 @@
 <span class="p">}</span>
 </code></pre></div></div>
 
-<h2 id="코테-0단계">코테 0단계</h2>
-<h3 id="다이얼">다이얼</h3>
-<p><a href="https://www.acmicpc.net/problem/5622">백준 - 다이얼</a></p>
+<h4 id="731">7/31</h4>
 
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>에러 내용: 
+
+Photo library access not determined.
+
+This app has crashed because it attempted to access privacy-sensitive data without a usage description.  The app's Info.plist must contain an NSPhotoLibraryUsageDescription key with a string value explaining to the user how the app uses this data.
+</code></pre></div></div>
 <ul>
-  <li>더 간단하게 만들 방법을 찾기</li>
+  <li>TARGETS - Info - Privacy - Photo Library Usage Description 키 값 추가 - value 추가하여 해결</li>
 </ul>
 
-<div class="language-swift highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1">// 소요 시간 35분</span>
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>에러 내용: 
 
-<span class="k">let</span> <span class="nv">inputStr</span> <span class="o">=</span> <span class="nf">readLine</span><span class="p">()</span><span class="o">!</span>
-
-<span class="k">var</span> <span class="nv">sum</span> <span class="o">=</span> <span class="mi">0</span>
-
-<span class="k">let</span> <span class="nv">arr</span> <span class="o">=</span> <span class="kt">Array</span><span class="p">(</span><span class="n">inputStr</span><span class="p">)</span>
-
-<span class="k">let</span> <span class="nv">two</span> <span class="o">=</span> <span class="p">[</span><span class="s">"A"</span><span class="p">,</span> <span class="s">"B"</span><span class="p">,</span> <span class="s">"C"</span><span class="p">]</span>
-<span class="k">let</span> <span class="nv">three</span> <span class="o">=</span> <span class="p">[</span><span class="s">"D"</span><span class="p">,</span> <span class="s">"E"</span><span class="p">,</span> <span class="s">"F"</span><span class="p">]</span>
-<span class="k">let</span> <span class="nv">four</span> <span class="o">=</span> <span class="p">[</span><span class="s">"G"</span><span class="p">,</span> <span class="s">"H"</span><span class="p">,</span> <span class="s">"I"</span><span class="p">]</span>
-<span class="k">let</span> <span class="nv">five</span> <span class="o">=</span> <span class="p">[</span><span class="s">"J"</span><span class="p">,</span> <span class="s">"K"</span><span class="p">,</span> <span class="s">"L"</span><span class="p">]</span>
-<span class="k">let</span> <span class="nv">six</span> <span class="o">=</span> <span class="p">[</span><span class="s">"M"</span><span class="p">,</span> <span class="s">"N"</span><span class="p">,</span> <span class="s">"O"</span><span class="p">]</span>
-<span class="k">let</span> <span class="nv">seven</span> <span class="o">=</span> <span class="p">[</span><span class="s">"P"</span><span class="p">,</span> <span class="s">"Q"</span><span class="p">,</span> <span class="s">"R"</span><span class="p">,</span> <span class="s">"S"</span><span class="p">]</span>
-<span class="k">let</span> <span class="nv">eight</span> <span class="o">=</span> <span class="p">[</span><span class="s">"T"</span><span class="p">,</span> <span class="s">"U"</span><span class="p">,</span> <span class="s">"V"</span><span class="p">]</span>
-<span class="k">let</span> <span class="nv">nine</span> <span class="o">=</span> <span class="p">[</span><span class="s">"W"</span><span class="p">,</span> <span class="s">"X"</span><span class="p">,</span> <span class="s">"Y"</span><span class="p">,</span> <span class="s">"Z"</span><span class="p">]</span>
-
-<span class="k">for</span> <span class="n">i</span> <span class="k">in</span> <span class="n">arr</span> <span class="p">{</span>
-
-    <span class="k">if</span> <span class="n">two</span><span class="o">.</span><span class="nf">contains</span><span class="p">(</span><span class="kt">String</span><span class="p">(</span><span class="n">i</span><span class="p">))</span> <span class="p">{</span>
-        <span class="n">sum</span> <span class="o">+=</span> <span class="mi">3</span>
-    <span class="p">}</span> <span class="k">else</span> <span class="k">if</span> <span class="n">three</span><span class="o">.</span><span class="nf">contains</span><span class="p">(</span><span class="kt">String</span><span class="p">(</span><span class="n">i</span><span class="p">))</span> <span class="p">{</span>
-        <span class="n">sum</span> <span class="o">+=</span> <span class="mi">4</span>
-    <span class="p">}</span>
-    <span class="k">else</span> <span class="k">if</span> <span class="n">four</span><span class="o">.</span><span class="nf">contains</span><span class="p">(</span><span class="kt">String</span><span class="p">(</span><span class="n">i</span><span class="p">))</span> <span class="p">{</span>
-        <span class="n">sum</span> <span class="o">+=</span> <span class="mi">5</span>
-    <span class="p">}</span>
-    <span class="k">else</span> <span class="k">if</span> <span class="n">five</span><span class="o">.</span><span class="nf">contains</span><span class="p">(</span><span class="kt">String</span><span class="p">(</span><span class="n">i</span><span class="p">))</span> <span class="p">{</span>
-        <span class="n">sum</span> <span class="o">+=</span> <span class="mi">6</span>
-    <span class="p">}</span>
-    <span class="k">else</span> <span class="k">if</span> <span class="n">six</span><span class="o">.</span><span class="nf">contains</span><span class="p">(</span><span class="kt">String</span><span class="p">(</span><span class="n">i</span><span class="p">))</span> <span class="p">{</span>
-        <span class="n">sum</span> <span class="o">+=</span> <span class="mi">7</span>
-    <span class="p">}</span>
-    <span class="k">else</span> <span class="k">if</span> <span class="n">seven</span><span class="o">.</span><span class="nf">contains</span><span class="p">(</span><span class="kt">String</span><span class="p">(</span><span class="n">i</span><span class="p">))</span> <span class="p">{</span>
-        <span class="n">sum</span> <span class="o">+=</span> <span class="mi">8</span>
-    <span class="p">}</span>
-    <span class="k">else</span> <span class="k">if</span> <span class="n">eight</span><span class="o">.</span><span class="nf">contains</span><span class="p">(</span><span class="kt">String</span><span class="p">(</span><span class="n">i</span><span class="p">))</span> <span class="p">{</span>
-        <span class="n">sum</span> <span class="o">+=</span> <span class="mi">9</span>
-    <span class="p">}</span>
-    <span class="k">else</span> <span class="k">if</span> <span class="n">nine</span><span class="o">.</span><span class="nf">contains</span><span class="p">(</span><span class="kt">String</span><span class="p">(</span><span class="n">i</span><span class="p">))</span> <span class="p">{</span>
-        <span class="n">sum</span> <span class="o">+=</span> <span class="mi">10</span>
-    <span class="p">}</span>
-<span class="p">}</span>
-<span class="nf">print</span><span class="p">(</span><span class="n">sum</span><span class="p">)</span>
+스마트 앨범의 카운트가 실제와 다르게 큰 수로 나타남
 </code></pre></div></div>
-
-<h3 id="문자열-다루기">문자열 다루기</h3>
-
-<div class="language-swift highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">func</span> <span class="nf">solution</span><span class="p">()</span> <span class="o">-&gt;</span> <span class="kt">String</span> <span class="p">{</span>
-    <span class="k">var</span> <span class="nv">str</span> <span class="o">=</span> <span class="s">"aaa_bbb_ccc"</span>
-    <span class="k">var</span> <span class="nv">separatorChar</span> <span class="o">=</span> <span class="s">"_"</span>
-    <span class="k">var</span> <span class="nv">strArr</span> <span class="o">=</span> <span class="n">str</span><span class="o">.</span><span class="nf">split</span><span class="p">(</span><span class="nv">separator</span><span class="p">:</span> <span class="n">separatorChar</span><span class="p">)</span>
-    
-    <span class="k">let</span> <span class="nv">capitalizedStrArr</span> <span class="o">=</span> <span class="n">strArr</span><span class="o">.</span><span class="n">map</span><span class="p">{</span><span class="nv">$0</span><span class="o">.</span><span class="n">capitalized</span><span class="p">}</span>
-    <span class="k">let</span> <span class="nv">result</span> <span class="o">=</span> <span class="n">capitalizedStrArr</span><span class="o">.</span><span class="nf">joined</span><span class="p">(</span><span class="nv">separator</span><span class="p">:</span><span class="s">"-"</span><span class="p">)</span>
-    
-    <span class="k">return</span> <span class="n">result</span> <span class="c1">// "AaaBbbCcc"</span>
-<span class="p">}</span>
-</code></pre></div></div>
+<ul>
+  <li>estimatedAssetCount를 사용할 경우, 정확한 결과를 가져오지 못할 수 있으므로 fetchAssets를 사용하여 정확한 asset의 수를 구하여 해결</li>
+</ul>
 
 </section>
             </div><div class="search-results">
@@ -633,7 +532,7 @@ MathJax = {
     },
     "gitbook": {
         "version": "3.2.3",
-        "time": "2023-07-09 23:50:19 +0900"
+        "time": "2023-07-31 22:38:22 +0900"
     },
     "basePath": "",
     "book": {
