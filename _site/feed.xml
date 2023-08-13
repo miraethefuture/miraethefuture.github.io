@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="4.3.2">Jekyll</generator><link href="http://localhost:4000/feed.xml" rel="self" type="application/atom+xml" /><link href="http://localhost:4000/" rel="alternate" type="text/html" /><updated>2023-07-31T22:38:22+09:00</updated><id>http://localhost:4000/feed.xml</id><title type="html">Mirae Jung  iOS Developer</title><subtitle>안녕하세요. iOS Developer 정미래입니다.
+<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="4.3.2">Jekyll</generator><link href="http://localhost:4000/feed.xml" rel="self" type="application/atom+xml" /><link href="http://localhost:4000/" rel="alternate" type="text/html" /><updated>2023-08-13T16:28:03+09:00</updated><id>http://localhost:4000/feed.xml</id><title type="html">Mirae Jung  iOS Developer</title><subtitle>안녕하세요. iOS Developer 정미래입니다.
 </subtitle><author><name>Mirae</name></author><entry><title type="html">Coding Test TIL</title><link href="http://localhost:4000/til/2023-07-04-CodingTestTIL.html" rel="alternate" type="text/html" title="Coding Test TIL" /><published>2023-07-04T00:00:00+09:00</published><updated>2023-07-04T00:00:00+09:00</updated><id>http://localhost:4000/til/CodingTestTIL</id><content type="html" xml:base="http://localhost:4000/til/2023-07-04-CodingTestTIL.html"><![CDATA[<h3 id="백준-10811번-바구니-뒤집기">백준 10811번: 바구니 뒤집기</h3>
 
 <div class="language-swift highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">import</span> <span class="kt">Foundation</span>
@@ -830,14 +830,80 @@ JSON 객체의 키 값과 이름이 같은 경우는 case 이름만 작성 / 다
   <p><a href="https://developer.apple.com/tutorials/app-dev-training/building-a-network-test-client">Building a network test client</a></p>
 </blockquote>
 
-<p>원래 앱에서는 remote network server에서 데이터를 가져옴
-테스트를 위해서 데이터를 가져오는 두번째 경우가 있음
-Data Downloader를 각각 다른 것을 사용할 것인데 두 다운로더를 완전히 따로 작성하는 것이 아니라
-existential type을 사용하여 작성한 하나의 다운로더를 사용할 것임.</p>
+<p>Earthquakes 앱은 network client를 사용하여 원격 서버에서 JSON 데이터를 가져옵니다.
+network client의 동작을 테스트하기 위해, 제네릭 / existential 타입을 사용하여 network client를 재사용 가능하도록 만들 것입니다.</p>
 
-<p>Existentnial type은 any 키워드를 앞에 붙여 사용할 수 있음</p>
+<p>Existentnial type은 any 키워드를 앞에 붙여 사용할 수 있음 
+lazy는 let과 함께 사용할 수 없음. var와 함께 사용.</p>
 
-<p>lazy는 let과 함께 사용할 수 없음. var와 함께 사용.</p>
+<h2 id="제네릭--existential-타입-비교하기">제네릭 / existential 타입 비교하기</h2>
+<div class="language-swift highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">import</span> <span class="kt">Foundation</span>
+
+<span class="kd">protocol</span> <span class="kt">Pollinator</span> <span class="p">{</span>
+    <span class="c1">// 꽃가루를 옮기는 기능을 하는 프로토콜</span>
+    <span class="c1">// 이 프로토콜을 따르는 struct는 꽃가루를 '파라미터'식물로부터 옮기는 동작을 수행함.</span>
+    <span class="kd">func</span> <span class="nf">pollinate</span><span class="p">(</span><span class="n">_</span> <span class="nv">plant</span><span class="p">:</span> <span class="kt">String</span><span class="p">)</span>
+<span class="p">}</span>
+
+<span class="kd">struct</span> <span class="kt">Hummingbird</span><span class="p">:</span> <span class="kt">Pollinator</span> <span class="p">{</span>
+    <span class="c1">// Hummingbird 스트럭처는 Pollinator 프로토콜을 따르므로 아래 함수를 실행해야 함.</span>
+    <span class="kd">func</span> <span class="nf">pollinate</span><span class="p">(</span><span class="n">_</span> <span class="nv">plant</span><span class="p">:</span> <span class="kt">String</span><span class="p">)</span> <span class="p">{</span>
+        <span class="nf">print</span><span class="p">(</span><span class="s">"허밍버드가 부리로 </span><span class="se">\(</span><span class="n">plant</span><span class="se">)</span><span class="s">로부터 꽃가루를 옮김."</span><span class="p">)</span>
+    <span class="p">}</span>
+<span class="p">}</span>
+
+<span class="kd">struct</span> <span class="kt">Insect</span><span class="p">:</span> <span class="kt">Pollinator</span> <span class="p">{</span>
+    <span class="c1">// Insect 스트럭처도 마찬가지로 Pollinator 프로토콜을 따르므로 아래 함수를 실행해야 함.</span>
+    <span class="kd">func</span> <span class="nf">pollinate</span><span class="p">(</span><span class="n">_</span> <span class="nv">plant</span><span class="p">:</span> <span class="kt">String</span><span class="p">)</span> <span class="p">{</span>
+        <span class="nf">print</span><span class="p">(</span><span class="s">"곤충이 다리에 꽃가루를 묻혀 </span><span class="se">\(</span><span class="n">plant</span><span class="se">)</span><span class="s">로부터 꽃가루를 옮김."</span><span class="p">)</span>
+    <span class="p">}</span>
+<span class="p">}</span>
+
+<span class="c1">// Hummingbird와 Inset는 Pollinator 프로토콜을 따르므로 '꽃가루를 옮기는 기능'을 수행하는 스트럭처라는 것을 알 수 있음.</span>
+<span class="k">let</span> <span class="nv">speedy</span> <span class="o">=</span> <span class="kt">Hummingbird</span><span class="p">()</span>
+<span class="k">let</span> <span class="nv">busyBee</span> <span class="o">=</span> <span class="kt">Insect</span><span class="p">()</span>
+
+<span class="c1">// 각 스트럭처를 인스턴스화하여 실제로 pollinate 함수를 동작시킴.</span>
+<span class="n">speedy</span><span class="o">.</span><span class="nf">pollinate</span><span class="p">(</span><span class="s">"해바라기"</span><span class="p">)</span>
+<span class="n">busyBee</span><span class="o">.</span><span class="nf">pollinate</span><span class="p">(</span><span class="s">"프리지아"</span><span class="p">)</span>
+
+
+<span class="c1">// 꽃가루를 옮기는 기능을 하는 함수를 작성하려고 하는데...</span>
+<span class="c1">// 옮기는 주체가 Pollinator 타입을 따르는 것은 무엇이든 될 수 있는 함수를 작성하려고 함.</span>
+<span class="kd">func</span> <span class="n">pollinate</span><span class="o">&lt;</span><span class="kt">T</span><span class="p">:</span> <span class="kt">Pollinator</span><span class="o">&gt;</span><span class="p">(</span><span class="n">_</span> <span class="nv">plants</span><span class="p">:</span> <span class="p">[</span><span class="kt">String</span><span class="p">],</span> <span class="n">with</span> <span class="nv">pollinator</span><span class="p">:</span> <span class="kt">T</span><span class="p">)</span> <span class="p">{</span>
+    <span class="c1">// &lt;T: Pollinator&gt; 을 작성하여 Pollinator 프로토콜을 따르는 T라는 타입을 함수에서 사용할 것이라는 것을 알려줌.</span>
+    <span class="k">for</span> <span class="n">plant</span> <span class="k">in</span> <span class="n">plants</span> <span class="p">{</span>
+        <span class="c1">// 매개변수로 받은 pollinator는 Pollinator 프로토콜을 따르므로 pollinate 함수를 실행함.</span>
+        <span class="c1">// pollinator의 타입은 T, T는 Pollinator라는 프로토콜을 따르는 모든 타입. 여기서는 Hummingbird와 Insect 타입의 객체가 pollinator로 사용될 수 있음.</span>
+        <span class="n">pollinator</span><span class="o">.</span><span class="nf">pollinate</span><span class="p">(</span><span class="n">plant</span><span class="p">)</span>
+    <span class="p">}</span>
+<span class="p">}</span>
+
+<span class="nf">pollinate</span><span class="p">([</span><span class="s">"백합"</span><span class="p">,</span> <span class="s">"수국"</span><span class="p">],</span> <span class="nv">with</span><span class="p">:</span> <span class="n">speedy</span><span class="p">)</span>
+<span class="c1">// 실행 결과: 허밍버드가 부리로 백합로부터 꽃가루를 옮김. / 허밍버드가 부리로 수국로부터 꽃가루를 옮김.</span>
+<span class="nf">pollinate</span><span class="p">([</span><span class="s">"들꽃"</span><span class="p">],</span> <span class="nv">with</span><span class="p">:</span> <span class="n">busyBee</span><span class="p">)</span>
+<span class="c1">// 실행 결과 : 곤충이 다리에 꽃가루를 묻혀 들꽃로부터 꽃가루를 옮김.</span>
+<span class="c1">// * 하나의 함수에서 다른 타입의 객체를 매개변수로 사용할 수 있게 됨.</span>
+
+<span class="c1">// any Pollinator 타입을 따르는 변수를 정의 -&gt; any 키워드는 any Pollinator가 existential 타입이라는 것을 의미한다.</span>
+<span class="k">var</span> <span class="nv">anotherPollinator</span><span class="p">:</span> <span class="n">any</span> <span class="kt">Pollinator</span> <span class="o">=</span> <span class="kt">Hummingbird</span><span class="p">()</span>
+
+<span class="n">anotherPollinator</span><span class="o">.</span><span class="nf">pollinate</span><span class="p">(</span><span class="s">"튤립"</span><span class="p">)</span>
+<span class="c1">// anotherPollinator는 변수이므로 Pollinator 프로토콜을 따르는 타입의 인스턴스를 할당 받을 수 있음.</span>
+<span class="n">anotherPollinator</span> <span class="o">=</span> <span class="kt">Insect</span><span class="p">()</span>
+<span class="n">anotherPollinator</span><span class="o">.</span><span class="nf">pollinate</span><span class="p">(</span><span class="s">"옥수수"</span><span class="p">)</span>
+
+
+<span class="c1">// 아래 함수는 existential 타입의 매개변수를 사용하여 작성됨</span>
+<span class="kd">func</span> <span class="nf">pollinate2</span><span class="p">(</span><span class="n">_</span> <span class="nv">plants</span><span class="p">:</span> <span class="p">[</span><span class="kt">String</span><span class="p">],</span> <span class="n">with</span> <span class="nv">pollinator</span><span class="p">:</span> <span class="n">any</span> <span class="kt">Pollinator</span><span class="p">)</span> <span class="p">{</span>
+    <span class="k">for</span> <span class="n">plant</span> <span class="k">in</span> <span class="n">plants</span> <span class="p">{</span>
+        <span class="n">pollinator</span><span class="o">.</span><span class="nf">pollinate</span><span class="p">(</span><span class="n">plant</span><span class="p">)</span>
+    <span class="p">}</span>
+<span class="p">}</span>
+</code></pre></div></div>
+
+<p>Swift는 제네릭 함수를 호출 할 때는 static dispatch를 사용하여 함수 호출을 최적화 하지만,<br />
+existential 타입을 포함한 함수를 호출할 경우 dynamic dispatch를 사용함. 이때 더 많은 메모리를 필요로 하기 때문에 제네릭 매개변수를 사용한 함수 호출보다 조금 덜 효율적이게 됨.</p>
 
 <div class="language-swift highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">import</span> <span class="kt">Foundation</span>
 
