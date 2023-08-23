@@ -23,6 +23,42 @@ layout: post
 }
 ```
 --------------------
+
+```swift
+import UIKit
+
+class ViewController: UIViewController {
+
+    
+    @IBAction func touchCard(_ sender: UIButton) {
+        flipCard(withEmoji: "👻", on: sender)
+    }
+    
+    func flipCard(withEmoji emoji: String, on button: UIButton) {
+        // 카드 확인 -> already ghost -> flip it over
+        // 카드 확인 -> not ghost -> 하얀 배경 / 이모지로 변경 (flip)
+        // button style을 default로 변경해야 currentTitle을 통해 값을 받아올 수 있음
+        
+        if let title = button.currentTitle {
+            
+            if title == emoji {
+                
+                button.setTitle("", for: .normal) // 로 설정된 값은 currentTitle로 가져올 수 있음
+                button.backgroundColor = .orange
+                
+            } else {
+                // title = "" 인지 확인되면 else if 로 변경
+                
+                button.setTitle(emoji, for: .normal)
+                button.backgroundColor = .white
+                
+            }
+        }
+    }
+}
+```
+- 버튼 스타일이 default 상태여야 currentTitle을 통해 버튼의 타이틀 값을 가져올 수 있음.
+--------------------
   
 <b>didSet</b>  
   
