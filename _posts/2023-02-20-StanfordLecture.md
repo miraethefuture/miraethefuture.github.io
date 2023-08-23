@@ -57,7 +57,9 @@ class ViewController: UIViewController {
     }
 }
 ```
-- 버튼 스타일이 default 상태여야 currentTitle을 통해 버튼의 타이틀 값을 가져올 수 있음.
+* 버튼 스타일이 default 상태여야 currentTitle을 통해 버튼의 타이틀 값을 가져올 수 있음. 
+
+   
 --------------------
   
 <b>didSet</b>  

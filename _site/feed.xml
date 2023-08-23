@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="4.3.2">Jekyll</generator><link href="http://localhost:4000/feed.xml" rel="self" type="application/atom+xml" /><link href="http://localhost:4000/" rel="alternate" type="text/html" /><updated>2023-08-13T16:28:03+09:00</updated><id>http://localhost:4000/feed.xml</id><title type="html">Mirae Jung  iOS Developer</title><subtitle>안녕하세요. iOS Developer 정미래입니다.
+<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="4.3.2">Jekyll</generator><link href="http://localhost:4000/feed.xml" rel="self" type="application/atom+xml" /><link href="http://localhost:4000/" rel="alternate" type="text/html" /><updated>2023-08-23T23:36:50+09:00</updated><id>http://localhost:4000/feed.xml</id><title type="html">Mirae Jung  iOS Developer</title><subtitle>안녕하세요. iOS Developer 정미래입니다.
 </subtitle><author><name>Mirae</name></author><entry><title type="html">Coding Test TIL</title><link href="http://localhost:4000/til/2023-07-04-CodingTestTIL.html" rel="alternate" type="text/html" title="Coding Test TIL" /><published>2023-07-04T00:00:00+09:00</published><updated>2023-07-04T00:00:00+09:00</updated><id>http://localhost:4000/til/CodingTestTIL</id><content type="html" xml:base="http://localhost:4000/til/2023-07-04-CodingTestTIL.html"><![CDATA[<h3 id="백준-10811번-바구니-뒤집기">백준 10811번: 바구니 뒤집기</h3>
 
 <div class="language-swift highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">import</span> <span class="kt">Foundation</span>
@@ -577,6 +577,44 @@ SwiftUI가 라이프 사이클과 업데이트를 관리하는 UIKit 타입을 �
 </code></pre></div></div>
 <hr />
 
+<div class="language-swift highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">import</span> <span class="kt">UIKit</span>
+
+<span class="kd">class</span> <span class="kt">ViewController</span><span class="p">:</span> <span class="kt">UIViewController</span> <span class="p">{</span>
+
+    
+    <span class="kd">@IBAction</span> <span class="kd">func</span> <span class="nf">touchCard</span><span class="p">(</span><span class="n">_</span> <span class="nv">sender</span><span class="p">:</span> <span class="kt">UIButton</span><span class="p">)</span> <span class="p">{</span>
+        <span class="nf">flipCard</span><span class="p">(</span><span class="nv">withEmoji</span><span class="p">:</span> <span class="s">"👻"</span><span class="p">,</span> <span class="nv">on</span><span class="p">:</span> <span class="n">sender</span><span class="p">)</span>
+    <span class="p">}</span>
+    
+    <span class="kd">func</span> <span class="nf">flipCard</span><span class="p">(</span><span class="n">withEmoji</span> <span class="nv">emoji</span><span class="p">:</span> <span class="kt">String</span><span class="p">,</span> <span class="n">on</span> <span class="nv">button</span><span class="p">:</span> <span class="kt">UIButton</span><span class="p">)</span> <span class="p">{</span>
+        <span class="c1">// 카드 확인 -&gt; already ghost -&gt; flip it over</span>
+        <span class="c1">// 카드 확인 -&gt; not ghost -&gt; 하얀 배경 / 이모지로 변경 (flip)</span>
+        <span class="c1">// button style을 default로 변경해야 currentTitle을 통해 값을 받아올 수 있음</span>
+        
+        <span class="k">if</span> <span class="k">let</span> <span class="nv">title</span> <span class="o">=</span> <span class="n">button</span><span class="o">.</span><span class="n">currentTitle</span> <span class="p">{</span>
+            
+            <span class="k">if</span> <span class="n">title</span> <span class="o">==</span> <span class="n">emoji</span> <span class="p">{</span>
+                
+                <span class="n">button</span><span class="o">.</span><span class="nf">setTitle</span><span class="p">(</span><span class="s">""</span><span class="p">,</span> <span class="nv">for</span><span class="p">:</span> <span class="o">.</span><span class="n">normal</span><span class="p">)</span> <span class="c1">// 로 설정된 값은 currentTitle로 가져올 수 있음</span>
+                <span class="n">button</span><span class="o">.</span><span class="n">backgroundColor</span> <span class="o">=</span> <span class="o">.</span><span class="n">orange</span>
+                
+            <span class="p">}</span> <span class="k">else</span> <span class="p">{</span>
+                <span class="c1">// title = "" 인지 확인되면 else if 로 변경</span>
+                
+                <span class="n">button</span><span class="o">.</span><span class="nf">setTitle</span><span class="p">(</span><span class="n">emoji</span><span class="p">,</span> <span class="nv">for</span><span class="p">:</span> <span class="o">.</span><span class="n">normal</span><span class="p">)</span>
+                <span class="n">button</span><span class="o">.</span><span class="n">backgroundColor</span> <span class="o">=</span> <span class="o">.</span><span class="n">white</span>
+                
+            <span class="p">}</span>
+        <span class="p">}</span>
+    <span class="p">}</span>
+<span class="p">}</span>
+</code></pre></div></div>
+<ul>
+  <li>버튼 스타일이 default 상태여야 currentTitle을 통해 버튼의 타이틀 값을 가져올 수 있음.</li>
+</ul>
+
+<hr />
+
 <p><b>didSet</b></p>
 
 <p>카드를 뒤집어서 같은 두 개의 그림을 찾아 짝을 맞추는 게임앱. 
@@ -960,7 +998,7 @@ async, throws 키워드를 사용. property에 async와 throws를 사용하려�
 </code></pre></div>    </div>
   </li>
   <li>URLSession에 extension을 작성하여 위 커스텀 프로토콜을 따르도록 함</li>
-  <li>httpData(from:_) 함수의 바디 부분에 인스턴스 메서드 data를 사용하여 data를 가져옴</li>
+  <li>httpData(from:_) 함수의 바디 부분에 URLSession의 인스턴스 메서드인 data를 사용하여 네트워크 연결을 통해 데이터를 가져옴</li>
 </ol>
 
 <ul>

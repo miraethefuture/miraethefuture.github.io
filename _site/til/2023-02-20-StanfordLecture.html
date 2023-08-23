@@ -256,6 +256,44 @@
 </code></pre></div></div>
 <hr />
 
+<div class="language-swift highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">import</span> <span class="kt">UIKit</span>
+
+<span class="kd">class</span> <span class="kt">ViewController</span><span class="p">:</span> <span class="kt">UIViewController</span> <span class="p">{</span>
+
+    
+    <span class="kd">@IBAction</span> <span class="kd">func</span> <span class="nf">touchCard</span><span class="p">(</span><span class="n">_</span> <span class="nv">sender</span><span class="p">:</span> <span class="kt">UIButton</span><span class="p">)</span> <span class="p">{</span>
+        <span class="nf">flipCard</span><span class="p">(</span><span class="nv">withEmoji</span><span class="p">:</span> <span class="s">"👻"</span><span class="p">,</span> <span class="nv">on</span><span class="p">:</span> <span class="n">sender</span><span class="p">)</span>
+    <span class="p">}</span>
+    
+    <span class="kd">func</span> <span class="nf">flipCard</span><span class="p">(</span><span class="n">withEmoji</span> <span class="nv">emoji</span><span class="p">:</span> <span class="kt">String</span><span class="p">,</span> <span class="n">on</span> <span class="nv">button</span><span class="p">:</span> <span class="kt">UIButton</span><span class="p">)</span> <span class="p">{</span>
+        <span class="c1">// 카드 확인 -&gt; already ghost -&gt; flip it over</span>
+        <span class="c1">// 카드 확인 -&gt; not ghost -&gt; 하얀 배경 / 이모지로 변경 (flip)</span>
+        <span class="c1">// button style을 default로 변경해야 currentTitle을 통해 값을 받아올 수 있음</span>
+        
+        <span class="k">if</span> <span class="k">let</span> <span class="nv">title</span> <span class="o">=</span> <span class="n">button</span><span class="o">.</span><span class="n">currentTitle</span> <span class="p">{</span>
+            
+            <span class="k">if</span> <span class="n">title</span> <span class="o">==</span> <span class="n">emoji</span> <span class="p">{</span>
+                
+                <span class="n">button</span><span class="o">.</span><span class="nf">setTitle</span><span class="p">(</span><span class="s">""</span><span class="p">,</span> <span class="nv">for</span><span class="p">:</span> <span class="o">.</span><span class="n">normal</span><span class="p">)</span> <span class="c1">// 로 설정된 값은 currentTitle로 가져올 수 있음</span>
+                <span class="n">button</span><span class="o">.</span><span class="n">backgroundColor</span> <span class="o">=</span> <span class="o">.</span><span class="n">orange</span>
+                
+            <span class="p">}</span> <span class="k">else</span> <span class="p">{</span>
+                <span class="c1">// title = "" 인지 확인되면 else if 로 변경</span>
+                
+                <span class="n">button</span><span class="o">.</span><span class="nf">setTitle</span><span class="p">(</span><span class="n">emoji</span><span class="p">,</span> <span class="nv">for</span><span class="p">:</span> <span class="o">.</span><span class="n">normal</span><span class="p">)</span>
+                <span class="n">button</span><span class="o">.</span><span class="n">backgroundColor</span> <span class="o">=</span> <span class="o">.</span><span class="n">white</span>
+                
+            <span class="p">}</span>
+        <span class="p">}</span>
+    <span class="p">}</span>
+<span class="p">}</span>
+</code></pre></div></div>
+<ul>
+  <li>버튼 스타일이 default 상태여야 currentTitle을 통해 버튼의 타이틀 값을 가져올 수 있음.</li>
+</ul>
+
+<hr />
+
 <p><b>didSet</b></p>
 
 <p>카드를 뒤집어서 같은 두 개의 그림을 찾아 짝을 맞추는 게임앱. 
@@ -437,7 +475,7 @@ MathJax = {
     },
     "gitbook": {
         "version": "3.2.3",
-        "time": "2023-08-13 16:28:03 +0900"
+        "time": "2023-08-23 23:36:50 +0900"
     },
     "basePath": "",
     "book": {
