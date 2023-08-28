@@ -91,7 +91,10 @@ var flipCount = 0 {
 ```
 didSet은 property obeserver인데 flipCount라는 프로퍼티의 값을 관찰하고 있다가
 그것이 변경될 때마다 disSet 안의 코드를 실행함. 
- 
+
+
+📌 swift에서는 instance variables를 property라고 함
+📌 코드를 작성 중 복사/붙여넣기를 하고 있다면 뭔가 잘못된 것!
 
   
 ## 2. MVC
