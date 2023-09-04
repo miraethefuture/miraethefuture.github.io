@@ -100,6 +100,18 @@ didSet은 property obeserver인데 flipCount라는 프로퍼티의 값을 관찰
 ## 2. MVC
 
 > [🔗](https://youtu.be/gI3pz7eFgfo)  
+
+<b>Model</b>
+- 뷰(화면에 보여지는 부분)과 완전히 독립적인 객체의 모임 (뷰와 전혀 관계 없음)
+- 앱이 어떤 일을 하는지와 관련된 로직을 담고 있음 
+- 지금 만들고 있는 앱에서는 카드 뒤집기 게임의 진행 방식을 Model이 가지고 있음
+
+<b>Controller</b>
+- Model이 '어떤 방식으로 사용자에게 보여질 것인지'에 대한 로직을 담음 (UI logic)
+
+<b>View</b>
+- Controller의 미니언
+- Button, Text 등의 제네릭 뷰를 사용하여 Controller가 시키는 대로 화면을 그림 
   
 <b>API</b>  
   
