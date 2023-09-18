@@ -1,10 +1,10 @@
 ---
 layout: home
-title: Mirae Jung
+title: iOS
 permalink: /
 ---
 
-##  iOS Developer  
-..👷 블로그 공사중 🚧..
+
+
 
 

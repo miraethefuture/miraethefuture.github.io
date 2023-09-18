@@ -1,10 +1,9 @@
 # Configurations
-title:            Mirae Jung  iOS Developer
-longtitle:        Jekyll Gitbook
+title:             Jung Mirae
+longtitle:
 author:           Mirae
 email:            mirae2thefuture@gmail.com
 description: >
-  안녕하세요. iOS Developer 정미래입니다.
 
 version:          1.0
 gitbook_version:  3.2.3
@@ -22,7 +21,7 @@ toc:
   h_max: 3
 
 # customize the link favicon in header, will be {{site.baseurl}}/{{site.favicon_path}}
-favicon_path:     /assets/gitbook/images/favicon.ico
+favicon_path: /assets/gitbook/images/Apple-logo.png
 
 # markdown render engine.
 markdown:         kramdown
