@@ -1,5 +1,5 @@
 ---
-title: LazyVStack의 pinnedHeader 없이 스티키 헤더 만들기
+title: SwiftUI 이중 스티키 헤더
 author: Mirae
 date: 2023-09-06
 category: TIL
