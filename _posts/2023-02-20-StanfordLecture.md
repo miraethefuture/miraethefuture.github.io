@@ -1,29 +1,32 @@
 ---
-title: Stanford Lectures 
+title: Stanford CS 193P 
 author: Mirae
 date: 2023-02-20
 category: TIL
 layout: post
 ---
 
-[Stanford - Developing iOS 11 Apps with Swift](https://www.youtube.com/watch?v=TZL5AmwuwlA&list=PL3d_SFOiG7_8ofjyKzX6Nl1wZehbdiZC_)  
-> 강의 내용 중 필요한 것 정리.
+[Youtube 🔗](https://www.youtube.com/watch?v=TZL5AmwuwlA&list=PL3d_SFOiG7_8ofjyKzX6Nl1wZehbdiZC_)  
+> 강의 내용 중 필요한 것 정리
   
   
 
-# Developing iOS 11 Apps with Swift 1 
+# Developing iOS 11 Apps with Swift 
 ## 1. Introduction to iOS 11, Xcode 9 and Swift 4
-> [🔗](https://youtu.be/TZL5AmwuwlA)
   
   
-<b>the underscore operator (\_)</b>  
-함수의 internal / external names 부분에서 아래와 같이 언더바 '_' 가 사용되는 경우는 argument가 없을 때 인데, 대부분 사용할 일이 없음. (항상 아규먼트 이름을 사용하는 것을 권장하기 때문에) 아래의 touchCard 함수는 Objective-C 부터 사용하던 함수이고, Objective-C는 internal/external name 개념이 없기 때문에 언더바가 사용됨.
+📌 the underscore operator 
 ```swift
 @IBAction func touchCard(_ sender: UIButton) {
 }
 ```
---------------------
 
+위 함수의 external name은 '\_'이고, internal name은 sender.  
+external / internal names 둘 다 사용하는 것을 권장하는데, 아래의 touchCard 함수는 internal / external names 개념이 없는 Objective-C 부터 사용된 함수이기 때문에 때문에 external name으로 '\_'가 사용됨.
+
+<br><br>
+
+📌 버튼 스타일이 default 상태여야 currentTitle을 통해 버튼의 타이틀 값을 가져올 수 있음. 
 ```swift
 import UIKit
 
@@ -57,12 +60,10 @@ class ViewController: UIViewController {
     }
 }
 ```
-* 버튼 스타일이 default 상태여야 currentTitle을 통해 버튼의 타이틀 값을 가져올 수 있음. 
 
+<br><br>
    
---------------------
-  
-<b>didSet</b>  
+📌 didSet 
   
 카드를 뒤집어서 같은 두 개의 그림을 찾아 짝을 맞추는 게임앱. 
 카드를 뒤집을 때마다 아래와 같이 flipCount라는 변수에 1을 더함.
@@ -93,7 +94,7 @@ didSet은 property obeserver인데 flipCount라는 프로퍼티의 값을 관찰
 그것이 변경될 때마다 disSet 안의 코드를 실행함. 
 
 
-📌 swift에서는 instance variables를 property라고 함
+📌 swift에서는 instance variables를 property라고 함  
 📌 코드를 작성 중 복사/붙여넣기를 하고 있다면 뭔가 잘못된 것!
 
   
@@ -115,12 +116,12 @@ didSet은 property obeserver인데 flipCount라는 프로퍼티의 값을 관찰
   
 <b>API</b>  
   
-class를 만들 때 public API에 대해 생각해보기.  
+모델 class를 만들 때 public API에 대해 생각해보기.  
 API는 클래스에 속한 메서드, instance variables의 리스트.
 public API는 다른 클래스들이 호출할 수 있도록 허용된 메서드, instance variables.
   
-앱이 동작하는 방식에 있어 가장 기본적이고 중요한 정보가 무엇인지 알아야,  
+앱이 동작하는 방식에 있어 가장 기본적이고 중요한 정보가 무엇인지,  
 사람들이 이 앱을 어떻게 사용할지 알아야 클래스의 메서드와 instance variables를 작성할 수 있기 때문에  
-클래스를 작성하기 전에 API에 대해 생각해 보는 것을 추천
+클래스를 작성하기 전에 API에 대해 생각해 보는 것을 추천.
 
 
