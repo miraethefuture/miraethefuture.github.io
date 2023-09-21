@@ -365,6 +365,30 @@ public API는 다른 클래스들이 호출할 수 있도록 허용된 메서드
 사람들이 이 앱을 어떻게 사용할지 알아야 클래스의 메서드와 instance variables를 작성할 수 있기 때문에<br />
 클래스를 작성하기 전에 API에 대해 생각해 보는 것을 추천.</p>
 
+<p><br /><br /></p>
+
+<p>📌 static…<br />
+static var / static func 처럼 static 키워드를 사용하여 타입 레벨의 프로퍼티를 생성할 수 있음.<br />
+아래 Card 타입 스트럭쳐가 인스턴스화되지 않더라도 Card.getUniqueIdentifier() 처럼 함수를 사용할 수 있고, static이 붙은 변수는 static 함수 안에서 자유롭게 사용할 수 있음.</p>
+
+<div class="language-swift highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">struct</span> <span class="kt">Card</span> <span class="p">{</span>
+    <span class="k">var</span> <span class="nv">isFaceUp</span> <span class="o">=</span> <span class="kc">false</span>
+    <span class="k">var</span> <span class="nv">isMatched</span> <span class="o">=</span> <span class="kc">false</span>
+    <span class="k">var</span> <span class="nv">identifier</span><span class="p">:</span> <span class="kt">Int</span>
+    
+    <span class="kd">static</span> <span class="k">var</span> <span class="nv">identifierFactory</span> <span class="o">=</span> <span class="mi">0</span>
+    
+    <span class="kd">static</span> <span class="kd">func</span> <span class="nf">getUniqueIdentifier</span><span class="p">()</span> <span class="o">-&gt;</span> <span class="kt">Int</span> <span class="p">{</span>
+        <span class="n">identifierFactory</span> <span class="o">+=</span> <span class="mi">1</span>
+        <span class="k">return</span> <span class="n">identifierFactory</span>
+    <span class="p">}</span>
+    
+    <span class="nf">init</span><span class="p">()</span> <span class="p">{</span>
+        <span class="k">self</span><span class="o">.</span><span class="n">identifier</span> <span class="o">=</span> <span class="kt">Card</span><span class="o">.</span><span class="nf">getUniqueIdentifier</span><span class="p">()</span>
+    <span class="p">}</span>
+<span class="p">}</span>
+</code></pre></div></div>
+
 </section>
             </div><div class="search-results">
     <div class="has-results">
@@ -504,7 +528,7 @@ MathJax = {
     },
     "gitbook": {
         "version": "3.2.3",
-        "time": "2023-09-19 22:51:36 +0900"
+        "time": "2023-09-21 22:31:30 +0900"
     },
     "basePath": "",
     "book": {
