@@ -128,7 +128,7 @@ public API는 다른 클래스들이 호출할 수 있도록 허용된 메서드
 
 📌 static...  
 static var / static func 처럼 static 키워드를 사용하여 타입 레벨의 프로퍼티를 생성할 수 있음.  
-아래 Card 타입 스트럭쳐가 인스턴스화되지 않더라도 Card.getUniqueIdentifier() 처럼 함수를 사용할 수 있고, static이 붙은 변수는 static 함수 안에서 자유롭게 사용할 수 있음.
+아래 Card 타입 스트럭쳐가 인스턴스화되지 않더라도 Card.getUniqueIdentifier() 처럼 함수를 사용할 수 있고, static이 붙은 변수는 static 함수 안에서 자유롭게 사용할 수 있음. 
 
 ```swift
 struct Card {
