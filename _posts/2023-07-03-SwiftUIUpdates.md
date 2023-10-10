@@ -161,6 +161,6 @@ macro stringify(_ value: Int) -> (Int, String) // 1
 @attached(member) 
 ```
 
-- MemberMacro 프로토콜은 하나의 요구사항을 가짐. 이 요구사항은 'expansion' 함수인데, 
+<!--- MemberMacro 프로토콜은 하나의 요구사항을 가짐. 이 요구사항은 'expansion' 함수인데, -->
   
 

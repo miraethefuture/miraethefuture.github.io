@@ -52,8 +52,6 @@ SwiftUI의 PageTabViewStyle은 기본적으로 수평으로 넘길 수 있는 pa
 
 - // 1 : rotationEffect를 사용하여 왼쪽으로 90도 이미지를 로테이션 시켜줍니다. 현재 탭뷰 안의 이미지는 아래와 같이 살짝 커졌지만 가운데 정렬된 상태로 나타납니다. 
 
-<center><img src="/assets/images/viewLayout_1.png" alt="viewLayout_1.png" width="300"><br></center>
-
 - // 2: 이때 width / height는 누워있는 이미지와 같이 width가 더 큰 직사각형 형태로 존재합니다. 
 
 - // 3: 여기서 TabView의 frame을 정의하는데, height와 width를 바꿔줍니다. 그러면 width가 heigt보다 작은 세로로 기다란 모양의 직사각형 frame이 되겠죠? 
@@ -70,29 +68,29 @@ LazyVStack은 모든 아이템을 먼저 그리는게 아니라 필요할 때 �
 
 
 
-#### UIKit 사용한 Horizontal paged tabView
-
-SwiftUI 프로젝트에 UIKit 뷰와 뷰 컨트롤러 사용하기 
-
-UIViewRepresentable / UIViewControllerRepresentable(프로토콜)을 채택하는 커스텀 타입을 생성 
-SwiftUI가 라이프 사이클과 업데이트를 관리하는 UIKit 타입을 생성하는 커스텀 타입
-
-UIViewControllerRepresentable은 정의해야하는 두가지 요구사항이 있음 
-
-1. UIPageViewController를 리턴하는 makeUIViewController(context:_)를 구현 
-
-```swift
-func makeUIViewController(context: Context) -> UIPageViewController {
-    let pageViewController = UIPageViewController(
-        transitionStyle: .scroll, // .PageCurl 스타일도 있음
-        navigationOrientation: .horizontal) // .vertical도 있음
-    
-    return pageViewController
-        
-}
-```  
-- UIPageViewController의 트랜지션 스타일과 .horizontal / .vertical 방식 중 하나를 설정하여 리턴
-
-2. updateUIViewController(_:context:) 메서드를 구현하여 setViewControllers(_:direction:animated:) 메서드를 호출
+<!--#### UIKit 사용한 Horizontal paged tabView-->
+<!---->
+<!--SwiftUI 프로젝트에 UIKit 뷰와 뷰 컨트롤러 사용하기 -->
+<!---->
+<!--UIViewRepresentable / UIViewControllerRepresentable(프로토콜)을 채택하는 커스텀 타입을 생성 -->
+<!--SwiftUI가 라이프 사이클과 업데이트를 관리하는 UIKit 타입을 생성하는 커스텀 타입-->
+<!---->
+<!--UIViewControllerRepresentable은 정의해야하는 두가지 요구사항이 있음 -->
+<!---->
+<!--1. UIPageViewController를 리턴하는 makeUIViewController(context:_)를 구현 -->
+<!---->
+<!--```swift-->
+<!--func makeUIViewController(context: Context) -> UIPageViewController {-->
+<!--    let pageViewController = UIPageViewController(-->
+<!--        transitionStyle: .scroll, // .PageCurl 스타일도 있음-->
+<!--        navigationOrientation: .horizontal) // .vertical도 있음-->
+<!--    -->
+<!--    return pageViewController-->
+<!--        -->
+<!--}-->
+<!--```  -->
+<!--- UIPageViewController의 트랜지션 스타일과 .horizontal / .vertical 방식 중 하나를 설정하여 리턴-->
+<!---->
+<!--2. updateUIViewController(_:context:) 메서드를 구현하여 setViewControllers(_:direction:animated:) 메서드를 호출-->
 
 

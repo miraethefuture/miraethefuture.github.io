@@ -135,17 +135,6 @@
                         </li>
                     
                         
-                        <li class="chapter" data-level="1.1" data-path="/til/2023-04-24-CoreData.html">
-                        
-                            <a href="/til/2023-04-24-CoreData.html">
-                                Persisting Data
-                            </a>
-                            
-                                
-                            
-                        </li>
-                    
-                        
                         <li class="chapter" data-level="1.1" data-path="/til/2023-04-29-VerticalTabView.html">
                         
                             <a href="/til/2023-04-29-VerticalTabView.html">
@@ -642,7 +631,7 @@ async, throws 키워드를 사용. property에 async와 throws를 사용하려�
 <p><a href="https://developer.apple.com/tutorials/app-dev-training/managing-structured-concurrency#Protecting-data-with-actors">→</a>
 현재 Earthquakes 앱의 클라이언트는 지진의 정보 목록을 가져오기 위해서 하나의 요청을 보내고 있음.<br />
 이제 클라이언트가 concurrency 기능을 사용하여 여러개의 요청을 동시에 보내도록 수정하려고 함.<br />
-비동기 함수와 비동기 프로퍼티를 사용해서 네트워크 요청에 대한 값을 가져오는 작업이 실행되는 동안 잠깐 해당 부분에 실행을 멈춤.
+비동기 함수와 비동기 속성을 사용해서 네트워크 요청에 대한 값을 가져오는 작업이 실행되는 동안 잠깐 해당 부분에 실행을 멈춤.
 그동안 다른 작업이 먼저 진행됨.</p>
 
 <div class="language-swift highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">let</span> <span class="nv">quakes</span><span class="p">:</span> <span class="p">[</span><span class="kt">Quake</span><span class="p">]</span> <span class="o">=</span> <span class="k">try</span> <span class="k">await</span> <span class="n">quakeClient</span><span class="o">.</span><span class="n">quakes</span>
@@ -811,7 +800,7 @@ MathJax = {
     },
     "gitbook": {
         "version": "3.2.3",
-        "time": "2023-09-21 22:31:30 +0900"
+        "time": "2023-10-10 21:51:22 +0900"
     },
     "basePath": "",
     "book": {

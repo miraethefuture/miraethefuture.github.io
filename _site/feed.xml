@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="4.3.2">Jekyll</generator><link href="http://localhost:4000/feed.xml" rel="self" type="application/atom+xml" /><link href="http://localhost:4000/" rel="alternate" type="text/html" /><updated>2023-09-21T22:31:30+09:00</updated><id>http://localhost:4000/feed.xml</id><title type="html"> Jung Mirae</title><subtitle></subtitle><author><name>Mirae</name></author><entry><title type="html">SwiftUI 이중 스티키 헤더</title><link href="http://localhost:4000/til/2023-09-06-stickyHeader.html" rel="alternate" type="text/html" title="SwiftUI 이중 스티키 헤더" /><published>2023-09-06T00:00:00+09:00</published><updated>2023-09-06T00:00:00+09:00</updated><id>http://localhost:4000/til/stickyHeader</id><content type="html" xml:base="http://localhost:4000/til/2023-09-06-stickyHeader.html"><![CDATA[<div class="language-swift highlighter-rouge"><div class="highlight"><pre class="highlight"><code>
+<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="4.3.2">Jekyll</generator><link href="http://localhost:4000/feed.xml" rel="self" type="application/atom+xml" /><link href="http://localhost:4000/" rel="alternate" type="text/html" /><updated>2023-10-10T21:51:22+09:00</updated><id>http://localhost:4000/feed.xml</id><title type="html"> Jung Mirae</title><subtitle></subtitle><author><name>Mirae</name></author><entry><title type="html">SwiftUI 이중 스티키 헤더</title><link href="http://localhost:4000/til/2023-09-06-stickyHeader.html" rel="alternate" type="text/html" title="SwiftUI 이중 스티키 헤더" /><published>2023-09-06T00:00:00+09:00</published><updated>2023-09-06T00:00:00+09:00</updated><id>http://localhost:4000/til/stickyHeader</id><content type="html" xml:base="http://localhost:4000/til/2023-09-06-stickyHeader.html"><![CDATA[<div class="language-swift highlighter-rouge"><div class="highlight"><pre class="highlight"><code>
 <span class="kd">import</span> <span class="kt">SwiftUI</span>
 
 <span class="kd">struct</span> <span class="kt">ContentView</span><span class="p">:</span> <span class="kt">View</span> <span class="p">{</span>
@@ -608,9 +608,7 @@
 <span class="kd">@attached</span><span class="p">(</span><span class="n">member</span><span class="p">)</span> 
 </code></pre></div></div>
 
-<ul>
-  <li>MemberMacro 프로토콜은 하나의 요구사항을 가짐. 이 요구사항은 ‘expansion’ 함수인데,</li>
-</ul>]]></content><author><name>Mirae</name></author><category term="TIL" /><summary type="html"><![CDATA[onChange(of:initial:_:)]]></summary></entry><entry><title type="html">SwiftUI 뷰 레이아웃</title><link href="http://localhost:4000/til/2023-05-24-ViewLayout.html" rel="alternate" type="text/html" title="SwiftUI 뷰 레이아웃" /><published>2023-05-24T00:00:00+09:00</published><updated>2023-05-24T00:00:00+09:00</updated><id>http://localhost:4000/til/ViewLayout</id><content type="html" xml:base="http://localhost:4000/til/2023-05-24-ViewLayout.html"><![CDATA[<div class="language-swift highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">struct</span> <span class="kt">ReusableLabel</span><span class="p">:</span> <span class="kt">View</span> <span class="p">{</span>
+<!--- MemberMacro 프로토콜은 하나의 요구사항을 가짐. 이 요구사항은 'expansion' 함수인데, -->]]></content><author><name>Mirae</name></author><category term="TIL" /><summary type="html"><![CDATA[onChange(of:initial:_:)]]></summary></entry><entry><title type="html">SwiftUI 뷰 레이아웃</title><link href="http://localhost:4000/til/2023-05-24-ViewLayout.html" rel="alternate" type="text/html" title="SwiftUI 뷰 레이아웃" /><published>2023-05-24T00:00:00+09:00</published><updated>2023-05-24T00:00:00+09:00</updated><id>http://localhost:4000/til/ViewLayout</id><content type="html" xml:base="http://localhost:4000/til/2023-05-24-ViewLayout.html"><![CDATA[<div class="language-swift highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">struct</span> <span class="kt">ReusableLabel</span><span class="p">:</span> <span class="kt">View</span> <span class="p">{</span>
     <span class="k">let</span> <span class="nv">keyword</span><span class="p">:</span> <span class="kt">String</span>
     <span class="k">let</span> <span class="nv">symbol</span><span class="p">:</span> <span class="kt">String</span>
     <span class="k">var</span> <span class="nv">body</span><span class="p">:</span> <span class="kd">some</span> <span class="kt">View</span> <span class="p">{</span>
@@ -681,7 +679,34 @@
   <li>Image() 뷰 이니셜라이저는 기본적으로 이미지의 원래 사이즈로 이미지를 가져옴</li>
   <li>resizable() 모더파이어와 scaledToFit() 같은 모더파이어를 사용하여 이미지 사이즈를 조정할 수 있음</li>
   <li>.clipShape(RoundedRectangle(cornerRadius: 10.0, style: .continuous)) 을 사용하여 뷰의 위치나 크기를 변경하지 않고 corner radius를 설정할 수 있음</li>
-</ul>]]></content><author><name>Mirae</name></author><category term="TIL" /><summary type="html"><![CDATA[```swift struct ReusableLabel: View { let keyword: String let symbol: String var body: some View { Label(keyword, systemImage: symbol) .font(.title) .foregroundColor(.white) .padding() .background(.green.opacity(0.75), in: Capsule()) // - 1 } }]]></summary></entry><entry><title type="html">TIL</title><link href="http://localhost:4000/til/2023-05-24-TIL.html" rel="alternate" type="text/html" title="TIL" /><published>2023-05-24T00:00:00+09:00</published><updated>2023-05-24T00:00:00+09:00</updated><id>http://localhost:4000/til/TIL</id><content type="html" xml:base="http://localhost:4000/til/2023-05-24-TIL.html"><![CDATA[<h2 id="스터디-과제-진행하며-정리-67">스터디 과제 진행하며 정리 (~6/7)</h2>
+</ul>]]></content><author><name>Mirae</name></author><category term="TIL" /><summary type="html"><![CDATA[```swift struct ReusableLabel: View { let keyword: String let symbol: String var body: some View { Label(keyword, systemImage: symbol) .font(.title) .foregroundColor(.white) .padding() .background(.green.opacity(0.75), in: Capsule()) // - 1 } }]]></summary></entry><entry><title type="html">TIL</title><link href="http://localhost:4000/til/2023-05-24-TIL.html" rel="alternate" type="text/html" title="TIL" /><published>2023-05-24T00:00:00+09:00</published><updated>2023-05-24T00:00:00+09:00</updated><id>http://localhost:4000/til/TIL</id><content type="html" xml:base="http://localhost:4000/til/2023-05-24-TIL.html"><![CDATA[<h2 id="lazy-stored-property">Lazy Stored Property</h2>
+
+<ul>
+  <li>lazy stored property의 초기값은 해당 속성이 사용되기 전까지 계산되지 않음.</li>
+  <li>lazy property는 var 키워드를 사용하여 항상 변수로 선언해야 함. lazy 속성은 인스턴스 초기화가 완료된 후에도 초기값이 없을 수 있음(사용되기 전이기 때문에). 반면에, 상수(Constant) 속성은 객체 초기화 전에 값을 꼭 가져야 하기 때문에 lazy 속성으로 정의될 수 없음.</li>
+</ul>
+
+<div class="language-swift highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">class</span> <span class="kt">DataImporter</span> <span class="p">{</span>
+    <span class="cm">/*
+    DataImporter 클래스는 외부의 파일로부터 데이터를 가져옴.
+    이 객체를 초기화하는 시간이 꽤 걸린다고 가정함.
+    */</span>
+    <span class="k">var</span> <span class="nv">filename</span> <span class="o">=</span> <span class="s">"data.txt"</span>
+<span class="p">}</span>
+
+<span class="kd">class</span> <span class="kt">DataManager</span> <span class="p">{</span>
+    <span class="kd">lazy</span> <span class="k">var</span> <span class="nv">importer</span> <span class="o">=</span> <span class="kt">DataImporter</span><span class="p">()</span>
+    <span class="k">var</span> <span class="nv">data</span><span class="p">:</span> <span class="p">[</span><span class="kt">String</span><span class="p">]</span> <span class="o">=</span> <span class="p">[]</span> 
+    <span class="c1">// 데이터를 관리하는 기능을 제공하는 객체</span>
+<span class="p">}</span>
+
+<span class="k">let</span> <span class="nv">manager</span> <span class="o">=</span> <span class="kt">DataManager</span><span class="p">()</span>
+<span class="n">manager</span><span class="o">.</span><span class="n">data</span><span class="o">.</span><span class="nf">append</span><span class="p">(</span><span class="s">"Some data"</span><span class="p">)</span>
+<span class="n">manager</span><span class="o">.</span><span class="n">data</span><span class="o">.</span><span class="nf">append</span><span class="p">(</span><span class="s">"Some more data"</span><span class="p">)</span>
+<span class="c1">// 아직까지는 importer에 할당될 DataImporter의 인스턴스가 생성되지 않음.</span>
+</code></pre></div></div>
+
+<h2 id="스터디-과제-진행하며-정리-67">스터디 과제 진행하며 정리 (~6/7)</h2>
 <ul>
   <li>@State 프로퍼티는 항상 private으로 사용 (해당하는 뷰와 서브 뷰의 특정한 정보를 담기 때문)</li>
   <li>observable object class 수정
@@ -834,7 +859,7 @@ This app has crashed because it attempted to access privacy-sensitive data witho
 </code></pre></div></div>
 <ul>
   <li>estimatedAssetCount를 사용할 경우, 정확한 결과를 가져오지 못할 수 있으므로 fetchAssets를 사용하여 정확한 asset의 수를 구하여 해결</li>
-</ul>]]></content><author><name>Mirae</name></author><category term="TIL" /><summary type="html"><![CDATA[스터디 과제 진행하며 정리 (~6/7) @State 프로퍼티는 항상 private으로 사용 (해당하는 뷰와 서브 뷰의 특정한 정보를 담기 때문) observable object class 수정 published 값이 옵셔널로 설정되어 있음 -&gt; 뷰 부분에서 처리해주어야 하는 불편함을 해결하기 위해 수정 final class로 변경 Combine 추가 데이터 로드하는 함수를 제네릭 함수로 변경 데이터 로드 함수를 실행하는 init() 제거 데이터 로드 함수가 observable object 클래스 안이 아닌 바깥 쪽에 정의]]></summary></entry><entry><title type="html">Vertical TabView in SwiftUI</title><link href="http://localhost:4000/til/2023-04-29-VerticalTabView.html" rel="alternate" type="text/html" title="Vertical TabView in SwiftUI" /><published>2023-04-29T00:00:00+09:00</published><updated>2023-04-29T00:00:00+09:00</updated><id>http://localhost:4000/til/VerticalTabView</id><content type="html" xml:base="http://localhost:4000/til/2023-04-29-VerticalTabView.html"><![CDATA[<video src="https://user-images.githubusercontent.com/85061148/235292829-c16fccb8-e5ae-4243-86e3-356f57443024.mov" controls="controls" style="max-width: 300px">
+</ul>]]></content><author><name>Mirae</name></author><category term="TIL" /><summary type="html"><![CDATA[Lazy Stored Property]]></summary></entry><entry><title type="html">Vertical TabView in SwiftUI</title><link href="http://localhost:4000/til/2023-04-29-VerticalTabView.html" rel="alternate" type="text/html" title="Vertical TabView in SwiftUI" /><published>2023-04-29T00:00:00+09:00</published><updated>2023-04-29T00:00:00+09:00</updated><id>http://localhost:4000/til/VerticalTabView</id><content type="html" xml:base="http://localhost:4000/til/2023-04-29-VerticalTabView.html"><![CDATA[<video src="https://user-images.githubusercontent.com/85061148/235292829-c16fccb8-e5ae-4243-86e3-356f57443024.mov" controls="controls" style="max-width: 300px">
 </video>
 
 <div class="language-swift highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">import</span> <span class="kt">SwiftUI</span>
@@ -877,12 +902,9 @@ This app has crashed because it attempted to access privacy-sensitive data witho
 <p>위 코드와 같이, rotationEffect와 GeometryReader를 사용하여 수직으로 넘어가는 탭뷰를 만들 수 있습니다.</p>
 
 <ul>
-  <li>// 1 : rotationEffect를 사용하여 왼쪽으로 90도 이미지를 로테이션 시켜줍니다. 현재 탭뷰 안의 이미지는 아래와 같이 살짝 커졌지만 가운데 정렬된 상태로 나타납니다.</li>
-</ul>
-
-<center><img src="/assets/images/viewLayout_1.png" alt="viewLayout_1.png" width="300" /><br /></center>
-
-<ul>
+  <li>
+    <p>// 1 : rotationEffect를 사용하여 왼쪽으로 90도 이미지를 로테이션 시켜줍니다. 현재 탭뷰 안의 이미지는 아래와 같이 살짝 커졌지만 가운데 정렬된 상태로 나타납니다.</p>
+  </li>
   <li>
     <p>// 2: 이때 width / height는 누워있는 이미지와 같이 width가 더 큰 직사각형 형태로 존재합니다.</p>
   </li>
@@ -902,47 +924,30 @@ This app has crashed because it attempted to access privacy-sensitive data witho
 LazyVStack은 모든 아이템을 먼저 그리는게 아니라 필요할 때 아이템을 렌더링 하기 떄문에 기존의. VStack과는 다른 레이아웃 룰을 가지고 있습니다. 그래서 높이가 10 정도 되는 뷰만 그려주게 됩니다.<br />
 일단 VStack으로 교체하면 이 문제는 해결할 수 있습니다.</p>
 
-<h4 id="uikit-사용한-horizontal-paged-tabview">UIKit 사용한 Horizontal paged tabView</h4>
-
-<p>SwiftUI 프로젝트에 UIKit 뷰와 뷰 컨트롤러 사용하기</p>
-
-<p>UIViewRepresentable / UIViewControllerRepresentable(프로토콜)을 채택하는 커스텀 타입을 생성 
-SwiftUI가 라이프 사이클과 업데이트를 관리하는 UIKit 타입을 생성하는 커스텀 타입</p>
-
-<p>UIViewControllerRepresentable은 정의해야하는 두가지 요구사항이 있음</p>
-
-<ol>
-  <li>UIPageViewController를 리턴하는 makeUIViewController(context:_)를 구현</li>
-</ol>
-
-<div class="language-swift highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">func</span> <span class="nf">makeUIViewController</span><span class="p">(</span><span class="nv">context</span><span class="p">:</span> <span class="kt">Context</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kt">UIPageViewController</span> <span class="p">{</span>
-    <span class="k">let</span> <span class="nv">pageViewController</span> <span class="o">=</span> <span class="kt">UIPageViewController</span><span class="p">(</span>
-        <span class="nv">transitionStyle</span><span class="p">:</span> <span class="o">.</span><span class="n">scroll</span><span class="p">,</span> <span class="c1">// .PageCurl 스타일도 있음</span>
-        <span class="nv">navigationOrientation</span><span class="p">:</span> <span class="o">.</span><span class="n">horizontal</span><span class="p">)</span> <span class="c1">// .vertical도 있음</span>
-    
-    <span class="k">return</span> <span class="n">pageViewController</span>
-        
-<span class="p">}</span>
-</code></pre></div></div>
-<ul>
-  <li>UIPageViewController의 트랜지션 스타일과 .horizontal / .vertical 방식 중 하나를 설정하여 리턴</li>
-</ul>
-
-<ol>
-  <li>updateUIViewController(<em>:context:) 메서드를 구현하여 setViewControllers(</em>:direction:animated:) 메서드를 호출</li>
-</ol>]]></content><author><name>Mirae</name></author><category term="TIL" /><summary type="html"><![CDATA[]]></summary></entry><entry><title type="html">Persisting Data</title><link href="http://localhost:4000/til/2023-04-24-CoreData.html" rel="alternate" type="text/html" title="Persisting Data" /><published>2023-04-24T00:00:00+09:00</published><updated>2023-04-24T00:00:00+09:00</updated><id>http://localhost:4000/til/CoreData</id><content type="html" xml:base="http://localhost:4000/til/2023-04-24-CoreData.html"><![CDATA[<h1>💿</h1>
-<p>JSON 형태의 Open API를 이용해서 사용자 목록을 가져오고, 팔로우/언팔로우 정보를 추가해서 보여주는 개인 과제를 하고 있습니다.</p>
-<ul>
-  <li>API를 통해 가져오는 정보에는 팔로우에 대한 속성이 없음</li>
-  <li>때문에, 데이터를 받는 클라이언트/프로바이더 단에서 팔로우/언팔로우에 대한 bool 값을 가지고 있지 않음</li>
-  <li>프로바이더를 통해 메인 뷰에서 데이터를 뿌려주는데 팔로우/언팔로우에 대한 정보가 없기 때문에 네비게이션 링크를 통해 가야하는 디테일 뷰에 팔로우/언팔로우에 대한 State 정보를 줄 수 없는 것이 문제..</li>
-  <li>UserDefaults에 사용자의 id를 키로 설정하고, 값에는 팔로우/언팔로우 정보를 bool 타입으로 저장함</li>
-  <li>디코딩하는 이니셜라이저에서 UserDefaluts에 저장되어 있는 bool 값도 함께 가져옴</li>
-</ul>
-
-<h2 id="saveaction--">SaveAction { }</h2>
-
-<p>ㄲ</p>]]></content><author><name>Mirae</name></author><category term="TIL" /><summary type="html"><![CDATA[💿 JSON 형태의 Open API를 이용해서 사용자 목록을 가져오고, 팔로우/언팔로우 정보를 추가해서 보여주는 개인 과제를 하고 있습니다. API를 통해 가져오는 정보에는 팔로우에 대한 속성이 없음 때문에, 데이터를 받는 클라이언트/프로바이더 단에서 팔로우/언팔로우에 대한 bool 값을 가지고 있지 않음 프로바이더를 통해 메인 뷰에서 데이터를 뿌려주는데 팔로우/언팔로우에 대한 정보가 없기 때문에 네비게이션 링크를 통해 가야하는 디테일 뷰에 팔로우/언팔로우에 대한 State 정보를 줄 수 없는 것이 문제.. UserDefaults에 사용자의 id를 키로 설정하고, 값에는 팔로우/언팔로우 정보를 bool 타입으로 저장함 디코딩하는 이니셜라이저에서 UserDefaluts에 저장되어 있는 bool 값도 함께 가져옴]]></summary></entry><entry><title type="html">Stanford CS 193P</title><link href="http://localhost:4000/til/2023-02-20-StanfordLecture.html" rel="alternate" type="text/html" title="Stanford CS 193P" /><published>2023-02-20T00:00:00+09:00</published><updated>2023-02-20T00:00:00+09:00</updated><id>http://localhost:4000/til/StanfordLecture</id><content type="html" xml:base="http://localhost:4000/til/2023-02-20-StanfordLecture.html"><![CDATA[<p><a href="https://www.youtube.com/watch?v=TZL5AmwuwlA&amp;list=PL3d_SFOiG7_8ofjyKzX6Nl1wZehbdiZC_">Youtube 🔗</a></p>
+<!--#### UIKit 사용한 Horizontal paged tabView-->
+<!---->
+<!--SwiftUI 프로젝트에 UIKit 뷰와 뷰 컨트롤러 사용하기 -->
+<!---->
+<!--UIViewRepresentable / UIViewControllerRepresentable(프로토콜)을 채택하는 커스텀 타입을 생성 -->
+<!--SwiftUI가 라이프 사이클과 업데이트를 관리하는 UIKit 타입을 생성하는 커스텀 타입-->
+<!---->
+<!--UIViewControllerRepresentable은 정의해야하는 두가지 요구사항이 있음 -->
+<!---->
+<!--1. UIPageViewController를 리턴하는 makeUIViewController(context:_)를 구현 -->
+<!---->
+<!--```swift-->
+<!--func makeUIViewController(context: Context) -> UIPageViewController {-->
+<!--    let pageViewController = UIPageViewController(-->
+<!--        transitionStyle: .scroll, // .PageCurl 스타일도 있음-->
+<!--        navigationOrientation: .horizontal) // .vertical도 있음-->
+<!--    -->
+<!--    return pageViewController-->
+<!--        -->
+<!--}-->
+<!--```  -->
+<!--- UIPageViewController의 트랜지션 스타일과 .horizontal / .vertical 방식 중 하나를 설정하여 리턴-->
+<!---->
+<!--2. updateUIViewController(_:context:) 메서드를 구현하여 setViewControllers(_:direction:animated:) 메서드를 호출-->]]></content><author><name>Mirae</name></author><category term="TIL" /><summary type="html"><![CDATA[]]></summary></entry><entry><title type="html">Stanford CS 193P</title><link href="http://localhost:4000/til/2023-02-20-StanfordLecture.html" rel="alternate" type="text/html" title="Stanford CS 193P" /><published>2023-02-20T00:00:00+09:00</published><updated>2023-02-20T00:00:00+09:00</updated><id>http://localhost:4000/til/StanfordLecture</id><content type="html" xml:base="http://localhost:4000/til/2023-02-20-StanfordLecture.html"><![CDATA[<p><a href="https://www.youtube.com/watch?v=TZL5AmwuwlA&amp;list=PL3d_SFOiG7_8ofjyKzX6Nl1wZehbdiZC_">Youtube 🔗</a></p>
 <blockquote>
   <p>강의 내용 중 필요한 것 정리</p>
 </blockquote>
@@ -1475,7 +1480,7 @@ async, throws 키워드를 사용. property에 async와 throws를 사용하려�
 <p><a href="https://developer.apple.com/tutorials/app-dev-training/managing-structured-concurrency#Protecting-data-with-actors">→</a>
 현재 Earthquakes 앱의 클라이언트는 지진의 정보 목록을 가져오기 위해서 하나의 요청을 보내고 있음.<br />
 이제 클라이언트가 concurrency 기능을 사용하여 여러개의 요청을 동시에 보내도록 수정하려고 함.<br />
-비동기 함수와 비동기 프로퍼티를 사용해서 네트워크 요청에 대한 값을 가져오는 작업이 실행되는 동안 잠깐 해당 부분에 실행을 멈춤.
+비동기 함수와 비동기 속성을 사용해서 네트워크 요청에 대한 값을 가져오는 작업이 실행되는 동안 잠깐 해당 부분에 실행을 멈춤.
 그동안 다른 작업이 먼저 진행됨.</p>
 
 <div class="language-swift highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">let</span> <span class="nv">quakes</span><span class="p">:</span> <span class="p">[</span><span class="kt">Quake</span><span class="p">]</span> <span class="o">=</span> <span class="k">try</span> <span class="k">await</span> <span class="n">quakeClient</span><span class="o">.</span><span class="n">quakes</span>
