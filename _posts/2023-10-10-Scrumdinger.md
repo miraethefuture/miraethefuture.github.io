@@ -40,3 +40,26 @@ layout: post
 시스템은 원천데이터를 가진 부모뷰와 @Binding을 가진 자식뷰의 관계를 성립시킴.  
 이때는 자식뷰, 부모뷰 모두 원천데이터를 읽거나, 수정할 수 있음. 만약 자식뷰가 read-only 속성을 가지고 있다면, 원천데이터를 보내기만 할 수 있음. (수정은 안됨.)
 두 경우 모두, 프레임워크가 자동으로 뷰를 업데이트 함.  
+  
+# Making classes observable
+## Working with reference types
+@State 속성은 구조체나 열거형과 같은 value type 원천데이터만 정의할 수 있다.  
+클래스와 같은 reference type인 원천데이터를 정의하려면 @State가 아닌 아래 세가지 프로퍼티 래퍼를 사용해야 한다.  
+```swift
+@ObservedObject 
+@StateObject 
+@EnvironmentObject
+```
+이 프로퍼티 래퍼들을 사용하려면 먼저 원천데이터가 될 클래스를 observable한 상태로 만들어주어야 한다.  
+
+## Making a class observable
+ObservableObject 프로토콜을 따르는 클래스를 생성하여 클래스를 observable 하도록 만들 수 있다. (observable의 사전적 의미 중 하나는 '관찰할 수 있는'이다. 클래스를 observable 하도록 만든다는 건, 다른 어떤 것들이 이 클래스를 관찰할 수 있도록 만든다는 것이다.) 
+```swift
+class ScrumTimer: ObservableObject {
+   @Published var activeSpeaker = ""
+   @Published var secondsElapsed = 0
+   @Published var secondsRemaining = 0
+   // ...
+}
+```
+이 클래스 안에서 위 세개의 속성들은 자신의 값이 변할 때 UI를 업데이트 해야한다. 이런 속성들은 @Published를 사용하여 정의한다. 이 published property의 값이 변경될 때 ScrumTimer가 자신을 관찰하고 있는 관찰자에게 이 변경사항을 알린다.
