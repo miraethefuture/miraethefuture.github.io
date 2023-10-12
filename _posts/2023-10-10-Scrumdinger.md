@@ -63,3 +63,6 @@ class ScrumTimer: ObservableObject {
 }
 ```
 이 클래스 안에서 위 세개의 속성들은 자신의 값이 변할 때 UI를 업데이트 해야한다. 이런 속성들은 @Published를 사용하여 정의한다. 이 published property의 값이 변경될 때 ScrumTimer가 자신을 관찰하고 있는 관찰자에게 이 변경사항을 알린다.
+
+## Monitoring an object for changes
+ObservedObject, StateObject, EnvironmentObject 이 세가지의 속성 중 하나를 사용하여 SwiftUI가 observable 객체를 모니터링하도록 할 수 있다. 이 속성을 사용하여 정의된 프로퍼티는 원천데이터가 된다.
