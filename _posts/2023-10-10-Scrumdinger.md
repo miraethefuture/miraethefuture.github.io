@@ -24,6 +24,7 @@ layout: post
 일반적으로 많이 사용되는 속성의 동작들을 캡슐화 해놓은 것.  
 
 <b>State</b>는 그런 프로퍼티 래퍼중 하나로 뷰 안에서 원천데이터를 생성함.  
+
 ```swift
 @State
 ```
@@ -45,6 +46,7 @@ layout: post
 ## Working with reference types
 @State 속성은 구조체나 열거형과 같은 value type 원천데이터만 정의할 수 있다.  
 클래스와 같은 reference type인 원천데이터를 정의하려면 @State가 아닌 아래 세가지 프로퍼티 래퍼를 사용해야 한다.  
+
 ```swift
 @ObservedObject 
 @StateObject 
@@ -54,6 +56,7 @@ layout: post
 
 ## Making a class observable
 ObservableObject 프로토콜을 따르는 클래스를 생성하여 클래스를 observable 하도록 만들 수 있다. (observable의 사전적 의미 중 하나는 '관찰할 수 있는'이다. 클래스를 observable 하도록 만든다는 건, 다른 어떤 것들이 이 클래스를 관찰할 수 있도록 만든다는 것이다.) 
+
 ```swift
 class ScrumTimer: ObservableObject {
    @Published var activeSpeaker = ""
@@ -65,4 +68,19 @@ class ScrumTimer: ObservableObject {
 이 클래스 안에서 위 세개의 속성들은 자신의 값이 변할 때 UI를 업데이트 해야한다. 이런 속성들은 @Published를 사용하여 정의한다. 이 published property의 값이 변경될 때 ScrumTimer가 자신을 관찰하고 있는 관찰자에게 이 변경사항을 알린다.
 
 ## Monitoring an object for changes
-ObservedObject, StateObject, EnvironmentObject 이 세가지의 속성 중 하나를 사용하여 SwiftUI가 observable 객체를 모니터링하도록 할 수 있다. 이 속성을 사용하여 정의된 프로퍼티는 원천데이터가 된다.
+ObservedObject, StateObject, EnvironmentObject 이 세가지의 속성 중 하나를 사용하여 SwiftUI가 observable 객체를 모니터링하도록 할 수 있다. 이 속성을 사용하여 정의된 프로퍼티는 원천데이터가 된다.  
+  
+```swift
+struct MeetingView: View {
+   @StateObject var scrumTimer = ScrumTimer()
+   // ...
+}
+```
+@StateObject 래퍼를 사용하여 observable 객체를 생성한다. App, Scene, View에서 스테이트 객체를 생성할 수 있다. 시스템이 스테이트 객체를 초기화하면 해당 스트럭처 또는 객체를 전달 받은 다른 뷰에서 해당 객체를 사용할 수 있다. 
+
+<!--```swift-->
+<!--struct ChildView: View {-->
+<!--   @ObservedObject var timer: ScrumTimer-->
+<!--   // ...-->
+<!--}-->
+<!--``` 여기부터 이어서 작성하기.. -->
