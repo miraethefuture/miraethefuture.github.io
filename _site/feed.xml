@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="4.3.2">Jekyll</generator><link href="http://localhost:4000/feed.xml" rel="self" type="application/atom+xml" /><link href="http://localhost:4000/" rel="alternate" type="text/html" /><updated>2023-10-13T23:29:35+09:00</updated><id>http://localhost:4000/feed.xml</id><title type="html"> Jung Mirae</title><subtitle></subtitle><author><name>Mirae</name></author><entry><title type="html">앱 Scrumdinger 튜토리얼을 따라가며 정리</title><link href="http://localhost:4000/til/2023-10-10-Scrumdinger.html" rel="alternate" type="text/html" title="앱 Scrumdinger 튜토리얼을 따라가며 정리" /><published>2023-10-10T00:00:00+09:00</published><updated>2023-10-10T00:00:00+09:00</updated><id>http://localhost:4000/til/Scrumdinger</id><content type="html" xml:base="http://localhost:4000/til/2023-10-10-Scrumdinger.html"><![CDATA[<p><a href="https://developer.apple.com/tutorials/app-dev-training/managing-data-flow-between-views">Scrumdinger app tutorial</a></p>
+<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="4.3.2">Jekyll</generator><link href="http://localhost:4000/feed.xml" rel="self" type="application/atom+xml" /><link href="http://localhost:4000/" rel="alternate" type="text/html" /><updated>2023-10-14T22:07:22+09:00</updated><id>http://localhost:4000/feed.xml</id><title type="html"> Jung Mirae</title><subtitle></subtitle><author><name>Mirae</name></author><entry><title type="html">앱 Scrumdinger 튜토리얼을 따라가며 정리</title><link href="http://localhost:4000/til/2023-10-10-Scrumdinger.html" rel="alternate" type="text/html" title="앱 Scrumdinger 튜토리얼을 따라가며 정리" /><published>2023-10-10T00:00:00+09:00</published><updated>2023-10-10T00:00:00+09:00</updated><id>http://localhost:4000/til/Scrumdinger</id><content type="html" xml:base="http://localhost:4000/til/2023-10-10-Scrumdinger.html"><![CDATA[<p><a href="https://developer.apple.com/tutorials/app-dev-training/managing-data-flow-between-views">Scrumdinger app tutorial</a></p>
 <blockquote>
   <p>이 글은 위 튜토리얼을 따라가며 정리한 내용입니다.</p>
 </blockquote>
@@ -72,7 +72,54 @@
 <!--   @ObservedObject var timer: ScrumTimer-->
 <!--   // ...-->
 <!--}-->
-<!--``` 여기부터 이어서 작성하기.. -->]]></content><author><name>Mirae</name></author><category term="TIL" /><summary type="html"><![CDATA[Scrumdinger app tutorial 이 글은 위 튜토리얼을 따라가며 정리한 내용입니다. Managing data flow between views Source of truth source of truth == 원천데이터 원천데이터를 사용하지 않으면 뷰에 나타나는 데이터가 불일치하는 버그가 생길 수 있음. 데이터를 가지고 있는 요소를 한 장소에 보관하고 뷰들이 그 데이터에 접근하도록 함. 앱 전체 코드를 통하는 원천데이터를 생성할 수도 있음. 원천 데이터를 정의하는 방식과 위치는 여러 뷰들 사이에서 공유되는 데이터인지, 변하는 데이터인지에 따라 다름.]]></summary></entry><entry><title type="html">SwiftUI 이중 스티키 헤더</title><link href="http://localhost:4000/til/2023-09-06-stickyHeader.html" rel="alternate" type="text/html" title="SwiftUI 이중 스티키 헤더" /><published>2023-09-06T00:00:00+09:00</published><updated>2023-09-06T00:00:00+09:00</updated><id>http://localhost:4000/til/stickyHeader</id><content type="html" xml:base="http://localhost:4000/til/2023-09-06-stickyHeader.html"><![CDATA[<div class="language-swift highlighter-rouge"><div class="highlight"><pre class="highlight"><code>
+<!--``` 여기부터 이어서 작성하기.. -->
+
+<h1 id="managing-state-and-life-cycle">Managing state and life cycle</h1>
+
+<div class="language-swift highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">struct</span> <span class="kt">MeetingFooterView</span><span class="p">:</span> <span class="kt">View</span> <span class="p">{</span>
+    
+    <span class="k">let</span> <span class="nv">speakers</span><span class="p">:</span> <span class="p">[</span><span class="kt">ScrumTimer</span><span class="o">.</span><span class="kt">Speaker</span><span class="p">]</span>
+
+    <span class="kd">private</span> <span class="k">var</span> <span class="nv">isLastSpeaker</span><span class="p">:</span> <span class="kt">Bool</span> <span class="p">{</span>
+            <span class="k">return</span> <span class="n">speakers</span><span class="o">.</span><span class="nf">dropLast</span><span class="p">()</span><span class="o">.</span><span class="n">allSatisfy</span> <span class="p">{</span> <span class="nv">$0</span><span class="o">.</span><span class="n">isCompleted</span> <span class="p">}</span>
+        <span class="p">}</span>
+    <span class="p">}</span>
+</code></pre></div></div>
+<p>🖍️ 이 뷰 안에서만 필요한 computed property이기 때문에 private으로 선언<br />
+🖍️ dropLast()를 사용하여 speakers 배열의 마지막 요소를 제외한 배열을 리턴함.</p>
+
+<p><b>dropLast(_:)</b></p>
+<div class="language-swift highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">let</span> <span class="nv">numbers</span> <span class="o">=</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">4</span><span class="p">,</span> <span class="mi">5</span><span class="p">]</span>
+<span class="nf">print</span><span class="p">(</span><span class="n">numbers</span><span class="o">.</span><span class="nf">dropLast</span><span class="p">(</span><span class="mi">2</span><span class="p">))</span>
+<span class="c1">// Prints "[1, 2, 3]"</span>
+<span class="nf">print</span><span class="p">(</span><span class="n">numbers</span><span class="o">.</span><span class="nf">dropLast</span><span class="p">(</span><span class="mi">10</span><span class="p">))</span>
+<span class="c1">// Prints "[]"</span>
+</code></pre></div></div>
+<p>🖍️ 마지막 요소만 제외하거나, 제외할 요소의 수를 정할 수 있음. 위 코드에서는 2를 통과시켜 맨 뒤에서부터 배열의 요소 2개를 제외한 배열을 리턴
+🖍️ 배열의 카운트보다 큰 수를 통과시킬 경우 빈 배열을 리턴</p>
+
+<div class="language-swift highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">import</span> <span class="kt">Foundation</span>
+
+<span class="c1">/// Keeps time for a daily scrum meeting. Keep track of the total meeting time, the time for each speaker, and the name of the current speaker.</span>
+
+<span class="kd">@MainActor</span>
+<span class="kd">final</span> <span class="kd">class</span> <span class="kt">ScrumTimer</span><span class="p">:</span> <span class="kt">ObservableObject</span> <span class="p">{</span>
+    <span class="c1">/// A struct to keep track of meeting attendees during a meeting.</span>
+    <span class="kd">struct</span> <span class="kt">Speaker</span><span class="p">:</span> <span class="kt">Identifiable</span> <span class="p">{</span>
+        <span class="c1">/// The attendee name.</span>
+        <span class="k">let</span> <span class="nv">name</span><span class="p">:</span> <span class="kt">String</span>
+        <span class="c1">/// True if the attendee has completed their turn to speak.</span>
+        <span class="k">var</span> <span class="nv">isCompleted</span><span class="p">:</span> <span class="kt">Bool</span>
+        <span class="c1">/// Id for Identifiable conformance.</span>
+        <span class="k">let</span> <span class="nv">id</span> <span class="o">=</span> <span class="kt">UUID</span><span class="p">()</span>
+    <span class="p">}</span>
+    
+    <span class="c1">// ...</span>
+<span class="p">}</span>
+</code></pre></div></div>
+<p>🖍️ 주석 /// 을 사용하여 Xcode에서 보여지는 문서를 작성할 수 있음</p>
+
+<p><img src="/assets/images/writingDocs.png" alt="writingDocs" width="550" /><br /></p>]]></content><author><name>Mirae</name></author><category term="TIL" /><summary type="html"><![CDATA[Scrumdinger app tutorial 이 글은 위 튜토리얼을 따라가며 정리한 내용입니다. Managing data flow between views Source of truth source of truth == 원천데이터 원천데이터를 사용하지 않으면 뷰에 나타나는 데이터가 불일치하는 버그가 생길 수 있음. 데이터를 가지고 있는 요소를 한 장소에 보관하고 뷰들이 그 데이터에 접근하도록 함. 앱 전체 코드를 통하는 원천데이터를 생성할 수도 있음. 원천 데이터를 정의하는 방식과 위치는 여러 뷰들 사이에서 공유되는 데이터인지, 변하는 데이터인지에 따라 다름.]]></summary></entry><entry><title type="html">SwiftUI 이중 스티키 헤더</title><link href="http://localhost:4000/til/2023-09-06-stickyHeader.html" rel="alternate" type="text/html" title="SwiftUI 이중 스티키 헤더" /><published>2023-09-06T00:00:00+09:00</published><updated>2023-09-06T00:00:00+09:00</updated><id>http://localhost:4000/til/stickyHeader</id><content type="html" xml:base="http://localhost:4000/til/2023-09-06-stickyHeader.html"><![CDATA[<div class="language-swift highlighter-rouge"><div class="highlight"><pre class="highlight"><code>
 <span class="kd">import</span> <span class="kt">SwiftUI</span>
 
 <span class="kd">struct</span> <span class="kt">ContentView</span><span class="p">:</span> <span class="kt">View</span> <span class="p">{</span>
