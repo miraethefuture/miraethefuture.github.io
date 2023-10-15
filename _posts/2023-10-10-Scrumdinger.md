@@ -98,7 +98,8 @@ struct MeetingFooterView: View {
     }
 ```
 🖍️ 이 뷰 안에서만 필요한 computed property이기 때문에 private으로 선언  
-🖍️ dropLast()를 사용하여 speakers 배열의 마지막 요소를 제외한 배열을 리턴함.
+🖍️ dropLast()를 사용하여 speakers 배열의 마지막 요소를 제외한 배열을 리턴함.  
+🖍️ allSatisfy()를 사용하여 마지막 speaker를 제외한 모든 speakers의 isCompleted 이 true라는 bool 값을 리턴함.  
 
 <b>dropLast(\_:)</b>
 ```swift
@@ -110,6 +111,15 @@ print(numbers.dropLast(10))
 ```
 🖍️ 마지막 요소만 제외하거나, 제외할 요소의 수를 정할 수 있음. 위 코드에서는 2를 통과시켜 맨 뒤에서부터 배열의 요소 2개를 제외한 배열을 리턴
 🖍️ 배열의 카운트보다 큰 수를 통과시킬 경우 빈 배열을 리턴
+
+<b>allSatisfy(\_:)</b>
+
+```swift
+let names = ["Sofia", "Camilla", "Martina", "Mateo", "Nicolás"]
+let allHaveAtLeastFive = names.allSatisfy({ $0.count >= 5 })
+// allHaveAtLeastFive == true
+```
+🖍️ 배열의 모든 요소가 5자 이상인 이름인지를 bool 값으로 리턴함.
 
 ```swift
 import Foundation
