@@ -10,6 +10,35 @@ layout: post
 > 이 글은 위 튜토리얼을 따라가며 정리한 내용입니다. 
   
   
+# Create a color theme
+
+앱 전체에 일관된 스타일을 주기 위해 컬러 테마를 생성하기.
+
+- 뷰 파일이 아니지만 Foundation을 제거하고 SwiftUI를 import (SwiftUI 프레임워크의 Color을 사용하기 때문) 
+
+    > SwiftUI는 컬러를 뷰 계층에 바로 추가할 수 있는 하나의 뷰 인스턴스로 취급함.
+
+- String 타입의 값을 raw value로 가지는 enum 생성 
+
+```swift 
+enum Theme: String {
+    case bubblegum
+    case buttercup
+    case indigo
+    case lavender
+    
+    var accentColor: Color {
+        switch self {
+        case .bubblegum, .buttercup, .lavender: return .black
+        case .indigo: return .white
+        }
+    }
+}
+```
+> 위와 같이 case 이름만 작성해주면 Swift가 자동으로 스트링 타입의 raw value를 생성함. 
+> enum 안에 switch self를 사용하여 case 별로 값을 리턴하는 컬러 프로퍼티를 생성
+    
+  
   
 # Managing data flow between views  
 ## Source of truth 

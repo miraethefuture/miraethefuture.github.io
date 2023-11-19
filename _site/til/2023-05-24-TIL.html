@@ -150,7 +150,7 @@
                             </a>
                             
                                 
-                                    <ul><li><a href="#lazy-stored-property">Lazy Stored Property</a></li><li><a href="#스터디-과제-진행하며-정리-67">스터디 과제 진행하며 정리 (~6/7)</a></li><li><a href="#스터디-과제-진행하며-정리-719">스터디 과제 진행하며 정리 (~7/19)</a></li><li><a href="#swiftui">SwiftUI</a></li></ul>
+                                    <ul><li><a href="#swiftui-videoplayer-영상-looping">SwiftUI VideoPlayer 영상 looping</a></li><li><a href="#lazy-stored-property">Lazy Stored Property</a></li><li><a href="#스터디-과제-진행하며-정리-67">스터디 과제 진행하며 정리 (~6/7)</a></li><li><a href="#스터디-과제-진행하며-정리-719">스터디 과제 진행하며 정리 (~7/19)</a></li><li><a href="#swiftui">SwiftUI</a></li></ul>
 
                                 
                             
@@ -248,7 +248,46 @@
                         <h1 id="/til/TIL">TIL</h1>
                     
 
-                    <h2 id="lazy-stored-property">Lazy Stored Property</h2>
+                    <h2 id="swiftui-videoplayer-영상-looping">SwiftUI VideoPlayer 영상 looping</h2>
+<div class="language-swift highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">@State</span> <span class="kd">private</span> <span class="k">var</span> <span class="nv">queuePlayer</span><span class="p">:</span> <span class="kt">AVQueuePlayer</span> <span class="o">=</span> <span class="kt">AVQueuePlayer</span><span class="p">()</span>
+<span class="kd">@State</span> <span class="kd">private</span> <span class="k">var</span> <span class="nv">playerLooper</span><span class="p">:</span> <span class="kt">AVPlayerLooper</span><span class="o">!</span>
+
+<span class="kd">struct</span> <span class="kt">SomeView</span><span class="p">:</span> <span class="kt">View</span> <span class="p">{</span>
+
+    <span class="kt">VideoPlayer</span><span class="p">(</span><span class="nv">player</span><span class="p">:</span> <span class="n">queuePlayer</span><span class="p">)</span>
+         <span class="o">.</span><span class="n">onAppear</span> <span class="p">{</span>
+             <span class="k">guard</span> <span class="k">let</span> <span class="nv">url</span> <span class="o">=</span> <span class="kt">URL</span><span class="p">(</span><span class="nv">string</span><span class="p">:</span> <span class="s">"stringUrl"</span><span class="p">)</span> <span class="k">else</span> <span class="p">{</span>
+                 <span class="k">return</span>
+             <span class="p">}</span>
+             
+             <span class="k">if</span> <span class="n">queuePlayer</span><span class="o">.</span><span class="n">currentItem</span><span class="p">?</span><span class="o">.</span><span class="n">status</span><span class="o">.</span><span class="n">rawValue</span> <span class="o">!=</span> <span class="mi">1</span> <span class="p">{</span>
+                 
+                 <span class="nf">print</span><span class="p">(</span><span class="s">"player status readyToPlay"</span><span class="p">)</span>
+                 
+                 <span class="k">let</span> <span class="nv">asset</span> <span class="o">=</span> <span class="kt">AVAsset</span><span class="p">(</span><span class="nv">url</span><span class="p">:</span> <span class="n">url</span><span class="p">)</span>
+                 <span class="k">let</span> <span class="nv">item</span> <span class="o">=</span> <span class="kt">AVPlayerItem</span><span class="p">(</span><span class="nv">asset</span><span class="p">:</span> <span class="n">asset</span><span class="p">)</span>
+                 <span class="n">playerLooper</span> <span class="o">=</span> <span class="kt">AVPlayerLooper</span><span class="p">(</span><span class="nv">player</span><span class="p">:</span> <span class="n">queuePlayer</span><span class="p">,</span> <span class="nv">templateItem</span><span class="p">:</span> <span class="n">item</span><span class="p">)</span>
+             <span class="p">}</span>
+             
+             <span class="n">queuePlayer</span><span class="o">.</span><span class="nf">play</span><span class="p">()</span>
+         <span class="p">}</span>
+         <span class="o">.</span><span class="n">onDisappear</span> <span class="p">{</span>
+             <span class="n">queuePlayer</span><span class="o">.</span><span class="nf">pause</span><span class="p">()</span>
+         <span class="p">}</span>
+<span class="p">}</span>
+</code></pre></div></div>
+<p><b>하나의 영상을 반복 재생하기</b></p>
+<ul>
+  <li>AVQueuePlayer와 AVPlayerLooper를 사용</li>
+  <li>url을 통해 영상 데이터를 가져옴</li>
+  <li>AVAsset, AVPlayerItem, AVPlayerLooper를 사용하여 반복 재생하였으나 paged style tab view 안에 재생되는 비디오가 page 이동 후 돌아오면 아래와 같은 에러가 발생함.</li>
+</ul>
+
+<blockquote>
+  <p>An AVPlayerItem can occupy only one position in a player’s queue at a time</p>
+</blockquote>
+
+<h2 id="lazy-stored-property">Lazy Stored Property</h2>
 
 <ul>
   <li>lazy stored property의 초기값은 해당 속성이 사용되기 전까지 계산되지 않음.</li>
@@ -569,7 +608,7 @@ MathJax = {
     },
     "gitbook": {
         "version": "3.2.3",
-        "time": "2023-10-14 22:07:22 +0900"
+        "time": "2023-11-20 00:23:16 +0900"
     },
     "basePath": "",
     "book": {

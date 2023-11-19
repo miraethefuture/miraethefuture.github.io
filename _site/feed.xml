@@ -1,6 +1,42 @@
-<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="4.3.2">Jekyll</generator><link href="http://localhost:4000/feed.xml" rel="self" type="application/atom+xml" /><link href="http://localhost:4000/" rel="alternate" type="text/html" /><updated>2023-10-14T22:07:22+09:00</updated><id>http://localhost:4000/feed.xml</id><title type="html"> Jung Mirae</title><subtitle></subtitle><author><name>Mirae</name></author><entry><title type="html">앱 Scrumdinger 튜토리얼을 따라가며 정리</title><link href="http://localhost:4000/til/2023-10-10-Scrumdinger.html" rel="alternate" type="text/html" title="앱 Scrumdinger 튜토리얼을 따라가며 정리" /><published>2023-10-10T00:00:00+09:00</published><updated>2023-10-10T00:00:00+09:00</updated><id>http://localhost:4000/til/Scrumdinger</id><content type="html" xml:base="http://localhost:4000/til/2023-10-10-Scrumdinger.html"><![CDATA[<p><a href="https://developer.apple.com/tutorials/app-dev-training/managing-data-flow-between-views">Scrumdinger app tutorial</a></p>
+<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="4.3.2">Jekyll</generator><link href="http://localhost:4000/feed.xml" rel="self" type="application/atom+xml" /><link href="http://localhost:4000/" rel="alternate" type="text/html" /><updated>2023-11-20T00:23:16+09:00</updated><id>http://localhost:4000/feed.xml</id><title type="html"> Jung Mirae</title><subtitle></subtitle><author><name>Mirae</name></author><entry><title type="html">앱 Scrumdinger 튜토리얼을 따라가며 정리</title><link href="http://localhost:4000/til/2023-10-10-Scrumdinger.html" rel="alternate" type="text/html" title="앱 Scrumdinger 튜토리얼을 따라가며 정리" /><published>2023-10-10T00:00:00+09:00</published><updated>2023-10-10T00:00:00+09:00</updated><id>http://localhost:4000/til/Scrumdinger</id><content type="html" xml:base="http://localhost:4000/til/2023-10-10-Scrumdinger.html"><![CDATA[<p><a href="https://developer.apple.com/tutorials/app-dev-training/managing-data-flow-between-views">Scrumdinger app tutorial</a></p>
 <blockquote>
   <p>이 글은 위 튜토리얼을 따라가며 정리한 내용입니다.</p>
+</blockquote>
+
+<h1 id="create-a-color-theme">Create a color theme</h1>
+
+<p>앱 전체에 일관된 스타일을 주기 위해 컬러 테마를 생성하기.</p>
+
+<ul>
+  <li>
+    <p>뷰 파일이 아니지만 Foundation을 제거하고 SwiftUI를 import (SwiftUI 프레임워크의 Color을 사용하기 때문)</p>
+
+    <blockquote>
+      <p>SwiftUI는 컬러를 뷰 계층에 바로 추가할 수 있는 하나의 뷰 인스턴스로 취급함.</p>
+    </blockquote>
+  </li>
+  <li>
+    <p>String 타입의 값을 raw value로 가지는 enum 생성</p>
+  </li>
+</ul>
+
+<div class="language-swift highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">enum</span> <span class="kt">Theme</span><span class="p">:</span> <span class="kt">String</span> <span class="p">{</span>
+    <span class="k">case</span> <span class="n">bubblegum</span>
+    <span class="k">case</span> <span class="n">buttercup</span>
+    <span class="k">case</span> <span class="n">indigo</span>
+    <span class="k">case</span> <span class="n">lavender</span>
+    
+    <span class="k">var</span> <span class="nv">accentColor</span><span class="p">:</span> <span class="kt">Color</span> <span class="p">{</span>
+        <span class="k">switch</span> <span class="k">self</span> <span class="p">{</span>
+        <span class="k">case</span> <span class="o">.</span><span class="n">bubblegum</span><span class="p">,</span> <span class="o">.</span><span class="n">buttercup</span><span class="p">,</span> <span class="o">.</span><span class="nv">lavender</span><span class="p">:</span> <span class="k">return</span> <span class="o">.</span><span class="n">black</span>
+        <span class="k">case</span> <span class="o">.</span><span class="nv">indigo</span><span class="p">:</span> <span class="k">return</span> <span class="o">.</span><span class="n">white</span>
+        <span class="p">}</span>
+    <span class="p">}</span>
+<span class="p">}</span>
+</code></pre></div></div>
+<blockquote>
+  <p>위와 같이 case 이름만 작성해주면 Swift가 자동으로 스트링 타입의 raw value를 생성함. 
+enum 안에 switch self를 사용하여 case 별로 값을 리턴하는 컬러 프로퍼티를 생성</p>
 </blockquote>
 
 <h1 id="managing-data-flow-between-views">Managing data flow between views</h1>
@@ -86,7 +122,8 @@
     <span class="p">}</span>
 </code></pre></div></div>
 <p>🖍️ 이 뷰 안에서만 필요한 computed property이기 때문에 private으로 선언<br />
-🖍️ dropLast()를 사용하여 speakers 배열의 마지막 요소를 제외한 배열을 리턴함.</p>
+🖍️ dropLast()를 사용하여 speakers 배열의 마지막 요소를 제외한 배열을 리턴함.<br />
+🖍️ allSatisfy()를 사용하여 마지막 speaker를 제외한 모든 speakers의 isCompleted 이 true라는 bool 값을 리턴함.</p>
 
 <p><b>dropLast(_:)</b></p>
 <div class="language-swift highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">let</span> <span class="nv">numbers</span> <span class="o">=</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">4</span><span class="p">,</span> <span class="mi">5</span><span class="p">]</span>
@@ -97,6 +134,14 @@
 </code></pre></div></div>
 <p>🖍️ 마지막 요소만 제외하거나, 제외할 요소의 수를 정할 수 있음. 위 코드에서는 2를 통과시켜 맨 뒤에서부터 배열의 요소 2개를 제외한 배열을 리턴
 🖍️ 배열의 카운트보다 큰 수를 통과시킬 경우 빈 배열을 리턴</p>
+
+<p><b>allSatisfy(_:)</b></p>
+
+<div class="language-swift highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">let</span> <span class="nv">names</span> <span class="o">=</span> <span class="p">[</span><span class="s">"Sofia"</span><span class="p">,</span> <span class="s">"Camilla"</span><span class="p">,</span> <span class="s">"Martina"</span><span class="p">,</span> <span class="s">"Mateo"</span><span class="p">,</span> <span class="s">"Nicolás"</span><span class="p">]</span>
+<span class="k">let</span> <span class="nv">allHaveAtLeastFive</span> <span class="o">=</span> <span class="n">names</span><span class="o">.</span><span class="nf">allSatisfy</span><span class="p">({</span> <span class="nv">$0</span><span class="o">.</span><span class="n">count</span> <span class="o">&gt;=</span> <span class="mi">5</span> <span class="p">})</span>
+<span class="c1">// allHaveAtLeastFive == true</span>
+</code></pre></div></div>
+<p>🖍️ 배열의 모든 요소가 5자 이상인 이름인지를 bool 값으로 리턴함.</p>
 
 <div class="language-swift highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">import</span> <span class="kt">Foundation</span>
 
@@ -119,7 +164,7 @@
 </code></pre></div></div>
 <p>🖍️ 주석 /// 을 사용하여 Xcode에서 보여지는 문서를 작성할 수 있음</p>
 
-<p><img src="/assets/images/writingDocs.png" alt="writingDocs" width="550" /><br /></p>]]></content><author><name>Mirae</name></author><category term="TIL" /><summary type="html"><![CDATA[Scrumdinger app tutorial 이 글은 위 튜토리얼을 따라가며 정리한 내용입니다. Managing data flow between views Source of truth source of truth == 원천데이터 원천데이터를 사용하지 않으면 뷰에 나타나는 데이터가 불일치하는 버그가 생길 수 있음. 데이터를 가지고 있는 요소를 한 장소에 보관하고 뷰들이 그 데이터에 접근하도록 함. 앱 전체 코드를 통하는 원천데이터를 생성할 수도 있음. 원천 데이터를 정의하는 방식과 위치는 여러 뷰들 사이에서 공유되는 데이터인지, 변하는 데이터인지에 따라 다름.]]></summary></entry><entry><title type="html">SwiftUI 이중 스티키 헤더</title><link href="http://localhost:4000/til/2023-09-06-stickyHeader.html" rel="alternate" type="text/html" title="SwiftUI 이중 스티키 헤더" /><published>2023-09-06T00:00:00+09:00</published><updated>2023-09-06T00:00:00+09:00</updated><id>http://localhost:4000/til/stickyHeader</id><content type="html" xml:base="http://localhost:4000/til/2023-09-06-stickyHeader.html"><![CDATA[<div class="language-swift highlighter-rouge"><div class="highlight"><pre class="highlight"><code>
+<p><img src="/assets/images/writingDocs.png" alt="writingDocs" width="550" /><br /></p>]]></content><author><name>Mirae</name></author><category term="TIL" /><summary type="html"><![CDATA[Scrumdinger app tutorial 이 글은 위 튜토리얼을 따라가며 정리한 내용입니다. Create a color theme]]></summary></entry><entry><title type="html">SwiftUI 이중 스티키 헤더</title><link href="http://localhost:4000/til/2023-09-06-stickyHeader.html" rel="alternate" type="text/html" title="SwiftUI 이중 스티키 헤더" /><published>2023-09-06T00:00:00+09:00</published><updated>2023-09-06T00:00:00+09:00</updated><id>http://localhost:4000/til/stickyHeader</id><content type="html" xml:base="http://localhost:4000/til/2023-09-06-stickyHeader.html"><![CDATA[<div class="language-swift highlighter-rouge"><div class="highlight"><pre class="highlight"><code>
 <span class="kd">import</span> <span class="kt">SwiftUI</span>
 
 <span class="kd">struct</span> <span class="kt">ContentView</span><span class="p">:</span> <span class="kt">View</span> <span class="p">{</span>
@@ -800,7 +845,46 @@
   <li>Image() 뷰 이니셜라이저는 기본적으로 이미지의 원래 사이즈로 이미지를 가져옴</li>
   <li>resizable() 모더파이어와 scaledToFit() 같은 모더파이어를 사용하여 이미지 사이즈를 조정할 수 있음</li>
   <li>.clipShape(RoundedRectangle(cornerRadius: 10.0, style: .continuous)) 을 사용하여 뷰의 위치나 크기를 변경하지 않고 corner radius를 설정할 수 있음</li>
-</ul>]]></content><author><name>Mirae</name></author><category term="TIL" /><summary type="html"><![CDATA[```swift struct ReusableLabel: View { let keyword: String let symbol: String var body: some View { Label(keyword, systemImage: symbol) .font(.title) .foregroundColor(.white) .padding() .background(.green.opacity(0.75), in: Capsule()) // - 1 } }]]></summary></entry><entry><title type="html">TIL</title><link href="http://localhost:4000/til/2023-05-24-TIL.html" rel="alternate" type="text/html" title="TIL" /><published>2023-05-24T00:00:00+09:00</published><updated>2023-05-24T00:00:00+09:00</updated><id>http://localhost:4000/til/TIL</id><content type="html" xml:base="http://localhost:4000/til/2023-05-24-TIL.html"><![CDATA[<h2 id="lazy-stored-property">Lazy Stored Property</h2>
+</ul>]]></content><author><name>Mirae</name></author><category term="TIL" /><summary type="html"><![CDATA[```swift struct ReusableLabel: View { let keyword: String let symbol: String var body: some View { Label(keyword, systemImage: symbol) .font(.title) .foregroundColor(.white) .padding() .background(.green.opacity(0.75), in: Capsule()) // - 1 } }]]></summary></entry><entry><title type="html">TIL</title><link href="http://localhost:4000/til/2023-05-24-TIL.html" rel="alternate" type="text/html" title="TIL" /><published>2023-05-24T00:00:00+09:00</published><updated>2023-05-24T00:00:00+09:00</updated><id>http://localhost:4000/til/TIL</id><content type="html" xml:base="http://localhost:4000/til/2023-05-24-TIL.html"><![CDATA[<h2 id="swiftui-videoplayer-영상-looping">SwiftUI VideoPlayer 영상 looping</h2>
+<div class="language-swift highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">@State</span> <span class="kd">private</span> <span class="k">var</span> <span class="nv">queuePlayer</span><span class="p">:</span> <span class="kt">AVQueuePlayer</span> <span class="o">=</span> <span class="kt">AVQueuePlayer</span><span class="p">()</span>
+<span class="kd">@State</span> <span class="kd">private</span> <span class="k">var</span> <span class="nv">playerLooper</span><span class="p">:</span> <span class="kt">AVPlayerLooper</span><span class="o">!</span>
+
+<span class="kd">struct</span> <span class="kt">SomeView</span><span class="p">:</span> <span class="kt">View</span> <span class="p">{</span>
+
+    <span class="kt">VideoPlayer</span><span class="p">(</span><span class="nv">player</span><span class="p">:</span> <span class="n">queuePlayer</span><span class="p">)</span>
+         <span class="o">.</span><span class="n">onAppear</span> <span class="p">{</span>
+             <span class="k">guard</span> <span class="k">let</span> <span class="nv">url</span> <span class="o">=</span> <span class="kt">URL</span><span class="p">(</span><span class="nv">string</span><span class="p">:</span> <span class="s">"stringUrl"</span><span class="p">)</span> <span class="k">else</span> <span class="p">{</span>
+                 <span class="k">return</span>
+             <span class="p">}</span>
+             
+             <span class="k">if</span> <span class="n">queuePlayer</span><span class="o">.</span><span class="n">currentItem</span><span class="p">?</span><span class="o">.</span><span class="n">status</span><span class="o">.</span><span class="n">rawValue</span> <span class="o">!=</span> <span class="mi">1</span> <span class="p">{</span>
+                 
+                 <span class="nf">print</span><span class="p">(</span><span class="s">"player status readyToPlay"</span><span class="p">)</span>
+                 
+                 <span class="k">let</span> <span class="nv">asset</span> <span class="o">=</span> <span class="kt">AVAsset</span><span class="p">(</span><span class="nv">url</span><span class="p">:</span> <span class="n">url</span><span class="p">)</span>
+                 <span class="k">let</span> <span class="nv">item</span> <span class="o">=</span> <span class="kt">AVPlayerItem</span><span class="p">(</span><span class="nv">asset</span><span class="p">:</span> <span class="n">asset</span><span class="p">)</span>
+                 <span class="n">playerLooper</span> <span class="o">=</span> <span class="kt">AVPlayerLooper</span><span class="p">(</span><span class="nv">player</span><span class="p">:</span> <span class="n">queuePlayer</span><span class="p">,</span> <span class="nv">templateItem</span><span class="p">:</span> <span class="n">item</span><span class="p">)</span>
+             <span class="p">}</span>
+             
+             <span class="n">queuePlayer</span><span class="o">.</span><span class="nf">play</span><span class="p">()</span>
+         <span class="p">}</span>
+         <span class="o">.</span><span class="n">onDisappear</span> <span class="p">{</span>
+             <span class="n">queuePlayer</span><span class="o">.</span><span class="nf">pause</span><span class="p">()</span>
+         <span class="p">}</span>
+<span class="p">}</span>
+</code></pre></div></div>
+<p><b>하나의 영상을 반복 재생하기</b></p>
+<ul>
+  <li>AVQueuePlayer와 AVPlayerLooper를 사용</li>
+  <li>url을 통해 영상 데이터를 가져옴</li>
+  <li>AVAsset, AVPlayerItem, AVPlayerLooper를 사용하여 반복 재생하였으나 paged style tab view 안에 재생되는 비디오가 page 이동 후 돌아오면 아래와 같은 에러가 발생함.</li>
+</ul>
+
+<blockquote>
+  <p>An AVPlayerItem can occupy only one position in a player’s queue at a time</p>
+</blockquote>
+
+<h2 id="lazy-stored-property">Lazy Stored Property</h2>
 
 <ul>
   <li>lazy stored property의 초기값은 해당 속성이 사용되기 전까지 계산되지 않음.</li>
@@ -980,7 +1064,7 @@ This app has crashed because it attempted to access privacy-sensitive data witho
 </code></pre></div></div>
 <ul>
   <li>estimatedAssetCount를 사용할 경우, 정확한 결과를 가져오지 못할 수 있으므로 fetchAssets를 사용하여 정확한 asset의 수를 구하여 해결</li>
-</ul>]]></content><author><name>Mirae</name></author><category term="TIL" /><summary type="html"><![CDATA[Lazy Stored Property]]></summary></entry><entry><title type="html">Vertical TabView in SwiftUI</title><link href="http://localhost:4000/til/2023-04-29-VerticalTabView.html" rel="alternate" type="text/html" title="Vertical TabView in SwiftUI" /><published>2023-04-29T00:00:00+09:00</published><updated>2023-04-29T00:00:00+09:00</updated><id>http://localhost:4000/til/VerticalTabView</id><content type="html" xml:base="http://localhost:4000/til/2023-04-29-VerticalTabView.html"><![CDATA[<video src="https://user-images.githubusercontent.com/85061148/235292829-c16fccb8-e5ae-4243-86e3-356f57443024.mov" controls="controls" style="max-width: 300px">
+</ul>]]></content><author><name>Mirae</name></author><category term="TIL" /><summary type="html"><![CDATA[SwiftUI VideoPlayer 영상 looping ```swift @State private var queuePlayer: AVQueuePlayer = AVQueuePlayer() @State private var playerLooper: AVPlayerLooper!]]></summary></entry><entry><title type="html">Vertical TabView in SwiftUI</title><link href="http://localhost:4000/til/2023-04-29-VerticalTabView.html" rel="alternate" type="text/html" title="Vertical TabView in SwiftUI" /><published>2023-04-29T00:00:00+09:00</published><updated>2023-04-29T00:00:00+09:00</updated><id>http://localhost:4000/til/VerticalTabView</id><content type="html" xml:base="http://localhost:4000/til/2023-04-29-VerticalTabView.html"><![CDATA[<video src="https://user-images.githubusercontent.com/85061148/235292829-c16fccb8-e5ae-4243-86e3-356f57443024.mov" controls="controls" style="max-width: 300px">
 </video>
 
 <div class="language-swift highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">import</span> <span class="kt">SwiftUI</span>

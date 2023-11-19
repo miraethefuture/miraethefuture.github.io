@@ -203,7 +203,7 @@
                             </a>
                             
                                 
-                                    <ul><li><a href="#managing-data-flow-between-views">Managing data flow between views</a><ul><li><a href="#source-of-truth">Source of truth</a></li><li><a href="#swift-property-wrappers">Swift property wrappers</a></li></ul></li><li><a href="#making-classes-observable">Making classes observable</a><ul><li><a href="#working-with-reference-types">Working with reference types</a></li><li><a href="#making-a-class-observable">Making a class observable</a></li><li><a href="#monitoring-an-object-for-changes">Monitoring an object for changes</a></li></ul></li><li><a href="#managing-state-and-life-cycle">Managing state and life cycle</a></li></ul>
+                                    <ul><li><a href="#create-a-color-theme">Create a color theme</a></li><li><a href="#managing-data-flow-between-views">Managing data flow between views</a><ul><li><a href="#source-of-truth">Source of truth</a></li><li><a href="#swift-property-wrappers">Swift property wrappers</a></li></ul></li><li><a href="#making-classes-observable">Making classes observable</a><ul><li><a href="#working-with-reference-types">Working with reference types</a></li><li><a href="#making-a-class-observable">Making a class observable</a></li><li><a href="#monitoring-an-object-for-changes">Monitoring an object for changes</a></li></ul></li><li><a href="#managing-state-and-life-cycle">Managing state and life cycle</a></li></ul>
 
                                 
                             
@@ -249,6 +249,42 @@
                     <p><a href="https://developer.apple.com/tutorials/app-dev-training/managing-data-flow-between-views">Scrumdinger app tutorial</a></p>
 <blockquote>
   <p>이 글은 위 튜토리얼을 따라가며 정리한 내용입니다.</p>
+</blockquote>
+
+<h1 id="create-a-color-theme">Create a color theme</h1>
+
+<p>앱 전체에 일관된 스타일을 주기 위해 컬러 테마를 생성하기.</p>
+
+<ul>
+  <li>
+    <p>뷰 파일이 아니지만 Foundation을 제거하고 SwiftUI를 import (SwiftUI 프레임워크의 Color을 사용하기 때문)</p>
+
+    <blockquote>
+      <p>SwiftUI는 컬러를 뷰 계층에 바로 추가할 수 있는 하나의 뷰 인스턴스로 취급함.</p>
+    </blockquote>
+  </li>
+  <li>
+    <p>String 타입의 값을 raw value로 가지는 enum 생성</p>
+  </li>
+</ul>
+
+<div class="language-swift highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">enum</span> <span class="kt">Theme</span><span class="p">:</span> <span class="kt">String</span> <span class="p">{</span>
+    <span class="k">case</span> <span class="n">bubblegum</span>
+    <span class="k">case</span> <span class="n">buttercup</span>
+    <span class="k">case</span> <span class="n">indigo</span>
+    <span class="k">case</span> <span class="n">lavender</span>
+    
+    <span class="k">var</span> <span class="nv">accentColor</span><span class="p">:</span> <span class="kt">Color</span> <span class="p">{</span>
+        <span class="k">switch</span> <span class="k">self</span> <span class="p">{</span>
+        <span class="k">case</span> <span class="o">.</span><span class="n">bubblegum</span><span class="p">,</span> <span class="o">.</span><span class="n">buttercup</span><span class="p">,</span> <span class="o">.</span><span class="nv">lavender</span><span class="p">:</span> <span class="k">return</span> <span class="o">.</span><span class="n">black</span>
+        <span class="k">case</span> <span class="o">.</span><span class="nv">indigo</span><span class="p">:</span> <span class="k">return</span> <span class="o">.</span><span class="n">white</span>
+        <span class="p">}</span>
+    <span class="p">}</span>
+<span class="p">}</span>
+</code></pre></div></div>
+<blockquote>
+  <p>위와 같이 case 이름만 작성해주면 Swift가 자동으로 스트링 타입의 raw value를 생성함. 
+enum 안에 switch self를 사용하여 case 별로 값을 리턴하는 컬러 프로퍼티를 생성</p>
 </blockquote>
 
 <h1 id="managing-data-flow-between-views">Managing data flow between views</h1>
@@ -334,7 +370,8 @@
     <span class="p">}</span>
 </code></pre></div></div>
 <p>🖍️ 이 뷰 안에서만 필요한 computed property이기 때문에 private으로 선언<br />
-🖍️ dropLast()를 사용하여 speakers 배열의 마지막 요소를 제외한 배열을 리턴함.</p>
+🖍️ dropLast()를 사용하여 speakers 배열의 마지막 요소를 제외한 배열을 리턴함.<br />
+🖍️ allSatisfy()를 사용하여 마지막 speaker를 제외한 모든 speakers의 isCompleted 이 true라는 bool 값을 리턴함.</p>
 
 <p><b>dropLast(_:)</b></p>
 <div class="language-swift highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">let</span> <span class="nv">numbers</span> <span class="o">=</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">4</span><span class="p">,</span> <span class="mi">5</span><span class="p">]</span>
@@ -345,6 +382,14 @@
 </code></pre></div></div>
 <p>🖍️ 마지막 요소만 제외하거나, 제외할 요소의 수를 정할 수 있음. 위 코드에서는 2를 통과시켜 맨 뒤에서부터 배열의 요소 2개를 제외한 배열을 리턴
 🖍️ 배열의 카운트보다 큰 수를 통과시킬 경우 빈 배열을 리턴</p>
+
+<p><b>allSatisfy(_:)</b></p>
+
+<div class="language-swift highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">let</span> <span class="nv">names</span> <span class="o">=</span> <span class="p">[</span><span class="s">"Sofia"</span><span class="p">,</span> <span class="s">"Camilla"</span><span class="p">,</span> <span class="s">"Martina"</span><span class="p">,</span> <span class="s">"Mateo"</span><span class="p">,</span> <span class="s">"Nicolás"</span><span class="p">]</span>
+<span class="k">let</span> <span class="nv">allHaveAtLeastFive</span> <span class="o">=</span> <span class="n">names</span><span class="o">.</span><span class="nf">allSatisfy</span><span class="p">({</span> <span class="nv">$0</span><span class="o">.</span><span class="n">count</span> <span class="o">&gt;=</span> <span class="mi">5</span> <span class="p">})</span>
+<span class="c1">// allHaveAtLeastFive == true</span>
+</code></pre></div></div>
+<p>🖍️ 배열의 모든 요소가 5자 이상인 이름인지를 bool 값으로 리턴함.</p>
 
 <div class="language-swift highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">import</span> <span class="kt">Foundation</span>
 
@@ -495,7 +540,7 @@ MathJax = {
     },
     "gitbook": {
         "version": "3.2.3",
-        "time": "2023-10-14 22:07:22 +0900"
+        "time": "2023-11-20 00:23:16 +0900"
     },
     "basePath": "",
     "book": {
