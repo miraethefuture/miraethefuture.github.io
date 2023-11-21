@@ -203,7 +203,7 @@
                             </a>
                             
                                 
-                                    <ul><li><a href="#create-a-color-theme">Create a color theme</a></li><li><a href="#managing-data-flow-between-views">Managing data flow between views</a><ul><li><a href="#source-of-truth">Source of truth</a></li><li><a href="#swift-property-wrappers">Swift property wrappers</a></li></ul></li><li><a href="#making-classes-observable">Making classes observable</a><ul><li><a href="#working-with-reference-types">Working with reference types</a></li><li><a href="#making-a-class-observable">Making a class observable</a></li><li><a href="#monitoring-an-object-for-changes">Monitoring an object for changes</a></li></ul></li><li><a href="#managing-state-and-life-cycle">Managing state and life cycle</a></li></ul>
+                                    <ul><li><a href="#create-a-color-theme">Create a color theme</a></li><li><a href="#managing-data-flow-between-views">Managing data flow between views</a><ul><li><a href="#source-of-truth">Source of truth</a></li><li><a href="#swift-property-wrappers">Swift property wrappers</a></li></ul></li><li><a href="#making-classes-observable">Making classes observable</a><ul><li><a href="#working-with-reference-types">Working with reference types</a></li><li><a href="#making-a-class-observable">Making a class observable</a></li><li><a href="#monitoring-an-object-for-changes">Monitoring an object for changes</a></li></ul></li><li><a href="#managing-state-and-life-cycle">Managing state and life cycle</a><ul><li><a href="#adopting-swift-concurrency">Adopting Swift Concurrency</a><ul><li><a href="#defining-an-asynchronous-function">Defining an asynchronous function</a></li><li><a href="#calling-an-asynchronous-function">Calling an asynchronous function</a></li></ul></li></ul></li></ul>
 
                                 
                             
@@ -414,6 +414,48 @@ enum 안에 switch self를 사용하여 case 별로 값을 리턴하는 컬러 �
 
 <p><img src="/assets/images/writingDocs.png" alt="writingDocs" width="550" /><br /></p>
 
+<h2 id="adopting-swift-concurrency">Adopting Swift Concurrency</h2>
+
+<blockquote>
+  <p>Swift 코드로 복잡한 비동기 작업을 단순화 해보자!</p>
+</blockquote>
+
+<p>SwiftUI 앱에서는 메인 스레드가 모든 UI 작업을 실행한다. 또, 탭하거나 스와이프하는 것과 같은 유저 이벤트를 처리한다. 앱이 제대로 작동하기 위해서는 모든 뷰 업데이트 작업과 이벤트 핸들러를 메인 스레드에서 실행해야 한다.<br />
+하지만 만약 모든 작업을 메인 스레드에서 처리한다면 앱이 느린 것과 같이 느껴질 수 있다.<br />
+만약 메인 스레드가 모든 코드를 처리하는 것을 기다려야 한다면, 앱이 느리거나 심지어 멈춘 것처럼 느껴질 수 있다.<br />
+그렇기 때문에 가능한 작업은 백그라운드 스레드에서 실행하고, 꼭 필요한 작업을 메인 스레드에서 실행하며 균형을 맞춰야 한다.</p>
+
+<p>디스크에 있는 데이터를 읽고, 디스크에 데이터를 입력하는 작업을 비동기적으로 작성해보자.<br />
+이 작업에서는 스위프트의 비동기 함수, Task 타입, @MainActor 어노테이션을 사용할 것이다.</p>
+
+<h3 id="defining-an-asynchronous-function">Defining an asynchronous function</h3>
+
+<p>비동기 함수는 파라미터 리스트 뒤에 async 키워드를 추가하여 정의한다. 리턴값이 있을 경우 리턴 애로우 앞쪽에 표시한다.</p>
+
+<div class="language-swift highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">final</span> <span class="kd">class</span> <span class="kt">UserStore</span> <span class="p">{</span>
+    <span class="kd">func</span> <span class="nf">fetchParticipants</span><span class="p">()</span> <span class="n">asyns</span> <span class="o">-&gt;</span> <span class="p">[</span><span class="kt">Participant</span><span class="p">]</span> <span class="p">{</span><span class="o">...</span><span class="p">}</span>
+<span class="p">}</span>
+</code></pre></div></div>
+
+<h3 id="calling-an-asynchronous-function">Calling an asynchronous function</h3>
+
+<p>await 키워드를 사용하여 비동기 함수를 호출한다. await 키워드는 비동기적인 흐름, 문맥에서만 사용할 수 있다. 아래 UserStore 클래스는 비동기 함수인 refresh() 안에서 fetchParticipants() 함수를 await를 사용해서 호출하고 있다.</p>
+
+<div class="language-swift highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">final</span> <span class="kd">class</span> <span class="kt">UserStore</span> <span class="p">{</span>
+
+    <span class="kd">func</span> <span class="nf">refresh</span><span class="p">()</span> <span class="k">async</span> <span class="o">-&gt;</span> <span class="p">[</span><span class="kt">UserRecord</span><span class="p">]</span> <span class="p">{</span>
+        <span class="k">let</span> <span class="nv">participants</span> <span class="o">=</span> <span class="k">await</span> <span class="nf">fetchParticipants</span><span class="p">()</span>
+        <span class="k">let</span> <span class="nv">records</span> <span class="o">=</span> <span class="k">await</span> <span class="nf">fetchRecords</span><span class="p">(</span><span class="nv">participants</span><span class="p">:</span> <span class="n">participants</span><span class="p">)</span>
+        <span class="k">return</span> <span class="n">records</span>
+    <span class="p">}</span>
+    
+    <span class="kd">func</span> <span class="n">fetchParticipants</span> <span class="k">async</span> <span class="o">-&gt;</span> <span class="p">[</span><span class="kt">Participant</span><span class="p">]</span> <span class="p">{</span><span class="o">...</span><span class="p">}</span>
+    <span class="kd">func</span> <span class="nf">fetchRecords</span><span class="p">(</span><span class="nv">participants</span><span class="p">:</span> <span class="p">[</span><span class="kt">Participant</span><span class="p">])</span> <span class="k">async</span> <span class="o">-&gt;</span> <span class="p">[</span><span class="kt">UserRecord</span><span class="p">]</span>
+<span class="p">}</span>
+</code></pre></div></div>
+<p>fetchParticipants()가 작업을 완료하는 동안 refresh() 함수는 잠시 멈춤. 
+그동안 refresh()를 실행하는 스레드는 다른 작업을 할 수 있음. fetchParticipants()의 작업이 완료되면, 시스템은 refresh() 함수의 다음 라인을 실행함. fetchRecords(participants: participants) 함수가 호출할 때 fetchParticipants()의 리턴값을 사용할 수 있음. 비동기 함수를 사용하면 작성돼있는 순서로 코드를 실행함.</p>
+
 </section>
             </div><div class="search-results">
     <div class="has-results">
@@ -540,7 +582,7 @@ MathJax = {
     },
     "gitbook": {
         "version": "3.2.3",
-        "time": "2023-11-20 00:23:16 +0900"
+        "time": "2023-11-22 01:06:21 +0900"
     },
     "basePath": "",
     "book": {

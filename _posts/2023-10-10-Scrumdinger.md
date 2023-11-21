@@ -174,3 +174,47 @@ final class ScrumTimer: ObservableObject {
   
 <img src="/assets/images/writingDocs.png" alt="writingDocs" width="550"><br> 
 
+
+## Adopting Swift Concurrency
+
+> Swift 코드로 복잡한 비동기 작업을 단순화 해보자!
+
+SwiftUI 앱에서는 메인 스레드가 모든 UI 작업을 실행한다. 또, 탭하거나 스와이프하는 것과 같은 유저 이벤트를 처리한다. 앱이 제대로 작동하기 위해서는 모든 뷰 업데이트 작업과 이벤트 핸들러를 메인 스레드에서 실행해야 한다.  
+하지만 만약 모든 작업을 메인 스레드에서 처리한다면 앱이 느린 것과 같이 느껴질 수 있다.  
+만약 메인 스레드가 모든 코드를 처리하는 것을 기다려야 한다면, 앱이 느리거나 심지어 멈춘 것처럼 느껴질 수 있다.  
+그렇기 때문에 가능한 작업은 백그라운드 스레드에서 실행하고, 꼭 필요한 작업을 메인 스레드에서 실행하며 균형을 맞춰야 한다.  
+
+디스크에 있는 데이터를 읽고, 디스크에 데이터를 입력하는 작업을 비동기적으로 작성해보자.  
+이 작업에서는 스위프트의 비동기 함수, Task 타입, @MainActor 어노테이션을 사용할 것이다.  
+
+
+### Defining an asynchronous function
+
+비동기 함수는 파라미터 리스트 뒤에 async 키워드를 추가하여 정의한다. 리턴값이 있을 경우 리턴 애로우 앞쪽에 표시한다.
+
+```swift
+final class UserStore {
+    func fetchParticipants() asyns -> [Participant] {...}
+}
+```
+
+### Calling an asynchronous function 
+
+await 키워드를 사용하여 비동기 함수를 호출한다. await 키워드는 비동기적인 흐름, 문맥에서만 사용할 수 있다. 아래 UserStore 클래스는 비동기 함수인 refresh() 안에서 fetchParticipants() 함수를 await를 사용해서 호출하고 있다.
+
+```swift
+final class UserStore {
+
+    func refresh() async -> [UserRecord] {
+        let participants = await fetchParticipants()
+        let records = await fetchRecords(participants: participants)
+        return records
+    }
+    
+    func fetchParticipants async -> [Participant] {...}
+    func fetchRecords(participants: [Participant]) async -> [UserRecord]
+}
+```
+fetchParticipants()가 작업을 완료하는 동안 refresh() 함수는 잠시 멈춤. 
+그동안 refresh()를 실행하는 스레드는 다른 작업을 할 수 있음. fetchParticipants()의 작업이 완료되면, 시스템은 refresh() 함수의 다음 라인을 실행함. fetchRecords(participants: participants) 함수가 호출할 때 fetchParticipants()의 리턴값을 사용할 수 있음. 비동기 함수를 사용하면 작성돼있는 순서로 코드를 실행함.
+
