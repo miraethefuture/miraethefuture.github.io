@@ -218,3 +218,46 @@ final class UserStore {
 fetchParticipants()가 작업을 완료하는 동안 refresh() 함수는 잠시 멈춤. 
 그동안 refresh()를 실행하는 스레드는 다른 작업을 할 수 있음. fetchParticipants()의 작업이 완료되면, 시스템은 refresh() 함수의 다음 라인을 실행함. fetchRecords(participants: participants) 함수가 호출할 때 fetchParticipants()의 리턴값을 사용할 수 있음. 비동기 함수를 사용하면 작성돼있는 순서로 코드를 실행함.
 
+### Creating an asynchronous context
+
+비동기 함수는 비동기적인 문맥상에서만 사용할 수 있다. 이 비동기적인 문맥은 거의 대부분 또 다른 비동기 함수나 클로저의 바디 부분이 될 것이다. 위 refresh() 함수가 비동기 함수로 작성되었기 때문에 또 다른 비동기 함수인 fetchParticipants()와 fetchRecords(participants:)를 호출할 수 있었다.  
+동기적 문맥상에서 작동하는 API를 사용하는 것과 같은 동기적 문맥상에서 비동기 함수를 호출해야 하는 일이 빈번히 발생하는데, 이때 Task를 사용하여 비동기 함수를 호출 할 수 있다.  
+
+```swift
+struct RefreshButton: View {
+    @Binding var model: ViewModel
+    
+    var body: some View {
+        Buton("Refresh") {
+            // 버튼의 액션 부분에서는 비동기 함수를 호출 할 수 없다.
+            Task {
+                // Task를 생성하여 액션 클로저 안에 비동기적 문맥을 생성하여 비동기 함수를 호출할 수 있다. 
+                await model.refresh()
+            }
+        }
+    }
+}
+```
+refresh() 함수가 리턴값을 가지고 있지 않고, 에러를 던지고 있지 않기 때문에 위의 코드는 정상적으로 동작한다. Task { } 안에서 리턴값이나 에러에 대한 처리를 수동적으로 처리하지 않으면 코드가 정상적으로 작동하지 않을 수 있다.  
+뷰 모더파이어인 onAppear(perform:)도 동기적 클로저의 또 다른 예다. SwiftUI의 task(priority:_\:) 모더파이어를 사용하여 뷰가 나타날 때 비동기 함수를 실행할 수 있다. task의 생명주기는 task 모더파이어가 적용된 뷰의 생명주기와 같다. 뷰가 사라지면 진행중인 task가 취소된다. 
+
+### Updating the user interface
+
+@State 와 @Binding 속성의 값이 변경되면 뷰가 업데이트 된다. 그렇기 때문에 이 값들을 변경시키는 것은 메인 스레드에서 실행되어야 한다. 비동기 함수는 백그라운드 스레드에서 실행될 수 있기 때문에 위와 같은 동작을 하는 함수를 비동기 함수로 실행하는 것은 문제가 될 수 있다.  
+Swift는 메인 스레드와의 상호작용을 돕기 위한 어노테이션인 @MainActor를 제공한다. @MainActor 어노테이션이 적용된 클래스의 속성의 변경은 모두 메인 스레드에서 다뤄지게 된다. 아래 코드에서 UserStore 는 ObservableObject이다. 그리고 users 는 퍼블리시드 속성이다. @MainActor를 사용했기 때문에 users 속성을 수정하는 동작은 메인스 스레드에서 일어나게 되고, 안전하게 뷰를 변경하는 @Binding과 함꼐 사용할 수 있게 된다. 
+
+```swift 
+@MainActor
+class UserStore: ObservableObject {
+    @Published var users: [UserRecord] = []
+    
+    func refresh() async {
+        let participants = await fetchParticipants()
+        let records = await fetchRecords(participants: participants)
+        self.users = records
+    }
+    func fetchParticipants() async -> [Participant] { return [] }
+    func fetchRecords(participants: [Participant]) async -> [UserRecord] { return [] }
+}
+```
+
