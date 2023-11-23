@@ -261,3 +261,24 @@ class UserStore: ObservableObject {
 }
 ```
 
+### Persisting data
+
+- 커스텀 타입에 Codable conformance를 적용하려면 타입의 모든 stored properties가 Codable을 채택하고 있어야 함.  
+- @Published 속성은 뷰에 bind 되어 있음. binding을 사용하여 가장 최신의 데이터로 뷰를 업데이트 할 수 있음.  
+- ObservableObject 는 클래스에만 사용할 수 있는 프로토콜로, SwiftUI 뷰와 외부 모델 데이터를 연결함.
+
+```swift
+class ScrumStore: ObservableObject {
+    @Published var scrums: [DailyScrum] = []
+    
+    private static var fileURL() throws -> URL {
+        try FileManager.default.url(for: .documentDirectory,
+                                    in: .userDomainMask,
+                                    appropriateFor: nil,
+                                    create: false)
+        .appendingPathComponent("scrums.data")
+    }
+}
+```
+
+- FileManager의 shared 인스턴스를 사용하여 현재 사용자의 문서 파일의 위치를 얻음.

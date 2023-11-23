@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="4.3.2">Jekyll</generator><link href="http://localhost:4000/feed.xml" rel="self" type="application/atom+xml" /><link href="http://localhost:4000/" rel="alternate" type="text/html" /><updated>2023-11-22T23:20:14+09:00</updated><id>http://localhost:4000/feed.xml</id><title type="html"> Jung Mirae</title><subtitle></subtitle><author><name>Mirae</name></author><entry><title type="html">앱 Scrumdinger 튜토리얼을 따라가며 정리</title><link href="http://localhost:4000/til/2023-10-10-Scrumdinger.html" rel="alternate" type="text/html" title="앱 Scrumdinger 튜토리얼을 따라가며 정리" /><published>2023-10-10T00:00:00+09:00</published><updated>2023-10-10T00:00:00+09:00</updated><id>http://localhost:4000/til/Scrumdinger</id><content type="html" xml:base="http://localhost:4000/til/2023-10-10-Scrumdinger.html"><![CDATA[<p><a href="https://developer.apple.com/tutorials/app-dev-training/managing-data-flow-between-views">Scrumdinger app tutorial</a></p>
+<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="4.3.2">Jekyll</generator><link href="http://localhost:4000/feed.xml" rel="self" type="application/atom+xml" /><link href="http://localhost:4000/" rel="alternate" type="text/html" /><updated>2023-11-23T23:32:16+09:00</updated><id>http://localhost:4000/feed.xml</id><title type="html"> Jung Mirae</title><subtitle></subtitle><author><name>Mirae</name></author><entry><title type="html">앱 Scrumdinger 튜토리얼을 따라가며 정리</title><link href="http://localhost:4000/til/2023-10-10-Scrumdinger.html" rel="alternate" type="text/html" title="앱 Scrumdinger 튜토리얼을 따라가며 정리" /><published>2023-10-10T00:00:00+09:00</published><updated>2023-10-10T00:00:00+09:00</updated><id>http://localhost:4000/til/Scrumdinger</id><content type="html" xml:base="http://localhost:4000/til/2023-10-10-Scrumdinger.html"><![CDATA[<p><a href="https://developer.apple.com/tutorials/app-dev-training/managing-data-flow-between-views">Scrumdinger app tutorial</a></p>
 <blockquote>
   <p>이 글은 위 튜토리얼을 따라가며 정리한 내용입니다.</p>
 </blockquote>
@@ -247,7 +247,32 @@ Swift는 메인 스레드와의 상호작용을 돕기 위한 어노테이션인
     <span class="kd">func</span> <span class="nf">fetchParticipants</span><span class="p">()</span> <span class="k">async</span> <span class="o">-&gt;</span> <span class="p">[</span><span class="kt">Participant</span><span class="p">]</span> <span class="p">{</span> <span class="k">return</span> <span class="p">[]</span> <span class="p">}</span>
     <span class="kd">func</span> <span class="nf">fetchRecords</span><span class="p">(</span><span class="nv">participants</span><span class="p">:</span> <span class="p">[</span><span class="kt">Participant</span><span class="p">])</span> <span class="k">async</span> <span class="o">-&gt;</span> <span class="p">[</span><span class="kt">UserRecord</span><span class="p">]</span> <span class="p">{</span> <span class="k">return</span> <span class="p">[]</span> <span class="p">}</span>
 <span class="p">}</span>
-</code></pre></div></div>]]></content><author><name>Mirae</name></author><category term="TIL" /><summary type="html"><![CDATA[Scrumdinger app tutorial 이 글은 위 튜토리얼을 따라가며 정리한 내용입니다. Create a color theme]]></summary></entry><entry><title type="html">SwiftUI 이중 스티키 헤더</title><link href="http://localhost:4000/til/2023-09-06-stickyHeader.html" rel="alternate" type="text/html" title="SwiftUI 이중 스티키 헤더" /><published>2023-09-06T00:00:00+09:00</published><updated>2023-09-06T00:00:00+09:00</updated><id>http://localhost:4000/til/stickyHeader</id><content type="html" xml:base="http://localhost:4000/til/2023-09-06-stickyHeader.html"><![CDATA[<div class="language-swift highlighter-rouge"><div class="highlight"><pre class="highlight"><code>
+</code></pre></div></div>
+
+<h3 id="persisting-data">Persisting data</h3>
+
+<ul>
+  <li>커스텀 타입에 Codable conformance를 적용하려면 타입의 모든 stored properties가 Codable을 채택하고 있어야 함.</li>
+  <li>@Published 속성은 뷰에 bind 되어 있음. binding을 사용하여 가장 최신의 데이터로 뷰를 업데이트 할 수 있음.</li>
+  <li>ObservableObject 는 클래스에만 사용할 수 있는 프로토콜로, SwiftUI 뷰와 외부 모델 데이터를 연결함.</li>
+</ul>
+
+<div class="language-swift highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">class</span> <span class="kt">ScrumStore</span><span class="p">:</span> <span class="kt">ObservableObject</span> <span class="p">{</span>
+    <span class="kd">@Published</span> <span class="k">var</span> <span class="nv">scrums</span><span class="p">:</span> <span class="p">[</span><span class="kt">DailyScrum</span><span class="p">]</span> <span class="o">=</span> <span class="p">[]</span>
+    
+    <span class="kd">private</span> <span class="kd">static</span> <span class="k">var</span> <span class="nv">fileURL</span><span class="p">()</span> <span class="k">throws</span> <span class="o">-&gt;</span> <span class="kt">URL</span> <span class="p">{</span>
+        <span class="k">try</span> <span class="kt">FileManager</span><span class="o">.</span><span class="k">default</span><span class="o">.</span><span class="nf">url</span><span class="p">(</span><span class="nv">for</span><span class="p">:</span> <span class="o">.</span><span class="n">documentDirectory</span><span class="p">,</span>
+                                    <span class="nv">in</span><span class="p">:</span> <span class="o">.</span><span class="n">userDomainMask</span><span class="p">,</span>
+                                    <span class="nv">appropriateFor</span><span class="p">:</span> <span class="kc">nil</span><span class="p">,</span>
+                                    <span class="nv">create</span><span class="p">:</span> <span class="kc">false</span><span class="p">)</span>
+        <span class="o">.</span><span class="nf">appendingPathComponent</span><span class="p">(</span><span class="s">"scrums.data"</span><span class="p">)</span>
+    <span class="p">}</span>
+<span class="p">}</span>
+</code></pre></div></div>
+
+<ul>
+  <li>FileManager의 shared 인스턴스를 사용하여 현재 사용자의 문서 파일의 위치를 얻음.</li>
+</ul>]]></content><author><name>Mirae</name></author><category term="TIL" /><summary type="html"><![CDATA[Scrumdinger app tutorial 이 글은 위 튜토리얼을 따라가며 정리한 내용입니다. Create a color theme]]></summary></entry><entry><title type="html">SwiftUI 이중 스티키 헤더</title><link href="http://localhost:4000/til/2023-09-06-stickyHeader.html" rel="alternate" type="text/html" title="SwiftUI 이중 스티키 헤더" /><published>2023-09-06T00:00:00+09:00</published><updated>2023-09-06T00:00:00+09:00</updated><id>http://localhost:4000/til/stickyHeader</id><content type="html" xml:base="http://localhost:4000/til/2023-09-06-stickyHeader.html"><![CDATA[<div class="language-swift highlighter-rouge"><div class="highlight"><pre class="highlight"><code>
 <span class="kd">import</span> <span class="kt">SwiftUI</span>
 
 <span class="kd">struct</span> <span class="kt">ContentView</span><span class="p">:</span> <span class="kt">View</span> <span class="p">{</span>
