@@ -282,3 +282,14 @@ class ScrumStore: ObservableObject {
 ```
 
 - FileManager의 shared 인스턴스를 사용하여 현재 사용자의 문서 파일의 위치를 얻음.
+- appendingPathComponent(_:) 함수를 호출하여 scrums.data 라는 이름의 파일의 URL을 리턴함
+- 파일 시스템의 데이터를 읽는 동작은 느릴 수 있음.
+- 파일 시스템으로부터 데이터를 읽어오는 동안, 시스템이 기다리지 않고 UI를 먼저 업데이트 하도록 함.
+
+```swift
+func load() async throws {
+    let task = Tast {
+    }
+}
+```
+- let constant에 Task를 담아서 후에 리턴값에 접근하거나 task로 부터 던져진 에러를 catch할 수 있도록 함. 
