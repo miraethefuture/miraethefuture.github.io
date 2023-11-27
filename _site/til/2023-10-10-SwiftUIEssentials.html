@@ -1,7 +1,7 @@
 <!DOCTYPE HTML>
 <html lang="en" >
     <head><meta charset="UTF-8">
-<meta content="text/html; charset=utf-8" http-equiv="Content-Type"><title>About ·  Jung Mirae</title><meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<meta content="text/html; charset=utf-8" http-equiv="Content-Type"><title>SwiftUI Essentials 튜토리얼을 따라가며 정리 ·  Jung Mirae</title><meta http-equiv="X-UA-Compatible" content="IE=edge" />
 <meta name="description" content=""><meta name="generator" content="Jekyll (using style of GitBook 3.2.3)"><meta name="author" content="Mirae"><link rel="stylesheet" href="/assets/gitbook/style.css">
 <link rel="stylesheet" href="/assets/gitbook/gitbook-plugin-fontsettings/website.css">
 <link rel="stylesheet" href="/assets/gitbook/gitbook-plugin-search-pro/search.css">
@@ -21,11 +21,9 @@
 
 
 
-            <link rel="prev" href="/" />
+            <link rel="prev" href="/til/2023-10-10-Scrumdinger.html" />
         
 
-        
-            <link rel="next" href="/pages/contact/" />
         
     </head>
     <body>
@@ -55,15 +53,12 @@
 
                     
                         
-                        <li class="chapter active" data-level="1.2" data-path="/pages/about/">
+                        <li class="chapter" data-level="1.1" data-path="/pages/about/">
                         
                             <a href="/pages/about/">
                                 About
                             </a>
                             
-                                
-                                    
-
                                 
                             
                         </li>
@@ -212,12 +207,15 @@
                         </li>
                     
                         
-                        <li class="chapter" data-level="1.1" data-path="/til/2023-10-10-SwiftUIEssentials.html">
+                        <li class="chapter active" data-level="1.2" data-path="/til/2023-10-10-SwiftUIEssentials.html">
                         
                             <a href="/til/2023-10-10-SwiftUIEssentials.html">
                                 SwiftUI Essentials 튜토리얼을 따라가며 정리
                             </a>
                             
+                                
+                                    <ul><li><a href="#drawing-paths-and-shapes">Drawing paths and shapes</a></li></ul>
+
                                 
                             
                         </li>
@@ -243,7 +241,7 @@
                     <h1>
                         <i class="fa fa-circle-o-notch fa-spin"></i>
                         
-                            <a href="." >About</a>
+                            <a href="." >SwiftUI Essentials 튜토리얼을 따라가며 정리</a>
                         
                     </h1>
                 </div>
@@ -256,10 +254,35 @@
             <div class="search-noresults">
                 <section class="normal markdown-section">
                     
-                        <h1 id="/pages/about">About</h1>
+                        <h1 id="/til/SwiftUIEssentials">SwiftUI Essentials 튜토리얼을 따라가며 정리</h1>
                     
 
-                    <p>This is an about page.</p>
+                    <p><a href="https://developer.apple.com/tutorials/swiftui/drawing-paths-and-shapes">SwiftUI Essentials</a></p>
+<blockquote>
+  <p>이 글은 위 튜토리얼을 따라가며 정리한 내용입니다.</p>
+</blockquote>
+
+<h1 id="drawing-paths-and-shapes">Drawing paths and shapes</h1>
+
+<div class="language-swift highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">struct</span> <span class="kt">BadgeBackground</span><span class="p">:</span> <span class="kt">View</span> <span class="p">{</span>
+    <span class="k">var</span> <span class="nv">body</span><span class="p">:</span> <span class="kd">some</span> <span class="kt">View</span> <span class="p">{</span>
+        <span class="kt">Path</span> <span class="p">{</span> <span class="n">path</span> <span class="k">in</span>
+            <span class="k">var</span> <span class="nv">width</span><span class="p">:</span> <span class="kt">CGFloat</span> <span class="o">=</span> <span class="mf">100.0</span>
+            <span class="k">let</span> <span class="nv">height</span> <span class="o">=</span> <span class="n">width</span>
+            <span class="n">path</span><span class="o">.</span><span class="nf">move</span><span class="p">(</span>
+                <span class="nv">to</span><span class="p">:</span> <span class="kt">CGPoint</span><span class="p">(</span>
+                    <span class="nv">x</span><span class="p">:</span> <span class="n">width</span> <span class="o">*</span> <span class="mf">0.95</span><span class="p">,</span>
+                    <span class="nv">y</span><span class="p">:</span> <span class="n">height</span> <span class="o">*</span> <span class="mf">0.20</span>
+                <span class="p">)</span>
+            <span class="p">)</span>
+        <span class="p">}</span>
+        <span class="o">.</span><span class="nf">fill</span><span class="p">(</span><span class="o">.</span><span class="n">black</span><span class="p">)</span>
+    <span class="p">}</span>
+<span class="p">}</span>
+</code></pre></div></div>
+
+<p>Path shape을 추가하고, fill() modifier를 적용하여 shape을 view로 만들어 줍니다. paths는 선, 곡선 등의 기초 요소를 혼합하여 더 복잡한 모양을 그리는 곳에 사용됩니다.<br />
+100*100px 사이즈의 컨테이너를 path의 시작점으로 설정해줍니다. path.move(to:) 메서드는 드로잉 커서를 움직입니다.</p>
 </section>
             </div><div class="search-results">
     <div class="has-results">
@@ -288,15 +311,11 @@ MathJax = {
   src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js">
 </script>
 
-                        <a href="/" class="navigation navigation-prev navigation-unique" aria-label="Previous page:  Jung Mirae">
+                        <a href="/til/2023-10-10-Scrumdinger.html" class="navigation navigation-prev navigation-unique" aria-label="Previous page: 앱 Scrumdinger 튜토리얼을 따라가며 정리">
                             <i class="fa fa-angle-left"></i>
                         </a>
                     
 
-                    
-                        <a href="/pages/contact/" class="navigation navigation-next navigation-unique" aria-label="Next page: Contact">
-                            <i class="fa fa-angle-right"></i>
-                        </a>
                     
                 </div>
             </div>
@@ -309,15 +328,6 @@ MathJax = {
         "title": "Introduction",
         "level": "1.1",
         "depth": 1,
-        
-        "next": {
-            "title": "Contact",
-            "level": "1.2",
-            "depth": 1,
-            "path": "_pages/contact.md",
-            "ref": "_pages/contact.md",
-            "articles": []
-        },
         
         "dir": "ltr"
     },    "config": {
@@ -393,8 +403,8 @@ MathJax = {
         "gitbook": "*"
     },
     "file": {
-        "path": "_pages/about.md",
-        "mtime": "2022-02-04 00:00:00 +0900",
+        "path": "_posts/2023-11-27-SwiftUIEssentials.md",
+        "mtime": "2023-10-10 00:00:00 +0900",
         "type": "markdown"
     },
     "gitbook": {
