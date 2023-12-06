@@ -1,29 +1,36 @@
-<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="4.3.2">Jekyll</generator><link href="http://localhost:4000/feed.xml" rel="self" type="application/atom+xml" /><link href="http://localhost:4000/" rel="alternate" type="text/html" /><updated>2023-12-03T01:37:37+09:00</updated><id>http://localhost:4000/feed.xml</id><title type="html"> Jung Mirae</title><subtitle></subtitle><author><name>Mirae</name></author><entry><title type="html">SwiftUI Essentials 튜토리얼을 따라가며 정리</title><link href="http://localhost:4000/til/2023-10-10-SwiftUIEssentials.html" rel="alternate" type="text/html" title="SwiftUI Essentials 튜토리얼을 따라가며 정리" /><published>2023-10-10T00:00:00+09:00</published><updated>2023-10-10T00:00:00+09:00</updated><id>http://localhost:4000/til/SwiftUIEssentials</id><content type="html" xml:base="http://localhost:4000/til/2023-10-10-SwiftUIEssentials.html"><![CDATA[<p><a href="https://developer.apple.com/tutorials/swiftui/drawing-paths-and-shapes">SwiftUI Essentials</a></p>
-<blockquote>
-  <p>이 글은 위 튜토리얼을 따라가며 정리한 내용입니다.</p>
+<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="4.3.2">Jekyll</generator><link href="http://localhost:4000/feed.xml" rel="self" type="application/atom+xml" /><link href="http://localhost:4000/" rel="alternate" type="text/html" /><updated>2023-12-03T22:06:56+09:00</updated><id>http://localhost:4000/feed.xml</id><title type="html"> Jung Mirae</title><subtitle></subtitle><author><name>Mirae</name></author><entry><title type="html">앱 Your Music 작성기</title><link href="http://localhost:4000/til/2023-12-03-YourMusicApp.html" rel="alternate" type="text/html" title="앱 Your Music 작성기" /><published>2023-12-03T00:00:00+09:00</published><updated>2023-12-03T00:00:00+09:00</updated><id>http://localhost:4000/til/YourMusicApp</id><content type="html" xml:base="http://localhost:4000/til/2023-12-03-YourMusicApp.html"><![CDATA[<blockquote>
+  <p>첫번째 목표… Spotify API 호출하기</p>
 </blockquote>
 
-<h1 id="drawing-paths-and-shapes">Drawing paths and shapes</h1>
+<h1 id="authorization">Authorization</h1>
 
-<div class="language-swift highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">struct</span> <span class="kt">BadgeBackground</span><span class="p">:</span> <span class="kt">View</span> <span class="p">{</span>
-    <span class="k">var</span> <span class="nv">body</span><span class="p">:</span> <span class="kd">some</span> <span class="kt">View</span> <span class="p">{</span>
-        <span class="kt">Path</span> <span class="p">{</span> <span class="n">path</span> <span class="k">in</span>
-            <span class="k">var</span> <span class="nv">width</span><span class="p">:</span> <span class="kt">CGFloat</span> <span class="o">=</span> <span class="mf">100.0</span>
-            <span class="k">let</span> <span class="nv">height</span> <span class="o">=</span> <span class="n">width</span>
-            <span class="n">path</span><span class="o">.</span><span class="nf">move</span><span class="p">(</span>
-                <span class="nv">to</span><span class="p">:</span> <span class="kt">CGPoint</span><span class="p">(</span>
-                    <span class="nv">x</span><span class="p">:</span> <span class="n">width</span> <span class="o">*</span> <span class="mf">0.95</span><span class="p">,</span>
-                    <span class="nv">y</span><span class="p">:</span> <span class="n">height</span> <span class="o">*</span> <span class="mf">0.20</span>
-                <span class="p">)</span>
-            <span class="p">)</span>
-        <span class="p">}</span>
-        <span class="o">.</span><span class="nf">fill</span><span class="p">(</span><span class="o">.</span><span class="n">black</span><span class="p">)</span>
-    <span class="p">}</span>
-<span class="p">}</span>
+<ul>
+  <li>모든 Spotify Web API로의 요청은 권한이 필요.</li>
+  <li>웹 API를 통해서 프라이빗한 정보에 접근하기 위해서는 사용자의 동의를 받아야 함.</li>
+</ul>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>https://accounts.spotify.com/en/authorize?client_id=클라이언트아이디값&amp;response_type=token&amp;redirect_uri=https://open.spotify.com/
 </code></pre></div></div>
 
-<p>Path shape을 추가하고, fill() modifier를 적용하여 shape을 view로 만들어 줍니다. paths는 선, 곡선 등의 기초 요소를 혼합하여 더 복잡한 모양을 그리는 곳에 사용됩니다.<br />
-100*100px 사이즈의 컨테이너를 path의 시작점으로 설정해줍니다. path.move(to:) 메서드는 드로잉 커서를 움직입니다.</p>]]></content><author><name>Mirae</name></author><category term="TIL" /><summary type="html"><![CDATA[SwiftUI Essentials 이 글은 위 튜토리얼을 따라가며 정리한 내용입니다. Drawing paths and shapes]]></summary></entry><entry><title type="html">앱 Scrumdinger 튜토리얼을 따라가며 정리</title><link href="http://localhost:4000/til/2023-10-10-Scrumdinger.html" rel="alternate" type="text/html" title="앱 Scrumdinger 튜토리얼을 따라가며 정리" /><published>2023-10-10T00:00:00+09:00</published><updated>2023-10-10T00:00:00+09:00</updated><id>http://localhost:4000/til/Scrumdinger</id><content type="html" xml:base="http://localhost:4000/til/2023-10-10-Scrumdinger.html"><![CDATA[<p><a href="https://developer.apple.com/tutorials/app-dev-training/managing-data-flow-between-views">Scrumdinger app tutorial</a></p>
+<ul>
+  <li>위 주소로 토큰을 받는 네트워크 요청을 보내봄.</li>
+</ul>
+
+<center><img src="/assets/images/YourMusic_20231203.png" alt="YourMusic_20231203" width="400" /></center>
+<p><br /></p>
+
+<ul>
+  <li>위와 같이 사용자의 동의를 얻는 화면이 나타남.</li>
+  <li>동의하면 redirect_uri 주소로 이동하며 아래와 같이 access token을 얻게 됨.</li>
+</ul>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>https://open.spotify.com/#access_token=토큰값&amp;token_type=Bearer&amp;expires_in=3600
+</code></pre></div></div>
+<ul>
+  <li>이 토큰은 한시간동안 유효함.</li>
+</ul>
+
+<p>https://open.spotify.com/#access_token=BQDhgN0-a0A2rk3b6XuI1__aTDzPF1YUDdfvHb5HlH7JN_jv8zBQH1isxdlDnnDxz_nMXZ8636l63lRAwEu3VY7jYxKPGvLaWjw0ioQdDlH_pGhGyn8OriokdN3jab9bvkco9bXchwbrKic5SkZCGGMVQ_azzw0-UX767m64YdxC4SfyVRtAixa_x_EyvGBohXY&amp;token_type=Bearer&amp;expires_in=3600</p>]]></content><author><name>Mirae</name></author><category term="TIL" /><summary type="html"><![CDATA[첫번째 목표… Spotify API 호출하기]]></summary></entry><entry><title type="html">앱 Scrumdinger 튜토리얼을 따라가며 정리</title><link href="http://localhost:4000/til/2023-10-10-Scrumdinger.html" rel="alternate" type="text/html" title="앱 Scrumdinger 튜토리얼을 따라가며 정리" /><published>2023-10-10T00:00:00+09:00</published><updated>2023-10-10T00:00:00+09:00</updated><id>http://localhost:4000/til/Scrumdinger</id><content type="html" xml:base="http://localhost:4000/til/2023-10-10-Scrumdinger.html"><![CDATA[<p><a href="https://developer.apple.com/tutorials/app-dev-training/managing-data-flow-between-views">Scrumdinger app tutorial</a></p>
 <blockquote>
   <p>이 글은 위 튜토리얼을 따라가며 정리한 내용입니다.</p>
 </blockquote>
@@ -309,7 +316,32 @@ Swift는 메인 스레드와의 상호작용을 돕기 위한 어노테이션인
 </code></pre></div></div>
 <ul>
   <li>let constant에 Task를 담아서 후에 리턴값에 접근하거나 task로 부터 던져진 에러를 catch할 수 있도록 함.</li>
-</ul>]]></content><author><name>Mirae</name></author><category term="TIL" /><summary type="html"><![CDATA[Scrumdinger app tutorial 이 글은 위 튜토리얼을 따라가며 정리한 내용입니다. Create a color theme]]></summary></entry><entry><title type="html">SwiftUI 이중 스티키 헤더</title><link href="http://localhost:4000/til/2023-09-06-stickyHeader.html" rel="alternate" type="text/html" title="SwiftUI 이중 스티키 헤더" /><published>2023-09-06T00:00:00+09:00</published><updated>2023-09-06T00:00:00+09:00</updated><id>http://localhost:4000/til/stickyHeader</id><content type="html" xml:base="http://localhost:4000/til/2023-09-06-stickyHeader.html"><![CDATA[<div class="language-swift highlighter-rouge"><div class="highlight"><pre class="highlight"><code>
+</ul>]]></content><author><name>Mirae</name></author><category term="TIL" /><summary type="html"><![CDATA[Scrumdinger app tutorial 이 글은 위 튜토리얼을 따라가며 정리한 내용입니다. Create a color theme]]></summary></entry><entry><title type="html">SwiftUI Essentials 튜토리얼을 따라가며 정리</title><link href="http://localhost:4000/til/2023-10-10-SwiftUIEssentials.html" rel="alternate" type="text/html" title="SwiftUI Essentials 튜토리얼을 따라가며 정리" /><published>2023-10-10T00:00:00+09:00</published><updated>2023-10-10T00:00:00+09:00</updated><id>http://localhost:4000/til/SwiftUIEssentials</id><content type="html" xml:base="http://localhost:4000/til/2023-10-10-SwiftUIEssentials.html"><![CDATA[<p><a href="https://developer.apple.com/tutorials/swiftui/drawing-paths-and-shapes">SwiftUI Essentials</a></p>
+<blockquote>
+  <p>이 글은 위 튜토리얼을 따라가며 정리한 내용입니다.</p>
+</blockquote>
+
+<h1 id="drawing-paths-and-shapes">Drawing paths and shapes</h1>
+
+<div class="language-swift highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">struct</span> <span class="kt">BadgeBackground</span><span class="p">:</span> <span class="kt">View</span> <span class="p">{</span>
+    <span class="k">var</span> <span class="nv">body</span><span class="p">:</span> <span class="kd">some</span> <span class="kt">View</span> <span class="p">{</span>
+        <span class="kt">Path</span> <span class="p">{</span> <span class="n">path</span> <span class="k">in</span>
+            <span class="k">var</span> <span class="nv">width</span><span class="p">:</span> <span class="kt">CGFloat</span> <span class="o">=</span> <span class="mf">100.0</span>
+            <span class="k">let</span> <span class="nv">height</span> <span class="o">=</span> <span class="n">width</span>
+            <span class="n">path</span><span class="o">.</span><span class="nf">move</span><span class="p">(</span>
+                <span class="nv">to</span><span class="p">:</span> <span class="kt">CGPoint</span><span class="p">(</span>
+                    <span class="nv">x</span><span class="p">:</span> <span class="n">width</span> <span class="o">*</span> <span class="mf">0.95</span><span class="p">,</span>
+                    <span class="nv">y</span><span class="p">:</span> <span class="n">height</span> <span class="o">*</span> <span class="mf">0.20</span>
+                <span class="p">)</span>
+            <span class="p">)</span>
+        <span class="p">}</span>
+        <span class="o">.</span><span class="nf">fill</span><span class="p">(</span><span class="o">.</span><span class="n">black</span><span class="p">)</span>
+    <span class="p">}</span>
+<span class="p">}</span>
+</code></pre></div></div>
+
+<p>Path shape을 추가하고, fill() modifier를 적용하여 shape을 view로 만들어 줍니다. paths는 선, 곡선 등의 기초 요소를 혼합하여 더 복잡한 모양을 그리는 곳에 사용됩니다.<br />
+100*100px 사이즈의 컨테이너를 path의 시작점으로 설정해줍니다. path.move(to:) 메서드는 드로잉 커서를 움직입니다.</p>]]></content><author><name>Mirae</name></author><category term="TIL" /><summary type="html"><![CDATA[SwiftUI Essentials 이 글은 위 튜토리얼을 따라가며 정리한 내용입니다. Drawing paths and shapes]]></summary></entry><entry><title type="html">SwiftUI 이중 스티키 헤더</title><link href="http://localhost:4000/til/2023-09-06-stickyHeader.html" rel="alternate" type="text/html" title="SwiftUI 이중 스티키 헤더" /><published>2023-09-06T00:00:00+09:00</published><updated>2023-09-06T00:00:00+09:00</updated><id>http://localhost:4000/til/stickyHeader</id><content type="html" xml:base="http://localhost:4000/til/2023-09-06-stickyHeader.html"><![CDATA[<div class="language-swift highlighter-rouge"><div class="highlight"><pre class="highlight"><code>
 <span class="kd">import</span> <span class="kt">SwiftUI</span>
 
 <span class="kd">struct</span> <span class="kt">ContentView</span><span class="p">:</span> <span class="kt">View</span> <span class="p">{</span>
@@ -1441,430 +1473,4 @@ static var / static func 처럼 static 키워드를 사용하여 타입 레벨�
         <span class="k">self</span><span class="o">.</span><span class="n">identifier</span> <span class="o">=</span> <span class="kt">Card</span><span class="o">.</span><span class="nf">getUniqueIdentifier</span><span class="p">()</span>
     <span class="p">}</span>
 <span class="p">}</span>
-</code></pre></div></div>]]></content><author><name>Mirae</name></author><category term="TIL" /><summary type="html"><![CDATA[Youtube 🔗 강의 내용 중 필요한 것 정리]]></summary></entry><entry><title type="html">앱 Earthquakes 튜토리얼을 따라가며 정리</title><link href="http://localhost:4000/til/2023-01-17-Quake.html" rel="alternate" type="text/html" title="앱 Earthquakes 튜토리얼을 따라가며 정리" /><published>2023-01-17T00:00:00+09:00</published><updated>2023-01-17T00:00:00+09:00</updated><id>http://localhost:4000/til/Quake</id><content type="html" xml:base="http://localhost:4000/til/2023-01-17-Quake.html"><![CDATA[<p><a href="https://developer.apple.com/tutorials/app-dev-training/decoding-structured-json">Earthquakes app tutorial</a></p>
-<blockquote>
-  <p>이 글은 위의 apple developer tutorial을 따라가며 정리한 내용입니다.</p>
-</blockquote>
-
-<h1 id="error">Error</h1>
-<blockquote>
-  <p>/decoding-structured-json/Decode earthquake data/step 8</p>
-</blockquote>
-
-<p>Swift에서는 Error 프로토콜을 따르는 타입을 사용하여 에러를 나타냅니다.<br />
-  Error 프로토콜은 에러를 핸들링하기 위해 사용되는 타입이라는 것을 나타낼 뿐 아무런 내용이 없습니다.<br />
-  요구사항도 없습니다. 그래서 커스텀 타입에 자유롭게 사용할 수 있습니다.</p>
-
-<div class="language-swift highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">enum</span> <span class="kt">QuakeError</span><span class="p">:</span> <span class="kt">Error</span> <span class="p">{</span>
-    <span class="k">case</span> <span class="n">missingData</span>
-<span class="p">}</span>
-
-<span class="kd">extension</span> <span class="kt">QuakeError</span><span class="p">:</span> <span class="kt">LocalizedError</span> <span class="p">{</span>
-    <span class="k">var</span> <span class="nv">errorDescription</span><span class="p">:</span> <span class="kt">String</span><span class="p">?</span> <span class="p">{</span>
-        <span class="k">switch</span> <span class="k">self</span> <span class="p">{</span>
-        <span class="k">case</span> <span class="o">.</span><span class="nv">missingData</span><span class="p">:</span>
-            <span class="k">return</span> <span class="kt">NSLocalizedString</span><span class="p">(</span><span class="s">"Found and will discard a quake missing a valid code, magnitude, place, or time."</span><span class="p">,</span> <span class="nv">comment</span><span class="p">:</span> <span class="s">""</span><span class="p">)</span>
-        <span class="p">}</span>
-    <span class="p">}</span>
-<span class="p">}</span>
-</code></pre></div></div>
-
-<p>위 QuakeError enumeration은 case missingData를 가지는데 LocalizedError 프로토콜을 따르는 extension을 작성하여, QuakeError.missingData로 에러가 던져질 경우 “code, maginitude, place, time 중 없는 데이터가 있어 정상적으로 코드가 작동하지 않았다.”는 메세지를 표출할 것입니다.</p>
-
-<div class="language-swift highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1">// Quake struct라는 설계도를 사용하여 디코딩하는 인스턴스를 생성하기 위해 from decoder:_를 인자로 가지는 init 사용</span>
-<span class="c1">// throws function, try, try?를 사용하여 디코딩 과정 중 에러 발생 시 nil을 반환하도록 처리함</span>
-<span class="nf">init</span><span class="p">(</span><span class="n">from</span> <span class="nv">decoder</span><span class="p">:</span> <span class="kt">Decoder</span><span class="p">)</span> <span class="k">throws</span> <span class="p">{</span>
-    <span class="k">let</span> <span class="nv">values</span> <span class="o">=</span> <span class="k">try</span> <span class="n">decoder</span><span class="o">.</span><span class="nf">container</span><span class="p">(</span><span class="nv">keyedBy</span><span class="p">:</span> <span class="kt">CodingKeys</span><span class="o">.</span><span class="k">self</span><span class="p">)</span>
-    <span class="k">let</span> <span class="nv">rawMagnitude</span> <span class="o">=</span> <span class="k">try</span><span class="p">?</span> <span class="n">values</span><span class="o">.</span><span class="nf">decode</span><span class="p">(</span><span class="kt">Double</span><span class="o">.</span><span class="k">self</span><span class="p">,</span> <span class="nv">forKey</span><span class="p">:</span> <span class="o">.</span><span class="n">magitude</span><span class="p">)</span>
-    <span class="k">let</span> <span class="nv">rawPlace</span> <span class="o">=</span> <span class="k">try</span><span class="p">?</span> <span class="n">values</span><span class="o">.</span><span class="nf">decode</span><span class="p">(</span><span class="kt">String</span><span class="o">.</span><span class="k">self</span><span class="p">,</span> <span class="nv">forKey</span><span class="p">:</span> <span class="o">.</span><span class="n">place</span><span class="p">)</span>
-    <span class="k">let</span> <span class="nv">rawTime</span> <span class="o">=</span> <span class="k">try</span><span class="p">?</span> <span class="n">values</span><span class="o">.</span><span class="nf">decode</span><span class="p">(</span><span class="kt">Date</span><span class="o">.</span><span class="k">self</span><span class="p">,</span> <span class="nv">forKey</span><span class="p">:</span> <span class="o">.</span><span class="n">time</span><span class="p">)</span>
-    <span class="k">let</span> <span class="nv">rawCode</span> <span class="o">=</span> <span class="k">try</span><span class="p">?</span> <span class="n">values</span><span class="o">.</span><span class="nf">decode</span><span class="p">(</span><span class="kt">String</span><span class="o">.</span><span class="k">self</span><span class="p">,</span> <span class="nv">forKey</span><span class="p">:</span> <span class="o">.</span><span class="n">code</span><span class="p">)</span>
-    <span class="k">let</span> <span class="nv">rawDetail</span> <span class="o">=</span> <span class="k">try</span><span class="p">?</span> <span class="n">values</span><span class="o">.</span><span class="nf">decode</span><span class="p">(</span><span class="kt">URL</span><span class="o">.</span><span class="k">self</span><span class="p">,</span> <span class="nv">forKey</span><span class="p">:</span> <span class="o">.</span><span class="n">detail</span><span class="p">)</span>
-    
-    <span class="c1">// try? 가 사용된 곳에서 에러가 발생하지 않으면 옵셔널 값이 반환되므로 해당 값을 unwrapping 함</span>
-    <span class="k">guard</span> <span class="k">let</span> <span class="nv">magnitude</span> <span class="o">=</span> <span class="n">rawMagnitude</span><span class="p">,</span>
-          <span class="k">let</span> <span class="nv">place</span> <span class="o">=</span> <span class="n">rawPlace</span><span class="p">,</span>
-          <span class="k">let</span> <span class="nv">time</span> <span class="o">=</span> <span class="n">rawTime</span><span class="p">,</span>
-          <span class="k">let</span> <span class="nv">code</span> <span class="o">=</span> <span class="n">rawCode</span><span class="p">,</span>
-          <span class="k">let</span> <span class="nv">detail</span> <span class="o">=</span> <span class="n">rawDetail</span>
-    <span class="k">else</span> <span class="p">{</span>
-        <span class="k">throw</span> <span class="kt">QuakeError</span><span class="o">.</span><span class="n">missingData</span>
-    <span class="p">}</span>
-</code></pre></div></div>
-
-<p>위 예시의 가장 아래쪽에 있는 else 구문에서 throw 키워드를 사용하여 에러를 던졌습니다. magnitude, place, time, code, detail 중 데이터가 없는 것이 있을 때 QuakeError.missingData 에러가 던져집니다.</p>
-
-<h1 id="experiment">Experiment</h1>
-<blockquote>
-  <p>/decoding-structured-json/Decoding structured JSON/test the decoder</p>
-</blockquote>
-
-<ul>
-  <li>쓰나미 경보를 푸시 알림으로 보내려 하는 상황</li>
-  <li>
-    <p>튜토리얼 내용을 참고하여 쓰나미 관련 데이터를 디코딩해보기</p>
-  </li>
-  <li>USGS 사이트에서 쓰나미의 데이터 타입을 찾음 -&gt; Integer</li>
-  <li>Quake 스트럭처에 tsunami 프로퍼티 추가</li>
-</ul>
-
-<div class="language-swift highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">struct</span> <span class="kt">Quake</span><span class="p">:</span> <span class="kt">Identifiable</span> <span class="p">{</span>
-    
-    <span class="k">let</span> <span class="nv">magnitude</span><span class="p">:</span> <span class="kt">Double</span>
-    <span class="k">let</span> <span class="nv">place</span><span class="p">:</span> <span class="kt">String</span>
-    <span class="k">let</span> <span class="nv">time</span><span class="p">:</span> <span class="kt">Date</span>
-    <span class="k">let</span> <span class="nv">code</span><span class="p">:</span> <span class="kt">String</span>
-    <span class="k">let</span> <span class="nv">detail</span><span class="p">:</span> <span class="kt">URL</span>
-    <span class="k">let</span> <span class="nv">tsunami</span><span class="p">:</span> <span class="kt">Int</span>
-    
-<span class="p">}</span>
-</code></pre></div></div>
-<ul>
-  <li>키 값으로 사용되는 CodingKeys enum에 tsunami일 경우를 추가</li>
-</ul>
-
-<div class="language-swift highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">private</span> <span class="kd">enum</span> <span class="kt">CodingKeys</span><span class="p">:</span> <span class="kt">String</span><span class="p">,</span> <span class="kt">CodingKey</span> <span class="p">{</span>
-    <span class="k">case</span> <span class="n">magnitude</span> <span class="o">=</span> <span class="s">"mag"</span>
-    <span class="k">case</span> <span class="n">place</span>
-    <span class="k">case</span> <span class="n">time</span>
-    <span class="k">case</span> <span class="n">code</span>
-    <span class="k">case</span> <span class="n">detail</span>
-    <span class="k">case</span> <span class="n">tsunami</span>
-<span class="p">}</span>
-</code></pre></div></div>
-<ul>
-  <li>생성자에 필요한 코드 추가</li>
-</ul>
-
-<div class="language-swift highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nf">init</span><span class="p">(</span><span class="n">from</span> <span class="nv">decoder</span><span class="p">:</span> <span class="kt">Decoder</span><span class="p">)</span> <span class="k">throws</span> <span class="p">{</span>
-    <span class="k">let</span> <span class="nv">values</span> <span class="o">=</span> <span class="k">try</span> <span class="n">decoder</span><span class="o">.</span><span class="nf">container</span><span class="p">(</span><span class="nv">keyedBy</span><span class="p">:</span> <span class="kt">CodingKeys</span><span class="o">.</span><span class="k">self</span><span class="p">)</span>
-    <span class="k">let</span> <span class="nv">rawMagnitude</span> <span class="o">=</span> <span class="k">try</span><span class="p">?</span> <span class="n">values</span><span class="o">.</span><span class="nf">decode</span><span class="p">(</span><span class="kt">Double</span><span class="o">.</span><span class="k">self</span><span class="p">,</span> <span class="nv">forKey</span><span class="p">:</span> <span class="o">.</span><span class="n">magitude</span><span class="p">)</span>
-    <span class="k">let</span> <span class="nv">rawPlace</span> <span class="o">=</span> <span class="k">try</span><span class="p">?</span> <span class="n">values</span><span class="o">.</span><span class="nf">decode</span><span class="p">(</span><span class="kt">String</span><span class="o">.</span><span class="k">self</span><span class="p">,</span> <span class="nv">forKey</span><span class="p">:</span> <span class="o">.</span><span class="n">place</span><span class="p">)</span>
-    <span class="k">let</span> <span class="nv">rawTime</span> <span class="o">=</span> <span class="k">try</span><span class="p">?</span> <span class="n">values</span><span class="o">.</span><span class="nf">decode</span><span class="p">(</span><span class="kt">Date</span><span class="o">.</span><span class="k">self</span><span class="p">,</span> <span class="nv">forKey</span><span class="p">:</span> <span class="o">.</span><span class="n">time</span><span class="p">)</span>
-    <span class="k">let</span> <span class="nv">rawCode</span> <span class="o">=</span> <span class="k">try</span><span class="p">?</span> <span class="n">values</span><span class="o">.</span><span class="nf">decode</span><span class="p">(</span><span class="kt">String</span><span class="o">.</span><span class="k">self</span><span class="p">,</span> <span class="nv">forKey</span><span class="p">:</span> <span class="o">.</span><span class="n">code</span><span class="p">)</span>
-    <span class="k">let</span> <span class="nv">rawDetail</span> <span class="o">=</span> <span class="k">try</span><span class="p">?</span> <span class="n">values</span><span class="o">.</span><span class="nf">decode</span><span class="p">(</span><span class="kt">URL</span><span class="o">.</span><span class="k">self</span><span class="p">,</span> <span class="nv">forKey</span><span class="p">:</span> <span class="o">.</span><span class="n">detail</span><span class="p">)</span>
-    <span class="k">let</span> <span class="nv">rawTsunami</span> <span class="o">=</span> <span class="k">try</span><span class="p">?</span> <span class="n">values</span><span class="o">.</span><span class="nf">decode</span><span class="p">(</span><span class="kt">Int</span><span class="o">.</span><span class="k">self</span><span class="p">,</span> <span class="nv">forKey</span><span class="p">:</span> <span class="o">.</span><span class="n">tsunami</span><span class="p">)</span>
-    
-    <span class="c1">// try? 가 사용된 곳에서 에러가 발생하지 않으면 옵셔널 값이 반환되므로 해당 값을 unwrapping 함</span>
-    <span class="k">guard</span> <span class="k">let</span> <span class="nv">magnitude</span> <span class="o">=</span> <span class="n">rawMagnitude</span><span class="p">,</span>
-          <span class="k">let</span> <span class="nv">place</span> <span class="o">=</span> <span class="n">rawPlace</span><span class="p">,</span>
-          <span class="k">let</span> <span class="nv">time</span> <span class="o">=</span> <span class="n">rawTime</span><span class="p">,</span>
-          <span class="k">let</span> <span class="nv">code</span> <span class="o">=</span> <span class="n">rawCode</span><span class="p">,</span>
-          <span class="k">let</span> <span class="nv">detail</span> <span class="o">=</span> <span class="n">rawDetail</span><span class="p">,</span>
-          <span class="k">let</span> <span class="nv">tsunami</span> <span class="o">=</span> <span class="n">rawTsunami</span>
-    <span class="k">else</span> <span class="p">{</span>
-        <span class="k">throw</span> <span class="kt">QuakeError</span><span class="o">.</span><span class="n">missingData</span>
-    <span class="p">}</span>
-    
-    <span class="k">self</span><span class="o">.</span><span class="n">magnitude</span> <span class="o">=</span> <span class="n">magnitude</span>
-    <span class="k">self</span><span class="o">.</span><span class="n">place</span> <span class="o">=</span> <span class="n">place</span>
-    <span class="k">self</span><span class="o">.</span><span class="n">time</span> <span class="o">=</span> <span class="n">time</span>
-    <span class="k">self</span><span class="o">.</span><span class="n">code</span> <span class="o">=</span> <span class="n">code</span>
-    <span class="k">self</span><span class="o">.</span><span class="n">detail</span> <span class="o">=</span> <span class="n">detail</span>
-    <span class="k">self</span><span class="o">.</span><span class="n">tsunami</span> <span class="o">=</span> <span class="n">tsunami</span>
-    
-<span class="p">}</span>
-</code></pre></div></div>
-
-<ul>
-  <li>현재 테스트 데이터의 값인 0과 같은지 테스트를 통해 확인</li>
-</ul>
-
-<div class="language-swift highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">import</span> <span class="kt">XCTest</span>
-<span class="kd">@testable</span> <span class="kd">import</span> <span class="kt">FollwingEarthquake</span>
-
-<span class="kd">class</span> <span class="kt">FollwingEarthquakeTests</span><span class="p">:</span> <span class="kt">XCTestCase</span> <span class="p">{</span>
-    
-    <span class="kd">func</span> <span class="nf">testGeoJSONDecoderDecodesQuake</span><span class="p">()</span> <span class="k">throws</span> <span class="p">{</span>
-        <span class="k">let</span> <span class="nv">decoder</span> <span class="o">=</span> <span class="kt">JSONDecoder</span><span class="p">()</span>
-        <span class="n">decoder</span><span class="o">.</span><span class="n">dateDecodingStrategy</span> <span class="o">=</span> <span class="o">.</span><span class="n">millisecondsSince1970</span>
-        <span class="k">let</span> <span class="nv">quake</span> <span class="o">=</span> <span class="k">try</span> <span class="n">decoder</span><span class="o">.</span><span class="nf">decode</span><span class="p">(</span><span class="kt">Quake</span><span class="o">.</span><span class="k">self</span><span class="p">,</span> <span class="nv">from</span><span class="p">:</span> <span class="n">testFeature_nc73649170</span><span class="p">)</span>
-        
-        <span class="kt">XCTAssertEqual</span><span class="p">(</span><span class="n">quake</span><span class="o">.</span><span class="n">code</span><span class="p">,</span> <span class="s">"73649170"</span><span class="p">)</span>
-        
-        
-        <span class="k">let</span> <span class="nv">expectedSeconds</span> <span class="o">=</span> <span class="kt">TimeInterval</span><span class="p">(</span><span class="mi">1636129710550</span><span class="p">)</span> <span class="o">/</span> <span class="mi">1000</span>
-        <span class="k">let</span> <span class="nv">decodedSeconds</span> <span class="o">=</span> <span class="n">quake</span><span class="o">.</span><span class="n">time</span><span class="o">.</span><span class="n">timeIntervalSince1970</span>
-        
-        <span class="kt">XCTAssertEqual</span><span class="p">(</span><span class="n">expectedSeconds</span><span class="p">,</span> <span class="n">decodedSeconds</span><span class="p">,</span> <span class="nv">accuracy</span><span class="p">:</span> <span class="mf">0.00001</span><span class="p">)</span>
-        
-        
-        <span class="kt">XCTAssertEqual</span><span class="p">(</span><span class="n">quake</span><span class="o">.</span><span class="n">tsunami</span><span class="p">,</span> <span class="mi">0</span><span class="p">)</span> <span class="c1">// 테스트 통과</span>
-        
-    <span class="p">}</span>
-<span class="p">}</span>
-</code></pre></div></div>
-
-<h1 id="privateset">private(set)</h1>
-
-<div class="language-swift highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">struct</span> <span class="kt">GeoJSON</span> <span class="p">{</span>
-    <span class="kd">private(set)</span> <span class="k">var</span> <span class="nv">quakes</span><span class="p">:[</span><span class="kt">Quake</span><span class="p">]</span> <span class="o">=</span> <span class="p">[]</span>
-<span class="p">}</span>
-</code></pre></div></div>
-
-<p>private(set) modifier가 사용된 배열 quakes는 GeoJSON 스트럭쳐 안에있는 코드에서만 수정 가능합니다.<br />
-  GeoJSON 스트럭처 바깥에서 작성된 코드에서는 quakes의 값을 읽는 것만 가능합니다.</p>
-
-<h1 id="structuredjson">structuredJSON</h1>
-
-<center><img src="/assets/images/structuredJSON.jpg" alt="structuredJSON.jpg" width="550" /></center>
-<p><br /></p>
-
-<p>USGS의 지진 정보는 structuredJSON 형태로 제공됩니다. 필요한 정보인 latitude / longitude를 얻기 위해 
-각 structure를 정의합니다. Products 타입을 사용하여 RootProperties 타입 안에 products를 정의하고<br />
-Origin 타입을 사용하여 Products 타입 안에 origin 을 정의하는 것과 같은 방법으로 이미지 속 GeoJSON 계층을<br />
-모델링합니다.</p>
-
-<div class="language-swift highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">var</span> <span class="nv">latitude</span><span class="p">:</span> <span class="kt">Double</span> <span class="p">{</span> <span class="n">properties</span><span class="o">.</span><span class="n">products</span><span class="o">.</span><span class="n">origin</span><span class="o">.</span><span class="n">first</span><span class="o">!.</span><span class="n">properties</span><span class="o">.</span><span class="n">latitude</span> <span class="p">}</span>
-<span class="k">var</span> <span class="nv">longitude</span><span class="p">:</span> <span class="kt">Double</span> <span class="p">{</span> <span class="n">properties</span><span class="o">.</span><span class="n">products</span><span class="o">.</span><span class="n">origin</span><span class="o">.</span><span class="n">first</span><span class="o">!.</span><span class="n">properties</span><span class="o">.</span><span class="n">longitude</span> <span class="p">}</span>
-</code></pre></div></div>
-<p>모델링한 스트럭처를 이용하여 위와 같이 latitude, longitude 정보를 계산합니다. 루트 프로퍼티로부터 한 계층씩 내려가며 
-최종적으로 latitude와 longitude를 계산하는 방식이 인상깊었습니다.</p>
-
-<h1 id="codingkey-enum">CodingKey enum</h1>
-<div class="language-swift highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">private</span> <span class="kd">enum</span> <span class="kt">CodingKeys</span><span class="p">:</span> <span class="kt">String</span><span class="p">,</span> <span class="kt">CodingKey</span> <span class="p">{</span>
-    <span class="k">case</span> <span class="n">magnitude</span> <span class="o">=</span> <span class="s">"mag"</span>
-    <span class="k">case</span> <span class="n">place</span>
-    <span class="k">case</span> <span class="n">time</span>
-    <span class="k">case</span> <span class="n">code</span>
-    <span class="k">case</span> <span class="n">detail</span>
-    <span class="k">case</span> <span class="n">tsunami</span>
-<span class="p">}</span>
-</code></pre></div></div>
-<p>위 예시의 nested coding keys enumeration은 case magnitude = “mag” 값을 가지고 있습니다.<br />
-place, time, code, detail, tsunami는 GeoJSON 객체에서 같은 이름을 키값으로 사용하고 있고,<br />
-magnitude는 GeoJSON 객체에서 “mag”를 키값으로 가집니다.</p>
-<div class="language-swift highlighter-rouge"><div class="highlight"><pre class="highlight"><code>    <span class="nf">init</span><span class="p">(</span><span class="n">from</span> <span class="nv">decoder</span><span class="p">:</span> <span class="kt">Decoder</span><span class="p">)</span> <span class="k">throws</span> <span class="p">{</span>
-        <span class="k">let</span> <span class="nv">values</span> <span class="o">=</span> <span class="k">try</span> <span class="n">decoder</span><span class="o">.</span><span class="nf">container</span><span class="p">(</span><span class="nv">keyedBy</span><span class="p">:</span> <span class="kt">CodingKeys</span><span class="o">.</span><span class="k">self</span><span class="p">)</span>
-        <span class="k">let</span> <span class="nv">rawMagnitude</span> <span class="o">=</span> <span class="k">try</span><span class="p">?</span> <span class="n">values</span><span class="o">.</span><span class="nf">decode</span><span class="p">(</span><span class="kt">Double</span><span class="o">.</span><span class="k">self</span><span class="p">,</span> <span class="nv">forKey</span><span class="p">:</span> <span class="o">.</span><span class="n">magnitude</span><span class="p">)</span>
-        <span class="k">let</span> <span class="nv">rawPlace</span> <span class="o">=</span> <span class="k">try</span><span class="p">?</span> <span class="n">values</span><span class="o">.</span><span class="nf">decode</span><span class="p">(</span><span class="kt">String</span><span class="o">.</span><span class="k">self</span><span class="p">,</span> <span class="nv">forKey</span><span class="p">:</span> <span class="o">.</span><span class="n">place</span><span class="p">)</span>
-        <span class="k">let</span> <span class="nv">rawTime</span> <span class="o">=</span> <span class="k">try</span><span class="p">?</span> <span class="n">values</span><span class="o">.</span><span class="nf">decode</span><span class="p">(</span><span class="kt">Date</span><span class="o">.</span><span class="k">self</span><span class="p">,</span> <span class="nv">forKey</span><span class="p">:</span> <span class="o">.</span><span class="n">time</span><span class="p">)</span>
-        <span class="k">let</span> <span class="nv">rawCode</span> <span class="o">=</span> <span class="k">try</span><span class="p">?</span> <span class="n">values</span><span class="o">.</span><span class="nf">decode</span><span class="p">(</span><span class="kt">String</span><span class="o">.</span><span class="k">self</span><span class="p">,</span> <span class="nv">forKey</span><span class="p">:</span> <span class="o">.</span><span class="n">code</span><span class="p">)</span>
-        <span class="k">let</span> <span class="nv">rawDetail</span> <span class="o">=</span> <span class="k">try</span><span class="p">?</span> <span class="n">values</span><span class="o">.</span><span class="nf">decode</span><span class="p">(</span><span class="kt">URL</span><span class="o">.</span><span class="k">self</span><span class="p">,</span> <span class="nv">forKey</span><span class="p">:</span> <span class="o">.</span><span class="n">detail</span><span class="p">)</span>
-        <span class="k">let</span> <span class="nv">rawTsunami</span> <span class="o">=</span> <span class="k">try</span><span class="p">?</span> <span class="n">values</span><span class="o">.</span><span class="nf">decode</span><span class="p">(</span><span class="kt">Int</span><span class="o">.</span><span class="k">self</span><span class="p">,</span> <span class="nv">forKey</span><span class="p">:</span> <span class="o">.</span><span class="n">tsunami</span><span class="p">)</span>
-        
-        <span class="o">...</span> <span class="p">}</span>
-</code></pre></div></div>
-<p>디코딩하는 생성자 함수에서 magnitude를 키값으로 사용한 것을 확인할 수 있습니다.<br />
-CodingKeys enum의 케이스 이름은 Quake struct의 프로퍼티를 나타냅니다.<br />
-JSON 객체의 키 값과 이름이 같은 경우는 case 이름만 작성 / 다른 경우는 case magnitude = “mag”와 같이 작성합니다.</p>
-
-<h1 id="existential-types">Existential Types</h1>
-<blockquote>
-  <p><a href="https://developer.apple.com/tutorials/app-dev-training/building-a-network-test-client">Building a network test client</a></p>
-</blockquote>
-
-<p>Earthquakes 앱은 network client를 사용하여 원격 서버에서 JSON 데이터를 가져옵니다.
-network client의 동작을 테스트하기 위해, 제네릭 / existential 타입을 사용하여 network client를 재사용 가능하도록 만들 것입니다.</p>
-
-<p>Existentnial type은 any 키워드를 앞에 붙여 사용할 수 있음 
-lazy는 let과 함께 사용할 수 없음. var와 함께 사용.</p>
-
-<h2 id="제네릭--existential-타입-비교하기">제네릭 / existential 타입 비교하기</h2>
-<div class="language-swift highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">import</span> <span class="kt">Foundation</span>
-
-<span class="kd">protocol</span> <span class="kt">Pollinator</span> <span class="p">{</span>
-    <span class="c1">// 꽃가루를 옮기는 기능을 하는 프로토콜</span>
-    <span class="c1">// 이 프로토콜을 따르는 struct는 꽃가루를 '파라미터'식물로부터 옮기는 동작을 수행함.</span>
-    <span class="kd">func</span> <span class="nf">pollinate</span><span class="p">(</span><span class="n">_</span> <span class="nv">plant</span><span class="p">:</span> <span class="kt">String</span><span class="p">)</span>
-<span class="p">}</span>
-
-<span class="kd">struct</span> <span class="kt">Hummingbird</span><span class="p">:</span> <span class="kt">Pollinator</span> <span class="p">{</span>
-    <span class="c1">// Hummingbird 스트럭처는 Pollinator 프로토콜을 따르므로 아래 함수를 실행해야 함.</span>
-    <span class="kd">func</span> <span class="nf">pollinate</span><span class="p">(</span><span class="n">_</span> <span class="nv">plant</span><span class="p">:</span> <span class="kt">String</span><span class="p">)</span> <span class="p">{</span>
-        <span class="nf">print</span><span class="p">(</span><span class="s">"허밍버드가 부리로 </span><span class="se">\(</span><span class="n">plant</span><span class="se">)</span><span class="s">로부터 꽃가루를 옮김."</span><span class="p">)</span>
-    <span class="p">}</span>
-<span class="p">}</span>
-
-<span class="kd">struct</span> <span class="kt">Insect</span><span class="p">:</span> <span class="kt">Pollinator</span> <span class="p">{</span>
-    <span class="c1">// Insect 스트럭처도 마찬가지로 Pollinator 프로토콜을 따르므로 아래 함수를 실행해야 함.</span>
-    <span class="kd">func</span> <span class="nf">pollinate</span><span class="p">(</span><span class="n">_</span> <span class="nv">plant</span><span class="p">:</span> <span class="kt">String</span><span class="p">)</span> <span class="p">{</span>
-        <span class="nf">print</span><span class="p">(</span><span class="s">"곤충이 다리에 꽃가루를 묻혀 </span><span class="se">\(</span><span class="n">plant</span><span class="se">)</span><span class="s">로부터 꽃가루를 옮김."</span><span class="p">)</span>
-    <span class="p">}</span>
-<span class="p">}</span>
-
-<span class="c1">// Hummingbird와 Inset는 Pollinator 프로토콜을 따르므로 '꽃가루를 옮기는 기능'을 수행하는 스트럭처라는 것을 알 수 있음.</span>
-<span class="k">let</span> <span class="nv">speedy</span> <span class="o">=</span> <span class="kt">Hummingbird</span><span class="p">()</span>
-<span class="k">let</span> <span class="nv">busyBee</span> <span class="o">=</span> <span class="kt">Insect</span><span class="p">()</span>
-
-<span class="c1">// 각 스트럭처를 인스턴스화하여 실제로 pollinate 함수를 동작시킴.</span>
-<span class="n">speedy</span><span class="o">.</span><span class="nf">pollinate</span><span class="p">(</span><span class="s">"해바라기"</span><span class="p">)</span>
-<span class="n">busyBee</span><span class="o">.</span><span class="nf">pollinate</span><span class="p">(</span><span class="s">"프리지아"</span><span class="p">)</span>
-
-
-<span class="c1">// 꽃가루를 옮기는 기능을 하는 함수를 작성하려고 하는데...</span>
-<span class="c1">// 옮기는 주체가 Pollinator 타입을 따르는 것은 무엇이든 될 수 있는 함수를 작성하려고 함.</span>
-<span class="kd">func</span> <span class="n">pollinate</span><span class="o">&lt;</span><span class="kt">T</span><span class="p">:</span> <span class="kt">Pollinator</span><span class="o">&gt;</span><span class="p">(</span><span class="n">_</span> <span class="nv">plants</span><span class="p">:</span> <span class="p">[</span><span class="kt">String</span><span class="p">],</span> <span class="n">with</span> <span class="nv">pollinator</span><span class="p">:</span> <span class="kt">T</span><span class="p">)</span> <span class="p">{</span>
-    <span class="c1">// &lt;T: Pollinator&gt; 을 작성하여 Pollinator 프로토콜을 따르는 T라는 타입을 함수에서 사용할 것이라는 것을 알려줌.</span>
-    <span class="k">for</span> <span class="n">plant</span> <span class="k">in</span> <span class="n">plants</span> <span class="p">{</span>
-        <span class="c1">// 매개변수로 받은 pollinator는 Pollinator 프로토콜을 따르므로 pollinate 함수를 실행함.</span>
-        <span class="c1">// pollinator의 타입은 T, T는 Pollinator라는 프로토콜을 따르는 모든 타입. 여기서는 Hummingbird와 Insect 타입의 객체가 pollinator로 사용될 수 있음.</span>
-        <span class="n">pollinator</span><span class="o">.</span><span class="nf">pollinate</span><span class="p">(</span><span class="n">plant</span><span class="p">)</span>
-    <span class="p">}</span>
-<span class="p">}</span>
-
-<span class="nf">pollinate</span><span class="p">([</span><span class="s">"백합"</span><span class="p">,</span> <span class="s">"수국"</span><span class="p">],</span> <span class="nv">with</span><span class="p">:</span> <span class="n">speedy</span><span class="p">)</span>
-<span class="c1">// 실행 결과: 허밍버드가 부리로 백합로부터 꽃가루를 옮김. / 허밍버드가 부리로 수국로부터 꽃가루를 옮김.</span>
-<span class="nf">pollinate</span><span class="p">([</span><span class="s">"들꽃"</span><span class="p">],</span> <span class="nv">with</span><span class="p">:</span> <span class="n">busyBee</span><span class="p">)</span>
-<span class="c1">// 실행 결과 : 곤충이 다리에 꽃가루를 묻혀 들꽃로부터 꽃가루를 옮김.</span>
-<span class="c1">// * 하나의 함수에서 다른 타입의 객체를 매개변수로 사용할 수 있게 됨.</span>
-
-<span class="c1">// any Pollinator 타입을 따르는 변수를 정의 -&gt; any 키워드는 any Pollinator가 existential 타입이라는 것을 의미한다.</span>
-<span class="k">var</span> <span class="nv">anotherPollinator</span><span class="p">:</span> <span class="n">any</span> <span class="kt">Pollinator</span> <span class="o">=</span> <span class="kt">Hummingbird</span><span class="p">()</span>
-
-<span class="n">anotherPollinator</span><span class="o">.</span><span class="nf">pollinate</span><span class="p">(</span><span class="s">"튤립"</span><span class="p">)</span>
-<span class="c1">// anotherPollinator는 변수이므로 Pollinator 프로토콜을 따르는 타입의 인스턴스를 할당 받을 수 있음.</span>
-<span class="n">anotherPollinator</span> <span class="o">=</span> <span class="kt">Insect</span><span class="p">()</span>
-<span class="n">anotherPollinator</span><span class="o">.</span><span class="nf">pollinate</span><span class="p">(</span><span class="s">"옥수수"</span><span class="p">)</span>
-
-
-<span class="c1">// 아래 함수는 existential 타입의 매개변수를 사용하여 작성됨</span>
-<span class="kd">func</span> <span class="nf">pollinate2</span><span class="p">(</span><span class="n">_</span> <span class="nv">plants</span><span class="p">:</span> <span class="p">[</span><span class="kt">String</span><span class="p">],</span> <span class="n">with</span> <span class="nv">pollinator</span><span class="p">:</span> <span class="n">any</span> <span class="kt">Pollinator</span><span class="p">)</span> <span class="p">{</span>
-    <span class="k">for</span> <span class="n">plant</span> <span class="k">in</span> <span class="n">plants</span> <span class="p">{</span>
-        <span class="n">pollinator</span><span class="o">.</span><span class="nf">pollinate</span><span class="p">(</span><span class="n">plant</span><span class="p">)</span>
-    <span class="p">}</span>
-<span class="p">}</span>
-</code></pre></div></div>
-
-<p>Swift는 제네릭 함수를 호출 할 때는 static dispatch를 사용하여 함수 호출을 최적화 하지만,<br />
-existential 타입을 포함한 함수를 호출할 경우 dynamic dispatch를 사용함. 이때 더 많은 메모리를 필요로 하기 때문에 제네릭 매개변수를 사용한 함수 호출보다 조금 덜 효율적이게 됨.</p>
-
-<div class="language-swift highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">import</span> <span class="kt">Foundation</span>
-
-<span class="kd">class</span> <span class="kt">QuakeClient</span> <span class="p">{</span>
-    <span class="kd">private</span> <span class="k">let</span> <span class="nv">feedURL</span> <span class="o">=</span> <span class="kt">URL</span><span class="p">(</span><span class="nv">string</span><span class="p">:</span> <span class="s">"https://earthquake.usgs.gov/earthquakes/feed/v1.0/summary/all_day.geojson"</span><span class="p">)</span><span class="o">!</span>
-    
-    <span class="c1">//computed porperty의 타입이 있고 milliseconds로 변경하기 위해 이렇게 사용한건가?</span>
-    <span class="c1">//date decoding strategy를 변경하기 위해서 anonymous 클로저를 사용해서 init 함</span>
-    <span class="kd">private</span> <span class="kd">lazy</span> <span class="k">var</span> <span class="nv">decoder</span><span class="p">:</span> <span class="kt">JSONDecoder</span> <span class="o">=</span> <span class="p">{</span>
-        <span class="k">let</span> <span class="nv">aDecoder</span> <span class="o">=</span> <span class="kt">JSONDecoder</span><span class="p">()</span>
-        <span class="n">aDecoder</span><span class="o">.</span><span class="n">dateDecodingStrategy</span> <span class="o">=</span> <span class="o">.</span><span class="n">millisecondsSince1970</span>
-        <span class="k">return</span> <span class="n">aDecoder</span>
-    <span class="p">}()</span>
-    
-    <span class="c1">//feedURL은 리터럴 스트링 값을 가지고 있고, decoder는 클로저를 사용하여 이니셜라이징함</span>
-    <span class="c1">//downloader 이니셜라이징하여 값 설정</span>
-    <span class="c1">//Existential value가 사용되는 부분</span>
-    <span class="kd">private</span> <span class="k">let</span> <span class="nv">downloader</span><span class="p">:</span> <span class="n">any</span> <span class="kt">HTTPDataDownloader</span>
-    
-    <span class="c1">//이니셜라이징 중 파라미터로 통과된 downloader(HTTPDataDownloader 프로토콜을 따르는 any type)가</span>
-    <span class="c1">//QuakeClient의 downloader로 사용됨</span>
-    <span class="nf">init</span><span class="p">(</span><span class="nv">downloader</span><span class="p">:</span> <span class="n">any</span> <span class="kt">HTTPDataDownloader</span><span class="p">)</span> <span class="p">{</span>
-        <span class="k">self</span><span class="o">.</span><span class="n">downloader</span> <span class="o">=</span> <span class="n">downloader</span>
-    <span class="p">}</span>
-    
-    
-<span class="p">}</span>
-</code></pre></div></div>
-
-<p>quakes 배열을 비동기식으로 가져오고, 가져오는 과정에서 에러가 있을 수 있기 때문에 
-async, throws 키워드를 사용. property에 async와 throws를 사용하려면 get syntax를 사용해야 함</p>
-
-<div class="language-swift highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">var</span> <span class="nv">quakes</span><span class="p">:</span> <span class="p">[</span><span class="kt">Quake</span><span class="p">]</span> <span class="p">{</span>
-    <span class="k">get</span> <span class="k">async</span> <span class="k">throws</span><span class="p">{</span>
-        <span class="c1">//data를 서버로부터 다운로드</span>
-        <span class="k">let</span> <span class="nv">data</span> <span class="o">=</span> <span class="k">try</span> <span class="k">await</span> <span class="n">downloader</span><span class="o">.</span><span class="nf">httpData</span><span class="p">(</span><span class="nv">from</span><span class="p">:</span> <span class="n">feedURL</span><span class="p">)</span>
-        <span class="c1">//다운로드한 데이터를 디코딩</span>
-        <span class="k">let</span> <span class="nv">allQuakes</span> <span class="o">=</span> <span class="k">try</span> <span class="n">decoder</span><span class="o">.</span><span class="nf">decode</span><span class="p">(</span><span class="kt">GeoJSON</span><span class="o">.</span><span class="k">self</span><span class="p">,</span> <span class="nv">from</span><span class="p">:</span> <span class="n">data</span><span class="p">)</span>
-        <span class="c1">//GeoJSON 스트럭처 안에 지진 정보를 배열 형태로 담는 quakes</span>
-        <span class="k">return</span> <span class="n">allQuakes</span><span class="o">.</span><span class="n">quakes</span>
-    <span class="p">}</span>
-<span class="p">}</span>
-</code></pre></div></div>
-
-<p><strong>URL 사용하여 데이터 가져오기</strong></p>
-<ol>
-  <li>URLSession의 인스턴스 메서드인 data를 사용하여 데이터를 가져오려고 함</li>
-  <li>
-    <p>커스텀 프로토콜인 HTTPDataDownloader를 생성</p>
-
-    <div class="language-swift highlighter-rouge"><div class="highlight"><pre class="highlight"><code> <span class="kd">protocol</span> <span class="kt">HTTPDataDownloader</span> <span class="p">{</span>
- <span class="kd">func</span> <span class="nf">httpData</span><span class="p">(</span><span class="nv">from</span><span class="p">:</span> <span class="kt">URL</span><span class="p">)</span> <span class="k">async</span> <span class="k">throws</span> <span class="o">-&gt;</span> <span class="kt">Data</span>
- <span class="p">}</span>
-</code></pre></div>    </div>
-  </li>
-  <li>URLSession에 extension을 작성하여 위 커스텀 프로토콜을 따르도록 함</li>
-  <li>httpData(from:_) 함수의 바디 부분에 URLSession의 인스턴스 메서드인 data를 사용하여 네트워크 연결을 통해 데이터를 가져옴</li>
-</ol>
-
-<ul>
-  <li>Preview Content 폴더로 test data 파일을 옮기면 SwiftUI 프리뷰와 유닛 테스트 둘 다에서 데이터를 사용할 수 있음</li>
-</ul>
-
-<h1 id="building-a-network-test-client">Building a network test client</h1>
-
-<p>네트워크 클라이언트를 만들어 Quake 구조 정보를 요청. 네트워크 클라이언트는 네트워크 요청을 하고 JSON 데이터를 받아오고 받아온 데이터를 커스텀 타입인 Quake structure 타입의 요소를 가진 배열로 decoding하는 역할을 함.</p>
-
-<h1 id="add-the-map-view">Add the map view</h1>
-
-<p>MapKit 프레임워크를 사용하여 지진이 발생한 곳을 지도로 보여주려고 함.</p>
-
-<div class="language-swift highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">import</span> <span class="kt">MapKit</span> <span class="c1">// 1 </span>
-
-<span class="kd">struct</span> <span class="kt">QuakeDetailMap</span><span class="p">:</span> <span class="kt">View</span> <span class="p">{</span>
-    <span class="kd">@State</span> <span class="kd">private</span> <span class="k">var</span> <span class="nv">region</span> <span class="o">=</span> <span class="kt">MKCoordinateRegion</span><span class="p">()</span> <span class="c1">// 2</span>
-    
-        <span class="k">var</span> <span class="nv">body</span><span class="p">:</span> <span class="kd">some</span> <span class="kt">View</span> <span class="p">{</span>
-            <span class="kt">Map</span><span class="p">(</span><span class="nv">coordinateRegion</span><span class="p">:</span> <span class="err">$</span><span class="n">region</span><span class="p">)</span> <span class="c1">// 3</span>
-                <span class="o">.</span><span class="n">onAppear</span> <span class="p">{</span> <span class="c1">// 4</span>
-                    <span class="n">withAnimation</span> <span class="p">{</span>
-                        <span class="n">region</span><span class="o">.</span><span class="n">center</span> <span class="o">=</span> <span class="kt">CLLocationCoordinate2D</span><span class="p">(</span><span class="nv">latitude</span><span class="p">:</span> <span class="o">-</span><span class="mf">30.0</span><span class="p">,</span> <span class="nv">longitude</span><span class="p">:</span> <span class="mf">130.0</span><span class="p">)</span>
-                        <span class="n">region</span><span class="o">.</span><span class="n">span</span> <span class="o">=</span> <span class="kt">MKCoordinateSpan</span><span class="p">(</span><span class="nv">latitudeDelta</span><span class="p">:</span> <span class="mi">50</span><span class="p">,</span> <span class="nv">longitudeDelta</span><span class="p">:</span> <span class="mi">70</span><span class="p">)</span>
-            <span class="p">}</span>
-        <span class="p">}</span>
-    <span class="p">}</span>
-<span class="p">}</span>
-
-</code></pre></div></div>
-<ol>
-  <li>맵킷 프레임워크 추가</li>
-  <li>맵이 보여줄 지역을 담은 state property</li>
-  <li>바디 프로퍼티 부분에 맵뷰를 추가하여 뷰에 지도 뿌리기</li>
-  <li>onAppear{} 사용하여 맵뷰가 열릴 때 특정 지역이 보이도록 함.</li>
-</ol>
-
-<ul>
-  <li>프리뷰에서 핀치 제스처 하는 방법 - 마우스 클릭하고 옵션 키 누르기</li>
-  <li>
-    <p>디테일에 추가할 맵뷰를 파일로 따로 생성한 경우, 디테일 뷰의 프리뷰에서 맵뷰를 확인할 수 있게 되면 프리뷰 자체를 삭제해도 됨. (그동안은 프리뷰 부분을 유지해야겠다고만 생각해서 추가 작업이 필요했음)</p>
-  </li>
-  <li>region.center = CLLocationCoordinate2D(latitude: 35.0, longitude: 127.0) 값을 수정하여 한국이 나타나도록 해봄</li>
-</ul>
-<center><img src="/assets/images/earthQuake_map.png" alt="earthQuake_map.png" width="800" /></center>
-<p><br /></p>
-
-<h1 id="managing-structured-concurrency">Managing structured concurrency</h1>
-
-<h2 id="fetching-multiple-urls">Fetching multiple URLs</h2>
-<p><a href="https://developer.apple.com/tutorials/app-dev-training/managing-structured-concurrency#Protecting-data-with-actors">→</a>
-현재 Earthquakes 앱의 클라이언트는 지진의 정보 목록을 가져오기 위해서 하나의 요청을 보내고 있음.<br />
-이제 클라이언트가 concurrency 기능을 사용하여 여러개의 네트워크 요청을 동시에 보내도록 수정하려고 함.<br />
-비동기 함수와 비동기 속성을 사용해서 네트워크 요청에 대한 값을 가져오는 작업이 실행되는 동안 잠깐 해당 부분에 실행을 멈춤.
-그동안 다른 작업이 먼저 진행됨.</p>
-
-<div class="language-swift highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">let</span> <span class="nv">quakes</span><span class="p">:</span> <span class="p">[</span><span class="kt">Quake</span><span class="p">]</span> <span class="o">=</span> <span class="k">try</span> <span class="k">await</span> <span class="n">quakeClient</span><span class="o">.</span><span class="n">quakes</span>
-</code></pre></div></div>
-<p>위 코드에서는 비동기 프로퍼티가 지진의 목록을 가져옴. (비동기 속서이기 때문에, 정보를 가져올때까지 기다림.)</p>
-
-<div class="language-swift highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">func</span> <span class="nf">quakeLocation</span><span class="p">(</span><span class="n">from</span> <span class="nv">url</span><span class="p">:</span> <span class="kt">URL</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kt">QuakeLocation</span>
-</code></pre></div></div>
-<p>위 코드에서는 각 지진의 디테일 정보 중 위치 정보를 가져옴. 이 함수를 비동기, 병렬 방식으로 호출하여 동시에 여러개의 네트워크 요청을 보낼 수 있도록 함.</p>
-
-<div class="language-swift highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">let</span> <span class="nv">quakes</span><span class="p">:</span> <span class="p">[</span><span class="kt">Quake</span><span class="p">]</span> <span class="o">=</span> <span class="k">try</span> <span class="k">await</span> <span class="n">quakeClient</span><span class="o">.</span><span class="n">quakes</span>
-<span class="k">var</span> <span class="nv">locations</span><span class="p">:</span> <span class="p">[</span><span class="kt">QuakeLocation</span><span class="p">]</span> <span class="o">=</span> <span class="p">[]</span>
-
-<span class="k">for</span> <span class="n">quake</span> <span class="k">in</span> <span class="n">quakes</span> <span class="p">{</span>
-    <span class="k">let</span> <span class="nv">location</span> <span class="o">=</span> <span class="k">await</span> <span class="n">quakeClient</span><span class="o">.</span><span class="nf">quakeLocation</span><span class="p">(</span><span class="nv">from</span><span class="p">:</span> <span class="n">quake</span><span class="o">.</span><span class="n">url</span><span class="p">)</span>
-    <span class="n">location</span><span class="o">.</span><span class="nf">append</span><span class="p">(</span><span class="n">location</span><span class="p">)</span>
-<span class="p">}</span>
-</code></pre></div></div>
-<p>위 코드를 보면, 가져온 지진 정보 마다 가지고 있는 위치 정보 url을 사용하여 위치 정보를 얻어오고, 그 정보를 locations 배열에 추가함.<br />
-for loop 안에 작성된 quakeClient.quakeLocation(from: quake.url) 함수는 각 반복마다 quakeLocation() 함수가 결과 값을 가져올동안 중단되고, 다시 실행되면 다음 suspension point(quakeLocation()이 다시 실행되는 곳)까지 실행됨. <br />
-비동기 함수이지만 순차적으로 진행되게 됨. 이것을 동시에 실행되도록 해야 함.</p>
-
-<p><b>Task Group</b>
-이때 사용할 수 있는 것이 테스크 그룸. 테스크 그룹을 사용하면 많은 테스크를 동시에 실행할 수 있음.<br />
-시스템은 병렬 쓰레드를 사용하여 테스크를 동시에 실행함. 
--withTaskGroup() 
--withThrowingTaskGroup()<br />
-위 두가지 함수를 사용하여 테스크 그룹을 사용할 수 있는데, 여기서는 throwing 함수를 사용하기 때문에 withThrowingTaskGroupo()을 사용함.</p>]]></content><author><name>Mirae</name></author><category term="TIL" /><summary type="html"><![CDATA[Earthquakes app tutorial 이 글은 위의 apple developer tutorial을 따라가며 정리한 내용입니다. Error /decoding-structured-json/Decode earthquake data/step 8 Swift에서는 Error 프로토콜을 따르는 타입을 사용하여 에러를 나타냅니다. Error 프로토콜은 에러를 핸들링하기 위해 사용되는 타입이라는 것을 나타낼 뿐 아무런 내용이 없습니다. 요구사항도 없습니다. 그래서 커스텀 타입에 자유롭게 사용할 수 있습니다. ```swift enum QuakeError: Error { case missingData }]]></summary></entry></feed>
+</code></pre></div></div>]]></content><author><name>Mirae</name></author><category term="TIL" /><summary type="html"><![CDATA[Youtube 🔗 강의 내용 중 필요한 것 정리]]></summary></entry></feed>
