@@ -1,24 +1,28 @@
 ---
-title: SwiftUI Concepts Tutorials
+title: SwiftUI Tutorials
 author: Mirae
-date: 2023-01-17
+date: 2024-04-09
 category: TIL
 layout: post
----
-
-[SwiftUI Concepts Tutorials](https://developer.apple.com/tutorials/swiftui-concepts/exploring-the-structure-of-a-swiftui-app)  
-> 이 글은 위의 apple developer tutorial을 따라가며 정리한 내용입니다. 
+--- 
   
-  
-  
-# SwiftUI 앱의 구조
-- App, Scene, View 프로토콜이라는 기초 빌딩 블럭을 사용하여 SwiftUI 앱의 구조를 형성한다. 
+# 색 정의하기
+> Define colors in the asset catalog
 
 ```swift
 import SwiftUI
 
-@main
-struct MyApp: App {
-    
+// global property
+let gradientColors: [Color] = [
+    .gradientTop,
+    .gradientBottom
+]
+
+struct ContentView: View {
+    //...
 }
 ```
+에셋 카탈로그에 'GradientTop', 'GradientBottom'라는 이름의 Color set을 추가했습니다.  
+Xcode가 자동으로 카멜케이스 스타일의 컬러 밸류를 생성합니다. (.gradientTop, .gradientBottom)  
+gradientColors 속성은 최상단 레벨에 작성되었고 이런 프로퍼티(=속성)을 글로벌 프로퍼티라고 합니다.  
+글로벌 프로퍼티는 모든 파일, 모든 코드에서 사용할 수 있게 됩니다. 

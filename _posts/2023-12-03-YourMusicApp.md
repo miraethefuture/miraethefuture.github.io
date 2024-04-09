@@ -30,3 +30,6 @@ https://open.spotify.com/#access_token=토큰값&token_type=Bearer&expires_in=36
 - 이 토큰은 한시간동안 유효함.
 
 https://open.spotify.com/#access_token=BQDhgN0-a0A2rk3b6XuI1__aTDzPF1YUDdfvHb5HlH7JN_jv8zBQH1isxdlDnnDxz_nMXZ8636l63lRAwEu3VY7jYxKPGvLaWjw0ioQdDlH_pGhGyn8OriokdN3jab9bvkco9bXchwbrKic5SkZCGGMVQ_azzw0-UX767m64YdxC4SfyVRtAixa_x_EyvGBohXY&token_type=Bearer&expires_in=3600
+
+- client secret이 안전하게 보관될 수 없는 환경에는 PKCE를 통한 권한 요청을 할 것을 추천함.
+- code verifier를 생성하는 것으로 PKCE 권한 요청 플로우를 시작함.

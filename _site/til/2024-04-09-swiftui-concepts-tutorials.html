@@ -1,7 +1,7 @@
 <!DOCTYPE HTML>
 <html lang="en" >
     <head><meta charset="UTF-8">
-<meta content="text/html; charset=utf-8" http-equiv="Content-Type"><title> Jung Mirae</title><meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<meta content="text/html; charset=utf-8" http-equiv="Content-Type"><title>SwiftUI Tutorials ·  Jung Mirae</title><meta http-equiv="X-UA-Compatible" content="IE=edge" />
 <meta name="description" content=""><meta name="generator" content="Jekyll (using style of GitBook 3.2.3)"><meta name="author" content="Mirae"><link rel="stylesheet" href="/assets/gitbook/style.css">
 <link rel="stylesheet" href="/assets/gitbook/gitbook-plugin-fontsettings/website.css">
 <link rel="stylesheet" href="/assets/gitbook/gitbook-plugin-search-pro/search.css">
@@ -21,9 +21,9 @@
 
 
 
-
+            <link rel="prev" href="/til/2024-01-04-CW-project.html" />
         
-            <link rel="next" href="/til/2022-08-14-myBoxes.html" />
+
         
     </head>
     <body>
@@ -240,12 +240,15 @@
                         </li>
                     
                         
-                        <li class="chapter" data-level="1.1" data-path="/til/2024-04-09-swiftui-concepts-tutorials.html">
+                        <li class="chapter active" data-level="1.2" data-path="/til/2024-04-09-swiftui-concepts-tutorials.html">
                         
                             <a href="/til/2024-04-09-swiftui-concepts-tutorials.html">
                                 SwiftUI Tutorials
                             </a>
                             
+                                
+                                    <ul><li><a href="#색-정의하기">색 정의하기</a></li></ul>
+
                                 
                             
                         </li>
@@ -271,7 +274,7 @@
                     <h1>
                         <i class="fa fa-circle-o-notch fa-spin"></i>
                         
-                            <a href="." > Jung Mirae</a>
+                            <a href="." >SwiftUI Tutorials</a>
                         
                     </h1>
                 </div>
@@ -284,29 +287,30 @@
             <div class="search-noresults">
                 <section class="normal markdown-section">
                     
-                        <h1 id=""> Jung Mirae</h1>
+                        <h1 id="/til/swiftui-concepts-tutorials">SwiftUI Tutorials</h1>
                     
 
-                    <style type="text/css" media="screen">
-  .container {
-    margin: 10px auto;
-    max-width: 600px;
-    text-align: center;
-  }
-  h1 {
-    margin: 30px 0;
-    font-size: 4em;
-    line-height: 1;
-    letter-spacing: -1px;
-  }
-</style>
+                    <h1 id="색-정의하기">색 정의하기</h1>
+<blockquote>
+  <p>Define colors in the asset catalog</p>
+</blockquote>
 
-<div class="container">
-  <h1>404</h1>
+<div class="language-swift highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">import</span> <span class="kt">SwiftUI</span>
 
-  <p><strong>Page not found :(</strong></p>
-  <p>The requested page could not be found.</p>
-</div>
+<span class="c1">// global property</span>
+<span class="k">let</span> <span class="nv">gradientColors</span><span class="p">:</span> <span class="p">[</span><span class="kt">Color</span><span class="p">]</span> <span class="o">=</span> <span class="p">[</span>
+    <span class="o">.</span><span class="n">gradientTop</span><span class="p">,</span>
+    <span class="o">.</span><span class="n">gradientBottom</span>
+<span class="p">]</span>
+
+<span class="kd">struct</span> <span class="kt">ContentView</span><span class="p">:</span> <span class="kt">View</span> <span class="p">{</span>
+    <span class="c1">//...</span>
+<span class="p">}</span>
+</code></pre></div></div>
+<p>에셋 카탈로그에 ‘GradientTop’, ‘GradientBottom’라는 이름의 Color set을 추가했습니다.<br />
+Xcode가 자동으로 카멜케이스 스타일의 컬러 밸류를 생성합니다. (.gradientTop, .gradientBottom)<br />
+gradientColors 속성은 최상단 레벨에 작성되었고 이런 프로퍼티(=속성)을 글로벌 프로퍼티라고 합니다.<br />
+글로벌 프로퍼티는 모든 파일, 모든 코드에서 사용할 수 있게 됩니다.</p>
 </section>
             </div><div class="search-results">
     <div class="has-results">
@@ -335,9 +339,11 @@ MathJax = {
   src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js">
 </script>
 
-                        <a href="/til/2022-08-14-myBoxes.html" class="navigation navigation-next navigation-unique" aria-label="Next page: My Box">
-                            <i class="fa fa-angle-right"></i>
+                        <a href="/til/2024-01-04-CW-project.html" class="navigation navigation-prev navigation-unique" aria-label="Previous page: CW Project">
+                            <i class="fa fa-angle-left"></i>
                         </a>
+                    
+
                     
                 </div>
             </div>
@@ -350,17 +356,6 @@ MathJax = {
         "title": "Introduction",
         "level": "1.1",
         "depth": 1,
-        
-
-        
-        "next": {
-            "title": "My Box",
-            "level": "1.2",
-            "depth": 1,
-            "path": "_posts/2022-08-14-myBoxes.md",
-            "ref": "_posts/2022-08-14-myBoxes.md",
-            "articles": []
-        },
         
         "dir": "ltr"
     },    "config": {
@@ -436,8 +431,8 @@ MathJax = {
         "gitbook": "*"
     },
     "file": {
-        "path": "404.html",
-        "mtime": "",
+        "path": "_posts/2024-01-01-swiftui-concepts-tutorials.md",
+        "mtime": "2024-04-09 00:00:00 +0900",
         "type": "markdown"
     },
     "gitbook": {
