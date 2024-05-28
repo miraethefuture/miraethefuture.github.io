@@ -29,7 +29,58 @@ gradientColors 속성은 최상단 레벨에 작성되었고 이런 프로퍼티
 글로벌 프로퍼티는 모든 파일, 모든 코드에서 사용할 수 있게 됩니다. 
 
 
-#
+# Text 뷰
 
 Text 뷰는 읽기 전용 텍스트를 보여주는 뷰입니다. 텍스트 뷰는 타이틀과 같은 짧은 String, 또는 글의 내용과 같이 긴 String을 컨텐츠로 가질 수 있습니다.
 
+
+# mutating 함수
+
+```swift
+// 뷰가 새 레시피를 추가하는 화면을 보이도록 상태를 변경하는 함수
+mutating func presentAddRecipe(sidebar: SidebarItem) {
+    recipe = Recipe.emptyRecipe()
+    // ...
+    shouldSaveChanges = false
+    isPresented = true
+}
+```
+함수가 위치한 structure 안에 정의된 변수인 shouldSaveChanges, isPresented의 값을 변경시키기 때문에 mutating 키워드를 사용하여 작성함
+
+
+# .Sheet modifier
+
+```swift
+.sheet(isPresented: $recipeEditorConfig.isPresented,
+onDismiss: didDismissEditor) {
+RecipeEditor(config: $recipeEditorConfig)
+}
+```
+위의 sheet modifier는 recipeEditorConfig.isPresented 값을 바인딩으로 받는다.  
+그러므로 isPresented 값을 read / write 할 수 있게 된다. 만약 사용자가 아래 방향으로 스와이핑하여 시트가 아래로 내려가면,  
+isPresented의 값이 false로 변경되고, SwiftUI가 뷰를 다시 초기화하고, 다시 그린다. 그러하여 더이상 sheet가 올라와있지 않게 된다.
+
+
+# Design a custom control
+
+커스텀 컨트롤을 구현하기 전에 생각해 볼 것이 있다.  
+어떤 데이터가 필요한지, 그 데이터를 사용하여 뭘 하는지, 그리고 데이터를 뷰에 어떻게 보여줄 것인지이다.  
+
+# Specifying the source of truth
+
+이 샘플 앱은 커스텀 뷰인 DetailView에서 레시피의 세부사항을 보여주는데, DetailView는 레시피의 id만 알고 있다. 
+레시피의 세부사항은 recipe box라는 데이터 스토어에 담겨 있는데, 이 세부사항을 가져와 DetailView에서 보여주기 위해 커스텀 바인딩을 사용한다.
+DetailView에서 State를 사용하여 원천데이터를 정의하는 것이 아니고, 데이터 스토어에서 커스텀 바인딩과 id를 통해 데이터를 가져오는 것이다.
+
+> Note
+> 커스텀을 바인딩은 state 변수로 원천데이터를 정의할 수 없을 떄, state object를 사용하여 모델 데이터를 공유할 수 없을 때만 사용한다.
+
+## 여기서는 왜 커스텀 바인딩을 사용했는가?
+
+```swift
+private var recipe: Binding<Recipe> {
+
+}
+```
+state 변수를 정의하는 대신, recipe라는 computed property를 선언했다.
+recipe는 Recipe를 리턴하지 않고, Recipe 타입의 커스텀 바인딩을 리턴한다.
