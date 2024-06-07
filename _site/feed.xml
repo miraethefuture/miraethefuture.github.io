@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="4.3.2">Jekyll</generator><link href="http://localhost:4000/feed.xml" rel="self" type="application/atom+xml" /><link href="http://localhost:4000/" rel="alternate" type="text/html" /><updated>2024-05-27T14:03:14+09:00</updated><id>http://localhost:4000/feed.xml</id><title type="html"> Jung Mirae</title><subtitle></subtitle><author><name>Mirae</name></author><entry><title type="html">SwiftUI Tutorials</title><link href="http://localhost:4000/til/2024-04-09-swiftui-concepts-tutorials.html" rel="alternate" type="text/html" title="SwiftUI Tutorials" /><published>2024-04-09T00:00:00+09:00</published><updated>2024-04-09T00:00:00+09:00</updated><id>http://localhost:4000/til/swiftui-concepts-tutorials</id><content type="html" xml:base="http://localhost:4000/til/2024-04-09-swiftui-concepts-tutorials.html"><![CDATA[<h1 id="색-정의하기">색 정의하기</h1>
+<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="4.3.2">Jekyll</generator><link href="http://localhost:4000/feed.xml" rel="self" type="application/atom+xml" /><link href="http://localhost:4000/" rel="alternate" type="text/html" /><updated>2024-06-01T23:01:02+09:00</updated><id>http://localhost:4000/feed.xml</id><title type="html"> Jung Mirae</title><subtitle></subtitle><author><name>Mirae</name></author><entry><title type="html">SwiftUI Tutorials</title><link href="http://localhost:4000/til/2024-04-09-swiftui-concepts-tutorials.html" rel="alternate" type="text/html" title="SwiftUI Tutorials" /><published>2024-04-09T00:00:00+09:00</published><updated>2024-04-09T00:00:00+09:00</updated><id>http://localhost:4000/til/swiftui-concepts-tutorials</id><content type="html" xml:base="http://localhost:4000/til/2024-04-09-swiftui-concepts-tutorials.html"><![CDATA[<h1 id="색-정의하기">색 정의하기</h1>
 <blockquote>
   <p>Define colors in the asset catalog</p>
 </blockquote>
@@ -69,11 +69,43 @@ DetailView에서 State를 사용하여 원천데이터를 정의하는 것이 �
 <h2 id="여기서는-왜-커스텀-바인딩을-사용했는가">여기서는 왜 커스텀 바인딩을 사용했는가?</h2>
 
 <div class="language-swift highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">private</span> <span class="k">var</span> <span class="nv">recipe</span><span class="p">:</span> <span class="kt">Binding</span><span class="o">&lt;</span><span class="kt">Recipe</span><span class="o">&gt;</span> <span class="p">{</span>
-
+    <span class="kt">Binding</span> <span class="p">{</span>
+            <span class="k">if</span> <span class="k">let</span> <span class="nv">id</span> <span class="o">=</span> <span class="n">recipeId</span> <span class="p">{</span>
+                <span class="k">return</span> <span class="n">recipeBox</span><span class="o">.</span><span class="nf">recipe</span><span class="p">(</span><span class="nv">with</span><span class="p">:</span> <span class="n">id</span><span class="p">)</span> <span class="p">??</span> <span class="kt">Recipe</span><span class="o">.</span><span class="nf">emptyRecipe</span><span class="p">()</span>
+            <span class="p">}</span> <span class="k">else</span> <span class="p">{</span>
+                <span class="k">return</span> <span class="kt">Recipe</span><span class="o">.</span><span class="nf">emptyRecipe</span><span class="p">()</span>
+            <span class="p">}</span>
+        <span class="p">}</span> <span class="nv">set</span><span class="p">:</span> <span class="p">{</span> <span class="n">updatedRecipe</span> <span class="k">in</span>
+            <span class="n">recipeBox</span><span class="o">.</span><span class="nf">update</span><span class="p">(</span><span class="n">updatedRecipe</span><span class="p">)</span>
+        <span class="p">}</span>
 <span class="p">}</span>
 </code></pre></div></div>
 <p>state 변수를 정의하는 대신, recipe라는 computed property를 선언했다.
-recipe는 Recipe를 리턴하지 않고, Recipe 타입의 커스텀 바인딩을 리턴한다.</p>]]></content><author><name>Mirae</name></author><category term="TIL" /><summary type="html"><![CDATA[색 정의하기 Define colors in the asset catalog]]></summary></entry><entry><title type="html">CW Project</title><link href="http://localhost:4000/til/2024-01-04-CW-project.html" rel="alternate" type="text/html" title="CW Project" /><published>2024-01-04T00:00:00+09:00</published><updated>2024-01-04T00:00:00+09:00</updated><id>http://localhost:4000/til/CW-project</id><content type="html" xml:base="http://localhost:4000/til/2024-01-04-CW-project.html"><![CDATA[<ul>
+recipe는 Recipe를 리턴하지 않고, Recipe 타입의 커스텀 바인딩을 리턴한다.</p>
+
+<h2 id="내가-작성한-코드와-다른점">내가 작성한 코드와 다른점</h2>
+
+<ul>
+  <li>
+    <p>이 샘플 앱은 총 3개의 네비게이션 층을 가지고 있다. 카테고리 등을 선택할 수 있는 side bar 부분, 레시피 리스트 부분, 레시피 디테일 부분. 이 세가지의 네비게이션 층을 파일로 생성하였다. 그리고 그 안에서 세부 뷰들을 나눠 파일을 만들었다. 그렇게 하므로써 선언형 코드의 장점을 극대화했다. 전에 내가 작성했던 코드는 물론 더 복잡한 네비게이션 계층을 가지고 있기 때문에 똑같이 작성할 수는 없겠지만, 뷰에 적용될 데이터를 가져오지 못했거나 없을 경우 나타나는 뷰와 데이터가 있을 경우 나타나는 뷰를 한 파일에 작성하고 (DetailView), 데이터가 있을 경우 나타나는 뷰 (RecipeDetailView)를 따로 작성하여, 데이터 유무에 따라 어떤 뷰가 나타날지 한번에 볼 수 있도록 코드를 작성한 것이 눈에 띄였다. (나도 데이터가 없을 경우 나타나는 뷰를 따로 작성하긴 했지만, 데이터가 있을 경우의 뷰는 동일 파일에 작성했었다.)</p>
+  </li>
+  <li>
+    <p>RecipeDetailView와 같은 경우 아래와 같이 작성되었는데, TopView(), BottomView() 구조체를 같은 파일에 private struct 로 작성한 뒤 각 뷰의 필요한 구조체는 따로 다른 파일에 작성하여 한눈에 볼 수 있도록 한 것이 인상 깊었다.</p>
+    <div class="language-swift highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">struct</span> <span class="kt">RecipeDetailView</span><span class="p">:</span> <span class="kt">View</span> <span class="p">{</span>
+  <span class="kd">@Binding</span> <span class="k">var</span> <span class="nv">recipe</span><span class="p">:</span> <span class="kt">Recipe</span>
+    
+  <span class="k">var</span> <span class="nv">body</span><span class="p">:</span> <span class="kd">some</span> <span class="kt">View</span> <span class="p">{</span>
+      <span class="kt">VStack</span> <span class="p">{</span>
+          <span class="kt">TopView</span><span class="p">(</span><span class="nv">recipe</span><span class="p">:</span> <span class="err">$</span><span class="n">recipe</span><span class="p">)</span>
+          <span class="kt">ScrollView</span> <span class="p">{</span>
+              <span class="kt">BottomView</span><span class="p">(</span><span class="nv">recipe</span><span class="p">:</span> <span class="n">recipe</span><span class="p">)</span>
+          <span class="p">}</span>
+      <span class="p">}</span>
+  <span class="p">}</span>
+<span class="p">}</span>
+</code></pre></div>    </div>
+  </li>
+</ul>]]></content><author><name>Mirae</name></author><category term="TIL" /><summary type="html"><![CDATA[색 정의하기 Define colors in the asset catalog]]></summary></entry><entry><title type="html">CW Project</title><link href="http://localhost:4000/til/2024-01-04-CW-project.html" rel="alternate" type="text/html" title="CW Project" /><published>2024-01-04T00:00:00+09:00</published><updated>2024-01-04T00:00:00+09:00</updated><id>http://localhost:4000/til/CW-project</id><content type="html" xml:base="http://localhost:4000/til/2024-01-04-CW-project.html"><![CDATA[<ul>
   <li>EKEventStore 객체를 사용하여 달력 이벤트와 리마인더…</li>
 </ul>]]></content><author><name>Mirae</name></author><category term="TIL" /><summary type="html"><![CDATA[EKEventStore 객체를 사용하여 달력 이벤트와 리마인더…]]></summary></entry><entry><title type="html">앱 Your Music 작성기</title><link href="http://localhost:4000/til/2023-12-03-YourMusicApp.html" rel="alternate" type="text/html" title="앱 Your Music 작성기" /><published>2023-12-03T00:00:00+09:00</published><updated>2023-12-03T00:00:00+09:00</updated><id>http://localhost:4000/til/YourMusicApp</id><content type="html" xml:base="http://localhost:4000/til/2023-12-03-YourMusicApp.html"><![CDATA[<blockquote>
   <p>첫번째 목표… Spotify API 호출하기</p>

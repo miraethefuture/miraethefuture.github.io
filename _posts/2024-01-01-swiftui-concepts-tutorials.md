@@ -79,8 +79,37 @@ DetailView에서 State를 사용하여 원천데이터를 정의하는 것이 �
 
 ```swift
 private var recipe: Binding<Recipe> {
-
+    Binding {
+            if let id = recipeId {
+                return recipeBox.recipe(with: id) ?? Recipe.emptyRecipe()
+            } else {
+                return Recipe.emptyRecipe()
+            }
+        } set: { updatedRecipe in
+            recipeBox.update(updatedRecipe)
+        }
 }
 ```
 state 변수를 정의하는 대신, recipe라는 computed property를 선언했다.
 recipe는 Recipe를 리턴하지 않고, Recipe 타입의 커스텀 바인딩을 리턴한다.
+
+## 내가 작성한 코드와 다른점
+
+- 이 샘플 앱은 총 3개의 네비게이션 층을 가지고 있다. 카테고리 등을 선택할 수 있는 side bar 부분, 레시피 리스트 부분, 레시피 디테일 부분. 이 세가지의 네비게이션 층을 파일로 생성하였다. 그리고 그 안에서 세부 뷰들을 나눠 파일을 만들었다. 그렇게 하므로써 선언형 코드의 장점을 극대화했다. 전에 내가 작성했던 코드는 물론 더 복잡한 네비게이션 계층을 가지고 있기 때문에 똑같이 작성할 수는 없겠지만, 뷰에 적용될 데이터를 가져오지 못했거나 없을 경우 나타나는 뷰와 데이터가 있을 경우 나타나는 뷰를 한 파일에 작성하고 (DetailView), 데이터가 있을 경우 나타나는 뷰 (RecipeDetailView)를 따로 작성하여, 데이터 유무에 따라 어떤 뷰가 나타날지 한번에 볼 수 있도록 코드를 작성한 것이 눈에 띄였다. (나도 데이터가 없을 경우 나타나는 뷰를 따로 작성하긴 했지만, 데이터가 있을 경우의 뷰는 동일 파일에 작성했었다.)  
+
+
+- RecipeDetailView와 같은 경우 아래와 같이 작성되었는데, TopView(), BottomView() 구조체를 같은 파일에 private struct 로 작성한 뒤 각 뷰의 필요한 구조체는 따로 다른 파일에 작성하여 한눈에 볼 수 있도록 한 것이 인상 깊었다. 
+```swift
+struct RecipeDetailView: View {
+    @Binding var recipe: Recipe
+    
+    var body: some View {
+        VStack {
+            TopView(recipe: $recipe)
+            ScrollView {
+                BottomView(recipe: recipe)
+            }
+        }
+    }
+}
+```
