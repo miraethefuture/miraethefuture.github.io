@@ -13,6 +13,11 @@
     "keywords": "Jekyll",
     "url": "/pages/design/draft/",
     "body": "This is an draft page."
+  },"/til/2024-06-07-Moya.html": {
+    "title": "Moya",
+    "keywords": "TIL",
+    "url": "/til/2024-06-07-Moya.html",
+    "body": "Moya 문서 읽기 사용할 모든 API 타겟별 enum 정의하기 나는 일단 먼저 필요한 하나만 정의함 enum LottoDataService { case getLottoWinsData }"
   },"/til/2024-04-09-swiftui-concepts-tutorials.html": {
     "title": "SwiftUI Tutorials",
     "keywords": "TIL",
