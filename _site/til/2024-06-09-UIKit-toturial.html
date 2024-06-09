@@ -1,7 +1,7 @@
 <!DOCTYPE HTML>
 <html lang="en" >
     <head><meta charset="UTF-8">
-<meta content="text/html; charset=utf-8" http-equiv="Content-Type"><title>CW Project ·  Jung Mirae</title><meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<meta content="text/html; charset=utf-8" http-equiv="Content-Type"><title>UIKit 튜토리얼 따라가보기 ·  Jung Mirae</title><meta http-equiv="X-UA-Compatible" content="IE=edge" />
 <meta name="description" content=""><meta name="generator" content="Jekyll (using style of GitBook 3.2.3)"><meta name="author" content="Mirae"><link rel="stylesheet" href="/assets/gitbook/style.css">
 <link rel="stylesheet" href="/assets/gitbook/gitbook-plugin-fontsettings/website.css">
 <link rel="stylesheet" href="/assets/gitbook/gitbook-plugin-search-pro/search.css">
@@ -21,11 +21,9 @@
 
 
 
-            <link rel="prev" href="/til/2023-12-03-YourMusicApp.html" />
+            <link rel="prev" href="/til/2024-06-07-Moya.html" />
         
 
-        
-            <link rel="next" href="/til/2024-04-09-swiftui-concepts-tutorials.html" />
         
     </head>
     <body>
@@ -231,20 +229,6 @@
                         </li>
                     
                         
-                        <li class="chapter active" data-level="1.2" data-path="/til/2024-01-04-CW-project.html">
-                        
-                            <a href="/til/2024-01-04-CW-project.html">
-                                CW Project
-                            </a>
-                            
-                                
-                                    
-
-                                
-                            
-                        </li>
-                    
-                        
                         <li class="chapter" data-level="1.1" data-path="/til/2024-04-09-swiftui-concepts-tutorials.html">
                         
                             <a href="/til/2024-04-09-swiftui-concepts-tutorials.html">
@@ -262,6 +246,20 @@
                                 Moya
                             </a>
                             
+                                
+                            
+                        </li>
+                    
+                        
+                        <li class="chapter active" data-level="1.2" data-path="/til/2024-06-09-UIKit-toturial.html">
+                        
+                            <a href="/til/2024-06-09-UIKit-toturial.html">
+                                UIKit 튜토리얼 따라가보기
+                            </a>
+                            
+                                
+                                    <ul><li><a href="#creating-a-list-view">Creating a list view</a></li></ul>
+
                                 
                             
                         </li>
@@ -287,7 +285,7 @@
                     <h1>
                         <i class="fa fa-circle-o-notch fa-spin"></i>
                         
-                            <a href="." >CW Project</a>
+                            <a href="." >UIKit 튜토리얼 따라가보기</a>
                         
                     </h1>
                 </div>
@@ -300,13 +298,64 @@
             <div class="search-noresults">
                 <section class="normal markdown-section">
                     
-                        <h1 id="/til/CW-project">CW Project</h1>
+                        <h1 id="/til/UIKit-toturial">UIKit 튜토리얼 따라가보기</h1>
                     
 
-                    <ul>
-  <li>EKEventStore 객체를 사용하여 달력 이벤트와 리마인더…</li>
+                    <h1 id="creating-a-list-view">Creating a list view</h1>
+<blockquote>
+  <p>Add a collention view controller</p>
+</blockquote>
+
+<p>뷰컨트롤러(이하 ‘뷰컨’)는 뷰와 데이터 모델 사이에 다리 역할을 한다.<br />
+  각 뷰컨은 하나의 뷰 계층을 관리하는 역할을 담당한다. 뷰의 컨텐츠를 업데이트하고, UI에 일어난 이벤트를 관리한다.<br />
+  Interface Builder를 사용하여 컬렉션 뷰컨트롤러를 생성해보자.<br />
+  컬렉션뷰는 그리드, 행, 열, 또는 테이블의 형태로 셀을 보여준다.</p>
+
+<ul>
+  <li>Collection view controller scene을 추가한다.</li>
+  <li>생성된 collection view의 cell 템플릿을 제거한다. (셀을 코드에서 정의할 것이기 때문.)</li>
+  <li>Attribute inspector에서 is initial view controller 체크박스를 체크하여 해당 씬을 스토리보드의 엔트리 포인트로 설정 (앱이 스토리보드를 로드할 때 가장 먼저 로드됨.)</li>
 </ul>
 
+<blockquote>
+  <p>Create a reminder model</p>
+</blockquote>
+
+<p>structure를 사용하여 모델을 생성한다. Swift 컴파일러가 자동으로 스트럭처에 멤버에 해당하는 이니셜라이저를 생성하기 때문에 따로 이니셜라이저를 생성할 필요가 없다.</p>
+
+<div class="language-swift highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="cp">#if DEBUG</span>
+<span class="kd">extension</span> <span class="kt">Reminder</span> <span class="p">{</span>
+<span class="p">}</span>
+<span class="cp">#endif</span>
+</code></pre></div></div>
+<ul>
+  <li>#if DEBUG 블락을 사용하여 디버그 모드에서만 컴파일되는 코드를 작성할 수 있다.</li>
+  <li>디버그 빌드에서 테스팅을 위한 코드를 작성하거나, 샘플 테스트 데이터를 작성할 때 사용할 수 있다.</li>
+  <li>나는 아래와 같이 내 앱 데이터에 해당하는 샘플 데이터를 생성했다.</li>
+</ul>
+
+<div class="language-swift highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="cp">#if DEBUG</span>
+<span class="kd">extension</span> <span class="kt">LottoWinPointModel</span> <span class="p">{</span>
+    <span class="kd">static</span> <span class="k">var</span> <span class="nv">sampleLottoWinPoints</span> <span class="o">=</span> <span class="p">[</span>
+        <span class="kt">LottoWinPointModel</span><span class="p">(</span><span class="nv">currentCount</span><span class="p">:</span> <span class="mi">10</span><span class="p">,</span> <span class="nv">data</span><span class="p">:</span> <span class="kt">LottoWinPointModelData</span><span class="o">.</span><span class="n">sampleLottoWinPointsData</span><span class="p">,</span> <span class="nv">matchCount</span><span class="p">:</span> <span class="mi">330</span><span class="p">,</span> <span class="nv">page</span><span class="p">:</span> <span class="mi">1</span><span class="p">,</span> <span class="nv">perPage</span><span class="p">:</span> <span class="mi">10</span><span class="p">,</span> <span class="nv">totalCount</span><span class="p">:</span> <span class="mi">330</span><span class="p">)</span>
+    <span class="p">]</span>
+<span class="p">}</span>
+<span class="kd">extension</span> <span class="kt">LottoWinPointModelData</span> <span class="p">{</span>
+    <span class="kd">static</span> <span class="k">var</span> <span class="nv">sampleLottoWinPointsData</span> <span class="o">=</span> <span class="p">[</span>
+        <span class="kt">LottoWinPointModelData</span><span class="p">(</span><span class="nv">firstPrizeWinsCount</span><span class="p">:</span> <span class="s">"5"</span><span class="p">,</span> <span class="nv">storeName</span><span class="p">:</span> <span class="s">"일등복권편의점"</span><span class="p">,</span> <span class="nv">orderNumber</span><span class="p">:</span> <span class="s">"1"</span><span class="p">,</span> <span class="nv">region</span><span class="p">:</span> <span class="s">"대구 달서구"</span><span class="p">),</span>
+        <span class="kt">LottoWinPointModelData</span><span class="p">(</span><span class="nv">firstPrizeWinsCount</span><span class="p">:</span> <span class="s">"3"</span><span class="p">,</span> <span class="nv">storeName</span><span class="p">:</span> <span class="s">"오케이상사"</span><span class="p">,</span> <span class="nv">orderNumber</span><span class="p">:</span> <span class="s">"2"</span><span class="p">,</span> <span class="nv">region</span><span class="p">:</span> <span class="s">"서울 서초구"</span><span class="p">),</span>
+        <span class="kt">LottoWinPointModelData</span><span class="p">(</span><span class="nv">firstPrizeWinsCount</span><span class="p">:</span> <span class="s">"2"</span><span class="p">,</span> <span class="nv">storeName</span><span class="p">:</span> <span class="s">"세진전자통신"</span><span class="p">,</span> <span class="nv">orderNumber</span><span class="p">:</span> <span class="s">"3"</span><span class="p">,</span> <span class="nv">region</span><span class="p">:</span> <span class="s">"대구 서구"</span><span class="p">),</span>
+        <span class="kt">LottoWinPointModelData</span><span class="p">(</span><span class="nv">firstPrizeWinsCount</span><span class="p">:</span> <span class="s">"2"</span><span class="p">,</span> <span class="nv">storeName</span><span class="p">:</span> <span class="s">"라이프마트"</span><span class="p">,</span> <span class="nv">orderNumber</span><span class="p">:</span> <span class="s">"4"</span><span class="p">,</span> <span class="nv">region</span><span class="p">:</span> <span class="s">"인천 중구"</span><span class="p">),</span>
+        <span class="kt">LottoWinPointModelData</span><span class="p">(</span><span class="nv">firstPrizeWinsCount</span><span class="p">:</span> <span class="s">"2"</span><span class="p">,</span> <span class="nv">storeName</span><span class="p">:</span> <span class="s">"스파"</span><span class="p">,</span> <span class="nv">orderNumber</span><span class="p">:</span> <span class="s">"5"</span><span class="p">,</span> <span class="nv">region</span><span class="p">:</span> <span class="s">"서울 노원구"</span><span class="p">),</span>
+        <span class="kt">LottoWinPointModelData</span><span class="p">(</span><span class="nv">firstPrizeWinsCount</span><span class="p">:</span> <span class="s">"2"</span><span class="p">,</span> <span class="nv">storeName</span><span class="p">:</span> <span class="s">"노다지복권방"</span><span class="p">,</span> <span class="nv">orderNumber</span><span class="p">:</span> <span class="s">"6"</span><span class="p">,</span> <span class="nv">region</span><span class="p">:</span> <span class="s">"인천 미추홀구"</span><span class="p">),</span>
+        <span class="kt">LottoWinPointModelData</span><span class="p">(</span><span class="nv">firstPrizeWinsCount</span><span class="p">:</span> <span class="s">"2"</span><span class="p">,</span> <span class="nv">storeName</span><span class="p">:</span> <span class="s">"흥부네박터졌네"</span><span class="p">,</span> <span class="nv">orderNumber</span><span class="p">:</span> <span class="s">"7"</span><span class="p">,</span> <span class="nv">region</span><span class="p">:</span> <span class="s">"인천 계양구"</span><span class="p">),</span>
+        <span class="kt">LottoWinPointModelData</span><span class="p">(</span><span class="nv">firstPrizeWinsCount</span><span class="p">:</span> <span class="s">"2"</span><span class="p">,</span> <span class="nv">storeName</span><span class="p">:</span> <span class="s">"오천억복권방"</span><span class="p">,</span> <span class="nv">orderNumber</span><span class="p">:</span> <span class="s">"8"</span><span class="p">,</span> <span class="nv">region</span><span class="p">:</span> <span class="s">"광주 서구"</span><span class="p">),</span>
+        <span class="kt">LottoWinPointModelData</span><span class="p">(</span><span class="nv">firstPrizeWinsCount</span><span class="p">:</span> <span class="s">"2"</span><span class="p">,</span> <span class="nv">storeName</span><span class="p">:</span> <span class="s">"해피+24시편의점"</span><span class="p">,</span> <span class="nv">orderNumber</span><span class="p">:</span> <span class="s">"9"</span><span class="p">,</span> <span class="nv">region</span><span class="p">:</span> <span class="s">"광주 북구"</span><span class="p">),</span>
+        <span class="kt">LottoWinPointModelData</span><span class="p">(</span><span class="nv">firstPrizeWinsCount</span><span class="p">:</span> <span class="s">"2"</span><span class="p">,</span> <span class="nv">storeName</span><span class="p">:</span> <span class="s">"토큰박스"</span><span class="p">,</span> <span class="nv">orderNumber</span><span class="p">:</span> <span class="s">"10"</span><span class="p">,</span> <span class="nv">region</span><span class="p">:</span> <span class="s">"경기 남양주시"</span><span class="p">),</span>
+    <span class="p">]</span>
+<span class="p">}</span>
+<span class="cp">#endif</span>
+</code></pre></div></div>
 </section>
             </div><div class="search-results">
     <div class="has-results">
@@ -335,15 +384,11 @@ MathJax = {
   src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js">
 </script>
 
-                        <a href="/til/2023-12-03-YourMusicApp.html" class="navigation navigation-prev navigation-unique" aria-label="Previous page: 앱 Your Music 작성기">
+                        <a href="/til/2024-06-07-Moya.html" class="navigation navigation-prev navigation-unique" aria-label="Previous page: Moya">
                             <i class="fa fa-angle-left"></i>
                         </a>
                     
 
-                    
-                        <a href="/til/2024-04-09-swiftui-concepts-tutorials.html" class="navigation navigation-next navigation-unique" aria-label="Next page: SwiftUI Tutorials">
-                            <i class="fa fa-angle-right"></i>
-                        </a>
                     
                 </div>
             </div>
@@ -356,15 +401,6 @@ MathJax = {
         "title": "Introduction",
         "level": "1.1",
         "depth": 1,
-        
-        "next": {
-            "title": "SwiftUI Tutorials",
-            "level": "1.2",
-            "depth": 1,
-            "path": "_posts/2024-01-01-swiftui-concepts-tutorials.md",
-            "ref": "_posts/2024-01-01-swiftui-concepts-tutorials.md",
-            "articles": []
-        },
         
         "dir": "ltr"
     },    "config": {
@@ -440,13 +476,13 @@ MathJax = {
         "gitbook": "*"
     },
     "file": {
-        "path": "_posts/2024-01-04-CW-project.md",
-        "mtime": "2024-01-04 00:00:00 +0900",
+        "path": "_posts/2024-01-04-UIKit-toturial.md",
+        "mtime": "2024-06-09 00:00:00 +0900",
         "type": "markdown"
     },
     "gitbook": {
         "version": "3.2.3",
-        "time": "2024-06-08 02:03:33 +0900"
+        "time": "2024-06-09 13:51:54 +0900"
     },
     "basePath": "",
     "book": {

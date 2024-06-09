@@ -1,4 +1,58 @@
-<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="4.3.2">Jekyll</generator><link href="http://localhost:4000/feed.xml" rel="self" type="application/atom+xml" /><link href="http://localhost:4000/" rel="alternate" type="text/html" /><updated>2024-06-08T02:03:33+09:00</updated><id>http://localhost:4000/feed.xml</id><title type="html"> Jung Mirae</title><subtitle></subtitle><author><name>Mirae</name></author><entry><title type="html">Moya</title><link href="http://localhost:4000/til/2024-06-07-Moya.html" rel="alternate" type="text/html" title="Moya" /><published>2024-06-07T00:00:00+09:00</published><updated>2024-06-07T00:00:00+09:00</updated><id>http://localhost:4000/til/Moya</id><content type="html" xml:base="http://localhost:4000/til/2024-06-07-Moya.html"><![CDATA[<blockquote>
+<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="4.3.2">Jekyll</generator><link href="http://localhost:4000/feed.xml" rel="self" type="application/atom+xml" /><link href="http://localhost:4000/" rel="alternate" type="text/html" /><updated>2024-06-09T13:51:54+09:00</updated><id>http://localhost:4000/feed.xml</id><title type="html"> Jung Mirae</title><subtitle></subtitle><author><name>Mirae</name></author><entry><title type="html">UIKit 튜토리얼 따라가보기</title><link href="http://localhost:4000/til/2024-06-09-UIKit-toturial.html" rel="alternate" type="text/html" title="UIKit 튜토리얼 따라가보기" /><published>2024-06-09T00:00:00+09:00</published><updated>2024-06-09T00:00:00+09:00</updated><id>http://localhost:4000/til/UIKit-toturial</id><content type="html" xml:base="http://localhost:4000/til/2024-06-09-UIKit-toturial.html"><![CDATA[<h1 id="creating-a-list-view">Creating a list view</h1>
+<blockquote>
+  <p>Add a collention view controller</p>
+</blockquote>
+
+<p>뷰컨트롤러(이하 ‘뷰컨’)는 뷰와 데이터 모델 사이에 다리 역할을 한다.<br />
+  각 뷰컨은 하나의 뷰 계층을 관리하는 역할을 담당한다. 뷰의 컨텐츠를 업데이트하고, UI에 일어난 이벤트를 관리한다.<br />
+  Interface Builder를 사용하여 컬렉션 뷰컨트롤러를 생성해보자.<br />
+  컬렉션뷰는 그리드, 행, 열, 또는 테이블의 형태로 셀을 보여준다.</p>
+
+<ul>
+  <li>Collection view controller scene을 추가한다.</li>
+  <li>생성된 collection view의 cell 템플릿을 제거한다. (셀을 코드에서 정의할 것이기 때문.)</li>
+  <li>Attribute inspector에서 is initial view controller 체크박스를 체크하여 해당 씬을 스토리보드의 엔트리 포인트로 설정 (앱이 스토리보드를 로드할 때 가장 먼저 로드됨.)</li>
+</ul>
+
+<blockquote>
+  <p>Create a reminder model</p>
+</blockquote>
+
+<p>structure를 사용하여 모델을 생성한다. Swift 컴파일러가 자동으로 스트럭처에 멤버에 해당하는 이니셜라이저를 생성하기 때문에 따로 이니셜라이저를 생성할 필요가 없다.</p>
+
+<div class="language-swift highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="cp">#if DEBUG</span>
+<span class="kd">extension</span> <span class="kt">Reminder</span> <span class="p">{</span>
+<span class="p">}</span>
+<span class="cp">#endif</span>
+</code></pre></div></div>
+<ul>
+  <li>#if DEBUG 블락을 사용하여 디버그 모드에서만 컴파일되는 코드를 작성할 수 있다.</li>
+  <li>디버그 빌드에서 테스팅을 위한 코드를 작성하거나, 샘플 테스트 데이터를 작성할 때 사용할 수 있다.</li>
+  <li>나는 아래와 같이 내 앱 데이터에 해당하는 샘플 데이터를 생성했다.</li>
+</ul>
+
+<div class="language-swift highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="cp">#if DEBUG</span>
+<span class="kd">extension</span> <span class="kt">LottoWinPointModel</span> <span class="p">{</span>
+    <span class="kd">static</span> <span class="k">var</span> <span class="nv">sampleLottoWinPoints</span> <span class="o">=</span> <span class="p">[</span>
+        <span class="kt">LottoWinPointModel</span><span class="p">(</span><span class="nv">currentCount</span><span class="p">:</span> <span class="mi">10</span><span class="p">,</span> <span class="nv">data</span><span class="p">:</span> <span class="kt">LottoWinPointModelData</span><span class="o">.</span><span class="n">sampleLottoWinPointsData</span><span class="p">,</span> <span class="nv">matchCount</span><span class="p">:</span> <span class="mi">330</span><span class="p">,</span> <span class="nv">page</span><span class="p">:</span> <span class="mi">1</span><span class="p">,</span> <span class="nv">perPage</span><span class="p">:</span> <span class="mi">10</span><span class="p">,</span> <span class="nv">totalCount</span><span class="p">:</span> <span class="mi">330</span><span class="p">)</span>
+    <span class="p">]</span>
+<span class="p">}</span>
+<span class="kd">extension</span> <span class="kt">LottoWinPointModelData</span> <span class="p">{</span>
+    <span class="kd">static</span> <span class="k">var</span> <span class="nv">sampleLottoWinPointsData</span> <span class="o">=</span> <span class="p">[</span>
+        <span class="kt">LottoWinPointModelData</span><span class="p">(</span><span class="nv">firstPrizeWinsCount</span><span class="p">:</span> <span class="s">"5"</span><span class="p">,</span> <span class="nv">storeName</span><span class="p">:</span> <span class="s">"일등복권편의점"</span><span class="p">,</span> <span class="nv">orderNumber</span><span class="p">:</span> <span class="s">"1"</span><span class="p">,</span> <span class="nv">region</span><span class="p">:</span> <span class="s">"대구 달서구"</span><span class="p">),</span>
+        <span class="kt">LottoWinPointModelData</span><span class="p">(</span><span class="nv">firstPrizeWinsCount</span><span class="p">:</span> <span class="s">"3"</span><span class="p">,</span> <span class="nv">storeName</span><span class="p">:</span> <span class="s">"오케이상사"</span><span class="p">,</span> <span class="nv">orderNumber</span><span class="p">:</span> <span class="s">"2"</span><span class="p">,</span> <span class="nv">region</span><span class="p">:</span> <span class="s">"서울 서초구"</span><span class="p">),</span>
+        <span class="kt">LottoWinPointModelData</span><span class="p">(</span><span class="nv">firstPrizeWinsCount</span><span class="p">:</span> <span class="s">"2"</span><span class="p">,</span> <span class="nv">storeName</span><span class="p">:</span> <span class="s">"세진전자통신"</span><span class="p">,</span> <span class="nv">orderNumber</span><span class="p">:</span> <span class="s">"3"</span><span class="p">,</span> <span class="nv">region</span><span class="p">:</span> <span class="s">"대구 서구"</span><span class="p">),</span>
+        <span class="kt">LottoWinPointModelData</span><span class="p">(</span><span class="nv">firstPrizeWinsCount</span><span class="p">:</span> <span class="s">"2"</span><span class="p">,</span> <span class="nv">storeName</span><span class="p">:</span> <span class="s">"라이프마트"</span><span class="p">,</span> <span class="nv">orderNumber</span><span class="p">:</span> <span class="s">"4"</span><span class="p">,</span> <span class="nv">region</span><span class="p">:</span> <span class="s">"인천 중구"</span><span class="p">),</span>
+        <span class="kt">LottoWinPointModelData</span><span class="p">(</span><span class="nv">firstPrizeWinsCount</span><span class="p">:</span> <span class="s">"2"</span><span class="p">,</span> <span class="nv">storeName</span><span class="p">:</span> <span class="s">"스파"</span><span class="p">,</span> <span class="nv">orderNumber</span><span class="p">:</span> <span class="s">"5"</span><span class="p">,</span> <span class="nv">region</span><span class="p">:</span> <span class="s">"서울 노원구"</span><span class="p">),</span>
+        <span class="kt">LottoWinPointModelData</span><span class="p">(</span><span class="nv">firstPrizeWinsCount</span><span class="p">:</span> <span class="s">"2"</span><span class="p">,</span> <span class="nv">storeName</span><span class="p">:</span> <span class="s">"노다지복권방"</span><span class="p">,</span> <span class="nv">orderNumber</span><span class="p">:</span> <span class="s">"6"</span><span class="p">,</span> <span class="nv">region</span><span class="p">:</span> <span class="s">"인천 미추홀구"</span><span class="p">),</span>
+        <span class="kt">LottoWinPointModelData</span><span class="p">(</span><span class="nv">firstPrizeWinsCount</span><span class="p">:</span> <span class="s">"2"</span><span class="p">,</span> <span class="nv">storeName</span><span class="p">:</span> <span class="s">"흥부네박터졌네"</span><span class="p">,</span> <span class="nv">orderNumber</span><span class="p">:</span> <span class="s">"7"</span><span class="p">,</span> <span class="nv">region</span><span class="p">:</span> <span class="s">"인천 계양구"</span><span class="p">),</span>
+        <span class="kt">LottoWinPointModelData</span><span class="p">(</span><span class="nv">firstPrizeWinsCount</span><span class="p">:</span> <span class="s">"2"</span><span class="p">,</span> <span class="nv">storeName</span><span class="p">:</span> <span class="s">"오천억복권방"</span><span class="p">,</span> <span class="nv">orderNumber</span><span class="p">:</span> <span class="s">"8"</span><span class="p">,</span> <span class="nv">region</span><span class="p">:</span> <span class="s">"광주 서구"</span><span class="p">),</span>
+        <span class="kt">LottoWinPointModelData</span><span class="p">(</span><span class="nv">firstPrizeWinsCount</span><span class="p">:</span> <span class="s">"2"</span><span class="p">,</span> <span class="nv">storeName</span><span class="p">:</span> <span class="s">"해피+24시편의점"</span><span class="p">,</span> <span class="nv">orderNumber</span><span class="p">:</span> <span class="s">"9"</span><span class="p">,</span> <span class="nv">region</span><span class="p">:</span> <span class="s">"광주 북구"</span><span class="p">),</span>
+        <span class="kt">LottoWinPointModelData</span><span class="p">(</span><span class="nv">firstPrizeWinsCount</span><span class="p">:</span> <span class="s">"2"</span><span class="p">,</span> <span class="nv">storeName</span><span class="p">:</span> <span class="s">"토큰박스"</span><span class="p">,</span> <span class="nv">orderNumber</span><span class="p">:</span> <span class="s">"10"</span><span class="p">,</span> <span class="nv">region</span><span class="p">:</span> <span class="s">"경기 남양주시"</span><span class="p">),</span>
+    <span class="p">]</span>
+<span class="p">}</span>
+<span class="cp">#endif</span>
+</code></pre></div></div>]]></content><author><name>Mirae</name></author><category term="TIL" /><summary type="html"><![CDATA[Creating a list view Add a collention view controller 뷰컨트롤러(이하 ‘뷰컨’)는 뷰와 데이터 모델 사이에 다리 역할을 한다. 각 뷰컨은 하나의 뷰 계층을 관리하는 역할을 담당한다. 뷰의 컨텐츠를 업데이트하고, UI에 일어난 이벤트를 관리한다. Interface Builder를 사용하여 컬렉션 뷰컨트롤러를 생성해보자. 컬렉션뷰는 그리드, 행, 열, 또는 테이블의 형태로 셀을 보여준다. Collection view controller scene을 추가한다. 생성된 collection view의 cell 템플릿을 제거한다. (셀을 코드에서 정의할 것이기 때문.) Attribute inspector에서 is initial view controller 체크박스를 체크하여 해당 씬을 스토리보드의 엔트리 포인트로 설정 (앱이 스토리보드를 로드할 때 가장 먼저 로드됨.)]]></summary></entry><entry><title type="html">Moya</title><link href="http://localhost:4000/til/2024-06-07-Moya.html" rel="alternate" type="text/html" title="Moya" /><published>2024-06-07T00:00:00+09:00</published><updated>2024-06-07T00:00:00+09:00</updated><id>http://localhost:4000/til/Moya</id><content type="html" xml:base="http://localhost:4000/til/2024-06-07-Moya.html"><![CDATA[<blockquote>
   <p>Moya 문서 읽기</p>
 </blockquote>
 
@@ -117,9 +171,7 @@ recipe는 Recipe를 리턴하지 않고, Recipe 타입의 커스텀 바인딩을
 <span class="p">}</span>
 </code></pre></div>    </div>
   </li>
-</ul>]]></content><author><name>Mirae</name></author><category term="TIL" /><summary type="html"><![CDATA[색 정의하기 Define colors in the asset catalog]]></summary></entry><entry><title type="html">CW Project</title><link href="http://localhost:4000/til/2024-01-04-CW-project.html" rel="alternate" type="text/html" title="CW Project" /><published>2024-01-04T00:00:00+09:00</published><updated>2024-01-04T00:00:00+09:00</updated><id>http://localhost:4000/til/CW-project</id><content type="html" xml:base="http://localhost:4000/til/2024-01-04-CW-project.html"><![CDATA[<ul>
-  <li>EKEventStore 객체를 사용하여 달력 이벤트와 리마인더…</li>
-</ul>]]></content><author><name>Mirae</name></author><category term="TIL" /><summary type="html"><![CDATA[EKEventStore 객체를 사용하여 달력 이벤트와 리마인더…]]></summary></entry><entry><title type="html">앱 Your Music 작성기</title><link href="http://localhost:4000/til/2023-12-03-YourMusicApp.html" rel="alternate" type="text/html" title="앱 Your Music 작성기" /><published>2023-12-03T00:00:00+09:00</published><updated>2023-12-03T00:00:00+09:00</updated><id>http://localhost:4000/til/YourMusicApp</id><content type="html" xml:base="http://localhost:4000/til/2023-12-03-YourMusicApp.html"><![CDATA[<blockquote>
+</ul>]]></content><author><name>Mirae</name></author><category term="TIL" /><summary type="html"><![CDATA[색 정의하기 Define colors in the asset catalog]]></summary></entry><entry><title type="html">앱 Your Music 작성기</title><link href="http://localhost:4000/til/2023-12-03-YourMusicApp.html" rel="alternate" type="text/html" title="앱 Your Music 작성기" /><published>2023-12-03T00:00:00+09:00</published><updated>2023-12-03T00:00:00+09:00</updated><id>http://localhost:4000/til/YourMusicApp</id><content type="html" xml:base="http://localhost:4000/til/2023-12-03-YourMusicApp.html"><![CDATA[<blockquote>
   <p>첫번째 목표… Spotify API 호출하기</p>
 </blockquote>
 
