@@ -55,3 +55,53 @@ extension LottoWinPointModelData {
 }
 #endif
 ```
+ 
+> Configure the collection as a list
+  
+  Compositional layout을 사용하여 컬렉션 뷰의 appearance를 설정하기.  
+  컴포지셔널 레이아웃은 sections, groups, items와 같은 컴포넌트를 조합하여 뷰를 생성함.  
+  아이템이 가장 작은 단위, 아이템의 그룹이 group, 가장 큰 단위가 section.  
+
+- 스토리보드의 Collection view controller를 backing code에 연결하기.
+- UICollectionViewController를 상속하는 뷰컨 클래스를 생성.
+- 스토리보드의 Custom Class의 클래스를 해당 파일로 변경해주어 클래스 인스턴스에 엑세스할 수 있도록 함. 
+
+```swift
+private func listLayout() -> UICollectionViewCompositionalLayout {
+    var listConfiguration = UICollectionLayoutListConfiguration(appearance: .grouped)
+    listConfiguration.showsSeparators = false
+    listConfiguration.backgroundColor = .clear
+    return UICollectionViewCompositionalLayout.list(using: listConfiguration)
+}
+```
+  
+- UICollectionLayoutListConfiguration은 리스트의 섹션 부분을 생성함.
+- 생성한 list configuration을 사용하여 UICollectionViewCompositionalLayout을 리턴함.
+  
+```swift
+override func viewDidLoad() {
+    super.viewDidLoad()
+    
+    let listLayout = listLayout()
+    collectionView.collectionViewLayout = listLayout
+}
+```
+  
+- 뷰컨이 자신의 뷰 계층을 메모리에 로드한 후, 시스템이 ViewDidLoad() 함수를 호출함.
+- viewDidLoad() 함수 안에서 리스트 레이아웃을 생성한 뒤 collectionViewLayout에 할당함.  
+
+
+> Configure the data source
+  
+```swift
+let cellResistration = UICollectionView.CellRegistration {
+    (cell: UICollectionViewListCell, indexPath: IndexPath, itemIdentifier: String) in
+    let lottoWinPoint = LottoWinPointModelData.sampleLottoWinPointsData[indexPath.item]
+    var contentConfiguration = cell.defaultContentConfiguration()
+    contentConfiguration.text = lottoWinPoint.storeName
+    cell.contentConfiguration = contentConfiguration
+}
+```
+- CellRegistration을 사용하여 셀의 스타일과 내용(데이터)를 설정한다. 
+- defaultContentConfiguration()은 시스템 디폴트 스타일의 셀을 리턴함. 
+- contentConfigutation.text는 primary 스타일의 텍스트를 셀에 나타냄.
