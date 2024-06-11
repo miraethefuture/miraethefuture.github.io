@@ -258,7 +258,7 @@
                             </a>
                             
                                 
-                                    <ul><li><a href="#creating-a-list-view">Creating a list view</a></li></ul>
+                                    <ul><li><a href="#creating-a-list-view">Creating a list view</a></li><li><a href="#displaying-cell-info">Displaying cell info</a></li></ul>
 
                                 
                             
@@ -356,6 +356,136 @@
 <span class="p">}</span>
 <span class="cp">#endif</span>
 </code></pre></div></div>
+
+<blockquote>
+  <p>Configure the collection as a list</p>
+</blockquote>
+
+<p>Compositional layout을 사용하여 컬렉션 뷰의 appearance를 설정하기.<br />
+  컴포지셔널 레이아웃은 sections, groups, items와 같은 컴포넌트를 조합하여 뷰를 생성함.<br />
+  아이템이 가장 작은 단위, 아이템의 그룹이 group, 가장 큰 단위가 section.</p>
+
+<ul>
+  <li>스토리보드의 Collection view controller를 backing code에 연결하기.</li>
+  <li>UICollectionViewController를 상속하는 뷰컨 클래스를 생성.</li>
+  <li>스토리보드의 Custom Class의 클래스를 해당 파일로 변경해주어 클래스 인스턴스에 엑세스할 수 있도록 함.</li>
+</ul>
+
+<div class="language-swift highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">private</span> <span class="kd">func</span> <span class="nf">listLayout</span><span class="p">()</span> <span class="o">-&gt;</span> <span class="kt">UICollectionViewCompositionalLayout</span> <span class="p">{</span>
+    <span class="k">var</span> <span class="nv">listConfiguration</span> <span class="o">=</span> <span class="kt">UICollectionLayoutListConfiguration</span><span class="p">(</span><span class="nv">appearance</span><span class="p">:</span> <span class="o">.</span><span class="n">grouped</span><span class="p">)</span>
+    <span class="n">listConfiguration</span><span class="o">.</span><span class="n">showsSeparators</span> <span class="o">=</span> <span class="kc">false</span>
+    <span class="n">listConfiguration</span><span class="o">.</span><span class="n">backgroundColor</span> <span class="o">=</span> <span class="o">.</span><span class="n">clear</span>
+    <span class="k">return</span> <span class="kt">UICollectionViewCompositionalLayout</span><span class="o">.</span><span class="nf">list</span><span class="p">(</span><span class="nv">using</span><span class="p">:</span> <span class="n">listConfiguration</span><span class="p">)</span>
+<span class="p">}</span>
+</code></pre></div></div>
+
+<ul>
+  <li>UICollectionLayoutListConfiguration은 리스트의 섹션 부분을 생성함.</li>
+  <li>생성한 list configuration을 사용하여 UICollectionViewCompositionalLayout을 리턴함.</li>
+</ul>
+
+<div class="language-swift highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">override</span> <span class="kd">func</span> <span class="nf">viewDidLoad</span><span class="p">()</span> <span class="p">{</span>
+    <span class="k">super</span><span class="o">.</span><span class="nf">viewDidLoad</span><span class="p">()</span>
+    
+    <span class="k">let</span> <span class="nv">listLayout</span> <span class="o">=</span> <span class="nf">listLayout</span><span class="p">()</span>
+    <span class="n">collectionView</span><span class="o">.</span><span class="n">collectionViewLayout</span> <span class="o">=</span> <span class="n">listLayout</span>
+<span class="p">}</span>
+</code></pre></div></div>
+
+<ul>
+  <li>뷰컨이 자신의 뷰 계층을 메모리에 로드한 후, 시스템이 ViewDidLoad() 함수를 호출함.</li>
+  <li>viewDidLoad() 함수 안에서 리스트 레이아웃을 생성한 뒤 collectionViewLayout에 할당함.</li>
+</ul>
+
+<blockquote>
+  <p>Configure the data source</p>
+</blockquote>
+
+<div class="language-swift highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">let</span> <span class="nv">cellResistration</span> <span class="o">=</span> <span class="kt">UICollectionView</span><span class="o">.</span><span class="kt">CellRegistration</span> <span class="p">{</span>
+    <span class="p">(</span><span class="nv">cell</span><span class="p">:</span> <span class="kt">UICollectionViewListCell</span><span class="p">,</span> <span class="nv">indexPath</span><span class="p">:</span> <span class="kt">IndexPath</span><span class="p">,</span> <span class="nv">itemIdentifier</span><span class="p">:</span> <span class="kt">String</span><span class="p">)</span> <span class="k">in</span>
+    <span class="k">let</span> <span class="nv">lottoWinPoint</span> <span class="o">=</span> <span class="kt">LottoWinPointModelData</span><span class="o">.</span><span class="n">sampleLottoWinPointsData</span><span class="p">[</span><span class="n">indexPath</span><span class="o">.</span><span class="n">item</span><span class="p">]</span>
+    <span class="k">var</span> <span class="nv">contentConfiguration</span> <span class="o">=</span> <span class="n">cell</span><span class="o">.</span><span class="nf">defaultContentConfiguration</span><span class="p">()</span>
+    <span class="n">contentConfiguration</span><span class="o">.</span><span class="n">text</span> <span class="o">=</span> <span class="n">lottoWinPoint</span><span class="o">.</span><span class="n">storeName</span>
+    <span class="n">cell</span><span class="o">.</span><span class="n">contentConfiguration</span> <span class="o">=</span> <span class="n">contentConfiguration</span>
+<span class="p">}</span>
+</code></pre></div></div>
+<ul>
+  <li>CellRegistration을 사용하여 셀의 스타일과 내용(데이터)를 설정한다.</li>
+  <li>defaultContentConfiguration()은 시스템 디폴트 스타일의 셀을 리턴함.</li>
+  <li>contentConfigutation.text는 primary 스타일의 텍스트를 셀에 나타냄.</li>
+</ul>
+
+<div class="language-swift highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">typealias</span> <span class="kt">DataSource</span> <span class="o">=</span> <span class="kt">UICollectionViewDiffableDataSource</span><span class="o">&lt;</span><span class="kt">Int</span><span class="p">,</span> <span class="kt">String</span><span class="o">&gt;</span>
+    
+<span class="k">var</span> <span class="nv">dataSource</span><span class="p">:</span> <span class="kt">DataSource</span><span class="o">!</span>
+
+<span class="n">dataSource</span> <span class="o">=</span> <span class="kt">DataSource</span><span class="p">(</span><span class="nv">collectionView</span><span class="p">:</span> <span class="n">collectionView</span><span class="p">,</span> <span class="nv">cellProvider</span><span class="p">:</span> <span class="p">{</span> <span class="p">(</span><span class="nv">collectionView</span><span class="p">:</span> <span class="kt">UICollectionView</span><span class="p">,</span> <span class="nv">indexPath</span><span class="p">:</span> <span class="kt">IndexPath</span><span class="p">,</span> <span class="nv">itemIdentifier</span><span class="p">:</span> <span class="kt">String</span><span class="p">)</span> <span class="k">in</span>
+    <span class="k">return</span> <span class="n">collectionView</span><span class="o">.</span><span class="nf">dequeueConfiguredReusableCell</span><span class="p">(</span><span class="nv">using</span><span class="p">:</span> <span class="n">cellResistration</span><span class="p">,</span> <span class="nv">for</span><span class="p">:</span> <span class="n">indexPath</span><span class="p">,</span> <span class="nv">item</span><span class="p">:</span> <span class="n">itemIdentifier</span><span class="p">)</span>
+<span class="p">})</span>
+</code></pre></div></div>
+
+<ul>
+  <li>typealias를 사용하여 길게 표현된 타입을 짧게 줄일 수 있음.</li>
+  <li>dataSource 변수는 implicitly unwrapped optional 인데, (!를 사용하여 강제로 언래핑) 이것은 위에서처럼 값이 언제나 있을때만 사용해야 함.</li>
+  <li>새로운 셀을 계속해서 생성할수도 있지만 앱 퍼포먼스를 위하여 리유저블 셀을 사용함.</li>
+</ul>
+
+<blockquote>
+  <p>Apply a snapshot</p>
+</blockquote>
+
+<ul>
+  <li>Diffable 데이터 소스는 스냅샷을 사용하여 데이터의 상태를 관리함.</li>
+  <li>스냅샵은 특정 시간 지점의 데이터 상태를 보여줌.</li>
+  <li>스냅샷을 사용하여 데이터를 보여주기 위해서, 스냅샷을 생성, 보여주길 원하는 데이터의 상태로 스냅샷을 채우고, 스냅샷을 UI에 적용함.</li>
+</ul>
+
+<div class="language-swift highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">typealias</span> <span class="kt">SnapShot</span> <span class="o">=</span> <span class="kt">NSDiffableDataSourceSnapshot</span><span class="o">&lt;</span><span class="kt">Int</span><span class="p">,</span> <span class="kt">String</span><span class="o">&gt;</span>
+
+<span class="k">var</span> <span class="nv">snapshot</span> <span class="o">=</span> <span class="kt">SnapShot</span><span class="p">()</span> <span class="c1">// 스냅샷 생성</span>
+<span class="n">snapshot</span><span class="o">.</span><span class="nf">appendSections</span><span class="p">([</span><span class="mi">0</span><span class="p">])</span> <span class="c1">// 하나의 섹션 추가</span>
+<span class="n">snapshot</span><span class="o">.</span><span class="nf">appendItems</span><span class="p">(</span><span class="kt">LottoWinPointModelData</span><span class="o">.</span><span class="n">sampleLottoWinPointsData</span><span class="o">.</span><span class="n">map</span> <span class="p">{</span> <span class="nv">$0</span><span class="o">.</span><span class="n">storeName</span> <span class="p">})</span> <span class="c1">// 샘플데이터 중 storeName으로 배열을 생성하여 아이템으로 추가</span>
+<span class="n">dataSource</span><span class="o">.</span><span class="nf">apply</span><span class="p">(</span><span class="n">snapshot</span><span class="p">)</span> <span class="c1">// 데이터 소스에 적용하여 데이터의 변경사항이 UI에 적용되도록 함.</span>
+<span class="n">collectionView</span><span class="o">.</span><span class="n">dataSource</span> <span class="o">=</span> <span class="n">dataSource</span> <span class="c1">// 컬렉션 뷰에 데이터소스 적용.</span>
+</code></pre></div></div>
+
+<h1 id="displaying-cell-info">Displaying cell info</h1>
+
+<blockquote>
+  <p>Organize view controllers</p>
+</blockquote>
+
+<p>UIKit 앱에서 뷰컨은 여러가지 역할을 담당한다. 데이터 소스와 관련된 behavior를 다른 파일로 분리시켜 뷰컨의 역할을 정리해보자.</p>
+
+<div class="language-swift highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">import</span> <span class="kt">UIKit</span>
+
+<span class="kd">extension</span> <span class="kt">WinPointsListViewController</span> <span class="p">{</span>
+    <span class="kd">typealias</span> <span class="kt">DataSource</span> <span class="o">=</span> <span class="kt">UICollectionViewDiffableDataSource</span><span class="o">&lt;</span><span class="kt">Int</span><span class="p">,</span> <span class="kt">String</span><span class="o">&gt;</span>
+    <span class="kd">typealias</span> <span class="kt">SnapShot</span> <span class="o">=</span> <span class="kt">NSDiffableDataSourceSnapshot</span><span class="o">&lt;</span><span class="kt">Int</span><span class="p">,</span> <span class="kt">String</span><span class="o">&gt;</span>
+    
+    <span class="kd">func</span> <span class="nf">cellRegistrationHandler</span><span class="p">(</span><span class="nv">cell</span><span class="p">:</span> <span class="kt">UICollectionViewListCell</span><span class="p">,</span> <span class="nv">indexPath</span><span class="p">:</span> <span class="kt">IndexPath</span><span class="p">,</span> <span class="nv">id</span><span class="p">:</span> <span class="kt">String</span><span class="p">)</span> <span class="p">{</span>
+        <span class="k">let</span> <span class="nv">lottoWinPoints</span> <span class="o">=</span> <span class="kt">LottoWinPointModelData</span><span class="o">.</span><span class="n">sampleLottoWinPointsData</span><span class="p">[</span><span class="n">indexPath</span><span class="o">.</span><span class="n">item</span><span class="p">]</span>
+        <span class="k">var</span> <span class="nv">contentConfiguration</span> <span class="o">=</span> <span class="n">cell</span><span class="o">.</span><span class="nf">defaultContentConfiguration</span><span class="p">()</span>
+        <span class="n">contentConfiguration</span><span class="o">.</span><span class="n">text</span> <span class="o">=</span> <span class="n">lottoWinPoints</span><span class="o">.</span><span class="n">storeName</span>
+        <span class="n">contentConfiguration</span><span class="o">.</span><span class="n">secondaryText</span> <span class="o">=</span> <span class="s">"1등 당첨 횟수: </span><span class="se">\(</span><span class="n">lottoWinPoints</span><span class="o">.</span><span class="n">firstPrizeWinsCount</span><span class="se">)</span><span class="s">"</span>
+        <span class="n">contentConfiguration</span><span class="o">.</span><span class="n">secondaryTextProperties</span><span class="o">.</span><span class="n">font</span> <span class="o">=</span> <span class="kt">UIFont</span><span class="o">.</span><span class="nf">preferredFont</span><span class="p">(</span><span class="nv">forTextStyle</span><span class="p">:</span> <span class="o">.</span><span class="n">caption1</span><span class="p">)</span>
+        <span class="n">cell</span><span class="o">.</span><span class="n">contentConfiguration</span> <span class="o">=</span> <span class="n">contentConfiguration</span>
+    <span class="p">}</span>
+<span class="p">}</span>
+</code></pre></div></div>
+
+<ul>
+  <li>WinPointsListViewController+DataSource라는 이름의 파일을 생성.</li>
+  <li>cellRegistrationHandler 함수를 작성.</li>
+  <li>WinPointsListViewController에 있는 cell registration 부분의 trailing closure를 아래 코드로 대체.</li>
+</ul>
+
+<div class="language-swift highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">let</span> <span class="nv">cellResistration</span> <span class="o">=</span> <span class="kt">UICollectionView</span><span class="o">.</span><span class="kt">CellRegistration</span><span class="p">(</span><span class="nv">handler</span><span class="p">:</span> <span class="n">cellRegistrationHandler</span><span class="p">)</span>
+</code></pre></div></div>
+
+<ul>
+  <li>뷰컨은 많은 역할을 담당하므로 그 코드가 길어질 수 있기 때문에, 위와 같이 extension을 사용하여 역할 별로 구분된 파일을 생성하여 에러를 찾기 쉽고 새 기능을 쉽게 추가할 수 있도록 해야함.</li>
+</ul>
 </section>
             </div><div class="search-results">
     <div class="has-results">
@@ -482,7 +612,7 @@ MathJax = {
     },
     "gitbook": {
         "version": "3.2.3",
-        "time": "2024-06-09 13:51:54 +0900"
+        "time": "2024-06-11 23:52:51 +0900"
     },
     "basePath": "",
     "book": {

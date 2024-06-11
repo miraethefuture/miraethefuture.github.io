@@ -105,3 +105,67 @@ let cellResistration = UICollectionView.CellRegistration {
 - CellRegistration을 사용하여 셀의 스타일과 내용(데이터)를 설정한다. 
 - defaultContentConfiguration()은 시스템 디폴트 스타일의 셀을 리턴함. 
 - contentConfigutation.text는 primary 스타일의 텍스트를 셀에 나타냄.
+
+```swift
+typealias DataSource = UICollectionViewDiffableDataSource<Int, String>
+    
+var dataSource: DataSource!
+
+dataSource = DataSource(collectionView: collectionView, cellProvider: { (collectionView: UICollectionView, indexPath: IndexPath, itemIdentifier: String) in
+    return collectionView.dequeueConfiguredReusableCell(using: cellResistration, for: indexPath, item: itemIdentifier)
+})
+```
+  
+- typealias를 사용하여 길게 표현된 타입을 짧게 줄일 수 있음. 
+- dataSource 변수는 implicitly unwrapped optional 인데, (!를 사용하여 강제로 언래핑) 이것은 위에서처럼 값이 언제나 있을때만 사용해야 함. 
+- 새로운 셀을 계속해서 생성할수도 있지만 앱 퍼포먼스를 위하여 리유저블 셀을 사용함. 
+  
+> Apply a snapshot
+  
+- Diffable 데이터 소스는 스냅샷을 사용하여 데이터의 상태를 관리함.  
+- 스냅샵은 특정 시간 지점의 데이터 상태를 보여줌.  
+- 스냅샷을 사용하여 데이터를 보여주기 위해서, 스냅샷을 생성, 보여주길 원하는 데이터의 상태로 스냅샷을 채우고, 스냅샷을 UI에 적용함.
+    
+```swift
+typealias SnapShot = NSDiffableDataSourceSnapshot<Int, String>
+
+var snapshot = SnapShot() // 스냅샷 생성
+snapshot.appendSections([0]) // 하나의 섹션 추가
+snapshot.appendItems(LottoWinPointModelData.sampleLottoWinPointsData.map { $0.storeName }) // 샘플데이터 중 storeName으로 배열을 생성하여 아이템으로 추가
+dataSource.apply(snapshot) // 데이터 소스에 적용하여 데이터의 변경사항이 UI에 적용되도록 함.
+collectionView.dataSource = dataSource // 컬렉션 뷰에 데이터소스 적용.
+```
+
+# Displaying cell info 
+
+> Organize view controllers
+  
+UIKit 앱에서 뷰컨은 여러가지 역할을 담당한다. 데이터 소스와 관련된 behavior를 다른 파일로 분리시켜 뷰컨의 역할을 정리해보자. 
+
+```swift
+import UIKit
+
+extension WinPointsListViewController {
+    typealias DataSource = UICollectionViewDiffableDataSource<Int, String>
+    typealias SnapShot = NSDiffableDataSourceSnapshot<Int, String>
+    
+    func cellRegistrationHandler(cell: UICollectionViewListCell, indexPath: IndexPath, id: String) {
+        let lottoWinPoints = LottoWinPointModelData.sampleLottoWinPointsData[indexPath.item]
+        var contentConfiguration = cell.defaultContentConfiguration()
+        contentConfiguration.text = lottoWinPoints.storeName
+        contentConfiguration.secondaryText = "1등 당첨 횟수: \(lottoWinPoints.firstPrizeWinsCount)"
+        contentConfiguration.secondaryTextProperties.font = UIFont.preferredFont(forTextStyle: .caption1)
+        cell.contentConfiguration = contentConfiguration
+    }
+}
+```
+  
+- WinPointsListViewController+DataSource라는 이름의 파일을 생성. 
+- cellRegistrationHandler 함수를 작성.
+- WinPointsListViewController에 있는 cell registration 부분의 trailing closure를 아래 코드로 대체.
+  
+```swift
+let cellResistration = UICollectionView.CellRegistration(handler: cellRegistrationHandler)
+```
+  
+- 뷰컨은 많은 역할을 담당하므로 그 코드가 길어질 수 있기 때문에, 위와 같이 extension을 사용하여 역할 별로 구분된 파일을 생성하여 에러를 찾기 쉽고 새 기능을 쉽게 추가할 수 있도록 해야함.
