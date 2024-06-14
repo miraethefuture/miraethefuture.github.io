@@ -169,3 +169,8 @@ let cellResistration = UICollectionView.CellRegistration(handler: cellRegistrati
 ```
   
 - 뷰컨은 많은 역할을 담당하므로 그 코드가 길어질 수 있기 때문에, 위와 같이 extension을 사용하여 역할 별로 구분된 파일을 생성하여 에러를 찾기 쉽고 새 기능을 쉽게 추가할 수 있도록 해야함.
+  
+  
+> Display the reminder complete status
+
+- UIButton 객체가 .normal 상태일 때와 highlighted 상태일 때 다른 이미지를 보여주도록 할 수 있음.
