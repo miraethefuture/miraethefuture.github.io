@@ -171,6 +171,50 @@ let cellResistration = UICollectionView.CellRegistration(handler: cellRegistrati
 - 뷰컨은 많은 역할을 담당하므로 그 코드가 길어질 수 있기 때문에, 위와 같이 extension을 사용하여 역할 별로 구분된 파일을 생성하여 에러를 찾기 쉽고 새 기능을 쉽게 추가할 수 있도록 해야함.
   
   
-> Display the reminder complete status
+# Making reminders identifiable 
+  
+Diffable data source는 컬렉션 뷰의 아이템들이 가지는 identifier를 담은 리스트를 가지고 있다. 
 
-- UIButton 객체가 .normal 상태일 때와 highlighted 상태일 때 다른 이미지를 보여주도록 할 수 있음.
+```swift
+struct LottoWinPointModelData: Codable, LottoWinPoint, Identifiable {
+    var id: String = UUID().uuidString
+}
+
+LottoWinPointModelData.ID
+```
+  
+- Identifiable 프로토콜을 사용하려면 id 속성이 필수로 필요.
+- structure이름.ID는 Identifiable 프로토콜의 연관속성으로 위 코드에서는 String의 type alias가 됨.
+
+  
+> Create functions for accessing the model
+
+```swift
+// extension Array where Element == LottoWinPointModelData
+extension [LottoWinPointModelData] {
+    func indexOfWinPoint(widhId id: LottoWinPointModelData.ID) -> Self.Index {
+        guard let index = firstIndex(where: { $0.id == id }) else {
+            fatalError()
+        }
+        return index
+    }
+}
+
+func lottoWinPoint(withId id: LottoWinPointModelData.ID) -> LottoWinPointModelData {
+    let index = lottoWinPoints.indexOfWinPoint(widhId: id)
+    return lottoWinPoints[index]
+}
+
+func updateLottoWinPoint(_ lottoWinPoint: LottoWinPointModelData) {
+    let index = lottoWinPoints.indexOfWinPoint(widhId: lottoWinPoint.id)
+    lottoWinPoints[index] = lottoWinPoint
+}
+```
+- 커스텀 타입 'LottoWinPointModelData' 타입 배열의 extension 생성.
+- 배열의 요소가 LottoWinPointModelData 타입일 경우 이 익스텐션 안에 작성된 indexOfWinPoint(withId:) 함수를 사용하여 해당 아이디를 가진 요소의 index를 얻을 수 있게 됨.  
+- lottoWinPoint(withId:), updateLottoWinPoint() 함수를 사용하여 각 lottoWinPoint의 id 값으로 배열안의 인덱스 값을 얻을 수 있음. 이 방식으로 lotto win point 데이터를 가져오거나 업데이트 하도록 함. 
+  
+  
+> Create a custom button action 
+  
+
