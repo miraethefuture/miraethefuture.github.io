@@ -215,6 +215,31 @@ func updateLottoWinPoint(_ lottoWinPoint: LottoWinPointModelData) {
 - lottoWinPoint(withId:), updateLottoWinPoint() 함수를 사용하여 각 lottoWinPoint의 id 값으로 배열안의 인덱스 값을 얻을 수 있음. 이 방식으로 lotto win point 데이터를 가져오거나 업데이트 하도록 함. 
   
   
-> Create a custom button action 
+> Wire a target-action pair 
   
+Target-action은 디자인 패턴인데, 이벤트가 발생하면 한 객체가 이벤트를 실행하기 위해 다른 객체에 메세지를 보낸다. 
+
+```swift
+import UIKit
+
+class LottoWinPointLikedButton: UIButton {
+    var id: LottoWinPoint.ID?
+}
+```
+  
+- 커스텀 UIButton 클래스를 생성한 뒤, id 속성을 추가한다.
+  
+```swift
+import Foundation
+
+extension WinPointsListViewController {
+    @objc func didPressLikedButton(_ sender: LottoWinPointLikedButton) {
+        guard let id = sender.id else { return }
+        likeLottoWinPoint(withId: id)
+    }
+}
+```
+  
+- WinPointsListViewController+Actions 파일을 생성한 뒤, 뷰컨의 액션 관련 코드를 분리해줍니다.  
+- didPressLikedButton() 함수를 작성하여 해당 버튼의 id를 가져와서 likeLottoWinPoint()를 실행.
 
