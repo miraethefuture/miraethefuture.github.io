@@ -242,4 +242,99 @@ extension WinPointsListViewController {
   
 - WinPointsListViewController+Actions 파일을 생성한 뒤, 뷰컨의 액션 관련 코드를 분리해줍니다.  
 - didPressLikedButton() 함수를 작성하여 해당 버튼의 id를 가져와서 likeLottoWinPoint()를 실행.
+  
+> Breakpoint 사용해보기  
+  
+- liked button을 탭 했을 때 아무일도 일어나지 않아서 이 action이 동작하는지 확인이 필요함. 
+- 버튼이 탭 되었을 때 업데이트하는 함수 call 부분에 breakpoint를 추가하고 다시 동작시킴.
+- break point에 멈추기 때문에 함수가 호출된다는 것은 알 수 있음.
+- 함수 호출이 문제가 아니라, 변경된 사항을 보여주기 위해 새 스냅샷을 생성해야 함.
+  
+> Update the snapshot
+  
+```swift
+func updateSnapshot(reloading ids: [LottoWinPoint.ID] = []) {
+    var snapshot = SnapShot()
+    snapshot.appendSections([0])
+    snapshot.appendItems(lottoWinPoints.map { $0.id })
+    if !ids.isEmpty {
+        snapshot.reloadItems(ids)
+    }
+    dataSource.apply(snapshot)
+}
+```
+  
+- 파라미터에 빈 배열을 기본값으로 줌으로써 viewDidLoad() 함수에서 ids 값 없이 호출할 수 있도록 함. viewDidLoad()에서는 ids 값없이 호출하여 스냅샷이 리로드되지 않고, updateSnapshot(reloading: [id]) 와 같이 id 값이 파라미터로 들어와 호출되면 스냅샷이 리로드 되도록 함.  
+  
+> Make the action accessible
+  
+```swift 
+var lottoWinPointLikedValue: String {
+    NSLocalizedString("Liked", comment: "Lotto win point liked value")
+}
+
+var lottoWinPointNotLikedValue: String {
+    NSLocalizedString("Not Liked", comment: "Lotto win point not liked value")
+}
+
+func cellRegistrationHandler(cell: UICollectionViewListCell, indexPath: IndexPath, id: LottoWinPoint.ID) {
+    let lottoWinPoint = lottoWinPoint(withId: id)
+    
+    cell.accessibilityCustomActions = [likedButtonAccessibilityAction(for: lottoWinPoint)]
+    cell.accessibilityValue = lottoWinPoint.isLiked ? lottoWinPointLikedValue : lottoWinPointNotLikedValue
+}
+
+private func likedButtonAccessibilityAction(for lottoWinPoint: LottoWinPoint) -> UIAccessibilityCustomAction {
+    let name = NSLocalizedString("Toggle completion", comment: "Lotto win point accessibility label")
+    let action = UIAccessibilityCustomAction(name: name) { [weak self] action in
+        self?.likeLottoWinPoint(withId: lottoWinPoint.id)
+        return true
+    }
+    return action
+}
+```
+  
+- 위와 같이 Accessibility를 추가하고 Accessibility inspector를 사용하여 시뮬레이터로 테스트할 수 있음.  
+  
+# Displaying reminder details  
+  
+```swift 
+class LottoWinPointViewController: UICollectionViewController {
+    var lottoWinPoint: LottoWinPoint
+    
+    init(lottoWinPoint: LottoWinPoint) {
+        self.lottoWinPoint = lottoWinPoint
+        var listConfiguration = UICollectionLayoutListConfiguration(appearance: .insetGrouped)
+        listConfiguration.showsSeparators = false
+        let listLayout = UICollectionViewCompositionalLayout.list(using: listConfiguration)
+        super.init(collectionViewLayout: listLayout)
+    }
+}
+```
+  
+- Swift의 서브클래스는 초기화 과정에서 슈퍼클래스의 designated initializers를 호출해야 함. 
+  
+> Display the detail view  
+  
+```swift
+override func collectionView(_ collectionView: UICollectionView, shouldSelectItemAt indexPath: IndexPath) -> Bool {
+    let id = lottoWinPoints[indexPath.item].id
+    pushDetailViewForLottoWinPoint(withId: id)
+    return false
+}
+
+func pushDetailViewForLottoWinPoint(withId id: LottoWinPoint.ID) {
+    let reminder = reminder(withId: id)
+    let viewController = LottoWinPointViewController(lottoWinPoint: lottoWinPoint)
+    navigationController?.pushViewController(viewController, animated: true)
+}
+```
+  
+- 디테일 뷰는 리스트의 셀을 선택하면 보여짐.  
+- 해당 Lotto win point의 아이디 값을 사용하여 디테일 정보를 가져옴. 
+- 생성해둔 LottoWinPointViewController(디테일 뷰)에 lotto win point 정보를 넣어 view controller 인스턴스를 생성.
+- 네비게이션 스택에 푸시해주기.
+- collectionView(_ collectionView: UICollectionView, shouldSelectItemAt indexPath: IndexPath) 함수를 사용하여 해당 셀이 선택되었을 때 pushDetailViewForLottoWinPoint 함수가 실행되도록 함. 이때 선택이 되었는지를 표시하지 않기 때문에 false를 리턴함. 
+- Main 스토리보드로 이동하여 Win point list view controller scene을 선택하고 Editor - Embed in - navigation controller를 선택하여 네비게이션 컨트롤러를 생성
+- 빌드하여 디테일 뷰를 확인하기. 
 
