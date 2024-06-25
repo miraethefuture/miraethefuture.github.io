@@ -336,5 +336,76 @@ func pushDetailViewForLottoWinPoint(withId id: LottoWinPoint.ID) {
 - 네비게이션 스택에 푸시해주기.
 - collectionView(_ collectionView: UICollectionView, shouldSelectItemAt indexPath: IndexPath) 함수를 사용하여 해당 셀이 선택되었을 때 pushDetailViewForLottoWinPoint 함수가 실행되도록 함. 이때 선택이 되었는지를 표시하지 않기 때문에 false를 리턴함. 
 - Main 스토리보드로 이동하여 Win point list view controller scene을 선택하고 Editor - Embed in - navigation controller를 선택하여 네비게이션 컨트롤러를 생성
-- 빌드하여 디테일 뷰를 확인하기. 
+- 빌드하여 디테일 뷰를 확인하기.  
+  
+# Getting ready for editing
+  
+> Add an edit button
+  
+- UIViewController의 서브클래스는 editButtonItem 속성을 가지고 있습니다. 이 속성을 사용하여 편집 모드를 껐다/켰다 할 수 있습니다.  
+
+```swift
+override func viewDidLoad() {
+    super.viewDidLoad()
+    
+    navigationItem.rightBarButtonItem = editButtonItem
+}
+```
+  
+- 유저가 Edit 버튼을 탭하면 시스템은 setEditing(_:animated:) 함수를 호출합니다. 이 함수를 override하여 디테일뷰를 뷰/편집 모드로 전환합니다.  
+
+  
+# Using Content Views
+  
+> Create a reusable layout function  
+  
+UIKit view는 UI를 생성하기 위해 사용되는 아주 기초적인 빌딩블럭이다. UIKit이 제공하는 subclass를 사용하여 라벨, 버튼 등의 일반적인 인터페이스 요소들을 만들 수 있다.  
+  
+```swift
+extension UIView {
+    func addPinnedSubview(
+        _ subview: UIView, height: CGFloat? = nil,
+        insets: UIEdgeInsets = UIEdgeInsets(top: 0, left: 8, bottom: 0, right: 8)
+    ) {
+        addSubview(subview)
+        subview.translatesAutoresizingMaskIntoConstraints = false
+        subview.topAnchor.constraint(equalTo: topAnchor, constant: insets.top).isActive = true
+        subview.leadingAnchor.constraint(equalTo: leadingAnchor, constant: insets.left).isActive = true
+    }
+}
+```  
+  
+- UIView의 addSubview(\_:) 메서드는 슈퍼뷰의 가장 아래 계층에 sub view를 추가함.  
+- 시스템이 자동으로 constraint를 생성하지만, 환경(사이즈, 스크린 방향)에 따라 다른 contraint를 뷰에 적용하지 않기 때문에 false 처리 해줌.  
+- UIKit의 constraint syntax를 사용하여 슈퍼뷰의 top 부분에 sub view를 pin함.
+  
+  
+> Create a custom view with a text field  
+  
+```swift
+import UIKit
+
+class TextFieldContentView: UIView {
+    let textField = UITextField()
+    
+    override var intrinsicContentSize: CGSize {
+        CGSize(width: 0, height: 44)
+    }
+    
+    init() {
+        super.init(frame: .zero) // 1
+        addPinnedSubView(textField, insets: UIEdgeInsets(top: 0, left: 16, bottom: 0, right: 16)) // 2
+    }
+    
+    required init?(coder: NSCoder) {
+        fatalError("init(coder:) has not been implemented")
+    }
+}
+```  
+  
+- 1. 처음에는 프레임 사이즈 없이 텍스트 필드를 초기화 함. 
+- 2. 텍스트 필드는 top에 pin되고, 16의 horizontal padding을 가짐. top, bottom inset이 0이기 때문에 super view의 height 만큼 늘어나게 됨.  
+
+
+
 
