@@ -1,7 +1,7 @@
 <!DOCTYPE HTML>
 <html lang="en" >
     <head><meta charset="UTF-8">
-<meta content="text/html; charset=utf-8" http-equiv="Content-Type"><title>Moya ·  Jung Mirae</title><meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<meta content="text/html; charset=utf-8" http-equiv="Content-Type"><title>PinLayout ·  Jung Mirae</title><meta http-equiv="X-UA-Compatible" content="IE=edge" />
 <meta name="description" content=""><meta name="generator" content="Jekyll (using style of GitBook 3.2.3)"><meta name="author" content="Mirae"><link rel="stylesheet" href="/assets/gitbook/style.css">
 <link rel="stylesheet" href="/assets/gitbook/gitbook-plugin-fontsettings/website.css">
 <link rel="stylesheet" href="/assets/gitbook/gitbook-plugin-search-pro/search.css">
@@ -21,11 +21,9 @@
 
 
 
-            <link rel="prev" href="/til/2024-04-09-swiftui-concepts-tutorials.html" />
+            <link rel="prev" href="/til/2024-06-09-UIKit-toturial.html" />
         
 
-        
-            <link rel="next" href="/til/2024-06-09-UIKit-toturial.html" />
         
     </head>
     <body>
@@ -242,26 +240,26 @@
                         </li>
                     
                         
-                        <li class="chapter active" data-level="1.2" data-path="/til/2024-06-07-Moya.html">
-                        
-                            <a href="/til/2024-06-07-Moya.html">
-                                Moya
-                            </a>
-                            
-                                
-                                    
-
-                                
-                            
-                        </li>
-                    
-                        
                         <li class="chapter" data-level="1.1" data-path="/til/2024-06-09-UIKit-toturial.html">
                         
                             <a href="/til/2024-06-09-UIKit-toturial.html">
                                 UIKit 튜토리얼 따라가보기
                             </a>
                             
+                                
+                            
+                        </li>
+                    
+                        
+                        <li class="chapter active" data-level="1.2" data-path="/til/2024-06-26-PinLayout.html">
+                        
+                            <a href="/til/2024-06-26-PinLayout.html">
+                                PinLayout
+                            </a>
+                            
+                                
+                                    
+
                                 
                             
                         </li>
@@ -287,7 +285,7 @@
                     <h1>
                         <i class="fa fa-circle-o-notch fa-spin"></i>
                         
-                            <a href="." >Moya</a>
+                            <a href="." >PinLayout</a>
                         
                     </h1>
                 </div>
@@ -300,23 +298,24 @@
             <div class="search-noresults">
                 <section class="normal markdown-section">
                     
-                        <h1 id="/til/Moya">Moya</h1>
+                        <h1 id="/til/PinLayout">PinLayout</h1>
                     
 
-                    <blockquote>
-  <p>Moya 문서 읽기</p>
-</blockquote>
-
-<ul>
-  <li>사용할 모든 API 타겟별 enum 정의하기<br />
-나는 일단 먼저 필요한 하나만 정의함</li>
-</ul>
-
-<div class="language-swift highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">enum</span> <span class="kt">LottoDataService</span> <span class="p">{</span>
-    <span class="k">case</span> <span class="n">getLottoWinsData</span>
-<span class="p">}</span> 
+                    <div class="language-swift highlighter-rouge"><div class="highlight"><pre class="highlight"><code>    <span class="k">override</span> <span class="nf">init</span><span class="p">()</span> <span class="p">{</span>
+        <span class="c1">// 뷰의 appearance를 정의</span>
+    <span class="p">}</span>
+    
+    <span class="k">override</span> <span class="kd">func</span> <span class="nf">layoutSubviews</span><span class="p">()</span> <span class="p">{</span>
+        <span class="c1">// 이 안에서 layout을 설정해주어야 뷰에 나타남.</span>
+    <span class="p">}</span>
 </code></pre></div></div>
 
+<div class="language-swift highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">addressField</span><span class="o">.</span><span class="n">pin</span><span class="o">.</span><span class="nf">below</span><span class="p">(</span><span class="nv">of</span><span class="p">:</span> <span class="nf">visible</span><span class="p">([</span><span class="n">ageSwitch</span><span class="p">,</span> <span class="n">ageField</span><span class="p">]))</span><span class="o">.</span><span class="nf">horizontally</span><span class="p">()</span><span class="o">.</span><span class="nf">height</span><span class="p">(</span><span class="n">height</span><span class="p">)</span><span class="o">.</span><span class="nf">marginTop</span><span class="p">(</span><span class="n">margin</span><span class="p">)</span><span class="o">.</span><span class="nf">marginHorizontal</span><span class="p">(</span><span class="mi">20</span><span class="p">)</span>
+</code></pre></div></div>
+
+<ul>
+  <li>visible을 사용하여 보이는 뷰의 아래에 뷰를 pin 할 수 있음. ageSwitch 버튼의 isOn 상태에 따라 ageField가 나타났다 사라졌다 하는데 ageField가 나타났을 때는 ageField 아래에 뷰가 나타나고, 사라졌을 때는 ageSwitch 밑에 뷰가 나타남.</li>
+</ul>
 </section>
             </div><div class="search-results">
     <div class="has-results">
@@ -345,15 +344,11 @@ MathJax = {
   src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js">
 </script>
 
-                        <a href="/til/2024-04-09-swiftui-concepts-tutorials.html" class="navigation navigation-prev navigation-unique" aria-label="Previous page: SwiftUI Tutorials">
+                        <a href="/til/2024-06-09-UIKit-toturial.html" class="navigation navigation-prev navigation-unique" aria-label="Previous page: UIKit 튜토리얼 따라가보기">
                             <i class="fa fa-angle-left"></i>
                         </a>
                     
 
-                    
-                        <a href="/til/2024-06-09-UIKit-toturial.html" class="navigation navigation-next navigation-unique" aria-label="Next page: UIKit 튜토리얼 따라가보기">
-                            <i class="fa fa-angle-right"></i>
-                        </a>
                     
                 </div>
             </div>
@@ -366,15 +361,6 @@ MathJax = {
         "title": "Introduction",
         "level": "1.1",
         "depth": 1,
-        
-        "next": {
-            "title": "UIKit 튜토리얼 따라가보기",
-            "level": "1.2",
-            "depth": 1,
-            "path": "_posts/2024-01-04-UIKit-toturial.md",
-            "ref": "_posts/2024-01-04-UIKit-toturial.md",
-            "articles": []
-        },
         
         "dir": "ltr"
     },    "config": {
@@ -450,13 +436,13 @@ MathJax = {
         "gitbook": "*"
     },
     "file": {
-        "path": "_posts/2024-06-07-Moya.md",
-        "mtime": "2024-06-07 00:00:00 +0900",
+        "path": "_posts/2024-06-26-PinLayout.md",
+        "mtime": "2024-06-26 00:00:00 +0900",
         "type": "markdown"
     },
     "gitbook": {
         "version": "3.2.3",
-        "time": "2024-06-20 16:49:11 +0900"
+        "time": "2024-06-26 17:13:25 +0900"
     },
     "basePath": "",
     "book": {

@@ -1,4 +1,18 @@
-<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="4.3.2">Jekyll</generator><link href="http://localhost:4000/feed.xml" rel="self" type="application/atom+xml" /><link href="http://localhost:4000/" rel="alternate" type="text/html" /><updated>2024-06-20T16:49:11+09:00</updated><id>http://localhost:4000/feed.xml</id><title type="html"> Jung Mirae</title><subtitle></subtitle><author><name>Mirae</name></author><entry><title type="html">UIKit 튜토리얼 따라가보기</title><link href="http://localhost:4000/til/2024-06-09-UIKit-toturial.html" rel="alternate" type="text/html" title="UIKit 튜토리얼 따라가보기" /><published>2024-06-09T00:00:00+09:00</published><updated>2024-06-09T00:00:00+09:00</updated><id>http://localhost:4000/til/UIKit-toturial</id><content type="html" xml:base="http://localhost:4000/til/2024-06-09-UIKit-toturial.html"><![CDATA[<h1 id="creating-a-list-view">Creating a list view</h1>
+<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="4.3.2">Jekyll</generator><link href="http://localhost:4000/feed.xml" rel="self" type="application/atom+xml" /><link href="http://localhost:4000/" rel="alternate" type="text/html" /><updated>2024-06-26T17:13:25+09:00</updated><id>http://localhost:4000/feed.xml</id><title type="html"> Jung Mirae</title><subtitle></subtitle><author><name>Mirae</name></author><entry><title type="html">PinLayout</title><link href="http://localhost:4000/til/2024-06-26-PinLayout.html" rel="alternate" type="text/html" title="PinLayout" /><published>2024-06-26T00:00:00+09:00</published><updated>2024-06-26T00:00:00+09:00</updated><id>http://localhost:4000/til/PinLayout</id><content type="html" xml:base="http://localhost:4000/til/2024-06-26-PinLayout.html"><![CDATA[<div class="language-swift highlighter-rouge"><div class="highlight"><pre class="highlight"><code>    <span class="k">override</span> <span class="nf">init</span><span class="p">()</span> <span class="p">{</span>
+        <span class="c1">// 뷰의 appearance를 정의</span>
+    <span class="p">}</span>
+    
+    <span class="k">override</span> <span class="kd">func</span> <span class="nf">layoutSubviews</span><span class="p">()</span> <span class="p">{</span>
+        <span class="c1">// 이 안에서 layout을 설정해주어야 뷰에 나타남.</span>
+    <span class="p">}</span>
+</code></pre></div></div>
+
+<div class="language-swift highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">addressField</span><span class="o">.</span><span class="n">pin</span><span class="o">.</span><span class="nf">below</span><span class="p">(</span><span class="nv">of</span><span class="p">:</span> <span class="nf">visible</span><span class="p">([</span><span class="n">ageSwitch</span><span class="p">,</span> <span class="n">ageField</span><span class="p">]))</span><span class="o">.</span><span class="nf">horizontally</span><span class="p">()</span><span class="o">.</span><span class="nf">height</span><span class="p">(</span><span class="n">height</span><span class="p">)</span><span class="o">.</span><span class="nf">marginTop</span><span class="p">(</span><span class="n">margin</span><span class="p">)</span><span class="o">.</span><span class="nf">marginHorizontal</span><span class="p">(</span><span class="mi">20</span><span class="p">)</span>
+</code></pre></div></div>
+
+<ul>
+  <li>visible을 사용하여 보이는 뷰의 아래에 뷰를 pin 할 수 있음. ageSwitch 버튼의 isOn 상태에 따라 ageField가 나타났다 사라졌다 하는데 ageField가 나타났을 때는 ageField 아래에 뷰가 나타나고, 사라졌을 때는 ageSwitch 밑에 뷰가 나타남.</li>
+</ul>]]></content><author><name>Mirae</name></author><category term="TIL" /><summary type="html"><![CDATA[override init() { // 뷰의 appearance를 정의 } override func layoutSubviews() { // 이 안에서 layout을 설정해주어야 뷰에 나타남. }]]></summary></entry><entry><title type="html">UIKit 튜토리얼 따라가보기</title><link href="http://localhost:4000/til/2024-06-09-UIKit-toturial.html" rel="alternate" type="text/html" title="UIKit 튜토리얼 따라가보기" /><published>2024-06-09T00:00:00+09:00</published><updated>2024-06-09T00:00:00+09:00</updated><id>http://localhost:4000/til/UIKit-toturial</id><content type="html" xml:base="http://localhost:4000/til/2024-06-09-UIKit-toturial.html"><![CDATA[<h1 id="creating-a-list-view">Creating a list view</h1>
 <blockquote>
   <p>Add a collention view controller</p>
 </blockquote>
@@ -371,21 +385,90 @@
   <li>빌드하여 디테일 뷰를 확인하기.</li>
 </ul>
 
+<h1 id="getting-ready-for-editing">Getting ready for editing</h1>
+
 <blockquote>
-  <p>Style the navigation bar</p>
-</blockquote>]]></content><author><name>Mirae</name></author><category term="TIL" /><summary type="html"><![CDATA[Creating a list view Add a collention view controller 뷰컨트롤러(이하 ‘뷰컨’)는 뷰와 데이터 모델 사이에 다리 역할을 한다. 각 뷰컨은 하나의 뷰 계층을 관리하는 역할을 담당한다. 뷰의 컨텐츠를 업데이트하고, UI에 일어난 이벤트를 관리한다. Interface Builder를 사용하여 컬렉션 뷰컨트롤러를 생성해보자. 컬렉션뷰는 그리드, 행, 열, 또는 테이블의 형태로 셀을 보여준다. Collection view controller scene을 추가한다. 생성된 collection view의 cell 템플릿을 제거한다. (셀을 코드에서 정의할 것이기 때문.) Attribute inspector에서 is initial view controller 체크박스를 체크하여 해당 씬을 스토리보드의 엔트리 포인트로 설정 (앱이 스토리보드를 로드할 때 가장 먼저 로드됨.)]]></summary></entry><entry><title type="html">Moya</title><link href="http://localhost:4000/til/2024-06-07-Moya.html" rel="alternate" type="text/html" title="Moya" /><published>2024-06-07T00:00:00+09:00</published><updated>2024-06-07T00:00:00+09:00</updated><id>http://localhost:4000/til/Moya</id><content type="html" xml:base="http://localhost:4000/til/2024-06-07-Moya.html"><![CDATA[<blockquote>
-  <p>Moya 문서 읽기</p>
+  <p>Add an edit button</p>
 </blockquote>
 
 <ul>
-  <li>사용할 모든 API 타겟별 enum 정의하기<br />
-나는 일단 먼저 필요한 하나만 정의함</li>
+  <li>UIViewController의 서브클래스는 editButtonItem 속성을 가지고 있습니다. 이 속성을 사용하여 편집 모드를 껐다/켰다 할 수 있습니다.</li>
 </ul>
 
-<div class="language-swift highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">enum</span> <span class="kt">LottoDataService</span> <span class="p">{</span>
-    <span class="k">case</span> <span class="n">getLottoWinsData</span>
-<span class="p">}</span> 
-</code></pre></div></div>]]></content><author><name>Mirae</name></author><category term="TIL" /><summary type="html"><![CDATA[Moya 문서 읽기]]></summary></entry><entry><title type="html">SwiftUI Tutorials</title><link href="http://localhost:4000/til/2024-04-09-swiftui-concepts-tutorials.html" rel="alternate" type="text/html" title="SwiftUI Tutorials" /><published>2024-04-09T00:00:00+09:00</published><updated>2024-04-09T00:00:00+09:00</updated><id>http://localhost:4000/til/swiftui-concepts-tutorials</id><content type="html" xml:base="http://localhost:4000/til/2024-04-09-swiftui-concepts-tutorials.html"><![CDATA[<h1 id="색-정의하기">색 정의하기</h1>
+<div class="language-swift highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">override</span> <span class="kd">func</span> <span class="nf">viewDidLoad</span><span class="p">()</span> <span class="p">{</span>
+    <span class="k">super</span><span class="o">.</span><span class="nf">viewDidLoad</span><span class="p">()</span>
+    
+    <span class="n">navigationItem</span><span class="o">.</span><span class="n">rightBarButtonItem</span> <span class="o">=</span> <span class="n">editButtonItem</span>
+<span class="p">}</span>
+</code></pre></div></div>
+
+<ul>
+  <li>유저가 Edit 버튼을 탭하면 시스템은 setEditing(_:animated:) 함수를 호출합니다. 이 함수를 override하여 디테일뷰를 뷰/편집 모드로 전환합니다.</li>
+</ul>
+
+<h1 id="using-content-views">Using Content Views</h1>
+
+<blockquote>
+  <p>Create a reusable layout function</p>
+</blockquote>
+
+<p>UIKit view는 UI를 생성하기 위해 사용되는 아주 기초적인 빌딩블럭이다. UIKit이 제공하는 subclass를 사용하여 라벨, 버튼 등의 일반적인 인터페이스 요소들을 만들 수 있다.</p>
+
+<div class="language-swift highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">extension</span> <span class="kt">UIView</span> <span class="p">{</span>
+    <span class="kd">func</span> <span class="nf">addPinnedSubview</span><span class="p">(</span>
+        <span class="n">_</span> <span class="nv">subview</span><span class="p">:</span> <span class="kt">UIView</span><span class="p">,</span> <span class="nv">height</span><span class="p">:</span> <span class="kt">CGFloat</span><span class="p">?</span> <span class="o">=</span> <span class="kc">nil</span><span class="p">,</span>
+        <span class="nv">insets</span><span class="p">:</span> <span class="kt">UIEdgeInsets</span> <span class="o">=</span> <span class="kt">UIEdgeInsets</span><span class="p">(</span><span class="nv">top</span><span class="p">:</span> <span class="mi">0</span><span class="p">,</span> <span class="nv">left</span><span class="p">:</span> <span class="mi">8</span><span class="p">,</span> <span class="nv">bottom</span><span class="p">:</span> <span class="mi">0</span><span class="p">,</span> <span class="nv">right</span><span class="p">:</span> <span class="mi">8</span><span class="p">)</span>
+    <span class="p">)</span> <span class="p">{</span>
+        <span class="nf">addSubview</span><span class="p">(</span><span class="n">subview</span><span class="p">)</span>
+        <span class="n">subview</span><span class="o">.</span><span class="n">translatesAutoresizingMaskIntoConstraints</span> <span class="o">=</span> <span class="kc">false</span>
+        <span class="n">subview</span><span class="o">.</span><span class="n">topAnchor</span><span class="o">.</span><span class="nf">constraint</span><span class="p">(</span><span class="nv">equalTo</span><span class="p">:</span> <span class="n">topAnchor</span><span class="p">,</span> <span class="nv">constant</span><span class="p">:</span> <span class="n">insets</span><span class="o">.</span><span class="n">top</span><span class="p">)</span><span class="o">.</span><span class="n">isActive</span> <span class="o">=</span> <span class="kc">true</span>
+        <span class="n">subview</span><span class="o">.</span><span class="n">leadingAnchor</span><span class="o">.</span><span class="nf">constraint</span><span class="p">(</span><span class="nv">equalTo</span><span class="p">:</span> <span class="n">leadingAnchor</span><span class="p">,</span> <span class="nv">constant</span><span class="p">:</span> <span class="n">insets</span><span class="o">.</span><span class="n">left</span><span class="p">)</span><span class="o">.</span><span class="n">isActive</span> <span class="o">=</span> <span class="kc">true</span>
+    <span class="p">}</span>
+<span class="p">}</span>
+</code></pre></div></div>
+
+<ul>
+  <li>UIView의 addSubview(_:) 메서드는 슈퍼뷰의 가장 아래 계층에 sub view를 추가함.</li>
+  <li>시스템이 자동으로 constraint를 생성하지만, 환경(사이즈, 스크린 방향)에 따라 다른 contraint를 뷰에 적용하지 않기 때문에 false 처리 해줌.</li>
+  <li>UIKit의 constraint syntax를 사용하여 슈퍼뷰의 top 부분에 sub view를 pin함.</li>
+</ul>
+
+<blockquote>
+  <p>Create a custom view with a text field</p>
+</blockquote>
+
+<div class="language-swift highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">import</span> <span class="kt">UIKit</span>
+
+<span class="kd">class</span> <span class="kt">TextFieldContentView</span><span class="p">:</span> <span class="kt">UIView</span> <span class="p">{</span>
+    <span class="k">let</span> <span class="nv">textField</span> <span class="o">=</span> <span class="kt">UITextField</span><span class="p">()</span>
+    
+    <span class="k">override</span> <span class="k">var</span> <span class="nv">intrinsicContentSize</span><span class="p">:</span> <span class="kt">CGSize</span> <span class="p">{</span>
+        <span class="kt">CGSize</span><span class="p">(</span><span class="nv">width</span><span class="p">:</span> <span class="mi">0</span><span class="p">,</span> <span class="nv">height</span><span class="p">:</span> <span class="mi">44</span><span class="p">)</span>
+    <span class="p">}</span>
+    
+    <span class="nf">init</span><span class="p">()</span> <span class="p">{</span>
+        <span class="k">super</span><span class="o">.</span><span class="nf">init</span><span class="p">(</span><span class="nv">frame</span><span class="p">:</span> <span class="o">.</span><span class="n">zero</span><span class="p">)</span> <span class="c1">// 1</span>
+        <span class="nf">addPinnedSubView</span><span class="p">(</span><span class="n">textField</span><span class="p">,</span> <span class="nv">insets</span><span class="p">:</span> <span class="kt">UIEdgeInsets</span><span class="p">(</span><span class="nv">top</span><span class="p">:</span> <span class="mi">0</span><span class="p">,</span> <span class="nv">left</span><span class="p">:</span> <span class="mi">16</span><span class="p">,</span> <span class="nv">bottom</span><span class="p">:</span> <span class="mi">0</span><span class="p">,</span> <span class="nv">right</span><span class="p">:</span> <span class="mi">16</span><span class="p">))</span> <span class="c1">// 2</span>
+    <span class="p">}</span>
+    
+    <span class="kd">required</span> <span class="nf">init</span><span class="p">?(</span><span class="nv">coder</span><span class="p">:</span> <span class="kt">NSCoder</span><span class="p">)</span> <span class="p">{</span>
+        <span class="nf">fatalError</span><span class="p">(</span><span class="s">"init(coder:) has not been implemented"</span><span class="p">)</span>
+    <span class="p">}</span>
+<span class="p">}</span>
+</code></pre></div></div>
+
+<ul>
+  <li>
+    <ol>
+      <li>처음에는 프레임 사이즈 없이 텍스트 필드를 초기화 함.</li>
+    </ol>
+  </li>
+  <li>
+    <ol>
+      <li>텍스트 필드는 top에 pin되고, 16의 horizontal padding을 가짐. top, bottom inset이 0이기 때문에 super view의 height 만큼 늘어나게 됨.</li>
+    </ol>
+  </li>
+</ul>]]></content><author><name>Mirae</name></author><category term="TIL" /><summary type="html"><![CDATA[Creating a list view Add a collention view controller 뷰컨트롤러(이하 ‘뷰컨’)는 뷰와 데이터 모델 사이에 다리 역할을 한다. 각 뷰컨은 하나의 뷰 계층을 관리하는 역할을 담당한다. 뷰의 컨텐츠를 업데이트하고, UI에 일어난 이벤트를 관리한다. Interface Builder를 사용하여 컬렉션 뷰컨트롤러를 생성해보자. 컬렉션뷰는 그리드, 행, 열, 또는 테이블의 형태로 셀을 보여준다. Collection view controller scene을 추가한다. 생성된 collection view의 cell 템플릿을 제거한다. (셀을 코드에서 정의할 것이기 때문.) Attribute inspector에서 is initial view controller 체크박스를 체크하여 해당 씬을 스토리보드의 엔트리 포인트로 설정 (앱이 스토리보드를 로드할 때 가장 먼저 로드됨.)]]></summary></entry><entry><title type="html">SwiftUI Tutorials</title><link href="http://localhost:4000/til/2024-04-09-swiftui-concepts-tutorials.html" rel="alternate" type="text/html" title="SwiftUI Tutorials" /><published>2024-04-09T00:00:00+09:00</published><updated>2024-04-09T00:00:00+09:00</updated><id>http://localhost:4000/til/swiftui-concepts-tutorials</id><content type="html" xml:base="http://localhost:4000/til/2024-04-09-swiftui-concepts-tutorials.html"><![CDATA[<h1 id="색-정의하기">색 정의하기</h1>
 <blockquote>
   <p>Define colors in the asset catalog</p>
 </blockquote>
