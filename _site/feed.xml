@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="4.3.2">Jekyll</generator><link href="http://localhost:4000/feed.xml" rel="self" type="application/atom+xml" /><link href="http://localhost:4000/" rel="alternate" type="text/html" /><updated>2024-06-26T17:13:25+09:00</updated><id>http://localhost:4000/feed.xml</id><title type="html"> Jung Mirae</title><subtitle></subtitle><author><name>Mirae</name></author><entry><title type="html">PinLayout</title><link href="http://localhost:4000/til/2024-06-26-PinLayout.html" rel="alternate" type="text/html" title="PinLayout" /><published>2024-06-26T00:00:00+09:00</published><updated>2024-06-26T00:00:00+09:00</updated><id>http://localhost:4000/til/PinLayout</id><content type="html" xml:base="http://localhost:4000/til/2024-06-26-PinLayout.html"><![CDATA[<div class="language-swift highlighter-rouge"><div class="highlight"><pre class="highlight"><code>    <span class="k">override</span> <span class="nf">init</span><span class="p">()</span> <span class="p">{</span>
+<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="4.3.2">Jekyll</generator><link href="http://localhost:4000/feed.xml" rel="self" type="application/atom+xml" /><link href="http://localhost:4000/" rel="alternate" type="text/html" /><updated>2024-06-27T17:24:54+09:00</updated><id>http://localhost:4000/feed.xml</id><title type="html"> Jung Mirae</title><subtitle></subtitle><author><name>Mirae</name></author><entry><title type="html">PinLayout</title><link href="http://localhost:4000/til/2024-06-26-PinLayout.html" rel="alternate" type="text/html" title="PinLayout" /><published>2024-06-26T00:00:00+09:00</published><updated>2024-06-26T00:00:00+09:00</updated><id>http://localhost:4000/til/PinLayout</id><content type="html" xml:base="http://localhost:4000/til/2024-06-26-PinLayout.html"><![CDATA[<div class="language-swift highlighter-rouge"><div class="highlight"><pre class="highlight"><code>    <span class="k">override</span> <span class="nf">init</span><span class="p">()</span> <span class="p">{</span>
         <span class="c1">// 뷰의 appearance를 정의</span>
     <span class="p">}</span>
     
@@ -468,6 +468,32 @@
       <li>텍스트 필드는 top에 pin되고, 16의 horizontal padding을 가짐. top, bottom inset이 0이기 때문에 super view의 height 만큼 늘어나게 됨.</li>
     </ol>
   </li>
+</ul>
+
+<blockquote>
+  <p>Create a custom view with a text field</p>
+</blockquote>
+
+<ul>
+  <li>이 앱에서는, UIView의 서브클래스를 커스텀하여 편집화면에서 사용할 컨트롤을 만든다.</li>
+  <li>
+    <p>UIKit configurations의 스타일과 power를 사용하기 위해서 커스텀 서브 클래스가 UIContentView 프로토콜을 따라야 한다.</p>
+
+    <blockquote>
+      <p><b>Configurations</b><br />
+  Configurations를 사용하여 셀과 뷰의 내용, appearance를 상세히 정할 수 있다.<br />
+  뷰의 상태가 변경될 때 자동으로 업데이트되어 뷰가 해당 상태의 새로운 스타일을 반영할 수 있도록 함.</p>
+    </blockquote>
+  </li>
+</ul>
+
+<blockquote>
+  <p>Conform to the content view protocol</p>
+</blockquote>
+
+<ul>
+  <li>UIContentView 프로토콜을 따르는 객체는 UIContentConfiguration 타입의 configuration 속성을 가져야 한다.</li>
+  <li>이 앱에서 사용할 configuration은 텍스트 필드의 값인 text 속성을 가진다. text 속성을 가진 커스텀 UIContentConfiguration 타입을 생성하자.</li>
 </ul>]]></content><author><name>Mirae</name></author><category term="TIL" /><summary type="html"><![CDATA[Creating a list view Add a collention view controller 뷰컨트롤러(이하 ‘뷰컨’)는 뷰와 데이터 모델 사이에 다리 역할을 한다. 각 뷰컨은 하나의 뷰 계층을 관리하는 역할을 담당한다. 뷰의 컨텐츠를 업데이트하고, UI에 일어난 이벤트를 관리한다. Interface Builder를 사용하여 컬렉션 뷰컨트롤러를 생성해보자. 컬렉션뷰는 그리드, 행, 열, 또는 테이블의 형태로 셀을 보여준다. Collection view controller scene을 추가한다. 생성된 collection view의 cell 템플릿을 제거한다. (셀을 코드에서 정의할 것이기 때문.) Attribute inspector에서 is initial view controller 체크박스를 체크하여 해당 씬을 스토리보드의 엔트리 포인트로 설정 (앱이 스토리보드를 로드할 때 가장 먼저 로드됨.)]]></summary></entry><entry><title type="html">SwiftUI Tutorials</title><link href="http://localhost:4000/til/2024-04-09-swiftui-concepts-tutorials.html" rel="alternate" type="text/html" title="SwiftUI Tutorials" /><published>2024-04-09T00:00:00+09:00</published><updated>2024-04-09T00:00:00+09:00</updated><id>http://localhost:4000/til/swiftui-concepts-tutorials</id><content type="html" xml:base="http://localhost:4000/til/2024-04-09-swiftui-concepts-tutorials.html"><![CDATA[<h1 id="색-정의하기">색 정의하기</h1>
 <blockquote>
   <p>Define colors in the asset catalog</p>

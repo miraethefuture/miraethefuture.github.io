@@ -405,6 +405,21 @@ class TextFieldContentView: UIView {
   
 - 1. 처음에는 프레임 사이즈 없이 텍스트 필드를 초기화 함. 
 - 2. 텍스트 필드는 top에 pin되고, 16의 horizontal padding을 가짐. top, bottom inset이 0이기 때문에 super view의 height 만큼 늘어나게 됨.  
+  
+
+> Create a custom view with a text field
+  
+- 이 앱에서는, UIView의 서브클래스를 커스텀하여 편집화면에서 사용할 컨트롤을 만든다.  
+- UIKit configurations의 스타일과 power를 사용하기 위해서 커스텀 서브 클래스가 UIContentView 프로토콜을 따라야 한다.  
+  
+    > <b>Configurations</b>  
+    Configurations를 사용하여 셀과 뷰의 내용, appearance를 상세히 정할 수 있다.  
+    뷰의 상태가 변경될 때 자동으로 업데이트되어 뷰가 해당 상태의 새로운 스타일을 반영할 수 있도록 함.  
+      
+> Conform to the content view protocol  
+  
+- UIContentView 프로토콜을 따르는 객체는 UIContentConfiguration 타입의 configuration 속성을 가져야 한다.  
+- 이 앱에서 사용할 configuration은 텍스트 필드의 값인 text 속성을 가진다. text 속성을 가진 커스텀 UIContentConfiguration 타입을 생성하자.  
 
 
 
