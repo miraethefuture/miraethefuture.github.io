@@ -420,6 +420,11 @@ class TextFieldContentView: UIView {
   
 - UIContentView 프로토콜을 따르는 객체는 UIContentConfiguration 타입의 configuration 속성을 가져야 한다.  
 - 이 앱에서 사용할 configuration은 텍스트 필드의 값인 text 속성을 가진다. text 속성을 가진 커스텀 UIContentConfiguration 타입을 생성하자.  
+  
+  
+# Editing reminders
+  
+- workingReminder 라는 변수를 생성. 사용자가 편집 모드에서 workingReminder에 변경 사항을 일으키면 이 변경된 사항을 reminder에 복사해서 뷰 모드에서 그 데이터들이 보여지도록 함.  
 
 
 
