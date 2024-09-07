@@ -1,5 +1,5 @@
 ---
-title: PinLayout
+title: PinLayout & FlexLayout
 author: Mirae
 date: 2024-06-26
 category: TIL
