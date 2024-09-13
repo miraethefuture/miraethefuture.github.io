@@ -44,3 +44,17 @@ flex.addItem().direction(.row).alignItems(.baseline).define { flex in
 }
 ```
 - UILabel의 높이가 같은 컨테이너에 있을 경우 같게 나타나는 문제가 있어 아래와 같이 alignItems()를 추가해주어 각자의 높이가 정상적으로 나타나도록 함.
+  
+🍊 Simulator에서 layout이 정상적으로 보이지 않는 문제
+- Scroll view를 사용하는 뷰가 프리뷰에서는 정상적으로 보이나 시뮬레이터에서는 정상적으로 보이지 않음.
+- 코드 a와 b의 순서가 다른 것이 문제였음. scroll view를 pin하는 코드를 먼저 작성해주었더니 정상적으로 나타남. 
+```swift
+override func layoutSubviews() {
+    super.layoutSubviews()
+    scrollView.pin.top().bottom().left().right() // scroll view를 pin하는 코드 a
+    rootFlexContainer.pin.top().left().right() // rootFlexContainer를 pin하는 코드 b
+    rootFlexContainer.flex.layout(mode: .adjustHeight)
+    scrollView.contentSize = rootFlexContainer.frame.size
+}
+```
+
