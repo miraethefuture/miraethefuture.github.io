@@ -1,7 +1,7 @@
 <!DOCTYPE HTML>
 <html lang="en" >
     <head><meta charset="UTF-8">
-<meta content="text/html; charset=utf-8" http-equiv="Content-Type"><title>SwiftUI Essentials 튜토리얼을 따라가며 정리 ·  Jung Mirae</title><meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<meta content="text/html; charset=utf-8" http-equiv="Content-Type"><title>PinLayout &amp; FlexLayout ·  Jung Mirae</title><meta http-equiv="X-UA-Compatible" content="IE=edge" />
 <meta name="description" content=""><meta name="generator" content="Jekyll (using style of GitBook 3.2.3)"><meta name="author" content="Mirae"><link rel="stylesheet" href="/assets/gitbook/style.css">
 <link rel="stylesheet" href="/assets/gitbook/gitbook-plugin-fontsettings/website.css">
 <link rel="stylesheet" href="/assets/gitbook/gitbook-plugin-search-pro/search.css">
@@ -21,11 +21,9 @@
 
 
 
-            <link rel="prev" href="/til/2023-10-10-Scrumdinger.html" />
+            <link rel="prev" href="/til/2024-06-09-UIKit-toturial.html" />
         
 
-        
-            <link rel="next" href="/til/2023-12-03-YourMusicApp.html" />
         
     </head>
     <body>
@@ -176,17 +174,6 @@
                         </li>
                     
                         
-                        <li class="chapter" data-level="1.1" data-path="/til/2023-07-04-CodingTestTIL.html">
-                        
-                            <a href="/til/2023-07-04-CodingTestTIL.html">
-                                Coding Test TIL
-                            </a>
-                            
-                                
-                            
-                        </li>
-                    
-                        
                         <li class="chapter" data-level="1.1" data-path="/til/2023-09-06-stickyHeader.html">
                         
                             <a href="/til/2023-09-06-stickyHeader.html">
@@ -202,31 +189,6 @@
                         
                             <a href="/til/2023-10-10-Scrumdinger.html">
                                 앱 Scrumdinger 튜토리얼을 따라가며 정리
-                            </a>
-                            
-                                
-                            
-                        </li>
-                    
-                        
-                        <li class="chapter active" data-level="1.2" data-path="/til/2023-10-10-SwiftUIEssentials.html">
-                        
-                            <a href="/til/2023-10-10-SwiftUIEssentials.html">
-                                SwiftUI Essentials 튜토리얼을 따라가며 정리
-                            </a>
-                            
-                                
-                                    <ul><li><a href="#drawing-paths-and-shapes">Drawing paths and shapes</a></li></ul>
-
-                                
-                            
-                        </li>
-                    
-                        
-                        <li class="chapter" data-level="1.1" data-path="/til/2023-12-03-YourMusicApp.html">
-                        
-                            <a href="/til/2023-12-03-YourMusicApp.html">
-                                앱 Your Music 작성기
                             </a>
                             
                                 
@@ -256,12 +218,15 @@
                         </li>
                     
                         
-                        <li class="chapter" data-level="1.1" data-path="/til/2024-06-26-PinLayout.html">
+                        <li class="chapter active" data-level="1.2" data-path="/til/2024-06-26-PinLayoutAndFlexLayout.html">
                         
-                            <a href="/til/2024-06-26-PinLayout.html">
-                                PinLayout
+                            <a href="/til/2024-06-26-PinLayoutAndFlexLayout.html">
+                                PinLayout &amp; FlexLayout
                             </a>
                             
+                                
+                                    
+
                                 
                             
                         </li>
@@ -287,7 +252,7 @@
                     <h1>
                         <i class="fa fa-circle-o-notch fa-spin"></i>
                         
-                            <a href="." >SwiftUI Essentials 튜토리얼을 따라가며 정리</a>
+                            <a href="." >PinLayout &amp; FlexLayout</a>
                         
                     </h1>
                 </div>
@@ -300,35 +265,67 @@
             <div class="search-noresults">
                 <section class="normal markdown-section">
                     
-                        <h1 id="/til/SwiftUIEssentials">SwiftUI Essentials 튜토리얼을 따라가며 정리</h1>
+                        <h1 id="/til/PinLayoutAndFlexLayout">PinLayout &amp; FlexLayout</h1>
                     
 
-                    <p><a href="https://developer.apple.com/tutorials/swiftui/drawing-paths-and-shapes">SwiftUI Essentials</a></p>
-<blockquote>
-  <p>이 글은 위 튜토리얼을 따라가며 정리한 내용입니다.</p>
+                    <blockquote>
+  <p>이 포스팅은 PinLayout &amp; FlexLayout 사용하여 프로젝트를 진행하며 기억해두고 싶은 것을 적어두는 것에 목적을 두고 있습니다.</p>
 </blockquote>
 
-<h1 id="drawing-paths-and-shapes">Drawing paths and shapes</h1>
-
-<div class="language-swift highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">struct</span> <span class="kt">BadgeBackground</span><span class="p">:</span> <span class="kt">View</span> <span class="p">{</span>
-    <span class="k">var</span> <span class="nv">body</span><span class="p">:</span> <span class="kd">some</span> <span class="kt">View</span> <span class="p">{</span>
-        <span class="kt">Path</span> <span class="p">{</span> <span class="n">path</span> <span class="k">in</span>
-            <span class="k">var</span> <span class="nv">width</span><span class="p">:</span> <span class="kt">CGFloat</span> <span class="o">=</span> <span class="mf">100.0</span>
-            <span class="k">let</span> <span class="nv">height</span> <span class="o">=</span> <span class="n">width</span>
-            <span class="n">path</span><span class="o">.</span><span class="nf">move</span><span class="p">(</span>
-                <span class="nv">to</span><span class="p">:</span> <span class="kt">CGPoint</span><span class="p">(</span>
-                    <span class="nv">x</span><span class="p">:</span> <span class="n">width</span> <span class="o">*</span> <span class="mf">0.95</span><span class="p">,</span>
-                    <span class="nv">y</span><span class="p">:</span> <span class="n">height</span> <span class="o">*</span> <span class="mf">0.20</span>
-                <span class="p">)</span>
-            <span class="p">)</span>
-        <span class="p">}</span>
-        <span class="o">.</span><span class="nf">fill</span><span class="p">(</span><span class="o">.</span><span class="n">black</span><span class="p">)</span>
+<p>🍊</p>
+<div class="language-swift highlighter-rouge"><div class="highlight"><pre class="highlight"><code>    <span class="k">override</span> <span class="nf">init</span><span class="p">()</span> <span class="p">{</span>
+        <span class="c1">// 뷰의 appearance를 정의</span>
     <span class="p">}</span>
-<span class="p">}</span>
+    
+    <span class="k">override</span> <span class="kd">func</span> <span class="nf">layoutSubviews</span><span class="p">()</span> <span class="p">{</span>
+        <span class="c1">// 이 안에서 layout을 설정해주어야 뷰에 나타남.</span>
+    <span class="p">}</span>
 </code></pre></div></div>
 
-<p>Path shape을 추가하고, fill() modifier를 적용하여 shape을 view로 만들어 줍니다. paths는 선, 곡선 등의 기초 요소를 혼합하여 더 복잡한 모양을 그리는 곳에 사용됩니다.<br />
-100*100px 사이즈의 컨테이너를 path의 시작점으로 설정해줍니다. path.move(to:) 메서드는 드로잉 커서를 움직입니다.</p>
+<p>🍊</p>
+<div class="language-swift highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">addressField</span><span class="o">.</span><span class="n">pin</span><span class="o">.</span><span class="nf">below</span><span class="p">(</span><span class="nv">of</span><span class="p">:</span> <span class="nf">visible</span><span class="p">([</span><span class="n">ageSwitch</span><span class="p">,</span> <span class="n">ageField</span><span class="p">]))</span><span class="o">.</span><span class="nf">horizontally</span><span class="p">()</span><span class="o">.</span><span class="nf">height</span><span class="p">(</span><span class="n">height</span><span class="p">)</span><span class="o">.</span><span class="nf">marginTop</span><span class="p">(</span><span class="n">margin</span><span class="p">)</span><span class="o">.</span><span class="nf">marginHorizontal</span><span class="p">(</span><span class="mi">20</span><span class="p">)</span>
+</code></pre></div></div>
+
+<ul>
+  <li>visible을 사용하여 보이는 뷰의 아래에 뷰를 pin 할 수 있음. ageSwitch 버튼의 isOn 상태에 따라 ageField가 나타났다 사라졌다 하는데 ageField가 나타났을 때는 ageField 아래에 뷰가 나타나고, 사라졌을 때는 ageSwitch 밑에 뷰가 나타남.</li>
+</ul>
+
+<p>🍊</p>
+<div class="language-swift highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">override</span> <span class="kd">func</span> <span class="nf">layoutSubviews</span><span class="p">()</span> <span class="p">{</span>
+    <span class="k">super</span><span class="o">.</span><span class="nf">layoutSubviews</span><span class="p">()</span>
+    <span class="c1">// top: safety area에 고정, 나머지는 스크린 끝쪽에 고정</span>
+    <span class="n">contentView</span><span class="o">.</span><span class="n">pin</span><span class="o">.</span><span class="nf">top</span><span class="p">(</span><span class="n">pin</span><span class="o">.</span><span class="n">safeArea</span><span class="p">)</span><span class="o">.</span><span class="nf">bottom</span><span class="p">()</span><span class="o">.</span><span class="nf">left</span><span class="p">()</span><span class="o">.</span><span class="nf">right</span><span class="p">()</span>
+<span class="p">}</span>
+</code></pre></div></div>
+<ul>
+  <li>top: safety area에 고정, 나머지는 스크린 끝쪽에 고정</li>
+</ul>
+
+<p>🍊</p>
+<div class="language-swift highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">flex</span><span class="o">.</span><span class="nf">addItem</span><span class="p">()</span><span class="o">.</span><span class="nf">direction</span><span class="p">(</span><span class="o">.</span><span class="n">row</span><span class="p">)</span><span class="o">.</span><span class="nf">alignItems</span><span class="p">(</span><span class="o">.</span><span class="n">baseline</span><span class="p">)</span><span class="o">.</span><span class="n">define</span> <span class="p">{</span> <span class="n">flex</span> <span class="k">in</span>
+    <span class="n">flex</span><span class="o">.</span><span class="nf">addItem</span><span class="p">(</span><span class="n">view1</span><span class="p">)</span><span class="o">.</span><span class="nf">marginRight</span><span class="p">(</span><span class="mi">8</span><span class="p">)</span>
+    <span class="n">flex</span><span class="o">.</span><span class="nf">addItem</span><span class="p">(</span><span class="n">view2</span><span class="p">)</span>
+<span class="p">}</span>
+</code></pre></div></div>
+<ul>
+  <li>UILabel의 높이가 같은 컨테이너에 있을 경우 같게 나타나는 문제가 있어 아래와 같이 alignItems()를 추가해주어 각자의 높이가 정상적으로 나타나도록 함.</li>
+</ul>
+
+<p>🍊 Simulator에서 layout이 정상적으로 보이지 않는 문제</p>
+<ul>
+  <li>Scroll view를 사용하는 뷰가 프리뷰에서는 정상적으로 보이나 시뮬레이터에서는 정상적으로 보이지 않음.</li>
+  <li>코드 a와 b의 순서가 다른 것이 문제였음. scroll view를 pin하는 코드를 먼저 작성해주었더니 정상적으로 나타남.
+    <div class="language-swift highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">override</span> <span class="kd">func</span> <span class="nf">layoutSubviews</span><span class="p">()</span> <span class="p">{</span>
+  <span class="k">super</span><span class="o">.</span><span class="nf">layoutSubviews</span><span class="p">()</span>
+  <span class="n">scrollView</span><span class="o">.</span><span class="n">pin</span><span class="o">.</span><span class="nf">top</span><span class="p">()</span><span class="o">.</span><span class="nf">bottom</span><span class="p">()</span><span class="o">.</span><span class="nf">left</span><span class="p">()</span><span class="o">.</span><span class="nf">right</span><span class="p">()</span> <span class="c1">// scroll view를 pin하는 코드 a</span>
+  <span class="n">rootFlexContainer</span><span class="o">.</span><span class="n">pin</span><span class="o">.</span><span class="nf">top</span><span class="p">()</span><span class="o">.</span><span class="nf">left</span><span class="p">()</span><span class="o">.</span><span class="nf">right</span><span class="p">()</span> <span class="c1">// rootFlexContainer를 pin하는 코드 b</span>
+  <span class="n">rootFlexContainer</span><span class="o">.</span><span class="n">flex</span><span class="o">.</span><span class="nf">layout</span><span class="p">(</span><span class="nv">mode</span><span class="p">:</span> <span class="o">.</span><span class="n">adjustHeight</span><span class="p">)</span>
+  <span class="n">scrollView</span><span class="o">.</span><span class="n">contentSize</span> <span class="o">=</span> <span class="n">rootFlexContainer</span><span class="o">.</span><span class="n">frame</span><span class="o">.</span><span class="n">size</span>
+<span class="p">}</span>
+</code></pre></div>    </div>
+  </li>
+</ul>
+
 </section>
             </div><div class="search-results">
     <div class="has-results">
@@ -357,15 +354,11 @@ MathJax = {
   src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js">
 </script>
 
-                        <a href="/til/2023-10-10-Scrumdinger.html" class="navigation navigation-prev navigation-unique" aria-label="Previous page: 앱 Scrumdinger 튜토리얼을 따라가며 정리">
+                        <a href="/til/2024-06-09-UIKit-toturial.html" class="navigation navigation-prev navigation-unique" aria-label="Previous page: UIKit 튜토리얼 따라가보기">
                             <i class="fa fa-angle-left"></i>
                         </a>
                     
 
-                    
-                        <a href="/til/2023-12-03-YourMusicApp.html" class="navigation navigation-next navigation-unique" aria-label="Next page: 앱 Your Music 작성기">
-                            <i class="fa fa-angle-right"></i>
-                        </a>
                     
                 </div>
             </div>
@@ -378,15 +371,6 @@ MathJax = {
         "title": "Introduction",
         "level": "1.1",
         "depth": 1,
-        
-        "next": {
-            "title": "앱 Your Music 작성기",
-            "level": "1.2",
-            "depth": 1,
-            "path": "_posts/2023-12-03-YourMusicApp.md",
-            "ref": "_posts/2023-12-03-YourMusicApp.md",
-            "articles": []
-        },
         
         "dir": "ltr"
     },    "config": {
@@ -462,13 +446,13 @@ MathJax = {
         "gitbook": "*"
     },
     "file": {
-        "path": "_posts/2023-11-27-SwiftUIEssentials.md",
-        "mtime": "2023-10-10 00:00:00 +0900",
+        "path": "_posts/2024-06-26-PinLayoutAndFlexLayout.md",
+        "mtime": "2024-06-26 00:00:00 +0900",
         "type": "markdown"
     },
     "gitbook": {
         "version": "3.2.3",
-        "time": "2024-06-27 17:24:54 +0900"
+        "time": "2024-09-19 21:59:48 +0900"
     },
     "basePath": "",
     "book": {

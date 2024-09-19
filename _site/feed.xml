@@ -1,4 +1,9 @@
-<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="4.3.2">Jekyll</generator><link href="http://localhost:4000/feed.xml" rel="self" type="application/atom+xml" /><link href="http://localhost:4000/" rel="alternate" type="text/html" /><updated>2024-06-27T17:24:54+09:00</updated><id>http://localhost:4000/feed.xml</id><title type="html"> Jung Mirae</title><subtitle></subtitle><author><name>Mirae</name></author><entry><title type="html">PinLayout</title><link href="http://localhost:4000/til/2024-06-26-PinLayout.html" rel="alternate" type="text/html" title="PinLayout" /><published>2024-06-26T00:00:00+09:00</published><updated>2024-06-26T00:00:00+09:00</updated><id>http://localhost:4000/til/PinLayout</id><content type="html" xml:base="http://localhost:4000/til/2024-06-26-PinLayout.html"><![CDATA[<div class="language-swift highlighter-rouge"><div class="highlight"><pre class="highlight"><code>    <span class="k">override</span> <span class="nf">init</span><span class="p">()</span> <span class="p">{</span>
+<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="4.3.2">Jekyll</generator><link href="http://localhost:4000/feed.xml" rel="self" type="application/atom+xml" /><link href="http://localhost:4000/" rel="alternate" type="text/html" /><updated>2024-09-19T21:59:48+09:00</updated><id>http://localhost:4000/feed.xml</id><title type="html"> Jung Mirae</title><subtitle></subtitle><author><name>Mirae</name></author><entry><title type="html">PinLayout &amp;amp; FlexLayout</title><link href="http://localhost:4000/til/2024-06-26-PinLayoutAndFlexLayout.html" rel="alternate" type="text/html" title="PinLayout &amp;amp; FlexLayout" /><published>2024-06-26T00:00:00+09:00</published><updated>2024-06-26T00:00:00+09:00</updated><id>http://localhost:4000/til/PinLayoutAndFlexLayout</id><content type="html" xml:base="http://localhost:4000/til/2024-06-26-PinLayoutAndFlexLayout.html"><![CDATA[<blockquote>
+  <p>이 포스팅은 PinLayout &amp; FlexLayout 사용하여 프로젝트를 진행하며 기억해두고 싶은 것을 적어두는 것에 목적을 두고 있습니다.</p>
+</blockquote>
+
+<p>🍊</p>
+<div class="language-swift highlighter-rouge"><div class="highlight"><pre class="highlight"><code>    <span class="k">override</span> <span class="nf">init</span><span class="p">()</span> <span class="p">{</span>
         <span class="c1">// 뷰의 appearance를 정의</span>
     <span class="p">}</span>
     
@@ -7,12 +12,49 @@
     <span class="p">}</span>
 </code></pre></div></div>
 
+<p>🍊</p>
 <div class="language-swift highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">addressField</span><span class="o">.</span><span class="n">pin</span><span class="o">.</span><span class="nf">below</span><span class="p">(</span><span class="nv">of</span><span class="p">:</span> <span class="nf">visible</span><span class="p">([</span><span class="n">ageSwitch</span><span class="p">,</span> <span class="n">ageField</span><span class="p">]))</span><span class="o">.</span><span class="nf">horizontally</span><span class="p">()</span><span class="o">.</span><span class="nf">height</span><span class="p">(</span><span class="n">height</span><span class="p">)</span><span class="o">.</span><span class="nf">marginTop</span><span class="p">(</span><span class="n">margin</span><span class="p">)</span><span class="o">.</span><span class="nf">marginHorizontal</span><span class="p">(</span><span class="mi">20</span><span class="p">)</span>
 </code></pre></div></div>
 
 <ul>
   <li>visible을 사용하여 보이는 뷰의 아래에 뷰를 pin 할 수 있음. ageSwitch 버튼의 isOn 상태에 따라 ageField가 나타났다 사라졌다 하는데 ageField가 나타났을 때는 ageField 아래에 뷰가 나타나고, 사라졌을 때는 ageSwitch 밑에 뷰가 나타남.</li>
-</ul>]]></content><author><name>Mirae</name></author><category term="TIL" /><summary type="html"><![CDATA[override init() { // 뷰의 appearance를 정의 } override func layoutSubviews() { // 이 안에서 layout을 설정해주어야 뷰에 나타남. }]]></summary></entry><entry><title type="html">UIKit 튜토리얼 따라가보기</title><link href="http://localhost:4000/til/2024-06-09-UIKit-toturial.html" rel="alternate" type="text/html" title="UIKit 튜토리얼 따라가보기" /><published>2024-06-09T00:00:00+09:00</published><updated>2024-06-09T00:00:00+09:00</updated><id>http://localhost:4000/til/UIKit-toturial</id><content type="html" xml:base="http://localhost:4000/til/2024-06-09-UIKit-toturial.html"><![CDATA[<h1 id="creating-a-list-view">Creating a list view</h1>
+</ul>
+
+<p>🍊</p>
+<div class="language-swift highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">override</span> <span class="kd">func</span> <span class="nf">layoutSubviews</span><span class="p">()</span> <span class="p">{</span>
+    <span class="k">super</span><span class="o">.</span><span class="nf">layoutSubviews</span><span class="p">()</span>
+    <span class="c1">// top: safety area에 고정, 나머지는 스크린 끝쪽에 고정</span>
+    <span class="n">contentView</span><span class="o">.</span><span class="n">pin</span><span class="o">.</span><span class="nf">top</span><span class="p">(</span><span class="n">pin</span><span class="o">.</span><span class="n">safeArea</span><span class="p">)</span><span class="o">.</span><span class="nf">bottom</span><span class="p">()</span><span class="o">.</span><span class="nf">left</span><span class="p">()</span><span class="o">.</span><span class="nf">right</span><span class="p">()</span>
+<span class="p">}</span>
+</code></pre></div></div>
+<ul>
+  <li>top: safety area에 고정, 나머지는 스크린 끝쪽에 고정</li>
+</ul>
+
+<p>🍊</p>
+<div class="language-swift highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">flex</span><span class="o">.</span><span class="nf">addItem</span><span class="p">()</span><span class="o">.</span><span class="nf">direction</span><span class="p">(</span><span class="o">.</span><span class="n">row</span><span class="p">)</span><span class="o">.</span><span class="nf">alignItems</span><span class="p">(</span><span class="o">.</span><span class="n">baseline</span><span class="p">)</span><span class="o">.</span><span class="n">define</span> <span class="p">{</span> <span class="n">flex</span> <span class="k">in</span>
+    <span class="n">flex</span><span class="o">.</span><span class="nf">addItem</span><span class="p">(</span><span class="n">view1</span><span class="p">)</span><span class="o">.</span><span class="nf">marginRight</span><span class="p">(</span><span class="mi">8</span><span class="p">)</span>
+    <span class="n">flex</span><span class="o">.</span><span class="nf">addItem</span><span class="p">(</span><span class="n">view2</span><span class="p">)</span>
+<span class="p">}</span>
+</code></pre></div></div>
+<ul>
+  <li>UILabel의 높이가 같은 컨테이너에 있을 경우 같게 나타나는 문제가 있어 아래와 같이 alignItems()를 추가해주어 각자의 높이가 정상적으로 나타나도록 함.</li>
+</ul>
+
+<p>🍊 Simulator에서 layout이 정상적으로 보이지 않는 문제</p>
+<ul>
+  <li>Scroll view를 사용하는 뷰가 프리뷰에서는 정상적으로 보이나 시뮬레이터에서는 정상적으로 보이지 않음.</li>
+  <li>코드 a와 b의 순서가 다른 것이 문제였음. scroll view를 pin하는 코드를 먼저 작성해주었더니 정상적으로 나타남.
+    <div class="language-swift highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">override</span> <span class="kd">func</span> <span class="nf">layoutSubviews</span><span class="p">()</span> <span class="p">{</span>
+  <span class="k">super</span><span class="o">.</span><span class="nf">layoutSubviews</span><span class="p">()</span>
+  <span class="n">scrollView</span><span class="o">.</span><span class="n">pin</span><span class="o">.</span><span class="nf">top</span><span class="p">()</span><span class="o">.</span><span class="nf">bottom</span><span class="p">()</span><span class="o">.</span><span class="nf">left</span><span class="p">()</span><span class="o">.</span><span class="nf">right</span><span class="p">()</span> <span class="c1">// scroll view를 pin하는 코드 a</span>
+  <span class="n">rootFlexContainer</span><span class="o">.</span><span class="n">pin</span><span class="o">.</span><span class="nf">top</span><span class="p">()</span><span class="o">.</span><span class="nf">left</span><span class="p">()</span><span class="o">.</span><span class="nf">right</span><span class="p">()</span> <span class="c1">// rootFlexContainer를 pin하는 코드 b</span>
+  <span class="n">rootFlexContainer</span><span class="o">.</span><span class="n">flex</span><span class="o">.</span><span class="nf">layout</span><span class="p">(</span><span class="nv">mode</span><span class="p">:</span> <span class="o">.</span><span class="n">adjustHeight</span><span class="p">)</span>
+  <span class="n">scrollView</span><span class="o">.</span><span class="n">contentSize</span> <span class="o">=</span> <span class="n">rootFlexContainer</span><span class="o">.</span><span class="n">frame</span><span class="o">.</span><span class="n">size</span>
+<span class="p">}</span>
+</code></pre></div>    </div>
+  </li>
+</ul>]]></content><author><name>Mirae</name></author><category term="TIL" /><summary type="html"><![CDATA[이 포스팅은 PinLayout &amp; FlexLayout 사용하여 프로젝트를 진행하며 기억해두고 싶은 것을 적어두는 것에 목적을 두고 있습니다.]]></summary></entry><entry><title type="html">UIKit 튜토리얼 따라가보기</title><link href="http://localhost:4000/til/2024-06-09-UIKit-toturial.html" rel="alternate" type="text/html" title="UIKit 튜토리얼 따라가보기" /><published>2024-06-09T00:00:00+09:00</published><updated>2024-06-09T00:00:00+09:00</updated><id>http://localhost:4000/til/UIKit-toturial</id><content type="html" xml:base="http://localhost:4000/til/2024-06-09-UIKit-toturial.html"><![CDATA[<h1 id="creating-a-list-view">Creating a list view</h1>
 <blockquote>
   <p>Add a collention view controller</p>
 </blockquote>
@@ -494,6 +536,12 @@
 <ul>
   <li>UIContentView 프로토콜을 따르는 객체는 UIContentConfiguration 타입의 configuration 속성을 가져야 한다.</li>
   <li>이 앱에서 사용할 configuration은 텍스트 필드의 값인 text 속성을 가진다. text 속성을 가진 커스텀 UIContentConfiguration 타입을 생성하자.</li>
+</ul>
+
+<h1 id="editing-reminders">Editing reminders</h1>
+
+<ul>
+  <li>workingReminder 라는 변수를 생성. 사용자가 편집 모드에서 workingReminder에 변경 사항을 일으키면 이 변경된 사항을 reminder에 복사해서 뷰 모드에서 그 데이터들이 보여지도록 함.</li>
 </ul>]]></content><author><name>Mirae</name></author><category term="TIL" /><summary type="html"><![CDATA[Creating a list view Add a collention view controller 뷰컨트롤러(이하 ‘뷰컨’)는 뷰와 데이터 모델 사이에 다리 역할을 한다. 각 뷰컨은 하나의 뷰 계층을 관리하는 역할을 담당한다. 뷰의 컨텐츠를 업데이트하고, UI에 일어난 이벤트를 관리한다. Interface Builder를 사용하여 컬렉션 뷰컨트롤러를 생성해보자. 컬렉션뷰는 그리드, 행, 열, 또는 테이블의 형태로 셀을 보여준다. Collection view controller scene을 추가한다. 생성된 collection view의 cell 템플릿을 제거한다. (셀을 코드에서 정의할 것이기 때문.) Attribute inspector에서 is initial view controller 체크박스를 체크하여 해당 씬을 스토리보드의 엔트리 포인트로 설정 (앱이 스토리보드를 로드할 때 가장 먼저 로드됨.)]]></summary></entry><entry><title type="html">SwiftUI Tutorials</title><link href="http://localhost:4000/til/2024-04-09-swiftui-concepts-tutorials.html" rel="alternate" type="text/html" title="SwiftUI Tutorials" /><published>2024-04-09T00:00:00+09:00</published><updated>2024-04-09T00:00:00+09:00</updated><id>http://localhost:4000/til/swiftui-concepts-tutorials</id><content type="html" xml:base="http://localhost:4000/til/2024-04-09-swiftui-concepts-tutorials.html"><![CDATA[<h1 id="색-정의하기">색 정의하기</h1>
 <blockquote>
   <p>Define colors in the asset catalog</p>
@@ -601,69 +649,7 @@ recipe는 Recipe를 리턴하지 않고, Recipe 타입의 커스텀 바인딩을
 <span class="p">}</span>
 </code></pre></div>    </div>
   </li>
-</ul>]]></content><author><name>Mirae</name></author><category term="TIL" /><summary type="html"><![CDATA[색 정의하기 Define colors in the asset catalog]]></summary></entry><entry><title type="html">앱 Your Music 작성기</title><link href="http://localhost:4000/til/2023-12-03-YourMusicApp.html" rel="alternate" type="text/html" title="앱 Your Music 작성기" /><published>2023-12-03T00:00:00+09:00</published><updated>2023-12-03T00:00:00+09:00</updated><id>http://localhost:4000/til/YourMusicApp</id><content type="html" xml:base="http://localhost:4000/til/2023-12-03-YourMusicApp.html"><![CDATA[<blockquote>
-  <p>첫번째 목표… Spotify API 호출하기</p>
-</blockquote>
-
-<h1 id="authorization">Authorization</h1>
-
-<ul>
-  <li>모든 Spotify Web API로의 요청은 권한이 필요.</li>
-  <li>웹 API를 통해서 프라이빗한 정보에 접근하기 위해서는 사용자의 동의를 받아야 함.</li>
-</ul>
-
-<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>https://accounts.spotify.com/en/authorize?client_id=클라이언트아이디값&amp;response_type=token&amp;redirect_uri=https://open.spotify.com/
-</code></pre></div></div>
-
-<ul>
-  <li>위 주소로 토큰을 받는 네트워크 요청을 보내봄.</li>
-</ul>
-
-<center><img src="/assets/images/YourMusic_20231203.png" alt="YourMusic_20231203" width="400" /></center>
-<p><br /></p>
-
-<ul>
-  <li>위와 같이 사용자의 동의를 얻는 화면이 나타남.</li>
-  <li>동의하면 redirect_uri 주소로 이동하며 아래와 같이 access token을 얻게 됨.</li>
-</ul>
-
-<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>https://open.spotify.com/#access_token=토큰값&amp;token_type=Bearer&amp;expires_in=3600
-</code></pre></div></div>
-<ul>
-  <li>이 토큰은 한시간동안 유효함.</li>
-</ul>
-
-<p>https://open.spotify.com/#access_token=BQDhgN0-a0A2rk3b6XuI1__aTDzPF1YUDdfvHb5HlH7JN_jv8zBQH1isxdlDnnDxz_nMXZ8636l63lRAwEu3VY7jYxKPGvLaWjw0ioQdDlH_pGhGyn8OriokdN3jab9bvkco9bXchwbrKic5SkZCGGMVQ_azzw0-UX767m64YdxC4SfyVRtAixa_x_EyvGBohXY&amp;token_type=Bearer&amp;expires_in=3600</p>
-
-<ul>
-  <li>client secret이 안전하게 보관될 수 없는 환경에는 PKCE를 통한 권한 요청을 할 것을 추천함.</li>
-  <li>code verifier를 생성하는 것으로 PKCE 권한 요청 플로우를 시작함.</li>
-</ul>]]></content><author><name>Mirae</name></author><category term="TIL" /><summary type="html"><![CDATA[첫번째 목표… Spotify API 호출하기]]></summary></entry><entry><title type="html">SwiftUI Essentials 튜토리얼을 따라가며 정리</title><link href="http://localhost:4000/til/2023-10-10-SwiftUIEssentials.html" rel="alternate" type="text/html" title="SwiftUI Essentials 튜토리얼을 따라가며 정리" /><published>2023-10-10T00:00:00+09:00</published><updated>2023-10-10T00:00:00+09:00</updated><id>http://localhost:4000/til/SwiftUIEssentials</id><content type="html" xml:base="http://localhost:4000/til/2023-10-10-SwiftUIEssentials.html"><![CDATA[<p><a href="https://developer.apple.com/tutorials/swiftui/drawing-paths-and-shapes">SwiftUI Essentials</a></p>
-<blockquote>
-  <p>이 글은 위 튜토리얼을 따라가며 정리한 내용입니다.</p>
-</blockquote>
-
-<h1 id="drawing-paths-and-shapes">Drawing paths and shapes</h1>
-
-<div class="language-swift highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">struct</span> <span class="kt">BadgeBackground</span><span class="p">:</span> <span class="kt">View</span> <span class="p">{</span>
-    <span class="k">var</span> <span class="nv">body</span><span class="p">:</span> <span class="kd">some</span> <span class="kt">View</span> <span class="p">{</span>
-        <span class="kt">Path</span> <span class="p">{</span> <span class="n">path</span> <span class="k">in</span>
-            <span class="k">var</span> <span class="nv">width</span><span class="p">:</span> <span class="kt">CGFloat</span> <span class="o">=</span> <span class="mf">100.0</span>
-            <span class="k">let</span> <span class="nv">height</span> <span class="o">=</span> <span class="n">width</span>
-            <span class="n">path</span><span class="o">.</span><span class="nf">move</span><span class="p">(</span>
-                <span class="nv">to</span><span class="p">:</span> <span class="kt">CGPoint</span><span class="p">(</span>
-                    <span class="nv">x</span><span class="p">:</span> <span class="n">width</span> <span class="o">*</span> <span class="mf">0.95</span><span class="p">,</span>
-                    <span class="nv">y</span><span class="p">:</span> <span class="n">height</span> <span class="o">*</span> <span class="mf">0.20</span>
-                <span class="p">)</span>
-            <span class="p">)</span>
-        <span class="p">}</span>
-        <span class="o">.</span><span class="nf">fill</span><span class="p">(</span><span class="o">.</span><span class="n">black</span><span class="p">)</span>
-    <span class="p">}</span>
-<span class="p">}</span>
-</code></pre></div></div>
-
-<p>Path shape을 추가하고, fill() modifier를 적용하여 shape을 view로 만들어 줍니다. paths는 선, 곡선 등의 기초 요소를 혼합하여 더 복잡한 모양을 그리는 곳에 사용됩니다.<br />
-100*100px 사이즈의 컨테이너를 path의 시작점으로 설정해줍니다. path.move(to:) 메서드는 드로잉 커서를 움직입니다.</p>]]></content><author><name>Mirae</name></author><category term="TIL" /><summary type="html"><![CDATA[SwiftUI Essentials 이 글은 위 튜토리얼을 따라가며 정리한 내용입니다. Drawing paths and shapes]]></summary></entry><entry><title type="html">앱 Scrumdinger 튜토리얼을 따라가며 정리</title><link href="http://localhost:4000/til/2023-10-10-Scrumdinger.html" rel="alternate" type="text/html" title="앱 Scrumdinger 튜토리얼을 따라가며 정리" /><published>2023-10-10T00:00:00+09:00</published><updated>2023-10-10T00:00:00+09:00</updated><id>http://localhost:4000/til/Scrumdinger</id><content type="html" xml:base="http://localhost:4000/til/2023-10-10-Scrumdinger.html"><![CDATA[<p><a href="https://developer.apple.com/tutorials/app-dev-training/managing-data-flow-between-views">Scrumdinger app tutorial</a></p>
+</ul>]]></content><author><name>Mirae</name></author><category term="TIL" /><summary type="html"><![CDATA[색 정의하기 Define colors in the asset catalog]]></summary></entry><entry><title type="html">앱 Scrumdinger 튜토리얼을 따라가며 정리</title><link href="http://localhost:4000/til/2023-10-10-Scrumdinger.html" rel="alternate" type="text/html" title="앱 Scrumdinger 튜토리얼을 따라가며 정리" /><published>2023-10-10T00:00:00+09:00</published><updated>2023-10-10T00:00:00+09:00</updated><id>http://localhost:4000/til/Scrumdinger</id><content type="html" xml:base="http://localhost:4000/til/2023-10-10-Scrumdinger.html"><![CDATA[<p><a href="https://developer.apple.com/tutorials/app-dev-training/managing-data-flow-between-views">Scrumdinger app tutorial</a></p>
 <blockquote>
   <p>이 글은 위 튜토리얼을 따라가며 정리한 내용입니다.</p>
 </blockquote>
@@ -1333,68 +1319,7 @@ Swift는 메인 스레드와의 상호작용을 돕기 위한 어노테이션인
 <span class="p">}</span>
 
 
-</code></pre></div></div>]]></content><author><name>Mirae</name></author><category term="TIL" /><summary type="html"><![CDATA[```swift]]></summary></entry><entry><title type="html">Coding Test TIL</title><link href="http://localhost:4000/til/2023-07-04-CodingTestTIL.html" rel="alternate" type="text/html" title="Coding Test TIL" /><published>2023-07-04T00:00:00+09:00</published><updated>2023-07-04T00:00:00+09:00</updated><id>http://localhost:4000/til/CodingTestTIL</id><content type="html" xml:base="http://localhost:4000/til/2023-07-04-CodingTestTIL.html"><![CDATA[<h3 id="백준-10811번-바구니-뒤집기">백준 10811번: 바구니 뒤집기</h3>
-
-<div class="language-swift highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">import</span> <span class="kt">Foundation</span>
-
-<span class="k">let</span> <span class="nv">input</span> <span class="o">=</span> <span class="nf">readLine</span><span class="p">()</span><span class="o">!.</span><span class="nf">components</span><span class="p">(</span><span class="nv">separatedBy</span><span class="p">:</span> <span class="s">" "</span><span class="p">)</span>
-
-<span class="k">let</span> <span class="nv">n</span> <span class="o">=</span> <span class="kt">Int</span><span class="p">(</span><span class="n">input</span><span class="p">[</span><span class="mi">0</span><span class="p">])</span><span class="o">!</span>
-<span class="k">let</span> <span class="nv">m</span> <span class="o">=</span> <span class="kt">Int</span><span class="p">(</span><span class="n">input</span><span class="p">[</span><span class="mi">1</span><span class="p">])</span><span class="o">!</span>
-
-<span class="k">var</span> <span class="nv">originArray</span> <span class="o">=</span> <span class="kt">Array</span><span class="p">(</span><span class="mi">1</span><span class="o">...</span><span class="n">n</span><span class="p">)</span>
-
-<span class="k">for</span> <span class="n">_</span> <span class="k">in</span> <span class="mi">1</span><span class="o">...</span><span class="n">m</span> <span class="p">{</span>
-    
-    <span class="k">let</span> <span class="nv">indices</span> <span class="o">=</span> <span class="nf">readLine</span><span class="p">()</span><span class="o">!.</span><span class="nf">components</span><span class="p">(</span><span class="nv">separatedBy</span><span class="p">:</span> <span class="s">" "</span><span class="p">)</span>
-    
-    <span class="k">let</span> <span class="nv">startIndex</span> <span class="o">=</span> <span class="kt">Int</span><span class="p">(</span><span class="n">indices</span><span class="p">[</span><span class="mi">0</span><span class="p">])</span><span class="o">!</span>
-    
-    <span class="k">let</span> <span class="nv">endIndex</span> <span class="o">=</span> <span class="kt">Int</span><span class="p">(</span><span class="n">indices</span><span class="p">[</span><span class="mi">1</span><span class="p">])</span><span class="o">!</span>
-    
-    <span class="c1">// 왜 ... 가 아니고 ..&lt; 이거지?</span>
-    <span class="k">let</span> <span class="nv">slicedAndReversed</span> <span class="o">=</span> <span class="n">originArray</span><span class="p">[</span><span class="n">startIndex</span><span class="o">-</span><span class="mi">1</span><span class="o">..&lt;</span><span class="n">endIndex</span><span class="o">-</span><span class="mi">1</span><span class="p">]</span><span class="o">.</span><span class="nf">reversed</span><span class="p">()</span>
-    
-    <span class="k">let</span> <span class="nv">slicedAndReversedArr</span> <span class="o">=</span> <span class="kt">Array</span><span class="p">(</span><span class="n">slicedAndReversed</span><span class="p">)</span>
-    
-    <span class="n">originArray</span><span class="o">.</span><span class="nf">removeSubrange</span><span class="p">(</span><span class="n">startIndex</span><span class="o">-</span><span class="mi">1</span><span class="o">..&lt;</span><span class="n">endIndex</span><span class="o">-</span><span class="mi">1</span><span class="p">)</span>
-    <span class="n">originArray</span><span class="o">.</span><span class="nf">insert</span><span class="p">(</span><span class="nv">contentsOf</span><span class="p">:</span> <span class="n">slicedAndReversedArr</span><span class="p">,</span> <span class="nv">at</span><span class="p">:</span> <span class="n">startIndex</span><span class="p">)</span>
-    
-<span class="p">}</span>
-
-<span class="c1">// 틀린 부분</span>
-<span class="nf">print</span><span class="p">(</span><span class="n">originArray</span><span class="p">)</span>
-
-<span class="c1">// 틀린 부분 수정 </span>
-<span class="n">originArray</span><span class="o">.</span><span class="n">forEach</span> <span class="p">{</span> <span class="nf">print</span><span class="p">(</span><span class="nv">$0</span><span class="p">,</span> <span class="nv">terminator</span><span class="p">:</span> <span class="s">" "</span><span class="p">)</span> <span class="p">}</span> 
-
-<span class="c1">// print의 terminator 파라미터는 기본값으로 "\n"을 가짐</span>
-<span class="c1">// 프린트 되는 값 뒤에 함께 프린트 되는 값으로 기본값이 \n이기 때문에 forEach를 사용하여 여러개의 값을 프린트하면</span>
-<span class="c1">// line break와 함께 출력됨</span>
-<span class="c1">// 위 예시 코드에서는 각 요소가 출력 될 때마다 space를 출력함</span>
-</code></pre></div></div>
-
-<h3 id="프로그래머스--내적">프로그래머스 : 내적</h3>
-
-<div class="language-swift highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">import</span> <span class="kt">Foundation</span>
-
-<span class="kd">func</span> <span class="nf">solution</span><span class="p">(</span><span class="n">_</span> <span class="nv">a</span><span class="p">:[</span><span class="kt">Int</span><span class="p">],</span> <span class="n">_</span> <span class="nv">b</span><span class="p">:[</span><span class="kt">Int</span><span class="p">])</span> <span class="o">-&gt;</span> <span class="kt">Int</span> <span class="p">{</span>
-    <span class="k">let</span> <span class="nv">n</span> <span class="o">=</span> <span class="n">a</span><span class="o">.</span><span class="n">count</span>
-    <span class="k">var</span> <span class="nv">array</span><span class="p">:</span> <span class="p">[</span><span class="kt">Int</span><span class="p">]</span> <span class="o">=</span> <span class="p">[]</span>
-    
-    <span class="k">for</span> <span class="n">index</span> <span class="k">in</span> <span class="mi">0</span><span class="o">..&lt;</span><span class="n">n</span> <span class="p">{</span>
-        <span class="n">array</span><span class="o">.</span><span class="nf">append</span><span class="p">(</span><span class="n">a</span><span class="p">[</span><span class="n">index</span><span class="p">]</span> <span class="o">*</span> <span class="n">b</span><span class="p">[</span><span class="n">index</span><span class="p">])</span>
-    <span class="p">}</span>
-    
-    <span class="k">let</span> <span class="nv">sumResult</span> <span class="o">=</span> <span class="n">array</span><span class="o">.</span><span class="nf">reduce</span><span class="p">(</span><span class="o">.</span><span class="n">zero</span><span class="p">,</span> <span class="o">+</span><span class="p">)</span>
-    
-    <span class="k">return</span> <span class="n">sumResult</span>
-<span class="p">}</span>
-</code></pre></div></div>
-
-<ul>
-  <li>forEach 문은 느리기 때문에 시간제한에 걸릴 수 있음.</li>
-</ul>]]></content><author><name>Mirae</name></author><category term="TIL" /><summary type="html"><![CDATA[백준 10811번: 바구니 뒤집기]]></summary></entry><entry><title type="html">SwiftUI 업데이트</title><link href="http://localhost:4000/til/2023-07-03-SwiftUIUpdates.html" rel="alternate" type="text/html" title="SwiftUI 업데이트" /><published>2023-07-03T00:00:00+09:00</published><updated>2023-07-03T00:00:00+09:00</updated><id>http://localhost:4000/til/SwiftUIUpdates</id><content type="html" xml:base="http://localhost:4000/til/2023-07-03-SwiftUIUpdates.html"><![CDATA[<h1 id="onchangeofinitial_">onChange(of:initial:_:)</h1>
+</code></pre></div></div>]]></content><author><name>Mirae</name></author><category term="TIL" /><summary type="html"><![CDATA[```swift]]></summary></entry><entry><title type="html">SwiftUI 업데이트</title><link href="http://localhost:4000/til/2023-07-03-SwiftUIUpdates.html" rel="alternate" type="text/html" title="SwiftUI 업데이트" /><published>2023-07-03T00:00:00+09:00</published><updated>2023-07-03T00:00:00+09:00</updated><id>http://localhost:4000/til/SwiftUIUpdates</id><content type="html" xml:base="http://localhost:4000/til/2023-07-03-SwiftUIUpdates.html"><![CDATA[<h1 id="onchangeofinitial_">onChange(of:initial:_:)</h1>
 
 <h2 id="파라미터">파라미터</h2>
 
@@ -1559,7 +1484,231 @@ Swift는 메인 스레드와의 상호작용을 돕기 위한 어노테이션인
 <span class="kd">@attached</span><span class="p">(</span><span class="n">member</span><span class="p">)</span> 
 </code></pre></div></div>
 
-<!--- MemberMacro 프로토콜은 하나의 요구사항을 가짐. 이 요구사항은 'expansion' 함수인데, -->]]></content><author><name>Mirae</name></author><category term="TIL" /><summary type="html"><![CDATA[onChange(of:initial:_:)]]></summary></entry><entry><title type="html">SwiftUI 뷰 레이아웃</title><link href="http://localhost:4000/til/2023-05-24-ViewLayout.html" rel="alternate" type="text/html" title="SwiftUI 뷰 레이아웃" /><published>2023-05-24T00:00:00+09:00</published><updated>2023-05-24T00:00:00+09:00</updated><id>http://localhost:4000/til/ViewLayout</id><content type="html" xml:base="http://localhost:4000/til/2023-05-24-ViewLayout.html"><![CDATA[<div class="language-swift highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">struct</span> <span class="kt">ReusableLabel</span><span class="p">:</span> <span class="kt">View</span> <span class="p">{</span>
+<!--- MemberMacro 프로토콜은 하나의 요구사항을 가짐. 이 요구사항은 'expansion' 함수인데, -->]]></content><author><name>Mirae</name></author><category term="TIL" /><summary type="html"><![CDATA[onChange(of:initial:_:)]]></summary></entry><entry><title type="html">TIL</title><link href="http://localhost:4000/til/2023-05-24-TIL.html" rel="alternate" type="text/html" title="TIL" /><published>2023-05-24T00:00:00+09:00</published><updated>2023-05-24T00:00:00+09:00</updated><id>http://localhost:4000/til/TIL</id><content type="html" xml:base="http://localhost:4000/til/2023-05-24-TIL.html"><![CDATA[<h2 id="ds_store">DS_Store</h2>
+<ul>
+  <li>DS_Store는 해당 폴더에 대한 Finder 관련 정보를 가지고 있으므로, 다른 컴퓨터에는 영향을 주지 않음. 커밋 시 ignore 하여도 무방함.</li>
+</ul>
+
+<h2 id="swiftui-videoplayer-영상-looping">SwiftUI VideoPlayer 영상 looping</h2>
+<div class="language-swift highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">@State</span> <span class="kd">private</span> <span class="k">var</span> <span class="nv">queuePlayer</span><span class="p">:</span> <span class="kt">AVQueuePlayer</span> <span class="o">=</span> <span class="kt">AVQueuePlayer</span><span class="p">()</span>
+<span class="kd">@State</span> <span class="kd">private</span> <span class="k">var</span> <span class="nv">playerLooper</span><span class="p">:</span> <span class="kt">AVPlayerLooper</span><span class="o">!</span>
+
+<span class="kd">struct</span> <span class="kt">SomeView</span><span class="p">:</span> <span class="kt">View</span> <span class="p">{</span>
+
+    <span class="kt">VideoPlayer</span><span class="p">(</span><span class="nv">player</span><span class="p">:</span> <span class="n">queuePlayer</span><span class="p">)</span>
+         <span class="o">.</span><span class="n">onAppear</span> <span class="p">{</span>
+             <span class="k">guard</span> <span class="k">let</span> <span class="nv">url</span> <span class="o">=</span> <span class="kt">URL</span><span class="p">(</span><span class="nv">string</span><span class="p">:</span> <span class="s">"stringUrl"</span><span class="p">)</span> <span class="k">else</span> <span class="p">{</span>
+                 <span class="k">return</span>
+             <span class="p">}</span>
+             
+             <span class="k">if</span> <span class="n">queuePlayer</span><span class="o">.</span><span class="n">currentItem</span><span class="p">?</span><span class="o">.</span><span class="n">status</span><span class="o">.</span><span class="n">rawValue</span> <span class="o">!=</span> <span class="mi">1</span> <span class="p">{</span>
+                 
+                 <span class="nf">print</span><span class="p">(</span><span class="s">"player status readyToPlay"</span><span class="p">)</span>
+                 
+                 <span class="k">let</span> <span class="nv">asset</span> <span class="o">=</span> <span class="kt">AVAsset</span><span class="p">(</span><span class="nv">url</span><span class="p">:</span> <span class="n">url</span><span class="p">)</span>
+                 <span class="k">let</span> <span class="nv">item</span> <span class="o">=</span> <span class="kt">AVPlayerItem</span><span class="p">(</span><span class="nv">asset</span><span class="p">:</span> <span class="n">asset</span><span class="p">)</span>
+                 <span class="n">playerLooper</span> <span class="o">=</span> <span class="kt">AVPlayerLooper</span><span class="p">(</span><span class="nv">player</span><span class="p">:</span> <span class="n">queuePlayer</span><span class="p">,</span> <span class="nv">templateItem</span><span class="p">:</span> <span class="n">item</span><span class="p">)</span>
+             <span class="p">}</span>
+             
+             <span class="n">queuePlayer</span><span class="o">.</span><span class="nf">play</span><span class="p">()</span>
+         <span class="p">}</span>
+         <span class="o">.</span><span class="n">onDisappear</span> <span class="p">{</span>
+             <span class="n">queuePlayer</span><span class="o">.</span><span class="nf">pause</span><span class="p">()</span>
+         <span class="p">}</span>
+<span class="p">}</span>
+</code></pre></div></div>
+<p><b>하나의 영상을 반복 재생하기</b></p>
+<ul>
+  <li>AVQueuePlayer와 AVPlayerLooper를 사용</li>
+  <li>url을 통해 영상 데이터를 가져옴</li>
+  <li>AVAsset, AVPlayerItem, AVPlayerLooper를 사용하여 반복 재생하였으나 paged style tab view 안에 재생되는 비디오가 page 이동 후 돌아오면 아래와 같은 에러가 발생함.</li>
+</ul>
+
+<blockquote>
+  <p>An AVPlayerItem can occupy only one position in a player’s queue at a time</p>
+</blockquote>
+
+<h2 id="lazy-stored-property">Lazy Stored Property</h2>
+
+<ul>
+  <li>lazy stored property의 초기값은 해당 속성이 사용되기 전까지 계산되지 않음.</li>
+  <li>lazy property는 var 키워드를 사용하여 항상 변수로 선언해야 함. lazy 속성은 인스턴스 초기화가 완료된 후에도 초기값이 없을 수 있음(사용되기 전이기 때문에). 반면에, 상수(Constant) 속성은 객체 초기화 전에 값을 꼭 가져야 하기 때문에 lazy 속성으로 정의될 수 없음.</li>
+</ul>
+
+<div class="language-swift highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">class</span> <span class="kt">DataImporter</span> <span class="p">{</span>
+    <span class="cm">/*
+    DataImporter 클래스는 외부의 파일로부터 데이터를 가져옴.
+    이 객체를 초기화하는 시간이 꽤 걸린다고 가정함.
+    */</span>
+    <span class="k">var</span> <span class="nv">filename</span> <span class="o">=</span> <span class="s">"data.txt"</span>
+<span class="p">}</span>
+
+<span class="kd">class</span> <span class="kt">DataManager</span> <span class="p">{</span>
+    <span class="kd">lazy</span> <span class="k">var</span> <span class="nv">importer</span> <span class="o">=</span> <span class="kt">DataImporter</span><span class="p">()</span>
+    <span class="k">var</span> <span class="nv">data</span><span class="p">:</span> <span class="p">[</span><span class="kt">String</span><span class="p">]</span> <span class="o">=</span> <span class="p">[]</span> 
+    <span class="c1">// 데이터를 관리하는 기능을 제공하는 객체</span>
+<span class="p">}</span>
+
+<span class="k">let</span> <span class="nv">manager</span> <span class="o">=</span> <span class="kt">DataManager</span><span class="p">()</span>
+<span class="n">manager</span><span class="o">.</span><span class="n">data</span><span class="o">.</span><span class="nf">append</span><span class="p">(</span><span class="s">"Some data"</span><span class="p">)</span>
+<span class="n">manager</span><span class="o">.</span><span class="n">data</span><span class="o">.</span><span class="nf">append</span><span class="p">(</span><span class="s">"Some more data"</span><span class="p">)</span>
+<span class="c1">// 아직까지는 importer에 할당될 DataImporter의 인스턴스가 생성되지 않음.</span>
+</code></pre></div></div>
+
+<h2 id="스터디-과제-진행하며-정리-67">스터디 과제 진행하며 정리 (~6/7)</h2>
+<ul>
+  <li>@State 프로퍼티는 항상 private으로 사용 (해당하는 뷰와 서브 뷰의 특정한 정보를 담기 때문)</li>
+  <li>observable object class 수정
+    <ul>
+      <li>published 값이 옵셔널로 설정되어 있음 -&gt; 뷰 부분에서 처리해주어야 하는 불편함을 해결하기 위해 수정</li>
+      <li>final class로 변경</li>
+      <li>Combine 추가</li>
+      <li>데이터 로드하는 함수를 제네릭 함수로 변경</li>
+      <li>데이터 로드 함수를 실행하는 init() 제거</li>
+      <li>데이터 로드 함수가 observable object 클래스 안이 아닌 바깥 쪽에 정의</li>
+    </ul>
+  </li>
+</ul>
+
+<div class="language-swift highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">func</span> <span class="nf">testSearching</span><span class="p">()</span> <span class="k">throws</span> <span class="p">{</span>
+    
+    <span class="k">let</span> <span class="nv">searchText</span> <span class="o">=</span> <span class="s">"주차"</span>
+
+    <span class="k">let</span> <span class="nv">result</span> <span class="o">=</span> <span class="kt">ModelData</span><span class="p">()</span><span class="o">.</span><span class="n">roomList</span><span class="o">.</span><span class="n">rooms</span><span class="o">.</span><span class="n">filter</span> <span class="p">{</span> <span class="nv">$0</span><span class="o">.</span><span class="n">hashTags</span><span class="o">.</span><span class="nf">contains</span><span class="p">(</span><span class="n">searchText</span><span class="p">)</span> <span class="p">}</span>
+
+    <span class="kt">XCTAssertEqual</span><span class="p">(</span><span class="n">result</span><span class="o">.</span><span class="n">count</span><span class="p">,</span> <span class="mi">40</span><span class="p">)</span>
+    
+<span class="p">}</span>
+</code></pre></div></div>
+<ul>
+  <li>간단한 테스트 코드 작성하여 search function test</li>
+  <li>
+    <p>위 코드에서 searchText의 값과 XCTAssertEqual()의 값만 변경하여 여러가지 검색어 상황에 따른 데이터 결과를 확인할 수 있었음</p>
+  </li>
+  <li>문제 해결 내용
+    <ul>
+      <li><code class="language-plaintext highlighter-rouge">swift 
+      let file = Bundle.main.url(forResource: filename, withExtension: "txt")</code> 에서 withExtension을 nil로 주면 이름이 일치하는 첫번째 파일을 가져온다고 하여 nil로 주었으나 파일을 찾지 못한다는 에러가 발생하여 파일의 익스텐션인 “txt”로 수정하여 해결</li>
+      <li>검색 기능을 추가하면서 search text를 해시 태그로 가지고 있는 방 데이터를 필터링하여 목록을 생성. 이 목록을 @State 변수에 할당해야 하는데, 현재 버튼으로 필터링하기 위해 computed property를 사용하고 있음.</li>
+    </ul>
+  </li>
+</ul>
+
+<h2 id="스터디-과제-진행하며-정리-719">스터디 과제 진행하며 정리 (~7/19)</h2>
+<ul>
+  <li>final 키워드가 붙은 class는 서브 클래스가 오버라이딩할 수 없음</li>
+</ul>
+
+<h2 id="swiftui">SwiftUI</h2>
+
+<p><b>Source of truth 생성하기</b></p>
+<ul>
+  <li>@State와 @Binding은 value type(ex. structure, enum)을 뷰를 업데이트하는 source of truth로 만들어 줌</li>
+  <li>value type이 아니고 reference type인 클래스는 @ObservedObject, @StateObject, @EnvironmentObject 프로퍼티 래퍼를 사용</li>
+  <li>@ObservedObject, @StateObject, @EnvironmentObject를 사용하기 위해서 클래스를 observable하게 만들어 주어야 함
+    <ul>
+      <li>@StateObject는 observable 객체를 생성</li>
+      <li>@ObservedObject는 parent view로부터 객체를 받는다는 걸 나타냄 (@StateObject로 생성된 객체를 받음)</li>
+      <li>@EnvironmentObject는 복잡한 뷰에서 사용됨. 이니셜라이저를 통해 객체를 통과시키지 않고 .environmentObject() 모더파이어를 통해 해당 뷰가 객체를 사용할 수 있도록 함 (부모-자식-자식의 자식뷰에서 자식뷰가 .environmentObject() 모더파이어를 통해 객체를 사용할 수 있게 되면 자식의 자식뷰도 @EnvironmentObject 속성을 통해 사용할 수 있게 됨)</li>
+    </ul>
+  </li>
+  <li>클래스가 ObservableObject 프로토콜을 따르도록 만들면 됨</li>
+  <li>클래스 안에는 값이 변경되었을 때 UI가 업데이트 되어야 하는 속성들이 정의됨</li>
+  <li>각 속성은 @Published atrribute를 사용해 정의되어 뷰에서 사용할 수 있게됨</li>
+</ul>
+
+<p><b>Scene architecture</b></p>
+<ul>
+  <li>Scene의 구조</li>
+  <li>하나의 앱을 만들기 위해서, App 프로토콜을 따르는 스트럭처를 생성함</li>
+  <li>이때 앞에 @main 어트리뷰트를 사용하여 이 스트럭처가 앱의 유일한 entry point라는 것을 시스템에 알려줌</li>
+  <li>앱 스트럭처의 바디 부분에 Scene 프로토콜을 따르는 스트럭처를 생성 (여러개 생성 가능)</li>
+  <li>Scene은 앱이 보여줄 뷰 게층을 담을 컨테이너</li>
+  <li>보통 iOS / WatchOS는 하나의 Scene을 가지고 macOS / iPadOS 는 여러개의 Scene을 가짐</li>
+</ul>
+
+<p><b>Scene Phases and transitions</b></p>
+<ul>
+  <li>Scene의 단계와 변형 과정</li>
+  <li>앱이 실행되는 동안 Scene은 세 단계로 변화될 수 있음</li>
+  <li>active: scene이 foreground에 있고 사용자가 상호작용할 수 있음</li>
+  <li>inactive: scene이 보이지만, 시스템이 scene과 상호작용할 수 없음. 예를 들면, 아이패드에서 멀티태스킹 기능을 사용할 때 사용하지 않는 쪽은 보이지만 inactive 상태임. (scene은 foreground에 있음)</li>
+  <li>background: 앱이 작동하고 있지만 사용자는 앱을 볼 수 없음. 앱이 꺼지기 직전에 Scene이 이 단계가 됨.</li>
+  <li>scenePhase environment value를 사용해서 현재 scene의 상태를 알 수 있음.</li>
+  <li>scene이 특정 상태가 됐을 때, 어떤 동작을 수행하도록 할 수 있음. (ex. 앱이 inactive 상태가 될 때 데이터를 저장하도록 함)</li>
+</ul>
+
+<p><b>Events and State</b></p>
+<ul>
+  <li>프로그램의 상태가 변할 때 뷰도 변하도록 하는 imperative 패턴과는 다르게, SwiftUI는 declarative 프로그래밍 패턴을 따름</li>
+  <li>SwiftUI의 뷰 바디에, 모든 상태에 대해 UI가 어떻게 나타날지 묘사함</li>
+  <li>프로그램이 실행되는 동안, 상태가 변함에 따라 변화되어야 하는 UI를 업데이트 함으로써 상태(state)와 UI가 서로 동기화되도록 함</li>
+  <li>사용자와의 상호작용이나, 알림 같은 event는 앱이 응답해야하는 상황을 만드는데, 이때 클로저가 이벤트의 응답으로써 실행됨. 이것이 Source of truth를 변경시킴</li>
+  <li>Source of truth에 일어난 변화를 감지하고, 이것을 뷰에 업데이트 하고 UI를 렌더링함</li>
+</ul>
+
+<p><b>View life cycle events</b></p>
+<ul>
+  <li>뷰가 나타나더나 스크린에서 사라질 때, 앱의 상태를 변경시키려면 onAppear(perform:) / onDisappear(perform:) / task(priority:_:) modifier 를 사용</li>
+</ul>
+
+<p><b>SwiftUI 기본 Structure</b></p>
+<ul>
+  <li>var body: some View { } 는 Scene, View, App 프로토콜을 다르는 structure가 꼭 구햔헤야 하는 필수 computed property</li>
+  <li>@main 으로 표시하여 App의 entry point를 정의할 수 있음. 앱에는 단 하나의 entry point만이 존재할 수 있음</li>
+  <li>아래 예시에서 WindowGroup은 첫번째 scene, Settings는 두번째 scene</li>
+  <li>Settings scene은 거의 모든 mac앱에서 볼 수 있는 Settings 메뉴를 생성</li>
+  <li>Settings scene은 macOS 에서만 사용 가능</li>
+</ul>
+
+<div class="language-swift highlighter-rouge"><div class="highlight"><pre class="highlight"><code>    <span class="cp">#if os(iOS)</span>
+    
+    <span class="c1">// iOS로 컴파일 될 코드</span>
+    
+    <span class="cp">#elseif os(macOS)</span>
+    <span class="kt">WindowGroup</span> <span class="p">{</span>
+        <span class="kt">AlternativeContentView</span><span class="p">()</span>
+    <span class="p">}</span>
+    
+    <span class="kt">Settings</span> <span class="p">{</span>
+        <span class="kt">SettingsView</span><span class="p">()</span>
+    <span class="p">}</span>
+    <span class="cp">#endif</span>
+</code></pre></div></div>
+
+<ul>
+  <li>#if os(iOS) 와 #elseif os(macOS), #endif는 platform conditional compilation block으로 Swift 컴파일러에게 특정 타겟 플랫폼에서만 조건문 안쪽의 코드를 컴파일 하도록 함</li>
+  <li>커스텀 뷰처럼 커스텀 Scene도 만들 수 있음</li>
+</ul>
+
+<div class="language-swift highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">struct</span> <span class="kt">CustomScene</span><span class="p">:</span> <span class="kt">Scene</span> <span class="p">{</span>
+    <span class="k">var</span> <span class="nv">body</span><span class="p">:</span> <span class="kd">some</span> <span class="kt">Scene</span> <span class="p">{</span>
+        <span class="kt">WindowGroup</span> <span class="p">{</span>
+            <span class="c1">// Scene 내용</span>
+        <span class="p">}</span>
+    <span class="p">}</span>   
+<span class="p">}</span>
+</code></pre></div></div>
+
+<h4 id="731">7/31</h4>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>에러 내용: 
+
+Photo library access not determined.
+
+This app has crashed because it attempted to access privacy-sensitive data without a usage description.  The app's Info.plist must contain an NSPhotoLibraryUsageDescription key with a string value explaining to the user how the app uses this data.
+</code></pre></div></div>
+<ul>
+  <li>TARGETS - Info - Privacy - Photo Library Usage Description 키 값 추가 - value 추가하여 해결</li>
+</ul>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>에러 내용: 
+
+스마트 앨범의 카운트가 실제와 다르게 큰 수로 나타남
+</code></pre></div></div>
+<ul>
+  <li>estimatedAssetCount를 사용할 경우, 정확한 결과를 가져오지 못할 수 있으므로 fetchAssets를 사용하여 정확한 asset의 수를 구하여 해결</li>
+</ul>]]></content><author><name>Mirae</name></author><category term="TIL" /><summary type="html"><![CDATA[DS_Store DS_Store는 해당 폴더에 대한 Finder 관련 정보를 가지고 있으므로, 다른 컴퓨터에는 영향을 주지 않음. 커밋 시 ignore 하여도 무방함.]]></summary></entry><entry><title type="html">SwiftUI 뷰 레이아웃</title><link href="http://localhost:4000/til/2023-05-24-ViewLayout.html" rel="alternate" type="text/html" title="SwiftUI 뷰 레이아웃" /><published>2023-05-24T00:00:00+09:00</published><updated>2023-05-24T00:00:00+09:00</updated><id>http://localhost:4000/til/ViewLayout</id><content type="html" xml:base="http://localhost:4000/til/2023-05-24-ViewLayout.html"><![CDATA[<div class="language-swift highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">struct</span> <span class="kt">ReusableLabel</span><span class="p">:</span> <span class="kt">View</span> <span class="p">{</span>
     <span class="k">let</span> <span class="nv">keyword</span><span class="p">:</span> <span class="kt">String</span>
     <span class="k">let</span> <span class="nv">symbol</span><span class="p">:</span> <span class="kt">String</span>
     <span class="k">var</span> <span class="nv">body</span><span class="p">:</span> <span class="kd">some</span> <span class="kt">View</span> <span class="p">{</span>
@@ -1630,4 +1779,231 @@ Swift는 메인 스레드와의 상호작용을 돕기 위한 어노테이션인
   <li>Image() 뷰 이니셜라이저는 기본적으로 이미지의 원래 사이즈로 이미지를 가져옴</li>
   <li>resizable() 모더파이어와 scaledToFit() 같은 모더파이어를 사용하여 이미지 사이즈를 조정할 수 있음</li>
   <li>.clipShape(RoundedRectangle(cornerRadius: 10.0, style: .continuous)) 을 사용하여 뷰의 위치나 크기를 변경하지 않고 corner radius를 설정할 수 있음</li>
-</ul>]]></content><author><name>Mirae</name></author><category term="TIL" /><summary type="html"><![CDATA[```swift struct ReusableLabel: View { let keyword: String let symbol: String var body: some View { Label(keyword, systemImage: symbol) .font(.title) .foregroundColor(.white) .padding() .background(.green.opacity(0.75), in: Capsule()) // - 1 } }]]></summary></entry></feed>
+</ul>]]></content><author><name>Mirae</name></author><category term="TIL" /><summary type="html"><![CDATA[```swift struct ReusableLabel: View { let keyword: String let symbol: String var body: some View { Label(keyword, systemImage: symbol) .font(.title) .foregroundColor(.white) .padding() .background(.green.opacity(0.75), in: Capsule()) // - 1 } }]]></summary></entry><entry><title type="html">Vertical TabView in SwiftUI</title><link href="http://localhost:4000/til/2023-04-29-VerticalTabView.html" rel="alternate" type="text/html" title="Vertical TabView in SwiftUI" /><published>2023-04-29T00:00:00+09:00</published><updated>2023-04-29T00:00:00+09:00</updated><id>http://localhost:4000/til/VerticalTabView</id><content type="html" xml:base="http://localhost:4000/til/2023-04-29-VerticalTabView.html"><![CDATA[<video src="https://user-images.githubusercontent.com/85061148/235292829-c16fccb8-e5ae-4243-86e3-356f57443024.mov" controls="controls" style="max-width: 300px">
+</video>
+
+<div class="language-swift highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">import</span> <span class="kt">SwiftUI</span>
+
+<span class="kd">struct</span> <span class="kt">ContentView</span><span class="p">:</span> <span class="kt">View</span> <span class="p">{</span>
+    <span class="k">var</span> <span class="nv">body</span><span class="p">:</span> <span class="kd">some</span> <span class="kt">View</span> <span class="p">{</span>
+        <span class="kt">GeometryReader</span> <span class="p">{</span> <span class="n">proxy</span> <span class="k">in</span>
+            <span class="kt">TabView</span> <span class="p">{</span>
+                <span class="kt">ForEach</span><span class="p">(</span><span class="mi">0</span><span class="o">..&lt;</span><span class="mi">3</span><span class="p">,</span> <span class="nv">id</span><span class="p">:</span> <span class="p">\</span><span class="o">.</span><span class="k">self</span><span class="p">)</span> <span class="p">{</span> <span class="n">i</span> <span class="k">in</span>
+                    <span class="kt">Image</span><span class="p">(</span><span class="s">"img_</span><span class="se">\(</span><span class="n">i</span> <span class="o">+</span> <span class="mi">1</span><span class="se">)</span><span class="s">"</span><span class="p">)</span>
+                        <span class="o">.</span><span class="nf">resizable</span><span class="p">()</span>
+                        <span class="o">.</span><span class="nf">scaledToFill</span><span class="p">()</span>
+                        <span class="o">.</span><span class="nf">rotationEffect</span><span class="p">(</span><span class="o">.</span><span class="nf">degrees</span><span class="p">(</span><span class="o">-</span><span class="mi">90</span><span class="p">))</span> <span class="c1">// 1</span>
+                        <span class="o">.</span><span class="nf">frame</span><span class="p">(</span>
+                            <span class="nv">width</span><span class="p">:</span> <span class="n">proxy</span><span class="o">.</span><span class="n">size</span><span class="o">.</span><span class="n">width</span><span class="p">,</span>
+                            <span class="nv">height</span><span class="p">:</span> <span class="n">proxy</span><span class="o">.</span><span class="n">size</span><span class="o">.</span><span class="n">height</span>
+                        <span class="p">)</span> <span class="c1">// 2</span>
+                <span class="p">}</span>
+            <span class="p">}</span>
+            <span class="o">.</span><span class="nf">frame</span><span class="p">(</span>
+                <span class="nv">width</span><span class="p">:</span> <span class="n">proxy</span><span class="o">.</span><span class="n">size</span><span class="o">.</span><span class="n">height</span><span class="p">,</span> <span class="c1">// Height &amp; width swap</span>
+                <span class="nv">height</span><span class="p">:</span> <span class="n">proxy</span><span class="o">.</span><span class="n">size</span><span class="o">.</span><span class="n">width</span>
+            <span class="p">)</span> <span class="c1">// 3</span>
+            <span class="o">.</span><span class="nf">rotationEffect</span><span class="p">(</span><span class="o">.</span><span class="nf">degrees</span><span class="p">(</span><span class="mi">90</span><span class="p">),</span> <span class="nv">anchor</span><span class="p">:</span> <span class="o">.</span><span class="n">topLeading</span><span class="p">)</span> <span class="c1">// 4</span>
+            <span class="o">.</span><span class="nf">offset</span><span class="p">(</span><span class="nv">x</span><span class="p">:</span> <span class="n">proxy</span><span class="o">.</span><span class="n">size</span><span class="o">.</span><span class="n">width</span><span class="p">)</span> <span class="c1">// 5</span>
+            <span class="o">.</span><span class="nf">tabViewStyle</span><span class="p">(</span><span class="kt">PageTabViewStyle</span><span class="p">(</span><span class="nv">indexDisplayMode</span><span class="p">:</span> <span class="o">.</span><span class="n">never</span><span class="p">))</span>
+        <span class="p">}</span>
+    <span class="p">}</span>
+<span class="p">}</span>
+</code></pre></div></div>
+
+<p><a href="https://morioh.com/p/81b0a940fba0">👉🏻 참고한 글</a></p>
+
+<div class="language-swift highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="o">.</span><span class="nf">tabViewStyle</span><span class="p">(</span><span class="kt">PageTabViewStyle</span><span class="p">(</span><span class="nv">indexDisplayMode</span><span class="p">:</span> <span class="o">.</span><span class="n">never</span><span class="p">))</span>
+</code></pre></div></div>
+
+<p>SwiftUI의 PageTabViewStyle은 기본적으로 수평으로 넘길 수 있는 paged scrolling 탭뷰입니다.
+페이지를 넘기는 것과 같은 효과를 줄 수 있는데요.</p>
+
+<p>위 코드와 같이, rotationEffect와 GeometryReader를 사용하여 수직으로 넘어가는 탭뷰를 만들 수 있습니다.</p>
+
+<ul>
+  <li>
+    <p>// 1 : rotationEffect를 사용하여 왼쪽으로 90도 이미지를 로테이션 시켜줍니다. 현재 탭뷰 안의 이미지는 아래와 같이 살짝 커졌지만 가운데 정렬된 상태로 나타납니다.</p>
+  </li>
+  <li>
+    <p>// 2: 이때 width / height는 누워있는 이미지와 같이 width가 더 큰 직사각형 형태로 존재합니다.</p>
+  </li>
+  <li>
+    <p>// 3: 여기서 TabView의 frame을 정의하는데, height와 width를 바꿔줍니다. 그러면 width가 heigt보다 작은 세로로 기다란 모양의 직사각형 frame이 되겠죠?</p>
+  </li>
+  <li>
+    <p>// 4 : anchor는 어느 꼭지점을 기준으로 로테이트 할 지 정할 때 사용하는데 .topLeading을 기준으로 90도 로테이트 했으므로 화면에는 이미지가 보여지지 않게 됩니다. 로테이트 하면서 화면 밖에 위치하게 되는데요.</p>
+  </li>
+  <li>
+    <p>// 5 : 그래서 offset에 x 값을 현재 width만큼 주어서 오른쪽으로 이동시킵니다.</p>
+  </li>
+</ul>
+
+<p>여기까지하면, 화면에 수직으로 이동하는 페이징 탭뷰가 맨 위에 있는 영상처럼 잘 나타나게 됩니다.<br />
+그런데 LazyVStack 안에 다른 뷰와 함께 탭뷰를 화면에 보이려고 하면 문제가 생기는데요.<br />
+LazyVStack은 모든 아이템을 먼저 그리는게 아니라 필요할 때 아이템을 렌더링 하기 떄문에 기존의. VStack과는 다른 레이아웃 룰을 가지고 있습니다. 그래서 높이가 10 정도 되는 뷰만 그려주게 됩니다.<br />
+일단 VStack으로 교체하면 이 문제는 해결할 수 있습니다.</p>
+
+<!--#### UIKit 사용한 Horizontal paged tabView-->
+<!---->
+<!--SwiftUI 프로젝트에 UIKit 뷰와 뷰 컨트롤러 사용하기 -->
+<!---->
+<!--UIViewRepresentable / UIViewControllerRepresentable(프로토콜)을 채택하는 커스텀 타입을 생성 -->
+<!--SwiftUI가 라이프 사이클과 업데이트를 관리하는 UIKit 타입을 생성하는 커스텀 타입-->
+<!---->
+<!--UIViewControllerRepresentable은 정의해야하는 두가지 요구사항이 있음 -->
+<!---->
+<!--1. UIPageViewController를 리턴하는 makeUIViewController(context:_)를 구현 -->
+<!---->
+<!--```swift-->
+<!--func makeUIViewController(context: Context) -> UIPageViewController {-->
+<!--    let pageViewController = UIPageViewController(-->
+<!--        transitionStyle: .scroll, // .PageCurl 스타일도 있음-->
+<!--        navigationOrientation: .horizontal) // .vertical도 있음-->
+<!--    -->
+<!--    return pageViewController-->
+<!--        -->
+<!--}-->
+<!--```  -->
+<!--- UIPageViewController의 트랜지션 스타일과 .horizontal / .vertical 방식 중 하나를 설정하여 리턴-->
+<!---->
+<!--2. updateUIViewController(_:context:) 메서드를 구현하여 setViewControllers(_:direction:animated:) 메서드를 호출-->]]></content><author><name>Mirae</name></author><category term="TIL" /><summary type="html"><![CDATA[]]></summary></entry><entry><title type="html">Stanford CS 193P</title><link href="http://localhost:4000/til/2023-02-20-StanfordLecture.html" rel="alternate" type="text/html" title="Stanford CS 193P" /><published>2023-02-20T00:00:00+09:00</published><updated>2023-02-20T00:00:00+09:00</updated><id>http://localhost:4000/til/StanfordLecture</id><content type="html" xml:base="http://localhost:4000/til/2023-02-20-StanfordLecture.html"><![CDATA[<p><a href="https://www.youtube.com/watch?v=TZL5AmwuwlA&amp;list=PL3d_SFOiG7_8ofjyKzX6Nl1wZehbdiZC_">Youtube 🔗</a></p>
+<blockquote>
+  <p>강의 내용 중 필요한 것 정리</p>
+</blockquote>
+
+<h1 id="developing-ios-11-apps-with-swift">Developing iOS 11 Apps with Swift</h1>
+<h2 id="1-introduction-to-ios-11-xcode-9-and-swift-4">1. Introduction to iOS 11, Xcode 9 and Swift 4</h2>
+
+<p>📌 the underscore operator</p>
+<div class="language-swift highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">@IBAction</span> <span class="kd">func</span> <span class="nf">touchCard</span><span class="p">(</span><span class="n">_</span> <span class="nv">sender</span><span class="p">:</span> <span class="kt">UIButton</span><span class="p">)</span> <span class="p">{</span>
+<span class="p">}</span>
+</code></pre></div></div>
+
+<p>위 함수의 external name은 ‘_‘이고, internal name은 sender.<br />
+external / internal names 둘 다 사용하는 것을 권장하는데, 아래의 touchCard 함수는 internal / external names 개념이 없는 Objective-C 부터 사용된 함수이기 때문에 때문에 external name으로 ‘_‘가 사용됨.</p>
+
+<p><br /><br /></p>
+
+<p>📌 버튼 스타일이 default 상태여야 currentTitle을 통해 버튼의 타이틀 값을 가져올 수 있음.</p>
+<div class="language-swift highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">import</span> <span class="kt">UIKit</span>
+
+<span class="kd">class</span> <span class="kt">ViewController</span><span class="p">:</span> <span class="kt">UIViewController</span> <span class="p">{</span>
+
+    
+    <span class="kd">@IBAction</span> <span class="kd">func</span> <span class="nf">touchCard</span><span class="p">(</span><span class="n">_</span> <span class="nv">sender</span><span class="p">:</span> <span class="kt">UIButton</span><span class="p">)</span> <span class="p">{</span>
+        <span class="nf">flipCard</span><span class="p">(</span><span class="nv">withEmoji</span><span class="p">:</span> <span class="s">"👻"</span><span class="p">,</span> <span class="nv">on</span><span class="p">:</span> <span class="n">sender</span><span class="p">)</span>
+    <span class="p">}</span>
+    
+    <span class="kd">func</span> <span class="nf">flipCard</span><span class="p">(</span><span class="n">withEmoji</span> <span class="nv">emoji</span><span class="p">:</span> <span class="kt">String</span><span class="p">,</span> <span class="n">on</span> <span class="nv">button</span><span class="p">:</span> <span class="kt">UIButton</span><span class="p">)</span> <span class="p">{</span>
+        <span class="c1">// 카드 확인 -&gt; already ghost -&gt; flip it over</span>
+        <span class="c1">// 카드 확인 -&gt; not ghost -&gt; 하얀 배경 / 이모지로 변경 (flip)</span>
+        <span class="c1">// button style을 default로 변경해야 currentTitle을 통해 값을 받아올 수 있음</span>
+        
+        <span class="k">if</span> <span class="k">let</span> <span class="nv">title</span> <span class="o">=</span> <span class="n">button</span><span class="o">.</span><span class="n">currentTitle</span> <span class="p">{</span>
+            
+            <span class="k">if</span> <span class="n">title</span> <span class="o">==</span> <span class="n">emoji</span> <span class="p">{</span>
+                
+                <span class="n">button</span><span class="o">.</span><span class="nf">setTitle</span><span class="p">(</span><span class="s">""</span><span class="p">,</span> <span class="nv">for</span><span class="p">:</span> <span class="o">.</span><span class="n">normal</span><span class="p">)</span> <span class="c1">// 로 설정된 값은 currentTitle로 가져올 수 있음</span>
+                <span class="n">button</span><span class="o">.</span><span class="n">backgroundColor</span> <span class="o">=</span> <span class="o">.</span><span class="n">orange</span>
+                
+            <span class="p">}</span> <span class="k">else</span> <span class="p">{</span>
+                <span class="c1">// title = "" 인지 확인되면 else if 로 변경</span>
+                
+                <span class="n">button</span><span class="o">.</span><span class="nf">setTitle</span><span class="p">(</span><span class="n">emoji</span><span class="p">,</span> <span class="nv">for</span><span class="p">:</span> <span class="o">.</span><span class="n">normal</span><span class="p">)</span>
+                <span class="n">button</span><span class="o">.</span><span class="n">backgroundColor</span> <span class="o">=</span> <span class="o">.</span><span class="n">white</span>
+                
+            <span class="p">}</span>
+        <span class="p">}</span>
+    <span class="p">}</span>
+<span class="p">}</span>
+</code></pre></div></div>
+
+<p><br /><br /></p>
+
+<p>📌 didSet</p>
+
+<p>카드를 뒤집어서 같은 두 개의 그림을 찾아 짝을 맞추는 게임앱. 
+카드를 뒤집을 때마다 아래와 같이 flipCount라는 변수에 1을 더함.</p>
+<div class="language-swift highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">var</span> <span class="nv">flipCount</span> <span class="o">=</span> <span class="mi">0</span>
+</code></pre></div></div>
+
+<div class="language-swift highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">flipCount</span> <span class="o">+=</span> <span class="mi">1</span> 
+</code></pre></div></div>
+<p>flipCountLabel 이라는 UILabel 타입의 변수가 있음.
+flipCount의 값이 변할때마다 flipCountLabel의 값도 변경되어야 함.</p>
+
+<div class="language-swift highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">flipCountLabel</span><span class="o">.</span><span class="n">text</span> <span class="o">=</span> <span class="s">"Flips: </span><span class="se">\(</span><span class="n">flipCount</span><span class="se">)</span><span class="s">"</span>
+</code></pre></div></div>
+<p>위의 코드를 변경되어야 하는 부분마다 반복적으로 입력한다면 같은 내용의 코드를 반복해서 여러번 작성하게 됨.
+좀 더 효과적으로 코드를 작성하기 위하여 didSet을 사용할 수 있음</p>
+
+<div class="language-swift highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">var</span> <span class="nv">flipCount</span> <span class="o">=</span> <span class="mi">0</span> <span class="p">{</span>
+    <span class="k">didSet</span> <span class="p">{</span>
+      <span class="n">flipCountLabel</span><span class="o">.</span><span class="n">text</span> <span class="o">=</span> <span class="s">"Flip s: </span><span class="se">\(</span><span class="n">flipCount</span><span class="se">)</span><span class="s">"</span>  
+    <span class="p">}</span>
+<span class="p">}</span>
+</code></pre></div></div>
+<p>didSet은 property obeserver인데 flipCount라는 프로퍼티의 값을 관찰하고 있다가
+그것이 변경될 때마다 disSet 안의 코드를 실행함.</p>
+
+<p>📌 swift에서는 instance variables를 property라고 함<br />
+📌 코드를 작성 중 복사/붙여넣기를 하고 있다면 뭔가 잘못된 것!</p>
+
+<h2 id="2-mvc">2. MVC</h2>
+
+<blockquote>
+  <p><a href="https://youtu.be/gI3pz7eFgfo">🔗</a></p>
+</blockquote>
+
+<p><b>Model</b></p>
+<ul>
+  <li>뷰(화면에 보여지는 부분)과 완전히 독립적인 객체의 모임 (뷰와 전혀 관계 없음)</li>
+  <li>앱이 어떤 일을 하는지와 관련된 로직을 담고 있음</li>
+  <li>지금 만들고 있는 앱에서는 카드 뒤집기 게임의 진행 방식을 Model이 가지고 있음</li>
+</ul>
+
+<p><b>Controller</b></p>
+<ul>
+  <li>Model이 ‘어떤 방식으로 사용자에게 보여질 것인지’에 대한 로직을 담음 (UI logic)</li>
+</ul>
+
+<p><b>View</b></p>
+<ul>
+  <li>Controller의 미니언</li>
+  <li>Button, Text 등의 제네릭 뷰를 사용하여 Controller가 시키는 대로 화면을 그림</li>
+</ul>
+
+<p><b>API</b></p>
+
+<p>모델 class를 만들 때 public API에 대해 생각해보기.<br />
+API는 클래스에 속한 메서드, instance variables의 리스트.
+public API는 다른 클래스들이 호출할 수 있도록 허용된 메서드, instance variables.</p>
+
+<p>앱이 동작하는 방식에 있어 가장 기본적이고 중요한 정보가 무엇인지,<br />
+사람들이 이 앱을 어떻게 사용할지 알아야 클래스의 메서드와 instance variables를 작성할 수 있기 때문에<br />
+클래스를 작성하기 전에 API에 대해 생각해 보는 것을 추천.</p>
+
+<p><br /><br /></p>
+
+<p>📌 static…<br />
+static var / static func 처럼 static 키워드를 사용하여 타입 레벨의 프로퍼티를 생성할 수 있음.<br />
+아래 Card 타입 스트럭쳐가 인스턴스화되지 않더라도 Card.getUniqueIdentifier() 처럼 함수를 사용할 수 있고, static이 붙은 변수는 static 함수 안에서 자유롭게 사용할 수 있음.</p>
+
+<div class="language-swift highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">struct</span> <span class="kt">Card</span> <span class="p">{</span>
+    <span class="k">var</span> <span class="nv">isFaceUp</span> <span class="o">=</span> <span class="kc">false</span>
+    <span class="k">var</span> <span class="nv">isMatched</span> <span class="o">=</span> <span class="kc">false</span>
+    <span class="k">var</span> <span class="nv">identifier</span><span class="p">:</span> <span class="kt">Int</span>
+    
+    <span class="kd">static</span> <span class="k">var</span> <span class="nv">identifierFactory</span> <span class="o">=</span> <span class="mi">0</span>
+    
+    <span class="kd">static</span> <span class="kd">func</span> <span class="nf">getUniqueIdentifier</span><span class="p">()</span> <span class="o">-&gt;</span> <span class="kt">Int</span> <span class="p">{</span>
+        <span class="n">identifierFactory</span> <span class="o">+=</span> <span class="mi">1</span>
+        <span class="k">return</span> <span class="n">identifierFactory</span>
+    <span class="p">}</span>
+    
+    <span class="nf">init</span><span class="p">()</span> <span class="p">{</span>
+        <span class="k">self</span><span class="o">.</span><span class="n">identifier</span> <span class="o">=</span> <span class="kt">Card</span><span class="o">.</span><span class="nf">getUniqueIdentifier</span><span class="p">()</span>
+    <span class="p">}</span>
+<span class="p">}</span>
+</code></pre></div></div>]]></content><author><name>Mirae</name></author><category term="TIL" /><summary type="html"><![CDATA[Youtube 🔗 강의 내용 중 필요한 것 정리]]></summary></entry></feed>
