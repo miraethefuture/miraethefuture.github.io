@@ -1,0 +1,544 @@
+<!DOCTYPE HTML>
+<html lang="en" >
+    <head><meta charset="UTF-8">
+<meta content="text/html; charset=utf-8" http-equiv="Content-Type"><title>프로젝트 &#39;로또메이트&#39; - 리팩토링 기록 ·  Jung Mirae</title><meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<meta name="description" content=""><meta name="generator" content="Jekyll (using style of GitBook 3.2.3)"><meta name="author" content="Mirae"><link rel="stylesheet" href="/assets/gitbook/style.css">
+<link rel="stylesheet" href="/assets/gitbook/gitbook-plugin-fontsettings/website.css">
+<link rel="stylesheet" href="/assets/gitbook/gitbook-plugin-search-pro/search.css">
+<link rel="stylesheet" href="/assets/gitbook/gitbook-plugin-back-to-top-button/plugin.css">
+
+<link rel="stylesheet" href="/assets/gitbook/rouge/igor_pro.css">
+
+<link rel="stylesheet" href="/assets/gitbook/custom.css">
+
+<meta name="HandheldFriendly" content="true"/>
+<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="black">
+<link rel="apple-touch-icon-precomposed" sizes="152x152" href="/assets/gitbook/images/apple-touch-icon-precomposed-152.png">
+<link rel="shortcut icon" href="//assets/gitbook/images/Apple-logo.png" type="image/x-icon">
+
+
+
+
+            <link rel="prev" href="/til/2024-09-20-lottoMate.html" />
+        
+
+        
+    </head>
+    <body>
+        <div class="book"><div class="book-summary">
+    <nav role="navigation">
+        <div id="book-search-input" role="search">
+            <input type="text" placeholder="Type to search" />
+        </div>
+        <div id="book-search-input-link" role="search">
+            <a href="/assets/search.html">Click to Search</a>
+        </div>
+        <ul class="summary">
+            
+            <li class="chapter" data-level="1.1" data-path="">
+            
+                <a href="/">
+                     Jung Mirae
+                </a>
+            </li>
+
+            <li class="divider"></li>
+
+            
+                <!-- <p>pages</p> -->
+                
+                    
+
+                    
+
+                    
+                
+            
+                <!-- <p>posts</p> -->
+                
+                    
+
+                    
+                        
+                        <li class="chapter" data-level="1.1" data-path="/til/2022-08-14-myBoxes.html">
+                        
+                            <a href="/til/2022-08-14-myBoxes.html">
+                                My Box
+                            </a>
+                            
+                                
+                            
+                        </li>
+                    
+                        
+                        <li class="chapter" data-level="1.1" data-path="/til/2023-01-17-Quake.html">
+                        
+                            <a href="/til/2023-01-17-Quake.html">
+                                앱 Earthquakes 튜토리얼을 따라가며 정리
+                            </a>
+                            
+                                
+                            
+                        </li>
+                    
+                        
+                        <li class="chapter" data-level="1.1" data-path="/til/2023-02-20-StanfordLecture.html">
+                        
+                            <a href="/til/2023-02-20-StanfordLecture.html">
+                                Stanford CS 193P
+                            </a>
+                            
+                                
+                            
+                        </li>
+                    
+                        
+                        <li class="chapter" data-level="1.1" data-path="/til/2023-04-29-VerticalTabView.html">
+                        
+                            <a href="/til/2023-04-29-VerticalTabView.html">
+                                Vertical TabView in SwiftUI
+                            </a>
+                            
+                                
+                            
+                        </li>
+                    
+                        
+                        <li class="chapter" data-level="1.1" data-path="/til/2023-05-24-TIL.html">
+                        
+                            <a href="/til/2023-05-24-TIL.html">
+                                TIL
+                            </a>
+                            
+                                
+                            
+                        </li>
+                    
+                        
+                        <li class="chapter" data-level="1.1" data-path="/til/2023-05-24-ViewLayout.html">
+                        
+                            <a href="/til/2023-05-24-ViewLayout.html">
+                                SwiftUI 뷰 레이아웃
+                            </a>
+                            
+                                
+                            
+                        </li>
+                    
+                        
+                        <li class="chapter" data-level="1.1" data-path="/til/2023-07-03-SwiftUIUpdates.html">
+                        
+                            <a href="/til/2023-07-03-SwiftUIUpdates.html">
+                                SwiftUI 업데이트
+                            </a>
+                            
+                                
+                            
+                        </li>
+                    
+                        
+                        <li class="chapter" data-level="1.1" data-path="/til/2023-09-06-stickyHeader.html">
+                        
+                            <a href="/til/2023-09-06-stickyHeader.html">
+                                SwiftUI 이중 스티키 헤더
+                            </a>
+                            
+                                
+                            
+                        </li>
+                    
+                        
+                        <li class="chapter" data-level="1.1" data-path="/til/2023-10-10-Scrumdinger.html">
+                        
+                            <a href="/til/2023-10-10-Scrumdinger.html">
+                                앱 Scrumdinger 튜토리얼을 따라가며 정리
+                            </a>
+                            
+                                
+                            
+                        </li>
+                    
+                        
+                        <li class="chapter" data-level="1.1" data-path="/til/2024-04-09-swiftui-concepts-tutorials.html">
+                        
+                            <a href="/til/2024-04-09-swiftui-concepts-tutorials.html">
+                                SwiftUI Tutorials
+                            </a>
+                            
+                                
+                            
+                        </li>
+                    
+                        
+                        <li class="chapter" data-level="1.1" data-path="/til/2024-06-09-UIKit-toturial.html">
+                        
+                            <a href="/til/2024-06-09-UIKit-toturial.html">
+                                UIKit 튜토리얼 따라가보기
+                            </a>
+                            
+                                
+                            
+                        </li>
+                    
+                        
+                        <li class="chapter" data-level="1.1" data-path="/til/2024-06-26-PinLayoutAndFlexLayout.html">
+                        
+                            <a href="/til/2024-06-26-PinLayoutAndFlexLayout.html">
+                                PinLayout &amp; FlexLayout
+                            </a>
+                            
+                                
+                            
+                        </li>
+                    
+                        
+                        <li class="chapter" data-level="1.1" data-path="/til/2024-09-20-lottoMate.html">
+                        
+                            <a href="/til/2024-09-20-lottoMate.html">
+                                프로젝트 &#39;로또메이트&#39; - 문제 해결 내용
+                            </a>
+                            
+                                
+                            
+                        </li>
+                    
+                        
+                        <li class="chapter active" data-level="1.2" data-path="/til/2024-09-22-lottoMate-refactoringLog.html">
+                        
+                            <a href="/til/2024-09-22-lottoMate-refactoringLog.html">
+                                프로젝트 &#39;로또메이트&#39; - 리팩토링 기록
+                            </a>
+                            
+                                
+                                    <ul><li><a href="#template">Template</a><ul><li><a href="#1-리팩토링-이유-reason-for-refactoring">1. 리팩토링 이유 (Reason for Refactoring)</a></li><li><a href="#2-기존-코드-문제점-issues-in-existing-code">2. 기존 코드 문제점 (Issues in Existing Code)</a></li><li><a href="#3-리팩토링-과정-refactoring-process">3. 리팩토링 과정 (Refactoring Process)</a></li><li><a href="#4-최종-코드-final-code">4. 최종 코드 (Final Code)</a></li><li><a href="#5-결과-outcome">5. 결과 (Outcome)</a></li><li><a href="#6-교훈-및-배운-점-lessons-learned">6. 교훈 및 배운 점 (Lessons Learned)</a></li></ul></li><li><a href="#rxswift-중첩-구독">[RxSwift] 중첩 구독</a><ul><li><a href="#1-리팩토링-이유">1. 리팩토링 이유</a></li><li><a href="#2-기존-코드-문제점">2. 기존 코드 문제점</a></li><li><a href="#3-리팩토링-과정-refactoring-process-1">3. 리팩토링 과정 (Refactoring Process)</a></li><li><a href="#4-최종-코드-final-code-1">4. 최종 코드 (Final Code)</a></li><li><a href="#6-교훈-및-배운-점">6. 교훈 및 배운 점</a></li></ul></li></ul>
+
+                                
+                            
+                        </li>
+                    
+
+                    
+                        <li class="divider"></li>
+                    
+                
+            
+
+            <li>
+                <a href="https://github.com/sighingnow/jekyll-gitbook/fork" target="blank" class="gitbook-link">
+                    Fork it Now!
+                </a>
+            </li>
+        </ul>
+    </nav>
+</div>
+<div class="book-body">
+                <div class="book-header" role="navigation">
+                    <!-- Title -->
+                    <h1>
+                        <i class="fa fa-circle-o-notch fa-spin"></i>
+                        
+                            <a href="." >프로젝트 &#39;로또메이트&#39; - 리팩토링 기록</a>
+                        
+                    </h1>
+                </div>
+
+                <div class="body-inner"><div class="page-wrapper" tabindex="-1" role="main">
+    
+
+    <div class="page-inner">
+        <div id="book-search-results">
+            <div class="search-noresults">
+                <section class="normal markdown-section">
+                    
+                        <h1 id="/til/lottoMate-refactoringLog">프로젝트 &#39;로또메이트&#39; - 리팩토링 기록</h1>
+                    
+
+                    <h1 id="template">Template</h1>
+
+<blockquote class="block-tip">
+  <h5 id="이슈-정리-템플리">이슈 정리 템플리</h5>
+
+  <p>프로젝트 진행 중 리팩토링한 내용을 아래 템플릿에 따라 정리합니다.</p>
+</blockquote>
+
+<h2 id="1-리팩토링-이유-reason-for-refactoring">1. 리팩토링 이유 (Reason for Refactoring)</h2>
+<ul>
+  <li>배경 설명: 코드 리팩토링이 필요했던 배경을 설명합니다. 새로운 기술을 학습하거나 프로젝트 요구 사항이 변경되어 리팩토링이 필요하게 된 이유를 적습니다.
+<!--- 예: "프로젝트의 유지보수성을 높이기 위해 코드 구조를 개선할 필요가 있었습니다." --></li>
+</ul>
+
+<h2 id="2-기존-코드-문제점-issues-in-existing-code">2. 기존 코드 문제점 (Issues in Existing Code)</h2>
+<ul>
+  <li>기존 코드의 문제점: 리팩토링 이전에 코드에서 발생한 문제들을 나열합니다. 성능 문제, 가독성, 중복 코드 등 개선해야 할 부분을 구체적으로 설명합니다.
+<!--- 예: "중복된 코드가 많아 가독성이 떨어졌고, 유지보수 시 어려움이 있었습니다." --></li>
+</ul>
+
+<h2 id="3-리팩토링-과정-refactoring-process">3. 리팩토링 과정 (Refactoring Process)</h2>
+<ul>
+  <li>
+    <p>수행한 작업: 리팩토링 중 어떤 작업을 수행했는지 단계별로 설명합니다. 코드 리팩토링 과정에서 변경한 주요 사항들을 포함합니다.
+<!--- 예: "중복된 함수를 제거하고 공통 모듈로 추출하였습니다." --></p>
+  </li>
+  <li>
+    <p>시도한 방법: 리팩토링을 진행하며 시도한 다양한 방법을 기록합니다. 성공하지 못한 접근 방식도 포함하여, 해결 과정에서의 고민을 보여줍니다.
+<!--- 예: "처음에는 함수의 파라미터 수를 줄여서 문제를 해결하려 했지만, 전체 코드 구조에 맞지 않아 실패하였습니다." --></p>
+  </li>
+</ul>
+
+<h2 id="4-최종-코드-final-code">4. 최종 코드 (Final Code)</h2>
+<ul>
+  <li>최종 코드 설명: 리팩토링 후의 최종 코드를 설명합니다. 리팩토링 전후의 주요 차이점과 개선된 부분을 코드와 함께 보여줍니다.
+<!--- 예: "기존의 반복된 코드를 하나의 함수로 통합하고, 재사용 가능한 모듈로 만들었습니다." -->
+    <div class="language-swift highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1">// 리팩토링 후의 최종 코드 예시</span>
+<span class="kd">func</span> <span class="nf">updateUI</span><span class="p">()</span> <span class="p">{</span>
+  <span class="nf">updateLabelText</span><span class="p">()</span>
+  <span class="nf">updateButtonState</span><span class="p">()</span>
+<span class="p">}</span>
+</code></pre></div>    </div>
+  </li>
+</ul>
+
+<h2 id="5-결과-outcome">5. 결과 (Outcome)</h2>
+<ul>
+  <li>성능 및 유지보수성 향상: 리팩토링 후 성능이나 유지보수성, 코드 가독성이 얼마나 개선되었는지 설명합니다.
+<!--- 예: "리팩토링 후 코드의 가독성이 크게 향상되었으며, 유지보수가 용이해졌습니다." --></li>
+</ul>
+
+<h2 id="6-교훈-및-배운-점-lessons-learned">6. 교훈 및 배운 점 (Lessons Learned)</h2>
+<ul>
+  <li>리팩토링을 통해 배운 점: 리팩토링 과정에서 배운 점이나 새로 익힌 기술을 기록합니다. 비슷한 상황에서 적용할 수 있는 원칙이나 개선할 수 있는 부분을 정리합니다.
+<!--- 예: "모듈화를 통해 코드의 재사용성을 높이는 것이 얼마나 중요한지 깨달았습니다." --></li>
+</ul>
+
+<hr />
+
+<h1 id="rxswift-중첩-구독">[RxSwift] 중첩 구독</h1>
+
+<h2 id="1-리팩토링-이유">1. 리팩토링 이유</h2>
+<ul>
+  <li>다른 개발자님께서 코드를 검토하던 중 중첩된 구독이 발생한 것을 알려주셨습니다. 코드의 가독성과 유지보수성을 높이기 위해 RxSwift의 권장 방식을 따르는 방향으로 리팩토링을 진행하게 되었습니다.</li>
+</ul>
+
+<h2 id="2-기존-코드-문제점">2. 기존 코드 문제점</h2>
+<div class="language-swift highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">confirmButton</span><span class="o">.</span><span class="n">rx</span><span class="o">.</span><span class="nf">tapGesture</span><span class="p">()</span>
+    <span class="o">.</span><span class="nf">when</span><span class="p">(</span><span class="o">.</span><span class="n">recognized</span><span class="p">)</span>
+    <span class="o">.</span><span class="nf">subscribe</span><span class="p">(</span><span class="nv">onNext</span><span class="p">:</span> <span class="p">{</span> <span class="p">[</span><span class="k">weak</span> <span class="k">self</span><span class="p">]</span> <span class="n">_</span> <span class="k">in</span>
+        <span class="k">guard</span> <span class="k">let</span> <span class="nv">self</span> <span class="o">=</span> <span class="k">self</span> <span class="k">else</span> <span class="p">{</span> <span class="k">return</span> <span class="p">}</span>
+        <span class="k">let</span> <span class="nv">selectedRound</span> <span class="o">=</span> <span class="n">data</span><span class="p">[</span><span class="n">row</span><span class="p">]</span><span class="o">.</span><span class="mi">0</span>
+        
+        <span class="n">viewModel</span><span class="o">.</span><span class="n">selectedLotteryType</span>
+            <span class="o">.</span><span class="nf">subscribe</span><span class="p">(</span><span class="nv">onNext</span><span class="p">:</span> <span class="p">{</span> <span class="p">[</span><span class="k">weak</span> <span class="k">self</span><span class="p">]</span> <span class="n">type</span> <span class="k">in</span>
+                <span class="k">switch</span> <span class="n">type</span> <span class="p">{</span>
+                <span class="k">case</span> <span class="o">.</span><span class="nv">lotto</span><span class="p">:</span>
+                    <span class="k">self</span><span class="p">?</span><span class="o">.</span><span class="n">viewModel</span><span class="o">.</span><span class="nf">fetchLottoResult</span><span class="p">(</span><span class="nv">round</span><span class="p">:</span> <span class="n">selectedRound</span><span class="p">)</span>
+                    <span class="k">self</span><span class="p">?</span><span class="o">.</span><span class="n">viewModel</span><span class="o">.</span><span class="n">currentLottoRound</span><span class="o">.</span><span class="nf">accept</span><span class="p">(</span><span class="n">selectedRound</span><span class="p">)</span>
+                <span class="k">case</span> <span class="o">.</span><span class="nv">pensionLottery</span><span class="p">:</span>
+                    <span class="k">self</span><span class="p">?</span><span class="o">.</span><span class="n">viewModel</span><span class="o">.</span><span class="nf">fetchPensionLotteryResult</span><span class="p">(</span><span class="nv">round</span><span class="p">:</span> <span class="n">selectedRound</span><span class="p">)</span>
+                    <span class="k">self</span><span class="p">?</span><span class="o">.</span><span class="n">viewModel</span><span class="o">.</span><span class="n">currentPensionLotteryRound</span><span class="o">.</span><span class="nf">accept</span><span class="p">(</span><span class="n">selectedRound</span><span class="p">)</span>
+                <span class="k">case</span> <span class="o">.</span><span class="nv">speeto</span><span class="p">:</span>
+                    <span class="k">break</span>
+                <span class="p">}</span>
+            <span class="p">})</span>
+            <span class="o">.</span><span class="nf">disposed</span><span class="p">(</span><span class="nv">by</span><span class="p">:</span> <span class="n">disposeBag</span><span class="p">)</span>
+        
+        <span class="k">self</span><span class="o">.</span><span class="nf">dismiss</span><span class="p">(</span><span class="nv">animated</span><span class="p">:</span> <span class="kc">true</span><span class="p">,</span> <span class="nv">completion</span><span class="p">:</span> <span class="kc">nil</span><span class="p">)</span>
+    <span class="p">})</span>
+    <span class="o">.</span><span class="nf">disposed</span><span class="p">(</span><span class="nv">by</span><span class="p">:</span> <span class="n">disposeBag</span><span class="p">)</span>
+</code></pre></div></div>
+<ul>
+  <li><a href="https://github.com/ReactiveX/RxSwift/blob/main/Documentation/Tips.md">여기</a> 에서 확인할 수 있듯이 RxSwift에서는 operator를 사용하여 스트림을 조합하는 것이 권장되지만, 기존 코드는 이를 따르지 않고 중첩 구독하는 방식으로 작성되어 있었습니다.</li>
+</ul>
+
+<h2 id="3-리팩토링-과정-refactoring-process-1">3. 리팩토링 과정 (Refactoring Process)</h2>
+<ul>
+  <li>중첩된 subscribe 제거: withLatestFrom 연산자를 사용하여 confirm 버튼을 탭하는 시점에 최신 lottery type을 가져오도록 하여 viewModel.selectedLotteryType의 subscribe를 제거하였습니다.</li>
+</ul>
+
+<h2 id="4-최종-코드-final-code-1">4. 최종 코드 (Final Code)</h2>
+
+<div class="language-swift highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">confirmButton</span><span class="o">.</span><span class="n">rx</span><span class="o">.</span><span class="nf">tapGesture</span><span class="p">()</span>
+    <span class="o">.</span><span class="nf">when</span><span class="p">(</span><span class="o">.</span><span class="n">recognized</span><span class="p">)</span>
+    <span class="o">.</span><span class="nf">withLatestFrom</span><span class="p">(</span><span class="n">viewModel</span><span class="o">.</span><span class="n">selectedLotteryType</span><span class="p">)</span> <span class="c1">// tap 시점에 최신 로터리 타입을 가져옴</span>
+    <span class="o">.</span><span class="nf">subscribe</span><span class="p">(</span><span class="nv">onNext</span><span class="p">:</span> <span class="p">{</span> <span class="p">[</span><span class="k">weak</span> <span class="k">self</span><span class="p">]</span> <span class="n">type</span> <span class="k">in</span>
+        <span class="k">guard</span> <span class="k">let</span> <span class="nv">self</span> <span class="o">=</span> <span class="k">self</span> <span class="k">else</span> <span class="p">{</span> <span class="k">return</span> <span class="p">}</span>
+        <span class="k">let</span> <span class="nv">selectedRound</span> <span class="o">=</span> <span class="n">data</span><span class="p">[</span><span class="n">row</span><span class="p">]</span><span class="o">.</span><span class="mi">0</span>
+        
+        <span class="k">switch</span> <span class="n">type</span> <span class="p">{</span>
+        <span class="k">case</span> <span class="o">.</span><span class="nv">lotto</span><span class="p">:</span>
+            <span class="k">self</span><span class="o">.</span><span class="n">viewModel</span><span class="o">.</span><span class="nf">fetchLottoResult</span><span class="p">(</span><span class="nv">round</span><span class="p">:</span> <span class="n">selectedRound</span><span class="p">)</span>
+            <span class="k">self</span><span class="o">.</span><span class="n">viewModel</span><span class="o">.</span><span class="n">currentLottoRound</span><span class="o">.</span><span class="nf">accept</span><span class="p">(</span><span class="n">selectedRound</span><span class="p">)</span>
+        <span class="k">case</span> <span class="o">.</span><span class="nv">pensionLottery</span><span class="p">:</span>
+            <span class="k">self</span><span class="o">.</span><span class="n">viewModel</span><span class="o">.</span><span class="nf">fetchPensionLotteryResult</span><span class="p">(</span><span class="nv">round</span><span class="p">:</span> <span class="n">selectedRound</span><span class="p">)</span>
+            <span class="k">self</span><span class="o">.</span><span class="n">viewModel</span><span class="o">.</span><span class="n">currentPensionLotteryRound</span><span class="o">.</span><span class="nf">accept</span><span class="p">(</span><span class="n">selectedRound</span><span class="p">)</span>
+        <span class="k">case</span> <span class="o">.</span><span class="nv">speeto</span><span class="p">:</span>
+            <span class="k">break</span>
+        <span class="p">}</span>
+
+        <span class="k">self</span><span class="o">.</span><span class="nf">dismiss</span><span class="p">(</span><span class="nv">animated</span><span class="p">:</span> <span class="kc">true</span><span class="p">,</span> <span class="nv">completion</span><span class="p">:</span> <span class="kc">nil</span><span class="p">)</span>
+    <span class="p">})</span>
+    <span class="o">.</span><span class="nf">disposed</span><span class="p">(</span><span class="nv">by</span><span class="p">:</span> <span class="n">disposeBag</span><span class="p">)</span>
+</code></pre></div></div>
+<ul>
+  <li>리팩토링 후의 최종 코드는 중첩된 구독을 제거하고, withLatestFrom 연산자를 사용하여 구독을 단순화했습니다. 이로 인해 코드의 가독성과 유지보수성이 크게 향상되었습니다.</li>
+</ul>
+
+<h2 id="6-교훈-및-배운-점">6. 교훈 및 배운 점</h2>
+<ul>
+  <li>리팩토링 과정에서 RxSwift의 operator 사용의 중요성을 깨달았습니다. 스트림을 조합하는 방식이 코드의 가독성과 유지보수성을 높이는 데 얼마나 효과적인지를 실감했으며, 앞으로도 이러한 원칙을 적용해 더 나은 코드를 작성할 수 있도록 할 것입니다.</li>
+</ul>
+
+</section>
+            </div><div class="search-results">
+    <div class="has-results">
+        <h1 class="search-results-title"><span class='search-results-count'></span> results matching "<span class='search-query'></span>"</h1>
+        <ul class="search-results-list"></ul>
+    </div>
+    <div class="no-results">
+        <h1 class="search-results-title">No results matching "<span class='search-query'></span>"</h1>
+    </div>
+</div></div>
+    </div>
+</div>
+
+<script>
+MathJax = {
+  tex: {
+    inlineMath: [ ['$', '$'], ['\\(', '\\)'] ]
+  },
+  svg: {
+    fontCache: 'global'
+  }
+};
+</script>
+<script
+  type="text/javascript" id="MathJax-script" async
+  src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js">
+</script>
+
+                        <a href="/til/2024-09-20-lottoMate.html" class="navigation navigation-prev navigation-unique" aria-label="Previous page: 프로젝트 '로또메이트' - 문제 해결 내용">
+                            <i class="fa fa-angle-left"></i>
+                        </a>
+                    
+
+                    
+                </div>
+            </div>
+
+            <script>
+            var gitbook = gitbook || [];
+            gitbook.push(function() {
+                gitbook.page.hasChanged({
+    "page": {
+        "title": "Introduction",
+        "level": "1.1",
+        "depth": 1,
+        
+        "dir": "ltr"
+    },    "config": {
+        "plugins": ["fontsettings", "highlight", "livereload", "lunr", "search", "sharing", "theme-default", "livereload"],
+        "styles": {
+            "ebook": "styles/ebook.css",
+            "epub": "styles/epub.css",
+            "mobi": "styles/mobi.css",
+            "pdf": "styles/pdf.css",
+            "print": "styles/print.css",
+            "website": "styles/website.css"
+        },
+        "pluginsConfig": {
+            "fontsettings": {
+                "family": "sans",
+                "size": 2,
+                "theme": "white"
+            },
+            "highlight": {},
+            "livereload": {},
+            "lunr": {
+                "ignoreSpecialCharacters": false,
+                "maxIndexSize": 1000000
+            },
+            "search": {},            "sharing": {
+                "all": ["facebook", "google", "twitter", "weibo", "instapaper", "github", "telegram"],
+                "facebook": false,
+                "google": false,
+                "github": true,
+                "github_link": "https://github.com",
+                "telegram": false,
+                "telegram_link": "https://t.me",
+                "instapaper": false,
+                "twitter": false,
+                "vk": false,
+                "weibo": false
+            },
+"theme-default": {
+                "showLevel": false,
+                "styles": {
+                    "ebook": "styles/ebook.css",
+                    "epub": "styles/epub.css",
+                    "mobi": "styles/mobi.css",
+                    "pdf": "styles/pdf.css",
+                    "print": "styles/print.css",
+                    "website": "styles/website.css"
+                }
+            }
+        },
+        "theme": "default",
+        "author": "Tao He",
+        "pdf": {
+            "pageNumbers": true,
+            "fontSize": 12,
+            "fontFamily": "Arial",
+            "paperSize": "a4",
+            "chapterMark": "pagebreak",
+            "pageBreaksBefore": "/",
+            "margin": {
+                "right": 62,
+                "left": 62,
+                "top": 56,
+                "bottom": 56
+            }
+        },
+        "structure": {
+            "langs": "LANGS.md",
+            "readme": "README.md",
+        },
+        "variables": {},
+        "title": " Jung Mirae",
+        "language": "en",
+        "gitbook": "*"
+    },
+    "file": {
+        "path": "_posts/2024-09-22-lottoMate-refactoringLog.md",
+        "mtime": "2024-09-22 00:00:00 +0900",
+        "type": "markdown"
+    },
+    "gitbook": {
+        "version": "3.2.3",
+        "time": "2024-09-22 23:56:24 +0900"
+    },
+    "basePath": "",
+    "book": {
+        "language": ""
+    }
+});
+            });
+            </script>
+        </div><script src="/assets/gitbook/gitbook.js"></script>
+<script src="/assets/gitbook/theme.js"></script>
+
+<script src="/assets/gitbook/gitbook-plugin-fontsettings/fontsettings.js"></script>
+<script src="/assets/gitbook/gitbook-plugin-sharing/buttons.js"></script>
+
+<!-- <script src="../gitbook/gitbook-plugin-lunr/lunr.min.js"></script>
+<script src="../gitbook/gitbook-plugin-lunr/search-lunr.js"></script>
+<script src="../gitbook/gitbook-plugin-search/search-engine.js"></script>
+<script src="../gitbook/gitbook-plugin-search/search.js"></script> -->
+
+<script src="/assets/gitbook/gitbook-plugin-search-pro/jquery.mark.min.js"></script>
+<script src="/assets/gitbook/gitbook-plugin-search-pro/search.js"></script>
+<script src="/assets/gitbook/gitbook-plugin-back-to-top-button/plugin.js"></script>
+<script src="/assets/gitbook/gitbook-plugin-copy-code-button/toggle.js"></script>
+
+</body>
+</html>

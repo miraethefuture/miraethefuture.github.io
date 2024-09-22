@@ -1,5 +1,5 @@
 ---
-title: 프로젝트 '로또메이트'
+title: 프로젝트 '로또메이트' - 문제 해결 내용
 author: Mirae
 date: 2024-09-20
 category: TIL
@@ -7,7 +7,7 @@ layout: post
 ---
 # Template
 
-> ##### 이슈 정리 템플리
+> ##### 이슈 정리 템플릿
 >
 > 아래 템플릿을 사용하여 프로젝트 진행 중 발생한 이슈 내용을 정리합니다.  
 > 각 항목에 맞춰 문제와 해결 방법을 구체적으로 작성합니다.
@@ -52,13 +52,14 @@ override func viewDidLayoutSubviews() {
 <!---예: "Safe Area와 다양한 기기 레이아웃을 미리 고려하는 것이 중요하며, 레이아웃을 조정할 때는 PinLayout과 같은 라이브러리를 효과적으로 활용하는 것이 도움이 됩니다." -->
   
   
-  
 ------------
+
+
 # 커스텀 네비게이션 바 레이아웃 이슈
 
 <center><img src="/assets/images/lottoMate_1.png" alt="lottoMate_1.png" width="257"></center><br>  
 
-## 1. 문제 상황 (Problem)
+## 1. 문제 상황
 - iPhone 14 Pro, iPhone 14 Pro Max, iPhone 15 Pro, iPhone 15 Pro Max 기기 시뮬레이터에서 status bar와 커스텀 navigation bar 사이에 5px 정도의 빈 공간이 나타나는 문제가 발생했습니다. 다른 기기 시뮬레이터 에서는 이러한 현상이 나타나지 않았으며, 문제는 해당 네 가지 기기 시뮬레이터에서만 재현되었습니다.
   
 - 문제는 rootFlexContainer가 top safe area 바로 아래에 커스텀 네비게이션 바가 위치하도록 작성된 코드에서 발생했습니다.
@@ -67,12 +68,12 @@ rootFlexContainer.pin.top(view.safeAreaInsets.top).horizontally()
 rootFlexContainer.flex.layout(mode: .adjustHeight)
 ```
 
-## 2. 원인 분석 (Analysis)
+## 2. 원인 분석
 - 기존 코드에서는 view.safeAreaInsets.top을 사용하여 네비게이션 바를 top safe area 아래에 배치하고 있었습니다. 하지만 특정 기기에서는 status bar와 top safe area 간에 예상치 못한 빈 공간이 생기는 현상이 발생했습니다.
 
 - 처음에는 사용자의 기기 정보를 기반으로 문제가 발생하는 기기(iPhone 14 Pro, iPhone 14 Pro Max, iPhone 15 Pro, iPhone 15 Pro Max)에 한해 커스텀 네비게이션 바의 margin top 값을 -5로 설정하여 빈 공간만큼 뷰를 위로 이동시키는 방식을 시도했습니다. 이를 통해 빈 공간이 없는 것처럼 보이게 했으나, 기기별 정보를 이용해 코드를 분기 처리하는 방식은 안전하지 않다고 판단했습니다. 따라서 최종적으로 status bar의 높이를 동적으로 구한 후, 그 값을 이용해 커스텀 네비게이션 바를 status bar 바로 아래에 위치시키는 방법을 사용했습니다.
 
-## 3. 해결 방법 (Solution)
+## 3. 해결 방법 
 - 문제를 해결하기 위해, status bar의 높이를 직접 가져와 그 값을 기반으로 rootFlexContainer(커스텀 네비게이션 바)를 배치하도록 코드를 수정했습니다. 빈 공간이 발생하는 기기에서도 문제없이 동작할 수 있도록 statusBarManager를 통해 상태 바의 정확한 높이를 가져와 그 바로 아래에 네비게이션 바가 위치하도록 설정했습니다.  
 
     ```swift 
@@ -91,10 +92,10 @@ rootFlexContainer.flex.layout(mode: .adjustHeight)
     ```
 문제의 원인은 top safe area의 높이와 status bar의 높이가 서로 다르기 때문이었습니다. 기기마다 status bar의 높이가 다를 수 있지만, 이 값을 동적으로 가져와 top 값으로 설정함으로써 모든 기기에서 일관된 레이아웃을 유지할 수 있었습니다. 
 
-## 4. 결과 (Result)
+## 4. 결과
 - 해당 코드를 적용한 후, iPhone 14 Pro, iPhone 14 Pro Max, iPhone 15 Pro, iPhone 15 Pro Max에서 모두 빈 공간이 나타나지 않고 네비게이션 바가 정상적으로 status bar 바로 아래에 배치되었습니다. 그 외 다른 기기에서도 정상적으로 레이아웃이 유지됨을 확인했습니다.
 
-## 5. 교훈 (Takeaways)
+## 5. 교훈
 - 이번 문제를 통해 기기별로 다른 코드를 사용하는 것보다, 모든 기기에서 일관되게 동작하는 코드를 찾는 것이 더 중요하다는 점을 알게 되었습니다. 앞으로는 특정 기기에 맞추기보다, 범용적으로 사용할 수 있는 코드를 우선적으로 고려하려고 합니다.
 
 
@@ -102,10 +103,10 @@ rootFlexContainer.flex.layout(mode: .adjustHeight)
 
 <center><img src="/assets/images/lottoMate_2_zoomImage.png" alt="lottoMate_2_zoomImage.png" width="257"></center><br> 
 
-## 1. 문제 상황 (Problem)
+## 1. 문제 상황
 - 사진 확대 기능에서 닫기 버튼을 통해 뷰를 제거하는 기능이 필요했습니다. 닫기 버튼을 처음 눌렀을 때 뷰가 사라지지 않고 두 번째 눌렀을 때부터 사라지는 문제가 발생했습니다.
 
-## 2. 원인 분석 (Analysis)
+## 2. 원인 분석
 - 닫기 버튼 클릭 시 동작하는 함수인 dismissFullscreenImage()가 호출될 때 전체 subview의 배경색을 확인해본 결과, 사진 확대 뷰가 두번 추가되었기 때문에 발생한 문제임을 발견했습니다.
 
     ```swift
@@ -120,7 +121,7 @@ rootFlexContainer.flex.layout(mode: .adjustHeight)
     // subview's background color: Optional(kCGColorSpaceModelRGB 0 0 0 0.8 )
     ```
 
-## 3. 해결 방법 (Solution)
+## 3. 해결 방법
 - winningReviewFullSizeImgName이 기본값을 내보낼 때도 서브 뷰가 추가되도록 코드가 작성되어 있었기 때문에 발생한 문제임을 발견했습니다. 기본값인 ""일 때는 뷰가 추가되지 않도록 수정했습니다.
     
     ```swift
@@ -136,8 +137,8 @@ rootFlexContainer.flex.layout(mode: .adjustHeight)
     }
     ```
 
-## 4. 결과 (Result)
+## 4. 결과
 - 문제 해결 후 닫기 버튼을 클릭하면 뷰가 즉시 제거되며, 사용자 경험이 개선되었습니다. 향후에는 UI 요소의 추가와 제거를 더 체계적으로 관리하기 위해 뷰의 상태를 명확하게 정의할 계획입니다.
 
-## 5. 교훈 (Takeaways)
+## 5. 교훈
 - 이 문제를 해결하며 문제를 바로 해결하려고 하기보다는 문제의 원인을 빠르게 파악하는 것이 중요하다는 것을 깨달았습니다. 원인을 이해한 후에 적절한 해결책을 찾는 것이 더 효과적입니다.

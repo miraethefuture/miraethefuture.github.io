@@ -1,7 +1,139 @@
-<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="4.3.2">Jekyll</generator><link href="http://localhost:4000/feed.xml" rel="self" type="application/atom+xml" /><link href="http://localhost:4000/" rel="alternate" type="text/html" /><updated>2024-09-22T20:27:34+09:00</updated><id>http://localhost:4000/feed.xml</id><title type="html"> Jung Mirae</title><subtitle></subtitle><author><name>Mirae</name></author><entry><title type="html">프로젝트 ‘로또메이트’</title><link href="http://localhost:4000/til/2024-09-20-lottoMate.html" rel="alternate" type="text/html" title="프로젝트 ‘로또메이트’" /><published>2024-09-20T00:00:00+09:00</published><updated>2024-09-20T00:00:00+09:00</updated><id>http://localhost:4000/til/lottoMate</id><content type="html" xml:base="http://localhost:4000/til/2024-09-20-lottoMate.html"><![CDATA[<h1 id="template">Template</h1>
+<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="4.3.2">Jekyll</generator><link href="http://localhost:4000/feed.xml" rel="self" type="application/atom+xml" /><link href="http://localhost:4000/" rel="alternate" type="text/html" /><updated>2024-09-22T23:56:24+09:00</updated><id>http://localhost:4000/feed.xml</id><title type="html"> Jung Mirae</title><subtitle></subtitle><author><name>Mirae</name></author><entry><title type="html">프로젝트 ‘로또메이트’ - 리팩토링 기록</title><link href="http://localhost:4000/til/2024-09-22-lottoMate-refactoringLog.html" rel="alternate" type="text/html" title="프로젝트 ‘로또메이트’ - 리팩토링 기록" /><published>2024-09-22T00:00:00+09:00</published><updated>2024-09-22T00:00:00+09:00</updated><id>http://localhost:4000/til/lottoMate-refactoringLog</id><content type="html" xml:base="http://localhost:4000/til/2024-09-22-lottoMate-refactoringLog.html"><![CDATA[<h1 id="template">Template</h1>
 
 <blockquote class="block-tip">
   <h5 id="이슈-정리-템플리">이슈 정리 템플리</h5>
+
+  <p>프로젝트 진행 중 리팩토링한 내용을 아래 템플릿에 따라 정리합니다.</p>
+</blockquote>
+
+<h2 id="1-리팩토링-이유-reason-for-refactoring">1. 리팩토링 이유 (Reason for Refactoring)</h2>
+<ul>
+  <li>배경 설명: 코드 리팩토링이 필요했던 배경을 설명합니다. 새로운 기술을 학습하거나 프로젝트 요구 사항이 변경되어 리팩토링이 필요하게 된 이유를 적습니다.
+<!--- 예: "프로젝트의 유지보수성을 높이기 위해 코드 구조를 개선할 필요가 있었습니다." --></li>
+</ul>
+
+<h2 id="2-기존-코드-문제점-issues-in-existing-code">2. 기존 코드 문제점 (Issues in Existing Code)</h2>
+<ul>
+  <li>기존 코드의 문제점: 리팩토링 이전에 코드에서 발생한 문제들을 나열합니다. 성능 문제, 가독성, 중복 코드 등 개선해야 할 부분을 구체적으로 설명합니다.
+<!--- 예: "중복된 코드가 많아 가독성이 떨어졌고, 유지보수 시 어려움이 있었습니다." --></li>
+</ul>
+
+<h2 id="3-리팩토링-과정-refactoring-process">3. 리팩토링 과정 (Refactoring Process)</h2>
+<ul>
+  <li>
+    <p>수행한 작업: 리팩토링 중 어떤 작업을 수행했는지 단계별로 설명합니다. 코드 리팩토링 과정에서 변경한 주요 사항들을 포함합니다.
+<!--- 예: "중복된 함수를 제거하고 공통 모듈로 추출하였습니다." --></p>
+  </li>
+  <li>
+    <p>시도한 방법: 리팩토링을 진행하며 시도한 다양한 방법을 기록합니다. 성공하지 못한 접근 방식도 포함하여, 해결 과정에서의 고민을 보여줍니다.
+<!--- 예: "처음에는 함수의 파라미터 수를 줄여서 문제를 해결하려 했지만, 전체 코드 구조에 맞지 않아 실패하였습니다." --></p>
+  </li>
+</ul>
+
+<h2 id="4-최종-코드-final-code">4. 최종 코드 (Final Code)</h2>
+<ul>
+  <li>최종 코드 설명: 리팩토링 후의 최종 코드를 설명합니다. 리팩토링 전후의 주요 차이점과 개선된 부분을 코드와 함께 보여줍니다.
+<!--- 예: "기존의 반복된 코드를 하나의 함수로 통합하고, 재사용 가능한 모듈로 만들었습니다." -->
+    <div class="language-swift highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1">// 리팩토링 후의 최종 코드 예시</span>
+<span class="kd">func</span> <span class="nf">updateUI</span><span class="p">()</span> <span class="p">{</span>
+  <span class="nf">updateLabelText</span><span class="p">()</span>
+  <span class="nf">updateButtonState</span><span class="p">()</span>
+<span class="p">}</span>
+</code></pre></div>    </div>
+  </li>
+</ul>
+
+<h2 id="5-결과-outcome">5. 결과 (Outcome)</h2>
+<ul>
+  <li>성능 및 유지보수성 향상: 리팩토링 후 성능이나 유지보수성, 코드 가독성이 얼마나 개선되었는지 설명합니다.
+<!--- 예: "리팩토링 후 코드의 가독성이 크게 향상되었으며, 유지보수가 용이해졌습니다." --></li>
+</ul>
+
+<h2 id="6-교훈-및-배운-점-lessons-learned">6. 교훈 및 배운 점 (Lessons Learned)</h2>
+<ul>
+  <li>리팩토링을 통해 배운 점: 리팩토링 과정에서 배운 점이나 새로 익힌 기술을 기록합니다. 비슷한 상황에서 적용할 수 있는 원칙이나 개선할 수 있는 부분을 정리합니다.
+<!--- 예: "모듈화를 통해 코드의 재사용성을 높이는 것이 얼마나 중요한지 깨달았습니다." --></li>
+</ul>
+
+<hr />
+
+<h1 id="rxswift-중첩-구독">[RxSwift] 중첩 구독</h1>
+
+<h2 id="1-리팩토링-이유">1. 리팩토링 이유</h2>
+<ul>
+  <li>다른 개발자님께서 코드를 검토하던 중 중첩된 구독이 발생한 것을 알려주셨습니다. 코드의 가독성과 유지보수성을 높이기 위해 RxSwift의 권장 방식을 따르는 방향으로 리팩토링을 진행하게 되었습니다.</li>
+</ul>
+
+<h2 id="2-기존-코드-문제점">2. 기존 코드 문제점</h2>
+<div class="language-swift highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">confirmButton</span><span class="o">.</span><span class="n">rx</span><span class="o">.</span><span class="nf">tapGesture</span><span class="p">()</span>
+    <span class="o">.</span><span class="nf">when</span><span class="p">(</span><span class="o">.</span><span class="n">recognized</span><span class="p">)</span>
+    <span class="o">.</span><span class="nf">subscribe</span><span class="p">(</span><span class="nv">onNext</span><span class="p">:</span> <span class="p">{</span> <span class="p">[</span><span class="k">weak</span> <span class="k">self</span><span class="p">]</span> <span class="n">_</span> <span class="k">in</span>
+        <span class="k">guard</span> <span class="k">let</span> <span class="nv">self</span> <span class="o">=</span> <span class="k">self</span> <span class="k">else</span> <span class="p">{</span> <span class="k">return</span> <span class="p">}</span>
+        <span class="k">let</span> <span class="nv">selectedRound</span> <span class="o">=</span> <span class="n">data</span><span class="p">[</span><span class="n">row</span><span class="p">]</span><span class="o">.</span><span class="mi">0</span>
+        
+        <span class="n">viewModel</span><span class="o">.</span><span class="n">selectedLotteryType</span>
+            <span class="o">.</span><span class="nf">subscribe</span><span class="p">(</span><span class="nv">onNext</span><span class="p">:</span> <span class="p">{</span> <span class="p">[</span><span class="k">weak</span> <span class="k">self</span><span class="p">]</span> <span class="n">type</span> <span class="k">in</span>
+                <span class="k">switch</span> <span class="n">type</span> <span class="p">{</span>
+                <span class="k">case</span> <span class="o">.</span><span class="nv">lotto</span><span class="p">:</span>
+                    <span class="k">self</span><span class="p">?</span><span class="o">.</span><span class="n">viewModel</span><span class="o">.</span><span class="nf">fetchLottoResult</span><span class="p">(</span><span class="nv">round</span><span class="p">:</span> <span class="n">selectedRound</span><span class="p">)</span>
+                    <span class="k">self</span><span class="p">?</span><span class="o">.</span><span class="n">viewModel</span><span class="o">.</span><span class="n">currentLottoRound</span><span class="o">.</span><span class="nf">accept</span><span class="p">(</span><span class="n">selectedRound</span><span class="p">)</span>
+                <span class="k">case</span> <span class="o">.</span><span class="nv">pensionLottery</span><span class="p">:</span>
+                    <span class="k">self</span><span class="p">?</span><span class="o">.</span><span class="n">viewModel</span><span class="o">.</span><span class="nf">fetchPensionLotteryResult</span><span class="p">(</span><span class="nv">round</span><span class="p">:</span> <span class="n">selectedRound</span><span class="p">)</span>
+                    <span class="k">self</span><span class="p">?</span><span class="o">.</span><span class="n">viewModel</span><span class="o">.</span><span class="n">currentPensionLotteryRound</span><span class="o">.</span><span class="nf">accept</span><span class="p">(</span><span class="n">selectedRound</span><span class="p">)</span>
+                <span class="k">case</span> <span class="o">.</span><span class="nv">speeto</span><span class="p">:</span>
+                    <span class="k">break</span>
+                <span class="p">}</span>
+            <span class="p">})</span>
+            <span class="o">.</span><span class="nf">disposed</span><span class="p">(</span><span class="nv">by</span><span class="p">:</span> <span class="n">disposeBag</span><span class="p">)</span>
+        
+        <span class="k">self</span><span class="o">.</span><span class="nf">dismiss</span><span class="p">(</span><span class="nv">animated</span><span class="p">:</span> <span class="kc">true</span><span class="p">,</span> <span class="nv">completion</span><span class="p">:</span> <span class="kc">nil</span><span class="p">)</span>
+    <span class="p">})</span>
+    <span class="o">.</span><span class="nf">disposed</span><span class="p">(</span><span class="nv">by</span><span class="p">:</span> <span class="n">disposeBag</span><span class="p">)</span>
+</code></pre></div></div>
+<ul>
+  <li><a href="https://github.com/ReactiveX/RxSwift/blob/main/Documentation/Tips.md">여기</a> 에서 확인할 수 있듯이 RxSwift에서는 operator를 사용하여 스트림을 조합하는 것이 권장되지만, 기존 코드는 이를 따르지 않고 중첩 구독하는 방식으로 작성되어 있었습니다.</li>
+</ul>
+
+<h2 id="3-리팩토링-과정-refactoring-process-1">3. 리팩토링 과정 (Refactoring Process)</h2>
+<ul>
+  <li>중첩된 subscribe 제거: withLatestFrom 연산자를 사용하여 confirm 버튼을 탭하는 시점에 최신 lottery type을 가져오도록 하여 viewModel.selectedLotteryType의 subscribe를 제거하였습니다.</li>
+</ul>
+
+<h2 id="4-최종-코드-final-code-1">4. 최종 코드 (Final Code)</h2>
+
+<div class="language-swift highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">confirmButton</span><span class="o">.</span><span class="n">rx</span><span class="o">.</span><span class="nf">tapGesture</span><span class="p">()</span>
+    <span class="o">.</span><span class="nf">when</span><span class="p">(</span><span class="o">.</span><span class="n">recognized</span><span class="p">)</span>
+    <span class="o">.</span><span class="nf">withLatestFrom</span><span class="p">(</span><span class="n">viewModel</span><span class="o">.</span><span class="n">selectedLotteryType</span><span class="p">)</span> <span class="c1">// tap 시점에 최신 로터리 타입을 가져옴</span>
+    <span class="o">.</span><span class="nf">subscribe</span><span class="p">(</span><span class="nv">onNext</span><span class="p">:</span> <span class="p">{</span> <span class="p">[</span><span class="k">weak</span> <span class="k">self</span><span class="p">]</span> <span class="n">type</span> <span class="k">in</span>
+        <span class="k">guard</span> <span class="k">let</span> <span class="nv">self</span> <span class="o">=</span> <span class="k">self</span> <span class="k">else</span> <span class="p">{</span> <span class="k">return</span> <span class="p">}</span>
+        <span class="k">let</span> <span class="nv">selectedRound</span> <span class="o">=</span> <span class="n">data</span><span class="p">[</span><span class="n">row</span><span class="p">]</span><span class="o">.</span><span class="mi">0</span>
+        
+        <span class="k">switch</span> <span class="n">type</span> <span class="p">{</span>
+        <span class="k">case</span> <span class="o">.</span><span class="nv">lotto</span><span class="p">:</span>
+            <span class="k">self</span><span class="o">.</span><span class="n">viewModel</span><span class="o">.</span><span class="nf">fetchLottoResult</span><span class="p">(</span><span class="nv">round</span><span class="p">:</span> <span class="n">selectedRound</span><span class="p">)</span>
+            <span class="k">self</span><span class="o">.</span><span class="n">viewModel</span><span class="o">.</span><span class="n">currentLottoRound</span><span class="o">.</span><span class="nf">accept</span><span class="p">(</span><span class="n">selectedRound</span><span class="p">)</span>
+        <span class="k">case</span> <span class="o">.</span><span class="nv">pensionLottery</span><span class="p">:</span>
+            <span class="k">self</span><span class="o">.</span><span class="n">viewModel</span><span class="o">.</span><span class="nf">fetchPensionLotteryResult</span><span class="p">(</span><span class="nv">round</span><span class="p">:</span> <span class="n">selectedRound</span><span class="p">)</span>
+            <span class="k">self</span><span class="o">.</span><span class="n">viewModel</span><span class="o">.</span><span class="n">currentPensionLotteryRound</span><span class="o">.</span><span class="nf">accept</span><span class="p">(</span><span class="n">selectedRound</span><span class="p">)</span>
+        <span class="k">case</span> <span class="o">.</span><span class="nv">speeto</span><span class="p">:</span>
+            <span class="k">break</span>
+        <span class="p">}</span>
+
+        <span class="k">self</span><span class="o">.</span><span class="nf">dismiss</span><span class="p">(</span><span class="nv">animated</span><span class="p">:</span> <span class="kc">true</span><span class="p">,</span> <span class="nv">completion</span><span class="p">:</span> <span class="kc">nil</span><span class="p">)</span>
+    <span class="p">})</span>
+    <span class="o">.</span><span class="nf">disposed</span><span class="p">(</span><span class="nv">by</span><span class="p">:</span> <span class="n">disposeBag</span><span class="p">)</span>
+</code></pre></div></div>
+<ul>
+  <li>리팩토링 후의 최종 코드는 중첩된 구독을 제거하고, withLatestFrom 연산자를 사용하여 구독을 단순화했습니다. 이로 인해 코드의 가독성과 유지보수성이 크게 향상되었습니다.</li>
+</ul>
+
+<h2 id="6-교훈-및-배운-점">6. 교훈 및 배운 점</h2>
+<ul>
+  <li>리팩토링 과정에서 RxSwift의 operator 사용의 중요성을 깨달았습니다. 스트림을 조합하는 방식이 코드의 가독성과 유지보수성을 높이는 데 얼마나 효과적인지를 실감했으며, 앞으로도 이러한 원칙을 적용해 더 나은 코드를 작성할 수 있도록 할 것입니다.</li>
+</ul>]]></content><author><name>Mirae</name></author><category term="TIL" /><summary type="html"><![CDATA[Template]]></summary></entry><entry><title type="html">프로젝트 ‘로또메이트’ - 문제 해결 내용</title><link href="http://localhost:4000/til/2024-09-20-lottoMate.html" rel="alternate" type="text/html" title="프로젝트 ‘로또메이트’ - 문제 해결 내용" /><published>2024-09-20T00:00:00+09:00</published><updated>2024-09-20T00:00:00+09:00</updated><id>http://localhost:4000/til/lottoMate</id><content type="html" xml:base="http://localhost:4000/til/2024-09-20-lottoMate.html"><![CDATA[<h1 id="template">Template</h1>
+
+<blockquote class="block-tip">
+  <h5 id="이슈-정리-템플릿">이슈 정리 템플릿</h5>
 
   <p>아래 템플릿을 사용하여 프로젝트 진행 중 발생한 이슈 내용을 정리합니다.<br />
 각 항목에 맞춰 문제와 해결 방법을 구체적으로 작성합니다.</p>
@@ -65,12 +197,13 @@ override func viewDidLayoutSubviews() {
 </ul>
 
 <hr />
+
 <h1 id="커스텀-네비게이션-바-레이아웃-이슈">커스텀 네비게이션 바 레이아웃 이슈</h1>
 
 <center><img src="/assets/images/lottoMate_1.png" alt="lottoMate_1.png" width="257" /></center>
 <p><br /></p>
 
-<h2 id="1-문제-상황-problem-1">1. 문제 상황 (Problem)</h2>
+<h2 id="1-문제-상황">1. 문제 상황</h2>
 <ul>
   <li>
     <p>iPhone 14 Pro, iPhone 14 Pro Max, iPhone 15 Pro, iPhone 15 Pro Max 기기 시뮬레이터에서 status bar와 커스텀 navigation bar 사이에 5px 정도의 빈 공간이 나타나는 문제가 발생했습니다. 다른 기기 시뮬레이터 에서는 이러한 현상이 나타나지 않았으며, 문제는 해당 네 가지 기기 시뮬레이터에서만 재현되었습니다.</p>
@@ -83,7 +216,7 @@ override func viewDidLayoutSubviews() {
   </li>
 </ul>
 
-<h2 id="2-원인-분석-analysis-1">2. 원인 분석 (Analysis)</h2>
+<h2 id="2-원인-분석">2. 원인 분석</h2>
 <ul>
   <li>
     <p>기존 코드에서는 view.safeAreaInsets.top을 사용하여 네비게이션 바를 top safe area 아래에 배치하고 있었습니다. 하지만 특정 기기에서는 status bar와 top safe area 간에 예상치 못한 빈 공간이 생기는 현상이 발생했습니다.</p>
@@ -93,7 +226,7 @@ override func viewDidLayoutSubviews() {
   </li>
 </ul>
 
-<h2 id="3-해결-방법-solution-1">3. 해결 방법 (Solution)</h2>
+<h2 id="3-해결-방법">3. 해결 방법</h2>
 <ul>
   <li>
     <p>문제를 해결하기 위해, status bar의 높이를 직접 가져와 그 값을 기반으로 rootFlexContainer(커스텀 네비게이션 바)를 배치하도록 코드를 수정했습니다. 빈 공간이 발생하는 기기에서도 문제없이 동작할 수 있도록 statusBarManager를 통해 상태 바의 정확한 높이를 가져와 그 바로 아래에 네비게이션 바가 위치하도록 설정했습니다.</p>
@@ -115,12 +248,12 @@ override func viewDidLayoutSubviews() {
   </li>
 </ul>
 
-<h2 id="4-결과-result-1">4. 결과 (Result)</h2>
+<h2 id="4-결과">4. 결과</h2>
 <ul>
   <li>해당 코드를 적용한 후, iPhone 14 Pro, iPhone 14 Pro Max, iPhone 15 Pro, iPhone 15 Pro Max에서 모두 빈 공간이 나타나지 않고 네비게이션 바가 정상적으로 status bar 바로 아래에 배치되었습니다. 그 외 다른 기기에서도 정상적으로 레이아웃이 유지됨을 확인했습니다.</li>
 </ul>
 
-<h2 id="5-교훈-takeaways-1">5. 교훈 (Takeaways)</h2>
+<h2 id="5-교훈">5. 교훈</h2>
 <ul>
   <li>이번 문제를 통해 기기별로 다른 코드를 사용하는 것보다, 모든 기기에서 일관되게 동작하는 코드를 찾는 것이 더 중요하다는 점을 알게 되었습니다. 앞으로는 특정 기기에 맞추기보다, 범용적으로 사용할 수 있는 코드를 우선적으로 고려하려고 합니다.</li>
 </ul>
@@ -130,12 +263,12 @@ override func viewDidLayoutSubviews() {
 <center><img src="/assets/images/lottoMate_2_zoomImage.png" alt="lottoMate_2_zoomImage.png" width="257" /></center>
 <p><br /></p>
 
-<h2 id="1-문제-상황-problem-2">1. 문제 상황 (Problem)</h2>
+<h2 id="1-문제-상황-1">1. 문제 상황</h2>
 <ul>
   <li>사진 확대 기능에서 닫기 버튼을 통해 뷰를 제거하는 기능이 필요했습니다. 닫기 버튼을 처음 눌렀을 때 뷰가 사라지지 않고 두 번째 눌렀을 때부터 사라지는 문제가 발생했습니다.</li>
 </ul>
 
-<h2 id="2-원인-분석-analysis-2">2. 원인 분석 (Analysis)</h2>
+<h2 id="2-원인-분석-1">2. 원인 분석</h2>
 <ul>
   <li>
     <p>닫기 버튼 클릭 시 동작하는 함수인 dismissFullscreenImage()가 호출될 때 전체 subview의 배경색을 확인해본 결과, 사진 확대 뷰가 두번 추가되었기 때문에 발생한 문제임을 발견했습니다.</p>
@@ -153,7 +286,7 @@ override func viewDidLayoutSubviews() {
   </li>
 </ul>
 
-<h2 id="3-해결-방법-solution-2">3. 해결 방법 (Solution)</h2>
+<h2 id="3-해결-방법-1">3. 해결 방법</h2>
 <ul>
   <li>
     <p>winningReviewFullSizeImgName이 기본값을 내보낼 때도 서브 뷰가 추가되도록 코드가 작성되어 있었기 때문에 발생한 문제임을 발견했습니다. 기본값인 ““일 때는 뷰가 추가되지 않도록 수정했습니다.</p>
@@ -172,12 +305,12 @@ override func viewDidLayoutSubviews() {
   </li>
 </ul>
 
-<h2 id="4-결과-result-2">4. 결과 (Result)</h2>
+<h2 id="4-결과-1">4. 결과</h2>
 <ul>
   <li>문제 해결 후 닫기 버튼을 클릭하면 뷰가 즉시 제거되며, 사용자 경험이 개선되었습니다. 향후에는 UI 요소의 추가와 제거를 더 체계적으로 관리하기 위해 뷰의 상태를 명확하게 정의할 계획입니다.</li>
 </ul>
 
-<h2 id="5-교훈-takeaways-2">5. 교훈 (Takeaways)</h2>
+<h2 id="5-교훈-1">5. 교훈</h2>
 <ul>
   <li>이 문제를 해결하며 문제를 바로 해결하려고 하기보다는 문제의 원인을 빠르게 파악하는 것이 중요하다는 것을 깨달았습니다. 원인을 이해한 후에 적절한 해결책을 찾는 것이 더 효과적입니다.</li>
 </ul>]]></content><author><name>Mirae</name></author><category term="TIL" /><summary type="html"><![CDATA[Template]]></summary></entry><entry><title type="html">PinLayout &amp;amp; FlexLayout</title><link href="http://localhost:4000/til/2024-06-26-PinLayoutAndFlexLayout.html" rel="alternate" type="text/html" title="PinLayout &amp;amp; FlexLayout" /><published>2024-06-26T00:00:00+09:00</published><updated>2024-06-26T00:00:00+09:00</updated><id>http://localhost:4000/til/PinLayoutAndFlexLayout</id><content type="html" xml:base="http://localhost:4000/til/2024-06-26-PinLayoutAndFlexLayout.html"><![CDATA[<blockquote>
@@ -1961,92 +2094,4 @@ This app has crashed because it attempted to access privacy-sensitive data witho
   <li>Image() 뷰 이니셜라이저는 기본적으로 이미지의 원래 사이즈로 이미지를 가져옴</li>
   <li>resizable() 모더파이어와 scaledToFit() 같은 모더파이어를 사용하여 이미지 사이즈를 조정할 수 있음</li>
   <li>.clipShape(RoundedRectangle(cornerRadius: 10.0, style: .continuous)) 을 사용하여 뷰의 위치나 크기를 변경하지 않고 corner radius를 설정할 수 있음</li>
-</ul>]]></content><author><name>Mirae</name></author><category term="TIL" /><summary type="html"><![CDATA[```swift struct ReusableLabel: View { let keyword: String let symbol: String var body: some View { Label(keyword, systemImage: symbol) .font(.title) .foregroundColor(.white) .padding() .background(.green.opacity(0.75), in: Capsule()) // - 1 } }]]></summary></entry><entry><title type="html">Vertical TabView in SwiftUI</title><link href="http://localhost:4000/til/2023-04-29-VerticalTabView.html" rel="alternate" type="text/html" title="Vertical TabView in SwiftUI" /><published>2023-04-29T00:00:00+09:00</published><updated>2023-04-29T00:00:00+09:00</updated><id>http://localhost:4000/til/VerticalTabView</id><content type="html" xml:base="http://localhost:4000/til/2023-04-29-VerticalTabView.html"><![CDATA[<video src="https://user-images.githubusercontent.com/85061148/235292829-c16fccb8-e5ae-4243-86e3-356f57443024.mov" controls="controls" style="max-width: 300px">
-</video>
-
-<div class="language-swift highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">import</span> <span class="kt">SwiftUI</span>
-
-<span class="kd">struct</span> <span class="kt">ContentView</span><span class="p">:</span> <span class="kt">View</span> <span class="p">{</span>
-    <span class="k">var</span> <span class="nv">body</span><span class="p">:</span> <span class="kd">some</span> <span class="kt">View</span> <span class="p">{</span>
-        <span class="kt">GeometryReader</span> <span class="p">{</span> <span class="n">proxy</span> <span class="k">in</span>
-            <span class="kt">TabView</span> <span class="p">{</span>
-                <span class="kt">ForEach</span><span class="p">(</span><span class="mi">0</span><span class="o">..&lt;</span><span class="mi">3</span><span class="p">,</span> <span class="nv">id</span><span class="p">:</span> <span class="p">\</span><span class="o">.</span><span class="k">self</span><span class="p">)</span> <span class="p">{</span> <span class="n">i</span> <span class="k">in</span>
-                    <span class="kt">Image</span><span class="p">(</span><span class="s">"img_</span><span class="se">\(</span><span class="n">i</span> <span class="o">+</span> <span class="mi">1</span><span class="se">)</span><span class="s">"</span><span class="p">)</span>
-                        <span class="o">.</span><span class="nf">resizable</span><span class="p">()</span>
-                        <span class="o">.</span><span class="nf">scaledToFill</span><span class="p">()</span>
-                        <span class="o">.</span><span class="nf">rotationEffect</span><span class="p">(</span><span class="o">.</span><span class="nf">degrees</span><span class="p">(</span><span class="o">-</span><span class="mi">90</span><span class="p">))</span> <span class="c1">// 1</span>
-                        <span class="o">.</span><span class="nf">frame</span><span class="p">(</span>
-                            <span class="nv">width</span><span class="p">:</span> <span class="n">proxy</span><span class="o">.</span><span class="n">size</span><span class="o">.</span><span class="n">width</span><span class="p">,</span>
-                            <span class="nv">height</span><span class="p">:</span> <span class="n">proxy</span><span class="o">.</span><span class="n">size</span><span class="o">.</span><span class="n">height</span>
-                        <span class="p">)</span> <span class="c1">// 2</span>
-                <span class="p">}</span>
-            <span class="p">}</span>
-            <span class="o">.</span><span class="nf">frame</span><span class="p">(</span>
-                <span class="nv">width</span><span class="p">:</span> <span class="n">proxy</span><span class="o">.</span><span class="n">size</span><span class="o">.</span><span class="n">height</span><span class="p">,</span> <span class="c1">// Height &amp; width swap</span>
-                <span class="nv">height</span><span class="p">:</span> <span class="n">proxy</span><span class="o">.</span><span class="n">size</span><span class="o">.</span><span class="n">width</span>
-            <span class="p">)</span> <span class="c1">// 3</span>
-            <span class="o">.</span><span class="nf">rotationEffect</span><span class="p">(</span><span class="o">.</span><span class="nf">degrees</span><span class="p">(</span><span class="mi">90</span><span class="p">),</span> <span class="nv">anchor</span><span class="p">:</span> <span class="o">.</span><span class="n">topLeading</span><span class="p">)</span> <span class="c1">// 4</span>
-            <span class="o">.</span><span class="nf">offset</span><span class="p">(</span><span class="nv">x</span><span class="p">:</span> <span class="n">proxy</span><span class="o">.</span><span class="n">size</span><span class="o">.</span><span class="n">width</span><span class="p">)</span> <span class="c1">// 5</span>
-            <span class="o">.</span><span class="nf">tabViewStyle</span><span class="p">(</span><span class="kt">PageTabViewStyle</span><span class="p">(</span><span class="nv">indexDisplayMode</span><span class="p">:</span> <span class="o">.</span><span class="n">never</span><span class="p">))</span>
-        <span class="p">}</span>
-    <span class="p">}</span>
-<span class="p">}</span>
-</code></pre></div></div>
-
-<p><a href="https://morioh.com/p/81b0a940fba0">👉🏻 참고한 글</a></p>
-
-<div class="language-swift highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="o">.</span><span class="nf">tabViewStyle</span><span class="p">(</span><span class="kt">PageTabViewStyle</span><span class="p">(</span><span class="nv">indexDisplayMode</span><span class="p">:</span> <span class="o">.</span><span class="n">never</span><span class="p">))</span>
-</code></pre></div></div>
-
-<p>SwiftUI의 PageTabViewStyle은 기본적으로 수평으로 넘길 수 있는 paged scrolling 탭뷰입니다.
-페이지를 넘기는 것과 같은 효과를 줄 수 있는데요.</p>
-
-<p>위 코드와 같이, rotationEffect와 GeometryReader를 사용하여 수직으로 넘어가는 탭뷰를 만들 수 있습니다.</p>
-
-<ul>
-  <li>
-    <p>// 1 : rotationEffect를 사용하여 왼쪽으로 90도 이미지를 로테이션 시켜줍니다. 현재 탭뷰 안의 이미지는 아래와 같이 살짝 커졌지만 가운데 정렬된 상태로 나타납니다.</p>
-  </li>
-  <li>
-    <p>// 2: 이때 width / height는 누워있는 이미지와 같이 width가 더 큰 직사각형 형태로 존재합니다.</p>
-  </li>
-  <li>
-    <p>// 3: 여기서 TabView의 frame을 정의하는데, height와 width를 바꿔줍니다. 그러면 width가 heigt보다 작은 세로로 기다란 모양의 직사각형 frame이 되겠죠?</p>
-  </li>
-  <li>
-    <p>// 4 : anchor는 어느 꼭지점을 기준으로 로테이트 할 지 정할 때 사용하는데 .topLeading을 기준으로 90도 로테이트 했으므로 화면에는 이미지가 보여지지 않게 됩니다. 로테이트 하면서 화면 밖에 위치하게 되는데요.</p>
-  </li>
-  <li>
-    <p>// 5 : 그래서 offset에 x 값을 현재 width만큼 주어서 오른쪽으로 이동시킵니다.</p>
-  </li>
-</ul>
-
-<p>여기까지하면, 화면에 수직으로 이동하는 페이징 탭뷰가 맨 위에 있는 영상처럼 잘 나타나게 됩니다.<br />
-그런데 LazyVStack 안에 다른 뷰와 함께 탭뷰를 화면에 보이려고 하면 문제가 생기는데요.<br />
-LazyVStack은 모든 아이템을 먼저 그리는게 아니라 필요할 때 아이템을 렌더링 하기 떄문에 기존의. VStack과는 다른 레이아웃 룰을 가지고 있습니다. 그래서 높이가 10 정도 되는 뷰만 그려주게 됩니다.<br />
-일단 VStack으로 교체하면 이 문제는 해결할 수 있습니다.</p>
-
-<!--#### UIKit 사용한 Horizontal paged tabView-->
-<!---->
-<!--SwiftUI 프로젝트에 UIKit 뷰와 뷰 컨트롤러 사용하기 -->
-<!---->
-<!--UIViewRepresentable / UIViewControllerRepresentable(프로토콜)을 채택하는 커스텀 타입을 생성 -->
-<!--SwiftUI가 라이프 사이클과 업데이트를 관리하는 UIKit 타입을 생성하는 커스텀 타입-->
-<!---->
-<!--UIViewControllerRepresentable은 정의해야하는 두가지 요구사항이 있음 -->
-<!---->
-<!--1. UIPageViewController를 리턴하는 makeUIViewController(context:_)를 구현 -->
-<!---->
-<!--```swift-->
-<!--func makeUIViewController(context: Context) -> UIPageViewController {-->
-<!--    let pageViewController = UIPageViewController(-->
-<!--        transitionStyle: .scroll, // .PageCurl 스타일도 있음-->
-<!--        navigationOrientation: .horizontal) // .vertical도 있음-->
-<!--    -->
-<!--    return pageViewController-->
-<!--        -->
-<!--}-->
-<!--```  -->
-<!--- UIPageViewController의 트랜지션 스타일과 .horizontal / .vertical 방식 중 하나를 설정하여 리턴-->
-<!---->
-<!--2. updateUIViewController(_:context:) 메서드를 구현하여 setViewControllers(_:direction:animated:) 메서드를 호출-->]]></content><author><name>Mirae</name></author><category term="TIL" /><summary type="html"><![CDATA[]]></summary></entry></feed>
+</ul>]]></content><author><name>Mirae</name></author><category term="TIL" /><summary type="html"><![CDATA[```swift struct ReusableLabel: View { let keyword: String let symbol: String var body: some View { Label(keyword, systemImage: symbol) .font(.title) .foregroundColor(.white) .padding() .background(.green.opacity(0.75), in: Capsule()) // - 1 } }]]></summary></entry></feed>
