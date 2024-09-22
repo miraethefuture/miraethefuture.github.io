@@ -7,7 +7,7 @@ layout: post
 ---
 # Template
 
-> ##### 이슈 정리 템플릿
+> ##### 이슈 정리 템플리
 >
 > 아래 템플릿을 사용하여 프로젝트 진행 중 발생한 이슈 내용을 정리합니다.  
 > 각 항목에 맞춰 문제와 해결 방법을 구체적으로 작성합니다.
@@ -97,3 +97,47 @@ rootFlexContainer.flex.layout(mode: .adjustHeight)
 ## 5. 교훈 (Takeaways)
 - 이번 문제를 통해 기기별로 다른 코드를 사용하는 것보다, 모든 기기에서 일관되게 동작하는 코드를 찾는 것이 더 중요하다는 점을 알게 되었습니다. 앞으로는 특정 기기에 맞추기보다, 범용적으로 사용할 수 있는 코드를 우선적으로 고려하려고 합니다.
 
+
+# 사진 확대 뷰 닫기 기능 이슈
+
+<center><img src="/assets/images/lottoMate_2_zoomImage.png" alt="lottoMate_2_zoomImage.png" width="257"></center><br> 
+
+## 1. 문제 상황 (Problem)
+- 사진 확대 기능에서 닫기 버튼을 통해 뷰를 제거하는 기능이 필요했습니다. 닫기 버튼을 처음 눌렀을 때 뷰가 사라지지 않고 두 번째 눌렀을 때부터 사라지는 문제가 발생했습니다.
+
+## 2. 원인 분석 (Analysis)
+- 닫기 버튼 클릭 시 동작하는 함수인 dismissFullscreenImage()가 호출될 때 전체 subview의 배경색을 확인해본 결과, 사진 확대 뷰가 두번 추가되었기 때문에 발생한 문제임을 발견했습니다.
+
+    ```swift
+    @objc func dismissFullscreenImage() {
+        for subview in self.view.subviews {
+            print("subview's background color: \(String(describing: subview.backgroundColor))")
+        }
+        
+    // subview's background color: nil
+    // subview's background color: Optional(kCGColorSpaceModelRGB 0 0 0 0.8 )
+    // subview's background color: Optional(kCGColorSpaceModelRGB 1 1 1 0.8 )
+    // subview's background color: Optional(kCGColorSpaceModelRGB 0 0 0 0.8 )
+    ```
+
+## 3. 해결 방법 (Solution)
+- winningReviewFullSizeImgName이 기본값을 내보낼 때도 서브 뷰가 추가되도록 코드가 작성되어 있었기 때문에 발생한 문제임을 발견했습니다. 기본값인 ""일 때는 뷰가 추가되지 않도록 수정했습니다.
+    
+    ```swift
+    func showTappedImage() {
+        viewModel.winningReviewFullSizeImgName
+            .subscribe(onNext: { name in
+                if name != "" { // 기본값인 ""일 때 추가되지 않도록 수정
+                    self.changeStatusBarBgColor(bgColor: .clear)
+                    self.showFullscreenImage(named: "\(name)")
+                }
+            })
+            .disposed(by: disposeBag)
+    }
+    ```
+
+## 4. 결과 (Result)
+- 문제 해결 후 닫기 버튼을 클릭하면 뷰가 즉시 제거되며, 사용자 경험이 개선되었습니다. 향후에는 UI 요소의 추가와 제거를 더 체계적으로 관리하기 위해 뷰의 상태를 명확하게 정의할 계획입니다.
+
+## 5. 교훈 (Takeaways)
+- 이 문제를 해결하며 문제를 바로 해결하려고 하기보다는 문제의 원인을 빠르게 파악하는 것이 중요하다는 것을 깨달았습니다. 원인을 이해한 후에 적절한 해결책을 찾는 것이 더 효과적입니다.

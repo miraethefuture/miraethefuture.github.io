@@ -1,7 +1,7 @@
-<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="4.3.2">Jekyll</generator><link href="http://localhost:4000/feed.xml" rel="self" type="application/atom+xml" /><link href="http://localhost:4000/" rel="alternate" type="text/html" /><updated>2024-09-22T00:29:22+09:00</updated><id>http://localhost:4000/feed.xml</id><title type="html"> Jung Mirae</title><subtitle></subtitle><author><name>Mirae</name></author><entry><title type="html">프로젝트 ‘로또메이트’</title><link href="http://localhost:4000/til/2024-09-20-lottoMate.html" rel="alternate" type="text/html" title="프로젝트 ‘로또메이트’" /><published>2024-09-20T00:00:00+09:00</published><updated>2024-09-20T00:00:00+09:00</updated><id>http://localhost:4000/til/lottoMate</id><content type="html" xml:base="http://localhost:4000/til/2024-09-20-lottoMate.html"><![CDATA[<h1 id="template">Template</h1>
+<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="4.3.2">Jekyll</generator><link href="http://localhost:4000/feed.xml" rel="self" type="application/atom+xml" /><link href="http://localhost:4000/" rel="alternate" type="text/html" /><updated>2024-09-22T20:27:34+09:00</updated><id>http://localhost:4000/feed.xml</id><title type="html"> Jung Mirae</title><subtitle></subtitle><author><name>Mirae</name></author><entry><title type="html">프로젝트 ‘로또메이트’</title><link href="http://localhost:4000/til/2024-09-20-lottoMate.html" rel="alternate" type="text/html" title="프로젝트 ‘로또메이트’" /><published>2024-09-20T00:00:00+09:00</published><updated>2024-09-20T00:00:00+09:00</updated><id>http://localhost:4000/til/lottoMate</id><content type="html" xml:base="http://localhost:4000/til/2024-09-20-lottoMate.html"><![CDATA[<h1 id="template">Template</h1>
 
 <blockquote class="block-tip">
-  <h5 id="이슈-정리-템플릿">이슈 정리 템플릿</h5>
+  <h5 id="이슈-정리-템플리">이슈 정리 템플리</h5>
 
   <p>아래 템플릿을 사용하여 프로젝트 진행 중 발생한 이슈 내용을 정리합니다.<br />
 각 항목에 맞춰 문제와 해결 방법을 구체적으로 작성합니다.</p>
@@ -123,6 +123,63 @@ override func viewDidLayoutSubviews() {
 <h2 id="5-교훈-takeaways-1">5. 교훈 (Takeaways)</h2>
 <ul>
   <li>이번 문제를 통해 기기별로 다른 코드를 사용하는 것보다, 모든 기기에서 일관되게 동작하는 코드를 찾는 것이 더 중요하다는 점을 알게 되었습니다. 앞으로는 특정 기기에 맞추기보다, 범용적으로 사용할 수 있는 코드를 우선적으로 고려하려고 합니다.</li>
+</ul>
+
+<h1 id="사진-확대-뷰-닫기-기능-이슈">사진 확대 뷰 닫기 기능 이슈</h1>
+
+<center><img src="/assets/images/lottoMate_2_zoomImage.png" alt="lottoMate_2_zoomImage.png" width="257" /></center>
+<p><br /></p>
+
+<h2 id="1-문제-상황-problem-2">1. 문제 상황 (Problem)</h2>
+<ul>
+  <li>사진 확대 기능에서 닫기 버튼을 통해 뷰를 제거하는 기능이 필요했습니다. 닫기 버튼을 처음 눌렀을 때 뷰가 사라지지 않고 두 번째 눌렀을 때부터 사라지는 문제가 발생했습니다.</li>
+</ul>
+
+<h2 id="2-원인-분석-analysis-2">2. 원인 분석 (Analysis)</h2>
+<ul>
+  <li>
+    <p>닫기 버튼 클릭 시 동작하는 함수인 dismissFullscreenImage()가 호출될 때 전체 subview의 배경색을 확인해본 결과, 사진 확대 뷰가 두번 추가되었기 때문에 발생한 문제임을 발견했습니다.</p>
+
+    <div class="language-swift highlighter-rouge"><div class="highlight"><pre class="highlight"><code>  <span class="kd">@objc</span> <span class="kd">func</span> <span class="nf">dismissFullscreenImage</span><span class="p">()</span> <span class="p">{</span>
+      <span class="k">for</span> <span class="n">subview</span> <span class="k">in</span> <span class="k">self</span><span class="o">.</span><span class="n">view</span><span class="o">.</span><span class="n">subviews</span> <span class="p">{</span>
+          <span class="nf">print</span><span class="p">(</span><span class="s">"subview's background color: </span><span class="se">\(</span><span class="kt">String</span><span class="p">(</span><span class="nv">describing</span><span class="p">:</span> <span class="n">subview</span><span class="o">.</span><span class="n">backgroundColor</span><span class="p">)</span><span class="se">)</span><span class="s">"</span><span class="p">)</span>
+      <span class="p">}</span>
+        
+  <span class="c1">// subview's background color: nil</span>
+  <span class="c1">// subview's background color: Optional(kCGColorSpaceModelRGB 0 0 0 0.8 )</span>
+  <span class="c1">// subview's background color: Optional(kCGColorSpaceModelRGB 1 1 1 0.8 )</span>
+  <span class="c1">// subview's background color: Optional(kCGColorSpaceModelRGB 0 0 0 0.8 )</span>
+</code></pre></div>    </div>
+  </li>
+</ul>
+
+<h2 id="3-해결-방법-solution-2">3. 해결 방법 (Solution)</h2>
+<ul>
+  <li>
+    <p>winningReviewFullSizeImgName이 기본값을 내보낼 때도 서브 뷰가 추가되도록 코드가 작성되어 있었기 때문에 발생한 문제임을 발견했습니다. 기본값인 ““일 때는 뷰가 추가되지 않도록 수정했습니다.</p>
+
+    <div class="language-swift highlighter-rouge"><div class="highlight"><pre class="highlight"><code>  <span class="kd">func</span> <span class="nf">showTappedImage</span><span class="p">()</span> <span class="p">{</span>
+      <span class="n">viewModel</span><span class="o">.</span><span class="n">winningReviewFullSizeImgName</span>
+          <span class="o">.</span><span class="nf">subscribe</span><span class="p">(</span><span class="nv">onNext</span><span class="p">:</span> <span class="p">{</span> <span class="n">name</span> <span class="k">in</span>
+              <span class="k">if</span> <span class="n">name</span> <span class="o">!=</span> <span class="s">""</span> <span class="p">{</span> <span class="c1">// 기본값인 ""일 때 추가되지 않도록 수정</span>
+                  <span class="k">self</span><span class="o">.</span><span class="nf">changeStatusBarBgColor</span><span class="p">(</span><span class="nv">bgColor</span><span class="p">:</span> <span class="o">.</span><span class="n">clear</span><span class="p">)</span>
+                  <span class="k">self</span><span class="o">.</span><span class="nf">showFullscreenImage</span><span class="p">(</span><span class="nv">named</span><span class="p">:</span> <span class="s">"</span><span class="se">\(</span><span class="n">name</span><span class="se">)</span><span class="s">"</span><span class="p">)</span>
+              <span class="p">}</span>
+          <span class="p">})</span>
+          <span class="o">.</span><span class="nf">disposed</span><span class="p">(</span><span class="nv">by</span><span class="p">:</span> <span class="n">disposeBag</span><span class="p">)</span>
+  <span class="p">}</span>
+</code></pre></div>    </div>
+  </li>
+</ul>
+
+<h2 id="4-결과-result-2">4. 결과 (Result)</h2>
+<ul>
+  <li>문제 해결 후 닫기 버튼을 클릭하면 뷰가 즉시 제거되며, 사용자 경험이 개선되었습니다. 향후에는 UI 요소의 추가와 제거를 더 체계적으로 관리하기 위해 뷰의 상태를 명확하게 정의할 계획입니다.</li>
+</ul>
+
+<h2 id="5-교훈-takeaways-2">5. 교훈 (Takeaways)</h2>
+<ul>
+  <li>이 문제를 해결하며 문제를 바로 해결하려고 하기보다는 문제의 원인을 빠르게 파악하는 것이 중요하다는 것을 깨달았습니다. 원인을 이해한 후에 적절한 해결책을 찾는 것이 더 효과적입니다.</li>
 </ul>]]></content><author><name>Mirae</name></author><category term="TIL" /><summary type="html"><![CDATA[Template]]></summary></entry><entry><title type="html">PinLayout &amp;amp; FlexLayout</title><link href="http://localhost:4000/til/2024-06-26-PinLayoutAndFlexLayout.html" rel="alternate" type="text/html" title="PinLayout &amp;amp; FlexLayout" /><published>2024-06-26T00:00:00+09:00</published><updated>2024-06-26T00:00:00+09:00</updated><id>http://localhost:4000/til/PinLayoutAndFlexLayout</id><content type="html" xml:base="http://localhost:4000/til/2024-06-26-PinLayoutAndFlexLayout.html"><![CDATA[<blockquote>
   <p>이 포스팅은 PinLayout &amp; FlexLayout 사용하여 프로젝트를 진행하며 기억해두고 싶은 것을 적어두는 것에 목적을 두고 있습니다.</p>
 </blockquote>
