@@ -1,4 +1,85 @@
-<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="4.3.2">Jekyll</generator><link href="http://localhost:4000/feed.xml" rel="self" type="application/atom+xml" /><link href="http://localhost:4000/" rel="alternate" type="text/html" /><updated>2024-10-01T16:57:49+09:00</updated><id>http://localhost:4000/feed.xml</id><title type="html"> Jung Mirae</title><subtitle></subtitle><author><name>Mirae</name></author><entry><title type="html">Create a more responsive media app (WWDC)</title><link href="http://localhost:4000/ti/2024-09-27-responsiveMediaApp.html" rel="alternate" type="text/html" title="Create a more responsive media app (WWDC)" /><published>2024-09-27T00:00:00+09:00</published><updated>2024-09-27T00:00:00+09:00</updated><id>http://localhost:4000/ti/responsiveMediaApp</id><content type="html" xml:base="http://localhost:4000/ti/2024-09-27-responsiveMediaApp.html"><![CDATA[<p><a href="https://developer.apple.com/videos/play/wwdc2022/110379/?time=249">Create a more responsive media app (WWDC)</a></p>
+<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="4.3.2">Jekyll</generator><link href="http://localhost:4000/feed.xml" rel="self" type="application/atom+xml" /><link href="http://localhost:4000/" rel="alternate" type="text/html" /><updated>2024-10-03T22:55:06+09:00</updated><id>http://localhost:4000/feed.xml</id><title type="html"> Jung Mirae</title><subtitle></subtitle><author><name>Mirae</name></author><entry><title type="html">로그인 기능 구현하기</title><link href="http://localhost:4000/til/2024-10-03-login.html" rel="alternate" type="text/html" title="로그인 기능 구현하기" /><published>2024-10-03T00:00:00+09:00</published><updated>2024-10-03T00:00:00+09:00</updated><id>http://localhost:4000/til/login</id><content type="html" xml:base="http://localhost:4000/til/2024-10-03-login.html"><![CDATA[<h1 id="구글-로그인">구글 로그인</h1>
+
+<h2 id="환경설정">환경설정</h2>
+
+<p><a href="https://developers.google.com/identity/sign-in/ios/start-integrating">🔗 Get started with Google Sign-In for iOS and macOS</a></p>
+
+<ul>
+  <li>CocoaPods나 SPM으로 Google Sign-In을 프로젝트에 추가합니다.</li>
+  <li>OAuth client ID를 생성합니다.</li>
+  <li>OAuth server client ID를 생성합니다. 대부분의 앱들은 로그인한 유저의 정보를 백엔드 서버로 보내야 합니다. 유저의 정보를 안전하게 백엔드 서버로 보내기 위해 ID token을 사용합니다. 유저의 ID token을 받기 위해서는 서버 클라이언트 ID인 두번째 클라이언트 ID가 필요합니다. 서버 클라이언트 ID를 얻기 위해 웹 어플리케이션 타입의 OAuth client ID를 생성합니다.</li>
+</ul>
+
+<p>⬆️ 윗 부분까지는 진행 완료. (서버 클라이언트 ID는 백엔드 개발자님께서 생성해주심)</p>
+
+<h3 id="xcode-프로젝트-설정하기">Xcode 프로젝트 설정하기</h3>
+
+<div class="language-swift highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1">// OAuth client ID</span>
+<span class="o">&lt;</span><span class="n">key</span><span class="o">&gt;</span><span class="kt">GIDClientID</span><span class="o">&lt;/</span><span class="n">key</span><span class="o">&gt;</span>
+<span class="o">&lt;</span><span class="n">string</span><span class="o">&gt;</span><span class="kt">YOUR_IOS_CLIENT_ID</span><span class="o">&lt;/</span><span class="n">string</span><span class="o">&gt;</span>
+
+<span class="c1">// OAuth server client ID</span>
+<span class="o">&lt;</span><span class="n">key</span><span class="o">&gt;</span><span class="kt">GIDServerClientID</span><span class="o">&lt;/</span><span class="n">key</span><span class="o">&gt;</span>
+<span class="o">&lt;</span><span class="n">string</span><span class="o">&gt;</span><span class="kt">YOUR_SERVER_CLIENT_ID</span><span class="o">&lt;/</span><span class="n">string</span><span class="o">&gt;</span>
+
+<span class="c1">// Custom URL Scheme</span>
+<span class="o">&lt;</span><span class="n">key</span><span class="o">&gt;</span><span class="kt">CFBundleURLTypes</span><span class="o">&lt;/</span><span class="n">key</span><span class="o">&gt;</span>
+<span class="o">&lt;</span><span class="n">array</span><span class="o">&gt;</span>
+  <span class="o">&lt;</span><span class="n">dict</span><span class="o">&gt;</span>
+    <span class="o">&lt;</span><span class="n">key</span><span class="o">&gt;</span><span class="kt">CFBundleURLSchemes</span><span class="o">&lt;/</span><span class="n">key</span><span class="o">&gt;</span>
+    <span class="o">&lt;</span><span class="n">array</span><span class="o">&gt;</span>
+      <span class="o">&lt;</span><span class="n">string</span><span class="o">&gt;</span><span class="kt">YOUR_DOT_REVERSED_IOS_CLIENT_ID</span><span class="o">&lt;/</span><span class="n">string</span><span class="o">&gt;</span>
+    <span class="o">&lt;/</span><span class="n">array</span><span class="o">&gt;</span>
+  <span class="o">&lt;/</span><span class="n">dict</span><span class="o">&gt;</span>
+<span class="o">&lt;/</span><span class="n">array</span><span class="o">&gt;</span>
+</code></pre></div></div>
+
+<p>위와 같이 OAuth client ID / OAuth server client ID / Custom URL Scheme을 설정합니다.<br />
+(보안을 위해 Config 파일에 값을 저장하였습니다.)</p>
+
+<h2 id="구현">구현</h2>
+
+<p><a href="https://developers.google.com/identity/sign-in/ios/sign-in">🔗 Integrating Google Sign-In into your iOS or macOS app</a><br />
+<a href="https://developers.google.com/identity/sign-in/ios/sample-app">🔗 Try iOS Sample App</a></p>
+
+<hr />
+
+<h3 id="1-handle-the-authentication-redirect-url">1. Handle the authentication redirect URL</h3>
+
+<p>AppDelegate에 아래 메서드를 추가하고, GIDSignIn의 handle url 메서드를 호출하는 코드를 추가합니다.</p>
+
+<div class="language-swift highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">func</span> <span class="nf">application</span><span class="p">(</span><span class="n">_</span> <span class="nv">app</span><span class="p">:</span> <span class="kt">UIApplication</span><span class="p">,</span> <span class="kd">open</span> <span class="nv">url</span><span class="p">:</span> <span class="kt">URL</span><span class="p">,</span> <span class="nv">options</span><span class="p">:</span> <span class="p">[</span><span class="kt">UIApplication</span><span class="o">.</span><span class="kt">OpenURLOptionsKey</span> <span class="p">:</span> <span class="kt">Any</span><span class="p">]</span> <span class="o">=</span> <span class="p">[:])</span> <span class="o">-&gt;</span> <span class="kt">Bool</span> <span class="p">{</span>
+    <span class="k">var</span> <span class="nv">handled</span><span class="p">:</span> <span class="kt">Bool</span>
+    <span class="n">handled</span> <span class="o">=</span> <span class="kt">GIDSignIn</span><span class="o">.</span><span class="n">sharedInstance</span><span class="o">.</span><span class="nf">handle</span><span class="p">(</span><span class="n">url</span><span class="p">)</span>
+    
+    <span class="k">if</span> <span class="n">handled</span> <span class="p">{</span>
+        <span class="k">return</span> <span class="kc">true</span>
+    <span class="p">}</span>
+    <span class="c1">// Handle other custom URL types.</span>
+    
+    <span class="c1">// If not handled by this app, return false.</span>
+    <span class="k">return</span> <span class="kc">false</span>
+<span class="p">}</span>
+</code></pre></div></div>
+
+<h3 id="2-attempt-to-restore-the-users-sign-in-state">2. Attempt to restore the user’s sign-in state</h3>
+
+<p>앱이 시작될 때, restorePreviousSignInWithCallback를 호출하여 이미 구글로 로그인을 했던 사용자의 sign-in 상태를 복구합니다. 로그인 상태가 복구되기 때문에 사용자가 앱을 사용할때마다 다시 로그인하지 않아도 됩니다. (사용자가 로그아웃하지 않았다면)</p>
+
+<p><b>application(application:didFinishLaunchingWithOptions:)</b>에서 <b>restorePreviousSignIn</b>의 결과값을 사용하여, 처음 앱이 열렸을 때 어떤 뷰를 보여줄지 결정할 수 있습니다.</p>
+
+<div class="language-swift highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">func</span> <span class="nf">application</span><span class="p">(</span><span class="n">_</span> <span class="nv">application</span><span class="p">:</span> <span class="kt">UIApplication</span><span class="p">,</span> <span class="n">didFinishLaunchingWithOptions</span> <span class="nv">launchOptions</span><span class="p">:</span> <span class="p">[</span><span class="kt">UIApplication</span><span class="o">.</span><span class="kt">LaunchOptionsKey</span><span class="p">:</span> <span class="kt">Any</span><span class="p">]?)</span> <span class="o">-&gt;</span> <span class="kt">Bool</span> <span class="p">{</span>
+    <span class="c1">// Override point for customization after application launch.</span>
+    <span class="kt">GIDSignIn</span><span class="o">.</span><span class="n">sharedInstance</span><span class="o">.</span><span class="n">restorePreviousSignIn</span> <span class="p">{</span> <span class="n">user</span><span class="p">,</span> <span class="n">error</span> <span class="k">in</span>
+        <span class="k">if</span> <span class="n">error</span> <span class="o">!=</span> <span class="kc">nil</span> <span class="o">||</span> <span class="n">user</span> <span class="o">==</span> <span class="kc">nil</span> <span class="p">{</span>
+            <span class="c1">// Show the app's signed-out state.</span>
+        <span class="p">}</span> <span class="k">else</span> <span class="p">{</span>
+            <span class="c1">// Show the app's signed-in state.</span>
+        <span class="p">}</span>
+    <span class="p">}</span>
+    <span class="k">return</span> <span class="kc">true</span>
+<span class="p">}</span>
+</code></pre></div></div>]]></content><author><name>Mirae</name></author><category term="TIL" /><summary type="html"><![CDATA[구글 로그인]]></summary></entry><entry><title type="html">Create a more responsive media app (WWDC)</title><link href="http://localhost:4000/ti/2024-09-27-responsiveMediaApp.html" rel="alternate" type="text/html" title="Create a more responsive media app (WWDC)" /><published>2024-09-27T00:00:00+09:00</published><updated>2024-09-27T00:00:00+09:00</updated><id>http://localhost:4000/ti/responsiveMediaApp</id><content type="html" xml:base="http://localhost:4000/ti/2024-09-27-responsiveMediaApp.html"><![CDATA[<p><a href="https://developer.apple.com/videos/play/wwdc2022/110379/?time=249">Create a more responsive media app (WWDC)</a></p>
 
 <h1 id="avfoundation을-사용하여-더-반응이-빠른-미디어-앱-만들기">AVFoundation을 사용하여 더 반응이 빠른 미디어 앱 만들기</h1>
 
@@ -1879,75 +1960,4 @@ Swift는 메인 스레드와의 상호작용을 돕기 위한 어노테이션인
 <span class="kd">@attached</span><span class="p">(</span><span class="n">member</span><span class="p">)</span> 
 </code></pre></div></div>
 
-<!--- MemberMacro 프로토콜은 하나의 요구사항을 가짐. 이 요구사항은 'expansion' 함수인데, -->]]></content><author><name>Mirae</name></author><category term="TIL" /><summary type="html"><![CDATA[onChange(of:initial:_:)]]></summary></entry><entry><title type="html">SwiftUI 뷰 레이아웃</title><link href="http://localhost:4000/til/2023-05-24-ViewLayout.html" rel="alternate" type="text/html" title="SwiftUI 뷰 레이아웃" /><published>2023-05-24T00:00:00+09:00</published><updated>2023-05-24T00:00:00+09:00</updated><id>http://localhost:4000/til/ViewLayout</id><content type="html" xml:base="http://localhost:4000/til/2023-05-24-ViewLayout.html"><![CDATA[<div class="language-swift highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">struct</span> <span class="kt">ReusableLabel</span><span class="p">:</span> <span class="kt">View</span> <span class="p">{</span>
-    <span class="k">let</span> <span class="nv">keyword</span><span class="p">:</span> <span class="kt">String</span>
-    <span class="k">let</span> <span class="nv">symbol</span><span class="p">:</span> <span class="kt">String</span>
-    <span class="k">var</span> <span class="nv">body</span><span class="p">:</span> <span class="kd">some</span> <span class="kt">View</span> <span class="p">{</span>
-        <span class="kt">Label</span><span class="p">(</span><span class="n">keyword</span><span class="p">,</span> <span class="nv">systemImage</span><span class="p">:</span> <span class="n">symbol</span><span class="p">)</span>
-            <span class="o">.</span><span class="nf">font</span><span class="p">(</span><span class="o">.</span><span class="n">title</span><span class="p">)</span>
-            <span class="o">.</span><span class="nf">foregroundColor</span><span class="p">(</span><span class="o">.</span><span class="n">white</span><span class="p">)</span>
-            <span class="o">.</span><span class="nf">padding</span><span class="p">()</span>
-            <span class="o">.</span><span class="nf">background</span><span class="p">(</span><span class="o">.</span><span class="n">green</span><span class="o">.</span><span class="nf">opacity</span><span class="p">(</span><span class="mf">0.75</span><span class="p">),</span> <span class="nv">in</span><span class="p">:</span> <span class="kt">Capsule</span><span class="p">())</span> <span class="c1">// - 1</span>
-            
-    <span class="p">}</span>
-<span class="p">}</span>
-
-<span class="kd">struct</span> <span class="kt">ReusableLabel_Previews</span><span class="p">:</span> <span class="kt">PreviewProvider</span> <span class="p">{</span> <span class="c1">// - 2</span>
-    
-    <span class="kd">static</span> <span class="k">let</span> <span class="nv">keywords</span> <span class="o">=</span> <span class="p">[</span><span class="s">"Hello"</span><span class="p">,</span> <span class="s">"Good Morning"</span><span class="p">]</span>
-    
-    <span class="kd">static</span> <span class="k">var</span> <span class="nv">previews</span><span class="p">:</span> <span class="kd">some</span> <span class="kt">View</span> <span class="p">{</span> <span class="c1">// - 3</span>
-        <span class="kt">VStack</span> <span class="p">{</span> <span class="c1">// - 4</span>
-            <span class="kt">ForEach</span><span class="p">(</span><span class="n">keywords</span><span class="p">,</span> <span class="nv">id</span><span class="p">:</span> <span class="p">\</span><span class="o">.</span><span class="k">self</span><span class="p">)</span> <span class="p">{</span> <span class="n">word</span> <span class="k">in</span>
-                <span class="kt">KeywordBubbleDefaultPadding</span><span class="p">(</span><span class="nv">keyword</span><span class="p">:</span> <span class="n">word</span><span class="p">,</span> <span class="nv">symbol</span><span class="p">:</span> <span class="s">"fish"</span><span class="p">)</span>
-            <span class="p">}</span>
-        <span class="p">}</span>
-    <span class="p">}</span>
-<span class="p">}</span>
-</code></pre></div></div>
-
-<ul>
-  <li>1: .background에 Capsule()을 정의해줌으로써 캡슐 모양이 Label의 뒷쪽에 오도록 함. 이때 .padding()을 백그라운드의 윗쪽에 선언해주어야 패딩을 포함한 백그라운드에 캡슐 모양을 생성할 수 있음.</li>
-  <li>2: PreviewProvider 프로토콜을 사용하여 커스텀 스위프트UI 뷰의 코드가 생성하는 화면을 미리 볼 수 있음</li>
-  <li>3: PreviewProvider 프로토콜을 구현하기 위해선 static previews 프로퍼티를 정의해야 함</li>
-  <li>4: VStack 안에 ForEach를 사용하여, ReusableLabel 스트럭쳐가 생성하는 라벨 뷰가 다른 텍스트 길이에서 어떻게 적용되는지 한 화면에서 확인할 수 있음</li>
-</ul>
-
-<center><img src="/assets/images/viewLayout_1.png" alt="viewLayout_1.png" width="600" /><br /></center>
-
-<p><br />
-<b>ScaledMetric를 사용하여 동적으로 넓이 조정하기</b></p>
-<ul>
-  <li>padding() modifier를 사용하여 패딩을 주었을 때, 폰트 사이즈가 달라지면 아래 이미지와 같이 큰 사이즈의 폰트에서는 패딩이 충분하지 않는 경우가 있음</li>
-  <li>이때 패딩 값을 그냥 키워주면 작은 폰트에서는 패딩이 너무 넓어질 수 있음</li>
-  <li>@ScaledMetric 프로퍼티 래퍼를 사용하여 .title과 같은 environment’s effective font size에 숫자값을 적용할 수 있음</li>
-</ul>
-
-<div class="language-swift highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">struct</span> <span class="kt">KeywordBubbleDefaultPadding</span><span class="p">:</span> <span class="kt">View</span> <span class="p">{</span>
-    <span class="k">let</span> <span class="nv">keyword</span><span class="p">:</span> <span class="kt">String</span>
-    <span class="k">let</span> <span class="nv">symbol</span><span class="p">:</span> <span class="kt">String</span>
-    <span class="kd">@ScaledMetric</span><span class="p">(</span><span class="nv">relativeTo</span><span class="p">:</span> <span class="o">.</span><span class="n">title</span><span class="p">)</span> <span class="k">var</span> <span class="nv">paddingWidth</span> <span class="o">=</span> <span class="mf">20.5</span> <span class="c1">// &lt;- 여기</span>
-    <span class="k">var</span> <span class="nv">body</span><span class="p">:</span> <span class="kd">some</span> <span class="kt">View</span> <span class="p">{</span>
-        <span class="kt">Label</span><span class="p">(</span><span class="n">keyword</span><span class="p">,</span> <span class="nv">systemImage</span><span class="p">:</span> <span class="n">symbol</span><span class="p">)</span>
-            <span class="o">.</span><span class="nf">font</span><span class="p">(</span><span class="o">.</span><span class="n">title</span><span class="p">)</span>
-            <span class="o">.</span><span class="nf">foregroundColor</span><span class="p">(</span><span class="o">.</span><span class="n">white</span><span class="p">)</span>
-            <span class="o">.</span><span class="nf">padding</span><span class="p">(</span><span class="n">paddingWidth</span><span class="p">)</span> <span class="c1">// &lt;- 여기</span>
-<span class="c1">//            .padding()</span>
-            <span class="o">.</span><span class="nf">background</span><span class="p">(</span><span class="o">.</span><span class="n">green</span><span class="o">.</span><span class="nf">opacity</span><span class="p">(</span><span class="mf">0.75</span><span class="p">),</span> <span class="nv">in</span><span class="p">:</span> <span class="kt">Capsule</span><span class="p">())</span>
-            
-    <span class="p">}</span>
-<span class="p">}</span>
-</code></pre></div></div>
-<center><img src="/assets/images/viewLayout_2.png" alt="viewLayout_2.png" width="350" /> <img src="/assets/images/viewLayout_3.png" alt="viewLayout_3.png" width="350" /><br /></center>
-<p><br /></p>
-
-<h2 id="layering-content">Layering Content</h2>
-
-<ul>
-  <li>어떤 컨텐츠를 겹쳐서 (z-axis) 나타낼 때, ZStack{}/.overlay()/.background()을 사용</li>
-  <li>ZStack 다른 뷰들과 상관 없이, 사용 가능한 공간에 따라 뷰의 사이즈를 정함</li>
-  <li>다른 컨텐츠의 사이즈와 관련하여 뷰의 사이즈를 조정하고 싶다면 overlay와 background를 사용하면 됨</li>
-  <li>Image() 뷰 이니셜라이저는 기본적으로 이미지의 원래 사이즈로 이미지를 가져옴</li>
-  <li>resizable() 모더파이어와 scaledToFit() 같은 모더파이어를 사용하여 이미지 사이즈를 조정할 수 있음</li>
-  <li>.clipShape(RoundedRectangle(cornerRadius: 10.0, style: .continuous)) 을 사용하여 뷰의 위치나 크기를 변경하지 않고 corner radius를 설정할 수 있음</li>
-</ul>]]></content><author><name>Mirae</name></author><category term="TIL" /><summary type="html"><![CDATA[```swift struct ReusableLabel: View { let keyword: String let symbol: String var body: some View { Label(keyword, systemImage: symbol) .font(.title) .foregroundColor(.white) .padding() .background(.green.opacity(0.75), in: Capsule()) // - 1 } }]]></summary></entry></feed>
+<!--- MemberMacro 프로토콜은 하나의 요구사항을 가짐. 이 요구사항은 'expansion' 함수인데, -->]]></content><author><name>Mirae</name></author><category term="TIL" /><summary type="html"><![CDATA[onChange(of:initial:_:)]]></summary></entry></feed>

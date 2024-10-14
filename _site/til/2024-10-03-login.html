@@ -1,7 +1,7 @@
 <!DOCTYPE HTML>
 <html lang="en" >
     <head><meta charset="UTF-8">
-<meta content="text/html; charset=utf-8" http-equiv="Content-Type"><title>Create a more responsive media app (WWDC) ·  Jung Mirae</title><meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<meta content="text/html; charset=utf-8" http-equiv="Content-Type"><title>로그인 기능 구현하기 ·  Jung Mirae</title><meta http-equiv="X-UA-Compatible" content="IE=edge" />
 <meta name="description" content=""><meta name="generator" content="Jekyll (using style of GitBook 3.2.3)"><meta name="author" content="Mirae"><link rel="stylesheet" href="/assets/gitbook/style.css">
 <link rel="stylesheet" href="/assets/gitbook/gitbook-plugin-fontsettings/website.css">
 <link rel="stylesheet" href="/assets/gitbook/gitbook-plugin-search-pro/search.css">
@@ -21,11 +21,9 @@
 
 
 
-            <link rel="prev" href="/til/2024-09-22-lottoMate-refactoringLog.html" />
+            <link rel="prev" href="/ti/2024-09-27-responsiveMediaApp.html" />
         
 
-        
-            <link rel="next" href="/til/2024-10-03-login.html" />
         
     </head>
     <body>
@@ -218,26 +216,26 @@
                         </li>
                     
                         
-                        <li class="chapter active" data-level="1.2" data-path="/ti/2024-09-27-responsiveMediaApp.html">
+                        <li class="chapter" data-level="1.1" data-path="/ti/2024-09-27-responsiveMediaApp.html">
                         
                             <a href="/ti/2024-09-27-responsiveMediaApp.html">
                                 Create a more responsive media app (WWDC)
                             </a>
                             
                                 
-                                    <ul><li><a href="#avfoundation을-사용하여-더-반응이-빠른-미디어-앱-만들기">AVFoundation을 사용하여 더 반응이 빠른 미디어 앱 만들기</a><ul><li><a href="#generating-thumbnails">Generating thumbnails</a><ul><li><a href="#imageat-time">image(at: time)</a></li></ul></li><li><a href="#generate-a-series-of-thumbnails">Generate a series of thumbnails</a></li></ul></li></ul>
-
-                                
                             
                         </li>
                     
                         
-                        <li class="chapter" data-level="1.1" data-path="/til/2024-10-03-login.html">
+                        <li class="chapter active" data-level="1.2" data-path="/til/2024-10-03-login.html">
                         
                             <a href="/til/2024-10-03-login.html">
                                 로그인 기능 구현하기
                             </a>
                             
+                                
+                                    <ul><li><a href="#구글-로그인">구글 로그인</a><ul><li><a href="#환경설정">환경설정</a><ul><li><a href="#xcode-프로젝트-설정하기">Xcode 프로젝트 설정하기</a></li></ul></li><li><a href="#구현">구현</a><ul><li><a href="#1-handle-the-authentication-redirect-url">1. Handle the authentication redirect URL</a></li><li><a href="#2-attempt-to-restore-the-users-sign-in-state">2. Attempt to restore the user’s sign-in state</a></li></ul></li></ul></li></ul>
+
                                 
                             
                         </li>
@@ -263,7 +261,7 @@
                     <h1>
                         <i class="fa fa-circle-o-notch fa-spin"></i>
                         
-                            <a href="." >Create a more responsive media app (WWDC)</a>
+                            <a href="." >로그인 기능 구현하기</a>
                         
                     </h1>
                 </div>
@@ -276,88 +274,89 @@
             <div class="search-noresults">
                 <section class="normal markdown-section">
                     
-                        <h1 id="/ti/responsiveMediaApp">Create a more responsive media app (WWDC)</h1>
+                        <h1 id="/til/login">로그인 기능 구현하기</h1>
                     
 
-                    <p><a href="https://developer.apple.com/videos/play/wwdc2022/110379/?time=249">Create a more responsive media app (WWDC)</a></p>
+                    <h1 id="구글-로그인">구글 로그인</h1>
 
-<h1 id="avfoundation을-사용하여-더-반응이-빠른-미디어-앱-만들기">AVFoundation을 사용하여 더 반응이 빠른 미디어 앱 만들기</h1>
+<h2 id="환경설정">환경설정</h2>
+
+<p><a href="https://developers.google.com/identity/sign-in/ios/start-integrating">🔗 Get started with Google Sign-In for iOS and macOS</a></p>
 
 <ul>
-  <li>썸네일을 보여주거나, 어러개의 미디어를 하나의 컴포지션으로 합치거나, 에셋의 정보를 얻는 등의 작업은 데이터를 로딩하는 작업이 필요합니다. 비디오처럼 큰 파일은 데이터를 로딩하는 작업에 긴 시간이 걸릴 수 있습니다. 이런 작업을 메인 스레드에서 동기적으로 실행하게 되면 레이턴시 이슈가 발생할 수 있습니다.</li>
-  <li>AVFoundation의 도구들을 사용하여 데이터를 비동기적으로 로드한 뒤, 데이터 로딩 작업이 끝난 후 UI를 업데이트 하여, 앱이 위와 같은 문제없이 responsive하게 동작할 수 있습니다.</li>
+  <li>CocoaPods나 SPM으로 Google Sign-In을 프로젝트에 추가합니다.</li>
+  <li>OAuth client ID를 생성합니다.</li>
+  <li>OAuth server client ID를 생성합니다. 대부분의 앱들은 로그인한 유저의 정보를 백엔드 서버로 보내야 합니다. 유저의 정보를 안전하게 백엔드 서버로 보내기 위해 ID token을 사용합니다. 유저의 ID token을 받기 위해서는 서버 클라이언트 ID인 두번째 클라이언트 ID가 필요합니다. 서버 클라이언트 ID를 얻기 위해 웹 어플리케이션 타입의 OAuth client ID를 생성합니다.</li>
 </ul>
 
-<h2 id="generating-thumbnails">Generating thumbnails</h2>
+<p>⬆️ 윗 부분까지는 진행 완료. (서버 클라이언트 ID는 백엔드 개발자님께서 생성해주심)</p>
 
-<p>AVAssetImageGenerator로부터 이미지를 얻는 것은 썸네일을 만드는 좋은 방법입니다.<br />
-하지만 이미지를 생성하는 것은 실행 즉시 이루어지지 않습니다.<br />
-이미지를 생성하기 위해서, image generator는 비디오 파일의 프레임 데이터를 먼저 로드해야 합니다.<br />
-원격 서버나 인터넷에서 비디오 파일을 가져온다면 프레임 데이터를 로딩하는 작업이 훨씬 느리게 진행되기 때문에 이미지를 생성하는 방법을 신중히 선택해야 합니다.<br />
-아래 코드에서 사용된 copyCGimage는 데이터를 메인스레드에서 동기적으로 로드합니다. 비디오가 로딩되길 기다리는 동안 UI는 멈춰버립니다.</p>
+<h3 id="xcode-프로젝트-설정하기">Xcode 프로젝트 설정하기</h3>
 
-<div class="language-swift highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">func</span> <span class="nf">thumbnail</span><span class="p">()</span> <span class="k">throws</span> <span class="o">-&gt;</span> <span class="kt">UIImage</span> <span class="p">{</span>
-    <span class="k">let</span> <span class="nv">generator</span> <span class="o">=</span> <span class="kt">AVAssetImageGenerator</span><span class="p">(</span><span class="nv">asset</span><span class="p">:</span> <span class="n">asset</span><span class="p">)</span>
-    <span class="k">let</span> <span class="nv">thumbnail</span> <span class="o">=</span> <span class="k">try</span> <span class="n">generator</span><span class="o">.</span><span class="nf">copyCGImage</span><span class="p">(</span><span class="nv">at</span><span class="p">:</span> <span class="n">time</span><span class="p">,</span> <span class="nv">actualTime</span><span class="p">:</span> <span class="kc">nil</span><span class="p">)</span>
-    <span class="k">return</span> <span class="kt">UIImage</span><span class="p">(</span><span class="nv">cgImage</span><span class="p">:</span> <span class="n">thumbnail</span><span class="p">)</span>
-<span class="p">}</span>
+<div class="language-swift highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1">// OAuth client ID</span>
+<span class="o">&lt;</span><span class="n">key</span><span class="o">&gt;</span><span class="kt">GIDClientID</span><span class="o">&lt;/</span><span class="n">key</span><span class="o">&gt;</span>
+<span class="o">&lt;</span><span class="n">string</span><span class="o">&gt;</span><span class="kt">YOUR_IOS_CLIENT_ID</span><span class="o">&lt;/</span><span class="n">string</span><span class="o">&gt;</span>
+
+<span class="c1">// OAuth server client ID</span>
+<span class="o">&lt;</span><span class="n">key</span><span class="o">&gt;</span><span class="kt">GIDServerClientID</span><span class="o">&lt;/</span><span class="n">key</span><span class="o">&gt;</span>
+<span class="o">&lt;</span><span class="n">string</span><span class="o">&gt;</span><span class="kt">YOUR_SERVER_CLIENT_ID</span><span class="o">&lt;/</span><span class="n">string</span><span class="o">&gt;</span>
+
+<span class="c1">// Custom URL Scheme</span>
+<span class="o">&lt;</span><span class="n">key</span><span class="o">&gt;</span><span class="kt">CFBundleURLTypes</span><span class="o">&lt;/</span><span class="n">key</span><span class="o">&gt;</span>
+<span class="o">&lt;</span><span class="n">array</span><span class="o">&gt;</span>
+  <span class="o">&lt;</span><span class="n">dict</span><span class="o">&gt;</span>
+    <span class="o">&lt;</span><span class="n">key</span><span class="o">&gt;</span><span class="kt">CFBundleURLSchemes</span><span class="o">&lt;/</span><span class="n">key</span><span class="o">&gt;</span>
+    <span class="o">&lt;</span><span class="n">array</span><span class="o">&gt;</span>
+      <span class="o">&lt;</span><span class="n">string</span><span class="o">&gt;</span><span class="kt">YOUR_DOT_REVERSED_IOS_CLIENT_ID</span><span class="o">&lt;/</span><span class="n">string</span><span class="o">&gt;</span>
+    <span class="o">&lt;/</span><span class="n">array</span><span class="o">&gt;</span>
+  <span class="o">&lt;/</span><span class="n">dict</span><span class="o">&gt;</span>
+<span class="o">&lt;/</span><span class="n">array</span><span class="o">&gt;</span>
 </code></pre></div></div>
 
-<h3 id="imageat-time">image(at: time)</h3>
-<p>image(at: time) 메서드를 사용하여 이미지 제너레이터가 데이터를 로딩하는 동안 호출된 스레드를 해제시켜 위와 같은 문제를 해결할 수 있습니다.</p>
+<p>위와 같이 OAuth client ID / OAuth server client ID / Custom URL Scheme을 설정합니다.<br />
+(보안을 위해 Config 파일에 값을 저장하였습니다.)</p>
 
-<div class="language-swift highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">func</span> <span class="nf">thumbnail</span><span class="p">(</span><span class="nv">asset</span><span class="p">:</span> <span class="kt">AVAsset</span><span class="p">)</span> <span class="k">async</span> <span class="k">throws</span> <span class="o">-&gt;</span> <span class="kt">UIImage</span> <span class="p">{</span>
-    <span class="k">let</span> <span class="nv">generator</span> <span class="o">=</span> <span class="kt">AVAssetImageGenerator</span><span class="p">(</span><span class="nv">asset</span><span class="p">:</span> <span class="n">asset</span><span class="p">)</span>
-    <span class="k">let</span> <span class="nv">thumbnail</span> <span class="o">=</span> <span class="k">try</span> <span class="k">await</span> <span class="n">generator</span><span class="o">.</span><span class="nf">image</span><span class="p">(</span><span class="nv">at</span><span class="p">:</span> <span class="kt">CMTime</span><span class="o">.</span><span class="n">zero</span><span class="p">)</span><span class="o">.</span><span class="n">image</span> <span class="c1">// time 설정 필요</span>
-    <span class="k">return</span> <span class="kt">UIImage</span><span class="p">(</span><span class="nv">cgImage</span><span class="p">:</span> <span class="n">thumbnail</span><span class="p">)</span>
-<span class="p">}</span>
-</code></pre></div></div>
+<h2 id="구현">구현</h2>
 
-<p>위 코드에서 이미지 제너레이터는 튜플 (image: CGImage, actualTime: CMTime)을 리턴합니다.<br />
-actual time은 에셋에서 해당 이미지의 actual time입니다. actual time은 몇가지 이유로 요청한 타임과 같지 않을 수 있습니다.<br />
-위 코드와 같이 .image를 사용하여 이미지에만 접근할 수도 있습니다.</p>
+<p><a href="https://developers.google.com/identity/sign-in/ios/sign-in">🔗 Integrating Google Sign-In into your iOS or macOS app</a><br />
+<a href="https://developers.google.com/identity/sign-in/ios/sample-app">🔗 Try iOS Sample App</a></p>
 
-<p>압축된 비디오의 프레임 중 IFrame은 다른 프레임들보다 로드하기 쉽습니다. 다른 프레임과 상관없이 독립적으로 디코딩되기 때문입니다.<br />
-다른 프레임들은 가까이 있는 프레임에 의존하여 디코딩됩니다. <br />
-그렇기 때문에 이미지 제너레이터는 기본적으로 요청한 시간과 가장 가까운 iFrame을 사용하여 이미지를 생성합니다.<br />
-아래와 같이 tolerance를 zero로 설정하여 요청한 정확한 시간의 썸네일을 얻을 수 있지만, 요청한 시간의 프레임이 iFrame이 아닐 경우<br />
-해당 프레임을 디코딩하기 위해 근처에 있는 프레임들까지 로딩해야할 수 있습니다.</p>
+<hr />
 
-<div class="language-swift highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">func</span> <span class="nf">thumbnail</span><span class="p">(</span><span class="nv">asset</span><span class="p">:</span> <span class="kt">AVAsset</span><span class="p">)</span> <span class="k">async</span> <span class="k">throws</span> <span class="o">-&gt;</span> <span class="kt">UIImage</span> <span class="p">{</span>
-    <span class="k">let</span> <span class="nv">generator</span> <span class="o">=</span> <span class="kt">AVAssetImageGenerator</span><span class="p">(</span><span class="nv">asset</span><span class="p">:</span> <span class="n">asset</span><span class="p">)</span>
-    <span class="n">generator</span><span class="o">.</span><span class="n">requestedTimeToleranceBefore</span> <span class="o">=</span> <span class="o">.</span><span class="n">zero</span>
-    <span class="n">generator</span><span class="o">.</span><span class="n">requestedTimeToleranceAfter</span> <span class="o">=</span> <span class="o">.</span><span class="n">zero</span>
-    <span class="k">let</span> <span class="nv">thumbnail</span> <span class="o">=</span> <span class="k">try</span> <span class="k">await</span> <span class="n">generator</span><span class="o">.</span><span class="nf">image</span><span class="p">(</span><span class="nv">at</span><span class="p">:</span> <span class="kt">CMTime</span><span class="o">.</span><span class="n">zero</span><span class="p">)</span><span class="o">.</span><span class="n">image</span> <span class="c1">// time 설정 필요</span>
-    <span class="k">return</span> <span class="kt">UIImage</span><span class="p">(</span><span class="nv">cgImage</span><span class="p">:</span> <span class="n">thumbnail</span><span class="p">)</span>
-<span class="p">}</span>
-</code></pre></div></div>
+<h3 id="1-handle-the-authentication-redirect-url">1. Handle the authentication redirect URL</h3>
 
-<p>아래와 같이 더 넓은 tolerance를 줄 수 있습니다. 제너레이터가 더 많은 프레임 선택지를 갖게 함으로써 데이터 로딩을 줄일 수 있게 됩니다.<br />
-프레임을 더 적게 로드할 수록 더 빠르게 이미지를 리턴할 수 있게 됩니다.</p>
+<p>AppDelegate에 아래 메서드를 추가하고, GIDSignIn의 handle url 메서드를 호출하는 코드를 추가합니다.</p>
 
-<div class="language-swift highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">func</span> <span class="nf">thumbnail</span><span class="p">(</span><span class="nv">asset</span><span class="p">:</span> <span class="kt">AVAsset</span><span class="p">)</span> <span class="k">async</span> <span class="k">throws</span> <span class="o">-&gt;</span> <span class="kt">UIImage</span> <span class="p">{</span>
-    <span class="k">let</span> <span class="nv">generator</span> <span class="o">=</span> <span class="kt">AVAssetImageGenerator</span><span class="p">(</span><span class="nv">asset</span><span class="p">:</span> <span class="n">asset</span><span class="p">)</span>
-    <span class="n">generator</span><span class="o">.</span><span class="n">requestedTimeToleranceBefore</span> <span class="o">=</span> <span class="o">.</span><span class="n">zero</span>
-    <span class="n">generator</span><span class="o">.</span><span class="n">requestedTimeToleranceAfter</span> <span class="o">=</span> <span class="kt">CMTime</span><span class="p">(</span><span class="nv">seconds</span><span class="p">:</span> <span class="mi">3</span><span class="p">,</span> <span class="nv">preferredTimescale</span><span class="p">:</span> <span class="mi">600</span><span class="p">)</span>
-    <span class="k">let</span> <span class="nv">thumbnail</span> <span class="o">=</span> <span class="k">try</span> <span class="k">await</span> <span class="n">generator</span><span class="o">.</span><span class="nf">image</span><span class="p">(</span><span class="nv">at</span><span class="p">:</span> <span class="kt">CMTime</span><span class="o">.</span><span class="n">zero</span><span class="p">)</span><span class="o">.</span><span class="n">image</span> <span class="c1">// time 설정 필요</span>
-    <span class="k">return</span> <span class="kt">UIImage</span><span class="p">(</span><span class="nv">cgImage</span><span class="p">:</span> <span class="n">thumbnail</span><span class="p">)</span>
-<span class="p">}</span>
-</code></pre></div></div>
-
-<h2 id="generate-a-series-of-thumbnails">Generate a series of thumbnails</h2>
-
-<p>여러개의 time으로 부터 섬네일들을 가져오기 위해서는, images(for: times)를 사용합니다.<br />
-images(for: times)는 Async Sequence를 사용하여 결과값을 제공합니다.<br />
-시퀀스를 사용하면 for in loop를 사용하여 items를 iterate할 수 있습니다.<br />
-아래의 코드처럼 items(generator.images(for: times))가 한번에 가져올 수 없는 값이라면,<br />
-async 시퀀스를 사용하여 각각의 iteration마다 다음 요소를 기다리도록 할 수 있습니다.</p>
-
-<div class="language-swift highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">func</span> <span class="nf">timelineThumbnails</span><span class="p">(</span><span class="k">for</span> <span class="nv">times</span><span class="p">:</span> <span class="p">[</span><span class="kt">CMTime</span><span class="p">],</span> <span class="nv">asset</span><span class="p">:</span> <span class="kt">AVAsset</span><span class="p">)</span> <span class="k">async</span> <span class="p">{</span>
-    <span class="k">let</span> <span class="nv">generator</span> <span class="o">=</span> <span class="kt">AVAssetImageGenerator</span><span class="p">(</span><span class="nv">asset</span><span class="p">:</span> <span class="n">asset</span><span class="p">)</span>
+<div class="language-swift highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">func</span> <span class="nf">application</span><span class="p">(</span><span class="n">_</span> <span class="nv">app</span><span class="p">:</span> <span class="kt">UIApplication</span><span class="p">,</span> <span class="kd">open</span> <span class="nv">url</span><span class="p">:</span> <span class="kt">URL</span><span class="p">,</span> <span class="nv">options</span><span class="p">:</span> <span class="p">[</span><span class="kt">UIApplication</span><span class="o">.</span><span class="kt">OpenURLOptionsKey</span> <span class="p">:</span> <span class="kt">Any</span><span class="p">]</span> <span class="o">=</span> <span class="p">[:])</span> <span class="o">-&gt;</span> <span class="kt">Bool</span> <span class="p">{</span>
+    <span class="k">var</span> <span class="nv">handled</span><span class="p">:</span> <span class="kt">Bool</span>
+    <span class="n">handled</span> <span class="o">=</span> <span class="kt">GIDSignIn</span><span class="o">.</span><span class="n">sharedInstance</span><span class="o">.</span><span class="nf">handle</span><span class="p">(</span><span class="n">url</span><span class="p">)</span>
     
-    <span class="k">for</span> <span class="k">await</span> <span class="n">result</span> <span class="k">in</span> <span class="n">generator</span><span class="o">.</span><span class="nf">images</span><span class="p">(</span><span class="nv">for</span><span class="p">:</span> <span class="n">times</span><span class="p">)</span> <span class="p">{</span>
-        <span class="c1">// ...</span>
+    <span class="k">if</span> <span class="n">handled</span> <span class="p">{</span>
+        <span class="k">return</span> <span class="kc">true</span>
     <span class="p">}</span>
+    <span class="c1">// Handle other custom URL types.</span>
+    
+    <span class="c1">// If not handled by this app, return false.</span>
+    <span class="k">return</span> <span class="kc">false</span>
+<span class="p">}</span>
+</code></pre></div></div>
+
+<h3 id="2-attempt-to-restore-the-users-sign-in-state">2. Attempt to restore the user’s sign-in state</h3>
+
+<p>앱이 시작될 때, restorePreviousSignInWithCallback를 호출하여 이미 구글로 로그인을 했던 사용자의 sign-in 상태를 복구합니다. 로그인 상태가 복구되기 때문에 사용자가 앱을 사용할때마다 다시 로그인하지 않아도 됩니다. (사용자가 로그아웃하지 않았다면)</p>
+
+<p><b>application(application:didFinishLaunchingWithOptions:)</b>에서 <b>restorePreviousSignIn</b>의 결과값을 사용하여, 처음 앱이 열렸을 때 어떤 뷰를 보여줄지 결정할 수 있습니다.</p>
+
+<div class="language-swift highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">func</span> <span class="nf">application</span><span class="p">(</span><span class="n">_</span> <span class="nv">application</span><span class="p">:</span> <span class="kt">UIApplication</span><span class="p">,</span> <span class="n">didFinishLaunchingWithOptions</span> <span class="nv">launchOptions</span><span class="p">:</span> <span class="p">[</span><span class="kt">UIApplication</span><span class="o">.</span><span class="kt">LaunchOptionsKey</span><span class="p">:</span> <span class="kt">Any</span><span class="p">]?)</span> <span class="o">-&gt;</span> <span class="kt">Bool</span> <span class="p">{</span>
+    <span class="c1">// Override point for customization after application launch.</span>
+    <span class="kt">GIDSignIn</span><span class="o">.</span><span class="n">sharedInstance</span><span class="o">.</span><span class="n">restorePreviousSignIn</span> <span class="p">{</span> <span class="n">user</span><span class="p">,</span> <span class="n">error</span> <span class="k">in</span>
+        <span class="k">if</span> <span class="n">error</span> <span class="o">!=</span> <span class="kc">nil</span> <span class="o">||</span> <span class="n">user</span> <span class="o">==</span> <span class="kc">nil</span> <span class="p">{</span>
+            <span class="c1">// Show the app's signed-out state.</span>
+        <span class="p">}</span> <span class="k">else</span> <span class="p">{</span>
+            <span class="c1">// Show the app's signed-in state.</span>
+        <span class="p">}</span>
+    <span class="p">}</span>
+    <span class="k">return</span> <span class="kc">true</span>
 <span class="p">}</span>
 </code></pre></div></div>
 
@@ -389,15 +388,11 @@ MathJax = {
   src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js">
 </script>
 
-                        <a href="/til/2024-09-22-lottoMate-refactoringLog.html" class="navigation navigation-prev navigation-unique" aria-label="Previous page: 프로젝트 '로또메이트' - 리팩토링 기록">
+                        <a href="/ti/2024-09-27-responsiveMediaApp.html" class="navigation navigation-prev navigation-unique" aria-label="Previous page: Create a more responsive media app (WWDC)">
                             <i class="fa fa-angle-left"></i>
                         </a>
                     
 
-                    
-                        <a href="/til/2024-10-03-login.html" class="navigation navigation-next navigation-unique" aria-label="Next page: 로그인 기능 구현하기">
-                            <i class="fa fa-angle-right"></i>
-                        </a>
                     
                 </div>
             </div>
@@ -410,15 +405,6 @@ MathJax = {
         "title": "Introduction",
         "level": "1.1",
         "depth": 1,
-        
-        "next": {
-            "title": "로그인 기능 구현하기",
-            "level": "1.2",
-            "depth": 1,
-            "path": "_posts/2024-10-03-login.md",
-            "ref": "_posts/2024-10-03-login.md",
-            "articles": []
-        },
         
         "dir": "ltr"
     },    "config": {
@@ -494,8 +480,8 @@ MathJax = {
         "gitbook": "*"
     },
     "file": {
-        "path": "_posts/2024-09-27-responsiveMediaApp.md",
-        "mtime": "2024-09-27 00:00:00 +0900",
+        "path": "_posts/2024-10-03-login.md",
+        "mtime": "2024-10-03 00:00:00 +0900",
         "type": "markdown"
     },
     "gitbook": {
