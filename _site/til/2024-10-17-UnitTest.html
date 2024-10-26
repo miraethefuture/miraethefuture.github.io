@@ -1,7 +1,7 @@
 <!DOCTYPE HTML>
 <html lang="en" >
     <head><meta charset="UTF-8">
-<meta content="text/html; charset=utf-8" http-equiv="Content-Type"><title>SwiftUI 뷰 레이아웃 ·  Jung Mirae</title><meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<meta content="text/html; charset=utf-8" http-equiv="Content-Type"><title>단위 테스트 작성하기 ·  Jung Mirae</title><meta http-equiv="X-UA-Compatible" content="IE=edge" />
 <meta name="description" content=""><meta name="generator" content="Jekyll (using style of GitBook 3.2.3)"><meta name="author" content="Mirae"><link rel="stylesheet" href="/assets/gitbook/style.css">
 <link rel="stylesheet" href="/assets/gitbook/gitbook-plugin-fontsettings/website.css">
 <link rel="stylesheet" href="/assets/gitbook/gitbook-plugin-search-pro/search.css">
@@ -21,11 +21,9 @@
 
 
 
-            <link rel="prev" href="/til/2023-04-29-VerticalTabView.html" />
+            <link rel="prev" href="/til/2024-10-03-login.html" />
         
 
-        
-            <link rel="next" href="/til/2023-10-10-Scrumdinger.html" />
         
     </head>
     <body>
@@ -86,15 +84,12 @@
                         </li>
                     
                         
-                        <li class="chapter active" data-level="1.2" data-path="/til/2023-05-24-ViewLayout.html">
+                        <li class="chapter" data-level="1.1" data-path="/til/2023-05-24-ViewLayout.html">
                         
                             <a href="/til/2023-05-24-ViewLayout.html">
                                 SwiftUI 뷰 레이아웃
                             </a>
                             
-                                
-                                    <ul><li><a href="#layering-content">Layering Content</a></li></ul>
-
                                 
                             
                         </li>
@@ -188,12 +183,15 @@
                         </li>
                     
                         
-                        <li class="chapter" data-level="1.1" data-path="/til/2024-10-17-UnitTest.html">
+                        <li class="chapter active" data-level="1.2" data-path="/til/2024-10-17-UnitTest.html">
                         
                             <a href="/til/2024-10-17-UnitTest.html">
                                 단위 테스트 작성하기
                             </a>
                             
+                                
+                                    
+
                                 
                             
                         </li>
@@ -219,7 +217,7 @@
                     <h1>
                         <i class="fa fa-circle-o-notch fa-spin"></i>
                         
-                            <a href="." >SwiftUI 뷰 레이아웃</a>
+                            <a href="." >단위 테스트 작성하기</a>
                         
                     </h1>
                 </div>
@@ -232,81 +230,32 @@
             <div class="search-noresults">
                 <section class="normal markdown-section">
                     
-                        <h1 id="/til/ViewLayout">SwiftUI 뷰 레이아웃</h1>
+                        <h1 id="/til/UnitTest">단위 테스트 작성하기</h1>
                     
 
-                    <div class="language-swift highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">struct</span> <span class="kt">ReusableLabel</span><span class="p">:</span> <span class="kt">View</span> <span class="p">{</span>
-    <span class="k">let</span> <span class="nv">keyword</span><span class="p">:</span> <span class="kt">String</span>
-    <span class="k">let</span> <span class="nv">symbol</span><span class="p">:</span> <span class="kt">String</span>
-    <span class="k">var</span> <span class="nv">body</span><span class="p">:</span> <span class="kd">some</span> <span class="kt">View</span> <span class="p">{</span>
-        <span class="kt">Label</span><span class="p">(</span><span class="n">keyword</span><span class="p">,</span> <span class="nv">systemImage</span><span class="p">:</span> <span class="n">symbol</span><span class="p">)</span>
-            <span class="o">.</span><span class="nf">font</span><span class="p">(</span><span class="o">.</span><span class="n">title</span><span class="p">)</span>
-            <span class="o">.</span><span class="nf">foregroundColor</span><span class="p">(</span><span class="o">.</span><span class="n">white</span><span class="p">)</span>
-            <span class="o">.</span><span class="nf">padding</span><span class="p">()</span>
-            <span class="o">.</span><span class="nf">background</span><span class="p">(</span><span class="o">.</span><span class="n">green</span><span class="o">.</span><span class="nf">opacity</span><span class="p">(</span><span class="mf">0.75</span><span class="p">),</span> <span class="nv">in</span><span class="p">:</span> <span class="kt">Capsule</span><span class="p">())</span> <span class="c1">// - 1</span>
-            
-    <span class="p">}</span>
-<span class="p">}</span>
-
-<span class="kd">struct</span> <span class="kt">ReusableLabel_Previews</span><span class="p">:</span> <span class="kt">PreviewProvider</span> <span class="p">{</span> <span class="c1">// - 2</span>
-    
-    <span class="kd">static</span> <span class="k">let</span> <span class="nv">keywords</span> <span class="o">=</span> <span class="p">[</span><span class="s">"Hello"</span><span class="p">,</span> <span class="s">"Good Morning"</span><span class="p">]</span>
-    
-    <span class="kd">static</span> <span class="k">var</span> <span class="nv">previews</span><span class="p">:</span> <span class="kd">some</span> <span class="kt">View</span> <span class="p">{</span> <span class="c1">// - 3</span>
-        <span class="kt">VStack</span> <span class="p">{</span> <span class="c1">// - 4</span>
-            <span class="kt">ForEach</span><span class="p">(</span><span class="n">keywords</span><span class="p">,</span> <span class="nv">id</span><span class="p">:</span> <span class="p">\</span><span class="o">.</span><span class="k">self</span><span class="p">)</span> <span class="p">{</span> <span class="n">word</span> <span class="k">in</span>
-                <span class="kt">KeywordBubbleDefaultPadding</span><span class="p">(</span><span class="nv">keyword</span><span class="p">:</span> <span class="n">word</span><span class="p">,</span> <span class="nv">symbol</span><span class="p">:</span> <span class="s">"fish"</span><span class="p">)</span>
-            <span class="p">}</span>
-        <span class="p">}</span>
-    <span class="p">}</span>
+                    <div class="language-swift highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">override</span> <span class="kd">func</span> <span class="nf">setUpWithError</span><span class="p">()</span> <span class="k">throws</span> <span class="p">{</span>
+    <span class="c1">//...</span>
 <span class="p">}</span>
 </code></pre></div></div>
-
 <ul>
-  <li>1: .background에 Capsule()을 정의해줌으로써 캡슐 모양이 Label의 뒷쪽에 오도록 함. 이때 .padding()을 백그라운드의 윗쪽에 선언해주어야 패딩을 포함한 백그라운드에 캡슐 모양을 생성할 수 있음.</li>
-  <li>2: PreviewProvider 프로토콜을 사용하여 커스텀 스위프트UI 뷰의 코드가 생성하는 화면을 미리 볼 수 있음</li>
-  <li>3: PreviewProvider 프로토콜을 구현하기 위해선 static previews 프로퍼티를 정의해야 함</li>
-  <li>4: VStack 안에 ForEach를 사용하여, ReusableLabel 스트럭쳐가 생성하는 라벨 뷰가 다른 텍스트 길이에서 어떻게 적용되는지 한 화면에서 확인할 수 있음</li>
+  <li>각 메서드가 실행되기 전에 호출되는 함수</li>
+  <li>테스트에 필요한 객체를 초기화</li>
 </ul>
 
-<center><img src="/assets/images/viewLayout_1.png" alt="viewLayout_1.png" width="600" /><br /></center>
-
-<p><br />
-<b>ScaledMetric를 사용하여 동적으로 넓이 조정하기</b></p>
-<ul>
-  <li>padding() modifier를 사용하여 패딩을 주었을 때, 폰트 사이즈가 달라지면 아래 이미지와 같이 큰 사이즈의 폰트에서는 패딩이 충분하지 않는 경우가 있음</li>
-  <li>이때 패딩 값을 그냥 키워주면 작은 폰트에서는 패딩이 너무 넓어질 수 있음</li>
-  <li>@ScaledMetric 프로퍼티 래퍼를 사용하여 .title과 같은 environment’s effective font size에 숫자값을 적용할 수 있음</li>
-</ul>
-
-<div class="language-swift highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">struct</span> <span class="kt">KeywordBubbleDefaultPadding</span><span class="p">:</span> <span class="kt">View</span> <span class="p">{</span>
-    <span class="k">let</span> <span class="nv">keyword</span><span class="p">:</span> <span class="kt">String</span>
-    <span class="k">let</span> <span class="nv">symbol</span><span class="p">:</span> <span class="kt">String</span>
-    <span class="kd">@ScaledMetric</span><span class="p">(</span><span class="nv">relativeTo</span><span class="p">:</span> <span class="o">.</span><span class="n">title</span><span class="p">)</span> <span class="k">var</span> <span class="nv">paddingWidth</span> <span class="o">=</span> <span class="mf">20.5</span> <span class="c1">// &lt;- 여기</span>
-    <span class="k">var</span> <span class="nv">body</span><span class="p">:</span> <span class="kd">some</span> <span class="kt">View</span> <span class="p">{</span>
-        <span class="kt">Label</span><span class="p">(</span><span class="n">keyword</span><span class="p">,</span> <span class="nv">systemImage</span><span class="p">:</span> <span class="n">symbol</span><span class="p">)</span>
-            <span class="o">.</span><span class="nf">font</span><span class="p">(</span><span class="o">.</span><span class="n">title</span><span class="p">)</span>
-            <span class="o">.</span><span class="nf">foregroundColor</span><span class="p">(</span><span class="o">.</span><span class="n">white</span><span class="p">)</span>
-            <span class="o">.</span><span class="nf">padding</span><span class="p">(</span><span class="n">paddingWidth</span><span class="p">)</span> <span class="c1">// &lt;- 여기</span>
-<span class="c1">//            .padding()</span>
-            <span class="o">.</span><span class="nf">background</span><span class="p">(</span><span class="o">.</span><span class="n">green</span><span class="o">.</span><span class="nf">opacity</span><span class="p">(</span><span class="mf">0.75</span><span class="p">),</span> <span class="nv">in</span><span class="p">:</span> <span class="kt">Capsule</span><span class="p">())</span>
-            
-    <span class="p">}</span>
+<div class="language-swift highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">override</span> <span class="kd">func</span> <span class="nf">tearDownWithError</span><span class="p">()</span> <span class="k">throws</span> <span class="p">{</span>
+    <span class="c1">// Put teardown code here. This method is called after the invocation of each test method in the class.</span>
 <span class="p">}</span>
 </code></pre></div></div>
-<center><img src="/assets/images/viewLayout_2.png" alt="viewLayout_2.png" width="350" /> <img src="/assets/images/viewLayout_3.png" alt="viewLayout_3.png" width="350" /><br /></center>
-<p><br /></p>
-
-<h2 id="layering-content">Layering Content</h2>
-
 <ul>
-  <li>어떤 컨텐츠를 겹쳐서 (z-axis) 나타낼 때, ZStack{}/.overlay()/.background()을 사용</li>
-  <li>ZStack 다른 뷰들과 상관 없이, 사용 가능한 공간에 따라 뷰의 사이즈를 정함</li>
-  <li>다른 컨텐츠의 사이즈와 관련하여 뷰의 사이즈를 조정하고 싶다면 overlay와 background를 사용하면 됨</li>
-  <li>Image() 뷰 이니셜라이저는 기본적으로 이미지의 원래 사이즈로 이미지를 가져옴</li>
-  <li>resizable() 모더파이어와 scaledToFit() 같은 모더파이어를 사용하여 이미지 사이즈를 조정할 수 있음</li>
-  <li>.clipShape(RoundedRectangle(cornerRadius: 10.0, style: .continuous)) 을 사용하여 뷰의 위치나 크기를 변경하지 않고 corner radius를 설정할 수 있음</li>
+  <li>각 테스트 메서드가 실행 완료한 뒤 호출되는 함수</li>
+  <li>테스트에서 사용한 객체를 정리함</li>
 </ul>
+
+<blockquote class="block-tip">
+  <h5 id="teardown-code">Teardown code</h5>
+
+  <p>Teardown code는 테스트에서 사용한 객체를 해제하는 코드를 의미함.</p>
+</blockquote>
 
 </section>
             </div><div class="search-results">
@@ -336,15 +285,11 @@ MathJax = {
   src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js">
 </script>
 
-                        <a href="/til/2023-04-29-VerticalTabView.html" class="navigation navigation-prev navigation-unique" aria-label="Previous page: Vertical TabView in SwiftUI">
+                        <a href="/til/2024-10-03-login.html" class="navigation navigation-prev navigation-unique" aria-label="Previous page: 로그인 기능 구현하기">
                             <i class="fa fa-angle-left"></i>
                         </a>
                     
 
-                    
-                        <a href="/til/2023-10-10-Scrumdinger.html" class="navigation navigation-next navigation-unique" aria-label="Next page: 앱 Scrumdinger 튜토리얼을 따라가며 정리">
-                            <i class="fa fa-angle-right"></i>
-                        </a>
                     
                 </div>
             </div>
@@ -357,15 +302,6 @@ MathJax = {
         "title": "Introduction",
         "level": "1.1",
         "depth": 1,
-        
-        "next": {
-            "title": "앱 Scrumdinger 튜토리얼을 따라가며 정리",
-            "level": "1.2",
-            "depth": 1,
-            "path": "_posts/2023-10-10-Scrumdinger.md",
-            "ref": "_posts/2023-10-10-Scrumdinger.md",
-            "articles": []
-        },
         
         "dir": "ltr"
     },    "config": {
@@ -441,8 +377,8 @@ MathJax = {
         "gitbook": "*"
     },
     "file": {
-        "path": "_posts/2023-06-04-ViewLayout.md",
-        "mtime": "2023-05-24 00:00:00 +0900",
+        "path": "_posts/2024-10-17-UnitTest.md",
+        "mtime": "2024-10-17 00:00:00 +0900",
         "type": "markdown"
     },
     "gitbook": {

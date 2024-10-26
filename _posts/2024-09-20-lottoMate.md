@@ -142,3 +142,44 @@ rootFlexContainer.flex.layout(mode: .adjustHeight)
 
 ## 5. 교훈
 - 이 문제를 해결하며 문제를 바로 해결하려고 하기보다는 문제의 원인을 빠르게 파악하는 것이 중요하다는 것을 깨달았습니다. 원인을 이해한 후에 적절한 해결책을 찾는 것이 더 효과적입니다.
+
+
+# UILabel 숫자 변경 시 레이아웃 흔들림 문제 해결
+
+## 1. 문제 상황 (Problem)
+- 배경 설명: 로또 번호를 랜덤으로 생성하는 뷰에 "오늘 N번째 돌렸어요!" 라는 텍스트를 보여주는 UILabel을 구현했습니다. N은 사용자가 버튼을 누를 때마다 증가하는 횟수를 표시합니다.
+
+- 문제 설명: 횟수(N)가 한 자릿수에서 두 자릿수로 변경될 때(예: 9→10), 두 자릿수에서 세 자릿수로 변경될 때(예: 99→100), 또는 같은 자릿수 내에서도 숫자가 변경될 때(예: 112→115)마다 레이블의 전체 너비가 변경되어 UI가 흔들리는 현상이 발생했습니다. 이는 각 숫자가 서로 다른 너비를 가지고 있어서, 숫자가 바뀔 때마다 전체 텍스트의 너비도 함께 변경되는 문제였습니다.
+
+## 2. 원인 분석 (Analysis)
+- 원인 분석 과정: 기존 폰트는 proportional 숫자를 사용하고 있었습니다. Proportional 숫자는 각 숫자가 자신의 실제 너비만큼 공간을 차지하기 때문에, "1"과 "2" 같은 숫자의 너비가 서로 달라 전체 텍스트의 길이가 변경되었습니다.
+
+- 시도한 방법들: 
+  1. 레이블의 너비를 고정값으로 설정
+  2. 레이블의 텍스트 정렬 방식 변경
+  위의 방법들은 근본적인 문제 해결이 되지 않았습니다.
+
+## 3. 해결 방법 (Solution)
+- 최종 해결 방법: UIFontDescriptor에 모노스페이스 숫자 특성을 추가하여 모든 숫자가 동일한 너비를 갖도록 수정했습니다.
+
+```swift
+let fontDescriptor = UIFontDescriptor(name: fontName, size: self.size)
+    .addingAttributes([
+        .featureSettings: [
+            [
+                UIFontDescriptor.FeatureKey.type: kNumberSpacingType,
+                UIFontDescriptor.FeatureKey.selector: kMonospacedNumbersSelector
+            ]
+        ]
+    ])
+let font = UIFont(descriptor: fontDescriptor, size: self.size)
+```
+
+- 왜 이 방법이 효과적인지: OpenType 폰트 기능 중 모노스페이스 숫자 설정을 활용하여, 모든 숫자가 동일한 너비를 갖도록 만들었습니다. 이로 인해 숫자가 변경되어도 전체 텍스트의 너비가 일정하게 유지됩니다.
+
+## 4. 결과 (Result)
+- 결과 설명: 숫자가 한 자릿수에서 두 자릿수, 세 자릿수로 변경되어도 레이블의 너비가 변경되지 않고 안정적으로 표시됩니다.
+
+## 5. 교훈 (Takeaways)
+- 숫자를 포함하는 동적 텍스트를 다룰 때는 폰트의 숫자 표시 방식(proportional vs. monospace)을 고려해야 합니다.
+- UIFontDescriptor의 다양한 특성들을 활용하면 텍스트 표시와 관련된 세밀한 제어가 가능합니다.

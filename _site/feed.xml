@@ -1,4 +1,26 @@
-<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="4.3.2">Jekyll</generator><link href="http://localhost:4000/feed.xml" rel="self" type="application/atom+xml" /><link href="http://localhost:4000/" rel="alternate" type="text/html" /><updated>2024-10-03T22:55:06+09:00</updated><id>http://localhost:4000/feed.xml</id><title type="html"> Jung Mirae</title><subtitle></subtitle><author><name>Mirae</name></author><entry><title type="html">로그인 기능 구현하기</title><link href="http://localhost:4000/til/2024-10-03-login.html" rel="alternate" type="text/html" title="로그인 기능 구현하기" /><published>2024-10-03T00:00:00+09:00</published><updated>2024-10-03T00:00:00+09:00</updated><id>http://localhost:4000/til/login</id><content type="html" xml:base="http://localhost:4000/til/2024-10-03-login.html"><![CDATA[<h1 id="구글-로그인">구글 로그인</h1>
+<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="4.3.2">Jekyll</generator><link href="http://localhost:4000/feed.xml" rel="self" type="application/atom+xml" /><link href="http://localhost:4000/" rel="alternate" type="text/html" /><updated>2024-10-26T21:45:40+09:00</updated><id>http://localhost:4000/feed.xml</id><title type="html"> Jung Mirae</title><subtitle></subtitle><author><name>Mirae</name></author><entry><title type="html">단위 테스트 작성하기</title><link href="http://localhost:4000/til/2024-10-17-UnitTest.html" rel="alternate" type="text/html" title="단위 테스트 작성하기" /><published>2024-10-17T00:00:00+09:00</published><updated>2024-10-17T00:00:00+09:00</updated><id>http://localhost:4000/til/UnitTest</id><content type="html" xml:base="http://localhost:4000/til/2024-10-17-UnitTest.html"><![CDATA[<div class="language-swift highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">override</span> <span class="kd">func</span> <span class="nf">setUpWithError</span><span class="p">()</span> <span class="k">throws</span> <span class="p">{</span>
+    <span class="c1">//...</span>
+<span class="p">}</span>
+</code></pre></div></div>
+<ul>
+  <li>각 메서드가 실행되기 전에 호출되는 함수</li>
+  <li>테스트에 필요한 객체를 초기화</li>
+</ul>
+
+<div class="language-swift highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">override</span> <span class="kd">func</span> <span class="nf">tearDownWithError</span><span class="p">()</span> <span class="k">throws</span> <span class="p">{</span>
+    <span class="c1">// Put teardown code here. This method is called after the invocation of each test method in the class.</span>
+<span class="p">}</span>
+</code></pre></div></div>
+<ul>
+  <li>각 테스트 메서드가 실행 완료한 뒤 호출되는 함수</li>
+  <li>테스트에서 사용한 객체를 정리함</li>
+</ul>
+
+<blockquote class="block-tip">
+  <h5 id="teardown-code">Teardown code</h5>
+
+  <p>Teardown code는 테스트에서 사용한 객체를 해제하는 코드를 의미함.</p>
+</blockquote>]]></content><author><name>Mirae</name></author><category term="TIL" /><summary type="html"><![CDATA[override func setUpWithError() throws { //... } 각 메서드가 실행되기 전에 호출되는 함수 테스트에 필요한 객체를 초기화]]></summary></entry><entry><title type="html">로그인 기능 구현하기</title><link href="http://localhost:4000/til/2024-10-03-login.html" rel="alternate" type="text/html" title="로그인 기능 구현하기" /><published>2024-10-03T00:00:00+09:00</published><updated>2024-10-03T00:00:00+09:00</updated><id>http://localhost:4000/til/login</id><content type="html" xml:base="http://localhost:4000/til/2024-10-03-login.html"><![CDATA[<h1 id="구글-로그인">구글 로그인</h1>
 
 <h2 id="환경설정">환경설정</h2>
 
@@ -474,6 +496,65 @@ override func viewDidLayoutSubviews() {
 <h2 id="5-교훈-1">5. 교훈</h2>
 <ul>
   <li>이 문제를 해결하며 문제를 바로 해결하려고 하기보다는 문제의 원인을 빠르게 파악하는 것이 중요하다는 것을 깨달았습니다. 원인을 이해한 후에 적절한 해결책을 찾는 것이 더 효과적입니다.</li>
+</ul>
+
+<h1 id="uilabel-숫자-변경-시-레이아웃-흔들림-문제-해결">UILabel 숫자 변경 시 레이아웃 흔들림 문제 해결</h1>
+
+<h2 id="1-문제-상황-problem-1">1. 문제 상황 (Problem)</h2>
+<ul>
+  <li>
+    <p>배경 설명: 로또 번호를 랜덤으로 생성하는 뷰에 “오늘 N번째 돌렸어요!” 라는 텍스트를 보여주는 UILabel을 구현했습니다. N은 사용자가 버튼을 누를 때마다 증가하는 횟수를 표시합니다.</p>
+  </li>
+  <li>
+    <p>문제 설명: 횟수(N)가 한 자릿수에서 두 자릿수로 변경될 때(예: 9→10), 두 자릿수에서 세 자릿수로 변경될 때(예: 99→100), 또는 같은 자릿수 내에서도 숫자가 변경될 때(예: 112→115)마다 레이블의 전체 너비가 변경되어 UI가 흔들리는 현상이 발생했습니다. 이는 각 숫자가 서로 다른 너비를 가지고 있어서, 숫자가 바뀔 때마다 전체 텍스트의 너비도 함께 변경되는 문제였습니다.</p>
+  </li>
+</ul>
+
+<h2 id="2-원인-분석-analysis-1">2. 원인 분석 (Analysis)</h2>
+<ul>
+  <li>
+    <p>원인 분석 과정: 기존 폰트는 proportional 숫자를 사용하고 있었습니다. Proportional 숫자는 각 숫자가 자신의 실제 너비만큼 공간을 차지하기 때문에, “1”과 “2” 같은 숫자의 너비가 서로 달라 전체 텍스트의 길이가 변경되었습니다.</p>
+  </li>
+  <li>
+    <p>시도한 방법들:</p>
+    <ol>
+      <li>레이블의 너비를 고정값으로 설정</li>
+      <li>레이블의 텍스트 정렬 방식 변경
+위의 방법들은 근본적인 문제 해결이 되지 않았습니다.</li>
+    </ol>
+  </li>
+</ul>
+
+<h2 id="3-해결-방법-solution-1">3. 해결 방법 (Solution)</h2>
+<ul>
+  <li>최종 해결 방법: UIFontDescriptor에 모노스페이스 숫자 특성을 추가하여 모든 숫자가 동일한 너비를 갖도록 수정했습니다.</li>
+</ul>
+
+<div class="language-swift highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">let</span> <span class="nv">fontDescriptor</span> <span class="o">=</span> <span class="kt">UIFontDescriptor</span><span class="p">(</span><span class="nv">name</span><span class="p">:</span> <span class="n">fontName</span><span class="p">,</span> <span class="nv">size</span><span class="p">:</span> <span class="k">self</span><span class="o">.</span><span class="n">size</span><span class="p">)</span>
+    <span class="o">.</span><span class="nf">addingAttributes</span><span class="p">([</span>
+        <span class="o">.</span><span class="nv">featureSettings</span><span class="p">:</span> <span class="p">[</span>
+            <span class="p">[</span>
+                <span class="kt">UIFontDescriptor</span><span class="o">.</span><span class="kt">FeatureKey</span><span class="o">.</span><span class="nv">type</span><span class="p">:</span> <span class="n">kNumberSpacingType</span><span class="p">,</span>
+                <span class="kt">UIFontDescriptor</span><span class="o">.</span><span class="kt">FeatureKey</span><span class="o">.</span><span class="nv">selector</span><span class="p">:</span> <span class="n">kMonospacedNumbersSelector</span>
+            <span class="p">]</span>
+        <span class="p">]</span>
+    <span class="p">])</span>
+<span class="k">let</span> <span class="nv">font</span> <span class="o">=</span> <span class="kt">UIFont</span><span class="p">(</span><span class="nv">descriptor</span><span class="p">:</span> <span class="n">fontDescriptor</span><span class="p">,</span> <span class="nv">size</span><span class="p">:</span> <span class="k">self</span><span class="o">.</span><span class="n">size</span><span class="p">)</span>
+</code></pre></div></div>
+
+<ul>
+  <li>왜 이 방법이 효과적인지: OpenType 폰트 기능 중 모노스페이스 숫자 설정을 활용하여, 모든 숫자가 동일한 너비를 갖도록 만들었습니다. 이로 인해 숫자가 변경되어도 전체 텍스트의 너비가 일정하게 유지됩니다.</li>
+</ul>
+
+<h2 id="4-결과-result-1">4. 결과 (Result)</h2>
+<ul>
+  <li>결과 설명: 숫자가 한 자릿수에서 두 자릿수, 세 자릿수로 변경되어도 레이블의 너비가 변경되지 않고 안정적으로 표시됩니다.</li>
+</ul>
+
+<h2 id="5-교훈-takeaways-1">5. 교훈 (Takeaways)</h2>
+<ul>
+  <li>숫자를 포함하는 동적 텍스트를 다룰 때는 폰트의 숫자 표시 방식(proportional vs. monospace)을 고려해야 합니다.</li>
+  <li>UIFontDescriptor의 다양한 특성들을 활용하면 텍스트 표시와 관련된 세밀한 제어가 가능합니다.</li>
 </ul>]]></content><author><name>Mirae</name></author><category term="TIL" /><summary type="html"><![CDATA[Template]]></summary></entry><entry><title type="html">PinLayout &amp;amp; FlexLayout</title><link href="http://localhost:4000/til/2024-06-26-PinLayoutAndFlexLayout.html" rel="alternate" type="text/html" title="PinLayout &amp;amp; FlexLayout" /><published>2024-06-26T00:00:00+09:00</published><updated>2024-06-26T00:00:00+09:00</updated><id>http://localhost:4000/til/PinLayoutAndFlexLayout</id><content type="html" xml:base="http://localhost:4000/til/2024-06-26-PinLayoutAndFlexLayout.html"><![CDATA[<blockquote>
   <p>이 포스팅은 PinLayout &amp; FlexLayout 사용하여 프로젝트를 진행하며 기억해두고 싶은 것을 적어두는 것에 목적을 두고 있습니다.</p>
 </blockquote>
@@ -1411,553 +1492,75 @@ Swift는 메인 스레드와의 상호작용을 돕기 위한 어노테이션인
 </code></pre></div></div>
 <ul>
   <li>let constant에 Task를 담아서 후에 리턴값에 접근하거나 task로 부터 던져진 에러를 catch할 수 있도록 함.</li>
-</ul>]]></content><author><name>Mirae</name></author><category term="TIL" /><summary type="html"><![CDATA[Scrumdinger app tutorial 이 글은 위 튜토리얼을 따라가며 정리한 내용입니다. Create a color theme]]></summary></entry><entry><title type="html">SwiftUI 이중 스티키 헤더</title><link href="http://localhost:4000/til/2023-09-06-stickyHeader.html" rel="alternate" type="text/html" title="SwiftUI 이중 스티키 헤더" /><published>2023-09-06T00:00:00+09:00</published><updated>2023-09-06T00:00:00+09:00</updated><id>http://localhost:4000/til/stickyHeader</id><content type="html" xml:base="http://localhost:4000/til/2023-09-06-stickyHeader.html"><![CDATA[<div class="language-swift highlighter-rouge"><div class="highlight"><pre class="highlight"><code>
-<span class="kd">import</span> <span class="kt">SwiftUI</span>
-
-<span class="kd">struct</span> <span class="kt">ContentView</span><span class="p">:</span> <span class="kt">View</span> <span class="p">{</span>
-    
-    <span class="kd">@State</span> <span class="kd">private</span> <span class="k">var</span> <span class="nv">hidePointView</span> <span class="o">=</span> <span class="kc">false</span>
-    <span class="kd">@State</span> <span class="kd">private</span> <span class="k">var</span> <span class="nv">isFirstShown</span> <span class="o">=</span> <span class="kc">true</span>
-    
+</ul>]]></content><author><name>Mirae</name></author><category term="TIL" /><summary type="html"><![CDATA[Scrumdinger app tutorial 이 글은 위 튜토리얼을 따라가며 정리한 내용입니다. Create a color theme]]></summary></entry><entry><title type="html">SwiftUI 뷰 레이아웃</title><link href="http://localhost:4000/til/2023-05-24-ViewLayout.html" rel="alternate" type="text/html" title="SwiftUI 뷰 레이아웃" /><published>2023-05-24T00:00:00+09:00</published><updated>2023-05-24T00:00:00+09:00</updated><id>http://localhost:4000/til/ViewLayout</id><content type="html" xml:base="http://localhost:4000/til/2023-05-24-ViewLayout.html"><![CDATA[<div class="language-swift highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">struct</span> <span class="kt">ReusableLabel</span><span class="p">:</span> <span class="kt">View</span> <span class="p">{</span>
+    <span class="k">let</span> <span class="nv">keyword</span><span class="p">:</span> <span class="kt">String</span>
+    <span class="k">let</span> <span class="nv">symbol</span><span class="p">:</span> <span class="kt">String</span>
     <span class="k">var</span> <span class="nv">body</span><span class="p">:</span> <span class="kd">some</span> <span class="kt">View</span> <span class="p">{</span>
-        
-        <span class="kt">VStack</span><span class="p">(</span><span class="nv">spacing</span><span class="p">:</span> <span class="mi">0</span><span class="p">)</span> <span class="p">{</span>
-            <span class="kt">ScrollView</span> <span class="p">{</span>
-                <span class="kt">VStack</span><span class="p">(</span><span class="nv">spacing</span><span class="p">:</span> <span class="mi">0</span><span class="p">)</span> <span class="p">{</span>
-                    <span class="kt">LazyVStack</span><span class="p">(</span><span class="nv">pinnedViews</span><span class="p">:</span> <span class="p">[</span><span class="o">.</span><span class="n">sectionHeaders</span><span class="p">],</span> <span class="nv">content</span><span class="p">:</span>  <span class="p">{</span>
-                        <span class="kt">Section</span><span class="p">(</span><span class="nv">header</span><span class="p">:</span> <span class="n">tempClearHeader</span><span class="p">)</span> <span class="p">{</span>
-                            <span class="n">videoView</span>
-                        <span class="p">}</span>
-                    <span class="p">})</span>
-                    
-                    <span class="kt">LazyVStack</span><span class="p">(</span><span class="nv">pinnedViews</span><span class="p">:</span> <span class="p">[</span><span class="o">.</span><span class="n">sectionHeaders</span><span class="p">],</span> <span class="nv">content</span><span class="p">:</span> <span class="p">{</span>
-                        
-                        <span class="kt">Section</span><span class="p">(</span><span class="nv">header</span><span class="p">:</span> <span class="n">tabViewHeader</span><span class="p">)</span> <span class="p">{</span>
-                            <span class="kt">Text</span><span class="p">(</span><span class="s">"리뷰 모아보기"</span><span class="p">)</span>
-                                <span class="o">.</span><span class="nf">font</span><span class="p">(</span><span class="o">.</span><span class="nf">system</span><span class="p">(</span><span class="nv">size</span><span class="p">:</span> <span class="mi">18</span><span class="p">,</span> <span class="nv">weight</span><span class="p">:</span> <span class="o">.</span><span class="n">bold</span><span class="p">))</span>
-                                <span class="o">.</span><span class="nf">frame</span><span class="p">(</span><span class="nv">height</span><span class="p">:</span> <span class="cm">/*@START_MENU_TOKEN@*/</span><span class="mi">100</span><span class="cm">/*@END_MENU_TOKEN@*/</span><span class="p">)</span>
-                                <span class="o">.</span><span class="nf">padding</span><span class="p">(</span><span class="o">.</span><span class="n">horizontal</span><span class="p">,</span> <span class="mi">20</span><span class="p">)</span>
-                        <span class="p">}</span>
-                    <span class="p">})</span>
-                    
-                    <span class="kt">LazyVStack</span><span class="p">(</span><span class="nv">pinnedViews</span><span class="p">:</span> <span class="p">[</span><span class="o">.</span><span class="n">sectionHeaders</span><span class="p">],</span> <span class="nv">content</span><span class="p">:</span> <span class="p">{</span>
-                        <span class="kt">Section</span><span class="p">(</span><span class="nv">header</span><span class="p">:</span> <span class="n">categoryHeader</span><span class="p">)</span> <span class="p">{</span>
-                            <span class="n">tabViewBody</span>
-                        <span class="p">}</span>
-                    <span class="p">})</span>
-                <span class="p">}</span>
-            <span class="p">}</span>
-            <span class="o">.</span><span class="nf">overlay</span><span class="p">(</span><span class="nv">alignment</span><span class="p">:</span> <span class="o">.</span><span class="n">top</span><span class="p">)</span> <span class="p">{</span>
-                <span class="n">pointViewHeader</span>
-                    <span class="o">.</span><span class="nf">opacity</span><span class="p">(</span><span class="n">hidePointView</span> <span class="p">?</span> <span class="mi">0</span> <span class="p">:</span> <span class="mi">10</span><span class="p">)</span>
-            <span class="p">}</span>
-        <span class="p">}</span>
-        <span class="o">.</span><span class="nf">padding</span><span class="p">(</span><span class="o">.</span><span class="n">top</span><span class="p">,</span> <span class="mi">1</span><span class="p">)</span>
-        <span class="o">.</span><span class="nf">background</span><span class="p">(</span><span class="o">.</span><span class="n">yellow</span><span class="p">)</span>
-    <span class="p">}</span>
-    
-    <span class="k">var</span> <span class="nv">pointViewHeader</span><span class="p">:</span> <span class="kd">some</span> <span class="kt">View</span> <span class="p">{</span>
-        <span class="kt">HStack</span> <span class="p">{</span>
-            <span class="kt">Image</span><span class="p">(</span><span class="nv">systemName</span><span class="p">:</span> <span class="s">"globe"</span><span class="p">)</span>
-                <span class="o">.</span><span class="nf">imageScale</span><span class="p">(</span><span class="o">.</span><span class="n">large</span><span class="p">)</span>
-                <span class="o">.</span><span class="nf">foregroundStyle</span><span class="p">(</span><span class="o">.</span><span class="n">tint</span><span class="p">)</span>
-            <span class="kt">Text</span><span class="p">(</span><span class="s">"PointView"</span><span class="p">)</span>
-        <span class="p">}</span>
-        <span class="o">.</span><span class="nf">frame</span><span class="p">(</span><span class="nv">minWidth</span><span class="p">:</span> <span class="mi">0</span><span class="p">,</span> <span class="nv">maxWidth</span><span class="p">:</span> <span class="o">.</span><span class="n">infinity</span><span class="p">)</span>
-        <span class="o">.</span><span class="nf">frame</span><span class="p">(</span><span class="nv">height</span><span class="p">:</span> <span class="mi">50</span><span class="p">)</span>
-        <span class="o">.</span><span class="nf">foregroundColor</span><span class="p">(</span><span class="o">.</span><span class="n">white</span><span class="p">)</span>
-        <span class="o">.</span><span class="nf">background</span><span class="p">(</span><span class="o">.</span><span class="n">black</span><span class="p">)</span>
-    <span class="p">}</span>
-    
-    <span class="k">var</span> <span class="nv">tabViewHeader</span><span class="p">:</span> <span class="kd">some</span> <span class="kt">View</span> <span class="p">{</span>
-        <span class="kt">HStack</span> <span class="p">{</span>
-            <span class="kt">Spacer</span><span class="p">()</span>
-            <span class="kt">Text</span><span class="p">(</span><span class="s">"영상 리뷰"</span><span class="p">)</span>
-            <span class="kt">Spacer</span><span class="p">()</span>
-            <span class="kt">Text</span><span class="p">(</span><span class="s">"포토 리뷰"</span><span class="p">)</span>
-            <span class="kt">Spacer</span><span class="p">()</span>
-        <span class="p">}</span>
-        <span class="o">.</span><span class="nf">frame</span><span class="p">(</span><span class="nv">minWidth</span><span class="p">:</span> <span class="mi">0</span><span class="p">,</span> <span class="nv">maxWidth</span><span class="p">:</span> <span class="o">.</span><span class="n">infinity</span><span class="p">)</span>
-        <span class="o">.</span><span class="nf">frame</span><span class="p">(</span><span class="nv">height</span><span class="p">:</span> <span class="mi">50</span><span class="p">)</span>
-        <span class="o">.</span><span class="nf">foregroundColor</span><span class="p">(</span><span class="o">.</span><span class="n">white</span><span class="p">)</span>
-        <span class="o">.</span><span class="nf">background</span><span class="p">(</span><span class="o">.</span><span class="n">black</span><span class="p">)</span>
-        
-    <span class="p">}</span>
-    
-    <span class="k">var</span> <span class="nv">tabViewBody</span><span class="p">:</span> <span class="kd">some</span> <span class="kt">View</span> <span class="p">{</span>
-        <span class="kt">VStack</span> <span class="p">{</span>
-            <span class="kt">ForEach</span><span class="p">(</span><span class="mi">0</span><span class="o">..&lt;</span><span class="mi">3</span><span class="p">)</span> <span class="p">{</span> <span class="n">row</span> <span class="k">in</span>
-                <span class="kt">HStack</span><span class="p">(</span><span class="nv">spacing</span><span class="p">:</span> <span class="mi">20</span><span class="p">)</span> <span class="p">{</span>
-                    <span class="kt">Spacer</span><span class="p">()</span>
-                    <span class="kt">Rectangle</span><span class="p">()</span>
-                        <span class="o">.</span><span class="nf">fill</span><span class="p">(</span><span class="o">.</span><span class="n">gray</span><span class="p">)</span>
-                        <span class="o">.</span><span class="nf">frame</span><span class="p">(</span><span class="nv">minWidth</span><span class="p">:</span> <span class="mi">0</span><span class="p">,</span> <span class="nv">maxWidth</span><span class="p">:</span> <span class="o">.</span><span class="n">infinity</span><span class="p">)</span>
-                        <span class="o">.</span><span class="nf">frame</span><span class="p">(</span><span class="nv">height</span><span class="p">:</span> <span class="mi">240</span><span class="p">)</span>
-                        <span class="o">.</span><span class="nf">padding</span><span class="p">([</span><span class="o">.</span><span class="n">top</span><span class="p">,</span> <span class="o">.</span><span class="n">bottom</span><span class="p">])</span>
-                    
-                    
-                    <span class="kt">Rectangle</span><span class="p">()</span>
-                        <span class="o">.</span><span class="nf">fill</span><span class="p">(</span><span class="o">.</span><span class="n">gray</span><span class="p">)</span>
-                        <span class="o">.</span><span class="nf">frame</span><span class="p">(</span><span class="nv">minWidth</span><span class="p">:</span> <span class="mi">0</span><span class="p">,</span> <span class="nv">maxWidth</span><span class="p">:</span> <span class="o">.</span><span class="n">infinity</span><span class="p">)</span>
-                        <span class="o">.</span><span class="nf">frame</span><span class="p">(</span><span class="nv">height</span><span class="p">:</span> <span class="mi">240</span><span class="p">)</span>
-                        <span class="o">.</span><span class="nf">padding</span><span class="p">([</span><span class="o">.</span><span class="n">top</span><span class="p">,</span> <span class="o">.</span><span class="n">bottom</span><span class="p">])</span>
-                    
-                    <span class="kt">Spacer</span><span class="p">()</span>
-                <span class="p">}</span>
-            <span class="p">}</span>
-        <span class="p">}</span>
-    <span class="p">}</span>
-    
-    <span class="k">var</span> <span class="nv">categoryHeader</span><span class="p">:</span> <span class="kd">some</span> <span class="kt">View</span> <span class="p">{</span>
-        <span class="kt">HStack</span> <span class="p">{</span>
-            <span class="kt">Spacer</span><span class="p">()</span>
-            <span class="kt">Text</span><span class="p">(</span><span class="s">"버튼"</span><span class="p">)</span>
-            <span class="kt">Spacer</span><span class="p">()</span>
-            <span class="kt">Text</span><span class="p">(</span><span class="s">"버튼"</span><span class="p">)</span>
-            <span class="kt">Spacer</span><span class="p">()</span>
-            <span class="kt">Text</span><span class="p">(</span><span class="s">"버튼"</span><span class="p">)</span>
-            <span class="kt">Spacer</span><span class="p">()</span>
-            <span class="kt">Text</span><span class="p">(</span><span class="s">"버튼"</span><span class="p">)</span>
-            <span class="kt">Spacer</span><span class="p">()</span>
-        <span class="p">}</span>
-        <span class="o">.</span><span class="nf">frame</span><span class="p">(</span><span class="nv">minWidth</span><span class="p">:</span> <span class="mi">0</span><span class="p">,</span> <span class="nv">maxWidth</span><span class="p">:</span> <span class="o">.</span><span class="n">infinity</span><span class="p">)</span>
-        <span class="o">.</span><span class="nf">frame</span><span class="p">(</span><span class="nv">height</span><span class="p">:</span> <span class="mi">50</span><span class="p">)</span>
-        <span class="o">.</span><span class="nf">foregroundColor</span><span class="p">(</span><span class="o">.</span><span class="n">white</span><span class="p">)</span>
-        <span class="o">.</span><span class="nf">background</span><span class="p">(</span><span class="o">.</span><span class="n">green</span><span class="p">)</span>
-    <span class="p">}</span>
-    
-    <span class="k">var</span> <span class="nv">videoView</span><span class="p">:</span> <span class="kd">some</span> <span class="kt">View</span> <span class="p">{</span>
-        <span class="kt">VStack</span><span class="p">(</span><span class="nv">spacing</span><span class="p">:</span> <span class="mi">0</span><span class="p">)</span> <span class="p">{</span>
-            <span class="kt">Rectangle</span><span class="p">()</span>
-                <span class="o">.</span><span class="nf">fill</span><span class="p">(</span><span class="o">.</span><span class="n">red</span><span class="p">)</span>
-                <span class="o">.</span><span class="nf">frame</span><span class="p">(</span><span class="nv">height</span><span class="p">:</span> <span class="mi">202</span><span class="p">)</span>
-        <span class="p">}</span>
-    <span class="p">}</span>
-    
-    <span class="k">var</span> <span class="nv">tempClearHeader</span><span class="p">:</span> <span class="kd">some</span> <span class="kt">View</span> <span class="p">{</span>
-        <span class="kt">HStack</span> <span class="p">{</span>
-            <span class="kt">Text</span><span class="p">(</span><span class="s">"temp"</span><span class="p">)</span>
-        <span class="p">}</span>
-        <span class="o">.</span><span class="nf">frame</span><span class="p">(</span><span class="nv">minWidth</span><span class="p">:</span> <span class="mi">0</span><span class="p">,</span> <span class="nv">maxWidth</span><span class="p">:</span> <span class="o">.</span><span class="n">infinity</span><span class="p">)</span>
-        <span class="o">.</span><span class="nf">frame</span><span class="p">(</span><span class="nv">height</span><span class="p">:</span> <span class="mi">50</span><span class="p">)</span>
-        <span class="o">.</span><span class="nf">foregroundColor</span><span class="p">(</span><span class="o">.</span><span class="n">white</span><span class="p">)</span>
-        <span class="o">.</span><span class="nf">background</span><span class="p">(</span><span class="o">.</span><span class="n">black</span><span class="p">)</span>
-        <span class="o">.</span><span class="n">onDisappear</span> <span class="p">{</span>
-            <span class="n">hidePointView</span><span class="o">.</span><span class="nf">toggle</span><span class="p">()</span>
-        <span class="p">}</span>
-        <span class="o">.</span><span class="n">onAppear</span> <span class="p">{</span>
+        <span class="kt">Label</span><span class="p">(</span><span class="n">keyword</span><span class="p">,</span> <span class="nv">systemImage</span><span class="p">:</span> <span class="n">symbol</span><span class="p">)</span>
+            <span class="o">.</span><span class="nf">font</span><span class="p">(</span><span class="o">.</span><span class="n">title</span><span class="p">)</span>
+            <span class="o">.</span><span class="nf">foregroundColor</span><span class="p">(</span><span class="o">.</span><span class="n">white</span><span class="p">)</span>
+            <span class="o">.</span><span class="nf">padding</span><span class="p">()</span>
+            <span class="o">.</span><span class="nf">background</span><span class="p">(</span><span class="o">.</span><span class="n">green</span><span class="o">.</span><span class="nf">opacity</span><span class="p">(</span><span class="mf">0.75</span><span class="p">),</span> <span class="nv">in</span><span class="p">:</span> <span class="kt">Capsule</span><span class="p">())</span> <span class="c1">// - 1</span>
             
-            <span class="k">if</span> <span class="o">!</span><span class="n">isFirstShown</span> <span class="p">{</span>
-                <span class="n">hidePointView</span><span class="o">.</span><span class="nf">toggle</span><span class="p">()</span>
-            <span class="p">}</span>
-            
-            <span class="n">isFirstShown</span> <span class="o">=</span> <span class="kc">false</span>
-        <span class="p">}</span>
     <span class="p">}</span>
 <span class="p">}</span>
 
-<span class="kd">struct</span> <span class="kt">ContentView_Previews</span><span class="p">:</span> <span class="kt">PreviewProvider</span> <span class="p">{</span>
-    <span class="kd">static</span> <span class="k">var</span> <span class="nv">previews</span><span class="p">:</span> <span class="kd">some</span> <span class="kt">View</span> <span class="p">{</span>
-        <span class="kt">ContentView</span><span class="p">()</span>
+<span class="kd">struct</span> <span class="kt">ReusableLabel_Previews</span><span class="p">:</span> <span class="kt">PreviewProvider</span> <span class="p">{</span> <span class="c1">// - 2</span>
+    
+    <span class="kd">static</span> <span class="k">let</span> <span class="nv">keywords</span> <span class="o">=</span> <span class="p">[</span><span class="s">"Hello"</span><span class="p">,</span> <span class="s">"Good Morning"</span><span class="p">]</span>
+    
+    <span class="kd">static</span> <span class="k">var</span> <span class="nv">previews</span><span class="p">:</span> <span class="kd">some</span> <span class="kt">View</span> <span class="p">{</span> <span class="c1">// - 3</span>
+        <span class="kt">VStack</span> <span class="p">{</span> <span class="c1">// - 4</span>
+            <span class="kt">ForEach</span><span class="p">(</span><span class="n">keywords</span><span class="p">,</span> <span class="nv">id</span><span class="p">:</span> <span class="p">\</span><span class="o">.</span><span class="k">self</span><span class="p">)</span> <span class="p">{</span> <span class="n">word</span> <span class="k">in</span>
+                <span class="kt">KeywordBubbleDefaultPadding</span><span class="p">(</span><span class="nv">keyword</span><span class="p">:</span> <span class="n">word</span><span class="p">,</span> <span class="nv">symbol</span><span class="p">:</span> <span class="s">"fish"</span><span class="p">)</span>
+            <span class="p">}</span>
+        <span class="p">}</span>
     <span class="p">}</span>
 <span class="p">}</span>
 </code></pre></div></div>
+
 <ul>
-  <li>탭뷰 헤더는 VStack 사용해도 될 것 같음 -&gt; VStack 바깥에 ScrollView 있기 때문에 화면 밖으로 헤더가 사라져서 안됨.</li>
-  <li>LazyVStack Pinned header를 특정 조건에 따라 나타나게 할 수 있을까?</li>
-  <li>전체 LazyVStack을 pointView가 나타날때 아래로 내리면?</li>
-  <li>header 부분만 내릴 수 있음</li>
-  <li>all header pinned 가 되는 부분을 찾아야 함</li>
+  <li>1: .background에 Capsule()을 정의해줌으로써 캡슐 모양이 Label의 뒷쪽에 오도록 함. 이때 .padding()을 백그라운드의 윗쪽에 선언해주어야 패딩을 포함한 백그라운드에 캡슐 모양을 생성할 수 있음.</li>
+  <li>2: PreviewProvider 프로토콜을 사용하여 커스텀 스위프트UI 뷰의 코드가 생성하는 화면을 미리 볼 수 있음</li>
+  <li>3: PreviewProvider 프로토콜을 구현하기 위해선 static previews 프로퍼티를 정의해야 함</li>
+  <li>4: VStack 안에 ForEach를 사용하여, ReusableLabel 스트럭쳐가 생성하는 라벨 뷰가 다른 텍스트 길이에서 어떻게 적용되는지 한 화면에서 확인할 수 있음</li>
 </ul>
 
-<p><a href="https://stackoverflow.com/questions/73015997/swiftui-lazyvstack-pinnedviews-in-another">TrackableScrollView</a></p>
+<center><img src="/assets/images/viewLayout_1.png" alt="viewLayout_1.png" width="600" /><br /></center>
 
-<div class="language-swift highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1">//</span>
-<span class="c1">//  ContentView.swift</span>
-<span class="c1">//  StickyHeaderWithoutLazy</span>
-<span class="c1">//</span>
-<span class="c1">//  Created by Mirae on 9/6/23.</span>
-<span class="c1">//  * overlay point view -&gt; 위 아래로 움직일 때 나타나는 뷰</span>
-<span class="c1">//  * 맨 위에는 스티키로 하나 넣고</span>
+<p><br />
+<b>ScaledMetric를 사용하여 동적으로 넓이 조정하기</b></p>
+<ul>
+  <li>padding() modifier를 사용하여 패딩을 주었을 때, 폰트 사이즈가 달라지면 아래 이미지와 같이 큰 사이즈의 폰트에서는 패딩이 충분하지 않는 경우가 있음</li>
+  <li>이때 패딩 값을 그냥 키워주면 작은 폰트에서는 패딩이 너무 넓어질 수 있음</li>
+  <li>@ScaledMetric 프로퍼티 래퍼를 사용하여 .title과 같은 environment’s effective font size에 숫자값을 적용할 수 있음</li>
+</ul>
 
-<span class="kd">import</span> <span class="kt">SwiftUI</span>
-
-<span class="kd">struct</span> <span class="kt">ContentView</span><span class="p">:</span> <span class="kt">View</span> <span class="p">{</span>
-    
-    <span class="kd">@State</span> <span class="kd">private</span> <span class="k">var</span> <span class="nv">allHeaderPinned</span> <span class="o">=</span> <span class="kc">false</span>
-    <span class="kd">@State</span> <span class="kd">private</span> <span class="k">var</span> <span class="nv">hidePointView</span> <span class="o">=</span> <span class="kc">false</span>
-    <span class="kd">@State</span> <span class="kd">private</span> <span class="k">var</span> <span class="nv">pullDownView</span> <span class="o">=</span> <span class="kc">false</span>
-    <span class="kd">@State</span> <span class="kd">private</span> <span class="k">var</span> <span class="nv">scrollOffset</span> <span class="o">=</span> <span class="mf">0.0</span>
-    
+<div class="language-swift highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">struct</span> <span class="kt">KeywordBubbleDefaultPadding</span><span class="p">:</span> <span class="kt">View</span> <span class="p">{</span>
+    <span class="k">let</span> <span class="nv">keyword</span><span class="p">:</span> <span class="kt">String</span>
+    <span class="k">let</span> <span class="nv">symbol</span><span class="p">:</span> <span class="kt">String</span>
+    <span class="kd">@ScaledMetric</span><span class="p">(</span><span class="nv">relativeTo</span><span class="p">:</span> <span class="o">.</span><span class="n">title</span><span class="p">)</span> <span class="k">var</span> <span class="nv">paddingWidth</span> <span class="o">=</span> <span class="mf">20.5</span> <span class="c1">// &lt;- 여기</span>
     <span class="k">var</span> <span class="nv">body</span><span class="p">:</span> <span class="kd">some</span> <span class="kt">View</span> <span class="p">{</span>
-        
-        <span class="kt">ScrollViewReader</span> <span class="p">{</span> <span class="n">scrollProxy</span> <span class="k">in</span>
+        <span class="kt">Label</span><span class="p">(</span><span class="n">keyword</span><span class="p">,</span> <span class="nv">systemImage</span><span class="p">:</span> <span class="n">symbol</span><span class="p">)</span>
+            <span class="o">.</span><span class="nf">font</span><span class="p">(</span><span class="o">.</span><span class="n">title</span><span class="p">)</span>
+            <span class="o">.</span><span class="nf">foregroundColor</span><span class="p">(</span><span class="o">.</span><span class="n">white</span><span class="p">)</span>
+            <span class="o">.</span><span class="nf">padding</span><span class="p">(</span><span class="n">paddingWidth</span><span class="p">)</span> <span class="c1">// &lt;- 여기</span>
+<span class="c1">//            .padding()</span>
+            <span class="o">.</span><span class="nf">background</span><span class="p">(</span><span class="o">.</span><span class="n">green</span><span class="o">.</span><span class="nf">opacity</span><span class="p">(</span><span class="mf">0.75</span><span class="p">),</span> <span class="nv">in</span><span class="p">:</span> <span class="kt">Capsule</span><span class="p">())</span>
             
-            <span class="kt">OffsettableScrollView</span> <span class="p">{</span> <span class="n">offsetProxy</span> <span class="k">in</span>
-                
-                <span class="k">if</span> <span class="k">self</span><span class="o">.</span><span class="n">scrollOffset</span> <span class="o">&gt;</span> <span class="n">offsetProxy</span><span class="o">.</span><span class="n">y</span> <span class="p">{</span>
-<span class="c1">//                    scrollState = true</span>
-                    <span class="nf">print</span><span class="p">(</span><span class="s">"true"</span><span class="p">)</span> <span class="c1">// 스크롤</span>
-                    <span class="n">withAnimation</span> <span class="p">{</span>
-                        <span class="n">hidePointView</span> <span class="o">=</span> <span class="kc">true</span>
-                        <span class="n">pullDownView</span> <span class="o">=</span> <span class="kc">true</span>
-                    <span class="p">}</span>
-                <span class="p">}</span> <span class="k">else</span> <span class="p">{</span>
-<span class="c1">//                    scrollState = false</span>
-                    <span class="nf">print</span><span class="p">(</span><span class="s">"false"</span><span class="p">)</span> <span class="c1">// 역스크롤</span>
-                    <span class="n">withAnimation</span> <span class="p">{</span>
-                        <span class="n">hidePointView</span> <span class="o">=</span> <span class="kc">false</span>
-                        <span class="n">pullDownView</span> <span class="o">=</span> <span class="kc">false</span>
-                    <span class="p">}</span>
-                <span class="p">}</span>
-                
-                <span class="k">self</span><span class="o">.</span><span class="n">scrollOffset</span> <span class="o">=</span> <span class="n">offsetProxy</span><span class="o">.</span><span class="n">y</span>
-                
-            <span class="p">}</span> <span class="nv">content</span><span class="p">:</span> <span class="p">{</span>
-            
-                <span class="kt">LazyVStack</span><span class="p">(</span><span class="nv">spacing</span><span class="p">:</span> <span class="mi">0</span><span class="p">,</span> <span class="nv">pinnedViews</span><span class="p">:</span> <span class="p">[</span><span class="o">.</span><span class="n">sectionHeaders</span><span class="p">],</span> <span class="nv">content</span><span class="p">:</span> <span class="p">{</span>
-                    
-                    <span class="c1">// pointViewHeader 자체에서 조건문으로 height 를 변경 (색 맞춰서 보이지 않게)</span>
-                    <span class="kt">Section</span><span class="p">(</span><span class="nv">header</span><span class="p">:</span> <span class="n">pointViewHeader</span><span class="p">)</span> <span class="p">{</span>
-                        <span class="n">videoView</span>
-                    <span class="p">}</span>
-                    
-                    <span class="kt">VStack</span><span class="p">(</span><span class="nv">spacing</span><span class="p">:</span> <span class="mi">0</span><span class="p">)</span> <span class="p">{</span>
-                        <span class="kt">LazyVStack</span><span class="p">(</span><span class="nv">pinnedViews</span><span class="p">:</span> <span class="p">[</span><span class="o">.</span><span class="n">sectionHeaders</span><span class="p">],</span> <span class="nv">content</span><span class="p">:</span>  <span class="p">{</span>
-                            <span class="c1">// on Disppear 시 hidePointView 변경됨)</span>
-                            <span class="kt">Section</span><span class="p">(</span><span class="nv">header</span><span class="p">:</span> <span class="n">tempClearHeader</span><span class="p">)</span> <span class="p">{</span> <span class="p">}</span>
-                        <span class="p">})</span>
-                        
-                        <span class="kt">LazyVStack</span><span class="p">(</span><span class="nv">spacing</span><span class="p">:</span> <span class="mi">0</span><span class="p">,</span> <span class="nv">pinnedViews</span><span class="p">:</span> <span class="p">[</span><span class="o">.</span><span class="n">sectionHeaders</span><span class="p">],</span> <span class="nv">content</span><span class="p">:</span> <span class="p">{</span>
-                            
-                            <span class="kt">Section</span><span class="p">(</span><span class="nv">header</span><span class="p">:</span> <span class="n">tabViewHeader</span><span class="p">)</span> <span class="p">{</span>
-                                <span class="kt">GeometryReader</span> <span class="p">{</span> <span class="n">geometry</span> <span class="k">in</span>
-                                    <span class="kt">VStack</span><span class="p">(</span><span class="nv">alignment</span><span class="p">:</span> <span class="o">.</span><span class="n">leading</span><span class="p">,</span> <span class="nv">spacing</span><span class="p">:</span> <span class="mi">2</span><span class="p">)</span> <span class="p">{</span>
-                                        <span class="kt">Text</span><span class="p">(</span><span class="s">"리뷰 모아보기"</span><span class="p">)</span>
-                                            <span class="o">.</span><span class="nf">font</span><span class="p">(</span><span class="o">.</span><span class="nf">system</span><span class="p">(</span><span class="nv">size</span><span class="p">:</span> <span class="mi">18</span><span class="p">,</span> <span class="nv">weight</span><span class="p">:</span> <span class="o">.</span><span class="n">bold</span><span class="p">))</span>
-                                        <span class="kt">Text</span><span class="p">(</span><span class="s">"💰위글 영상 리뷰보고 포인트 쌓자!"</span><span class="p">)</span>
-                                            <span class="o">.</span><span class="nf">font</span><span class="p">(</span><span class="o">.</span><span class="nf">system</span><span class="p">(</span><span class="nv">size</span><span class="p">:</span> <span class="mi">14</span><span class="p">,</span> <span class="nv">weight</span><span class="p">:</span> <span class="o">.</span><span class="n">regular</span><span class="p">))</span>
-                                    <span class="p">}</span>
-                                    <span class="o">.</span><span class="nf">padding</span><span class="p">(</span><span class="o">.</span><span class="n">horizontal</span><span class="p">,</span> <span class="mi">20</span><span class="p">)</span>
-                                    <span class="o">.</span><span class="nf">offset</span><span class="p">(</span><span class="nv">y</span><span class="p">:</span> <span class="n">geometry</span><span class="o">.</span><span class="n">size</span><span class="o">.</span><span class="n">height</span><span class="p">)</span>
-                                    <span class="o">.</span><span class="nf">onChange</span><span class="p">(</span><span class="nv">of</span><span class="p">:</span> <span class="n">geometry</span><span class="o">.</span><span class="nf">frame</span><span class="p">(</span><span class="nv">in</span><span class="p">:</span> <span class="o">.</span><span class="n">global</span><span class="p">)</span><span class="o">.</span><span class="n">minY</span><span class="p">)</span> <span class="p">{</span> <span class="n">minY</span> <span class="k">in</span>
-                                        <span class="n">withAnimation</span> <span class="p">{</span>
-                                            <span class="k">if</span> <span class="n">minY</span> <span class="o">&lt;</span> <span class="mi">0</span> <span class="p">{</span>
-                                                <span class="n">allHeaderPinned</span> <span class="o">=</span> <span class="kc">true</span>
-                                            <span class="p">}</span> <span class="k">else</span> <span class="p">{</span>
-                                                <span class="n">allHeaderPinned</span> <span class="o">=</span> <span class="kc">false</span>
-                                            <span class="p">}</span>
-                                        <span class="p">}</span>
-                                        
-                                        <span class="nf">print</span><span class="p">(</span><span class="s">"minY: </span><span class="se">\(</span><span class="n">minY</span><span class="se">)</span><span class="s">"</span><span class="p">)</span>
-                                    <span class="p">}</span>
-                                    <span class="c1">// let _ = print("\(geometry.size.height)") // PRINT: 10.0</span>
-                                <span class="p">}</span>
-                                <span class="o">.</span><span class="nf">padding</span><span class="p">(</span><span class="o">.</span><span class="n">vertical</span><span class="p">,</span> <span class="mi">10</span><span class="p">)</span>
-                                
-                                <span class="kt">LazyVStack</span><span class="p">(</span><span class="nv">pinnedViews</span><span class="p">:</span> <span class="p">[</span><span class="o">.</span><span class="n">sectionHeaders</span><span class="p">],</span> <span class="nv">content</span><span class="p">:</span> <span class="p">{</span>
-                                    <span class="kt">Section</span><span class="p">(</span><span class="nv">header</span><span class="p">:</span> <span class="n">categoryHeader</span><span class="p">)</span> <span class="p">{</span>
-                                        <span class="n">tabViewBody</span>
-                                    <span class="p">}</span>
-                                <span class="p">})</span>
-                            <span class="p">}</span>
-                        <span class="p">})</span>
-                        <span class="o">.</span><span class="nf">offset</span><span class="p">(</span><span class="nv">y</span><span class="p">:</span> <span class="o">-</span><span class="mi">1</span><span class="p">)</span>
-                    <span class="p">}</span>
-                <span class="p">})</span>
-                <span class="o">.</span><span class="nf">background</span><span class="p">(</span><span class="o">.</span><span class="n">yellow</span><span class="p">)</span>
-            <span class="p">}</span>
-            <span class="o">.</span><span class="nf">overlay</span><span class="p">(</span><span class="nv">alignment</span><span class="p">:</span> <span class="o">.</span><span class="n">top</span><span class="p">)</span> <span class="p">{</span>
-                <span class="n">withAnimation</span> <span class="p">{</span>
-                    <span class="n">pointViewHeader</span>
-                        <span class="o">.</span><span class="nf">opacity</span><span class="p">((</span><span class="n">allHeaderPinned</span> <span class="o">==</span> <span class="kc">true</span> <span class="o">&amp;&amp;</span> <span class="n">hidePointView</span><span class="p">)</span> <span class="p">?</span> <span class="mi">10</span> <span class="p">:</span> <span class="mi">0</span><span class="p">)</span>
-                    <span class="c1">// overlay는 pinned header들이 아래로 밀리지 않아서 사용할 수 없음</span>
-                <span class="p">}</span>
-            <span class="p">}</span>
-            <span class="o">.</span><span class="nf">padding</span><span class="p">(</span><span class="o">.</span><span class="n">top</span><span class="p">,</span> <span class="mi">1</span><span class="p">)</span>
-        <span class="p">}</span>
-    <span class="p">}</span>
-    
-    <span class="k">var</span> <span class="nv">pointViewHeader</span><span class="p">:</span> <span class="kd">some</span> <span class="kt">View</span> <span class="p">{</span>
-        <span class="kt">HStack</span> <span class="p">{</span>
-            <span class="kt">Image</span><span class="p">(</span><span class="nv">systemName</span><span class="p">:</span> <span class="s">"globe"</span><span class="p">)</span>
-                <span class="o">.</span><span class="nf">imageScale</span><span class="p">(</span><span class="o">.</span><span class="n">large</span><span class="p">)</span>
-                <span class="o">.</span><span class="nf">foregroundStyle</span><span class="p">(</span><span class="o">.</span><span class="n">tint</span><span class="p">)</span>
-            <span class="kt">Text</span><span class="p">(</span><span class="s">"2,759"</span><span class="p">)</span>
-                <span class="o">.</span><span class="nf">font</span><span class="p">(</span><span class="o">.</span><span class="nf">system</span><span class="p">(</span><span class="nv">size</span><span class="p">:</span> <span class="mi">18</span><span class="p">,</span> <span class="nv">weight</span><span class="p">:</span> <span class="o">.</span><span class="n">bold</span><span class="p">))</span>
-            <span class="kt">Spacer</span><span class="p">()</span>
-        <span class="p">}</span>
-        <span class="o">.</span><span class="nf">frame</span><span class="p">(</span><span class="nv">minWidth</span><span class="p">:</span> <span class="mi">0</span><span class="p">,</span> <span class="nv">maxWidth</span><span class="p">:</span> <span class="o">.</span><span class="n">infinity</span><span class="p">)</span>
-        <span class="o">.</span><span class="nf">frame</span><span class="p">(</span><span class="nv">height</span><span class="p">:</span> <span class="mi">50</span><span class="p">)</span>
-        <span class="o">.</span><span class="nf">foregroundColor</span><span class="p">(</span><span class="o">.</span><span class="n">white</span><span class="p">)</span>
-        <span class="o">.</span><span class="nf">background</span><span class="p">(</span><span class="o">.</span><span class="n">black</span><span class="p">)</span>
-    <span class="p">}</span>
-    
-    <span class="k">var</span> <span class="nv">pointViewHeaderOverlay</span><span class="p">:</span> <span class="kd">some</span> <span class="kt">View</span> <span class="p">{</span>
-        <span class="kt">HStack</span> <span class="p">{</span>
-            <span class="kt">Image</span><span class="p">(</span><span class="nv">systemName</span><span class="p">:</span> <span class="s">"globe"</span><span class="p">)</span>
-                <span class="o">.</span><span class="nf">imageScale</span><span class="p">(</span><span class="o">.</span><span class="n">large</span><span class="p">)</span>
-                <span class="o">.</span><span class="nf">foregroundStyle</span><span class="p">(</span><span class="o">.</span><span class="n">tint</span><span class="p">)</span>
-            <span class="kt">Text</span><span class="p">(</span><span class="s">"2,759"</span><span class="p">)</span>
-                <span class="o">.</span><span class="nf">font</span><span class="p">(</span><span class="o">.</span><span class="nf">system</span><span class="p">(</span><span class="nv">size</span><span class="p">:</span> <span class="mi">18</span><span class="p">,</span> <span class="nv">weight</span><span class="p">:</span> <span class="o">.</span><span class="n">bold</span><span class="p">))</span>
-            <span class="kt">Spacer</span><span class="p">()</span>
-        <span class="p">}</span>
-        <span class="o">.</span><span class="nf">frame</span><span class="p">(</span><span class="nv">minWidth</span><span class="p">:</span> <span class="mi">0</span><span class="p">,</span> <span class="nv">maxWidth</span><span class="p">:</span> <span class="o">.</span><span class="n">infinity</span><span class="p">)</span>
-        <span class="o">.</span><span class="nf">frame</span><span class="p">(</span><span class="nv">height</span><span class="p">:</span> <span class="mi">50</span><span class="p">)</span>
-        <span class="o">.</span><span class="nf">foregroundColor</span><span class="p">(</span><span class="o">.</span><span class="n">white</span><span class="p">)</span>
-        <span class="o">.</span><span class="nf">background</span><span class="p">(</span><span class="o">.</span><span class="n">blue</span><span class="p">)</span>
-    <span class="p">}</span>
-    
-    <span class="k">var</span> <span class="nv">tabViewHeader</span><span class="p">:</span> <span class="kd">some</span> <span class="kt">View</span> <span class="p">{</span>
-        <span class="kt">HStack</span> <span class="p">{</span>
-            <span class="kt">Spacer</span><span class="p">()</span>
-            <span class="kt">Text</span><span class="p">(</span><span class="s">"영상 리뷰"</span><span class="p">)</span>
-            <span class="kt">Spacer</span><span class="p">()</span>
-            <span class="kt">Text</span><span class="p">(</span><span class="s">"포토 리뷰"</span><span class="p">)</span>
-            <span class="kt">Spacer</span><span class="p">()</span>
-        <span class="p">}</span>
-        <span class="o">.</span><span class="nf">frame</span><span class="p">(</span><span class="nv">minWidth</span><span class="p">:</span> <span class="mi">0</span><span class="p">,</span> <span class="nv">maxWidth</span><span class="p">:</span> <span class="o">.</span><span class="n">infinity</span><span class="p">)</span>
-        <span class="o">.</span><span class="nf">frame</span><span class="p">(</span><span class="nv">height</span><span class="p">:</span> <span class="mi">50</span><span class="p">)</span>
-        <span class="o">.</span><span class="nf">foregroundColor</span><span class="p">(</span><span class="o">.</span><span class="n">white</span><span class="p">)</span>
-        <span class="o">.</span><span class="nf">background</span><span class="p">(</span><span class="o">.</span><span class="n">black</span><span class="p">)</span>
-        <span class="o">.</span><span class="nf">offset</span><span class="p">(</span><span class="nv">y</span><span class="p">:</span> <span class="p">(</span><span class="n">allHeaderPinned</span> <span class="o">==</span> <span class="kc">true</span> <span class="o">&amp;&amp;</span> <span class="n">pullDownView</span><span class="p">)</span> <span class="p">?</span> <span class="mi">50</span> <span class="p">:</span> <span class="mi">0</span><span class="p">)</span>
-    <span class="p">}</span>
-    
-    <span class="k">var</span> <span class="nv">tabViewBody</span><span class="p">:</span> <span class="kd">some</span> <span class="kt">View</span> <span class="p">{</span>
-        <span class="kt">VStack</span> <span class="p">{</span>
-            <span class="kt">ForEach</span><span class="p">(</span><span class="mi">0</span><span class="o">..&lt;</span><span class="mi">5</span><span class="p">)</span> <span class="p">{</span> <span class="n">row</span> <span class="k">in</span>
-                <span class="kt">HStack</span><span class="p">(</span><span class="nv">spacing</span><span class="p">:</span> <span class="mi">20</span><span class="p">)</span> <span class="p">{</span>
-                    <span class="kt">Spacer</span><span class="p">()</span>
-                    <span class="kt">Rectangle</span><span class="p">()</span>
-                        <span class="o">.</span><span class="nf">fill</span><span class="p">(</span><span class="o">.</span><span class="n">gray</span><span class="p">)</span>
-                        <span class="o">.</span><span class="nf">frame</span><span class="p">(</span><span class="nv">minWidth</span><span class="p">:</span> <span class="mi">0</span><span class="p">,</span> <span class="nv">maxWidth</span><span class="p">:</span> <span class="o">.</span><span class="n">infinity</span><span class="p">)</span>
-                        <span class="o">.</span><span class="nf">frame</span><span class="p">(</span><span class="nv">height</span><span class="p">:</span> <span class="mi">240</span><span class="p">)</span>
-                        <span class="o">.</span><span class="nf">padding</span><span class="p">([</span><span class="o">.</span><span class="n">top</span><span class="p">,</span> <span class="o">.</span><span class="n">bottom</span><span class="p">])</span>
-                    
-                    
-                    <span class="kt">Rectangle</span><span class="p">()</span>
-                        <span class="o">.</span><span class="nf">fill</span><span class="p">(</span><span class="o">.</span><span class="n">gray</span><span class="p">)</span>
-                        <span class="o">.</span><span class="nf">frame</span><span class="p">(</span><span class="nv">minWidth</span><span class="p">:</span> <span class="mi">0</span><span class="p">,</span> <span class="nv">maxWidth</span><span class="p">:</span> <span class="o">.</span><span class="n">infinity</span><span class="p">)</span>
-                        <span class="o">.</span><span class="nf">frame</span><span class="p">(</span><span class="nv">height</span><span class="p">:</span> <span class="mi">240</span><span class="p">)</span>
-                        <span class="o">.</span><span class="nf">padding</span><span class="p">([</span><span class="o">.</span><span class="n">top</span><span class="p">,</span> <span class="o">.</span><span class="n">bottom</span><span class="p">])</span>
-                    
-                    <span class="kt">Spacer</span><span class="p">()</span>
-                <span class="p">}</span>
-            <span class="p">}</span>
-        <span class="p">}</span>
-    <span class="p">}</span>
-    
-    <span class="k">var</span> <span class="nv">categoryHeader</span><span class="p">:</span> <span class="kd">some</span> <span class="kt">View</span> <span class="p">{</span>
-        <span class="kt">HStack</span> <span class="p">{</span>
-            <span class="kt">Spacer</span><span class="p">()</span>
-            <span class="kt">Button</span><span class="p">(</span><span class="nv">action</span><span class="p">:</span> <span class="p">{</span>
-                <span class="c1">//</span>
-            <span class="p">},</span> <span class="nv">label</span><span class="p">:</span> <span class="p">{</span>
-                <span class="kt">Text</span><span class="p">(</span><span class="s">"Button"</span><span class="p">)</span>
-            <span class="p">})</span>
-            <span class="kt">Spacer</span><span class="p">()</span>
-            <span class="kt">Text</span><span class="p">(</span><span class="s">"버튼"</span><span class="p">)</span>
-            <span class="kt">Spacer</span><span class="p">()</span>
-            <span class="kt">Text</span><span class="p">(</span><span class="s">"버튼"</span><span class="p">)</span>
-            <span class="kt">Spacer</span><span class="p">()</span>
-        <span class="p">}</span>
-        <span class="o">.</span><span class="nf">frame</span><span class="p">(</span><span class="nv">minWidth</span><span class="p">:</span> <span class="mi">0</span><span class="p">,</span> <span class="nv">maxWidth</span><span class="p">:</span> <span class="o">.</span><span class="n">infinity</span><span class="p">)</span>
-        <span class="o">.</span><span class="nf">frame</span><span class="p">(</span><span class="nv">height</span><span class="p">:</span> <span class="mi">50</span><span class="p">)</span>
-        <span class="o">.</span><span class="nf">foregroundColor</span><span class="p">(</span><span class="o">.</span><span class="n">white</span><span class="p">)</span>
-        <span class="o">.</span><span class="nf">background</span><span class="p">(</span><span class="o">.</span><span class="n">green</span><span class="p">)</span>
-        <span class="o">.</span><span class="nf">padding</span><span class="p">(</span><span class="o">.</span><span class="n">top</span><span class="p">,</span> <span class="mi">50</span><span class="p">)</span> <span class="c1">// 카테고리 헤더가 탭뷰 헤더 아래에 붙도록 패딩 조정</span>
-        <span class="o">.</span><span class="nf">offset</span><span class="p">(</span><span class="nv">y</span><span class="p">:</span> <span class="p">(</span><span class="n">allHeaderPinned</span> <span class="o">==</span> <span class="kc">true</span> <span class="o">&amp;&amp;</span> <span class="n">pullDownView</span><span class="p">)</span> <span class="p">?</span> <span class="mi">50</span> <span class="p">:</span> <span class="mi">0</span><span class="p">)</span>
-    <span class="p">}</span>
-    
-    <span class="k">var</span> <span class="nv">videoView</span><span class="p">:</span> <span class="kd">some</span> <span class="kt">View</span> <span class="p">{</span>
-        <span class="kt">VStack</span><span class="p">(</span><span class="nv">spacing</span><span class="p">:</span> <span class="mi">0</span><span class="p">)</span> <span class="p">{</span>
-            <span class="kt">Rectangle</span><span class="p">()</span>
-                <span class="o">.</span><span class="nf">fill</span><span class="p">(</span><span class="o">.</span><span class="n">red</span><span class="p">)</span>
-                <span class="o">.</span><span class="nf">frame</span><span class="p">(</span><span class="nv">height</span><span class="p">:</span> <span class="mi">202</span><span class="p">)</span>
-        <span class="p">}</span>
-    <span class="p">}</span>
-    
-    <span class="k">var</span> <span class="nv">tempClearHeader</span><span class="p">:</span> <span class="kd">some</span> <span class="kt">View</span> <span class="p">{</span>
-        <span class="kt">HStack</span> <span class="p">{</span>
-            <span class="kt">Text</span><span class="p">(</span><span class="s">""</span><span class="p">)</span>
-        <span class="p">}</span>
-        <span class="o">.</span><span class="nf">frame</span><span class="p">(</span><span class="nv">minWidth</span><span class="p">:</span> <span class="mi">0</span><span class="p">,</span> <span class="nv">maxWidth</span><span class="p">:</span> <span class="o">.</span><span class="n">infinity</span><span class="p">)</span>
-        <span class="o">.</span><span class="nf">frame</span><span class="p">(</span><span class="nv">height</span><span class="p">:</span> <span class="mi">1</span><span class="p">)</span>
-        <span class="o">.</span><span class="nf">foregroundColor</span><span class="p">(</span><span class="o">.</span><span class="n">white</span><span class="p">)</span>
-        <span class="o">.</span><span class="nf">background</span><span class="p">(</span><span class="o">.</span><span class="n">yellow</span><span class="p">)</span> <span class="c1">// 배경이랑 같은 색으로 맞추기</span>
     <span class="p">}</span>
 <span class="p">}</span>
+</code></pre></div></div>
+<center><img src="/assets/images/viewLayout_2.png" alt="viewLayout_2.png" width="350" /> <img src="/assets/images/viewLayout_3.png" alt="viewLayout_3.png" width="350" /><br /></center>
+<p><br /></p>
 
-<span class="kd">struct</span> <span class="kt">ContentView_Previews</span><span class="p">:</span> <span class="kt">PreviewProvider</span> <span class="p">{</span>
-    <span class="kd">static</span> <span class="k">var</span> <span class="nv">previews</span><span class="p">:</span> <span class="kd">some</span> <span class="kt">View</span> <span class="p">{</span>
-        <span class="kt">ContentView</span><span class="p">()</span>
-    <span class="p">}</span>
-<span class="p">}</span>
-
-
-</code></pre></div></div>]]></content><author><name>Mirae</name></author><category term="TIL" /><summary type="html"><![CDATA[```swift]]></summary></entry><entry><title type="html">SwiftUI 업데이트</title><link href="http://localhost:4000/til/2023-07-03-SwiftUIUpdates.html" rel="alternate" type="text/html" title="SwiftUI 업데이트" /><published>2023-07-03T00:00:00+09:00</published><updated>2023-07-03T00:00:00+09:00</updated><id>http://localhost:4000/til/SwiftUIUpdates</id><content type="html" xml:base="http://localhost:4000/til/2023-07-03-SwiftUIUpdates.html"><![CDATA[<h1 id="onchangeofinitial_">onChange(of:initial:_:)</h1>
-
-<h2 id="파라미터">파라미터</h2>
+<h2 id="layering-content">Layering Content</h2>
 
 <ul>
-  <li>
-    <p>value : of 뒤에 작성되는 값으로, value의 값에 변화가 생기면 onChange 클로저가 실행됨</p>
-  </li>
-  <li>
-    <p>initial : initial에 해당하는 뷰가 먼저 나타나면 onChange 속 동작이 실행됨</p>
-  </li>
-  <li>
-    <p>action : value 값이 변경되었을 때 실행되는 클로저</p>
-  </li>
-  <li>
-    <p>oldValue : 비교 체크를 실패한 예전 값 또는 처음 값</p>
-  </li>
-  <li>
-    <p>newValue : 비교 체크를 실패한 새로운 값</p>
-  </li>
-</ul>
-
-<h2 id="리턴값">리턴값</h2>
-
-<ul>
-  <li>특정 value가 변경될 때 어떤 동작을 실행하는 뷰를 리턴함</li>
-</ul>
-
-<h2 id="discussion">Discussion</h2>
-
-<ul>
-  <li>onChange를 사용하여 특정 값이 변경되었을 때 어떤 동작이 일어나도록 할 수 있음.</li>
-  <li>긴 시간동안 실행되는 테스크에 사용하는 것은 피해야 함</li>
-</ul>
-
-<div class="language-swift highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">struct</span> <span class="kt">PlayerView</span><span class="p">:</span> <span class="kt">View</span> <span class="p">{</span>
-    <span class="k">var</span> <span class="nv">episode</span><span class="p">:</span> <span class="kt">Episode</span>
-    <span class="kd">@State</span> <span class="kd">private</span> <span class="k">var</span> <span class="nv">playState</span><span class="p">:</span> <span class="kt">PlayState</span> <span class="o">=</span> <span class="o">.</span><span class="n">paused</span>
-
-
-    <span class="k">var</span> <span class="nv">body</span><span class="p">:</span> <span class="kd">some</span> <span class="kt">View</span> <span class="p">{</span>
-        <span class="kt">VStack</span> <span class="p">{</span>
-            <span class="kt">Text</span><span class="p">(</span><span class="n">episode</span><span class="o">.</span><span class="n">title</span><span class="p">)</span>
-            <span class="kt">Text</span><span class="p">(</span><span class="n">episode</span><span class="o">.</span><span class="n">showTitle</span><span class="p">)</span>
-            <span class="kt">PlayButton</span><span class="p">(</span><span class="nv">playState</span><span class="p">:</span> <span class="err">$</span><span class="n">playState</span><span class="p">)</span>
-        <span class="p">}</span>
-        <span class="o">.</span><span class="nf">onChange</span><span class="p">(</span><span class="nv">of</span><span class="p">:</span> <span class="n">playState</span><span class="p">)</span> <span class="p">{</span> <span class="n">oldState</span><span class="p">,</span> <span class="n">newState</span> <span class="k">in</span>
-            <span class="n">model</span><span class="o">.</span><span class="nf">playStateDidChange</span><span class="p">(</span><span class="nv">from</span><span class="p">:</span> <span class="n">oldState</span><span class="p">,</span> <span class="nv">to</span><span class="p">:</span> <span class="n">newState</span><span class="p">)</span>
-        <span class="p">}</span>
-    <span class="p">}</span>
-<span class="p">}</span>
-</code></pre></div></div>
-
-<h1 id="매크로">매크로</h1>
-
-<p>매크로를 사용하면 반복적으로 사용되는 코드를 컴파일 할 때 생성할 수 있음. 반복적인 코드를 짧게 줄일 수 있으므로 더 읽기 편해짐.</p>
-
-<div class="language-swift highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1">/// Slopes in my favorite ski resort.</span>
-<span class="kd">enum</span> <span class="kt">Slope</span> <span class="p">{</span>
-    <span class="k">case</span> <span class="n">beginnersParadise</span>
-    <span class="k">case</span> <span class="n">practiceRun</span>
-    <span class="k">case</span> <span class="n">livingRoom</span>
-    <span class="k">case</span> <span class="n">olympicRun</span>
-    <span class="k">case</span> <span class="n">blackBeauty</span>
-<span class="p">}</span>
-
-<span class="c1">/// Slopes suitable for beginners. Subset of `Slopes`.</span>
-<span class="kd">enum</span> <span class="kt">EasySlope</span> <span class="p">{</span>
-    <span class="k">case</span> <span class="n">beginnersParadise</span>
-    <span class="k">case</span> <span class="n">practiceRun</span>
-
-    <span class="nf">init</span><span class="p">?(</span><span class="n">_</span> <span class="nv">slope</span><span class="p">:</span> <span class="kt">Slope</span><span class="p">)</span> <span class="p">{</span>
-        <span class="k">switch</span> <span class="n">slope</span> <span class="p">{</span>
-        <span class="k">case</span> <span class="o">.</span><span class="nv">beginnersParadise</span><span class="p">:</span> <span class="k">self</span> <span class="o">=</span> <span class="o">.</span><span class="n">beginnersParadise</span>
-        <span class="k">case</span> <span class="o">.</span><span class="nv">practiceRun</span><span class="p">:</span> <span class="k">self</span> <span class="o">=</span> <span class="o">.</span><span class="n">practiceRun</span>
-        <span class="k">default</span><span class="p">:</span> <span class="k">return</span> <span class="kc">nil</span>
-        <span class="p">}</span>
-    <span class="p">}</span>
-
-    <span class="k">var</span> <span class="nv">slope</span><span class="p">:</span> <span class="kt">Slope</span> <span class="p">{</span>
-        <span class="k">switch</span> <span class="k">self</span> <span class="p">{</span>
-        <span class="k">case</span> <span class="o">.</span><span class="nv">beginnersParadise</span><span class="p">:</span> <span class="k">return</span> <span class="o">.</span><span class="n">beginnersParadise</span>
-        <span class="k">case</span> <span class="o">.</span><span class="nv">practiceRun</span><span class="p">:</span> <span class="k">return</span> <span class="o">.</span><span class="n">practiceRun</span>
-        <span class="p">}</span>
-    <span class="p">}</span>
-<span class="p">}</span>
-</code></pre></div></div>
-<ul>
-  <li>Slope 타입에 있는 case 중 초보자에게 적합한 slope이 있을 경우, EasySlope 타입으로 변환함.</li>
-  <li>이때 초보자에게 적합한 slope을 추가하기 위해서는 Slope 타입의 case, EasySlope 타입의 case, 이니셜라이저, computed property인 slope에 총 네번 코드를 추가해 주어야 함.</li>
-  <li>위 작업을 매크로를 사용해서 줄일 수 있는지 알아보겠음.
-    <ul>
-      <li>이니셜라이저와 컴퓨티드 프로퍼티는 EasySlope 타입의 멤버임. -&gt; attached member 매크로를 정의할 것</li>
-      <li>매크로를 구현할 컴파일러 플러그인을 생성해야 함.</li>
-      <li>매크로가 원하는대로 동작하는지 확인하기 위해서 test driven way로 코드를 작성.</li>
-      <li>정상적으로 코드를 작성할 시, 이니셜라이저에 해당되는 코드를 제거하고, 이니셜라이저 코드를 컴파일 타임에 생성할 매크로를 추가하게 됨.</li>
-    </ul>
-  </li>
-</ul>
-
-<div class="language-swift highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1">// EasySlope의 멤버인 이니셜라이저를 생성할 매크로</span>
-<span class="kd">@attached</span><span class="p">(</span><span class="n">member</span><span class="p">,</span> <span class="nv">names</span><span class="p">:</span> <span class="nf">named</span><span class="p">(</span><span class="kd">init</span><span class="p">))</span>
-<span class="c1">// SlopeSubset은 매크로의 이름</span>
-<span class="kd">public</span> <span class="n">macro</span> <span class="kt">SlopeSubset</span><span class="p">()</span> <span class="o">=</span> <span class="err">#</span><span class="nf">externalMacro</span><span class="p">(</span><span class="nv">module</span><span class="p">:</span> <span class="s">"MyMacroMacros"</span><span class="p">,</span> <span class="nv">type</span><span class="p">:</span> <span class="s">"SlopeSubsetMacro"</span><span class="p">)</span>
-</code></pre></div></div>
-<ul>
-  <li>여기까지는 매크로의 정의. 아직 implementation 부분을 작성한 것은 아님. (실행될 코드 부분을 expansion이라고 함.)</li>
-  <li>“SlopeSubsetMacro” 타입을 생성해야 함.</li>
-</ul>
-
-<div class="language-swift highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1">// attached member 매크로는 MemberMacro 프로토콜을 따라야 함.</span>
-<span class="c1">// MemberMacro 요구사항은 하나 -&gt; expansion() 함수</span>
-<span class="kd">public</span> <span class="kd">struct</span> <span class="kt">SlopeSubsetMacro</span><span class="p">:</span> <span class="kt">MemberMacro</span> <span class="p">{</span>
-    <span class="kd">public</span> <span class="kd">static</span> <span class="kd">func</span> <span class="nf">expansion</span><span class="p">(</span>
-        <span class="n">of</span> <span class="nv">attribute</span><span class="p">:</span> <span class="kt">AttributeSyntax</span><span class="p">,</span>
-        <span class="n">providingMembersOf</span> <span class="nv">declaration</span><span class="p">:</span> <span class="kd">some</span> <span class="kt">DeclGroupSyntax</span><span class="p">,</span>
-        <span class="k">in</span> <span class="nv">context</span><span class="p">:</span> <span class="kd">some</span> <span class="kt">MacroExpansionContext</span>
-    <span class="p">)</span> <span class="k">throws</span> <span class="o">-&gt;</span> <span class="p">[</span><span class="kt">DeclSyntax</span><span class="p">]</span> <span class="p">{</span>
-        <span class="k">return</span> <span class="p">[]</span>
-    <span class="p">}</span>
-<span class="p">}</span>
-
-<span class="c1">// providingMacros 프로퍼티를 작성하여 컴파일러가 작성한 매크로를 감지할 수 있도록 함.</span>
-<span class="kd">@main</span>
-<span class="kd">struct</span> <span class="kt">WWDCPlugin</span><span class="p">:</span> <span class="kt">CompilerPlugin</span> <span class="p">{</span>
-    <span class="k">let</span> <span class="nv">providingMacros</span><span class="p">:</span> <span class="p">[</span><span class="kt">Macro</span><span class="o">.</span><span class="k">Type</span><span class="p">]</span> <span class="o">=</span> <span class="p">[</span>
-        <span class="kt">SlopeSubsetMacro</span><span class="o">.</span><span class="k">self</span>
-    <span class="p">]</span>
-<span class="p">}</span>
-</code></pre></div></div>
-
-<p>#stringify : 스트링이파이 매크로</p>
-
-<div class="language-swift highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">let</span> <span class="nv">calculations</span> <span class="o">=</span> <span class="p">[</span>
-    <span class="p">(</span><span class="mi">1</span> <span class="o">+</span> <span class="mi">1</span><span class="p">,</span> <span class="s">"1 + 1"</span><span class="p">),</span>
-    <span class="p">(</span><span class="mi">3</span> <span class="o">*</span> <span class="mi">2</span><span class="p">,</span> <span class="s">"3 * 2"</span><span class="p">),</span>
-<span class="p">]</span>
-
-<span class="k">let</span> <span class="nv">calculations</span> <span class="o">=</span> <span class="p">[</span>
-    <span class="cp">#stringify(1 + 1)</span>
-    <span class="cp">#stringify(3 * 2)</span>
-<span class="p">]</span>
-</code></pre></div></div>
-
-<p>// 매크로 정의</p>
-<div class="language-swift highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">@freestanding</span><span class="p">(</span><span class="n">expression</span><span class="p">)</span> <span class="c1">// 2</span>
-<span class="n">macro</span> <span class="nf">stringify</span><span class="p">(</span><span class="n">_</span> <span class="nv">value</span><span class="p">:</span> <span class="kt">Int</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="p">(</span><span class="kt">Int</span><span class="p">,</span> <span class="kt">String</span><span class="p">)</span> <span class="c1">// 1</span>
-
-</code></pre></div></div>
-<ul>
-  <li>// 1: function 정의와 비슷함. Int 값을 파라미터로 받고 output 값으로 Int, String을 반환함.</li>
-  <li>
-    <p>// 2: freestanding expression macro role을 사용하여 정의되었는데, 이것은 expression을 사용하는 곳엔 어디서든 매크로를 사용할 수 있도록 한다는 의미.</p>
-
-    <ul>
-      <li>파라미터의 타입이 일치하는지 체크하고 (제네릭 타입 매크로도 작성 가능), 컴파일러는 macro expansion 실행 (macro expansion은 매크로가 실행되고 값을 리턴하는 과정을 말함)</li>
-    </ul>
-  </li>
-</ul>
-
-<div class="language-swift highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">@freestanding</span><span class="p">(</span><span class="n">expression</span><span class="p">)</span> 
-
-<span class="kd">@attached</span><span class="p">(</span><span class="n">member</span><span class="p">)</span> 
-</code></pre></div></div>
-
-<!--- MemberMacro 프로토콜은 하나의 요구사항을 가짐. 이 요구사항은 'expansion' 함수인데, -->]]></content><author><name>Mirae</name></author><category term="TIL" /><summary type="html"><![CDATA[onChange(of:initial:_:)]]></summary></entry></feed>
+  <li>어떤 컨텐츠를 겹쳐서 (z-axis) 나타낼 때, ZStack{}/.overlay()/.background()을 사용</li>
+  <li>ZStack 다른 뷰들과 상관 없이, 사용 가능한 공간에 따라 뷰의 사이즈를 정함</li>
+  <li>다른 컨텐츠의 사이즈와 관련하여 뷰의 사이즈를 조정하고 싶다면 overlay와 background를 사용하면 됨</li>
+  <li>Image() 뷰 이니셜라이저는 기본적으로 이미지의 원래 사이즈로 이미지를 가져옴</li>
+  <li>resizable() 모더파이어와 scaledToFit() 같은 모더파이어를 사용하여 이미지 사이즈를 조정할 수 있음</li>
+  <li>.clipShape(RoundedRectangle(cornerRadius: 10.0, style: .continuous)) 을 사용하여 뷰의 위치나 크기를 변경하지 않고 corner radius를 설정할 수 있음</li>
+</ul>]]></content><author><name>Mirae</name></author><category term="TIL" /><summary type="html"><![CDATA[```swift struct ReusableLabel: View { let keyword: String let symbol: String var body: some View { Label(keyword, systemImage: symbol) .font(.title) .foregroundColor(.white) .padding() .background(.green.opacity(0.75), in: Capsule()) // - 1 } }]]></summary></entry></feed>
