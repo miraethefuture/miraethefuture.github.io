@@ -8,6 +8,7 @@ layout: post
   
 # 색 정의하기
 > Define colors in the asset catalog
+[🔗](https://developer.apple.com/tutorials/develop-in-swift/design-an-interface)
 
 ```swift
 import SwiftUI
