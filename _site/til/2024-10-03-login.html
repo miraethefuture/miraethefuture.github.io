@@ -181,7 +181,7 @@
                             </a>
                             
                                 
-                                    <ul><li><a href="#구글-로그인">구글 로그인</a><ul><li><a href="#환경설정">환경설정</a><ul><li><a href="#xcode-프로젝트-설정하기">Xcode 프로젝트 설정하기</a></li></ul></li><li><a href="#구현">구현</a><ul><li><a href="#1-handle-the-authentication-redirect-url">1. Handle the authentication redirect URL</a></li><li><a href="#2-attempt-to-restore-the-users-sign-in-state">2. Attempt to restore the user’s sign-in state</a></li></ul></li></ul></li></ul>
+                                    <ul><li><a href="#구글-로그인">구글 로그인</a><ul><li><a href="#환경설정">환경설정</a><ul><li><a href="#xcode-프로젝트-설정하기">Xcode 프로젝트 설정하기</a></li></ul></li><li><a href="#구현">구현</a><ul><li><a href="#1-handle-the-authentication-redirect-url">1. Handle the authentication redirect URL</a></li><li><a href="#2-attempt-to-restore-the-users-sign-in-state">2. Attempt to restore the user’s sign-in state</a></li><li>!</li></ul></li></ul></li></ul>
 
                                 
                             
@@ -328,6 +328,12 @@
     <span class="k">return</span> <span class="kc">true</span>
 <span class="p">}</span>
 </code></pre></div></div>
+<h3>!</h3>
+<ul>
+  <li>KeychainSwift 라이브러리를 사용하여 accessToken을 키체인에 저장하는 로직을 작성하였다. UserDefaults 보다 보안상 안전할 것 같다고 판단하였기 때문이다.</li>
+  <li>키체인에 저장한 토큰을, 로그인이 필요한 API와 통신 시 header에 할당되도록 하였다.</li>
+  <li>로그인에 성공하고 accessToken을 얻게 되면, 로그인 state를 변경하고 state에 따라 로그인/비로그인 화면을 보여주어야 한다.</li>
+</ul>
 
 </section>
             </div><div class="search-results">
@@ -468,7 +474,7 @@ MathJax = {
     },
     "gitbook": {
         "version": "3.2.3",
-        "time": "2024-11-24 02:19:25 +0900"
+        "time": "2024-12-12 17:39:55 +0900"
     },
     "basePath": "",
     "book": {
