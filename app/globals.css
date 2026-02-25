@@ -1,0 +1,157 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --bg: #f6f7f9;
+  --surface: #ffffff;
+  --text-primary: #0f172a;
+  --text-secondary: #475569;
+  --accent: #0ea5e9;
+  --accent-strong: #0369a1;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html,
+body {
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  min-height: 100vh;
+  font-family: 'Pretendard Variable', ui-sans-serif, system-ui, sans-serif;
+  background: var(--bg);
+  color: var(--text-primary);
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+.site-bg {
+  position: fixed;
+  inset: 0;
+  z-index: -1;
+  pointer-events: none;
+  background:
+    radial-gradient(circle at 15% 12%, rgba(14, 165, 233, 0.16), transparent 30%),
+    radial-gradient(circle at 85% 22%, rgba(15, 23, 42, 0.1), transparent 30%),
+    linear-gradient(180deg, #f8fafc 0%, #f6f7f9 42%, #f2f5f8 100%);
+}
+
+.hero-title {
+  font-size: clamp(2rem, 3vw, 3rem);
+  line-height: 1.1;
+  letter-spacing: -0.02em;
+}
+
+.surface-panel {
+  border: 1px solid rgba(15, 23, 42, 0.08);
+  background: rgba(255, 255, 255, 0.88);
+  backdrop-filter: blur(6px);
+  box-shadow: 0 2px 16px rgba(15, 23, 42, 0.06);
+}
+
+.prose-mirae {
+  color: var(--text-primary);
+  line-height: 1.8;
+  font-size: 1rem;
+}
+
+.prose-mirae h1,
+.prose-mirae h2,
+.prose-mirae h3 {
+  color: var(--text-primary);
+  line-height: 1.25;
+  margin-top: 2.25rem;
+  margin-bottom: 1rem;
+}
+
+.prose-mirae h1 {
+  font-size: clamp(1.9rem, 2.7vw, 2.6rem);
+}
+
+.prose-mirae h2 {
+  font-size: clamp(1.5rem, 2.1vw, 2rem);
+}
+
+.prose-mirae h3 {
+  font-size: clamp(1.25rem, 1.5vw, 1.5rem);
+}
+
+.prose-mirae p,
+.prose-mirae ul,
+.prose-mirae ol,
+.prose-mirae blockquote {
+  margin-top: 1rem;
+  margin-bottom: 1rem;
+  color: var(--text-secondary);
+}
+
+.prose-mirae ul,
+.prose-mirae ol {
+  padding-left: 1.2rem;
+}
+
+.prose-mirae li + li {
+  margin-top: 0.45rem;
+}
+
+.prose-mirae blockquote {
+  border-left: 4px solid rgba(14, 165, 233, 0.6);
+  padding-left: 0.9rem;
+}
+
+.prose-mirae hr {
+  border: none;
+  border-top: 1px solid rgba(15, 23, 42, 0.1);
+  margin: 2.5rem 0;
+}
+
+.prose-mirae table {
+  width: 100%;
+  border-collapse: collapse;
+  margin: 1.4rem 0;
+}
+
+.prose-mirae th,
+.prose-mirae td {
+  border: 1px solid rgba(15, 23, 42, 0.14);
+  padding: 0.55rem 0.75rem;
+  text-align: left;
+}
+
+.prose-mirae code {
+  border-radius: 0.4rem;
+  background: rgba(15, 23, 42, 0.09);
+  padding: 0.1rem 0.35rem;
+  font-family: 'JetBrains Mono', ui-monospace, SFMono-Regular, monospace;
+  font-size: 0.9em;
+}
+
+.prose-mirae pre code {
+  background: transparent;
+  padding: 0;
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  .animate-rise {
+    animation: rise-up 0.35s ease-out;
+  }
+
+  @keyframes rise-up {
+    from {
+      transform: translateY(12px);
+      opacity: 0;
+    }
+    to {
+      transform: translateY(0);
+      opacity: 1;
+    }
+  }
+}

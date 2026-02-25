@@ -1,3 +1,10 @@
-
 # Mac files
 .DS_Store
+
+# Node/Next
+node_modules/
+.next/
+out/
+public/assets/
+.npm-cache/
+tsconfig.tsbuildinfo
