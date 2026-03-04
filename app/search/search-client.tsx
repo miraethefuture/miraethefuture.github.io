@@ -38,7 +38,7 @@ export function SearchClient({ documents }: SearchClientProps) {
   return (
     <section className="space-y-6">
       <header className="space-y-3">
-        <p className="text-sm font-semibold tracking-[0.1em] text-sky-700">SEARCH</p>
+        <p className="text-sm font-semibold tracking-[0.1em] text-slate-900">SEARCH</p>
         <h1 className="text-3xl font-semibold tracking-tight text-slate-950">검색</h1>
         <p className="text-slate-700">키워드로 프로젝트와 TIL 기록을 빠르게 찾습니다.</p>
       </header>
@@ -53,7 +53,7 @@ export function SearchClient({ documents }: SearchClientProps) {
           placeholder="예: SwiftUI, 로그인, AVFoundation"
           value={query}
           onChange={(event) => setQuery(event.target.value)}
-          className="w-full rounded-xl border border-slate-200 bg-white px-4 py-3 text-base text-slate-900 outline-none ring-sky-200 transition focus:ring"
+          className="w-full rounded-xl border border-slate-200 bg-white px-4 py-3 text-base text-slate-900 outline-none ring-slate-300 transition focus:ring"
         />
       </div>
 

@@ -25,8 +25,8 @@ const config: Config = {
         mono: ['JetBrains Mono', 'ui-monospace', 'SFMono-Regular', 'monospace'],
       },
       boxShadow: {
-        subtle: '0 2px 16px rgba(15, 23, 42, 0.06)',
-        medium: '0 12px 32px rgba(15, 23, 42, 0.12)',
+        subtle: '0 2px 16px rgba(0, 0, 0, 0.06)',
+        medium: '0 12px 32px rgba(0, 0, 0, 0.12)',
       },
     },
   },

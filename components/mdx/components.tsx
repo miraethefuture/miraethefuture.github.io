@@ -10,17 +10,17 @@ export const mdxComponents = {
     const href = props.href ?? '';
 
     if (href.startsWith('/')) {
-      return <Link href={href} className={cn('text-sky-700 underline underline-offset-4', props.className)}>{props.children}</Link>;
+      return <Link href={href} className={cn('text-slate-900 underline underline-offset-4', props.className)}>{props.children}</Link>;
     }
 
     if (href.startsWith('#')) {
-      return <a {...props} className={cn('text-sky-700 underline underline-offset-4', props.className)} />;
+      return <a {...props} className={cn('text-slate-900 underline underline-offset-4', props.className)} />;
     }
 
     return (
       <a
         {...props}
-        className={cn('text-sky-700 underline underline-offset-4', props.className)}
+        className={cn('text-slate-900 underline underline-offset-4', props.className)}
         target="_blank"
         rel="noreferrer"
       />

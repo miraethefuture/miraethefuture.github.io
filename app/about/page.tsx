@@ -6,7 +6,7 @@ export default function AboutPage() {
   return (
     <section className="space-y-10">
       <header className="space-y-3">
-        <p className="text-sm font-semibold tracking-[0.1em] text-sky-700">ABOUT</p>
+        <p className="text-sm font-semibold tracking-[0.1em] text-slate-900">ABOUT</p>
         <h1 className="text-3xl font-semibold tracking-tight text-slate-950">Mirae</h1>
         <p className="max-w-3xl text-slate-700">
           iOS 개발 과정에서 마주친 문제를 구조적으로 분석하고, 재현 가능한 해결 방식으로 정리하는 것을 중요하게

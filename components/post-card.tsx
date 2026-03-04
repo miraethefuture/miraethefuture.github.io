@@ -14,7 +14,7 @@ export function PostCard({ post }: PostCardProps) {
   return (
     <article className="group h-full rounded-2xl border border-slate-900/10 bg-white p-6 shadow-subtle transition duration-300 hover:-translate-y-1 hover:shadow-medium">
       <div className="mb-4 flex items-center gap-2 text-xs font-medium text-slate-600">
-        <span className="rounded-full bg-sky-100 px-2.5 py-1 text-sky-700">{post.type.toUpperCase()}</span>
+        <span className="rounded-full bg-slate-100 px-2.5 py-1 text-slate-900">{post.type.toUpperCase()}</span>
         <time dateTime={post.date}>{post.date}</time>
         <span>{post.readingMinutes} min read</span>
       </div>
@@ -32,7 +32,7 @@ export function PostCard({ post }: PostCardProps) {
 
       <Link
         href={getHref(post)}
-        className="mt-6 inline-flex items-center text-sm font-semibold text-slate-900 underline-offset-4 transition hover:text-sky-700 hover:underline"
+        className="mt-6 inline-flex items-center text-sm font-semibold text-slate-900 underline-offset-4 transition hover:text-slate-900 hover:underline"
       >
         자세히 보기
       </Link>

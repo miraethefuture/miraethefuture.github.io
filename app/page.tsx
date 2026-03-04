@@ -14,7 +14,7 @@ export default async function HomePage() {
   return (
     <div className="space-y-16">
       <section className="surface-panel animate-rise rounded-3xl p-7 md:p-10">
-        <p className="mb-4 text-sm font-semibold tracking-[0.12em] text-sky-700">IOS ENGINEER PORTFOLIO</p>
+        <p className="mb-4 text-sm font-semibold tracking-[0.12em] text-slate-900">IOS ENGINEER PORTFOLIO</p>
         <h1 className="hero-title mb-5 font-semibold text-slate-950">
           문제를 구조화하고
           <br className="hidden md:block" />
@@ -44,7 +44,7 @@ export default async function HomePage() {
       <section>
         <div className="mb-6 flex items-center justify-between">
           <h2 className="text-2xl font-semibold tracking-tight text-slate-950">Featured Projects</h2>
-          <Link href="/projects/" className="text-sm font-semibold text-sky-700 underline-offset-4 hover:underline">
+          <Link href="/projects/" className="text-sm font-semibold text-slate-900 underline-offset-4 hover:underline">
             전체 보기
           </Link>
         </div>
@@ -63,7 +63,7 @@ export default async function HomePage() {
       <section>
         <div className="mb-6 flex items-center justify-between">
           <h2 className="text-2xl font-semibold tracking-tight text-slate-950">Recent TIL</h2>
-          <Link href="/til/" className="text-sm font-semibold text-sky-700 underline-offset-4 hover:underline">
+          <Link href="/til/" className="text-sm font-semibold text-slate-900 underline-offset-4 hover:underline">
             전체 보기
           </Link>
         </div>

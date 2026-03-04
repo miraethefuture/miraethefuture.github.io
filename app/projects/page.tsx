@@ -11,7 +11,7 @@ export default async function ProjectsPage() {
   return (
     <section className="space-y-8">
       <header className="space-y-3">
-        <p className="text-sm font-semibold tracking-[0.1em] text-sky-700">PROJECT ARCHIVE</p>
+        <p className="text-sm font-semibold tracking-[0.1em] text-slate-900">PROJECT ARCHIVE</p>
         <h1 className="text-3xl font-semibold tracking-tight text-slate-950">프로젝트 모음</h1>
         <p className="max-w-3xl text-slate-700">
           핵심 프로젝트를 문제 정의, 역할, 해결 방식, 결과 관점으로 정리했습니다. 채용 관점에서 빠르게 비교할 수 있도록

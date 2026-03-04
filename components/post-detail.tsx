@@ -16,7 +16,7 @@ export function PostDetail({ post, sectionLabel, backHref, backLabel }: PostDeta
   return (
     <article className="space-y-8">
       <header className="surface-panel rounded-3xl p-7 md:p-10">
-        <p className="mb-2 text-sm font-semibold tracking-[0.1em] text-sky-700">{sectionLabel}</p>
+        <p className="mb-2 text-sm font-semibold tracking-[0.1em] text-slate-900">{sectionLabel}</p>
         <h1 className="mb-4 text-3xl font-semibold tracking-tight text-slate-950 md:text-4xl">{post.title}</h1>
         <p className="mb-6 max-w-3xl text-slate-700">{post.summary}</p>
 
@@ -38,7 +38,7 @@ export function PostDetail({ post, sectionLabel, backHref, backLabel }: PostDeta
                 href={url as string}
                 target="_blank"
                 rel="noreferrer"
-                className="rounded-full border border-slate-300 bg-white px-4 py-2 text-sm font-semibold text-slate-800 transition hover:border-sky-300 hover:text-sky-700"
+                className="rounded-full border border-slate-300 bg-white px-4 py-2 text-sm font-semibold text-slate-800 transition hover:border-slate-500 hover:text-slate-900"
               >
                 {key}
               </Link>
@@ -50,7 +50,7 @@ export function PostDetail({ post, sectionLabel, backHref, backLabel }: PostDeta
       <PostContent source={post.body} />
 
       <div className="pt-4">
-        <Link href={backHref} className="text-sm font-semibold text-sky-700 underline-offset-4 hover:underline">
+        <Link href={backHref} className="text-sm font-semibold text-slate-900 underline-offset-4 hover:underline">
           {backLabel}
         </Link>
       </div>
