@@ -135,6 +135,58 @@ a {
   padding: 0;
 }
 
+/* Code highlight colors adapted from the legacy Jekyll custom rouge palette. */
+.prose-mirae pre {
+  background: #333237;
+  border: 1px solid rgba(0, 0, 0, 0.35);
+}
+
+.prose-mirae pre code.hljs {
+  color: #fafafa;
+}
+
+.prose-mirae pre code.hljs .hljs-comment,
+.prose-mirae pre code.hljs .hljs-quote {
+  color: #858585;
+}
+
+.prose-mirae pre code.hljs .hljs-keyword,
+.prose-mirae pre code.hljs .hljs-selector-tag {
+  color: #ff6ea6;
+  font-weight: 700;
+}
+
+.prose-mirae pre code.hljs .hljs-type,
+.prose-mirae pre code.hljs .hljs-title.class_ {
+  color: #dab8ff;
+}
+
+.prose-mirae pre code.hljs .hljs-title.function_,
+.prose-mirae pre code.hljs .hljs-function .hljs-title {
+  color: #f4bf75;
+}
+
+.prose-mirae pre code.hljs .hljs-string,
+.prose-mirae pre code.hljs .hljs-attr,
+.prose-mirae pre code.hljs .hljs-doctag {
+  color: #e5887f;
+}
+
+.prose-mirae pre code.hljs .hljs-number,
+.prose-mirae pre code.hljs .hljs-literal {
+  color: #f5ef7f;
+}
+
+.prose-mirae pre code.hljs .hljs-built_in,
+.prose-mirae pre code.hljs .hljs-variable,
+.prose-mirae pre code.hljs .hljs-property {
+  color: #6a9fb5;
+}
+
+.prose-mirae pre code.hljs .hljs-meta {
+  color: #90a959;
+}
+
 @media (prefers-reduced-motion: no-preference) {
   .animate-rise {
     animation: rise-up 0.35s ease-out;
