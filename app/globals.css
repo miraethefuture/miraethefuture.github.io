@@ -320,7 +320,7 @@ a {
 
 .docs-page-title {
   margin: 0;
-  font-size: clamp(2.35rem, 4.5vw, 4.1rem);
+  font-size: clamp(2rem, 3.4vw, 3.1rem);
   line-height: 1.05;
   letter-spacing: -0.05em;
 }

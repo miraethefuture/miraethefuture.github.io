@@ -25,11 +25,7 @@ export default async function HomePage() {
       <div className="docs-page space-y-16">
         <section id="start-here">
           <header className="docs-page-header">
-            <h1 className="docs-page-title">구조적으로 읽는 iOS 개발 아카이브</h1>
-            <p className="docs-page-description">
-              프로젝트 결과물과 TIL 기록을 문서처럼 탐색할 수 있도록 정리했습니다. 좌측 트리로 문서를 이동하고,
-              우측 목차로 현재 페이지를 빠르게 스캔할 수 있습니다.
-            </p>
+            <h1 className="docs-page-title">iOS 개발 아카이브</h1>
           </header>
 
           <div className="docs-grid-two">
