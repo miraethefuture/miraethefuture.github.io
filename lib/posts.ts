@@ -220,3 +220,5 @@ export const getPostsByTag = cache(async (tag: string): Promise<PostMeta[]> => {
   const posts = await getAllPosts();
   return posts.filter((post) => post.tags.some((item) => item.toLowerCase() === normalized));
 });
+
+export const getPostHref = (post: Pick<PostMeta, 'slug' | 'type'>) => (post.type === 'project' ? `/projects/${post.slug}/` : `/til/${post.slug}/`);

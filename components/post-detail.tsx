@@ -1,6 +1,7 @@
 import Link from 'next/link';
 
 import { PostContent } from '@/components/post-content';
+import type { TocItem } from '@/lib/docs';
 import type { Post } from '@/lib/types';
 
 interface PostDetailProps {
@@ -8,24 +9,27 @@ interface PostDetailProps {
   sectionLabel: string;
   backHref: string;
   backLabel: string;
+  toc?: TocItem[];
 }
 
 export function PostDetail({ post, sectionLabel, backHref, backLabel }: PostDetailProps) {
   const entries = Object.entries(post.links).filter(([, value]) => Boolean(value));
 
   return (
-    <article className="space-y-8">
-      <header className="surface-panel rounded-3xl p-7 md:p-10">
-        <p className="mb-2 text-sm font-semibold tracking-[0.1em] text-slate-900">{sectionLabel}</p>
-        <h1 className="mb-4 text-3xl font-semibold tracking-tight text-slate-950 md:text-4xl">{post.title}</h1>
-        <p className="mb-6 max-w-3xl text-slate-700">{post.summary}</p>
+    <article className="docs-page space-y-8">
+      <header className="docs-page-header">
+        <p className="docs-eyebrow">{sectionLabel}</p>
+        <h1 className="docs-page-title docs-page-title-detail">{post.title}</h1>
+        <p className="docs-page-description">{post.summary}</p>
 
-        <div className="flex flex-wrap items-center gap-x-4 gap-y-2 text-sm text-slate-600">
-          <time dateTime={post.date}>{post.date}</time>
-          <span>{post.readingMinutes} min read</span>
+        <div className="docs-meta-row">
+          <span className="docs-meta-pill">
+            <time dateTime={post.date}>{post.date}</time>
+          </span>
+          <span className="docs-meta-pill">{post.readingMinutes} min read</span>
           {post.tags.map((tag) => (
-            <Link key={tag} href={`/tags/${encodeURIComponent(tag)}/`} className="rounded-full bg-slate-100 px-2.5 py-1 text-xs font-medium text-slate-700">
-              {tag}
+            <Link key={tag} href={`/tags/${encodeURIComponent(tag)}/`} className="docs-meta-pill">
+              #{tag}
             </Link>
           ))}
         </div>

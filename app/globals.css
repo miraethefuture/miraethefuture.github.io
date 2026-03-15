@@ -1,3 +1,5 @@
+@import url('https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@400;500;700;800&display=swap');
+
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
@@ -5,10 +7,12 @@
 :root {
   --bg: #ffffff;
   --surface: #ffffff;
+  --surface-muted: #f8f5f2;
   --text-primary: #111111;
-  --text-secondary: #525252;
+  --text-secondary: #111111;
   --accent: #111111;
-  --accent-strong: #000000;
+  --accent-strong: #111111;
+  --line: rgba(17, 24, 39, 0.12);
 }
 
 * {
@@ -23,7 +27,7 @@ body {
 
 body {
   min-height: 100vh;
-  font-family: 'Pretendard Variable', ui-sans-serif, system-ui, sans-serif;
+  font-family: 'Noto Sans KR', ui-sans-serif, system-ui, sans-serif;
   background: var(--bg);
   color: var(--text-primary);
 }
@@ -48,15 +52,15 @@ a {
 }
 
 .surface-panel {
-  border: 1px solid rgba(0, 0, 0, 0.12);
-  background: #ffffff;
-  box-shadow: 0 2px 12px rgba(0, 0, 0, 0.06);
+  border-top: 1px solid var(--line);
+  background: transparent;
+  box-shadow: none;
 }
 
 .prose-mirae {
   color: var(--text-primary);
-  line-height: 1.8;
-  font-size: 1rem;
+  line-height: 1.9;
+  font-size: 0.92rem;
 }
 
 .prose-mirae h1,
@@ -64,8 +68,9 @@ a {
 .prose-mirae h3 {
   color: var(--text-primary);
   line-height: 1.25;
-  margin-top: 2.25rem;
+  margin-top: 2.75rem;
   margin-bottom: 1rem;
+  scroll-margin-top: 2rem;
 }
 
 .prose-mirae h1 {
@@ -74,6 +79,8 @@ a {
 
 .prose-mirae h2 {
   font-size: clamp(1.5rem, 2.1vw, 2rem);
+  padding-bottom: 0.7rem;
+  border-bottom: 1px solid var(--line);
 }
 
 .prose-mirae h3 {
@@ -86,7 +93,14 @@ a {
 .prose-mirae blockquote {
   margin-top: 1rem;
   margin-bottom: 1rem;
-  color: var(--text-secondary);
+  color: #111111;
+}
+
+.prose-mirae a {
+  color: var(--accent);
+  text-decoration: underline;
+  text-decoration-color: rgba(17, 17, 17, 0.25);
+  text-underline-offset: 0.16em;
 }
 
 .prose-mirae ul,
@@ -105,7 +119,7 @@ a {
 
 .prose-mirae hr {
   border: none;
-  border-top: 1px solid rgba(0, 0, 0, 0.12);
+  border-top: 1px solid var(--line);
   margin: 2.5rem 0;
 }
 
@@ -117,14 +131,14 @@ a {
 
 .prose-mirae th,
 .prose-mirae td {
-  border: 1px solid rgba(0, 0, 0, 0.14);
+  border: 1px solid var(--line);
   padding: 0.55rem 0.75rem;
   text-align: left;
 }
 
 .prose-mirae code {
   border-radius: 0.4rem;
-  background: rgba(0, 0, 0, 0.08);
+  background: rgba(15, 23, 42, 0.08);
   padding: 0.1rem 0.35rem;
   font-family: 'JetBrains Mono', ui-monospace, SFMono-Regular, monospace;
   font-size: 0.9em;
@@ -139,6 +153,320 @@ a {
 .prose-mirae pre {
   background: #333237;
   border: 1px solid rgba(0, 0, 0, 0.35);
+  border-radius: 1rem;
+  padding: 1rem 1.2rem;
+  overflow-x: auto;
+}
+
+.docs-layout {
+  display: grid;
+  grid-template-columns: minmax(240px, 300px) minmax(0, 1fr) minmax(240px, 300px);
+  gap: 1.5rem;
+  align-items: start;
+}
+
+.docs-sidebar,
+.docs-right-rail {
+  min-width: 0;
+}
+
+.docs-sidebar-inner,
+.docs-right-rail-inner {
+  position: sticky;
+  top: 1.5rem;
+}
+
+.docs-sidebar-inner {
+  display: flex;
+  flex-direction: column;
+  gap: 1.25rem;
+  padding: 0.2rem 0.8rem 0.2rem 0;
+  max-height: calc(100vh - 3rem);
+  overflow: auto;
+}
+
+.docs-brand {
+  display: flex;
+  align-items: center;
+  gap: 0.9rem;
+}
+
+.docs-brand-mark {
+  display: inline-flex;
+  width: 2.6rem;
+  height: 2.6rem;
+  align-items: center;
+  justify-content: center;
+  border-radius: 0.9rem;
+  background: #111111;
+  color: white;
+  font-weight: 700;
+}
+
+.docs-brand-name {
+  margin: 0;
+  font-size: 1.05rem;
+  font-weight: 700;
+  letter-spacing: -0.02em;
+}
+
+.docs-brand-subtitle {
+  margin: 0.1rem 0 0;
+  color: var(--text-secondary);
+  font-size: 0.82rem;
+}
+
+.docs-search-link {
+  display: block;
+  border-bottom: 1px solid var(--line);
+  padding: 0 0 0.9rem;
+  font-size: 0.95rem;
+  color: #8a8f98;
+}
+
+.docs-tree {
+  display: flex;
+  flex-direction: column;
+  gap: 1.1rem;
+}
+
+.docs-tree-section {
+  display: flex;
+  flex-direction: column;
+  gap: 0.65rem;
+}
+
+.docs-tree-heading-row {
+  padding-bottom: 0.15rem;
+}
+
+.docs-tree-heading {
+  margin: 0;
+  font-size: 0.86rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  color: #2f3440;
+}
+
+.docs-tree-heading-active {
+  color: var(--accent-strong);
+}
+
+.docs-tree-items {
+  display: flex;
+  flex-direction: column;
+  gap: 0.1rem;
+  padding-left: 0.1rem;
+  border-left: 1px solid rgba(17, 24, 39, 0.08);
+}
+
+.docs-tree-item {
+  display: flex;
+  align-items: baseline;
+  justify-content: space-between;
+  gap: 0.75rem;
+  border-radius: 0.85rem;
+  padding: 0.55rem 0.75rem;
+  font-size: 0.94rem;
+  color: #4f5561;
+}
+
+.docs-tree-item:hover {
+  background: rgba(17, 17, 17, 0.04);
+  color: var(--accent-strong);
+}
+
+.docs-tree-item-active {
+  background: rgba(17, 17, 17, 0.06);
+  color: var(--accent-strong);
+}
+
+.docs-tree-item-title {
+  line-height: 1.45;
+}
+
+.docs-tree-item-meta {
+  flex-shrink: 0;
+  font-size: 0.72rem;
+  color: #8a8f98;
+}
+
+.docs-main-column {
+  min-width: 0;
+}
+
+.docs-main-surface {
+  min-height: calc(100vh - 7rem);
+  padding: clamp(1.2rem, 2vw, 1.8rem) 0;
+}
+
+.docs-page {
+  max-width: 60rem;
+}
+
+.docs-page-header {
+  margin-bottom: 2.5rem;
+}
+
+.docs-eyebrow {
+  margin: 0 0 0.8rem;
+  font-size: 0.82rem;
+  font-weight: 800;
+  text-transform: uppercase;
+  letter-spacing: 0.14em;
+  color: #5c6171;
+}
+
+.docs-page-title {
+  margin: 0;
+  font-size: clamp(2.35rem, 4.5vw, 4.1rem);
+  line-height: 1.05;
+  letter-spacing: -0.05em;
+}
+
+.docs-page-title-detail {
+  font-size: clamp(1.7rem, 2.6vw, 2.4rem);
+  font-weight: 800;
+}
+
+.docs-page-description {
+  max-width: 52rem;
+  margin: 1.2rem 0 0;
+  font-size: 1.12rem;
+  line-height: 1.8;
+  color: var(--text-secondary);
+}
+
+.docs-list {
+  display: flex;
+  flex-direction: column;
+  gap: 0;
+}
+
+.docs-grid-two {
+  display: grid;
+  gap: 1rem;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+}
+
+.docs-aside-card {
+  display: flex;
+  flex-direction: column;
+  gap: 0.9rem;
+}
+
+.docs-aside-label {
+  margin: 0;
+  font-size: 0.82rem;
+  font-weight: 800;
+  text-transform: uppercase;
+  letter-spacing: 0.12em;
+  color: #353944;
+}
+
+.docs-profile-card,
+.docs-toc {
+  border-top: 1px solid var(--line);
+  padding: 1rem 0 0;
+}
+
+.docs-profile-card {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.docs-profile-avatar {
+  display: inline-flex;
+  width: 3rem;
+  height: 3rem;
+  align-items: center;
+  justify-content: center;
+  border-radius: 1rem;
+  background: linear-gradient(135deg, #18181b, #454b57);
+  color: white;
+  font-weight: 700;
+}
+
+.docs-stat dt {
+  margin-bottom: 0.25rem;
+  font-size: 0.72rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  color: #8a8f98;
+}
+
+.docs-stat dd {
+  margin: 0;
+  color: #2c313c;
+}
+
+.docs-chip-link {
+  border: 1px solid var(--line);
+  border-radius: 999px;
+  padding: 0.45rem 0.8rem;
+  background: white;
+  font-size: 0.82rem;
+  font-weight: 600;
+  color: #444b57;
+}
+
+.docs-toc {
+  display: flex;
+  flex-direction: column;
+  gap: 0.15rem;
+}
+
+.docs-toc-link {
+  display: block;
+  padding: 0.35rem 0;
+  color: #4f5561;
+  font-size: 0.94rem;
+  line-height: 1.45;
+}
+
+.docs-toc-link:hover {
+  color: var(--accent-strong);
+}
+
+.docs-toc-link-nested {
+  padding-left: 1.25rem;
+  font-size: 0.88rem;
+}
+
+.docs-meta-row {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.7rem;
+  margin-top: 1.25rem;
+}
+
+.docs-meta-pill {
+  border: 1px solid var(--line);
+  border-radius: 999px;
+  background: var(--surface-muted);
+  padding: 0.45rem 0.8rem;
+  font-size: 0.82rem;
+  color: #4b5260;
+}
+
+@media (max-width: 900px) {
+  .docs-layout {
+    grid-template-columns: 1fr;
+    gap: 1.5rem;
+  }
+
+  .docs-grid-two {
+    grid-template-columns: 1fr;
+  }
+
+  .docs-sidebar-inner,
+  .docs-right-rail-inner {
+    position: static;
+    max-height: none;
+  }
 }
 
 .prose-mirae pre code.hljs {

@@ -1,7 +1,9 @@
 import type { Metadata } from 'next';
 import { notFound } from 'next/navigation';
 
+import { DocsShell } from '@/components/docs-shell';
 import { PostDetail } from '@/components/post-detail';
+import { extractTableOfContents } from '@/lib/docs';
 import { getPostBySlug, getPostsByType } from '@/lib/posts';
 
 interface TilDetailPageProps {
@@ -35,5 +37,11 @@ export default async function TilDetailPage({ params }: TilDetailPageProps) {
     notFound();
   }
 
-  return <PostDetail post={post} sectionLabel="TIL DETAIL" backHref="/til/" backLabel="TIL 목록으로" />;
+  const toc = extractTableOfContents(post.body);
+
+  return (
+    <DocsShell pathname={`/til/${params.slug}/`} toc={toc}>
+      <PostDetail post={post} sectionLabel="TIL detail" backHref="/til/" backLabel="TIL 목록으로" />
+    </DocsShell>
+  );
 }

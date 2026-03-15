@@ -36,14 +36,14 @@ export function SearchClient({ documents }: SearchClientProps) {
   }, [documents, query]);
 
   return (
-    <section className="space-y-6">
-      <header className="space-y-3">
-        <p className="text-sm font-semibold tracking-[0.1em] text-slate-900">SEARCH</p>
-        <h1 className="text-3xl font-semibold tracking-tight text-slate-950">검색</h1>
-        <p className="text-slate-700">키워드로 프로젝트와 TIL 기록을 빠르게 찾습니다.</p>
+    <section className="docs-page space-y-6" id="search-documents">
+      <header className="docs-page-header">
+        <p className="docs-eyebrow">Search</p>
+        <h1 className="docs-page-title">검색</h1>
+        <p className="docs-page-description">키워드로 프로젝트와 TIL 기록을 빠르게 찾습니다.</p>
       </header>
 
-      <div className="surface-panel rounded-2xl p-4">
+      <div className="surface-panel pt-4">
         <label className="sr-only" htmlFor="search-input">
           검색어
         </label>
@@ -53,28 +53,28 @@ export function SearchClient({ documents }: SearchClientProps) {
           placeholder="예: SwiftUI, 로그인, AVFoundation"
           value={query}
           onChange={(event) => setQuery(event.target.value)}
-          className="w-full rounded-xl border border-slate-200 bg-white px-4 py-3 text-base text-slate-900 outline-none ring-slate-300 transition focus:ring"
+          className="w-full border-0 border-b border-slate-300 bg-transparent px-0 py-3 text-base text-slate-900 outline-none ring-0 transition placeholder:text-slate-400 focus:border-slate-900"
         />
       </div>
 
-      <div className="space-y-3">
+      <div className="docs-list">
         {results.map((doc) => (
           <Link
             key={`${doc.type}-${doc.slug}`}
             href={doc.href}
-            className="block rounded-2xl border border-slate-900/10 bg-white p-5 shadow-subtle transition hover:-translate-y-0.5 hover:shadow-medium"
+            className="block border-t border-slate-900/10 py-5 first:border-t-0"
           >
             <div className="mb-2 flex items-center gap-2 text-xs font-medium text-slate-600">
-              <span className="rounded-full bg-slate-100 px-2 py-0.5">{doc.type.toUpperCase()}</span>
+              <span className="rounded-full bg-slate-100 px-2 py-0.5 text-slate-800">{doc.type.toUpperCase()}</span>
               <span>{doc.date}</span>
             </div>
             <h2 className="mb-2 text-lg font-semibold text-slate-950">{doc.title}</h2>
-            <p className="text-sm text-slate-700">{doc.summary}</p>
+            <p className="text-sm leading-7 text-slate-600">{doc.summary}</p>
           </Link>
         ))}
 
         {results.length === 0 ? (
-          <div className="rounded-2xl border border-dashed border-slate-300 bg-white p-8 text-sm text-slate-600">검색 결과가 없습니다.</div>
+          <div className="border-t border-dashed border-slate-300 py-8 text-sm text-slate-600">검색 결과가 없습니다.</div>
         ) : null}
       </div>
     </section>

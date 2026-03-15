@@ -3,7 +3,6 @@ import type { ReactNode } from 'react';
 
 import { GoogleAnalytics } from '@/components/ga/google-analytics';
 import { SiteFooter } from '@/components/site-footer';
-import { SiteHeader } from '@/components/site-header';
 
 import './globals.css';
 
@@ -18,8 +17,7 @@ export default function RootLayout({ children }: { children: ReactNode }) {
       <body>
         <GoogleAnalytics />
         <div className="site-bg" aria-hidden="true" />
-        <SiteHeader />
-        <main className="mx-auto w-full max-w-6xl px-5 py-10 md:px-8">{children}</main>
+        <main className="mx-auto w-full max-w-[1720px] px-4 py-6 md:px-6 md:py-8">{children}</main>
         <SiteFooter />
       </body>
     </html>

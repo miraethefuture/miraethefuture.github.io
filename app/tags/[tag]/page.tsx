@@ -1,6 +1,7 @@
 import type { Metadata } from 'next';
 import { notFound } from 'next/navigation';
 
+import { DocsShell } from '@/components/docs-shell';
 import { PostCard } from '@/components/post-card';
 import { getPostsByTag, getTags } from '@/lib/posts';
 
@@ -32,18 +33,20 @@ export default async function TagPage({ params }: TagPageProps) {
   }
 
   return (
-    <section className="space-y-8">
-      <header className="space-y-3">
-        <p className="text-sm font-semibold tracking-[0.1em] text-slate-900">TAG</p>
-        <h1 className="text-3xl font-semibold tracking-tight text-slate-950">#{tag}</h1>
-        <p className="text-slate-700">총 {posts.length}개의 글</p>
-      </header>
+    <DocsShell pathname={`/tags/${encodeURIComponent(tag)}/`} toc={[{ id: 'tag-archive', title: `#${tag}`, level: 2 }]}>
+      <section className="docs-page space-y-8" id="tag-archive">
+        <header className="docs-page-header">
+          <p className="docs-eyebrow">Tag</p>
+          <h1 className="docs-page-title">#{tag}</h1>
+          <p className="docs-page-description">총 {posts.length}개의 문서가 이 태그에 연결되어 있습니다.</p>
+        </header>
 
-      <div className="grid gap-4 md:grid-cols-2 xl:grid-cols-3">
-        {posts.map((post) => (
-          <PostCard key={post.slug} post={post} />
-        ))}
-      </div>
-    </section>
+        <div className="docs-list">
+          {posts.map((post) => (
+            <PostCard key={post.slug} post={post} />
+          ))}
+        </div>
+      </section>
+    </DocsShell>
   );
 }

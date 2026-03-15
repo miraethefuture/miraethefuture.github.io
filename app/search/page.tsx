@@ -1,4 +1,5 @@
 import { SearchClient } from '@/app/search/search-client';
+import { DocsShell } from '@/components/docs-shell';
 import { getAllPosts } from '@/lib/posts';
 
 export const metadata = {
@@ -13,5 +14,9 @@ export default async function SearchPage() {
     href: post.type === 'project' ? `/projects/${post.slug}/` : `/til/${post.slug}/`,
   }));
 
-  return <SearchClient documents={documents} />;
+  return (
+    <DocsShell pathname="/search/" toc={[{ id: 'search-documents', title: 'Search documents', level: 2 }]}>
+      <SearchClient documents={documents} />
+    </DocsShell>
+  );
 }

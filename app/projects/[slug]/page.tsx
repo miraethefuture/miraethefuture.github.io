@@ -1,7 +1,9 @@
 import type { Metadata } from 'next';
 import { notFound } from 'next/navigation';
 
+import { DocsShell } from '@/components/docs-shell';
 import { PostDetail } from '@/components/post-detail';
+import { extractTableOfContents } from '@/lib/docs';
 import { getPostBySlug, getPostsByType } from '@/lib/posts';
 
 interface ProjectDetailPageProps {
@@ -35,5 +37,11 @@ export default async function ProjectDetailPage({ params }: ProjectDetailPagePro
     notFound();
   }
 
-  return <PostDetail post={post} sectionLabel="PROJECT DETAIL" backHref="/projects/" backLabel="프로젝트 목록으로" />;
+  const toc = extractTableOfContents(post.body);
+
+  return (
+    <DocsShell pathname={`/projects/${params.slug}/`} toc={toc}>
+      <PostDetail post={post} sectionLabel="Project detail" backHref="/projects/" backLabel="프로젝트 목록으로" />
+    </DocsShell>
+  );
 }
