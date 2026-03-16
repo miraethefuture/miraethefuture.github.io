@@ -27,21 +27,6 @@ export default async function HomePage() {
           <header className="docs-page-header">
             <h1 className="docs-page-title">iOS 개발 아카이브</h1>
           </header>
-
-          <div className="docs-grid-two">
-            <article className="surface-panel pt-6">
-              <h2 className="mb-3 text-xl font-semibold tracking-tight text-slate-950">Projects</h2>
-              <p className="text-sm leading-7 text-slate-600">
-                문제 정의, 설계 결정, 개선 결과를 한 문서 안에서 추적할 수 있게 정리합니다.
-              </p>
-            </article>
-            <article className="surface-panel pt-6">
-              <h2 className="mb-3 text-xl font-semibold tracking-tight text-slate-950">TIL</h2>
-              <p className="text-sm leading-7 text-slate-600">
-                학습 과정에서 나온 실험과 트러블슈팅 기록을 축적해 재사용 가능한 지식으로 바꿉니다.
-              </p>
-            </article>
-          </div>
         </section>
 
         <section id="featured-projects" className="space-y-6">
