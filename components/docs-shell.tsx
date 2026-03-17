@@ -68,46 +68,6 @@ function DocsSidebar({ pathname, sections }: { pathname: string; sections: DocsN
   );
 }
 
-function DocsProfileCard() {
-  return (
-    <section className="docs-aside-card">
-      <p className="docs-aside-label">Profile</p>
-      <div className="docs-profile-card">
-        <div className="docs-profile-avatar">M</div>
-        <div className="space-y-2">
-          <h2 className="text-xl font-semibold tracking-tight text-slate-950">Mirae</h2>
-          <p className="text-sm leading-6 text-slate-600">
-            문제를 구조적으로 분해하고, 재현 가능한 해결 방식으로 정리하는 iOS 개발자입니다.
-          </p>
-        </div>
-
-        <dl className="grid grid-cols-2 gap-3 text-sm">
-          <div className="docs-stat">
-            <dt>Focus</dt>
-            <dd>iOS / SwiftUI</dd>
-          </div>
-          <div className="docs-stat">
-            <dt>Theme</dt>
-            <dd>Troubleshooting</dd>
-          </div>
-        </dl>
-
-        <div className="flex flex-wrap gap-2">
-          <Link href="/about/" className="docs-chip-link">
-            About
-          </Link>
-          <Link href="/projects/" className="docs-chip-link">
-            Projects
-          </Link>
-          <Link href="/til/" className="docs-chip-link">
-            TIL
-          </Link>
-        </div>
-      </div>
-    </section>
-  );
-}
-
 function DocsToc({ toc }: { toc: TocItem[] }) {
   return (
     <section className="docs-aside-card">
@@ -138,7 +98,6 @@ export async function DocsShell({ children, pathname, toc = [] }: DocsShellProps
       </div>
       <aside className="docs-right-rail">
         <div className="docs-right-rail-inner">
-          <DocsProfileCard />
           <DocsToc toc={toc} />
         </div>
       </aside>
