@@ -243,7 +243,7 @@ a {
 .docs-tree-items {
   display: flex;
   flex-direction: column;
-  gap: 0.1rem;
+  gap: 0;
   padding-left: 0.1rem;
   border-left: 1px solid rgba(17, 24, 39, 0.08);
 }
@@ -254,8 +254,8 @@ a {
   justify-content: space-between;
   gap: 0.75rem;
   border-radius: 0.85rem;
-  padding: 0.55rem 0.75rem;
-  font-size: 0.94rem;
+  padding: 0.36rem 0.75rem;
+  font-size: 0.82rem;
   color: #4f5561;
 }
 
@@ -270,7 +270,8 @@ a {
 }
 
 .docs-tree-item-title {
-  line-height: 1.45;
+  line-height: 1.28;
+  color: #111111;
 }
 
 .docs-tree-item-meta {

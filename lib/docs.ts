@@ -71,7 +71,6 @@ export const getDocsNavigation = cache(async (): Promise<DocsNavSection[]> => {
       items: projects.map((post) => ({
         title: post.title,
         href: `/projects/${post.slug}/`,
-        meta: post.date,
       })),
     },
     {
@@ -80,7 +79,6 @@ export const getDocsNavigation = cache(async (): Promise<DocsNavSection[]> => {
       items: tilPosts.map((post) => ({
         title: post.title,
         href: `/til/${post.slug}/`,
-        meta: post.date,
       })),
     },
     {
