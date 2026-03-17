@@ -188,19 +188,6 @@ a {
 .docs-brand {
   display: flex;
   align-items: center;
-  gap: 0.9rem;
-}
-
-.docs-brand-mark {
-  display: inline-flex;
-  width: 2.6rem;
-  height: 2.6rem;
-  align-items: center;
-  justify-content: center;
-  border-radius: 0.9rem;
-  background: #111111;
-  color: white;
-  font-weight: 700;
 }
 
 .docs-brand-name {

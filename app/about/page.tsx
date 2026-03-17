@@ -1,7 +1,7 @@
 import { DocsShell } from '@/components/docs-shell';
 
 export const metadata = {
-  title: 'About | Mirae Dev Blog',
+  title: 'About | Mirae',
 };
 
 export default function AboutPage() {

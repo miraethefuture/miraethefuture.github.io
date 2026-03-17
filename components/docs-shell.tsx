@@ -24,10 +24,8 @@ function DocsSidebar({ pathname, sections }: { pathname: string; sections: DocsN
     <aside className="docs-sidebar">
       <div className="docs-sidebar-inner">
         <Link href="/" className="docs-brand">
-          <span className="docs-brand-mark">M</span>
           <div>
-            <p className="docs-brand-name">Mirae Dev Blog</p>
-            <p className="docs-brand-subtitle">iOS engineering archive</p>
+            <p className="docs-brand-name">Mirae</p>
           </div>
         </Link>
 

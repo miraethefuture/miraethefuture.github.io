@@ -3,7 +3,7 @@ import { TagChip } from '@/components/tag-chip';
 import { getTags } from '@/lib/posts';
 
 export const metadata = {
-  title: 'Tags | Mirae Dev Blog',
+  title: 'Tags | Mirae',
 };
 
 export default async function TagsPage() {

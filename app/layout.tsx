@@ -7,7 +7,7 @@ import { SiteFooter } from '@/components/site-footer';
 import './globals.css';
 
 export const metadata: Metadata = {
-  title: 'Mirae Dev Blog',
+  title: 'Mirae',
   description: '채용 관점 포트폴리오 전달을 위한 iOS 개발 블로그',
 };
 

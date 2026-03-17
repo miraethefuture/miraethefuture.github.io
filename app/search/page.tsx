@@ -3,7 +3,7 @@ import { DocsShell } from '@/components/docs-shell';
 import { getAllPosts } from '@/lib/posts';
 
 export const metadata = {
-  title: 'Search | Mirae Dev Blog',
+  title: 'Search | Mirae',
 };
 
 export default async function SearchPage() {

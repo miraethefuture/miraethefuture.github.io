@@ -3,7 +3,7 @@ import { PostCard } from '@/components/post-card';
 import { getPostsByType } from '@/lib/posts';
 
 export const metadata = {
-  title: 'TIL | Mirae Dev Blog',
+  title: 'TIL | Mirae',
 };
 
 export default async function TilPage() {
