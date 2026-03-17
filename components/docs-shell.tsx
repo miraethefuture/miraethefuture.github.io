@@ -1,6 +1,7 @@
 import Link from 'next/link';
 import type { ReactNode } from 'react';
 
+import { SidebarSearchInput } from '@/components/sidebar-search-input';
 import type { DocsNavSection, TocItem } from '@/lib/docs';
 import { getDocsNavigation } from '@/lib/docs';
 import { cn } from '@/lib/utils';
@@ -29,9 +30,7 @@ function DocsSidebar({ pathname, sections }: { pathname: string; sections: DocsN
           </div>
         </Link>
 
-        <Link href="/search/" className="docs-search-link">
-          Search pages, posts, tags...
-        </Link>
+        <SidebarSearchInput />
 
         <nav aria-label="Documentation" className="docs-tree">
           {sections.map((section) => (

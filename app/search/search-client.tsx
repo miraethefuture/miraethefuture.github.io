@@ -1,7 +1,8 @@
 'use client';
 
-import { useMemo, useState } from 'react';
+import { startTransition, useEffect, useMemo, useState } from 'react';
 import Link from 'next/link';
+import { usePathname, useRouter, useSearchParams } from 'next/navigation';
 
 interface SearchDocument {
   slug: string;
@@ -18,10 +19,36 @@ interface SearchClientProps {
 }
 
 export function SearchClient({ documents }: SearchClientProps) {
-  const [query, setQuery] = useState('');
+  const pathname = usePathname();
+  const router = useRouter();
+  const searchParams = useSearchParams();
+  const currentQuery = searchParams.get('q') ?? '';
+  const [query, setQuery] = useState(currentQuery);
+
+  useEffect(() => {
+    setQuery(currentQuery);
+  }, [currentQuery]);
+
+  function updateSearch(nextValue: string) {
+    const trimmed = nextValue.trim();
+    const params = new URLSearchParams(searchParams.toString());
+
+    if (trimmed) {
+      params.set('q', trimmed);
+    } else {
+      params.delete('q');
+    }
+
+    const nextQuery = params.toString();
+    const href = nextQuery ? `${pathname}?${nextQuery}` : pathname;
+
+    startTransition(() => {
+      router.replace(href, { scroll: false });
+    });
+  }
 
   const results = useMemo(() => {
-    const keyword = query.trim().toLowerCase();
+    const keyword = currentQuery.trim().toLowerCase();
 
     if (!keyword) {
       return documents.slice(0, 20);
@@ -33,7 +60,7 @@ export function SearchClient({ documents }: SearchClientProps) {
         return haystack.includes(keyword);
       })
       .slice(0, 30);
-  }, [documents, query]);
+  }, [currentQuery, documents]);
 
   return (
     <section className="docs-page space-y-6" id="search-documents">
@@ -52,7 +79,11 @@ export function SearchClient({ documents }: SearchClientProps) {
           type="search"
           placeholder="예: SwiftUI, 로그인, AVFoundation"
           value={query}
-          onChange={(event) => setQuery(event.target.value)}
+          onChange={(event) => {
+            const nextValue = event.target.value;
+            setQuery(nextValue);
+            updateSearch(nextValue);
+          }}
           className="w-full border-0 border-b border-slate-300 bg-transparent px-0 py-3 text-base text-slate-900 outline-none ring-0 transition placeholder:text-slate-400 focus:border-slate-900"
         />
       </div>
