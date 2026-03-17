@@ -1,6 +1,6 @@
 import { cache } from 'react';
 
-import { getAllPosts, getPostsByType, getTags } from '@/lib/posts';
+import { getPostsByType, getTags } from '@/lib/posts';
 
 export interface TocItem {
   id: string;
@@ -58,22 +58,13 @@ export function extractTableOfContents(source: string): TocItem[] {
 }
 
 export const getDocsNavigation = cache(async (): Promise<DocsNavSection[]> => {
-  const [projects, tilPosts, tags, allPosts] = await Promise.all([
+  const [projects, tilPosts, tags] = await Promise.all([
     getPostsByType('project'),
     getPostsByType('til'),
     getTags(),
-    getAllPosts(),
   ]);
 
   return [
-    {
-      title: 'Overview',
-      items: [
-        { title: 'Home', href: '/' },
-        { title: 'About', href: '/about/' },
-        { title: 'Search', href: '/search/' },
-      ],
-    },
     {
       title: 'Projects',
       href: '/projects/',
@@ -99,14 +90,6 @@ export const getDocsNavigation = cache(async (): Promise<DocsNavSection[]> => {
         title: `#${tag.tag}`,
         href: `/tags/${encodeURIComponent(tag.tag)}/`,
         meta: `${tag.count}`,
-      })),
-    },
-    {
-      title: 'Recent updates',
-      items: allPosts.slice(0, 6).map((post) => ({
-        title: post.title,
-        href: post.type === 'project' ? `/projects/${post.slug}/` : `/til/${post.slug}/`,
-        meta: post.date,
       })),
     },
   ];
