@@ -1,5 +1,5 @@
 import Link from 'next/link';
-import type { ReactNode } from 'react';
+import { Suspense, type ReactNode } from 'react';
 
 import { SidebarNavTree } from '@/components/sidebar-nav-tree';
 import { SidebarSearchInput } from '@/components/sidebar-search-input';
@@ -23,7 +23,9 @@ function DocsSidebar({ pathname, sections }: { pathname: string; sections: DocsN
           </div>
         </Link>
 
-        <SidebarSearchInput />
+        <Suspense fallback={<div className="docs-search-link" aria-hidden="true" />}>
+          <SidebarSearchInput />
+        </Suspense>
 
         <SidebarNavTree pathname={pathname} sections={sections} />
       </div>

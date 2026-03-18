@@ -1,3 +1,5 @@
+import { Suspense } from 'react';
+
 import { SearchClient } from '@/app/search/search-client';
 import { DocsShell } from '@/components/docs-shell';
 import { getAllPosts } from '@/lib/posts';
@@ -16,7 +18,9 @@ export default async function SearchPage() {
 
   return (
     <DocsShell pathname="/search/" toc={[{ id: 'search-documents', title: 'Search documents', level: 2 }]}>
-      <SearchClient documents={documents} />
+      <Suspense fallback={null}>
+        <SearchClient documents={documents} />
+      </Suspense>
     </DocsShell>
   );
 }
