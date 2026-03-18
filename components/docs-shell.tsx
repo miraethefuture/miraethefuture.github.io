@@ -1,6 +1,7 @@
 import Link from 'next/link';
 import type { ReactNode } from 'react';
 
+import { SidebarNavTree } from '@/components/sidebar-nav-tree';
 import { SidebarSearchInput } from '@/components/sidebar-search-input';
 import type { DocsNavSection, TocItem } from '@/lib/docs';
 import { getDocsNavigation } from '@/lib/docs';
@@ -10,14 +11,6 @@ interface DocsShellProps {
   children: ReactNode;
   pathname: string;
   toc?: TocItem[];
-}
-
-function isActive(pathname: string, href: string) {
-  if (href === '/') {
-    return pathname === '/';
-  }
-
-  return pathname === href || pathname.startsWith(href);
 }
 
 function DocsSidebar({ pathname, sections }: { pathname: string; sections: DocsNavSection[] }) {
@@ -32,37 +25,7 @@ function DocsSidebar({ pathname, sections }: { pathname: string; sections: DocsN
 
         <SidebarSearchInput />
 
-        <nav aria-label="Documentation" className="docs-tree">
-          {sections.map((section) => (
-            <section key={section.title} className="docs-tree-section">
-              <div className="docs-tree-heading-row">
-                {section.href ? (
-                  <Link
-                    href={section.href}
-                    className={cn('docs-tree-heading', isActive(pathname, section.href) && 'docs-tree-heading-active')}
-                  >
-                    {section.title}
-                  </Link>
-                ) : (
-                  <p className="docs-tree-heading">{section.title}</p>
-                )}
-              </div>
-
-              <div className="docs-tree-items">
-                {section.items.map((item) => {
-                  const active = isActive(pathname, item.href);
-
-                  return (
-                    <Link key={item.href} href={item.href} className={cn('docs-tree-item', active && 'docs-tree-item-active')}>
-                      <span className="docs-tree-item-title">{item.title}</span>
-                      {item.meta ? <span className="docs-tree-item-meta">{item.meta}</span> : null}
-                    </Link>
-                  );
-                })}
-              </div>
-            </section>
-          ))}
-        </nav>
+        <SidebarNavTree pathname={pathname} sections={sections} />
       </div>
     </aside>
   );
