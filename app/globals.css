@@ -415,6 +415,14 @@ a {
   color: var(--text-secondary);
 }
 
+.docs-home-section-title {
+  margin: 0;
+  font-size: 1.55rem;
+  font-weight: 600;
+  letter-spacing: -0.04em;
+  color: #0f172a;
+}
+
 .docs-list {
   display: flex;
   flex-direction: column;

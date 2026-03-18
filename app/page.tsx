@@ -43,7 +43,7 @@ export default async function HomePage() {
 
         <section id="recent-til" className="space-y-6">
           <div className="flex items-center justify-between">
-            <h2 className="text-3xl font-semibold tracking-tight text-slate-950">Recent TIL</h2>
+            <h2 className="docs-home-section-title">Recent TIL</h2>
             <Link href="/til/" className="text-sm font-semibold text-slate-900 underline-offset-4 hover:underline">
               모든 TIL 보기
             </Link>
@@ -57,7 +57,7 @@ export default async function HomePage() {
         </section>
 
         <section id="browse-by-tag" className="space-y-5">
-          <h2 className="text-3xl font-semibold tracking-tight text-slate-950">Browse by tag</h2>
+          <h2 className="docs-home-section-title">Browse by tag</h2>
           <div className="flex flex-wrap gap-2.5">
             {tags.length > 0 ? tags.slice(0, 20).map((item) => <TagChip key={item.tag} tag={item.tag} count={item.count} />) : null}
           </div>
